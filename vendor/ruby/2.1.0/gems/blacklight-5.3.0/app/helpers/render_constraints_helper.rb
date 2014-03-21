@@ -1,0 +1,3 @@
+module RenderConstraintsHelper
+  include Blacklight::RenderConstraintsHelperBehavior
+end
