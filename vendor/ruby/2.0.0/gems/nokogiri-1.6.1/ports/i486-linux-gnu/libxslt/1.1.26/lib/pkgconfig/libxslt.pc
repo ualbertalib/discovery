@@ -1,0 +1,12 @@
+prefix=/home/asdp/Desktop/DiscoveryProject/discovery/vendor/ruby/2.0.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxslt/1.1.26
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+
+Name: libxslt
+Version: 1.1.26
+Description: XSLT library version 2.
+Requires: libxml-2.0
+Libs: -L${libdir} -lxslt  -L/home/asdp/Desktop/DiscoveryProject/discovery/vendor/ruby/2.0.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib -lxml2 -lz -lm -lm
+Cflags: -I${includedir}

@@ -1,0 +1,188 @@
+.ajax_form
+{
+  margin-bottom: 0;
+}
+
+#librarian_view
+{
+	left:-17%;
+	text-align:left;
+	top:10%;
+	width:700px;
+}
+
+#marc_view
+{
+	text-align:left;
+
+  .field
+  {
+    border-bottom: $marc_item_separator;
+    clear:both;
+  }
+
+  .ind1, .ind2
+  {
+    display:inline;
+    padding:0 $padding-xs-horizontal;
+  }
+
+  .subfields
+  {
+    padding-left:5em;
+  }
+
+  .tag_ind
+  {
+    float:left;
+  }
+}
+
+.constraints-container {
+  @extend .well;
+  line-height: 2.5;
+  padding: 16px 19px;
+}
+
+span.constraints-label {
+  @extend .h5;
+}
+
+.appliedFilter
+{
+  .constraint-value {
+    cursor: default;
+    
+    &:hover, &:active {
+      background-color: $btn-default-bg;
+      border-color: $btn-default-border;
+    }
+  }
+
+  .filterName:after
+  {
+    @extend .text-muted;
+    content: "\276F";
+    padding-left: $caret-width-base;
+  }
+
+  .remove:hover, .remove:active {
+    @extend .btn-danger;
+
+  }
+}
+
+#documents {
+  .document {
+    margin-top: $padding-base-vertical;
+    padding-top: $padding-base-vertical;
+    border-bottom:1px dotted $table-border-color;
+    @extend .clearfix;
+  }
+} 
+
+// Tools link on documetn show page
+.show-tools {
+  .bookmark_toggle {
+    padding: $nav-link-padding;
+  }
+}
+
+// bookmarks checkbox on index, give it some
+// lower margin when it collapses
+.index-document-functions {
+  margin-bottom: ($line-height-computed / 2);
+  @media (min-width: $screen-sm-min) {
+    margin-bottom: 0;
+  }
+}
+
+
+#sidebar form {
+  margin: 0;
+}
+
+.page_links
+{
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  padding-left: 0;
+}
+
+.pagination {
+  text-align: center ;
+}
+
+.dl-horizontal
+{
+  dd {
+    margin-bottom: $padding-base-vertical;
+
+    &:after {
+      clear: none;
+    }
+  }
+}
+
+.dl-invert {
+  dt {
+    font-weight: normal;
+    color: $field_name_color;
+  }
+}
+
+label.toggle_bookmark
+{
+	font-weight: inherit;
+	min-width: 8.5em;
+}
+
+#sidebar-mlt li {
+  padding-bottom: $padding-base-vertical;
+}
+
+#sortAndPerPage, #previousNextDocument {
+  border-bottom: 1px solid $pagination-border;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+#previousNextDocument {
+  @extend .clearfix;
+  padding-top: 1px;
+  padding-bottom: $padding-base-vertical;
+}
+
+#sortAndPerPage .dropdown-toggle {
+  cursor: pointer;
+}
+
+.no-js #sortAndPerPage {
+  & {
+    @extend .clearfix;
+  }
+  .dropdown-menu {
+    background: none;
+    box-shadow: none;
+    border: none;
+    position: relative;
+    display: block;
+    float: none;
+  }
+
+}
+
+.document-thumbnail {
+  float: right;
+  padding-left: $line-height-computed;
+  margin-bottom: $line-height-computed;
+}
+
+.view-type {
+  display: inline-block;
+
+  .caption {
+    @extend .sr-only;
+  }
+}
