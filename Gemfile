@@ -47,3 +47,6 @@ gem 'blacklight'
 gem 'therubyracer'
 
 gem "blacklight-marc", "~> 5.0"
+
+gem "rsolr"
+gem "nokogiri"
