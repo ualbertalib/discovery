@@ -156,23 +156,6 @@
     <fieldType name="pdouble" class="solr.DoubleField" omitNorms="true"/>
     <fieldType name="pdate" class="solr.DateField" sortMissingLast="true" omitNorms="true"/>
 
-
-    <!--
-      Note:
-      These should only be used for compatibility with existing indexes (created with older Solr versions).
-      Use Trie based fields instead. As of Solr 3.5 and 4.x, Trie based fields support sortMissingFirst/Last
-
-      Numeric field types that manipulate the value into
-      a string value that isn't human-readable in its internal form,
-      but with a lexicographic ordering the same as the numeric ordering,
-      so that range queries work correctly.
-    -->
-    <fieldType name="sint" class="solr.SortableIntField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="slong" class="solr.SortableLongField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="sfloat" class="solr.SortableFloatField" sortMissingLast="true" omitNorms="true"/>
-    <fieldType name="sdouble" class="solr.SortableDoubleField" sortMissingLast="true" omitNorms="true"/>
-
-
     <!-- The "RandomSortField" is not used to store or search any
          data.  You can declare fields of this type it in your schema
          to generate pseudo-random orderings of your docs for sorting 
@@ -593,14 +576,6 @@
         alternately, change the type="ignored" to some other type e.g. "text" if you want 
         unknown fields indexed and/or stored by default --> 
    <!--dynamicField name="*" type="ignored" multiValued="true" /-->
-
-    <dynamicField name="ua_*" type="string" indexed="true" stored="true" multiValued="false" />
-    <field name="identifiers" type="text" indexed="true" stored="false" multiValued="true"/>
-    <field name="ua_target" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="ua_search_targets" type="text" indexed="true" stored="true" multiValued="true"/>
-    <field name="ua_display_target_*" type="string" indexed="true" stored="true" multiValued="false"/>
-    <field name="ua_title" type="text" indexed="true" stored="true" multiValued="false"/>
-    <field name="updated" type="date" default="NOW"/>
    
  </fields>
 
@@ -631,7 +606,6 @@
    <copyField source="subject_t" dest="subject_unstem_search"/>
    <copyField source="subject_addl_t" dest="subject_addl_unstem_search"/>
    <copyField source="subject_topic_facet" dest="subject_topic_unstem_search"/>
-   <copyField source="ua_target" dest="ua_search_targets"/>
    
    <!-- sort fields -->
    <copyField source="pub_date" dest="pub_date_sort"/>
@@ -655,7 +629,7 @@
    <copyField source="subject_topic_facet" dest="subject_spell"/>
    <copyField source="subject_t" dest="subject_spell"/>
    <copyField source="subject_addl_t" dest="subject_spell"/>  
-
+   
    <!-- OpenSearch query field should match request handler search fields -->
    <copyField source="title_t" dest="opensearch_display"/>
    <copyField source="subtitle_t" dest="opensearch_display"/>

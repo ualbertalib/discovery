@@ -38,7 +38,7 @@
     <requestParsers enableRemoteStreaming="false" multipartUploadLimitInKB="2048" />
   </requestDispatcher>
   
-  <requestHandler name="standard" class="solr.StandardRequestHandler" default="true" />
+  <requestHandler name="standard" class="solr.StandardRequestHandler" />
   <requestHandler name="/analysis/field" startup="lazy" class="solr.FieldAnalysisRequestHandler" />
   <requestHandler name="/update" class="solr.UpdateRequestHandler"  />
   <requestHandler name="/admin/" class="org.apache.solr.handler.admin.AdminHandlers" />
@@ -87,67 +87,132 @@
        -->
 
        <str name="qf">
-           ua_object_id^100000
-	            ua_catkey^100000
-		             ua_title^100000
-			     ua_target^100000
-			              ua_issnPrint^100000
+         title_unstem_search^100000
+         subtitle_unstem_search^50000
+         title_t^25000
+         subtitle_t^10000
+         title_addl_unstem_search^5000
+         title_addl_t^2500
+         title_added_entry_unstem_search^1500
+         title_added_entry_t^1250
+         subject_topic_unstem_search^1000
+         subject_unstem_search^750
+         subject_topic_facet^625
+         subject_t^500
+         author_unstem_search^250
+         author_addl_unstem_search^250
+         author_t^100
+         author_addl_t^50
+         subject_addl_unstem_search^250
+         subject_addl_t^50
+         title_series_unstem_search^25
+         title_series_t^10
+         isbn_t
+         text
        </str>
        <str name="pf">
-            ua_object_id^1000000
-	             ua_catkey^1000000
-		              ua_title^1000000
-			      ua_target^1000000
-
-			               ua_issnPrint^1000000
-				          text^10
+         title_unstem_search^1000000
+         subtitle_unstem_search^500000
+         title_t^250000
+         subtitle_t^100000
+         title_addl_unstem_search^50000
+         title_addl_t^25000
+         title_added_entry_unstem_search^15000
+         title_added_entry_t^12500
+         subject_topic_unstem_search^10000
+         subject_unstem_search^7500
+         subject_topic_facet^6250
+         subject_t^5000
+         author_unstem_search^2500
+         author_addl_unstem_search^2500
+         author_t^1000
+         author_addl_t^500
+         subject_addl_unstem_search^2500
+         subject_addl_t^500
+         title_series_unstem_search^250
+         title_series_t^100
+         text^10
        </str>
-
- <str name="catkey_qf">
-          ua_catkey
-	         </str>
-		        <str name="catkey_pf">
-			         ua_catkey
-				        </str>
-					       <str name="title_qf">
-					                ua_title
-							       </str>
-							              <str name="title_pf">
-								               ua_title
-									              </str>
-					       <str name="target_qf">
-						 ua_search_targets
-							       </str>
-							              <str name="target_pf">
-									ua_search_targets
-									              </str>
-
-										             <str name="issn_qf">
-											              ua_issnPrint
-												               ua_issnElectronic
-													              </str>
-
-														            <str name="issn_pf">
-															             ua_issnPrint
-																              ua_issnElectronic
-																	             </str>
-
-																		           <str name="object_qf">
-																			           ua_object_id
-																				         </str>
-
-																					       <str name="object_pf">
-																					               ua_object_id
-																						             </str>
-
+       <str name="author_qf">
+         author_unstem_search^200
+         author_addl_unstem_search^50
+         author_t^20
+         author_addl_t
+       </str>
+       <str name="author_pf">
+         author_unstem_search^2000
+         author_addl_unstem_search^500
+         author_t^200
+         author_addl_t^10
+       </str>
+       <str name="title_qf">
+         title_unstem_search^50000
+         subtitle_unstem_search^25000
+         title_addl_unstem_search^10000
+         title_t^5000
+         subtitle_t^2500
+         title_addl_t^100
+         title_added_entry_unstem_search^50
+         title_added_entry_t^10
+         title_series_unstem_search^5
+         title_series_t
+       </str>
+       <str name="title_pf">
+         title_unstem_search^500000
+         subtitle_unstem_search^250000
+         title_addl_unstem_search^100000
+         title_t^50000
+         subtitle_t^25000
+         title_addl_t^1000
+         title_added_entry_unstem_search^500
+         title_added_entry_t^100
+         title_series_t^50
+         title_series_unstem_search^10
+       </str>
+       <str name="subject_qf">
+         subject_topic_unstem_search^200
+         subject_unstem_search^125
+         subject_topic_facet^100
+         subject_t^50
+         subject_addl_unstem_search^10
+         subject_addl_t
+       </str>
+       <str name="subject_pf">
+         subject_topic_unstem_search^2000
+         subject_unstem_search^1250
+         subject_t^1000
+         subject_topic_facet^500
+         subject_addl_unstem_search^100
+         subject_addl_t^10
+       </str>
        
        <int name="ps">3</int>
        <float name="tie">0.01</float>
 
        <!-- NOT using marc_display because it is large and will slow things down for search results -->
- <str name="fl">
-          id, ua_title, ua_catkey, ua_issnPrint, ua_issnElectronic, ua_object_id
-	         </str>
+       <str name="fl">
+         id, 
+         score,
+         author_display,
+         author_vern_display, 
+         format, 
+         isbn_t, 
+         language_facet, 
+         lc_callnum_display,
+         material_type_display, 
+         published_display,
+         published_vern_display,
+         pub_date,
+         title_display,
+         title_vern_display,
+         subject_topic_facet,
+         subject_geo_facet,
+         subject_era_facet,
+         subtitle_display,
+         subtitle_vern_display,
+         url_fulltext_display,
+         url_suppl_display,
+       </str>
 
        <str name="facet">true</str>
        <str name="facet.mincount">1</str>
