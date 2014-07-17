@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.email = ["justin@curationexperts.com"]
   s.homepage = "https://github.com/projectblacklight/blacklight_marc"
   s.licenses = ["Apache 2.0"]
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "MARC support for Blacklight"
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

@@ -1,0 +1,12 @@
+prefix=/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxslt/1.1.26
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+
+Name: libexslt
+Version: 0.8.15
+Description: EXSLT Extension library
+Requires: libxml-2.0
+Libs: -L${libdir} -lexslt -lxslt  -L/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib -lxml2 -lz -lm -lm 
+Cflags: -I${includedir}

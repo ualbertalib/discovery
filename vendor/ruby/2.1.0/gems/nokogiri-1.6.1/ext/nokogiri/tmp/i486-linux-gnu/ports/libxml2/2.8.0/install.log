@@ -1,0 +1,129 @@
+Making install in include
+make[1]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+Making install in libxml
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include/libxml'
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include/libxml'
+make[3]: Nothing to be done for `install-exec-am'.
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml"
+ /usr/bin/install -c -m 644 SAX.h entities.h encoding.h parser.h parserInternals.h xmlerror.h HTMLparser.h HTMLtree.h debugXML.h tree.h list.h hash.h xpath.h xpathInternals.h xpointer.h xinclude.h xmlIO.h xmlmemory.h nanohttp.h nanoftp.h uri.h valid.h xlink.h xmlversion.h DOCBparser.h catalog.h threads.h globals.h c14n.h xmlautomata.h xmlregexp.h xmlmodule.h xmlschemas.h schemasInternals.h xmlschemastypes.h xmlstring.h xmlunicode.h xmlreader.h relaxng.h dict.h '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml'
+ /usr/bin/install -c -m 644 SAX2.h xmlexports.h xmlwriter.h chvalid.h pattern.h xmlsave.h schematron.h '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2/libxml'
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include/libxml'
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include/libxml'
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+make[3]: Nothing to be done for `install-exec-am'.
+make[3]: Nothing to be done for `install-data-am'.
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+make[1]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+Making install in .
+make[1]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0'
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0'
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib"
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libxml2.la '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib'
+libtool: install: /usr/bin/install -c .libs/libxml2.so.2.8.0 /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib/libxml2.so.2.8.0
+libtool: install: (cd /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib && { ln -s -f libxml2.so.2.8.0 libxml2.so.2 || { rm -f libxml2.so.2 && ln -s libxml2.so.2.8.0 libxml2.so.2; }; })
+libtool: install: (cd /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib && { ln -s -f libxml2.so.2.8.0 libxml2.so || { rm -f libxml2.so && ln -s libxml2.so.2.8.0 libxml2.so; }; })
+libtool: install: /usr/bin/install -c .libs/libxml2.lai /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib/libxml2.la
+libtool: finish: PATH="/home/asdp/.rvm/gems/ruby-2.1.2/bin:/home/asdp/.rvm/gems/ruby-2.1.2@global/bin:/home/asdp/.rvm/rubies/ruby-2.1.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/asdp/.rvm/bin:/home/asdp/.rvm/bin:/sbin" ldconfig -n /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/bin" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/bin"
+  /bin/bash ./libtool   --mode=install /usr/bin/install -c xmllint xmlcatalog '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/bin'
+libtool: install: /usr/bin/install -c .libs/xmllint /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/bin/xmllint
+libtool: install: /usr/bin/install -c .libs/xmlcatalog /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/bin/xmlcatalog
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/bin" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/bin"
+ /usr/bin/install -c xml2-config '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/bin'
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib"
+ /usr/bin/install -c -m 644 xml2Conf.sh '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib'
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0
+/usr/bin/install -c -m 0644 ./Copyright /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/examples
+/usr/bin/install -c -m 0644 ./xmllint.c /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/examples
+/usr/bin/install -c -m 0644 ./testSAX.c /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/examples
+/usr/bin/install -c -m 0644 ./testHTML.c /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/examples
+/usr/bin/install -c -m 0644 ./testXPath.c /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/examples
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/aclocal" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/aclocal"
+ /usr/bin/install -c -m 644 libxml.m4 '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/aclocal'
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man1" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man1"
+ /usr/bin/install -c -m 644 xml2-config.1 '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man1'
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man3" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man3"
+ /usr/bin/install -c -m 644 libxml.3 '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man3'
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib/pkgconfig" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib/pkgconfig"
+ /usr/bin/install -c -m 644 libxml-2.0.pc '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib/pkgconfig'
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0'
+make[1]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0'
+Making install in doc
+make[1]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+Making install in devhelp
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/devhelp'
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/devhelp'
+make[3]: Nothing to be done for `install-exec-am'.
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/gtk-doc/html/libxml2
+/usr/bin/install -c -m 0644 ./libxml2.devhelp /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/gtk-doc/html/libxml2
+/usr/bin/install -c -m 0644 ./home.png ./left.png ./right.png ./up.png ./style.css /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/gtk-doc/html/libxml2
+/usr/bin/install -c -m 0644 ./index.html ./general.html ./libxml2-c14n.html ./libxml2-catalog.html ./libxml2-chvalid.html ./libxml2-debugXML.html ./libxml2-dict.html ./libxml2-DOCBparser.html ./libxml2-encoding.html ./libxml2-entities.html ./libxml2-globals.html ./libxml2-hash.html ./libxml2-HTMLparser.html ./libxml2-HTMLtree.html ./libxml2-list.html ./libxml2-nanoftp.html ./libxml2-nanohttp.html ./libxml2-parser.html ./libxml2-parserInternals.html ./libxml2-pattern.html ./libxml2-relaxng.html ./libxml2-SAX2.html ./libxml2-SAX.html ./libxml2-schemasInternals.html ./libxml2-schematron.html ./libxml2-threads.html ./libxml2-tree.html ./libxml2-uri.html ./libxml2-valid.html ./libxml2-xinclude.html ./libxml2-xlink.html ./libxml2-xmlautomata.html ./libxml2-xmlerror.html ./libxml2-xmlexports.html ./libxml2-xmlIO.html ./libxml2-xmlmemory.html ./libxml2-xmlmodule.html ./libxml2-xmlreader.html ./libxml2-xmlregexp.html ./libxml2-xmlsave.html ./libxml2-xmlschemas.html ./libxml2-xmlschemastypes.html ./libxml2-xmlstring.html ./libxml2-xmlunicode.html ./libxml2-xmlversion.html ./libxml2-xmlwriter.html ./libxml2-xpath.html ./libxml2-xpathInternals.html ./libxml2-xpointer.html /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/gtk-doc/html/libxml2
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/devhelp'
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/devhelp'
+Making install in examples
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/examples'
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/examples'
+make[3]: Nothing to be done for `install-exec-am'.
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html
+/usr/bin/install -c -m 0644 ./*.html ./*.c ./*.xml ./*.xsl ./*.res /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html
+/usr/bin/install: cannot stat ‘./*.html’: No such file or directory
+make[3]: [install-data-local] Error 1 (ignored)
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/examples'
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/examples'
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+make[3]: Nothing to be done for `install-exec-am'.
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html
+/usr/bin/install -c -m 0644 ./xml.html ./encoding.html ./FAQ.html ./structure.gif ./DOM.gif ./smallfootonly.gif ./redhat.gif ./libxml.gif ./w3c.png ./Libxml2-Logo-180x168.gif ./Libxml2-Logo-90x34.gif /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/html
+/usr/bin/install -c -m 0644 ./html/*.html /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/html
+/usr/bin/install -c -m 0644 ./html/*.png /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/html
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/tutorial
+/usr/bin/install -c -m 0644 ./tutorial/*.* \
+		/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/tutorial
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/tutorial/images
+/usr/bin/install -c -m 0644 ./tutorial/images/*.* \
+		/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/tutorial/images
+/bin/mkdir -p /home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/tutorial/images/callouts
+/usr/bin/install -c -m 0644 ./tutorial/images/callouts/*.* \
+		/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/doc/libxml2-2.8.0/html/tutorial/images/callouts
+test -z "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man1" || /bin/mkdir -p "/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man1"
+ /usr/bin/install -c -m 644 xmllint.1 xmlcatalog.1 '/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/share/man/man1'
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+make[1]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+Making install in example
+make[1]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/example'
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/example'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/example'
+make[1]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/example'
+Making install in xstc
+make[1]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/xstc'
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/xstc'
+make[2]: Nothing to be done for `install-exec-am'.
+make[2]: Nothing to be done for `install-data-am'.
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/xstc'
+make[1]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/xstc'

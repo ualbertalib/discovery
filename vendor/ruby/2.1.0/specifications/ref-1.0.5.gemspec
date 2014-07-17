@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/bdurand/ref"
   s.licenses = ["MIT"]
   s.rdoc_options = ["--charset=UTF-8", "--main", "README.rdoc"]
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "Library that implements weak, soft, and strong references in Ruby."
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 end

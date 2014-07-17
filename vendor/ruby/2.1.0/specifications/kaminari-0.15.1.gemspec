@@ -16,10 +16,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/amatsuda/kaminari"
   s.licenses = ["MIT"]
   s.rubyforge_project = "kaminari"
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "A pagination engine plugin for Rails 3+ and other modern frameworks"
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

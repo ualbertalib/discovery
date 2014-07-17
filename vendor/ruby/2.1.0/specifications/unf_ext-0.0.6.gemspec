@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
   s.files = ["LICENSE.txt", "README.md", "ext/unf_ext/extconf.rb"]
   s.homepage = "https://github.com/knu/ruby-unf_ext"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "Unicode Normalization Form support library for CRuby"
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

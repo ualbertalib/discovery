@@ -50,3 +50,5 @@ gem "blacklight-marc", "~> 5.0"
 
 gem "rsolr"
 gem "nokogiri"
+
+gem "rspec", group: :development

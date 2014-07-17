@@ -15,10 +15,10 @@ Gem::Specification.new do |s|
   s.files = ["CHANGELOG.rdoc", "CONTRIBUTING.md", "README.md", "TODO.rdoc"]
   s.homepage = "http://github.com/mikel/mail"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "Mail provides a nice Ruby DSL for making, sending and reading emails."
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

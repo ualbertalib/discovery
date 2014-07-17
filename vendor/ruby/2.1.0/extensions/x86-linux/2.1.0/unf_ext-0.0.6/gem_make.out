@@ -1,0 +1,14 @@
+/home/asdp/.rvm/rubies/ruby-2.1.2/bin/ruby extconf.rb 
+checking for main() in -lstdc++... yes
+checking for ruby/encoding.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling unf.cc
+linking shared-object unf_ext.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unf_ext.so ./.gem.20140717-9594-1u2wkex
+installing default unf_ext libraries

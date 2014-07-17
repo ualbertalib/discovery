@@ -1,0 +1,393 @@
+make  all-recursive
+make[1]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0'
+Making all in include
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+Making all in libxml
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include/libxml'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include/libxml'
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/include'
+Making all in .
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0'
+  CC     SAX.lo
+  CC     entities.lo
+  CC     encoding.lo
+  CC     error.lo
+  CC     parserInternals.lo
+  CC     parser.lo
+parser.c: In function 'xmlParseInNodeContext__internal_alias':
+parser.c:13084:9: warning: pointer targets in passing argument 1 of 'xmlFindCharEncodingHandler__internal_alias' differ in signedness [-Wpointer-sign]
+         hdlr = xmlFindCharEncodingHandler(doc->encoding);
+         ^
+In file included from libxml.h:94:0,
+                 from parser.c:34:
+elfgcchack.h:3429:46: note: expected 'const char *' but argument is of type 'const xmlChar *'
+ extern __typeof (xmlFindCharEncodingHandler) xmlFindCharEncodingHandler__internal_alias __attribute((visibility("hidden")));
+                                              ^
+  CC     tree.lo
+  CC     hash.lo
+  CC     list.lo
+  CC     xmlIO.lo
+  CC     xmlmemory.lo
+  CC     uri.lo
+  CC     valid.lo
+  CC     xlink.lo
+  CC     HTMLparser.lo
+  CC     HTMLtree.lo
+  CC     debugXML.lo
+  CC     xpath.lo
+xpath.c: In function 'xmlXPathRegisterFuncNS__internal_alias':
+xpath.c:4800:5: warning: ISO C forbids passing argument 4 of 'xmlHashAddEntry2__internal_alias' between function pointer and 'void *' [-Wpedantic]
+     return(xmlHashAddEntry2(ctxt->funcHash, name, ns_uri, XML_CAST_FPTR(f)));
+     ^
+In file included from libxml.h:94:0,
+                 from xpath.c:18:
+elfgcchack.h:4177:36: note: expected 'void *' but argument is of type 'xmlXPathFunction'
+ extern __typeof (xmlHashAddEntry2) xmlHashAddEntry2__internal_alias __attribute((visibility("hidden")));
+                                    ^
+xpath.c: In function 'xmlXPathFunctionLookupNS__internal_alias':
+xpath.c:4881:24: warning: ISO C forbids assignment between function pointer and 'void *' [-Wpedantic]
+     XML_CAST_FPTR(ret) = xmlHashLookup2(ctxt->funcHash, name, ns_uri);
+                        ^
+xpath.c: In function 'xmlXPathCompOpEval':
+xpath.c:13456:41: warning: ISO C forbids assignment between function pointer and 'void *' [-Wpedantic]
+                     XML_CAST_FPTR(func) = op->cache;
+                                         ^
+xpath.c:13483:31: warning: ISO C forbids assignment between function pointer and 'void *' [-Wpedantic]
+                     op->cache = XML_CAST_FPTR(func);
+                               ^
+In file included from xpath.c:110:0:
+xpath.c: At top level:
+trionan.c:218:1: warning: 'trio_is_negative' defined but not used [-Wunused-function]
+ trio_is_negative
+ ^
+  CC     xpointer.lo
+  CC     xinclude.lo
+  CC     nanohttp.lo
+  CC     nanoftp.lo
+  CC     DOCBparser.lo
+  CC     catalog.lo
+  CC     globals.lo
+  CC     threads.lo
+threads.c:53:12: warning: redundant redeclaration of 'pthread_once' [-Wredundant-decls]
+ extern int pthread_once (pthread_once_t *__once_control,
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:485:12: note: previous declaration of 'pthread_once' was here
+ extern int pthread_once (pthread_once_t *__once_control,
+            ^
+threads.c:56:14: warning: redundant redeclaration of 'pthread_getspecific' [-Wredundant-decls]
+ extern void *pthread_getspecific (pthread_key_t __key)
+              ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:1110:14: note: previous declaration of 'pthread_getspecific' was here
+ extern void *pthread_getspecific (pthread_key_t __key) __THROW;
+              ^
+threads.c:58:12: warning: redundant redeclaration of 'pthread_setspecific' [-Wredundant-decls]
+ extern int pthread_setspecific (pthread_key_t __key,
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:1113:12: note: previous declaration of 'pthread_setspecific' was here
+ extern int pthread_setspecific (pthread_key_t __key,
+            ^
+threads.c:61:12: warning: redundant redeclaration of 'pthread_key_create' [-Wredundant-decls]
+ extern int pthread_key_create (pthread_key_t *__key,
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:1102:12: note: previous declaration of 'pthread_key_create' was here
+ extern int pthread_key_create (pthread_key_t *__key,
+            ^
+threads.c:64:12: warning: redundant redeclaration of 'pthread_key_delete' [-Wredundant-decls]
+ extern int pthread_key_delete (pthread_key_t __key)
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:1107:12: note: previous declaration of 'pthread_key_delete' was here
+ extern int pthread_key_delete (pthread_key_t __key) __THROW;
+            ^
+threads.c:67:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:66:12: warning: redundant redeclaration of 'pthread_mutex_init' [-Wredundant-decls]
+ extern int pthread_mutex_init ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:740:12: note: previous declaration of 'pthread_mutex_init' was here
+ extern int pthread_mutex_init (pthread_mutex_t *__mutex,
+            ^
+threads.c:69:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:68:12: warning: redundant redeclaration of 'pthread_mutex_destroy' [-Wredundant-decls]
+ extern int pthread_mutex_destroy ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:745:12: note: previous declaration of 'pthread_mutex_destroy' was here
+ extern int pthread_mutex_destroy (pthread_mutex_t *__mutex)
+            ^
+threads.c:71:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:70:12: warning: redundant redeclaration of 'pthread_mutex_lock' [-Wredundant-decls]
+ extern int pthread_mutex_lock ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:753:12: note: previous declaration of 'pthread_mutex_lock' was here
+ extern int pthread_mutex_lock (pthread_mutex_t *__mutex)
+            ^
+threads.c:73:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:72:12: warning: redundant redeclaration of 'pthread_mutex_unlock' [-Wredundant-decls]
+ extern int pthread_mutex_unlock ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:764:12: note: previous declaration of 'pthread_mutex_unlock' was here
+ extern int pthread_mutex_unlock (pthread_mutex_t *__mutex)
+            ^
+threads.c:75:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:74:12: warning: redundant redeclaration of 'pthread_cond_init' [-Wredundant-decls]
+ extern int pthread_cond_init ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:959:12: note: previous declaration of 'pthread_cond_init' was here
+ extern int pthread_cond_init (pthread_cond_t *__restrict __cond,
+            ^
+threads.c:77:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:76:12: warning: redundant redeclaration of 'pthread_cond_destroy' [-Wredundant-decls]
+ extern int pthread_cond_destroy ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:964:12: note: previous declaration of 'pthread_cond_destroy' was here
+ extern int pthread_cond_destroy (pthread_cond_t *__cond)
+            ^
+threads.c:79:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:78:12: warning: redundant redeclaration of 'pthread_cond_wait' [-Wredundant-decls]
+ extern int pthread_cond_wait ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:980:12: note: previous declaration of 'pthread_cond_wait' was here
+ extern int pthread_cond_wait (pthread_cond_t *__restrict __cond,
+            ^
+threads.c:81:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:80:12: warning: redundant redeclaration of 'pthread_equal' [-Wredundant-decls]
+ extern int pthread_equal ()
+            ^
+In file included from /usr/include/features.h:371:0,
+                 from /usr/include/stdio.h:27,
+                 from libxml.h:44,
+                 from threads.c:11:
+/usr/include/pthread.h:1144:1: note: previous definition of 'pthread_equal' was here
+ __NTH (pthread_equal (pthread_t __thread1, pthread_t __thread2))
+ ^
+threads.c:83:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:82:18: warning: redundant redeclaration of 'pthread_self' [-Wredundant-decls]
+ extern pthread_t pthread_self ()
+                  ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:274:18: note: previous declaration of 'pthread_self' was here
+ extern pthread_t pthread_self (void) __THROW __attribute__ ((__const__));
+                  ^
+threads.c:85:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:84:12: warning: redundant redeclaration of 'pthread_key_create' [-Wredundant-decls]
+ extern int pthread_key_create ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:1102:12: note: previous declaration of 'pthread_key_create' was here
+ extern int pthread_key_create (pthread_key_t *__key,
+            ^
+threads.c:87:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:86:12: warning: redundant redeclaration of 'pthread_key_delete' [-Wredundant-decls]
+ extern int pthread_key_delete ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:1107:12: note: previous declaration of 'pthread_key_delete' was here
+ extern int pthread_key_delete (pthread_key_t __key) __THROW;
+            ^
+threads.c:89:5: warning: function declaration isn't a prototype [-Wstrict-prototypes]
+     __attribute((weak));
+     ^
+threads.c:88:12: warning: redundant redeclaration of 'pthread_cond_signal' [-Wredundant-decls]
+ extern int pthread_cond_signal ()
+            ^
+In file included from threads.c:28:0:
+/usr/include/pthread.h:968:12: note: previous declaration of 'pthread_cond_signal' was here
+ extern int pthread_cond_signal (pthread_cond_t *__cond)
+            ^
+  CC     c14n.lo
+  CC     xmlstring.lo
+  CC     xmlregexp.lo
+  CC     xmlschemas.lo
+  CC     xmlschemastypes.lo
+  CC     xmlunicode.lo
+  CC     xmlreader.lo
+  CC     relaxng.lo
+  CC     dict.lo
+  CC     SAX2.lo
+  CC     xmlwriter.lo
+  CC     legacy.lo
+  CC     chvalid.lo
+  CC     pattern.lo
+  CC     xmlsave.lo
+  CC     xmlmodule.lo
+  CC     schematron.lo
+  CC     xzlib.lo
+  CCLD   libxml2.la
+  CC     testdso.lo
+  CCLD   testdso.la
+  CC     xmllint.o
+  CCLD   xmllint
+  CC     xmlcatalog.o
+  CCLD   xmlcatalog
+  CC     testSchemas.o
+  CCLD   testSchemas
+  CC     testRelax.o
+  CCLD   testRelax
+  CC     testSAX.o
+  CCLD   testSAX
+  CC     testHTML.o
+  CCLD   testHTML
+  CC     testXPath.o
+  CCLD   testXPath
+  CC     testURI.o
+  CCLD   testURI
+  CC     testThreads.o
+  CCLD   testThreads
+  CC     testC14N.o
+  CCLD   testC14N
+  CC     testAutomata.o
+  CCLD   testAutomata
+  CC     testRegexp.o
+  CCLD   testRegexp
+  CC     testReader.o
+  CCLD   testReader
+  CC     testapi.o
+testapi.c:18015:25: warning: ‘gen_xmlSchematronPtr’ defined but not used [-Wunused-function]
+ static xmlSchematronPtr gen_xmlSchematronPtr(int no ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+                         ^
+testapi.c:18018:13: warning: ‘des_xmlSchematronPtr’ defined but not used [-Wunused-function]
+ static void des_xmlSchematronPtr(int no ATTRIBUTE_UNUSED, xmlSchematronPtr val ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+             ^
+testapi.c:18035:35: warning: ‘gen_xmlSchematronParserCtxtPtr’ defined but not used [-Wunused-function]
+ static xmlSchematronParserCtxtPtr gen_xmlSchematronParserCtxtPtr(int no ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+                                   ^
+testapi.c:18038:13: warning: ‘des_xmlSchematronParserCtxtPtr’ defined but not used [-Wunused-function]
+ static void des_xmlSchematronParserCtxtPtr(int no ATTRIBUTE_UNUSED, xmlSchematronParserCtxtPtr val ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+             ^
+testapi.c:34265:27: warning: ‘gen_xmlSAXHandlerPtr_ptr’ defined but not used [-Wunused-function]
+ static xmlSAXHandlerPtr * gen_xmlSAXHandlerPtr_ptr(int no ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+                           ^
+testapi.c:34268:13: warning: ‘des_xmlSAXHandlerPtr_ptr’ defined but not used [-Wunused-function]
+ static void des_xmlSAXHandlerPtr_ptr(int no ATTRIBUTE_UNUSED, xmlSAXHandlerPtr * val ATTRIBUTE_UNUSED, int nr ATTRIBUTE_UNUSED) {
+             ^
+  CCLD   testapi
+  CC     testModule.o
+  CCLD   testModule
+  CC     runtest.o
+  CCLD   runtest
+  CC     runsuite.o
+  CCLD   runsuite
+  CC     testchar.o
+  CCLD   testchar
+  CC     testdict.o
+testdict.c: In function ‘run_test2’:
+testdict.c:155:20: warning: variable ‘tmp’ set but not used [-Wunused-but-set-variable]
+     const xmlChar *tmp;
+                    ^
+testdict.c: In function ‘run_test1’:
+testdict.c:318:20: warning: variable ‘tmp’ set but not used [-Wunused-but-set-variable]
+     const xmlChar *tmp;
+                    ^
+  CCLD   testdict
+  CC     runxmlconf.o
+  CCLD   runxmlconf
+  CC     testrecurse.o
+testrecurse.c: In function ‘recursiveDetectTest’:
+testrecurse.c:690:9: warning: variable ‘mem’ set but not used [-Wunused-but-set-variable]
+     int mem;
+         ^
+testrecurse.c: In function ‘notRecursiveDetectTest’:
+testrecurse.c:731:9: warning: variable ‘mem’ set but not used [-Wunused-but-set-variable]
+     int mem;
+         ^
+  CCLD   testrecurse
+sed -e 's?\@XML_LIBDIR\@?-L/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/lib?g' \
+	    -e 's?\@XML_INCLUDEDIR\@?-I/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ports/i486-linux-gnu/libxml2/2.8.0/include/libxml2?g' \
+	    -e 's?\@VERSION\@?2.8.0?g' \
+	    -e 's?\@XML_LIBS\@?-lxml2 -lz   -lm ?g' \
+	       < ./xml2Conf.sh.in > xml2Conf.tmp \
+	&& mv xml2Conf.tmp xml2Conf.sh
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0'
+Making all in doc
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+Making all in devhelp
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/devhelp'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/devhelp'
+Making all in examples
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/examples'
+  CC     xpath2.o
+  CCLD   xpath2
+  CC     reader1.o
+  CCLD   reader1
+  CC     reader4.o
+  CCLD   reader4
+  CC     parse2.o
+  CCLD   parse2
+  CC     reader2.o
+  CCLD   reader2
+  CC     parse3.o
+  CCLD   parse3
+  CC     reader3.o
+  CCLD   reader3
+  CC     tree2.o
+tree2.c: In function ‘main’:
+tree2.c:30:15: warning: variable ‘dtd’ set but not used [-Wunused-but-set-variable]
+     xmlDtdPtr dtd = NULL;       /* DTD pointer */
+               ^
+  CCLD   tree2
+  CC     parse4.o
+  CCLD   parse4
+  CC     io2.o
+  CCLD   io2
+  CC     testWriter.o
+  CCLD   testWriter
+  CC     io1.o
+  CCLD   io1
+  CC     xpath1.o
+  CCLD   xpath1
+  CC     parse1.o
+  CCLD   parse1
+  CC     tree1.o
+  CCLD   tree1
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc/examples'
+make[3]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+make[3]: Nothing to be done for `all-am'.
+make[3]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/doc'
+Making all in example
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/example'
+  CC     gjobread.o
+  CCLD   gjobread
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/example'
+Making all in xstc
+make[2]: Entering directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/xstc'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0/xstc'
+make[1]: Leaving directory `/home/asdp/projects/DiscoveryProject/discovery/vendor/ruby/2.1.0/gems/nokogiri-1.6.1/ext/nokogiri/tmp/i486-linux-gnu/ports/libxml2/2.8.0/libxml2-2.8.0'

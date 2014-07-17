@@ -14,10 +14,10 @@ Gem::Specification.new do |s|
   s.email = ["michael@intridea.com", "josh.kalderimis@gmail.com", "sferik@gmail.com"]
   s.homepage = "http://github.com/intridea/multi_json"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "A common interface to multiple JSON libraries."
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

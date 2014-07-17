@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.files = ["ext/extconf.rb"]
   s.homepage = "http://github.com/headius/ruby-atomic"
   s.licenses = ["Apache-2.0"]
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "An atomic reference implementation for JRuby, Rubinius, and MRI"
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 end

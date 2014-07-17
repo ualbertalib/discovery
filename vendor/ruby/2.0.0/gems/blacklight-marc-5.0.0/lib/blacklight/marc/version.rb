@@ -1,5 +1,0 @@
-module Blacklight
-  module Marc
-    VERSION = "5.0.0"
-  end
-end

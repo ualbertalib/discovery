@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
   s.files = ["bin/erubis"]
   s.homepage = "http://www.kuwata-lab.com/erubis/"
   s.rubyforge_project = "erubis"
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "a fast and extensible eRuby implementation which supports multi-language"
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 end

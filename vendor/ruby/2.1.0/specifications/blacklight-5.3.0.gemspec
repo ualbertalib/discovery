@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.email = ["blacklight-development@googlegroups.com"]
   s.homepage = "http://projectblacklight.org/"
   s.licenses = ["Apache 2.0"]
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "Blacklight provides a discovery interface for any Solr (http://lucene.apache.org/solr) index."
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

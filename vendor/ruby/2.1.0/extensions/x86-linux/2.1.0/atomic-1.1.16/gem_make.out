@@ -1,0 +1,13 @@
+/home/asdp/.rvm/rubies/ruby-2.1.2/bin/ruby extconf.rb 
+checking for libkern/OSAtomic.h... no
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling atomic_reference.c
+linking shared-object atomic_reference.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 atomic_reference.so ./.gem.20140717-9594-e8k8jp
+installing default atomic_reference libraries

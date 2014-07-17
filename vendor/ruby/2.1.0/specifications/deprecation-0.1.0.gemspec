@@ -13,10 +13,10 @@ Gem::Specification.new do |s|
   s.email = ["chris@cbeer.info"]
   s.homepage = "http://github.com/cbeer/deprecation"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.2.0"
+  s.rubygems_version = "2.2.2"
   s.summary = "Stand-alone deprecation library borrowed from ActiveSupport::Deprecation"
 
-  s.installed_by_version = "2.2.0" if s.respond_to? :installed_by_version
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
