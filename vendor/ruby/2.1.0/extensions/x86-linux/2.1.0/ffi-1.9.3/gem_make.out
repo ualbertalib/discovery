@@ -1,0 +1,52 @@
+/home/asdp/.rvm/rubies/ruby-2.1.2/bin/ruby extconf.rb 
+checking for ffi_call() in -lffi... yes
+checking for ffi_prep_closure()... yes
+checking for ffi_raw_call()... yes
+checking for ffi_prep_raw_closure()... yes
+checking for rb_thread_blocking_region()... yes
+checking for rb_thread_call_with_gvl()... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for ffi_prep_cif_var()... yes
+creating extconf.h
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling ClosurePool.c
+compiling Struct.c
+compiling LastError.c
+compiling Call.c
+compiling Platform.c
+compiling Pointer.c
+compiling MemoryPointer.c
+compiling Thread.c
+compiling StructLayout.c
+compiling Types.c
+compiling ArrayType.c
+compiling FunctionInfo.c
+compiling StructByReference.c
+compiling DataConverter.c
+compiling MethodHandle.c
+compiling Buffer.c
+compiling Variadic.c
+compiling LongDouble.c
+compiling StructByValue.c
+compiling Type.c
+compiling MappedType.c
+compiling DynamicLibrary.c
+compiling AbstractMemory.c
+compiling ffi.c
+compiling Function.c
+Function.c: In function ‘callback_invoke’:
+Function.c:479:9: warning: passing argument 1 of ‘rb_thread_call_with_gvl’ from incompatible pointer type [enabled by default]
+         rb_thread_call_with_gvl(callback_with_gvl, &cb);
+         ^
+Function.c:102:14: note: expected ‘void * (*)(void *)’ but argument is of type ‘VALUE (*)(void *)’
+ extern void *rb_thread_call_with_gvl(void *(*func)(void *), void *data1);
+              ^
+linking shared-object ffi_c.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20140721-19325-1mlwvvc
+installing default ffi_c libraries

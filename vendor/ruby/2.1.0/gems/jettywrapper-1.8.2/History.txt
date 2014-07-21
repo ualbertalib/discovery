@@ -1,0 +1,21 @@
+1.8.0
+  2014-07-16: Removed mediashelf-loggable dependency [Justin Coyne]
+
+1.4.0
+  Download jetty from a zip file
+
+1.3.2
+  Throw error on start if port already in use
+
+1.3.1
+  It should use APP_ROOT constant throughout, not APP_ROOT environment variable.
+
+1.2.1
+  Fixed :restart task
+
+1.2.0
+  Added per environment configuration
+  Fixes for JRuby
+
+1.1.0
+  Added quiet mode, so you don't see log messages on jetty startup.
