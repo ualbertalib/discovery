@@ -1,3 +1,0 @@
-Next up:
-
-Check whether a port is open before you attempt to start jetty. I've put a method in place, but I need to work on something else for awhile and I haven't fully implemented this yet. 
