@@ -1,0 +1,45 @@
+have_library: checking for main() in -lstdc++... -------------------- yes
+
+"gcc -o conftest -I/usr/include/ruby/ruby-2.1.0/x86_64-linux -I/usr/include/ruby/ruby-2.1.0/ruby/backward -I/usr/include/ruby/ruby-2.1.0 -I.    -O2 -g -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -o conftest -I/usr/include/ruby/ruby-2.1.0/x86_64-linux -I/usr/include/ruby/ruby-2.1.0/ruby/backward -I/usr/include/ruby/ruby-2.1.0 -I.    -O2 -g -Wall -fno-strict-aliasing -fPIC conftest.c  -L. -L/usr/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -lruby -lstdc++  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for ruby/encoding.h... -------------------- yes
+
+"gcc -E -I/usr/include/ruby/ruby-2.1.0/x86_64-linux -I/usr/include/ruby/ruby-2.1.0/ruby/backward -I/usr/include/ruby/ruby-2.1.0 -I.    -O2 -g -Wall -fno-strict-aliasing -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <ruby/encoding.h>
+/* end */
+
+--------------------
+

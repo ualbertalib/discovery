@@ -1,0 +1,9 @@
+/* Warning! If you want to change these, just copy them into your own theme css. But you want to remove the !default, which only will set them if not already set. */
+
+$logo_image: 'blacklight/logo.png' !default;
+
+/* label (field names) */
+$field_name_color: $text-muted !default;
+
+/* border between items on marc view */
+$marc_item_separator: 1px solid $text-muted !default;

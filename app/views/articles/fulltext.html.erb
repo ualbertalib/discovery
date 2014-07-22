@@ -1,0 +1,16 @@
+<% eds_connect %>
+<% recordArray = retrieve(params[:dbid].to_s,params[:an].to_s) %>
+<% if recordArray['Record'].present? %>
+<% record = recordArray['Record'] %>
+<% end %>
+
+<% if has_pdf?(record) %>
+<meta http-equiv="REFRESH" content="0;url=<%= show_pdf_link(record) %>" />
+<%= link_to "Loading PDF Full Text", show_pdf_link(record) %>
+<% elsif has_html?(record) %>
+<meta http-equiv="REFRESH" content="0;url=<%= request.fullpath.split("/fulltext")[0] %>" />
+<%= link_to "Loading HTML Full Text", request.fullpath.split("/fulltext")[0] %>
+<% else %>
+<meta http-equiv="REFRESH" content="0;url=<%= show_best_fulltext_link_detail(record) %>" />
+<%= link_to "Loading Full Text", show_best_fulltext_link_detail(record) %>
+<% end %>

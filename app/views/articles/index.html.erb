@@ -1,0 +1,81 @@
+<!-- Look at eds-alpha -  -->
+<% eds_connect %>
+
+<% if params[:dbid].present? and params[:an].present? %>
+  <h2>Opening PDF Full-Text....</h2>
+  <p>You may close this window to return to your search results.</p>
+  <% retrieve(params[:dbid].to_s, params[:an].to_s) %>
+  <% if has_pdf?(session[:record]['Record']) %>
+    <div id="pdf_link" style="display: none;">
+      <%= show_pdf_link(session[:record]['Record']).to_s %>
+    </div>
+    <script type="text/javascript">
+      var pdf_url =  document.getElementById('pdf_link').innerHTML.replace(/&amp;/g,"&");
+      window.location.href=(pdf_url);
+    </script>
+    
+  <% else %>
+    <script type="text/javascript">
+      alert("There was an error retrieving full text.");
+    </script>
+  <% end %>
+<% else %>
+
+<% if has_search_parameters? %>
+    <% options = generate_api_query(params) %>
+    <% search(options) %>
+<% end %>
+
+<script type="text/javascript">
+  function htmlDecode(input){
+    var e = document.createElement('div');
+    e.innerHTML = input;
+    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+  }
+</script>
+
+<% show_numlimiters.times do |i| %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#limiter-<%= i %>').click(function() {
+      window.location.href = htmlDecode('<%= request.fullpath.split("?")[0] + "?" + generate_next_url %>&eds_action=') +  $('#limiter-<%= i %>').val();
+      $("body").addClass("loading");       
+    });
+  });
+</script>
+<% end %>
+
+<div id="sidebar" class="span3">
+ <%= render :partial=>'search_links' %>
+
+ <% if has_search_parameters? %>
+
+ <%= render :partial=>'facets' %>
+<% end %>
+</div><!--/well -->
+
+<div id="content" class="span9">
+    
+    <%= render :partial=>'search_form' %>
+
+    <% unless has_search_parameters? %>
+	    <%# if there are no input/search related params, display the "home" partial -%>
+	    <%= render 'home' %>
+    <% else %>
+
+      <h2 class="hide-text top-content-title"><%= t('blacklight.search.search_results_header') %></h2>
+
+      <% @page_title = t('blacklight.search.title', :application_name => application_name) %>
+
+      <h2>Search Results</h2>
+      <%= render :partial=>'constraints' %>
+      <%= render :partial=>'sort_and_per_page' %>
+      <%= render :partial=>'search_results' %>
+      <%= render :partial=>'results_pagination' %>
+    <% end %>
+
+</div>
+<div class="modal">Loading...<!-- Place at bottom of page --></div>
+<% end %>
+
+<%# render :partial => 'debug' %>

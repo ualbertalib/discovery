@@ -1,0 +1,4 @@
+<% page_info = paginate_params(@response) %>
+<%= tag :meta, :name => "totalResults", :content => @response.total %>
+<%= tag :meta, :name => "startIndex", :content => (page_info.current_page == 1 ? 1 : @response.start ) %>
+<%= tag :meta, :name => "itemsPerPage", :content => page_info.limit_value %>

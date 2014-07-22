@@ -1,0 +1,213 @@
+/usr/bin/ruby -r ./siteconf20140721-25852-1o5hz27.rb extconf.rb 
+checking for ffi.h... no
+checking for ffi.h in /usr/local/include,/usr/include/ffi... no
+checking for rb_thread_blocking_region()... yes
+checking for rb_thread_call_with_gvl()... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for ffi_prep_cif_var()... no
+creating extconf.h
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+Configuring libffi
+configure: WARNING: if you wanted to set the --build type, don't use --host.
+    If a cross compiler is detected then cross compile mode will be used
+make -C "/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux"
+make[1]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+make "AR_FLAGS=" "CC_FOR_BUILD=" "CFLAGS=-Wall -fexceptions" "CXXFLAGS=" "CFLAGS_FOR_BUILD=" "CFLAGS_FOR_TARGET=" "INSTALL=/usr/bin/install -c" "INSTALL_DATA=/usr/bin/install -c -m 644" "INSTALL_PROGRAM=/usr/bin/install -c" "INSTALL_SCRIPT=/usr/bin/install -c" "JC1FLAGS=" "LDFLAGS=" "LIBCFLAGS=" "LIBCFLAGS_FOR_TARGET=" "MAKE=make" "MAKEINFO=/bin/sh /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/missing --run makeinfo " "PICFLAG=" "PICFLAG_FOR_TARGET=" "RUNTESTFLAGS=" "SHELL=/bin/sh" "exec_prefix=/usr/local" "infodir=/usr/local/share/info" "libdir=/usr/local/lib" "mandir=/usr/local/share/man" "prefix=/usr/local" "AR=ar" "AS=as" "CC=gcc" "CXX=g++" "LD=/usr/bin/ld -m elf_x86_64" "NM=nm" "RANLIB=ranlib" "DESTDIR=" all-recursive
+make[2]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+Making all in include
+make[3]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/include'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/include'
+Making all in testsuite
+make[3]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/testsuite'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/testsuite'
+Making all in man
+make[3]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/man'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/man'
+make[3]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+restore=: && backupdir=".am$$" && \
+	am__cwd=`pwd` && CDPATH="${ZSH_VERSION+.}:" && cd /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi && \
+	rm -rf $backupdir && mkdir $backupdir && \
+	if (/bin/sh /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/missing --run makeinfo   --version) >/dev/null 2>&1; then \
+	  for f in /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc/libffi.info /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc/libffi.info-[0-9] /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc/libffi.info-[0-9][0-9] /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc/libffi.i[0-9] /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc/libffi.i[0-9][0-9]; do \
+	    if test -f $f; then mv $f $backupdir; restore=mv; else :; fi; \
+	  done; \
+	else :; fi && \
+	cd "$am__cwd"; \
+	if /bin/sh /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/missing --run makeinfo     -I doc -I /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc \
+	 -o /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc/libffi.info /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc/libffi.texi; \
+	then \
+	  rc=0; \
+	  CDPATH="${ZSH_VERSION+.}:" && cd /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi; \
+	else \
+	  rc=$?; \
+	  CDPATH="${ZSH_VERSION+.}:" && cd /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi && \
+	  $restore $backupdir/* `echo ".//var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/doc/libffi.info" | sed 's|[^/]*$||'`; \
+	fi; \
+	rm -rf $backupdir; exit $rc
+/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/missing: line 52: makeinfo: command not found
+WARNING: `makeinfo' is missing on your system.  You should only need it if
+         you modified a `.texi' or `.texinfo' file, or any other file
+         indirectly affecting the aspect of the manual.  The spurious
+         call might also be the consequence of using a buggy `make' (AIX,
+         DU, IRIX).  You might want to install the `Texinfo' package or
+         the `GNU make' package.  Grab either from any GNU archive site.
+/bin/sh ./libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -g  -Wall -fexceptions -c -o src/debug.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/debug.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -g -Wall -fexceptions -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/debug.c  -fPIC -DPIC -o src/.libs/debug.o
+/bin/sh ./libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -g  -Wall -fexceptions -c -o src/prep_cif.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/prep_cif.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -g -Wall -fexceptions -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/prep_cif.c  -fPIC -DPIC -o src/.libs/prep_cif.o
+/bin/sh ./libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -g  -Wall -fexceptions -c -o src/types.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/types.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -g -Wall -fexceptions -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/types.c  -fPIC -DPIC -o src/.libs/types.o
+/bin/sh ./libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -g  -Wall -fexceptions -c -o src/raw_api.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/raw_api.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -g -Wall -fexceptions -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/raw_api.c  -fPIC -DPIC -o src/.libs/raw_api.o
+/bin/sh ./libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -g  -Wall -fexceptions -c -o src/java_raw_api.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/java_raw_api.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -g -Wall -fexceptions -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/java_raw_api.c  -fPIC -DPIC -o src/.libs/java_raw_api.o
+/bin/sh ./libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -g  -Wall -fexceptions -c -o src/closures.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/closures.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -g -Wall -fexceptions -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/closures.c  -fPIC -DPIC -o src/.libs/closures.o
+/bin/sh ./libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -g  -Wall -fexceptions -c -o src/x86/ffi64.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/x86/ffi64.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -g -Wall -fexceptions -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/x86/ffi64.c  -fPIC -DPIC -o src/x86/.libs/ffi64.o
+/bin/sh ./libtool   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -c -o src/x86/unix64.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/x86/unix64.S
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/x86/unix64.S  -fPIC -DPIC -o src/x86/.libs/unix64.o
+/bin/sh ./libtool --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -g  -Wall -fexceptions -c -o src/x86/ffi.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/x86/ffi.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -g -Wall -fexceptions -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/x86/ffi.c  -fPIC -DPIC -o src/x86/.libs/ffi.o
+/bin/sh ./libtool   --mode=compile gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src  -c -o src/x86/sysv.lo /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/x86/sysv.S
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -I. -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/include -Iinclude -I/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src -c /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/src/x86/sysv.S  -fPIC -DPIC -o src/x86/.libs/sysv.o
+/bin/sh ./libtool --tag=CC   --mode=link gcc -g  -Wall -fexceptions -version-info `grep -v '^#' /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/libtool-version`    -o libffi.la -rpath /usr/local/lib src/debug.lo src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo                      src/x86/ffi64.lo src/x86/unix64.lo src/x86/ffi.lo src/x86/sysv.lo      
+libtool: link: gcc -shared  -fPIC -DPIC  src/.libs/debug.o src/.libs/prep_cif.o src/.libs/types.o src/.libs/raw_api.o src/.libs/java_raw_api.o src/.libs/closures.o src/x86/.libs/ffi64.o src/x86/.libs/unix64.o src/x86/.libs/ffi.o src/x86/.libs/sysv.o      -Wl,-soname -Wl,libffi.so.5 -o .libs/libffi.so.5.0.10
+libtool: link: (cd ".libs" && rm -f "libffi.so.5" && ln -s "libffi.so.5.0.10" "libffi.so.5")
+libtool: link: (cd ".libs" && rm -f "libffi.so" && ln -s "libffi.so.5.0.10" "libffi.so")
+libtool: link: ( cd ".libs" && rm -f "libffi.la" && ln -s "../libffi.la" "libffi.la" )
+/bin/sh ./libtool --tag=CC   --mode=link gcc -g  -Wall -fexceptions   -o libffi_convenience.la  src/debug.lo src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo                      src/x86/ffi64.lo src/x86/unix64.lo src/x86/ffi.lo src/x86/sysv.lo      
+libtool: link: rm -fr  .libs/libffi_convenience.a(D)
+libtool: link: ar cru .libs/libffi_convenience.a src/.libs/debug.o src/.libs/prep_cif.o src/.libs/types.o src/.libs/raw_api.o src/.libs/java_raw_api.o src/.libs/closures.o src/x86/.libs/ffi64.o src/x86/.libs/unix64.o src/x86/.libs/ffi.o src/x86/.libs/sysv.o 
+libtool: link: ranlib .libs/libffi_convenience.a
+libtool: link: ( cd ".libs" && rm -f "libffi_convenience.la" && ln -s "../libffi_convenience.la" "libffi_convenience.la" )
+make[3]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+make[2]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+make[1]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+compiling DynamicLibrary.c
+compiling LastError.c
+compiling Call.c
+Call.c: In function 'do_blocking_call':
+Call.c:303: warning: implicit declaration of function 'rb_thread_call_without_gvl'
+compiling Function.c
+Function.c: In function 'callback_invoke':
+Function.c:479: warning: passing argument 1 of 'rb_thread_call_with_gvl' from incompatible pointer type
+Function.c:102: note: expected 'void * (*)(void *)' but argument is of type 'VALUE (*)(void *)'
+Function.c: In function 'async_cb_event':
+Function.c:563: warning: implicit declaration of function 'rb_thread_call_without_gvl'
+Function.c: In function 'callback_with_gvl':
+Function.c:738: warning: no return statement in function returning non-void
+compiling FunctionInfo.c
+compiling Platform.c
+compiling Variadic.c
+compiling LongDouble.c
+compiling ArrayType.c
+compiling Buffer.c
+compiling StructByReference.c
+compiling MappedType.c
+compiling Thread.c
+compiling MemoryPointer.c
+compiling Types.c
+compiling ClosurePool.c
+compiling Struct.c
+compiling StructByValue.c
+compiling StructLayout.c
+compiling Pointer.c
+compiling AbstractMemory.c
+AbstractMemory.c:255: warning: 'memory_put_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_write_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_get_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_read_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_write_array_of_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_read_array_of_longdouble' defined but not used
+AbstractMemory.c:291: warning: 'memory_put_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_write_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_get_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_read_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_write_array_of_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_read_array_of_bool' defined but not used
+AbstractMemory.c:407: warning: 'memory_read_array_of_string' defined but not used
+compiling Type.c
+compiling ffi.c
+compiling DataConverter.c
+compiling MethodHandle.c
+linking shared-object ffi_c.so
+
+make "DESTDIR=" install
+make -C "/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux"
+make[1]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+make "AR_FLAGS=" "CC_FOR_BUILD=" "CFLAGS=-Wall -fexceptions" "CXXFLAGS=" "CFLAGS_FOR_BUILD=" "CFLAGS_FOR_TARGET=" "INSTALL=/usr/bin/install -c" "INSTALL_DATA=/usr/bin/install -c -m 644" "INSTALL_PROGRAM=/usr/bin/install -c" "INSTALL_SCRIPT=/usr/bin/install -c" "JC1FLAGS=" "LDFLAGS=" "LIBCFLAGS=" "LIBCFLAGS_FOR_TARGET=" "MAKE=make" "MAKEINFO=/bin/sh /var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi/missing --run makeinfo " "PICFLAG=" "PICFLAG_FOR_TARGET=" "RUNTESTFLAGS=" "SHELL=/bin/sh" "exec_prefix=/usr/local" "infodir=/usr/local/share/info" "libdir=/usr/local/lib" "mandir=/usr/local/share/man" "prefix=/usr/local" "AR=ar" "AS=as" "CC=gcc" "CXX=g++" "LD=/usr/bin/ld -m elf_x86_64" "NM=nm" "RANLIB=ranlib" "DESTDIR=" all-recursive
+make[2]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+Making all in include
+make[3]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/include'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/include'
+Making all in testsuite
+make[3]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/testsuite'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/testsuite'
+Making all in man
+make[3]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/man'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux/man'
+make[3]: Entering directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+make[3]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+make[2]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+make[1]: Leaving directory `/var/www/sites/blacklight/vendor/bundle/ruby/2.1.0/gems/ffi-1.9.3/ext/ffi_c/libffi-x86_64-linux'
+compiling DynamicLibrary.c
+compiling LastError.c
+compiling Call.c
+Call.c: In function 'do_blocking_call':
+Call.c:303: warning: implicit declaration of function 'rb_thread_call_without_gvl'
+compiling Function.c
+Function.c: In function 'callback_invoke':
+Function.c:479: warning: passing argument 1 of 'rb_thread_call_with_gvl' from incompatible pointer type
+Function.c:102: note: expected 'void * (*)(void *)' but argument is of type 'VALUE (*)(void *)'
+Function.c: In function 'async_cb_event':
+Function.c:563: warning: implicit declaration of function 'rb_thread_call_without_gvl'
+Function.c: In function 'callback_with_gvl':
+Function.c:738: warning: no return statement in function returning non-void
+compiling FunctionInfo.c
+compiling Platform.c
+compiling Variadic.c
+compiling LongDouble.c
+compiling ArrayType.c
+compiling Buffer.c
+compiling StructByReference.c
+compiling MappedType.c
+compiling Thread.c
+compiling MemoryPointer.c
+compiling Types.c
+compiling ClosurePool.c
+compiling Struct.c
+compiling StructByValue.c
+compiling StructLayout.c
+compiling Pointer.c
+compiling AbstractMemory.c
+AbstractMemory.c:255: warning: 'memory_put_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_write_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_get_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_read_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_write_array_of_longdouble' defined but not used
+AbstractMemory.c:255: warning: 'memory_read_array_of_longdouble' defined but not used
+AbstractMemory.c:291: warning: 'memory_put_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_write_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_get_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_read_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_write_array_of_bool' defined but not used
+AbstractMemory.c:291: warning: 'memory_read_array_of_bool' defined but not used
+AbstractMemory.c:407: warning: 'memory_read_array_of_string' defined but not used
+compiling Type.c
+compiling ffi.c
+compiling DataConverter.c
+compiling MethodHandle.c
+linking shared-object ffi_c.so
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20140721-25852-sufeqt
+installing default ffi_c libraries
