@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   Blacklight::Marc.add_routes(self)
   devise_for :users
 
-  get "articles", to: "articles#index"
-  get "articles/:dbid/:an", to: "articles#detail", constraints: {an: /[^V]+/ }
-  get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }
-  get "articles/switch", to: "articles#recordSwitch"
+  # get "articles", to: "articles#index"
+  # get "articles/:dbid/:an", to: "articles#detail", constraints: {an: /[^V]+/ }
+  # get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }
+  # get "articles/switch", to: "articles#recordSwitch"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
