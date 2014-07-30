@@ -1,8 +1,24 @@
+
+<% session[:current_url] = request.original_url %>
+
 <% eds_connect %>
-<% recordArray = retrieve(params[:dbid].to_s,params[:an].to_s,termsToHighlight(params[:highlight])) %>
+<%
+  recordArray = retrieve(params[:dbid].to_s,params[:an].to_s,termsToHighlight(params[:highlight]))
+  clean_params = deep_clean(params)
+  params = clean_params
+%>
+<% unless session[:results].present? %>
+ <% if session[:apiquery].present? %>
+  <% search(session[:apiquery]) %>
+ <% end %>
+<% end %>
 <% if recordArray['Record'].present? %>
 <% record = recordArray['Record'] %>
 <% end %>
+
+<% if has_restricted_access?(record) %>
+  <meta http-equiv="REFRESH" content="0;url=<%= new_user_session_path %>" />
+<% else %>
 
  <div class="row">
 
@@ -10,8 +26,7 @@
 
     <%= render 'previous_next_doc' %>
 
-     
-  <% @page_title = show_title(record) << " - Detailed Record - Blacklight" %>
+  <% @page_title = Sanitize.clean(show_title(record)) << " - Detailed Record - Blacklight" %>
 
   <%# this should be in a partial -%>
   <div id="document" class="<%= render_document_class %>">
@@ -55,7 +70,11 @@
 	    <% if has_full_text_on_screen?(record) %>
 	    <a name="fulltext"></a>
 	    <dt class="blacklight-subject">Full Text:</dt>
-	    <dd class="blacklight-abstract"><%= show_full_text_on_screen(record).html_safe %></dd>  
+	    <% if authenticated_user? %>
+ 	    <dd class="blacklight-abstract"><%= show_full_text_on_screen(record).html_safe %></dd>
+	    <% else %>
+ 	    <dd class="blacklight-abstract"><%= link_to "Please log in to display full-text.", new_user_session_path %></dd>	     
+	    <% end %>
 	    <% end %>
 
 	</dl>
@@ -77,10 +96,10 @@
     <br />
     <%= show_pubtype(record) %>
     </div>
-
+	    <% if authenticated_user? %>
 	    <% if has_any_fulltext?(record) %>
-	    <% fulltextlinks = [] %>
 	    <dt class="blacklight-fulltext">Full-Text Options:</dt>
+	    <% fulltextlinks = [] %>
 	    <dd class="blacklight-fulltext">
 	    <% if has_pdf?(record) %>
 	      <% fulltextlinks.push(link_to("PDF Full Text", show_pdf_link(record))) %>
@@ -88,6 +107,13 @@
 	    <% if has_html?(record) %>
 	      <% fulltextlinks.push(link_to("HTML Full Text", "#fulltext")) %>
 	    <% end %>
+	    <% if has_smartlink?(record) %>
+	      <% fulltextlinks.push(link_to("Linked Full Text", show_smartlink(record))) %>
+	    <% end %>
+	    <% if has_ebook?(record) %>
+	      <% fulltextlinks.push(link_to("eBook Full Text", show_ebook_link(record))) %>
+	    <% end %>
+	    
 	    <% if has_fulltext?(record) %>
 	      <% fulltextlinks.push(show_best_fulltext_link_detail(record)) %>
 	    <% end %>
@@ -97,11 +123,15 @@
 	    <dt class="blacklight-ill">Interlibrary Loan:</dt>
 	    <dd class="blacklight-ill"><%= show_ill(record) %></dd>  
 	  <% end %>
+	  <% else %>
+	    <dt class="blacklight-fulltext"><%= link_to "Please log in to see full-text options", new_user_session_path %></dt>
+	  <% end %>
+	  
 	  <br />
 	  <dt class="blacklight-fulltext">Other Options:</dt>
 	    <dd class="blacklight-fulltext"><%= link_to("View Record in EDS",show_plink(record),:target => "_blank") %></dd>
 	    
   </div><!--/span -->
 </div>
-
+<% end %>
 <%# render :partial => 'debug' %>

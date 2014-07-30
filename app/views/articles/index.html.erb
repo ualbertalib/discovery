@@ -1,29 +1,32 @@
-<!-- Look at eds-alpha -  -->
+<%
+##
+# Copyright 2013 EBSCO Information Services
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+%>
+
+<% session[:current_url] = request.original_url %>
+
 <% eds_connect %>
 
-<% if params[:dbid].present? and params[:an].present? %>
-  <h2>Opening PDF Full-Text....</h2>
-  <p>You may close this window to return to your search results.</p>
-  <% retrieve(params[:dbid].to_s, params[:an].to_s) %>
-  <% if has_pdf?(session[:record]['Record']) %>
-    <div id="pdf_link" style="display: none;">
-      <%= show_pdf_link(session[:record]['Record']).to_s %>
-    </div>
-    <script type="text/javascript">
-      var pdf_url =  document.getElementById('pdf_link').innerHTML.replace(/&amp;/g,"&");
-      window.location.href=(pdf_url);
-    </script>
-    
-  <% else %>
-    <script type="text/javascript">
-      alert("There was an error retrieving full text.");
-    </script>
-  <% end %>
-<% else %>
-
 <% if has_search_parameters? %>
-    <% options = generate_api_query(params) %>
-    <% search(options) %>
+       <% options = generate_api_query(params) %>
+       <% clean_params = deep_clean(params) %>
+       <% params = clean_params %>
+
+	<% unless params[:fromDetail] == 'y' and session[:results] %>
+	    <% search(options) %>
+	<% end %>
 <% end %>
 
 <script type="text/javascript">
@@ -59,7 +62,6 @@
     <%= render :partial=>'search_form' %>
 
     <% unless has_search_parameters? %>
-	    <%# if there are no input/search related params, display the "home" partial -%>
 	    <%= render 'home' %>
     <% else %>
 
@@ -75,7 +77,5 @@
     <% end %>
 
 </div>
-<div class="modal">Loading...<!-- Place at bottom of page --></div>
-<% end %>
-
-<%# render :partial => 'debug' %>
+<%# render :partial=>'debug' %>
+<div class="modal">Loading...</div>
