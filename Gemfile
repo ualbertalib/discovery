@@ -48,3 +48,5 @@ gem "ebsco-discovery-service-api", "1.0.4"
 gem "addressable", "2.3.2"
 gem "htmlentities"
 gem "activerecord-session_store"
+
+gem "factory_girl", "~> 4.0", group: [:test, :development]
