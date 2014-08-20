@@ -1,9 +1,6 @@
-require "om"
-require "solrizer"
+require_relative "./vocabulary"
 
-class DublinCoreVocabulary
-  include OM::XML::Document
-  include OM::XML::TerminologyBasedSolrizer
+class DublinCoreVocabulary < Vocabulary
 
   set_terminology do |t|
     t.root(path: "OAI-PMH", :xmlns => "http://www.openarchives.org/OAI/2.0/", "xmlns:dc" => "http://purl.org/dc/elements/1.1/","xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance")
