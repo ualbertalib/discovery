@@ -3,6 +3,7 @@ require_relative "../spec_helper.rb"
 describe PeelModsVocabulary do
 
   let(:mods_document){ PeelModsVocabulary.from_xml(File.open("../fixtures/mods_record.xml")) }
+  let(:solr_hash){ eval(File.open("../fixtures/mods_solr_hash").read) }
 
     it "should be a Dublin Core OM vocabulary with a terminology-based solrizer" do
       expect(mods_document).to be_an_instance_of PeelModsVocabulary
@@ -70,7 +71,7 @@ describe PeelModsVocabulary do
       expect(mods_document.note).to eq ["Taken from Geological Survey Division Map no. 10.", "Shadings differentiate kinds of tertiary, mesozoic, palaeozoic, and precambrian formations.", "peelmaps", "1", "73.7 x 44.1 cm.", "73.7", "44.1"]
       expect(mods_document.number).to eq []
       expect(mods_document.occupation).to eq []
-      expect(mods_document.originInfo).to eq ["EdmontonScientific and Industrial Research Council of Alberta1926"]
+      expect(mods_document.originInfo).to eq ["EdmontonScientific and Industrial Research Council of Alberta1926"]  # Finish breaking up nested fields
       expect(mods_document.part).to eq []
       expect(mods_document.partName).to eq []
       expect(mods_document.partNumber).to eq []
@@ -111,11 +112,44 @@ describe PeelModsVocabulary do
       expect(mods_document.url).to eq ["http://peel.library.ualberta.ca/maps/M/00/01/M000171/M000171.tif"]
     end
    
-    it "should have the fields tagged for Solr indexing"
+    it "should have the fields tagged for Solr indexing" do
+      expect(mods_document.to_solr["cartographics_tesim"]).to eq mods_document.cartographics
+      expect(mods_document.to_solr["classification_tesim"]).to eq mods_document.classification
+      expect(mods_document.to_solr["coordinates_tesim"]).to eq mods_document.coordinates
+      expect(mods_document.to_solr["dateIssued_tesim"]).to eq mods_document.dateIssued
+      expect(mods_document.to_solr["extent_tesim"]).to eq mods_document.extent
+      expect(mods_document.to_solr["marcgt_genre_tesim"]).to eq mods_document.marcgt_genre
+      expect(mods_document.to_solr["genre_tesim"]).to eq mods_document.genre
+      expect(mods_document.to_solr["geographic_tesim"]).to eq mods_document.geographic
+      expect(mods_document.to_solr["identifier_tesim"]).to eq mods_document.identifier
+      expect(mods_document.to_solr["language_tesim"]).to eq mods_document.language
+      expect(mods_document.to_solr["languageTerm_tesim"]).to eq mods_document.languageTerm
+      expect(mods_document.to_solr["location_tesim"]).to eq mods_document.location
+      expect(mods_document.to_solr["personalName_tesim"]).to eq mods_document.personalName
+      expect(mods_document.to_solr["corporateName_tesim"]).to eq mods_document.corporateName
+      expect(mods_document.to_solr["namePart_tesim"]).to eq mods_document.namePart
+      expect(mods_document.to_solr["note_tesim"]).to eq mods_document.note
+      expect(mods_document.to_solr["originInfo_tesim"]).to eq mods_document.originInfo
+      expect(mods_document.to_solr["physicalDescription_tesim"]).to eq mods_document.physicalDescription
+      expect(mods_document.to_solr["place_tesim"]).to eq mods_document.place
+      expect(mods_document.to_solr["placeTerm_tesim"]).to eq mods_document.placeTerm
+      expect(mods_document.to_solr["publisher_tesim"]).to eq mods_document.publisher
+      expect(mods_document.to_solr["recordChangeDate_tesim"]).to eq mods_document.recordChangeDate
+      expect(mods_document.to_solr["recordContentSource_tesim"]).to eq mods_document.recordContentSource
+      expect(mods_document.to_solr["recordIdentifier_tesim"]).to eq mods_document.recordIdentifier
+      expect(mods_document.to_solr["recordInfo_tesim"]).to eq mods_document.recordInfo
+      expect(mods_document.to_solr["scale_tesim"]).to eq mods_document.scale
+      expect(mods_document.to_solr["subject_tesim"]).to eq mods_document.subject
+      expect(mods_document.to_solr["temporal_tesim"]).to eq mods_document.temporal
+      expect(mods_document.to_solr["title_tesim"]).to eq mods_document.title
+      expect(mods_document.to_solr["titleInfo_tesim"]).to eq mods_document.titleInfo
+      expect(mods_document.to_solr["topic_tesim"]).to eq mods_document.topic
+      expect(mods_document.to_solr["typeOfResource_tesim"]).to eq mods_document.typeOfResource
+    end
     
     describe "#to_solr" do
       it "should include Solr-tagged fields in a hash" do
-        #expect(dublin_core_document.to_solr).to eq solr_hash
+        expect(mods_document.to_solr).to eq solr_hash
       end
     end
 end
