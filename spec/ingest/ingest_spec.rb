@@ -6,7 +6,6 @@ describe "Metadata ingest pipeline" do
   context "when it is given a vocabulary object" do
 
     let(:ingester) { Ingester.new }
-    let(:solr_index) { mock_model(Solr) }
     dc = DublinCoreVocabulary.from_xml(File.open("../fixtures/dublin_core_record.xml"))
 
     it "should connect to the Solr instance" do
