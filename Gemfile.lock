@@ -71,6 +71,8 @@ GEM
     ensure_valid_encoding (0.5.3)
     erubis (2.7.0)
     execjs (2.2.1)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
     ffi (1.9.3)
     hike (1.2.3)
     htmlentities (4.3.2)
@@ -184,6 +186,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3)
   ebsco-discovery-service-api (= 1.0.4)
+  factory_girl (~> 4.0)
   htmlentities
   jbuilder (~> 2.0)
   jettywrapper (~> 1.7)

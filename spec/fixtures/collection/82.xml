@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><OAI-PMH xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd" xmlns:ex="http://exslt.org/dates-and-times" xmlns:exslt="http://exslt.org/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.openarchives.org/OAI/2.0/">
+
+<record>
+<header>
+<identifier>http://wayback.archive-it.org/2901/*/http://www.energy.alberta.ca/</identifier>
+<datestamp>2013-02-14T23:28:13Z</datestamp>
+<setSpec>collection:2901</setSpec>
+</header>
+<metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:database="http://www.oclc.org/pears/" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Alberta Energy</dc:title>
+<dc:creator>Alberta Energy</dc:creator>
+<dc:subject>carbon capture and storage</dc:subject>
+<dc:subject>natural resources</dc:subject>
+<dc:subject>oil sands</dc:subject>
+<dc:subject>Aboriginal affairs</dc:subject>
+<dc:subject>electricity</dc:subject>
+<dc:subject>coal</dc:subject>
+<dc:subject>petroleum</dc:subject>
+<dc:subject>natural gas</dc:subject>
+<dc:subject>wind energy</dc:subject>
+<dc:subject>energy conservation</dc:subject>
+<dc:subject>utilities</dc:subject>
+<dc:description>Alberta Energy manages the development of province's non-renewable resources including coal, minerals, natural gas, petrochemicals, conventional oil and oil sands and renewable energy (wind, bioenergy, solar, hydro, geothermal, etc.) grants industry the right to explore for and develop energy and mineral resources establishes, administers and monitors the effectiveness of fiscal and royalty systems promotes energy efficiency and conservation by both Albertans and industry encourages additional investment that creates jobs and economic prosperity.</dc:description>
+<dc:coverage>Canada--Alberta</dc:coverage>
+<dc:language>English</dc:language>
+<dc:identifier>http://wayback.archive-it.org/2901/*/http://www.energy.alberta.ca/</dc:identifier>
+</oai_dc:dc>
+</metadata>
+</record>

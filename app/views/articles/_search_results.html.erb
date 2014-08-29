@@ -16,16 +16,15 @@
   <% end %><br /><%= show_pubtype(result) %>
 </div>
 <div class="documentHeader clearfix">
-  <% if has_any_fulltext?(result) %>
-<!--    <h5 class="index_title"><%# show_resultid(result) %>. <%# link_to show_title(result), show_best_fulltext_link(result), :target => "_blank" %></h5>    -->
-    <h5 class="index_title"><%= show_resultid(result) %>. <%= link_to show_title(result), show_detail_link(result, show_resultid(result), params[:q]) %></h5>    
-
+  <% if has_restricted_access?(result) %>
+    <h5 class="index_title"><%= show_resultid(result) %>. This result cannot be shown to guests.  <%= link_to "Please log in to see this result.", show_detail_link(result, show_resultid(result), params[:q]) %></h5>    
   <% else %>
     <h5 class="index_title"><%= show_resultid(result) %>. <%= link_to show_title(result), show_detail_link(result, show_resultid(result), params[:q]) %></h5>    
   <% end %>
         <%# bookmark functions for items/docs %>
         <%# render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
 </div>
+<% unless has_restricted_access?(result) %>
 <dl class="dl-horizontal dl-invert">
 
   <% if (show_view_option == 'brief' or show_view_option == 'detailed') and has_authors?(result) %>
@@ -63,6 +62,10 @@
     <%= link_to "PDF Full Text", show_pdf_title_link(result) %>
   <% elsif has_html?(result) %>
     <%= link_to "HTML Full Text", show_best_fulltext_link(result), :target => "_blank" %>
+  <% elsif has_smartlink?(result) %>
+    <%= link_to "Linked Full Text", show_smartlink_title_link(result) %>
+  <% elsif has_ebook?(result) %>
+    <%= link_to "eBook Full Text", show_ebook_title_link(result) %>
   <% else %>
     <%= show_best_fulltext_link_detail(result) %>
   <% end %>
@@ -72,8 +75,13 @@
   <dd class="blacklight-ill"><%= show_ill(result) %></dd>  
   <% end %>
 
-</dl>  
-
+</dl>
+<% else %>
+    <dl class="dl-horizontal dl-invert">
+  <dt class="blacklight-author_display">Note:</dt>
+  <dd class="blacklight-author_display">This result cannot be displayed unless you are <%= link_to "logged in", new_user_session_path %>.</dd>
+    </dl>
+<% end %>
 </div>
     
     <% end %>
