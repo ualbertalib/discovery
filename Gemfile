@@ -45,8 +45,10 @@ gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "blacklight-marc", "~> 5.0"
 gem "ebsco-discovery-service-api", "1.0.4"
+gem "om"
 gem "addressable", "2.3.2"
 gem "htmlentities"
 gem "activerecord-session_store"
 
 gem "factory_girl", "~> 4.0", group: [:test, :development]
+gem "rspec"
