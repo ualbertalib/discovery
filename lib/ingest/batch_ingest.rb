@@ -22,10 +22,14 @@ class BatchIngest
   private
 
   def read file
-    @records = Nokogiri::XML(File.open(file)).xpath(@root, @namespace)
+    @records =  load_xml_from file
   end
 
   def add record
     @ingester.add_document(record)
+  end
+
+  def load_xml_from file
+    Nokogiri::XML(File.open(file)).xpath(@root, @namespace)
   end
 end
