@@ -1,12 +1,14 @@
 require "rsolr"
 require_relative "../spec_helper.rb"
 
+include E
+
 describe "Metadata ingest pipeline" do
 
   context "when it is given a vocabulary object" do
 
     let(:ingester) { Ingester.new }
-    dc = DublinCoreVocabulary.from_xml(File.open("../fixtures/dublin_core_record.xml"))
+    dc = DublinCoreVocabulary.from_xml(File.open(E::*("fixtures/dublin_core_record.xml")))
 
     it "should connect to the Solr instance" do
       rsolr = double # IRL pass an RSolr.connect object to the ingester

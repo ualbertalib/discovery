@@ -1,9 +1,11 @@
-require "../spec_helper.rb"
+require_relative "../spec_helper.rb"
+
+include E
 
 describe DublinCoreVocabulary do
 
-  let(:dublin_core_document) { DublinCoreVocabulary.from_xml(File.open("../fixtures/dublin_core_record.xml"))}
-  let(:solr_hash) { eval(File.open("../fixtures/dc_solr_hash").read) }
+  let(:dublin_core_document){ DublinCoreVocabulary.from_xml(File.open(E::*("fixtures/dublin_core_record.xml"))) }
+  let(:solr_hash) { eval(File.open(E::*("fixtures/dc_solr_hash")).read) }
 
     it "should be a Dublin Core OM vocabulary with a terminology-based solrizer" do
       expect(dublin_core_document).to be_an_instance_of DublinCoreVocabulary
