@@ -4,25 +4,31 @@ class BatchIngest
   
   attr_writer :ingester, :root, :namespace
 
-  def from_file(file)
+  def from_file(file, vocabulary)
     read file
-    @records.each do |record|
-      add record
+    @records.each_with_index do |record, index|
+      solr = vocabulary.from_xml(record.to_s).to_solr
+      solr[:id] = "#{file}_#{index}"
+      add solr
     end
   end
 
-  def from_directory(dir)
+  def from_directory(dir, vocabulary)
     Dir.foreach(dir) do |file|
       next if file == "." or file == ".."
       path = "#{dir}/#{file}"
-      from_file(path)
+      from_file(path, vocabulary)
     end
   end
 
   private
 
+  def solr=(solr_url)
+    @ingester.solr_object = RSolr.connect(solr_url)
+  end
+
   def read file
-    @records =  load_xml_from file
+    @records = load_xml_from file
   end
 
   def add record
