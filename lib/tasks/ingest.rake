@@ -5,16 +5,27 @@ namespace :ingest do
 
   desc 'ingest Dublin Core records'
   # Syntax: rake ingest:dublin_core "data/era.xml|file"
+<<<<<<< HEAD
   task :dublin_core, [:file] do |t, args|
     path = args.file.split("|").first
     mode = args.file.split("|").last
+=======
+  task :dublin_core do |t, args|
+    path = ARGV.last.split("|").first
+    mode = ARGV.last.split("|").last
+>>>>>>> 337c9f4d8583be2a1978eb95083d42c617a18845
     batch_ingester = BatchIngest.new
     batch_ingester.ingester = Ingester.new
     batch_ingester.solr = "http://localhost:8983/solr"
     batch_ingester.root = "//xmlns:record"
     batch_ingester.namespace = {"xmlns" => "http://www.openarchives.org/OAI/2.0/"}
+<<<<<<< HEAD
     mode=="file" ? batch_ingester.from_file(path, DublinCoreVocabulary) : batch_ingester.from_directory(path)
     #task ARGV.last.to_sym do ; end
+=======
+    mode=="file" ? batch_ingester.from_file(path, DublinCoreVocabulary) : batch_ingester.from_dir(path)
+    task ARGV.last.to_sym do ; end
+>>>>>>> 337c9f4d8583be2a1978eb95083d42c617a18845
   end
 end
 
