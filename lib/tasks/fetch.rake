@@ -5,5 +5,4 @@ task :fetch, [:url] do |t, args|
   url = args.url.split("|").first
   filename = args.url.split("|").last
   `wget "#{url}" -O #{Rails.root}/data/#{filename}`
-  #task args.last.to_sym do ; end
 end
