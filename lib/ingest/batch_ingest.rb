@@ -21,11 +21,11 @@ class BatchIngest
     end
   end
 
-  private
-
   def solr=(solr_url)
     @ingester.solr_object = RSolr.connect(solr_url)
   end
+
+  private
 
   def read file
     @records = load_xml_from file
