@@ -1,9 +1,8 @@
 desc 'fetch data file from the web'
 # Syntax: 
 # rake fetch 'http://era.library.ualberta.ca/oaiprovider/?verb=ListRecords&metadataPrefix=oai_dc|era.xml'
-task :fetch do |t, args|
-  url = ARGV.last.split("|").first
-  filename = ARGV.last.split("|").last
+task :fetch, [:url] do |t, args|
+  url = args.url.split("|").first
+  filename = args.url.split("|").last
   `wget "#{url}" -O #{Rails.root}/data/#{filename}`
-  task ARGV.last.to_sym do ; end
 end
