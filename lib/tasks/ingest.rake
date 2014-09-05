@@ -4,6 +4,7 @@ require "#{Rails.root}/lib/ingest/dublin_core_om.rb"
 namespace :ingest do
 
   desc 'ingest Dublin Core records'
+  # Syntax: rake ingest:dublin_core "data/era.xml|file"
   task :dublin_core do |t, args|
     path = ARGV.last.split("|").first
     mode = ARGV.last.split("|").last

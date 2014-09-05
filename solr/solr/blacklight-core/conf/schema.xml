@@ -737,6 +737,7 @@
    <copyField source="subject_t" dest="subject_unstem_search"/>
    <copyField source="subject_addl_t" dest="subject_addl_unstem_search"/>
    <copyField source="subject_topic_facet" dest="subject_topic_unstem_search"/>
+   <copyField source="type_tesim" dest="format"/>
    
    <!-- sort fields -->
    <copyField source="pub_date" dest="pub_date_sort"/>
