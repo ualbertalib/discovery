@@ -4,11 +4,11 @@ class BatchIngest
   
   attr_writer :ingester, :root, :namespace
 
-  def from_file(file, vocabulary)
+  def from_file(file, prefix, vocabulary)
     read file
     @records.each_with_index do |record, index|
       solr = vocabulary.from_xml(record.to_s).to_solr
-      solr[:id] = "#{file}_#{index}"
+      solr[:id] = "#{prefix}_#{index}"
       add solr
     end
   end
