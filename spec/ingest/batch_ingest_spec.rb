@@ -19,14 +19,14 @@ describe "Batch Ingest Process" do
   context "when it is provided with a collection of records in a single file" do
     it "should process and ingest every record in the file" do
       expect(ingester).to receive(:add_document).exactly(100).times #.with(an_instance_of(Nokogiri::XML::Document))
-      batch_ingester.from_file(E::*("fixtures/collection.xml"), DublinCoreVocabulary)
+      batch_ingester.from_file(E::*("fixtures/collection.xml"), "DC", DublinCoreVocabulary)
     end
   end
 
   context "when it is provided with a collection of files in a directory" do
     it "should process and ingest every record in the directory" do
       expect(ingester).to receive(:add_document).exactly(100).times #.with(an_instance_of(Nokogiri::XML::Document))
-      batch_ingester.from_directory(E::*("fixtures/collection"), DublinCoreVocabulary)
+      batch_ingester.from_directory(E::*("fixtures/collection"), "DC", DublinCoreVocabulary)
     end
   end
 end

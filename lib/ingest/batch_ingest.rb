@@ -13,11 +13,11 @@ class BatchIngest
     end
   end
 
-  def from_directory(dir, vocabulary)
+  def from_directory(dir, prefix, vocabulary)
     Dir.foreach(dir) do |file|
       next if file == "." or file == ".."
       path = "#{dir}/#{file}"
-      from_file(path, vocabulary)
+      from_file(path, prefix, vocabulary)
     end
   end
 
