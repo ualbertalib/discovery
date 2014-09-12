@@ -4,4 +4,10 @@ namespace :ingest do
     ENV['MARC_FILE'] = "#{Rails.root}/data/maps.xml"
     Rake::Task["solr:marc:index"].invoke
   end
+
+  desc "Import CIHM data"
+  task :cihm do
+    ENV['MARC_FILE'] = "#{Rails.root}/data/cihm.mrc"
+    Rake::Task["solr:marc:index"].invoke
+  end
 end
