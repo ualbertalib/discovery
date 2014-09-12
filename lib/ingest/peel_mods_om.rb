@@ -101,6 +101,7 @@ class PeelModsVocabulary < Vocabulary
     t.total(:index_as => :stored_searchable)
     t.typeOfResource(:index_as => :stored_searchable)
     t.url(:index_as => :stored_searchable)
+    t.id(:path => "recordIdentifier", :index_as => :stored_searchable)
   end
 
 end

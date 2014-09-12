@@ -3,7 +3,7 @@ require_relative "./vocabulary"
 class DublinCoreVocabulary < Vocabulary
 
   set_terminology do |t|
-    t.root(path: "OAI-PMH", :xmlns => "http://www.openarchives.org/OAI/2.0/", "xmlns:dc" => "http://purl.org/dc/elements/1.1/","xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance")
+    t.root(path: "OAI-PMH", "xmlns:dc" => "http://purl.org/dc/elements/1.1/","xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance")
     t.id(:path=>"setSpec", :index_as => :stored_searchable)
     t.title(:namespace_prefix => "dc", :index_as => :stored_searchable)
     t.creator(:namespace_prefix => "dc", :index_as => :stored_searchable)
