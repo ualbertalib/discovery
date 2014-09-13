@@ -8,8 +8,7 @@ class BatchIngest
     read file
     @records.each_with_index do |record, index|
       solr = vocabulary.from_xml(record.to_s).to_solr
-      puts solr
-      solr[:id] = solr["id_tesim"]
+      solr[:id] = solr["id_tesim"].first
       add solr if solr[:id]
     end
   end
@@ -30,16 +29,10 @@ class BatchIngest
 
   def read file
     @records = []
-    # Have to clean this up, //xmlns:record is for OAI DC records only
     Nokogiri::XML(File.open(file)).xpath(@root, @namespace).xpath(@record_delimiter).each{|record| @records << record }
   end
 
   def add record
     @ingester.add_document(record)
-  end
-
-  def load_xml_from file
-    Nokogiri::XML(File.open(file)).xpath(@root, @namespace)
-
   end
 end

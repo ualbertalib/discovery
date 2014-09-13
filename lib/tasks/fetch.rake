@@ -3,6 +3,6 @@ desc 'fetch data file from the web'
 # rake fetch 'http://era.library.ualberta.ca/oaiprovider/?verb=ListRecords&metadataPrefix=oai_dc|era.xml'
 task :fetch, [:url] do |t, args|
   url = args.url.split("|").first
-  filename = args.url.split("|").last
-  `wget "#{url}" -O #{Rails.root}/data/#{filename}`
+  path = args.url.split("|").last
+  `wget "#{url}" -O #{Rails.root}/#{path}`
 end
