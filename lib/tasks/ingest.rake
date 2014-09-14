@@ -10,7 +10,7 @@ require "yaml"
 desc 'ingest records' # add config parameter for directory ingest?
 task :ingest, [:name] do |t, args|
   config = @config[args.name]
-  Rake::Task["fetch"].invoke("#{config["endpoint"]}|#{config["path"]}") if config["fetch"]
+  Rake::Task["fetch"].invoke("#{config["endpoint"]}|#{config["path"]}") if config["endpoint"]
 
   case config["schema"]
   when "mods", "dublin_core"

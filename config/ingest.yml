@@ -8,7 +8,6 @@ era:
    delimiter: "//xmlns:record"
    namespace: '{"xmlns" => "http://www.openarchives.org/OAI/2.0/"}'
    vocabulary: DublinCoreVocabulary
-   fetch: true
    endpoint: "http://era.library.ualberta.ca/oaiprovider/?verb=ListRecords&metadataPrefix=oai_dc"
    mode: file
    path: "data/era.xml"
@@ -24,7 +23,6 @@ peel:
 
 sfx:
   schema: marc
-  fetch: true
   endpoint: "http://resolver.library.ualberta.ca/sfx2sirsi/data/sfxdata.xml"
   path: "data/sfx.xml"
 
