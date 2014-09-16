@@ -38,7 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'comfortable_mexican_sofa', '~> 1.12.0' 
+
 gem "blacklight", ">= 5.3.0"
 gem "jettywrapper", "~> 1.7"
 gem "devise"
@@ -52,4 +52,3 @@ gem "activerecord-session_store"
 
 gem "factory_girl", "~> 4.0", group: [:test, :development]
 gem "rspec"
-

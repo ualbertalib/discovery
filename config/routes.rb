@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  comfy_route :cms_admin, :path => '/admin'
-
- 
-
   root :to => "catalog#index"
   blacklight_for :catalog
   Blacklight::Marc.add_routes(self)
@@ -12,9 +8,6 @@ Rails.application.routes.draw do
   get "articles/:dbid/:an", to: "articles#detail", constraints: {an: /[^V]+/ }
   get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }
   get "articles/switch", to: "articles#recordSwitch"
-
-   # Make sure this routeset is defined last
-  comfy_route :cms, :path => '/', :sitemap => false
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
