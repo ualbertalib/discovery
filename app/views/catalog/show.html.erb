@@ -12,7 +12,7 @@
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
   </div>
 </div>
-
+  <%= link_to "Place Hold", "https://myaccount.library.ualberta.ca/index.php?hldCatKey=#{@document.id}" %>
 </div>
 
 <div id="sidebar" class="col-md-3">

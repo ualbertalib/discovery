@@ -1,13 +1,12 @@
 require "rspec"
-require "factory_girl"
+require "yaml"
+require "active_support/inflector"
 require_relative "../lib/ingest/dublin_core_om"
 require_relative "../lib/ingest/peel_mods_om"
+require_relative "../lib/ingest/curriculum_mods_om"
 require_relative "../lib/ingest/ingester"
 require_relative "../lib/ingest/batch_ingest"
-
-RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
-end
+require_relative "../lib/tasks/ingest_configuration"
 
 module E
   def *(path)

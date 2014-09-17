@@ -4,8 +4,8 @@ include E
 
 describe PeelModsVocabulary do
 
-  let(:mods_document){ PeelModsVocabulary.from_xml(File.open(E::*("fixtures/mods_record.xml"))) }
-  let(:solr_hash){ eval(File.open(E*("fixtures/mods_solr_hash")).read) }
+  let(:mods_document){ PeelModsVocabulary.from_xml(File.open(E::*("fixtures/peel_mods_record.xml"))) }
+  let(:solr_hash){ eval(File.open(E*("fixtures/peel_solr_hash")).read) }
 
     it "should be a Dublin Core OM vocabulary with a terminology-based solrizer" do
       expect(mods_document).to be_an_instance_of PeelModsVocabulary

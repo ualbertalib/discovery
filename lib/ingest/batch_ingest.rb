@@ -2,14 +2,15 @@ require_relative "./ingester.rb"
 
 class BatchIngest
   
-  attr_writer :ingester, :root, :namespace
+  attr_writer :ingester, :root, :namespace, :record_delimiter
 
-  def from_file(file, prefix, vocabulary)
+  def from_file(file, vocabulary)
     read file
     @records.each_with_index do |record, index|
       solr = vocabulary.from_xml(record.to_s).to_solr
-      solr[:id] = "#{prefix}_#{index}"
-      add solr
+      next unless solr["id_tesim"]
+      solr[:id] = solr["id_tesim"].first
+      add solr if solr[:id]
     end
   end
 
@@ -28,14 +29,12 @@ class BatchIngest
   private
 
   def read file
-    @records = load_xml_from file
+    @records = []
+    Nokogiri::XML(File.open(file)).xpath(@root, @namespace).xpath(@record_delimiter).each{|record| @records << record }
+    #Nokogiri::XML(File.open(file)).xpath(@record_delimiter).each{|record| @records << record }
   end
 
   def add record
     @ingester.add_document(record)
-  end
-
-  def load_xml_from file
-    Nokogiri::XML(File.open(file)).xpath(@root, @namespace)
   end
 end
