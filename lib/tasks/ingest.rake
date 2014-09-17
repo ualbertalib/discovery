@@ -1,7 +1,6 @@
 require "#{Rails.root}/lib/ingest/batch_ingest.rb"
 require "#{Rails.root}/lib/ingest/dublin_core_om.rb"
 require "#{Rails.root}/lib/ingest/peel_mods_om.rb"
-require "#{Rails.root}/lib/ingest/curriculum_mods_om.rb"
 require_relative "./ingest_configuration.rb"
 
 require "yaml"
