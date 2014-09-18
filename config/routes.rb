@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => "catalog#index"
   
-  blacklight_for :catalog, :ebooks
+  blacklight_for :catalog, :ebooks, :databases
   Blacklight::Marc.add_routes(self)
   devise_for :users
 
