@@ -20,3 +20,4 @@ APIauthentication.txt
 token.txt
 /data
 /solr/solr/blacklight-core/data
+/solr/logs
