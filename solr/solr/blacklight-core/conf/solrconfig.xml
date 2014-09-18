@@ -156,6 +156,7 @@
          title_added_entry_t^10
          title_series_unstem_search^5
          title_series_t
+         title_tesim
        </str>
        <str name="title_pf">
          title_unstem_search^500000
@@ -168,6 +169,7 @@
          title_added_entry_t^100
          title_series_t^50
          title_series_unstem_search^10
+         title_tesim
        </str>
        <str name="subject_qf">
          subject_topic_unstem_search^200

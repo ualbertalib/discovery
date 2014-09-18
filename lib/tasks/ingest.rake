@@ -1,6 +1,8 @@
 require "#{Rails.root}/lib/ingest/batch_ingest.rb"
 require "#{Rails.root}/lib/ingest/dublin_core_om.rb"
 require "#{Rails.root}/lib/ingest/peel_mods_om.rb"
+require "#{Rails.root}/lib/ingest/databases.rb"
+require "#{Rails.root}/lib/ingest/database_om.rb"
 require_relative "./ingest_configuration.rb"
 
 require "yaml"
@@ -20,6 +22,10 @@ task :ingest, [:collection] do |t, args|
 
   when "marc"
     ingest_marc
+
+  when "database"
+    ingest_databases
+
   end
 
 end
@@ -46,6 +52,18 @@ end
 def ingest_marc
   ENV['MARC_FILE'] = @c.path
   Rake::Task["solr:marc:index"].invoke
+end
+
+def ingest_databases
+    db = Databases.new(@c.database_csv)
+    db.xml_records.each_with_index do |record, index|
+      db_vocabulary = DatabaseVocabulary.from_xml(record)
+      Dir.mkdir(@c.path) unless File.exists? @c.path
+      File.open("#{@c.path}/#{index}.xml", "w"){ |f| f.write db_vocabulary.to_xml }
+    end
+    batch_ingester = BatchIngest.new
+    configure batch_ingester
+    run batch_ingester
 end
 
 namespace :ingest do

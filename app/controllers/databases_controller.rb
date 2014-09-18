@@ -1,14 +1,14 @@
 # -*- encoding : utf-8 -*-
 #
-class DatabaseController < ApplicationController  
+class DatabasesController < ApplicationController  
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
 
   self.solr_search_params_logic << :show_only_databases
-  
-  def show_only_ebooks solr_parameters, user_parameters
+
+  def show_only_databases solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
-    solr_parameters[:fq] << "Database" # should be ebook in production
+    solr_parameters[:fq] << 'format:"Database"'
   end
 
   configure_blacklight do |config|

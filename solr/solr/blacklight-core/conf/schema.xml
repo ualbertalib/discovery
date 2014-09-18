@@ -525,7 +525,7 @@
    <field name="pub_date_sort" type="tint" indexed="true" stored="true" multiValued="false"/>
      
    <!-- format is used for facet, display, and choosing which partial to use for the show view, so it must be stored and indexed -->
-   <field name="format" type="string" indexed="true" stored="true"/>
+   <field name="format" type="string" indexed="true" stored="true" multiValued="true"/>
 
    
 
@@ -738,6 +738,8 @@
    <copyField source="subject_addl_t" dest="subject_addl_unstem_search"/>
    <copyField source="subject_topic_facet" dest="subject_topic_unstem_search"/>
    <copyField source="type_tesim" dest="format"/>
+   <copyField source="resource_type_tesim" dest="format"/>
+   <copyField source="title_tesim" dest="title_display"/>
    
    <!-- sort fields -->
    <copyField source="pub_date" dest="pub_date_sort"/>
