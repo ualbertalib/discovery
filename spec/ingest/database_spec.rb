@@ -75,7 +75,7 @@ describe DatabaseVocabulary do
     expect(database.description).to eq [""]
     expect(database.subject_id_redundant).to eq ["617"]
     expect(database.subject).to eq ["Native Health"]
-    expect(database.display_single_search).to eq ["1"]
+    expect(database.display_single_search).to eq ["1107"]
   end
 
   it "should have the fields tagged for solr indexing" do
