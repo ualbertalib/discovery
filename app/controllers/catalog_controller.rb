@@ -1,5 +1,6 @@
 # -*- encoding : utf-8 -*-
 #
+
 class CatalogController < ApplicationController  
   include Blacklight::Marc::Catalog
 
@@ -180,5 +181,4 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
   end
-
 end 

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }
   get "articles/switch", to: "articles#recordSwitch"
 
-
+  get "/results", to: "bento#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
