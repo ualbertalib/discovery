@@ -1,0 +1,70 @@
+<div class="navbar navbar-default" role="navigation" id="top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+     
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">My UAlberta</a></li>
+            <li><a href="#">Find a Person</a></li>
+            <li><a href="#">ONEcard</a></li>
+            <li><a href="#">Bear Tracks</a></li>
+            <li><a href="#">Maps</a></li>
+            <li><a href="#">Email &amp; Apps</a></li>
+            <li><a href="#">eClass</a></li>
+            <li><a href="#" class="last">Libraries</a></li>
+            <li><img src="<%= image_path 'blade-element.jpg' %>" class="hidden-sm"></li><li>
+          </li></ul>
+        </div><!--/.nav-collapse -->
+     
+
+    <div class="row header">
+      <div class="container">
+        <div class="col-md-6 col-sm-5 col-xs-8">
+          <h1><a href="/"><img src="<%= image_path 'ualib-logo.png' %>" class="ualogo"></a></h1>
+        </div>
+        <div class="col-md-6 col-sm-7 col-xs-4">
+          <ul class="ask">
+            <li><a href="#" class="ask-main">Ask Us</a></li>
+            <li><a href="#" class="hidden-xs">Text</a></li>
+            <li><a href="#" class="hidden-xs">Chat</a></li>
+            <li><a href="#" class="hidden-xs">Email</a></li>
+            <li><a href="#" class="last hidden-xs">Phone</a></li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+      <ul id="main-nav" class="small">
+           <li class="col-sm-2" id="home">
+              <h3><a href="http://library.ualberta.ca/sandbox/2014proto/idea2/index.html">Search &amp; Hours</a></h3>
+          </li>
+          <li class="col-sm-2" id="services">
+            <h3><a href="http://library.ualberta.ca/sandbox/2014proto/idea2/index.html">Services</a></h3>
+          </li>
+          <li class="col-sm-2" id="subjects">
+              <h3><a href="http://library.ualberta.ca/sandbox/2014proto/idea2/index.html">Subject Guides</a></h3>
+          </li>
+          <li class="col-sm-2" id="research">
+            <h3><a href="http://library.ualberta.ca/sandbox/2014proto/idea2/index.html">Researcher Tools</a></h3>
+          </li>
+          <li class="col-sm-2" id="news">
+           <h3><a href="http://library.ualberta.ca/sandbox/2014proto/idea2/index.html">News &amp; Events</a></h3>
+          </li>
+          <li class="col-sm-2" id="account">
+              <h3><a href="http://library.ualberta.ca/sandbox/2014proto/idea2/index.html">My Account</a></h3>
+          </li>
+        </ul>
+      </div>
+  
+  </div>
+    <div id="search-navbar" class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <%= render_search_bar  %>
+  </div>
+</div>
