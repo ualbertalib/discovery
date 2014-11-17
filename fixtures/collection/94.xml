@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><OAI-PMH xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd" xmlns:ex="http://exslt.org/dates-and-times" xmlns:exslt="http://exslt.org/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.openarchives.org/OAI/2.0/">
+
+<record>
+<header>
+<identifier>http://wayback.archive-it.org/2901/*/http://www.health.alberta.ca/</identifier>
+<datestamp>2013-02-14T23:28:13Z</datestamp>
+<setSpec>collection:2901</setSpec>
+</header>
+<metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:database="http://www.oclc.org/pears/" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Alberta Health and Wellness</dc:title>
+<dc:creator>Alberta Health</dc:creator>
+<dc:subject>health care system</dc:subject>
+<dc:subject>health policy</dc:subject>
+<dc:subject>health information</dc:subject>
+<dc:subject>Health Link Alberta</dc:subject>
+<dc:subject>mental health</dc:subject>
+<dc:subject>rehabilitation services</dc:subject>
+<dc:subject>health care facilities</dc:subject>
+<dc:subject>health insurance</dc:subject>
+<dc:subject>nutrition</dc:subject>
+<dc:subject>immunization</dc:subject>
+<dc:description>Alberta Health and Wellness is the provincial government ministry responsible for setting, monitoring and enforcing provincial health policy and standards; some health programs; and managing health capital planning, procurement and outcome measures.</dc:description>
+<dc:coverage>Canada--Alberta</dc:coverage>
+<dc:language>English</dc:language>
+<dc:identifier>http://wayback.archive-it.org/2901/*/http://www.health.alberta.ca/</dc:identifier>
+</oai_dc:dc>
+</metadata>
+</record>
