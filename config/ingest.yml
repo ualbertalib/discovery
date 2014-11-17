@@ -1,6 +1,6 @@
 solr: http://localhost:8983/solr
 
-collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test"]
+collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases"]
 
 era:
    schema: dublin_core
@@ -59,3 +59,13 @@ curriculum:
   vocabulary: CurriculumModsVocabulary
   mode: file
   path: "data/curriculummods.xml"
+
+databases:
+  schema: database
+  root: "//databases"
+  delimiter: "//database"
+  namespace: ""
+  vocabulary: DatabaseVocabulary
+  mode: directory
+  path: "data/databases"
+  database_csv: "data/databases.csv"

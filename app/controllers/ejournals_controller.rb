@@ -1,9 +1,15 @@
 # -*- encoding : utf-8 -*-
 #
-class CatalogController < ApplicationController  
+class EbooksController < ApplicationController  
   include Blacklight::Marc::Catalog
-
   include Blacklight::Catalog
+
+  self.solr_search_params_logic << :show_only_ebooks
+  
+  def show_only_ebooks solr_parameters, user_parameters
+    solr_parameters[:fq] ||= []
+    solr_parameters[:fq] << "source:sfx" # should be ebook in production
+  end
 
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
@@ -11,7 +17,7 @@ class CatalogController < ApplicationController
       config.default_solr_params = { 
         :qt => 'search',
         :rows => 10
-     }
+      }
     
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select' 
@@ -35,8 +41,8 @@ class CatalogController < ApplicationController
     config.index.display_type_field = 'format'
 
     # solr field configuration for document/show views
-    # config.show.title_field = 'title_display'
-    # config.show.display_type_field = 'format'
+    #config.show.title_field = 'title_display'
+    #config.show.display_type_field = 'format'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
