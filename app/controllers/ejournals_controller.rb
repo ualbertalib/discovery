@@ -1,14 +1,14 @@
 # -*- encoding : utf-8 -*-
 #
-class EbooksController < ApplicationController  
+class EjournalsController < ApplicationController  
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
 
-  self.solr_search_params_logic << :show_only_ebooks
+  self.solr_search_params_logic << :show_only_ejournals
   
-  def show_only_ebooks solr_parameters, user_parameters
+  def show_only_ejournals solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
-    solr_parameters[:fq] << "source:sfx" # should be ebook in production
+    solr_parameters[:fq] << "source:SFX"
   end
 
   configure_blacklight do |config|

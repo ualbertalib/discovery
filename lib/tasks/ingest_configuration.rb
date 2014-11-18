@@ -1,5 +1,5 @@
 class IngestConfiguration
-  attr_accessor :solr, :schema, :root, :delimiter, :namespace, :vocabulary, :endpoint, :mode, :path, :collections, :database_csv
+  attr_accessor :solr, :schema, :root, :delimiter, :namespace, :vocabulary, :endpoint, :mode, :path, :collections, :database_csv, :config
 
   def initialize(collection, config={})
     @solr = config["solr"]

@@ -109,12 +109,14 @@
          title_series_t^10
          isbn_t
          text
+         source
        </str>
        <str name="pf">
          title_unstem_search^1000000
          subtitle_unstem_search^500000
          title_t^250000
          subtitle_t^100000
+         source^100000
          title_addl_unstem_search^50000
          title_addl_t^25000
          title_added_entry_unstem_search^15000
@@ -214,12 +216,14 @@
          subtitle_vern_display,
          url_fulltext_display,
          url_suppl_display,
+         source,
        </str>
 
        <str name="facet">true</str>
        <str name="facet.mincount">1</str>
        <str name="facet.limit">10</str>
        <str name="facet.field">format</str>
+       <str name="facet.field">source</str>
        <str name="facet.field">lc_1letter_facet</str>
        <str name="facet.field">lc_alpha_facet</str>
        <str name="facet.field">lc_b4cutter_facet</str>
@@ -408,13 +412,15 @@
         subtitle_vern_display,
         url_fulltext_display,
         url_suppl_display,
-        *_tesim
+        *_tesim,
+        source,
       </str>
       
       <str name="facet">true</str>
       <str name="facet.mincount">1</str>
       <str name="facet.limit">10</str>
       <str name="facet.field">format</str>
+      <str name="facet.field">source</str>
       <str name="facet.field">lc_1letter_facet</str>
       <str name="facet.field">lc_alpha_facet</str>
       <str name="facet.field">lc_b4cutter_facet</str>

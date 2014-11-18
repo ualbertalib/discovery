@@ -32,14 +32,17 @@ peel:
 
 sfx:
   schema: marc
+  config: "config/SolrMarc/sfx_config.properties"
   endpoint: "http://resolver.library.ualberta.ca/sfx2sirsi/data/sfxdata.xml"
   path: "data/sfx.xml"
 
 sfx_test:
+  config: "config/SolrMarc/sfx_config.properties"
   schema: marc
   path: "data/sfx.xml"
 
 symphony:
+  config: "config/SolrMarc/symphony_config.properties"
   schema: marc
   path: "data/sample.mrc"
 

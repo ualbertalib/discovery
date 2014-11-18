@@ -1,14 +1,14 @@
 # -*- encoding : utf-8 -*-
 #
-class EbooksController < ApplicationController  
+class SymphonyController < ApplicationController  
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
 
-  self.solr_search_params_logic << :show_only_ebooks
-  
-  def show_only_ebooks solr_parameters, user_parameters
+  self.solr_search_params_logic << :show_only_symphony
+
+  def show_only_symphony solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
-    solr_parameters[:fq] << "Book" # should be ebook in production
+    solr_parameters[:fq] << 'source:"Symphony"'
   end
 
   configure_blacklight do |config|
@@ -186,5 +186,4 @@ class EbooksController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
   end
-
 end 
