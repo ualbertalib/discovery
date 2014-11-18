@@ -20,17 +20,17 @@
     </div>
         <div class="results-wrap top-margin">
         	<div class="col-md-4 results">
-        		<h3>On the Shelf <a href="#">see all COUNT results</a></h3>
+            <h3>On the Shelf <a href="#">see all <%= @symphony_count %> results</a></h3>
         		<ul class="symphony">
-					<% @symphony.each do |symphony| %>
+					<% @symphony.each do |id,symphony| %>
 						<li><a href="#"> <%= symphony %></a></li>
 					<% end %>
 				</ul>
         	</div>
 			<div class="col-md-4 results" id="articles">
-				<h3>Articles <a href="#">see all 339,674 results</a></h3>       
+        <h3>Electronic Journals <a href="#">see all <%= @ejournals_count %> results</a></h3>       
 				<ul class="ejournals">
-					<% @ejournals.each do |ejournals| %>
+					<% @ejournals.each do |id,ejournals| %>
 						<li><a href="#"> <%= ejournals %></a></li>
 					<% end %>
 				</ul>
