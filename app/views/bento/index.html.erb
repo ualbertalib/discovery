@@ -1,55 +1,48 @@
-   <div class="container" id="search-results">
-    <div class="row results-head extra-top-margin">
-   
-        <div class="col-md-6"><h2> COUNT  Results for <em>QUERY</em></h2>
-
- <form class="form-inline" role="form">
-                  <div class="form-group">
-                   
+<div class="container" id="search-results">
+    <div class="row results-head top-margin">
+   		<div class="col-md-6"><h2> COUNT  Results for <em>QUERY</em></h2>
+			<form class="form-inline" role="form">
+            	<div class="form-group">   
                     <input type="text" class="form-control" placeholder="search again" name="search">
-                  </div>
-                  <button type="submit" class="btn btn-small">search</button>
-                </form>
-
-</div> 
+                </div>
+                <button type="submit" class="btn btn-small">search</button>
+            </form>
+		</div> 
         <div class="col-md-6 outlined">
-       <p>Were you looking for hours? You can talk to a subject librarian about your search...</p>
-   
-        
-       </div>
+       		<p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html">chat with us!</a></p>
+       	</div>
     </div>
-        <div class="results-wrap top-margin">
-        	<div class="col-md-4 results">
-            <h3>On the Shelf <a href="#">see all <%= @symphony_count %> results</a></h3>
-            <ul class="symphony">
-            <% i = 1%>
-					<% @symphony.each do |id,symphony| %>
-            <li><%= i %><a href="#"> <%= symphony %></a></li>
-            <% i+=1 %>
-					<% end %>
-				</ul>
-        	</div>
-			<div class="col-md-4 results" id="ejournals">
-        <h3>Electronic Journals <a href="#">see all <%= @ejournals_count %> results</a></h3>       
-        <ul class="ejournals">
-          <% i = 1 %>
-					<% @ejournals.each do |id,ejournals| %>
-            <li><%= i %><a href="#"> <%= ejournals %></a></li>
-            <% i+=1 %>
-					<% end %>
-				</ul>
-				<div class="results-bottom">
-					<a href="#" class="col-md-6 first">Next 5 results</a><a href="#" class="col-md-6">View all Articles</a>
-				</div>
+    <div class="results-wrap top-margin">
+    	<div class="col-md-4 results" id="shelves">
+            <h3>On the Shelves <a href="#">see all <%= @symphony_count %> results</a></h3>
+            <ul>
+            	<% i = 1%>
+				<% @symphony.each do |id,symphony| %>
+            		<li><%= i %>. <a href="#"> <%= symphony %></a></li>
+            		<% i+=1 %>
+				<% end %>
+			</ul>
+			<div class="results-bottom">
+				<a href="#" class="col-md-12">View all resources on the shelves</a>
 			</div>
-
-        <div class="col-md-4 results">
- <h3>Databases</h3>
- <ul class="database">
-          <% i = 1 %>
+        </div>
+		<div class="col-md-4 results" id="ejournals">
+        	<h3>Electronic Journals <a href="#">see all <%= @ejournals_count %> results</a></h3>       
+        	<ul>
+          		<% i = 1 %>
+				<% @ejournals.each do |id,ejournals| %>
+            		<li><%= i %>. <a href="#"> <%= ejournals %></a></li>
+            		<% i+=1 %>
+				<% end %>
+			</ul>
+			<div class="results-bottom"><a href="#" class="col-md-12">View all Electronic Journals</a></div>
+		</div>
+		<div class="col-md-4 results" id="databases">
+ 			<h3>Databases</h3>
+ 				<ul>        
 					<% @databases.each do |id,database| %>
-            <li><%= i%>. <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database %></a></li>
-            <% i+=1 %>
-					<% end %>
+            			<li><a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database %></a></li>
+          			<% end %>
 				</ul>
-			</div>
+			<div class="results-bottom"><a href="#" class="col-md-12">View all Databases</a></div>
+		</div>
