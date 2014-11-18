@@ -21,17 +21,21 @@
         <div class="results-wrap top-margin">
         	<div class="col-md-4 results">
             <h3>On the Shelf <a href="#">see all <%= @symphony_count %> results</a></h3>
-        		<ul class="symphony">
+            <ul class="symphony">
+            <% i = 1%>
 					<% @symphony.each do |id,symphony| %>
-						<li><a href="#"> <%= symphony %></a></li>
+            <li><%= i %><a href="#"> <%= symphony %></a></li>
+            <% i+=1 %>
 					<% end %>
 				</ul>
         	</div>
-			<div class="col-md-4 results" id="articles">
+			<div class="col-md-4 results" id="ejournals">
         <h3>Electronic Journals <a href="#">see all <%= @ejournals_count %> results</a></h3>       
-				<ul class="ejournals">
+        <ul class="ejournals">
+          <% i = 1 %>
 					<% @ejournals.each do |id,ejournals| %>
-						<li><a href="#"> <%= ejournals %></a></li>
+            <li><%= i %><a href="#"> <%= ejournals %></a></li>
+            <% i+=1 %>
 					<% end %>
 				</ul>
 				<div class="results-bottom">
@@ -41,9 +45,11 @@
 
         <div class="col-md-4 results">
  <h3>Databases</h3>
-				<ul class="database">
-					<% @databases.each_with_index do |database, i| %>
-						<li><%= i+1%>. <a href="#"> <%= database %></a></li>
+ <ul class="database">
+          <% i = 1 %>
+					<% @databases.each do |id,database| %>
+            <li><%= i%>. <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database %></a></li>
+            <% i+=1 %>
 					<% end %>
 				</ul>
 			</div>
