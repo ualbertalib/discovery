@@ -1,5 +1,49 @@
-<strong>Databases (<%= @database_count %>):</strong> <%= @databases %>
-<br /><br />
-<strong>Ejournals (<%= @ejournals_count %>):</strong> <%= @ejournals %>
-<br /><br />
-<strong>Symphony (<%= @symphony_count %>):</strong> <%= @symphony %>
+   <div class="container" id="search-results">
+    <div class="row results-head extra-top-margin">
+   
+        <div class="col-md-6"><h2> COUNT  Results for <em>QUERY</em></h2>
+
+ <form class="form-inline" role="form">
+                  <div class="form-group">
+                   
+                    <input type="text" class="form-control" placeholder="search again" name="search">
+                  </div>
+                  <button type="submit" class="btn btn-small">search</button>
+                </form>
+
+</div> 
+        <div class="col-md-6 outlined">
+       <p>Were you looking for hours? You can talk to a subject librarian about your search...</p>
+   
+        
+       </div>
+    </div>
+        <div class="results-wrap top-margin">
+        	<div class="col-md-4 results">
+        		<h3>On the Shelf <a href="#">see all COUNT results</a></h3>
+        		<ul class="symphony">
+					<% @symphony.each do |symphony| %>
+						<li><a href="#"> <%= symphony %></a></li>
+					<% end %>
+				</ul>
+        	</div>
+			<div class="col-md-4 results" id="articles">
+				<h3>Articles <a href="#">see all 339,674 results</a></h3>       
+				<ul class="ejournals">
+					<% @ejournals.each do |ejournals| %>
+						<li><a href="#"> <%= ejournals %></a></li>
+					<% end %>
+				</ul>
+				<div class="results-bottom">
+					<a href="#" class="col-md-6 first">Next 5 results</a><a href="#" class="col-md-6">View all Articles</a>
+				</div>
+			</div>
+
+        <div class="col-md-4 results">
+ <h3>Databases</h3>
+				<ul class="database">
+					<% @databases.each_with_index do |database, i| %>
+						<li><%= i+1%>. <a href="#"> <%= database %></a></li>
+					<% end %>
+				</ul>
+			</div>
