@@ -3,16 +3,17 @@ require "json"
 class BentoController < ApplicationController
 
   def index
-    @databases = populate_from DatabasesController
-    @ejournals = populate_from EjournalsController
-    @symphony = populate_from SymphonyController
+    @databases = populate({format: 'Database'})
+    @ejournals = populate({source: 'SFX'})
+    @symphony = populate({source: 'Symphony'})
   end
 
   private
 
-  def populate_from(controller)
+  def populate(criterion)
     documents = []
-    controller.new.find.documents.each do |db|
+    (@solr_response, @document_list) = CatalogController.new.get_search_results(:q => '', :f => criterion)
+    @document_list.each do |db|
       documents << db.as_json["title_display"]
     end
     documents
