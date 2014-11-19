@@ -22,8 +22,9 @@ class BentoController < ApplicationController
   private
 
   def populate(criterion)
+    @query = params[:q]
     documents = {}
-    (@solr_response, @document_list) = CatalogController.new.get_search_results(:q => '', :f => criterion)
+    (@solr_response, @document_list) = CatalogController.new.get_search_results(:q => @query, :f => criterion)
     documents["count"] = @solr_response["response"]["numFound"]
     @document_list.each do |db|
       documents[db.as_json["id"]] = db.as_json["title_display"]
