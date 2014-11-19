@@ -18,7 +18,7 @@
             <ul>
             	<% i = 1%>
 				<% @symphony.each do |id,symphony| %>
-            		<li><%= i %>. <a href="#"> <%= symphony %></a></li>
+            		<li><span><%= i %>.</span> <a href="#"> <%= symphony %></a></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
@@ -31,7 +31,7 @@
         	<ul>
           		<% i = 1 %>
 				<% @ejournals.each do |id,ejournals| %>
-            		<li><%= i %>. <a href="#"> <%= ejournals %></a></li>
+            		<li><span><%= i %>.</span> <a href="#"> <%= ejournals %></a></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>

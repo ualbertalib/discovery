@@ -35,7 +35,7 @@
 /*begin custom styles by Natasha Nunn at University of Alberta Libraries 2014*/
 body{
 	font-family: 'Abel', sans-serif;
-
+	font-size: 175%;
 }
 body.home{
 	padding-top: 330px;
@@ -56,7 +56,9 @@ h2{
 h2 span.small{
 	font-size: 70%;
 }
-
+h5{
+	font-size: 120%;
+}
 .top-margin{
 	margin-top: 10px;
 }
@@ -279,12 +281,13 @@ color: #fff;
 	border: 10px solid #fff;
 	border-width: 0 10px;
 	padding:0 20px;
+	background-color: #12321b;
 }
 #ejournals{
-	background-color: #666;
+	
 }
 #databases, #shelves{
-	background-color: #333;
+	
 }
 .results-head{
 	margin-left:-5px;
@@ -310,12 +313,10 @@ color: #fff;
 text-align: center;
 font-size: 18px;
 	padding: 5px;
-	background-color:#B2C6D1;
+	background-color:#dae5dd;
 	color: #000;
 }
-.results-bottom a.first{
-border-right: 10px solid #4C6F84; 
-	}
+
 .results h3 a:hover, .results-bottom a:hover{
 	background-color:#B2C6D1;
 	text-decoration: none;
@@ -332,11 +333,8 @@ border-right: 10px solid #4C6F84;
 	padding: 5px;
 	overflow: hidden;
 }
-.results span{
-	font-size: 11px;
-	font-weight: bold;
-	font-family: arial;
-	margin-left: -13px;
+.results li span{
+font-size: 12px;
 }
 .results span.date{
 	margin-left: 0;
@@ -404,6 +402,10 @@ border-right: 10px solid #4C6F84;
 	font-size: 17px;
 	font-weight: solid;
 }
+.results ul li a:hover{
+	text-decoration: none;
+	}
+
 .result-details{
 
 	margin-bottom: 0;
@@ -414,11 +416,14 @@ border-right: 10px solid #4C6F84;
 }
 .outlined{
 	border: solid 1px #d9e4ea; 
-	margin-top: 10px;
-	padding: 10px;
-	font-size: 17px;
+	margin-top: 15px;
+	padding: 15px;
+	font-size: 19px;
 	line-height: 28px;
-	text-align: right;
+	text-align: center;
+}
+.outlined>p{
+	margin-bottom: 0;
 }
 .outlined>p>a{
 	background-color: #4C6F84;
@@ -456,7 +461,8 @@ ul.foot-nav{
 	font-size: 17px;
 }
 #footer{
-	  background: url("../img/footer-bg.jpg") repeat-x;
+	  background: url("footer-bg.jpg") repeat-x;
+	  margin-top: 40px;
 }
 #footer p{
 	float: right;
