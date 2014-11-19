@@ -17,6 +17,8 @@ class BentoController < ApplicationController
     @symphony_count = symphony["count"]
     symphony.delete("count")
     @symphony = symphony
+
+    @complete_count = @symphony_count + @ejournals_count + @database_count
   end
 
   private
