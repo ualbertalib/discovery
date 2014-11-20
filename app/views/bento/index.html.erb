@@ -22,7 +22,7 @@
     	<div class="col-md-4 results" id="shelves">
             <h3>On the Shelves 
                 <% if @symphony_count>10 %>
-                    <a href="#">see all <%= @symphony_count %> results</a>
+                    <a href="/symphony?q=<%= @query %>">see all <%= @symphony_count %> results</a>
                 <% end %>
                 </h3>
             <ul>
@@ -34,14 +34,14 @@
 			</ul>
 			<div class="results-bottom">
                 <% if @symphony_count>10 %>
-				    <a href="#" class="col-md-12">View all resources on the shelves</a>
+				    <a href="/symphony?q=<%= @query %>" class="col-md-12">View all resources on the shelves</a>
                 <% end %>
 			</div>
         </div>
 		<div class="col-md-4 results" id="ejournals">
         	<h3>Electronic Journals 
                 <% if @ejournals_count>10 %>
-                    <a href="#">see all <%= @ejournals_count %> results</a>
+                    <a href="/ejournals?q=<%= @query %>">see all <%= @ejournals_count %> results</a>
                  <% end %>
             </h3>       
         	<ul>
@@ -52,13 +52,13 @@
 				<% end %>
 			</ul>
               <% if @ejournals_count>10 %>
-			<div class="results-bottom"><a href="#" class="col-md-12">View all Electronic Journals</a></div>
+			<div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-md-12">View all Electronic Journals</a></div>
              <% end %>
 		</div>
 		<div class="col-md-4 results" id="databases">
  			<h3>Databases
              <% if @database_count>10 %>
-                    <a href="#">see all <%= @database_count %> results</a>
+                    <a href="/database?q=<%= @query %>">see all <%= @database_count %> results</a>
                  <% end %>
              </h3>
  				<ul>       
@@ -69,6 +69,6 @@
                     <% end %>
 				</ul>
                  <% if @database_count>10 %>
-			         <div class="results-bottom"><a href="#" class="col-md-12">View all Databases</a></div>
+			         <div class="results-bottom"><a href="/database?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
                 <% end %>
 		</div>
