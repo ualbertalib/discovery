@@ -71,4 +71,9 @@
                  <% if @database_count>10 %>
 			         <div class="results-bottom"><a href="/database?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
                 <% end %>
-		</div>
+              </div>
+     <div class="col-md-4 results" id="articles">
+       <h3>Articles</h3>
+       <%= render "articles/search_results" %>
+
+    </div>

@@ -1,6 +1,8 @@
 require "json"
+require "blacklight/catalog"
 
 class BentoController < ApplicationController
+  include Blacklight::Catalog
 
   def index
     databases = populate({format: 'Database'})
