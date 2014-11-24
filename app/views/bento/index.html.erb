@@ -28,7 +28,7 @@
             <ul>
             	<% i = 1%>
 				<% @symphony.each do |id,symphony| %>
-            		<li><span><%= i %>.</span> <a href="#"> <%= symphony %></a></li>
+          <li><span><%= i %>.</span> <a href="#"> <%= symphony[:title] %> / <%= symphony[:author] %></a> (<%= symphony[:year].first %>) - <%= symphony[:call_number].first %></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
@@ -47,7 +47,7 @@
         	<ul>
           		<% i = 1 %>
 				<% @ejournals.each do |id,ejournals| %>
-            		<li><span><%= i %>.</span> <a href="#"> <%= ejournals %></a></li>
+          <li><span><%= i %>.</span> <a href="#"> <%= ejournals[:title] %></a></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
@@ -64,7 +64,7 @@
  				<ul>       
                     <% i = 1 %> 
 					<% @databases.each do |id,database| %>
-            			<li><span><%= i %>.</span> <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database %></a></li>
+            			<li><span><%= i %>.</span> <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database[:title] %></a></li>
           			   <% i+=1 %>
                     <% end %>
 				</ul>
