@@ -91,6 +91,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'published_display', :label => 'Published'
     config.add_index_field 'published_vern_display', :label => 'Published'
     config.add_index_field 'lc_callnum_display', :label => 'Call number'
+    config.add_index_field 'isbn_t', :label => 'ISBN'
+    config.add_index_field 'issn_t', :label => 'ISSN'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
@@ -108,6 +110,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'published_vern_display', :label => 'Published'
     config.add_show_field 'lc_callnum_display', :label => 'Call number'
     config.add_show_field 'isbn_t', :label => 'ISBN'
+    config.add_show_field 'issn_t', :label => 'ISSN'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

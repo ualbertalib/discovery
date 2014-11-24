@@ -34,7 +34,8 @@ class BentoController < ApplicationController
       metadata = {}
       metadata[:title] = db.as_json["title_display"]
       metadata[:author] = db.as_json["author_display"]
-      metadata[:isbn] = db.as_json["isbn"]
+      metadata[:isbn] = db.as_json["isbn_t"]
+      metadata[:issn] = db.as_json["issn_t"]
       metadata[:year] = db.as_json["pub_date"]
       metadata[:call_number] = db.as_json["lc_callnum_display"] # this isn't the correct field. Just a place holder for now
       #Symphony: location(s), call number(s), checked out or in: these depend on item

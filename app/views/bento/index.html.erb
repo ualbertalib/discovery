@@ -47,7 +47,7 @@
         	<ul>
           		<% i = 1 %>
 				<% @ejournals.each do |id,ejournals| %>
-          <li><span><%= i %>.</span> <a href="#"> <%= ejournals[:title] %></a></li>
+          <li><span><%= i %>.</span> <a href="#"> <%= ejournals[:title] %> (<%= ejournals[:issn].first %>)</a></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
