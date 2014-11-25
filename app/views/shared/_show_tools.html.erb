@@ -50,6 +50,7 @@
     <% end %>
     <li><%= link_to "Place Hold", "https://myaccount.library.ualberta.ca/index.php?hldCatKey=#{@document.id}" %></li>
     <li><a href="/bookmarks">Bookmarks</a></li>
+    <li><%= link_to 'More options', advanced_search_path(params), :class=>'advanced_search'%></li>
   </ul>
 </div>
 </div>
