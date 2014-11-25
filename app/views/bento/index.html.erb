@@ -1,0 +1,79 @@
+<div class="container" id="search-results">
+    <div class="row results-head top-margin">
+   		<div class="col-md-6"><h2> 
+            <% if @query =='' %>
+                All Records
+            <% else %>
+                <%= @complete_count %>  results for <em><%= @query %></em>
+            <% end %>
+        </h2>
+			<form class="form-inline" role="form">
+            	<div class="form-group">   
+                    <input type="text" class="form-control" placeholder="search again" name="q">
+                </div>
+                <button type="submit" class="btn btn-small">search</button>
+            </form>
+		</div> 
+        <div class="col-md-6 outlined">
+       		<p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html">chat with us!</a></p>
+       	</div>
+    </div>
+    <div class="results-wrap top-margin">
+    	<div class="col-md-4 results" id="shelves">
+            <h3>On the Shelves 
+                <% if @symphony_count>10 %>
+                    <a href="/symphony?q=<%= @query %>">see all <%= @symphony_count %> results</a>
+                <% end %>
+                </h3>
+            <ul>
+            	<% i = 1%>
+				<% @symphony.each do |id,symphony| %>
+          <li><span><%= i %>.</span> <a href="#"> <%= symphony[:title] %> / <%= symphony[:author] %></a> (<%= symphony[:year].first %>) - <%= symphony[:call_number].first %></li>
+            		<% i+=1 %>
+				<% end %>
+			</ul>
+			<div class="results-bottom">
+                <% if @symphony_count>10 %>
+				    <a href="/symphony?q=<%= @query %>" class="col-md-12">View all resources on the shelves</a>
+                <% end %>
+			</div>
+        </div>
+		<div class="col-md-4 results" id="ejournals">
+        	<h3>Electronic Journals 
+                <% if @ejournals_count>10 %>
+                    <a href="/ejournals?q=<%= @query %>">see all <%= @ejournals_count %> results</a>
+                 <% end %>
+            </h3>       
+        	<ul>
+          		<% i = 1 %>
+				<% @ejournals.each do |id,ejournals| %>
+          <li><span><%= i %>.</span> <a href="#"> <%= ejournals[:title] %> (<%= ejournals[:issn].first %>)</a></li>
+            		<% i+=1 %>
+				<% end %>
+			</ul>
+              <% if @ejournals_count>10 %>
+			<div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-md-12">View all Electronic Journals</a></div>
+             <% end %>
+		</div>
+		<div class="col-md-4 results" id="databases">
+ 			<h3>Databases
+             <% if @database_count>10 %>
+                    <a href="/database?q=<%= @query %>">see all <%= @database_count %> results</a>
+                 <% end %>
+             </h3>
+ 				<ul>       
+                    <% i = 1 %> 
+					<% @databases.each do |id,database| %>
+            			<li><span><%= i %>.</span> <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database[:title] %></a></li>
+          			   <% i+=1 %>
+                    <% end %>
+				</ul>
+                 <% if @database_count>10 %>
+			         <div class="results-bottom"><a href="/database?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
+                <% end %>
+              </div>
+     <div class="col-md-4 results" id="articles">
+       <h3>Articles</h3>
+       <%= render "articles/search_results" %>
+
+    </div>

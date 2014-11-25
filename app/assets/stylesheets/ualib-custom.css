@@ -1,3 +1,20 @@
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+	height: 100%;
+	margin: 0 auto -124px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+	height: 124px; /* .push must be the same height as .footer */
+}
+
+
 /*used to create 5 column layout - from http://www.wearesicc.com/quick-tips-5-column-layout-with-twitter-bootstrap/ */
 .col-xs-15,
 .col-sm-15,
@@ -35,7 +52,7 @@
 /*begin custom styles by Natasha Nunn at University of Alberta Libraries 2014*/
 body{
 	font-family: 'Abel', sans-serif;
-
+	font-size: 175%;
 }
 body.home{
 	padding-top: 330px;
@@ -56,7 +73,9 @@ h2{
 h2 span.small{
 	font-size: 70%;
 }
-
+h5{
+	font-size: 120%;
+}
 .top-margin{
 	margin-top: 10px;
 }
@@ -259,7 +278,14 @@ background-color: #fffef2;
      make sure you have an empty gif */
   background-image: url('empty.gif');
 }   
-
+.btn-small {
+background-color: #1b460c;
+color: #efefef;
+}
+.btn-small:hover {
+background-color: #0d2f10;
+color: #fff;
+}
 .all{
 	text-align: right;
 	padding: 8px 10px 0 10px;
@@ -269,18 +295,24 @@ background-color: #fffef2;
 	font-size: 12px;
 }
 .results{
-	background-color: #4C6F84;
 	border: 10px solid #fff;
 	border-width: 0 10px;
 	padding:0 20px;
+	background-color: #eceef3;
+}
+#ejournals{
+	
+}
+#databases, #shelves{
+	
 }
 .results-head{
 	margin-left:-5px;
 	margin-right: 10px;
 }
 .results h3{
-	color: #fff;
-	font-size: 24px;
+	color: #000;
+	font-size: 22px;
 }
 .results h3 a{
 	font-size: 15px;
@@ -298,14 +330,12 @@ background-color: #fffef2;
 text-align: center;
 font-size: 18px;
 	padding: 5px;
-	background-color: #fff;
-	color: #4C6F84;
-}
-.results-bottom a.first{
-border-right: 10px solid #4C6F84; 
-	}
-.results h3 a:hover, .results-bottom a:hover{
 	background-color:#B2C6D1;
+	color: #000;
+}
+
+.results h3 a:hover, .results-bottom a:hover{
+	background-color:#d1dde4;
 	text-decoration: none;
 	color: #000;
 }
@@ -320,11 +350,8 @@ border-right: 10px solid #4C6F84;
 	padding: 5px;
 	overflow: hidden;
 }
-.results span{
-	font-size: 11px;
-	font-weight: bold;
-	font-family: arial;
-	margin-left: -13px;
+.results li span{
+font-size: 12px;
 }
 .results span.date{
 	margin-left: 0;
@@ -392,6 +419,10 @@ border-right: 10px solid #4C6F84;
 	font-size: 17px;
 	font-weight: solid;
 }
+.results ul li a:hover{
+	text-decoration: none;
+	}
+
 .result-details{
 
 	margin-bottom: 0;
@@ -402,8 +433,28 @@ border-right: 10px solid #4C6F84;
 }
 .outlined{
 	border: solid 1px #d9e4ea; 
-	margin-top: 10px;
-	padding: 10px;
+	margin-top: 15px;
+	padding: 15px;
+	font-size: 19px;
+	line-height: 28px;
+	text-align: center;
+}
+.outlined>p{
+	margin-bottom: 0;
+}
+.outlined>p>a{
+	background-color: #4C6F84;
+	display: inline-block;
+	padding: 3px 10px;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	margin-left:10px;
+	border-radius: 4px;
+}
+.outlined>p>a:hover{
+	background-color:#4d82a1;
+	text-decoration: none;
 }
 #search-results .form-inline .form-control {
 	width: 200px;
@@ -428,7 +479,8 @@ ul.foot-nav{
 	font-size: 17px;
 }
 #footer{
-	  background: url("../img/footer-bg.jpg") repeat-x;
+	  background: url("footer-bg.jpg") repeat-x;
+	  margin-top: 30px;
 }
 #footer p{
 	float: right;

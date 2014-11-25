@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><OAI-PMH xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd" xmlns:ex="http://exslt.org/dates-and-times" xmlns:exslt="http://exslt.org/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.openarchives.org/OAI/2.0/">
+
+<record>
+<header>
+<identifier>http://wayback.archive-it.org/2901/*/http://www.woodbuffalo.ab.ca</identifier>
+<datestamp>2013-02-14T23:28:13Z</datestamp>
+<setSpec>collection:2901</setSpec>
+</header>
+<metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:database="http://www.oclc.org/pears/" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Regional Municipality of Wood Buffalo</dc:title>
+<dc:creator>Regional Municipality of Wood Buffalo</dc:creator>
+<dc:subject>municipal government</dc:subject>
+<dc:subject>government services</dc:subject>
+<dc:subject>news</dc:subject>
+<dc:subject>elections</dc:subject>
+<dc:subject>events</dc:subject>
+<dc:subject>recreation</dc:subject>
+<dc:subject>employment</dc:subject>
+<dc:description>Website describing the communities, activities and services of the Municipality of Wood Buffalo in Alberta.</dc:description>
+<dc:coverage>Canada--Alberta--Wood Buffalo</dc:coverage>
+<dc:coverage>Canada--Alberta--Anzac</dc:coverage>
+<dc:coverage>Canada--Alberta--Conklin</dc:coverage>
+<dc:coverage>Canada--Alberta--Draper</dc:coverage>
+<dc:coverage>Canada--Alberta--Fort Chipewyan</dc:coverage>
+<dc:coverage>Canada--Alberta--Fort Fitzgerald</dc:coverage>
+<dc:coverage>Canada--Alberta--Fort MacKay</dc:coverage>
+<dc:coverage>Canada--Alberta--Fort McMurray</dc:coverage>
+<dc:coverage>Canada--Alberta--Gregoire Lake Estates</dc:coverage>
+<dc:coverage>Canada--Alberta--Janvier</dc:coverage>
+<dc:coverage>Canada--Alberta--Saprae Creek Estates</dc:coverage>
+<dc:language>English</dc:language>
+<dc:identifier>http://wayback.archive-it.org/2901/*/http://www.woodbuffalo.ab.ca</dc:identifier>
+</oai_dc:dc>
+</metadata>
+</record>

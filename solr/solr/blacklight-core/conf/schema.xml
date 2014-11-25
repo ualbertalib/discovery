@@ -505,7 +505,7 @@
    
    <!-- these display fields are NOT multi-valued -->
    <field name="marc_display" type="string" indexed="false" stored="true" multiValued="false"/>
-   <field name="title_display" type="string" indexed="false" stored="true" multiValued="false"/>
+   <field name="title_display" type="string" indexed="true" stored="true" multiValued="false"/>
    <field name="title_vern_display" type="string" indexed="false" stored="true" multiValued="false"/>
    <field name="subtitle_display" type="string" indexed="false" stored="true" multiValued="false"/>
    <field name="subtitle_vern_display" type="string" indexed="false" stored="true" multiValued="false"/>
@@ -526,7 +526,8 @@
      
    <!-- format is used for facet, display, and choosing which partial to use for the show view, so it must be stored and indexed -->
    <field name="format" type="string" indexed="true" stored="true" multiValued="true"/>
-
+   <!-- source is used to determine the data source of the record -->
+   <field name="source" type="string" indexed="true" stored="true" multiValued="true"/>
    
 
     <!-- NOTE:  not all possible Solr field types are represented in the dynamic fields -->
@@ -728,6 +729,7 @@
         
    <!-- unstemmed fields -->
    <copyField source="title_t" dest="title_unstem_search"/>
+   <copyField source="title_display" dest="title_unstem_search"/>
    <copyField source="subtitle_t" dest="subtitle_unstem_search"/>
    <copyField source="title_addl_t" dest="title_addl_unstem_search"/>
    <copyField source="title_added_entry_t" dest="title_added_entry_unstem_search"/>
@@ -740,6 +742,7 @@
    <copyField source="type_tesim" dest="format"/>
    <copyField source="resource_type_tesim" dest="format"/>
    <copyField source="title_tesim" dest="title_display"/>
+   <copyField source="source_tesim" dest="source"/>
    
    <!-- sort fields -->
    <copyField source="pub_date" dest="pub_date_sort"/>

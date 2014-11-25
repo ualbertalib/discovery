@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><OAI-PMH xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd" xmlns:ex="http://exslt.org/dates-and-times" xmlns:exslt="http://exslt.org/common" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.openarchives.org/OAI/2.0/">
+
+<record>
+<header>
+<identifier>http://wayback.archive-it.org/2901/*/http://www1.agric.gov.ab.ca/</identifier>
+<datestamp>2013-02-14T23:28:13Z</datestamp>
+<setSpec>collection:2901</setSpec>
+</header>
+<metadata>
+<oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:database="http://www.oclc.org/pears/" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title>Alberta Agriculture and Rural Development</dc:title>
+<dc:creator>Alberta Agriculture and Rural Development (ARD)</dc:creator>
+<dc:subject>agriculture</dc:subject>
+<dc:subject>agri-food products</dc:subject>
+<dc:subject>pest management</dc:subject>
+<dc:subject>farming</dc:subject>
+<dc:subject>4-H</dc:subject>
+<dc:subject>livestock</dc:subject>
+<dc:subject>crops</dc:subject>
+<dc:subject>agricultural aid programs</dc:subject>
+<dc:subject>farmers</dc:subject>
+<dc:subject>land management</dc:subject>
+<dc:subject>water management</dc:subject>
+<dc:subject>research</dc:subject>
+<dc:subject>regulations</dc:subject>
+<dc:description>The Ministry's core businesses are to: Facilitate sustainable industry growth; enhance rural sustainability; and strengthen business risk management. The Department is responsible for the management of programs designed to facilitate the development of all components of the agriculture and food industry, to sustain the natural resource base of the industry and to encourage the development of rural communities.</dc:description>
+<dc:coverage>Canada--Alberta</dc:coverage>
+<dc:language>English</dc:language>
+<dc:identifier>http://wayback.archive-it.org/2901/*/http://www1.agric.gov.ab.ca/</dc:identifier>
+</oai_dc:dc>
+</metadata>
+</record>

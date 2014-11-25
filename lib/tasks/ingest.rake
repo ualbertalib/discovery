@@ -50,7 +50,10 @@ def configure batch_ingester
 end
 
 def ingest_marc
+  puts @c.path
+  puts @c.config
   ENV['MARC_FILE'] = @c.path
+  ENV['CONFIG_PATH'] = @c.config
   Rake::Task["solr:marc:index"].invoke
 end
 

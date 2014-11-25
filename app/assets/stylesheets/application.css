@@ -13,4 +13,7 @@
  *= require_tree .
  *= require_self
  *= require_ualib-custom
- */
+ 
+ *= require 'blacklight_advanced_search'
+
+*/

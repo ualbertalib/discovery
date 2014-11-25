@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => "catalog#index"
-  
-  blacklight_for :catalog, :ebooks, :databases
+
+  blacklight_for :catalog, :ejournals, :databases, :symphony
   Blacklight::Marc.add_routes(self)
   devise_for :users
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }
   get "articles/switch", to: "articles#recordSwitch"
 
-
+  get "/results", to: "bento#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

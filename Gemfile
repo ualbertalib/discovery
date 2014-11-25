@@ -52,3 +52,5 @@ gem "activerecord-session_store"
 
 gem "factory_girl", "~> 4.0", group: [:test, :development]
 gem "rspec"
+
+gem "blacklight_advanced_search"

@@ -1,0 +1,71 @@
+solr: http://localhost:8983/solr
+
+collections: ["peel", "sfx", "symphony", "maps", "era", "databases", "cihm", "sfx_test", "era_test"]
+
+era:
+   schema: dublin_core
+   root: "//xmlns:OAI-PMH"
+   delimiter: "//xmlns:record"
+   namespace: '{"xmlns" => "http://www.openarchives.org/OAI/2.0/"}'
+   vocabulary: DublinCoreVocabulary
+   endpoint: "http://era.library.ualberta.ca/oaiprovider/?verb=ListRecords&metadataPrefix=oai_dc"
+   mode: file
+   path: "data/era.xml"
+
+era_test:
+   schema: dublin_core
+   root: "//xmlns:OAI_PMH"
+   delimiter: "//xmlns:record"
+   namespace: '{"xmlns" => "http://www.openarchives.org/OAI/2.0/"}'
+   vocabulary: DublinCoreVocabulary
+   mode: file
+   path: "data/era.xml"
+
+peel:
+  schema: mods
+  root: "//xmlns:mods"
+  delimiter: "//xmlns:mods"
+  namespace: '{"xmlns" => "http://www.loc.gov/mods/v3"}'
+  vocabulary: PeelModsVocabulary
+  mode: directory
+  path: "data/peel_mods_xml/"
+
+sfx:
+  schema: marc
+  endpoint: "http://resolver.library.ualberta.ca/sfx2sirsi/data/sfxdata.xml"
+  path: "data/sfx.xml"
+
+sfx_test:
+  schema: marc
+  path: "data/sfx.xml"
+
+symphony:
+  schema: marc
+  path: "data/sample.mrc"
+
+maps:
+  schema: marc
+  path: "data/maps.xml"
+
+cihm:
+  schema: marc
+  path: "data/cihm.mrc"
+
+curriculum:
+  schema: mods
+  root: "//mods:modsCollection"
+  delimiter: "//mods:mods"
+  namespace: '{"mods" => "http://www.loc.gov/mods/v3"}'
+  vocabulary: CurriculumModsVocabulary
+  mode: file
+  path: "data/curriculummods.xml"
+
+databases:
+  schema: database
+  root: "//databases"
+  delimiter: "//database"
+  namespace: ""
+  vocabulary: DatabaseVocabulary
+  mode: directory
+  path: "data/databases"
+  database_csv: "data/databases.csv"
