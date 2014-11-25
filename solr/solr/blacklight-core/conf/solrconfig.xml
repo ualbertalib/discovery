@@ -86,8 +86,10 @@
             http://wiki.apache.org/solr/LocalParams
        -->
 
+
        <str name="qf">
          title_unstem_search^100000
+         title_display^100000
          subtitle_unstem_search^50000
          title_t^25000
          subtitle_t^10000
@@ -114,6 +116,7 @@
        </str>
        <str name="pf">
          title_unstem_search^1000000
+         title_display^1000000
          subtitle_unstem_search^500000
          title_t^250000
          subtitle_t^100000
@@ -152,6 +155,7 @@
        </str>
        <str name="title_qf">
          title_unstem_search^50000
+         title_display^50000
          subtitle_unstem_search^25000
          title_addl_unstem_search^10000
          title_t^5000
@@ -165,6 +169,7 @@
        </str>
        <str name="title_pf">
          title_unstem_search^500000
+         title_display^500000
          subtitle_unstem_search^250000
          title_addl_unstem_search^100000
          title_t^50000
@@ -195,7 +200,6 @@
        
        <int name="ps">3</int>
        <float name="tie">0.01</float>
-
        <!-- NOT using marc_display because it is large and will slow things down for search results -->
        <str name="fl">
          id, 
