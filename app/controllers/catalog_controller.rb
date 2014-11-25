@@ -1,10 +1,14 @@
 # -*- encoding : utf-8 -*-
-#
-
 class CatalogController < ApplicationController
   include Blacklight::Marc::Catalog
 
   include Blacklight::Catalog
+
+  self.solr_search_params_logic << :show_only
+
+  def show_only solr_parameters, user_parameters
+    solr_parameters[:fq] ||= []
+  end
 
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
@@ -184,4 +188,5 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
   end
+
 end 

@@ -43,7 +43,7 @@ class BentoController < ApplicationController
       #Ejournals: coverage statement
       #Articles: full text?, Link to PDF, Year of publication - not sure
       #these are possible. Depends on EDS API
-
+      puts metadata
       documents[db.as_json["id"]] = metadata
     end
     documents
