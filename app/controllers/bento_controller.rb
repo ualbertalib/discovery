@@ -22,7 +22,7 @@ class BentoController < ApplicationController
     symphony.delete("count")
     @symphony = symphony
 
-    eds = populate("Articles", {})
+    eds = populate("Articles" {}) #, {format: 'Serial'})
     @eds_count = eds["count"]
     eds.delete("count")
     @eds = eds
