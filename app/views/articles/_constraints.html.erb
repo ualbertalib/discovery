@@ -1,0 +1,10 @@
+<% if query_has_facetfilters? %>
+      <div id="appliedParams" class="constraints-container">
+        <span class="constraints-label">Current filters: </span>
+  
+        <%=link_to t('blacklight.search.start_over'), url_for(:action=>'index'), :class => "catalog_startOverLink", :id=>"startOverLink" %>
+        <%= show_applied_limiters %>
+        <%= show_applied_facets %>  
+
+      </div>
+<% end %>
