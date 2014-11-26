@@ -69,14 +69,13 @@ class BentoController < ApplicationController
     session[:current_url] = request.original_url
     eds_connect
     if has_search_parameters? then
-      options = generate_api_query(params)
       clean_params = deep_clean(params)
       params = clean_params
+      options = generate_api_query(params)
     end
 
-    unless params[:fromDetail] == 'y' and session[:results] then
-      search(options)
-    end
+    search(options)
+
     documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
     @complete_count += documents["count"]
     results = session[:results]['SearchResult']['Data']['Records']
