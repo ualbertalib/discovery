@@ -28,7 +28,7 @@
             <ul>
             	<% i = 1%>
 				<% @symphony.each do |id,symphony| %>
-          <li><span><%= i %>.</span> <a href="#"> <%= symphony[:title] %> / <%= symphony[:author] %></a> (<%= symphony[:year].first %>) - <%= symphony[:call_number].first %></li>
+          <li><span><%= i %>.</span> <a href="#"> <%= symphony[:title] %> / <%= symphony[:author] %></a> (<%= symphony[:year].first if symphony[:year]%>) - <%= symphony[:call_number].first if symphony[:call_number]%></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
