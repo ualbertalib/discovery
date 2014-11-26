@@ -47,7 +47,7 @@
         	<ul>
           		<% i = 1 %>
 				<% @ejournals.each do |id,ejournals| %>
-          <li><span><%= i %>.</span> <a href="#"> <%= ejournals[:title] %> (<%= ejournals[:issn].first %>)</a></li>
+          <li><span><%= i %>.</span> <a href="#"> <%= ejournals[:title] %> (<%= ejournals[:issn].first if ejournals[:issn] %>)</a></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
@@ -72,8 +72,23 @@
 			         <div class="results-bottom"><a href="/database?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
                 <% end %>
               </div>
-     <div class="col-md-4 results" id="articles">
-       <h3>Articles</h3>
-       <%= render "articles/search_results" %>
+      </div>
 
-    </div>
+      <div class="col-md-4 results" id="articles"> 
+        <h3>Articles</h3> 
+        <% if @eds_count>10 %>
+        <a href="/articles?q=<%= @query %>">see all <%= @eds_count %> results</a> 
+       <% end %>
+       </h3> 
+ 		   <ul> 
+       <% i = 1 %>
+		  <% @eds.each do |id,eds| %> 
+        <li><span><%= i %>.</span> <a href="#"><em><%= eds[:title] %> <%= ': '+ eds[:subtitle] if eds[:subtitle] %></em>, <%= eds[:author] %> (<%= eds[:year].first if eds[:year] %>)</a></li>
+      			   <% i+=1 %> 
+              <% end %> 
+		 	</ul>
+            <% if @eds_count>10 %> 
+		         <div class="results&#38;#45;bottom"><a href="/articles?q=<%= @query %>" class="col&#38;#45;md&#38;#45;12">View all Databases</a></div> 
+               <% end %> 
+              </div> 
+            </div>
