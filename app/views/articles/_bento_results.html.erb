@@ -1,0 +1,26 @@
+    <% unless has_search_parameters? %>
+    <p>Empty Search.</p>
+
+    <% else %>
+    
+      <% if session[:results]['SearchResult']['Data']['Records'].present? %>
+ <ul>
+    <% session[:results]['SearchResult']['Data']['Records'].each do |result| %>
+  <% if has_restricted_access?(result) %>
+    <li><span><%= show_resultid(result) %>. This result cannot be shown to guests.  <%= link_to "Please log in to see this result.", show_detail_link(result, show_resultid(result), params[:q]) %>
+  <% else %>
+    <li><span><%= show_resultid(result) %>. <%= link_to show_title(result), show_detail_link(result, show_resultid(result), params[:q]) %>
+  <% end %>
+<% unless has_restricted_access?(result) %>
+
+  <% if (show_view_option == 'brief' or show_view_option == 'detailed') and has_authors?(result) %>
+  <%= show_authors(result) %>
+  <% end %>
+
+<% end %>
+    
+    <% end %>
+  </span></li>
+  </ul>
+  <% end %>
+  <% end %>

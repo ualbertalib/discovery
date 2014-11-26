@@ -3,39 +3,41 @@ require "blacklight/catalog"
 
 class BentoController < ApplicationController
   include Blacklight::Catalog
+  include ArticlesHelper
+  include ERB::Util
 
   def index
     @complete_count = 0
 
-    databases = populate("Catalog", {format: 'Database'})
+    eds = get_eds_results
+    @eds_count = eds["count"]
+    eds.delete("count")
+    @eds = eds
+
+    databases = populate(CatalogController, {format: 'Database'})
     @database_count = databases["count"]
     databases.delete("count")
     @databases = databases
 
-    ejournals = populate("Catalog", {source: 'SFX'})
+    ejournals = populate(CatalogController, {source: 'SFX'})
     @ejournals_count = ejournals["count"]
     ejournals.delete("count")
     @ejournals = ejournals
 
-    symphony = populate("Catalog", {source: 'Symphony'})
+    symphony = populate(CatalogController, {source: 'Symphony'})
     @symphony_count = symphony["count"]
     symphony.delete("count")
     @symphony = symphony
 
-    eds = populate("Articles" {}) #, {format: 'Serial'})
-    @eds_count = eds["count"]
-    eds.delete("count")
-    @eds = eds
     
   end
 
   private
 
-  def populate(controller_name, criterion)
-    controller = (controller_name+"Controller").constantize
+  def populate(controller, facet)
     @query = params[:q]
     documents = {}
-    (@solr_response, @document_list) = controller.new.get_search_results(:q => @query, :f => criterion)
+    (@solr_response, @document_list) = controller.new.get_search_results(:q => @query, :f => facet)
     documents["count"] = @solr_response["response"]["numFound"]
     @complete_count += documents["count"]
     @document_list.each do |doc|
@@ -60,5 +62,37 @@ class BentoController < ApplicationController
       #Articles: full text?, Link to PDF, Year of publication - not sure
       #these are possible. Depends on EDS API
       metadata
+  end
+
+  def get_eds_results
+    documents = {}
+    session[:current_url] = request.original_url
+    eds_connect
+    if has_search_parameters? then
+      options = generate_api_query(params)
+      clean_params = deep_clean(params)
+      params = clean_params
+    end
+
+    unless params[:fromDetail] == 'y' and session[:results] then
+      search(options)
+    end
+    documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
+    @complete_count += documents["count"]
+    results = session[:results]['SearchResult']['Data']['Records']
+    results.each do |result|
+      metadata = {}
+      if has_restricted_access?(result) then
+        metadata[:title] = "This result cannot be shown to guests."
+      else
+        metadata[:title] = show_title(result)
+      end
+      metadata[:author] = show_authors(result) if has_authors?(result)
+      metadata[:url] = result["PLink"]
+      metadata[:format] = show_pubtype(result) if has_pubtype?(result)
+      documents[show_pubtypeid(result)] = metadata
+    end
+    #session[:results]
+    documents
   end
 end
