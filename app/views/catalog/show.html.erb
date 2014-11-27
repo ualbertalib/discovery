@@ -13,6 +13,7 @@
     <% # bookmark/folder functions -%>
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
+    <% unless @holdings.empty? %>
     <div id = "holdings">
       <table>
         <tr><td>Call Number</td><td>Copies</td><td>Status</td><td>Location</td></tr>
@@ -24,7 +25,8 @@
             <td><%= item[:location] %></td></tr>
         <% end %>
         </table>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
