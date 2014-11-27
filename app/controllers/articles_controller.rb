@@ -1,9 +1,9 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
 
-class ArticlesController < ApplicationController  
+class ArticlesController < ApplicationController
   #before_filter :authenticate_user!
 
-  include Blacklight::Catalog
+ include Blacklight::Catalog
   
 end 

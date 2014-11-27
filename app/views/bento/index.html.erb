@@ -28,7 +28,7 @@
             <ul>
             	<% i = 1%>
 				<% @symphony.each do |id,symphony| %>
-          <li><span><%= i %>.</span> <a href="#"> <%= symphony[:title] %> / <%= symphony[:author] %></a> (<%= symphony[:year].first %>) - <%= symphony[:call_number].first %></li>
+          <li><span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %> / <%= symphony[:author] %></a> (<%= symphony[:year].first if symphony[:year]%>) - <%= symphony[:call_number].first if symphony[:call_number]%></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
@@ -47,7 +47,7 @@
         	<ul>
           		<% i = 1 %>
 				<% @ejournals.each do |id,ejournals| %>
-          <li><span><%= i %>.</span> <a href="#"> <%= ejournals[:title] %> (<%= ejournals[:issn].first %>)</a></li>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ejournals[:title] %> (<%= ejournals[:issn].first if ejournals[:issn] %>)</a></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
@@ -72,8 +72,23 @@
 			         <div class="results-bottom"><a href="/database?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
                 <% end %>
               </div>
-     <div class="col-md-4 results" id="articles">
-       <h3>Articles</h3>
-       <%= render "articles/search_results" %>
+      </div>
 
-    </div>
+      <div class="col-md-4 results" id="articles"> 
+        <h3>Articles</h3> 
+             <% if @eds_count>10 %>
+                    <a href="/articles?q=<%= @query %>">see all <%= @eds_count %> results</a>
+                 <% end %>
+             </h3>
+ 				<ul>       
+                    <% i = 1 %> 
+					<% @eds.each do |id,article| %>
+            <li><span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> / <%= article[:author] %></a> (<%= article[:format] %>)</li>
+          			   <% i+=1 %>
+                    <% end %>
+				</ul>
+                 <% if @eds_count>10 %>
+			         <div class="results-bottom"><a href="/articles?q=<%= @query %>" class="col-md-12">View all Articles</a></div>
+                <% end %>
+              </div>
+            </div>
