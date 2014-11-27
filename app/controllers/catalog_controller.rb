@@ -10,6 +10,35 @@ class CatalogController < ApplicationController
     solr_parameters[:fq] ||= []
   end
 
+  def show
+    super
+    @holdings = []
+    if @document["source"]
+      @holdings = fetch_symphony_holdings(@document) if @document["source"].first == "Symphony"
+    end
+  end
+
+  def fetch_symphony_holdings(document)
+    items = []
+    doc = Nokogiri::XML(document['marc_display']).remove_namespaces!
+    holdings = []
+    holdings = doc.xpath("//datafield[@tag='926']")
+    holdings.each do |item|
+      item_data = {}
+      item_data[:call_number] = item.xpath("subfield[@code='a']").text
+      item_data[:copies] = item.xpath("subfield[@code='c']").text
+      item_data[:status] = item.xpath("subfield[@code='l']").text
+      item_data[:location] = item.xpath("subfield[@code='m']").text
+      items << item_data
+    end
+    items
+  end
+
+  def fetch_sfx_holdings
+  end
+
+
+
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
 
