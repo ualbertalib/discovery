@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+require "open-uri"
+
 class CatalogController < ApplicationController
   include Blacklight::Marc::Catalog
 
@@ -15,6 +17,7 @@ class CatalogController < ApplicationController
     @holdings = []
     if @document["source"]
       @holdings = fetch_symphony_holdings(@document) if @document["source"].first == "Symphony"
+      @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
     end
   end
 
@@ -34,7 +37,24 @@ class CatalogController < ApplicationController
     items
   end
 
-  def fetch_sfx_holdings
+  def fetch_sfx_holdings(document)
+    doc = Nokogiri::XML(document['marc_display']).remove_namespaces!
+    targets = {}
+    raw_targets = doc.xpath("//datafield[@tag='866']")
+    raw_targets.each do |target|
+      coverage = target.xpath("subfield[@code='a']").text
+      id = BigDecimal.new(target.xpath("subfield[@code='s']").text).to_i
+      targets[id] = {id: id, coverage: coverage}
+    end
+    xml_response = Nokogiri::XML(open("http://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&ctx_ver=Z39.88-2004&rfr_id=info%3Asid%2Fualberta.ca%3Aopac&rft.genre=journal&rft.object_id=#{document.id}&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&url_ver=Z39.88-2004&sfx.response_type=simplexml").read)
+    xml_response.xpath("//target").each do |target|
+      id = BigDecimal.new(target.xpath("target_service_id").text).to_i
+      unless (target.xpath("target_name").text == "LOCAL_CATALOGUE_SIRSI_UNICORN") || (target.xpath("target_name").text == "MESSAGE_NO_DOCDEL_LCL")
+        targets[id].merge!({name: target.xpath("target_public_name").text})
+        targets[id].merge!({url: target.xpath("target_url").text})
+      end
+    end
+    targets
   end
 
 

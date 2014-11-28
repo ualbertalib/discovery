@@ -14,7 +14,8 @@
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
     <% unless @holdings.empty? %>
-    <div id = "holdings">
+      <div id = "holdings">
+        <% if @document["source"].first == "Symphony"  %>
       <table>
         <tr><td>Call Number</td><td>Copies</td><td>Status</td><td>Location</td></tr>
         <tr>
@@ -24,7 +25,20 @@
             <td><%= item[:status] %></td>
             <td><%= item[:location] %></td></tr>
         <% end %>
-        </table>
+      </table>
+    <% end %>
+        <% if @document["source"].first == "SFX"  %>
+      <table>
+        <tr><td>Subscription</td><td>Coverage</td></tr>
+            <tr>
+              <% for item in @holdings %> 
+            <td><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
+            <td><%= item[1][:coverage] %> </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+
       </div>
     <% end %>
 
