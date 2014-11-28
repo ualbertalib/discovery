@@ -13,6 +13,25 @@
     <% # bookmark/folder functions -%>
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
+    <% unless @urls.empty? && @alternative_urls.empty? %>
+
+      <div id ="electronic_access">
+        <h3>URL:</h3>
+      <% unless @urls.empty? %>
+          <% @urls.each do |url| %>
+            <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %></a>
+          <% end %>
+        <% end %>
+        <% if (@urls.empty?) && (!@alternative_urls.empty?) %>
+          <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
+          <% @alternative_urls.each do |url| %>
+            <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %></a>
+          <% end %>
+
+        <% end %>
+      </div>
+    <% end %>
+
     <% unless @holdings.empty? %>
       <div id = "holdings">
         <% if @document["source"].first == "Symphony"  %>

@@ -19,6 +19,26 @@ class CatalogController < ApplicationController
       @holdings = fetch_symphony_holdings(@document) if @document["source"].first == "Symphony"
       @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
     end
+
+    if @document["url_fulltext_display"]
+      create_ua_links(@document)
+    end
+  end
+
+  def create_ua_links(document)
+     @urls = []
+     @alternative_urls = []
+     doc = Nokogiri::XML(document['marc_display']).remove_namespaces!
+     links = doc.xpath("//datafield[@tag='856']")
+     links.each do |link|
+       url = link.xpath("subfield[@code='u']").text
+       display = link.xpath("subfield[@code='3']").text
+       if display == "University of Alberta Access"
+         @urls << {url: url, display: display}      
+       else
+         @alternative_urls << {url: url, display: display}
+       end
+     end
   end
 
   def fetch_symphony_holdings(document)
@@ -156,8 +176,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'author_display', :label => 'Author'
     config.add_show_field 'author_vern_display', :label => 'Author'
     config.add_show_field 'format', :label => 'Format'
-    config.add_show_field 'url_fulltext_display', :label => 'URL'
-    config.add_show_field 'url_suppl_display', :label => 'More Information'
     config.add_show_field 'language_facet', :label => 'Language'
     config.add_show_field 'published_display', :label => 'Published'
     config.add_show_field 'published_vern_display', :label => 'Published'
