@@ -13,6 +13,7 @@
     <% # bookmark/folder functions -%>
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
+    <% if @urls %>
     <% unless @urls.empty? && @alternative_urls.empty? %>
 
       <div id ="electronic_access">
@@ -30,6 +31,7 @@
 
         <% end %>
       </div>
+    <% end %>
     <% end %>
 
     <% unless @holdings.empty? %>
