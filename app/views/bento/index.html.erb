@@ -81,14 +81,18 @@
                  <% end %>
              </h3>
  				<ul>       
-                    <% i = 1 %> 
+          <% i = 1 %> 
+          <% if @eds.instance_of? Array %>
 					<% @eds.each do |id,article| %>
             <li><span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> / <%= article[:author] %></a> (<%= article[:format] %>)</li>
           			   <% i+=1 %>
                     <% end %>
 				</ul>
                  <% if @eds_count>10 %>
-			         <div class="results-bottom"><a href="/articles?q=<%= @query %>" class="col-md-12">View all Articles</a></div>
-                <% end %>
+                   <div class="results-bottom"><a href="/articles?q=<%= @query %>" class="col-md-12">View all Articles</a></div>
+              <% end %>
+             <% else %>
+               <p><%= @eds %></p>
+               <% end %>
               </div>
             </div>
