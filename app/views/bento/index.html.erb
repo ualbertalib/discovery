@@ -82,7 +82,7 @@
              </h3>
  				<ul>       
           <% i = 1 %> 
-          <% if @eds.instance_of? Array %>
+          <% if @eds.instance_of? Hash %>
 					<% @eds.each do |id,article| %>
             <li><span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> / <%= article[:author] %></a> (<%= article[:format] %>)</li>
           			   <% i+=1 %>
