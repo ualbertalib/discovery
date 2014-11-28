@@ -117,6 +117,7 @@ GEM
       activesupport
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
+    open_uri_redirections (0.2.1)
     orm_adapter (0.5.0)
     parslet (1.6.2)
       blankslate (>= 2.0, <= 4.0)
@@ -226,6 +227,7 @@ DEPENDENCIES
   jettywrapper (~> 1.7)
   jquery-rails
   om
+  open_uri_redirections
   rails (= 4.1.4)
   rspec
   sass-rails (~> 4.0.3)

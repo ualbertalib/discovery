@@ -9,10 +9,15 @@ class BentoController < ApplicationController
   def index
     @complete_count = 0
 
-    eds = get_eds_results
-    @eds_count = eds["count"]
-    eds.delete("count")
-    @eds = eds
+    if params["q"] then
+      eds = get_eds_results
+      @eds_count = eds["count"]
+      eds.delete("count")
+      @eds = eds
+    else
+      @eds_count = 0
+      @eds = "Empty Search"
+    end
 
     databases = populate(CatalogController, {format: 'Database'})
     @database_count = databases["count"]
