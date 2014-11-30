@@ -8,7 +8,7 @@ require_relative "../lib/ingest/database_om"
 require_relative "../lib/ingest/ingester"
 require_relative "../lib/ingest/batch_ingest"
 require_relative "../lib/tasks/ingest_configuration"
-require_relative "../app/helpers/holdings.rb"
+require_relative "../app/helpers/holdings_helper.rb"
 
 module E
   def *(path)
