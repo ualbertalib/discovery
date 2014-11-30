@@ -15,7 +15,8 @@
 
     <title>University of Alberta Libraries</title>
     <%= opensearch_description_tag application_name, opensearch_catalog_path(:format => 'xml', :only_path => false) %>
-    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <%# favicon_link_tag asset_path('favicon.ico') %>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Abel" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
