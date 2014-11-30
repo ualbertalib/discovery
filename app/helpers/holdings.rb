@@ -19,15 +19,13 @@ module Holdings
     raw_targets = marc_field(doc, '866')
     raw_targets.each do |target|
       coverage = get_marc_subfield(target, 'a')
-      id = BigDecimal.new(get_marc_subfield(target, 's')).to_i # Very similar to id_of - must be some way to replace the two.
-      targets[id] = {id: id, coverage: coverage}
+      targets[sfx_id(target)] = {id: sfx_id(target), coverage: coverage}
     end
 
     xml_response = sfx_results_for(document.id)
     xml_response.xpath("//target").each do |target|
-      id = id_of target 
       unless local_targets.include? target.xpath("target_name").text
-        targets[id].merge!({name: target.xpath("target_public_name").text, url: target.xpath("target_url").text})
+        targets[id(target)].merge!({name: target.xpath("target_public_name").text, url: target.xpath("target_url").text})
       end
     end
     targets
@@ -81,11 +79,14 @@ module Holdings
     Nokogiri::XML(open("http://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&ctx_ver=Z39.88-2004&rfr_id=info%3Asid%2Fualberta.ca%3Aopac&rft.genre=journal&rft.object_id=#{id}&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&url_ver=Z39.88-2004&sfx.response_type=simplexml").read)
   end
   
-  def id_of(target, marc=nil)
-    puts marc.nil?
+  def id(target)
     BigDecimal.new(target.xpath("target_service_id").text).to_i
   end
-  
+
+  def sfx_id(target)
+    BigDecimal.new(get_marc_subfield(target, 's')).to_i  
+  end
+
   def local_targets
     ["LOCAL_CATALOGUE_SIRSI_UNICORN", "MESSAGE_NO_DOCDEL_LCL"]
   end
