@@ -21,7 +21,8 @@ class CatalogController < ApplicationController
     end
 
     if @document["url_fulltext_display"]
-      create_ua_links(@document)
+      @urls = create_ua_links(@document)
+      @alternative_urls = create_alternative_links(@document)
     end
   end
 

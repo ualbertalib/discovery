@@ -19,15 +19,21 @@ describe Holdings do
   it "should return a set of UA link URLs" do
     document = {}
     document['marc_display'] = marc_display_with_ua_links
-    create_ua_links(document)
-    expect(@urls).to be_an_instance_of Array
-    expect(@urls.size).to eq 1
-    expect(@urls.first[:display]).to eq "University of Alberta Access"
-    expect(@urls.first[:url]).to eq "http://site.ebrary.com/lib/ualberta/Doc?id=2000743"
-    expect(@alternative_urls).to be_an_instance_of Array
-    expect(@alternative_urls.size).to eq 5
-    expect(@alternative_urls.first[:display]).to eq "Grant MacEwan University Access"
-    expect(@alternative_urls.first[:url]).to eq "http://site.ebrary.com/lib/macewan/Doc?id=2000743"
+    urls = create_ua_links(document)
+    expect(urls).to be_an_instance_of Array
+    expect(urls.size).to eq 1
+    expect(urls.first[:display]).to eq "University of Alberta Access"
+    expect(urls.first[:url]).to eq "http://site.ebrary.com/lib/ualberta/Doc?id=2000743"
+  end
+
+  it "should return a set of alternative link URLs" do
+    document = {}
+    document['marc_display'] = marc_display_with_ua_links
+    urls = create_alternative_links(document)
+    expect(urls).to be_an_instance_of Array
+    expect(urls.size).to eq 5
+    expect(urls.first[:display]).to eq "Grant MacEwan University Access"
+    expect(urls.first[:url]).to eq "http://site.ebrary.com/lib/macewan/Doc?id=2000743"
   end
 
   it "should return a set of SFX link URLs" do
