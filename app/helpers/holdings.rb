@@ -14,18 +14,15 @@ module Holdings
 
 
   def fetch_sfx_holdings(document)
-    doc = nokogiri document
     targets = {}
-    raw_targets = marc_field(doc, '866')
-    raw_targets.each do |target|
+    raw_targets(nokogiri document).each do |target|
       coverage = get_marc_subfield(target, 'a')
       targets[sfx_id(target)] = {id: sfx_id(target), coverage: coverage}
     end
 
-    xml_response = sfx_results_for(document.id)
-    xml_response.xpath("//target").each do |target|
-      unless local_targets.include? target.xpath("target_name").text
-        targets[id(target)].merge!({name: target.xpath("target_public_name").text, url: target.xpath("target_url").text})
+    sfx_results_for(document.id).xpath("//target").each do |target|
+      unless local_targets.include? name(target)        
+        targets[id(target)].merge!({name: display_name(target), url: url(target) })
       end
     end
     targets
@@ -89,5 +86,21 @@ module Holdings
 
   def local_targets
     ["LOCAL_CATALOGUE_SIRSI_UNICORN", "MESSAGE_NO_DOCDEL_LCL"]
+  end
+
+  def name(target)
+   target.xpath("target_name").text
+  end
+
+  def display_name(target)
+   target.xpath("target_public_name").text
+  end
+
+  def url(target) 
+    target.xpath("target_url").text
+  end
+
+  def raw_targets(doc)
+    raw_targets = marc_field(doc, '866')
   end
 end
