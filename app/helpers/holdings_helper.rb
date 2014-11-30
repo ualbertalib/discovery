@@ -1,4 +1,4 @@
-module Holdings
+module HoldingsHelper
   
   def create_ua_links(document)
      create_holdings({document: document, field: '856', method: 'populate_links', additional_arg: "ua" })

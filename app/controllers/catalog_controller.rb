@@ -4,7 +4,7 @@ require "open-uri"
 class CatalogController < ApplicationController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
-  include Holdings
+  include HoldingsHelper
 
   self.solr_search_params_logic << :show_only
 
