@@ -11,4 +11,9 @@ class EjournalsController < CatalogController
     solr_parameters[:fq] << "source:SFX"
   end
 
+  def index
+    super
+    @collection_name = "electronic journals"
+  end
+
 end

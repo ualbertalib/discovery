@@ -12,6 +12,11 @@ class CatalogController < ApplicationController
     solr_parameters[:fq] ||= []
   end
 
+  def index
+    super
+    @collection_name = "all library collections"
+  end
+
   def show
     super
     @holdings = []
