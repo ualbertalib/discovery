@@ -99,7 +99,7 @@
 		<div class="col-md-4 results extra-top-margin" id="databases">
  			<h3>Databases
              <% if @database_count>10 %>
-                    <a href="/database?q=<%= @query %>">see all <%= @database_count %> results</a>
+                    <a href="/databases?q=<%= @query %>">see all <%= @database_count %> results</a>
                  <% end %>
              </h3>
  				<ul>       
@@ -110,7 +110,7 @@
                     <% end %>
 				</ul>
                  <% if @database_count>10 %>
-			         <div class="results-bottom"><a href="/database?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
+			         <div class="results-bottom"><a href="/databases?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
                 <% end %>
               </div>
       </div>

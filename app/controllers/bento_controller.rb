@@ -85,6 +85,7 @@ class BentoController < ApplicationController
     @complete_count += documents["count"]
     results = session[:results]['SearchResult']['Data']['Records']
     results.each do |result|
+      puts result["ResultId"]
       metadata = {}
       if has_restricted_access?(result) then
         metadata[:title] = "This result cannot be shown to guests."
@@ -94,7 +95,7 @@ class BentoController < ApplicationController
       metadata[:author] = show_authors(result) if has_authors?(result)
       metadata[:url] = result["PLink"]
       metadata[:format] = show_pubtype(result) if has_pubtype?(result)
-      documents[show_pubtypeid(result)] = metadata
+      documents[result["ResultId"]] = metadata
     end
     #session[:results]
     documents
