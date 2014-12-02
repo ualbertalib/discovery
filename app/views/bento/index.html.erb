@@ -28,7 +28,28 @@
             <ul>
             	<% i = 1%>
 				<% @symphony.each do |id,symphony| %>
-          <li><span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %> / <%= symphony[:author] %></a> (<%= symphony[:year].first if symphony[:year]%>) - <%= symphony[:call_number].first if symphony[:call_number]%></li>
+        <li>
+             <div class="col-md-10">
+              <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %> </em></a>
+               <span class="date"><%= symphony[:year].first if symphony[:year]%></span>
+              
+             
+            </div>
+            <div class="col-md-2">
+         <button type="button" class="btn btn-xsmall" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>">more</button>
+       </div>
+<div class="more-results collapse" id="<%= i %>">
+         <div class="col-md-9">
+          <p class="result-details author">Author: <%= symphony[:author] %></p> 
+          <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
+        </div>
+        <div class="col-md-3">
+           <img src="https://bookjackets.library.ualberta.ca/books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+            
+         </div>
+           </div>
+         </li>
+      
             		<% i+=1 %>
 				<% end %>
 			</ul>
@@ -37,7 +58,27 @@
 				    <a href="/symphony?q=<%= @query %>" class="col-md-12">View all resources on the shelves</a>
                 <% end %>
 			</div>
-        </div>
+        </div> <div class="col-md-4 results" id="articles"> 
+        <h3>Articles
+             <% if @eds_count>10 %>
+                    <a href="/articles?q=<%= @query %>">see all <%= @eds_count %> results</a>
+                 <% end %>
+             </h3>
+        <ul>       
+          <% i = 1 %> 
+          <% if @eds.instance_of? Hash %>
+          <% @eds.each do |id,article| %>
+            <li><span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> / <%= article[:author] %></a> (<%= article[:format] %>)</li>
+                   <% i+=1 %>
+                    <% end %>
+        </ul>
+                 <% if @eds_count>10 %>
+                   <div class="results-bottom"><a href="/articles?q=<%= @query %>" class="col-md-12">View all Articles</a></div>
+              <% end %>
+             <% else %>
+               <p><%= @eds %></p>
+               <% end %>
+              </div>
 		<div class="col-md-4 results" id="ejournals">
         	<h3>Electronic Journals 
                 <% if @ejournals_count>10 %>
@@ -47,7 +88,7 @@
         	<ul>
           		<% i = 1 %>
 				<% @ejournals.each do |id,ejournals| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ejournals[:title] %> (<%= ejournals[:issn].first if ejournals[:issn] %>)</a></li>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ejournals[:title] %></a></li>
             		<% i+=1 %>
 				<% end %>
 			</ul>
@@ -55,7 +96,7 @@
 			<div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-md-12">View all Electronic Journals</a></div>
              <% end %>
 		</div>
-		<div class="col-md-4 results" id="databases">
+		<div class="col-md-4 results extra-top-margin" id="databases">
  			<h3>Databases
              <% if @database_count>10 %>
                     <a href="/databases?q=<%= @query %>">see all <%= @database_count %> results</a>
@@ -73,26 +114,4 @@
                 <% end %>
               </div>
       </div>
-
-      <div class="col-md-4 results" id="articles"> 
-        <h3>Articles</h3> 
-             <% if @eds_count>10 %>
-                    <a href="/articles?q=<%= @query %>">see all <%= @eds_count %> results</a>
-                 <% end %>
-             </h3>
- 				<ul>       
-          <% i = 1 %> 
-          <% if @eds.instance_of? Hash %>
-					<% @eds.each do |id,article| %>
-            <li><span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> / <%= article[:author] %></a> (<%= article[:format] %>)</li>
-          			   <% i+=1 %>
-                    <% end %>
-				</ul>
-                 <% if @eds_count>10 %>
-                   <div class="results-bottom"><a href="/articles?q=<%= @query %>" class="col-md-12">View all Articles</a></div>
-              <% end %>
-             <% else %>
-               <p><%= @eds %></p>
-               <% end %>
-              </div>
-            </div>
+      </div>
