@@ -73,6 +73,9 @@ class BentoController < ApplicationController
     documents = {}
     session[:current_url] = request.original_url
     eds_connect
+    params["includefacets"] = "y"
+    params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
+    params["resultsperpage"] = "10"
     if has_search_parameters? then
       clean_params = deep_clean(params)
       params = clean_params
@@ -84,7 +87,7 @@ class BentoController < ApplicationController
     documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
     @complete_count += documents["count"]
     results = session[:results]['SearchResult']['Data']['Records']
-    results.take(@rows).each do |result|
+    results.each do |result|
       metadata = {}
       if has_restricted_access?(result) then
         metadata[:title] = "This result cannot be shown to guests."
@@ -96,7 +99,6 @@ class BentoController < ApplicationController
       metadata[:format] = show_pubtype(result) if has_pubtype?(result)
       documents[result["ResultId"]] = metadata
     end
-    #session[:results]
     documents
   end
 end
