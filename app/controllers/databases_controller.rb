@@ -10,4 +10,9 @@ class DatabasesController < CatalogController
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << 'format:"Database"'
   end
+
+  def index
+    super
+    @collection_name = "databases"
+  end
 end 

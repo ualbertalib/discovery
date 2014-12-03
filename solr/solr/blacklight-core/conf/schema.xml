@@ -530,7 +530,7 @@
    <field name="source" type="string" indexed="true" stored="true" multiValued="true"/>
 
    <field name="holdings" type="text" indexed="false" stored="true" multiValued = "true"/>
-   <field name="electronic" type="boolean" indexed="true" stored="true" multiValued="false" />
+   <field name="electronic_tesim" type="boolean" indexed="true" stored="true" multiValued = "true" default="false"/>
 
     <!-- NOTE:  not all possible Solr field types are represented in the dynamic fields -->
 
