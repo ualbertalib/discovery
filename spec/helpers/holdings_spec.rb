@@ -1,21 +1,23 @@
 require_relative "../spec_helper.rb"
 
 include E
-include Holdings
+include HoldingsHelper
 
-describe Holdings do
+describe HoldingsHelper do
   let(:marc_display_with_ua_links){ File.open(E::*("fixtures/marc_display_with_ua_links.xml")).read }
   let(:marc_display_with_sfx_links){ File.open(E::*("fixtures/marc_display_with_sfx_links.xml")).read }
-  
+  let(:marc_display_with_print_holdings){ File.open(E::*("fixtures/marc_display_with_print_holdings.xml")).read }
+
   describe "#fetch_symphony_holdings" do
-    it "should return a set of Symphony print holdings" #do
-      # There are no print books in this small dataset. I need to get one with print holdings to write this test. 
-     # document = {}
-     # document['marc_display'] = marc_display_with_print_holdings
-     # holdings = fetch_symphony_holdings(document)
-     # expect(holdings).to be_an_instance_of Array
-     # expect(holdings.size).to eq 1
-    #end
+    it "should return a set of Symphony print holdings" do
+     document = {}
+     document['marc_display'] = marc_display_with_print_holdings
+     holdings = fetch_symphony_holdings(document)
+     expect(holdings).to be_an_instance_of Array
+     expect(holdings.size).to eq 2
+     expect(holdings.first[:call_number]).to eq "HT 151 H82 1973"
+     expect(holdings.first[:status]).to eq "ON_SHELF"
+    end
   end
 
   describe "#create_ua_links" do

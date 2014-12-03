@@ -42,7 +42,9 @@ module HoldingsHelper
     document.xpath("subfield[@code='#{tag}']").text
   end
 
-  def populate_print_holdings items, item
+  def populate_print_holdings(options = {})
+    item = options[:item]
+    items = options[:items]
     item_data = {}
     item_data[:call_number] = get_marc_subfield(item, 'a')
     item_data[:copies] = get_marc_subfield(item, 'c')
@@ -51,9 +53,12 @@ module HoldingsHelper
     items << item_data
   end
   
-  def populate_links(items, link, type)
-    url = get_marc_subfield(link, 'u')
-    display = get_marc_subfield(link, '3')
+  def populate_links(options = {})
+    items = options[:items]
+    item = options[:item]
+    type = options[:additional]
+    url = get_marc_subfield(item, 'u')
+    display = get_marc_subfield(item, '3')
     # I don't love this logic. Should be able to make it a single line.
     if (type=="ua")
       items << {url: url, display: display} if display == "University of Alberta Access"    
@@ -67,7 +72,7 @@ module HoldingsHelper
     items = []
     doc = nokogiri options[:document]
     for item in marc_field(doc, options[:field]) do
-      self.send options[:method].to_sym, items, item, options[:additional_arg]
+      self.send options[:method].to_sym, {:items => items, :item => item, :additional => options[:additional_arg]}
     end
     items
   end
