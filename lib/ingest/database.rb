@@ -77,7 +77,7 @@ class Database
             xml.subject @subject
             xml.display_single_search @display_single_search
             xml.type "Database"
-            xml.electronic "true"
+            xml.electronic true
           }
         }
       }
