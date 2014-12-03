@@ -44,7 +44,7 @@ sfx_test:
 symphony:
   config: "config/SolrMarc/symphony_config.properties"
   schema: marc
-  path: "data/sample2.marc"
+  path: "data/sample.mrc"
 
 maps:
   schema: marc

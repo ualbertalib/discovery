@@ -12,6 +12,11 @@ class CatalogController < ApplicationController
     solr_parameters[:fq] ||= []
   end
 
+  def index
+    super
+    @collection_name = "all library collections"
+  end
+
   def show
     super
     @holdings = []
@@ -85,8 +90,8 @@ class CatalogController < ApplicationController
     config.add_facet_field 'lc_1letter_facet', :label => 'Call Number' 
     config.add_facet_field 'subject_geo_facet', :label => 'Region' 
     config.add_facet_field 'subject_era_facet', :label => 'Era'  
+    config.add_facet_field 'electronic_tesim', :label => 'Electronic'
 
-    config.add_facet_field 'example_pivot_field', :label => 'Pivot Field', :pivot => ['format', 'language_facet']
 
     config.add_facet_field 'example_query_facet_field', :label => 'Publish Date', :query => {
        :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },
