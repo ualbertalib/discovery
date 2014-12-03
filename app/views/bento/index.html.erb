@@ -1,6 +1,7 @@
 <div class="container" id="search-results">
     <div class="row results-head top-margin">
-   		<div class="col-md-6"><h2> 
+   		<div class="col-md-6">
+        <h2> 
             <% if @query =='' %>
                 All Records
             <% else %>
@@ -30,12 +31,12 @@
 				<% @symphony.each do |id,symphony| %>
         <li>
              <div class="col-md-10">
-              <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %> </em></a>
-               <span class="date"><%= symphony[:year].first if symphony[:year]%></span>
+              <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %></em></a><span class="date">(<%= symphony[:year].first if symphony[:year]%>)</span>
               
              
             </div>
             <div class="col-md-2">
+
          <button type="button" class="btn btn-xsmall" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>">more</button>
        </div>
 <div class="more-results collapse" id="<%= i %>">
@@ -44,7 +45,7 @@
           <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
         </div>
         <div class="col-md-3">
-           <img src="https://bookjackets.library.ualberta.ca/books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+           <a href="/catalog/<%= id %>"><img src="https://bookjackets.library.ualberta.ca/books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
             
          </div>
            </div>

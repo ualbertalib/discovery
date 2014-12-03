@@ -8,7 +8,7 @@
 <%# this should be in a partial -%>
 
 <div id="document" class="document <%= render_document_class %>" itemscope  itemtype="<%= @document.itemtype %>">
-  <div id="doc_<%= @document.id.to_s.parameterize %>">
+  <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-md-9">
   
     <% # bookmark/folder functions -%>
     <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
@@ -17,10 +17,10 @@
     <% unless @urls.empty? && @alternative_urls.empty? %>
 
       <div id ="electronic_access">
-        <h3>URL:</h3>
+        
       <% unless @urls.empty? %>
           <% @urls.each do |url| %>
-            <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %></a>
+            <span class="url-label">URL:</span> <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span></a>
           <% end %>
         <% end %>
         <% if (@urls.empty?) && (!@alternative_urls.empty?) %>
@@ -30,9 +30,11 @@
           <% end %>
 
         <% end %>
+        
       </div>
     <% end %>
     <% end %>
+  
 
     <% unless @holdings.empty? %>
       <div id = "holdings">
@@ -65,6 +67,9 @@
 
     <%= @doc %>
   </div>
+    <div class="col-md-3 extra2-top-margin">
+      <img src="https://bookjackets.library.ualberta.ca/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+    </div>
 </div>
 
 

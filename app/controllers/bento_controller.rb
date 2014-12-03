@@ -22,6 +22,7 @@ class BentoController < ApplicationController
     databases = populate(CatalogController, {format: 'Database'})
     @database_count = databases["count"]
     databases.delete("count")
+    @rows = 5
     @databases = databases
 
     ejournals = populate(CatalogController, {source: 'SFX'})

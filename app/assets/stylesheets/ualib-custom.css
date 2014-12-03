@@ -278,16 +278,22 @@ background-color: #fffef2;
      make sure you have an empty gif */
   background-image: url('empty.gif');
 }   
-.btn-small, .btn-xsmall{
+.btn-small{
 background-color: #1b460c;
 color: #efefef;
 }
-.btn-small:hover, .btn-xsmall:hover, .btn-small:active, .btn-xsmall:active, .btn-small:focus, .btn-xsmall:focus{
+.btn-small:hover, .btn-small:active, .btn-small:focus{
 background-color: #0d2f10;
 color: #fff;
 }
 .btn-xsmall{
+	background-color: #B2C6D1;
 	padding: 5px;
+	color: #333;
+}
+.btn-xsmall:hover, .btn-xsmall:active, .btn-xsmall:focus{
+	background-color:#4d82a1;
+	color: #fff;
 }
 .all{
 	text-align: right;
@@ -308,6 +314,9 @@ color: #fff;
 }
 #databases{
 	float: right;
+}
+.collapse.in{
+	height: 20px;
 }
 .results-head{
 	margin-left:-5px;
@@ -361,6 +370,7 @@ font-size: 18px;
 	font-size: 11px;
 	font-weight: bold;
 	font-family: arial, sans-serif;
+	margin-left: 5px;
 	}
 .results .col-md-10, .results .col-md-2{
 	padding-right: 4px;
@@ -430,10 +440,39 @@ font-size: 18px;
 	margin-top: 5px;
 }
 .more-results{
-	font-size: 13px;
+	font-size: 14px;
 }
 .results ul li a.more-locations{
 	font-size: 14px;
+}
+#electronic_access{
+	font-size: 16px;
+}
+#electronic_access span{
+	font-size: 14px;
+	display: block;
+}
+#electronic_access span.url-label{
+	width: 160px;
+	text-align: right;
+	font-size: 18px;
+	font-weight: normal;
+	color: #777777;
+	display: inline-block;
+}
+#electronic_access a{
+	display: inline-block;
+font-size: 18px;
+	padding: 5px 10px;
+	background-color:#B2C6D1;
+	color: #000;
+	margin-left: 18px;
+	border-radius: 5px;
+}
+#electronic_access a:hover, #electronic_access a:focus, #electronic_access a:active{
+	text-decoration: none;
+	background-color:#d1dde4;
+	color: #333;
 }
 .outlined{
 	border: solid 1px #d9e4ea; 
