@@ -20,8 +20,8 @@
        	</div>
     </div>
     <div class="results-wrap top-margin">
-    	<div class="col-md-4 results" id="shelves">
-            <h3>On the Shelves 
+    	<div class="col-md-4 results" id="books">
+            <h3>Books and Journals
                 <% if @symphony_count>10 %>
                     <a href="/symphony?q=<%= @query %>">see all <%= @symphony_count %> results</a>
                 <% end %>
@@ -41,11 +41,10 @@
        </div>
 <div class="more-results collapse" id="<%= i %>">
          <div class="col-md-9">
-          <p class="result-details author">Author: <%= symphony[:author] %></p> 
+          <p class="result-details author"><%= symphony[:author] %></p> 
           <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
         </div>
-        <div class="col-md-3">
-           <a href="/catalog/<%= id %>"><img src="https://bookjackets.library.ualberta.ca/books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
+        <div class="col-md-3"><a href="/catalog/<%= id %>"><img src="http://bks3.books.google.com//books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
             
          </div>
            </div>
