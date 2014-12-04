@@ -8,10 +8,10 @@ html, body {
 	min-height: 100%;
 	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
 	height: 100%;
-	margin: 0 auto -124px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto -98px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer, .push {
-	height: 124px; /* .push must be the same height as .footer */
+	height: 98px; /* .push must be the same height as .footer */
 }
 
 
@@ -534,18 +534,18 @@ ul.foot-nav{
 	color: #ecf4e5;
 	font-size: 17px;
 }
-#footer{
+.footer{
 	  background: url("footer-bg.jpg") repeat-x;
-	  margin-top: 30px;
+	 
 }
-#footer p{
+.footer p{
 	float: right;
 	color: #fff;
 }
-#footer p a{
+.footer p a{
 	color: #ecf4e5;
 }
-#footer p a:hover, .foot-nav li a:hover{
+.footer p a:hover, .foot-nav li a:hover{
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.4);
 	text-decoration: none;
