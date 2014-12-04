@@ -324,7 +324,13 @@ color: #fff;
 }
 .results h3{
 	color: #000;
-	font-size: 22px;
+	font-size: 21px;
+	display: block;
+	height: 30px;
+	margin-left: -10px;
+}
+.results h3#print{
+	height: 45px;
 }
 .results h3 a{
 	font-size: 15px;
@@ -334,6 +340,7 @@ color: #fff;
 	border-radius: 4px;
 	font-weight: bold;
 	margin-top: -5px;
+
 }
 .results-bottom a{
 	float: left;
@@ -411,7 +418,13 @@ font-size: 18px;
 	margin-top: 5px;
 	margin-bottom: 0;
 }
-
+a.see-all-results{
+	padding-right: 25px;
+	background-image:url(go-arrow.png);
+	background-repeat: no-repeat;
+	background-position: center right;
+	font-size: 12px;
+}
 .date{
 	text-align: center;
 }
