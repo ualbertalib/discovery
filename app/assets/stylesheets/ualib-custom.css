@@ -8,10 +8,10 @@ html, body {
 	min-height: 100%;
 	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
 	height: 100%;
-	margin: 0 auto -98px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto -128px; /* the bottom margin is the negative value of the footer's height */
 }
 .footer, .push {
-	height: 98px; /* .push must be the same height as .footer */
+	height: 128px; /* .push must be the same height as .footer */
 }
 
 
@@ -535,8 +535,10 @@ ul.foot-nav{
 	font-size: 17px;
 }
 .footer{
-	  background: url("footer-bg.jpg") repeat-x;
-	 
+	  background: url("footer-bg.jpg") repeat-x center bottom;
+}
+.footer .container{
+	padding-top: 30px;
 }
 .footer p{
 	float: right;
