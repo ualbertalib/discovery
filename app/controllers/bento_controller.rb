@@ -75,7 +75,7 @@ class BentoController < ApplicationController
     eds_connect
     params["includefacets"] = "y"
     params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
-    params["resultsperpage"] = "10"
+    params["resultsperpage"] = "#{@rows}"
     if has_search_parameters? then
       clean_params = deep_clean(params)
       params = clean_params
