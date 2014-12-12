@@ -1,6 +1,8 @@
 require_relative "../services/sfx_service.rb"
+require_relative "../services/marc_module.rb"
 
 module HoldingsHelper
+  include MarcModule
   
   def create_ua_links(document)
      create_holdings({document: document, field: '856', method: 'populate_links', additional_arg: "ua" })
@@ -20,18 +22,6 @@ module HoldingsHelper
   end
 
   private
-
-  def nokogiri(document)
-    Nokogiri::XML(document['marc_display']).remove_namespaces!
-  end
-
-  def marc_field(document, tag)
-    document.xpath("//datafield[@tag='#{tag}']")
-  end
-
-  def get_marc_subfield(document, tag)
-    document.xpath("subfield[@code='#{tag}']").text
-  end
 
   def populate_print_holdings(options = {})
     item = options[:item]
@@ -68,27 +58,4 @@ module HoldingsHelper
     items
   end
 
-  def id(target)
-    BigDecimal.new(target.xpath("target_service_id").text).to_i
-  end
-
-  def sfx_id(target)
-    BigDecimal.new(get_marc_subfield(target, 's')).to_i  
-  end
-
-  def local_targets
-    ["LOCAL_CATALOGUE_SIRSI_UNICORN", "MESSAGE_NO_DOCDEL_LCL"]
-  end
-
-  def name(target)
-   target.xpath("target_name").text
-  end
-
-  def display_name(target)
-   target.xpath("target_public_name").text
-  end
-
-  def url(target) 
-    target.xpath("target_url").text
-  end
 end
