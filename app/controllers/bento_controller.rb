@@ -54,9 +54,9 @@ class BentoController < ApplicationController
 
   def populate_metadata(doc)
       metadata = {}
-      metadata[:title] = doc.as_json["title_display"]
-      metadata[:subtitle] = doc.as_json["subtitle_display"]
-      metadata[:author] = doc.as_json["author_display"]
+      metadata[:title] = parse(doc.as_json["title_display"], doc) if doc.as_json["title_display"]
+      metadata[:subtitle] = parse(doc.as_json["subtitle_display"], doc) if doc.as_json["subtitle_display"]
+      metadata[:author] = parse(doc.as_json["author_display"], doc, ", ") if doc.as_json["author_display"]
       metadata[:isbn] = doc.as_json["isbn_t"]
       metadata[:issn] = doc.as_json["issn_t"]
       metadata[:year] = doc.as_json["pub_date"]
@@ -67,6 +67,16 @@ class BentoController < ApplicationController
       #Articles: full text?, Link to PDF, Year of publication - not sure
       #these are possible. Depends on EDS API
       metadata
+  end
+
+  def parse(field, doc, delimiter=" ")
+    parsed_field = ""
+    if field.class.name == "String"
+      parsed_field = field
+    elsif field.class.name == "Array"
+      parsed_field = field.join(delimiter)
+    end
+    parsed_field
   end
 
   def get_eds_results
