@@ -46,9 +46,11 @@
           <p class="result-details author"><%= symphony[:author] %></p> 
           <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
         </div>
-        <div class="col-md-3"><a href="/catalog/<%= id %>"><img src="http://bks3.books.google.com//books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
-            
+        <% if symphony[:isbn] %>
+        <div class="col-md-3">
+           <a href="/catalog/<%= id %>"><img src="https://bookjackets.library.ualberta.ca/books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
          </div>
+       <% end %>
            </div>
          </li>
       

@@ -6,6 +6,8 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include HoldingsHelper
 
+  puts Rails.application.config.proxy
+
   self.solr_search_params_logic << :show_only
 
   def show_only solr_parameters, user_parameters
