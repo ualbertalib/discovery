@@ -49,8 +49,7 @@ gem "om"
 gem "addressable", "2.3.2"
 gem "htmlentities"
 gem "activerecord-session_store"
-
+gem "nokogiri"
 gem "factory_girl", "~> 4.0", group: [:test, :development]
 gem "rspec"
-
 gem "blacklight_advanced_search"

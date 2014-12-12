@@ -11,4 +11,9 @@ class SymphonyController < CatalogController
     solr_parameters[:fq] << 'source:"Symphony"'
   end
 
+  def index
+    super
+    @collection_name = "the library catalogue"
+  end
+
 end

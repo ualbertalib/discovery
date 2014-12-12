@@ -67,5 +67,6 @@ class DatabaseVocabulary < Vocabulary
     t.subject(index_as: :stored_searchable)
     t.display_single_search(index_as: :stored_searchable)
     t.type(index_as: :stored_searchable)
+    t.electronic(index_as: :stored_searchable)
   end
 end

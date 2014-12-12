@@ -7,8 +7,8 @@ class BentoController < ApplicationController
   include ERB::Util
 
   def index
+    @rows = 10
     @complete_count = 0
-
     if params["q"] then
       eds = get_eds_results
       @eds_count = eds["count"]
@@ -22,6 +22,7 @@ class BentoController < ApplicationController
     databases = populate(CatalogController, {format: 'Database'})
     @database_count = databases["count"]
     databases.delete("count")
+    @rows = 5
     @databases = databases
 
     ejournals = populate(CatalogController, {source: 'SFX'})
@@ -34,7 +35,6 @@ class BentoController < ApplicationController
     symphony.delete("count")
     @symphony = symphony
 
-    
   end
 
   private
@@ -73,6 +73,9 @@ class BentoController < ApplicationController
     documents = {}
     session[:current_url] = request.original_url
     eds_connect
+    params["includefacets"] = "y"
+    params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
+    params["resultsperpage"] = "#{@rows}"
     if has_search_parameters? then
       clean_params = deep_clean(params)
       params = clean_params
@@ -94,9 +97,8 @@ class BentoController < ApplicationController
       metadata[:author] = show_authors(result) if has_authors?(result)
       metadata[:url] = result["PLink"]
       metadata[:format] = show_pubtype(result) if has_pubtype?(result)
-      documents[show_pubtypeid(result)] = metadata
+      documents[result["ResultId"]] = metadata
     end
-    #session[:results]
     documents
   end
 end
