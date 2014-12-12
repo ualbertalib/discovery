@@ -20,7 +20,7 @@
         
       <% unless @urls.empty? %>
           <% @urls.each do |url| %>
-            <span class="url-label">URL:</span> <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span></a>
+            <span class="url-label">URL:</span> <a href="<%= Rails.application.config.proxy+url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span></a>
           <% end %>
         <% end %>
         <% if (@urls.empty?) && (!@alternative_urls.empty?) %>
@@ -67,9 +67,11 @@
 
     <%= @doc %>
   </div>
+   <% if @document[:isbn_t] %>
     <div class="col-md-3 extra2-top-margin">
       <img src="https://bookjackets.library.ualberta.ca/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
     </div>
+  <% end %>
 </div>
 
 

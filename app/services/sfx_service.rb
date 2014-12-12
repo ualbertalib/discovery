@@ -1,4 +1,7 @@
+require_relative "./marc_module.rb"
+
 class SFXService
+  include MarcModule
 
   attr_reader :targets
 
@@ -25,4 +28,29 @@ class SFXService
   def raw_targets(doc)
     raw_targets = marc_field(doc, '866')
   end
+
+  def sfx_id(target)
+    BigDecimal.new(get_marc_subfield(target, 's')).to_i  
+  end
+
+  def local_targets
+    ["LOCAL_CATALOGUE_SIRSI_UNICORN", "MESSAGE_NO_DOCDEL_LCL"]
+  end
+
+  def name(target)
+   target.xpath("target_name").text
+  end
+
+  def display_name(target)
+   target.xpath("target_public_name").text
+  end
+
+  def url(target) 
+    target.xpath("target_url").text
+  end
+
+  def id(target)
+    BigDecimal.new(target.xpath("target_service_id").text).to_i
+  end
+
 end
