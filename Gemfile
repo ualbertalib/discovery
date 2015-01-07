@@ -39,7 +39,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
-gem "blacklight", "5.8.2"
+gem "blacklight", "5.7.2"
 gem "jettywrapper", "~> 1.7"
 gem "devise"
 gem "devise-guests", "~> 0.3"
