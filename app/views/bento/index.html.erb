@@ -20,12 +20,14 @@
        	</div>
     </div>
     <div class="results-wrap top-margin">
-    	<div class="col-md-4 results" id="shelves">
-            <h3>On the Shelves 
+    	<div class="col-md-4 results" id="books">
+            
+            <h3 id="print"><span class="col-md-8">Books, ebooks, and Journals</span>
                 <% if @symphony_count>10 %>
-                    <a href="/symphony?q=<%= @query %>">see all <%= @symphony_count %> results</a>
+                    <a href="/symphony?q=<%= @query %>" class="col-md-4 see-all-results"><%= @symphony_count %> results</a>
                 <% end %>
                 </h3>
+
             <ul>
             	<% i = 1%>
 				<% @symphony.each do |id,symphony| %>
@@ -41,7 +43,7 @@
        </div>
 <div class="more-results collapse" id="<%= i %>">
          <div class="col-md-9">
-          <p class="result-details author">Author: <%= symphony[:author] %></p> 
+          <p class="result-details author"><%= symphony[:author] %></p> 
           <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
         </div>
         <% if symphony[:isbn] %>
@@ -58,20 +60,35 @@
 			</ul>
 			<div class="results-bottom">
                 <% if @symphony_count>10 %>
-				    <a href="/symphony?q=<%= @query %>" class="col-md-12">View all resources on the shelves</a>
+				    <a href="/symphony?q=<%= @query %>" class="col-md-12">View all Books and Journals</a>
                 <% end %>
 			</div>
         </div> <div class="col-md-4 results" id="articles"> 
-        <h3>Articles
+         <h3><span class="col-md-6">Articles</span>
              <% if @eds_count>10 %>
-                    <a href="/articles?q=<%= @query %>">see all <%= @eds_count %> results</a>
+                    <a href="/articles?q=<%= @query %>" class="col-md-6 see-all-results"><%= @eds_count %> results</a>
                  <% end %>
              </h3>
         <ul>       
           <% i = 1 %> 
           <% if @eds.instance_of? Hash %>
           <% @eds.each do |id,article| %>
-            <li><span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> / <%= article[:author] %></a> (<%= article[:format] %>)</li>
+            <li>
+                <div class="col-md-10">
+                  <span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> </a> 
+                 </div>
+                 <div class="col-md-2">
+
+         <button type="button" class="btn btn-xsmall" data-toggle="collapse" data-target="#article<%= i %>" aria-controls="article<%= i %>">more</button>
+       </div>
+<div class="more-results collapse" id="article<%= i %>">
+         <div class="col-md-12">
+          <p class="result-details author"><%= article[:author] %></p> 
+          <p class="result-details location">(<%= article[:format] %>)</p>
+         
+        </div>
+
+     </li>
                    <% i+=1 %>
                     <% end %>
         </ul>
@@ -83,9 +100,9 @@
                <% end %>
               </div>
 		<div class="col-md-4 results" id="ejournals">
-        	<h3>Electronic Journals 
+        	<h3><span class="col-md-8">Electronic Journals</span> 
                 <% if @ejournals_count>10 %>
-                    <a href="/ejournals?q=<%= @query %>">see all <%= @ejournals_count %> results</a>
+                    <a href="/ejournals?q=<%= @query %>" class="col-md-4 see-all-results"><%= @ejournals_count %> results</a>
                  <% end %>
             </h3>       
         	<ul>
@@ -100,9 +117,9 @@
              <% end %>
 		</div>
 		<div class="col-md-4 results extra-top-margin" id="databases">
- 			<h3>Databases
+ 			<h3><span class="col-md-8">Databases</span>
              <% if @database_count>10 %>
-                    <a href="/databases?q=<%= @query %>">see all <%= @database_count %> results</a>
+                    <a href="/databases?q=<%= @query %>" class="col-md-4 see-all-results"><%= @database_count %> results</a>
                  <% end %>
              </h3>
  				<ul>       
