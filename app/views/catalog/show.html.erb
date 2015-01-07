@@ -69,21 +69,21 @@
   </div>
    <% if @document[:isbn_t] %>
     <div class="col-md-3 extra2-top-margin">
-      <img src="http://bks3.books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+      <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
     </div>
   <% end %>
 </div>
 
 
 
-  <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
-    <!-- 
-         // COinS, for Zotero among others. 
-         // This document_partial_name(@document) business is not quite right,
-         // but has been there for a while. 
-    -->
-    <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
-  <% end %>
+  <%# <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
+  <%#   <!-- 
+  <%#        // COinS, for Zotero among others. 
+  <%#        // This document_partial_name(@document) business is not quite right,
+  <%#        // but has been there for a while. 
+  <%#   -->
+  <%#   <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
+  <%# <% end %>
 
 </div>
 
