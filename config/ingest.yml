@@ -1,5 +1,7 @@
 solr: http://localhost:8983/solr
 
+proxy: http://login.ezproxy.library.ualberta.ca/login?url=
+
 collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases"]
 
 era:

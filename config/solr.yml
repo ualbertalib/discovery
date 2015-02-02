@@ -11,8 +11,8 @@
 # how to start up solr, generally for automated testing. 
 
 development:
-  url: <%= ENV['SOLR_URL'] || "http://localhost:8983/solr" %>
+  url: <%= Rails.application.config.solr || "http://localhost:8983/solr" %>
 test: &test
-  url: <%= "http://localhost:#{ENV['TEST_JETTY_PORT'] || 8888}/solr" %>
+  url: <%= Rails.application.config.solr %>
 production:
-  url: <%= ENV['SOLR_URL'] || "http://localhost:8983/solr" %>
+  url: <%= Rails.application.config.solr || "http://localhost:8983/solr" %>
