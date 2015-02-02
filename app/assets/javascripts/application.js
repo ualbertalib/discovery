@@ -20,3 +20,5 @@
 // Required by Blacklight
 //= require blacklight/blacklight
 //= require_tree .
+
+//= require blacklight_google_analytics

@@ -56,4 +56,4 @@ gem "blacklight_advanced_search"
 group :test, :development do
   gem 'ci_reporter_rspec'
 end
-
+gem 'blacklight_google_analytics'
