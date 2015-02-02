@@ -53,3 +53,7 @@ gem "nokogiri"
 gem "factory_girl", "~> 4.0", group: [:test, :development]
 gem "rspec"
 gem "blacklight_advanced_search"
+group :test, :development do
+  gem 'ci_reporter_rspec'
+end
+
