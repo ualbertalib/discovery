@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Metadata ingest pipeline when it is given a vocabulary object" tests="1" time="0.003139186" failures="0" errors="0" skipped="0" timestamp="2015-02-02T14:45:22-07:00">
-  <testcase name="Metadata ingest pipeline when it is given a vocabulary object should connect to the Solr instance" time="0.003053045">
+<testsuite name="Metadata ingest pipeline when it is given a vocabulary object" tests="1" time="0.00294954" failures="0" errors="0" skipped="0" timestamp="2015-02-02T14:46:11-07:00">
+  <testcase name="Metadata ingest pipeline when it is given a vocabulary object should connect to the Solr instance" time="0.002867895">
   </testcase>
 </testsuite>

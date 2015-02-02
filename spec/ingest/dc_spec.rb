@@ -18,7 +18,7 @@ describe DublinCoreVocabulary do
     it "should hold all the Dublin Core Core Elements" do
       expect(dublin_core_document.title).to eq ["The ecology of boreal forest floor microbial communities in relation to environmental factors"]
       expect(dublin_core_document.creator).to eq ["Swallow, Mathew J B"]
-      expect(dublin_core_document.subject).to eq ["oreal", "Forest", "bacteria", "fungi", "protist", "soil", "auxin"]
+      expect(dublin_core_document.subject).to eq ["Boreal", "Forest", "bacteria", "fungi", "protist", "soil", "auxin"]
       expect(dublin_core_document.description).to eq ["Placeholder description - development only"]
       expect(dublin_core_document.publisher).to eq ["University of Alberta"]
       expect(dublin_core_document.contributors).to eq [] # test absent field

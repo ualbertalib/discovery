@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DublinCoreVocabulary" tests="4" time="0.082045402" failures="1" errors="0" skipped="0" timestamp="2015-02-02T14:45:22-07:00">
-  <testcase name="DublinCoreVocabulary should be a Dublin Core OM vocabulary with a terminology-based solrizer" time="0.000577728">
+<testsuite name="DublinCoreVocabulary" tests="4" time="0.060743578" failures="0" errors="0" skipped="0" timestamp="2015-02-02T14:46:11-07:00">
+  <testcase name="DublinCoreVocabulary should be a Dublin Core OM vocabulary with a terminology-based solrizer" time="0.000371514">
   </testcase>
-  <testcase name="DublinCoreVocabulary should hold all the Dublin Core Core Elements" time="0.001182158">
-    <failure type="RSpec::Expectations::ExpectationNotMetError" message="...">
-
-expected: ["oreal", "Forest", "bacteria", "fungi", "protist", "soil", "auxin"]
-     got: ["Boreal", "Forest", "bacteria", "fungi", "protist", "soil", "auxin"]
-
-(compared using ==)
- (RSpec::Expectations::ExpectationNotMetError)
-
-expected: ["oreal", "Forest", "bacteria", "fungi", "protist", "soil", "auxin"]
-     got: ["Boreal", "Forest", "bacteria", "fungi", "protist", "soil", "auxin"]
-
-(compared using ==)
-
-./spec/ingest/dc_spec.rb:21:in `block (2 levels) in &lt;top (required)&gt;'    </failure>
+  <testcase name="DublinCoreVocabulary should hold all the Dublin Core Core Elements" time="0.001187142">
   </testcase>
-  <testcase name="DublinCoreVocabulary should hold fields for admin and technical metadata (non-DC)" time="0.000581785">
+  <testcase name="DublinCoreVocabulary should hold fields for admin and technical metadata (non-DC)" time="0.000641815">
   </testcase>
-  <testcase name="DublinCoreVocabulary should have the fields tagged for Solr indexing" time="0.079508136">
+  <testcase name="DublinCoreVocabulary should have the fields tagged for Solr indexing" time="0.058336254">
   </testcase>
 </testsuite>

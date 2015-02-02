@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PeelModsVocabulary#to_solr" tests="1" time="0.015188277" failures="0" errors="0" skipped="0" timestamp="2015-02-02T14:45:23-07:00">
-  <testcase name="PeelModsVocabulary#to_solr should include Solr-tagged fields in a hash" time="0.01503263">
+<testsuite name="PeelModsVocabulary#to_solr" tests="1" time="0.008867039" failures="0" errors="0" skipped="0" timestamp="2015-02-02T14:46:11-07:00">
+  <testcase name="PeelModsVocabulary#to_solr should include Solr-tagged fields in a hash" time="0.008711897">
   </testcase>
 </testsuite>
