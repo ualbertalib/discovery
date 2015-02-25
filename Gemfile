@@ -57,3 +57,5 @@ group :test, :development do
   gem 'ci_reporter_rspec'
 end
 gem 'blacklight_google_analytics'
+gem 'comfortable_mexican_sofa', '~> 1.12.0'
+

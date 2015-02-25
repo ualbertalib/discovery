@@ -1,0 +1,23 @@
+ul{
+	list-style: none;
+}
+
+/* Ask Us Page Styles */
+
+ul.ask-list{
+	padding-left: 0;
+}
+ul.ask-list li{
+	padding: 20px;
+	background-color: #eceef3;
+	margin-bottom: 20px;
+}
+ul.ask-list li h3{
+	font-size: 50px;
+	padding-top: 0;
+	margin-top: 0;
+}
+.small-note{
+	font-size: 12px;
+	padding-right: 100px;
+}
