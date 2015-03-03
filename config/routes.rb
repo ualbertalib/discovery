@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  root :to => "bento#index"
-
   blacklight_for :catalog, :ejournals, :databases, :symphony
   Blacklight::Marc.add_routes(self)
   devise_for :users
