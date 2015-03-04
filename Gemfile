@@ -6,11 +6,11 @@ gem 'rails', '4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
 
@@ -39,14 +39,14 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
-gem "blacklight", "5.7.2"
-gem "jettywrapper", "~> 1.7"
+gem "blacklight", "5.9.3"
+gem "jettywrapper", "~> 2.0.3"
 gem "devise"
 gem "devise-guests", "~> 0.3"
-gem "blacklight-marc", "~> 5.0"
+gem "blacklight-marc", "~> 5.5.0"
 gem "ebsco-discovery-service-api", "1.0.4"
 gem "om"
-gem "addressable", "2.3.2"
+gem "addressable", "2.3.7"
 gem "htmlentities"
 gem "activerecord-session_store"
 gem "nokogiri"

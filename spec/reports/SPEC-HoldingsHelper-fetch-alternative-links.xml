@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HoldingsHelper#fetch_alternative_links" tests="1" time="0.000762007" failures="0" errors="0" skipped="0" timestamp="2015-03-04T10:42:07-07:00">
-  <testcase name="HoldingsHelper#fetch_alternative_links should return a set of alternative link URLs" time="0.000682182">
+<testsuite name="HoldingsHelper#fetch_alternative_links" tests="1" time="0.000740547" failures="0" errors="0" skipped="0" timestamp="2015-03-04T12:28:22-07:00">
+  <testcase name="HoldingsHelper#fetch_alternative_links should return a set of alternative link URLs" time="0.000668267">
   </testcase>
 </testsuite>
