@@ -14,7 +14,7 @@ class SFXService
 
     sfx_results_for(document.id).xpath("//target").each do |target|
       unless local_targets.include? name(target)
-        @targets[id(target)].merge!({name: display_name(target), url: url(target) })
+        @targets[id(target)].merge!({name: display_name(target), url: url(target) }) if @targets[id(target)]
       end
     end
   end
