@@ -14,7 +14,8 @@
   <% end %>
 
   <% if(paginator.has_next?)  %>
-    <li class="more_facets_link"><%= link_to(t('blacklight.search.facets.more'), html_safe(params.merge(:id => solr_field, :action => "facet", :page => nil, only_path: true)), :class => "more_facets_link") %></li>
+    <%# There's still a problem with the following link_to. Best-practice is to create a new hash, explicitly calling the required params, rather than params.merge, and then adding the new params. I don't know if this is possible with the EDS/Blacklight URLS (I don't know what params are being used) %>
+    <li class="more_facets_link"><%= link_to(t('blacklight.search.facets.more'), html_safe(params.merge(:id => solr_field, :action => "facet", :page => nil)), :class => "more_facets_link") %></li>
       <% end %>
 
 </ul>
