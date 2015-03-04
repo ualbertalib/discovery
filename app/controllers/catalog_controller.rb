@@ -2,7 +2,7 @@
 require "open-uri"
 
 class CatalogController < ApplicationController
-  include BlacklightGoogleAnalytics::ControllerExtraHead
+  #include BlacklightGoogleAnalytics::ControllerExtraHead
 
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
