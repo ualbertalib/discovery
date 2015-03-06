@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get "/results", to: "bento#index"
 
+  get "/advanced", to: "advanced#index"
+
   comfy_route :cms_admin, :path => '/admin'
 
   # Make sure this routeset is defined last

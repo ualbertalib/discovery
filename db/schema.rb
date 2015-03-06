@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150225182321) do
 
-  create_table "bookmarks", force: true do |t|
+  create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
     t.string   "user_type"
     t.string   "document_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
 
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
 
-  create_table "comfy_cms_blocks", force: true do |t|
+  create_table "comfy_cms_blocks", force: :cascade do |t|
     t.string   "identifier",                      null: false
     t.text     "content",        limit: 16777215
     t.integer  "blockable_id"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "comfy_cms_blocks", ["blockable_id", "blockable_type"], name: "index_comfy_cms_blocks_on_blockable_id_and_blockable_type"
   add_index "comfy_cms_blocks", ["identifier"], name: "index_comfy_cms_blocks_on_identifier"
 
-  create_table "comfy_cms_categories", force: true do |t|
+  create_table "comfy_cms_categories", force: :cascade do |t|
     t.integer "site_id",          null: false
     t.string  "label",            null: false
     t.string  "categorized_type", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
 
   add_index "comfy_cms_categories", ["site_id", "categorized_type", "label"], name: "index_cms_categories_on_site_id_and_cat_type_and_label", unique: true
 
-  create_table "comfy_cms_categorizations", force: true do |t|
+  create_table "comfy_cms_categorizations", force: :cascade do |t|
     t.integer "category_id",      null: false
     t.string  "categorized_type", null: false
     t.integer "categorized_id",   null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
 
   add_index "comfy_cms_categorizations", ["category_id", "categorized_type", "categorized_id"], name: "index_cms_categorizations_on_cat_id_and_catd_type_and_catd_id", unique: true
 
-  create_table "comfy_cms_files", force: true do |t|
+  create_table "comfy_cms_files", force: :cascade do |t|
     t.integer  "site_id",                                    null: false
     t.integer  "block_id"
     t.string   "label",                                      null: false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "comfy_cms_files", ["site_id", "label"], name: "index_comfy_cms_files_on_site_id_and_label"
   add_index "comfy_cms_files", ["site_id", "position"], name: "index_comfy_cms_files_on_site_id_and_position"
 
-  create_table "comfy_cms_layouts", force: true do |t|
+  create_table "comfy_cms_layouts", force: :cascade do |t|
     t.integer  "site_id",                                     null: false
     t.integer  "parent_id"
     t.string   "app_layout"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "comfy_cms_layouts", ["parent_id", "position"], name: "index_comfy_cms_layouts_on_parent_id_and_position"
   add_index "comfy_cms_layouts", ["site_id", "identifier"], name: "index_comfy_cms_layouts_on_site_id_and_identifier", unique: true
 
-  create_table "comfy_cms_pages", force: true do |t|
+  create_table "comfy_cms_pages", force: :cascade do |t|
     t.integer  "site_id",                                         null: false
     t.integer  "layout_id"
     t.integer  "parent_id"
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "comfy_cms_pages", ["parent_id", "position"], name: "index_comfy_cms_pages_on_parent_id_and_position"
   add_index "comfy_cms_pages", ["site_id", "full_path"], name: "index_comfy_cms_pages_on_site_id_and_full_path"
 
-  create_table "comfy_cms_revisions", force: true do |t|
+  create_table "comfy_cms_revisions", force: :cascade do |t|
     t.string   "record_type",                  null: false
     t.integer  "record_id",                    null: false
     t.text     "data",        limit: 16777215
@@ -118,7 +118,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
 
   add_index "comfy_cms_revisions", ["record_type", "record_id", "created_at"], name: "index_cms_revisions_on_rtype_and_rid_and_created_at"
 
-  create_table "comfy_cms_sites", force: true do |t|
+  create_table "comfy_cms_sites", force: :cascade do |t|
     t.string  "label",                       null: false
     t.string  "identifier",                  null: false
     t.string  "hostname",                    null: false
@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "comfy_cms_sites", ["hostname"], name: "index_comfy_cms_sites_on_hostname"
   add_index "comfy_cms_sites", ["is_mirrored"], name: "index_comfy_cms_sites_on_is_mirrored"
 
-  create_table "comfy_cms_snippets", force: true do |t|
+  create_table "comfy_cms_snippets", force: :cascade do |t|
     t.integer  "site_id",                                     null: false
     t.string   "label",                                       null: false
     t.string   "identifier",                                  null: false
@@ -144,7 +144,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "comfy_cms_snippets", ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true
   add_index "comfy_cms_snippets", ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position"
 
-  create_table "searches", force: true do |t|
+  create_table "searches", force: :cascade do |t|
     t.text     "query_params"
     t.integer  "user_id"
     t.string   "user_type"
@@ -154,7 +154,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
 
   add_index "searches", ["user_id"], name: "index_searches_on_user_id"
 
-  create_table "sessions", force: true do |t|
+  create_table "sessions", force: :cascade do |t|
     t.string   "session_id", null: false
     t.text     "data"
     t.datetime "created_at"
@@ -164,7 +164,7 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"

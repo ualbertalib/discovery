@@ -1,0 +1,563 @@
+ <!-- Start Search and Hours Pane -->
+    <div id="search-pane" class="pane">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7"><!-- Search and browse -->
+            <div class="search"><!-- Search box -->
+              <h2>Search Library Resources</h2>
+             <div id="test"></div>
+              <!-- Main search form, placeholder and search string changed with javascript-->
+              <form accept-charset="UTF-8" action="/results" class="search-query-form form-inline clearfix navbar-form" method="get" id="main-search">
+                <div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+                <div class="search-row">
+                  <div class="form-group col-sm-9 col-md-8 col-lg-9">
+                    <label class="sr-only" for="q">Search Library Resouces</label>
+                    <input autofocus="autofocus" class="search_q q form-control" id="q" name="q" placeholder="search books, articles, journals, ebooks, databases, ejournals..." type="text">
+                  </div>
+                  <div class="form-group col-xs-12 col-sm-3 col-md-4 col-lg-3">
+                    <button type="submit" class="btn btn-green main-search">search <span>everything</span></button><a class="btn btn-green-small" href="/advanced">advanced</a><a class="btn btn-help visible-xs-inline-block" href="#">get <br/>help</a>
+                  </div>
+                </div>
+                <div class="row hidden-xs">
+                  <div class="col-md-12 top-margin">
+                    <p class="search-options">you are searching </p>
+                    <button type="button" class="btn btn-blue selector" id="everything-limit">Everything</button>
+                    <button type="button" class="btn btn-ltblue selector" id="shelves-limit">books, journals &amp; ebooks</button>
+                    <button type="button" class="btn btn-ltblue selector" id="articles-limit">articles</button>
+                    <button type="button" class="btn btn-ltblue selector" id="databases-limit">databases</button>
+                    <button type="button" class="btn btn-ltblue selector" id="ejournals-limit">ejournals</button>
+                  </div>
+                </div>
+              </form><!-- End search form -->
+              <div class="row hidden-xs">
+                <div class="col-md-12">
+                  <p class="search-more-info">more options and information:</p>
+                  <ul class="search-extra-links">
+                    <li><a href="#">Get Search Help</a></li>
+                    <li><a href="#">About Our New Search</a></li>
+                    <li><a href="#">Advanced Search</a></li>
+                    <li><a href="#">Classic Catalogue</a></li>
+                  </ul>
+                </div>       
+              </div>
+            </div><!-- End search box -->
+            <div class="row">
+              <div class="col-md-12">
+                <div class="browse"><!-- Browse box -->
+                  <h2 class="hidden-xs">Browse Library Resources</h2>
+                  <ul class="browse-options clearfix">
+                    <li><a href="/databases">Databases AtoZ </a></li>
+                    <li><a href="/ejournals">Electronic Journals AtoZ </a></li>                        
+                    <li><a href="http://www.library.ualberta.ca/digitization/" class="hidden-xs">Digital Collections</a></li>
+                  </ul>
+                </div><!-- End browse box -->
+              </div>
+            </div>
+          </div><!-- End search and browse -->
+          <div class="col-md-5 hours-wrap"><!-- Hours widget -->
+            <div class="hours" id="hours"><a name="hours" id="hours-anch"></a>
+              <h2>Library Hours &amp; Locations <a href="https://hours.library.ualberta.ca" class="hidden-xs">see all</a></h2>
+              <script src="http://hours.library.ualberta.ca/widget-hours-all-js.php"></script>           
+            </div>
+          </div><!-- End hours widget -->
+        </div>
+      </div>
+    </div>
+    <!-- End Search and Hours Pane -->
+        
+    <!-- News and Events Pane -->
+    <div id="news-pane" class="pane"><a name="news" class="anchor"></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-11 col-md-11">
+            <h2>News &amp; Events</h2>
+          </div>
+          <div class="col-xs-1 col-md-1">
+            <a data-scroll href="#top"><img src="/assets/up.png" class="up"/></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-3 news-side">
+            <div class="twitter top-margin">
+              <a class="twitter-timeline" href="https://twitter.com/uofalibraries/favorites" data-widget-id="346675024738017280" border-color="#ffffff" data-chrome="nofooter transparent" height="479">Favorite Tweets by @uofalibraries</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+            <div class="social-icons">
+              <a href="/fb"><img src="https://library.ualberta.ca/2012assets/facebook-icon_normal.png" alt="facebook-icon"></a>
+              <a href="http://www.youtube.com/user/ualibrary2010"><img src="https://library.ualberta.ca/2012assets/youtube-icon_normal.png" alt="youtube-icon"></a>
+              <a href="/services/alerts/rss_feeds"><img src="https://library.ualberta.ca/2012assets/rss-icon_normal.png" alt="rss-icon"></a>
+              <a href="http://www.flickr.com/photos/uofalibraries"><img src="https://library.ualberta.ca/2012assets/flickr-icon_normal.png" alt="flickr-icon"></a>
+            </div>
+            <a href="#" class="international hidden-xs">Our International Intiatives</a>
+          </div>
+          <div class="top-margin col-md-9 hidden-xs">
+              <div class="col-md-4">
+                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/1.jpg" alt="img01"/>
+              </div>
+              <div class="col-md-4">
+                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/2.jpg" alt="img02"/>
+              </div>
+              <div class="col-md-4">
+                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/3.jpg" alt="img03"/>
+              </div>
+              <div class="col-md-4 extra-top-margin">
+                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/4.jpg" alt="img01"/>
+              </div>
+              <div class="col-md-4 extra-top-margin">
+                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/5.jpg" alt="img02"/>
+              </div>
+              <div class="col-md-4 extra-top-margin">
+                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/6.jpg" alt="img03"/>
+              </div>
+            <div class="col-md-12 hidden-xs">
+              <div class="col-md-12 librarian-profiles-title extra2-top-margin">
+                <h3>Meet some of our librarians</h3>
+              </div>
+              <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-1 direction">&lt;</div>
+              <div class="col-md-10">
+                <div class="row">
+                  <div class="col-md-4 librarian-profiles">
+                    <div class="librarian-info">
+                      <h4>Gerald Beasley</h4> <p>Chief Librarian</p> <br/>
+                    </div>
+                    <img src="http://beta.library.ualberta.ca/img/librarians/lib1.png"> 
+                  </div>
+                  <div class="col-md-4 librarian-profiles">
+                    <div class="librarian-info">
+                      <h4>Amanda Wakaruk</h4><p>Government Information Librarian</p> 
+                    </div>
+                    <img src="http://beta.library.ualberta.ca/img/librarians/lib2.png">
+                  </div>
+                  <div class="col-md-4 librarian-profiles" id="last">
+                    <div class="librarian-info">
+                      <h4>Chuck Humphry</h4><p>Data Library Coordinator</p> 
+                      </div>
+                        <img src="http://beta.library.ualberta.ca/img/librarians/lib3.png">
+                      </div>
+                    </div>                      
+                  </div>
+                  <div class="col-md-1 direction">&gt;</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>    
+    <!-- End news and events Pane -->
+
+    <!-- Start Services Pane -->
+    <div id="services-pane" class="pane"><a name="services" class="anchor"></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row">
+            <div class="col-xs-11 col-md-12">
+              <h2>Popular Library Services</h2>
+            </div>
+            <div class="col-xs-1 visible-xs-block">
+              <a data-scroll href="#top"><img src="" class="up"/></a>
+            </div>
+          </div>
+          <div class="row extra-top-margin">
+             <div class="col-md-4">
+              <a href="services/reserve-a-group-room" class="services-bx" id="reserve-room">
+                <h3>Reserve a Group Room</h3> 
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="services/study-space-directory" class="services-bx" id="space-dir">
+                <h3>Study Spaces Directory</h3>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="services/citation-and-writing-help" class="services-bx" id="writing">
+                <h3>Get Citation &amp; Writing Help</h3>
+              </a>
+            </div>
+          </div>
+          <div class="row extra-top-margin">
+            <div class="col-md-4">
+              <a href="services/access-to-e-resources" class="services-bx" id="eresources">
+                <h3>Get Access to E-Resources</h3>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="services/workshops" class="services-bx" id="workshops">
+                <h3 id="extra-padding">Workshops &amp; Tutorials</h3>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="subject-librarians" class="services-bx" id="librarians">
+                <h3>Subject Librarians</h3>
+              </a>
+            </div>
+          </div>
+              <div class="row extra-top-margin">
+            <div class="col-md-4">
+              <a href="http://library.ualberta.ca/reserveroom/" class="services-bx" id="reserves">
+                <h3>Reserves</h3>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="services/refworks" class="services-bx" id="refworks">
+                <h3 id="extra-padding">Refworks</h3>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <a href="subject-librarians" class="services-bx" id="ask-service">
+                <h3>Ask us a Question</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 top-margin">
+          <h2 class="grey-hd">Library Services A to Z <a data-scroll href="#top"><img src="/assets/up.png" class="up hidden-xs"/></a></h2>
+          <div class="grey">
+            <div class="row">
+              <div class="col-md-6 atoz">
+                <div class="atoz-wrap">
+                  <h3 class="col-md-1">a</h3>
+                  <ul class="col-md-11">
+                    <li><a href="/eresources" class="gra und dis">Access to E-Resources</a></li>
+                    <li><a href="http://guides.library.ualberta.ca/alumniborrowing" class="alu">Alumni Services</a></li>
+                    <li><a href="/askus/" class="everyone">Ask Us A Question</a></li>
+                  </ul>
+                </div>
+                <div class="atoz-wrap">
+                  <h3 class="col-md-1">b</h3>
+                  <ul class="col-md-11">
+                    <li><a href="/catalogue/bard/index.cfm" class="gra und fac">BARD Request</a></li>
+                    <li><a href="/services/studyspacebooking/index.cfm" class="fac gra und">Book Study Space</a></li>
+                    <li><a href="http://guides.library.ualberta.ca/borrowing" class="gra und fac dis">Borrowing Policies &amp; Library Cards</a></li>
+                  </ul>
+                </div>
+                <div class="atoz-wrap">
+                  <h3 class="col-md-1">c</h3>
+                  <ul class="col-md-11">
+                    <li><a href="http://guides.library.ualberta.ca/content.php?pid=57725&amp;sid=1857812" class="und gra dis" id="guides">Citation Help (APA)</a></li>
+                  </ul>
+                </div>
+                <div class="atoz-wrap">
+                  <h3 class="col-md-1">d</h3>
+                  <ul class="col-md-11">
+                    <li><a href="http://guides.library.ualberta.ca/distance" class="dis" id="mainguides"> Distance Student Services</a></li> 
+                  </ul>
+                </div>
+                <div class="atoz-wrap">
+                  <h3 class="col-md-1">e</h3>
+                  <ul class="col-md-11">
+                    <li><a href="http://www.gradstudies.ualberta.ca/degreesuperv/thesis/submissionethesis.aspx" class="fac gra">Submit your electronic theses</a></li>
+                  </ul>
+                </div>
+                <div class="atoz-wrap">
+                  <h3 class="col-md-1">f</h3>
+                  <ul class="col-md-11">
+                    <li><a href="http://guides.library.ualberta.ca/faculty" class="fac grad" id="mainguides">Faculty &amp; Researchers</a></li>   
+                    <li><a href="/circulation/fines/appeal/" class="fac gra und dis">Fines Appeal</a></li>
+                  </ul>
+                </div>
+                <div class="atoz-wrap">
+                  <h3 class="col-md-1">g</h3>
+                  <ul class="col-md-11">
+                    <li><a href="http://guides.library.ualberta.ca/grad" class="gra" id="mainguides">Graduate Student Services</a></li>
+                  </ul>
+                </div>
+                <div class="atoz-wrap">
+                  <h3 class="col-md-1">i</h3>
+                  <ul class="col-md-11">
+                    <li><a href="/instruction/" class="fac gra und">Instruction</a></li>
+                    <li><a href="http://guides.library.ualberta.ca/ill" class="und gra dis">Interlibrary Loan</a></li> 
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 atoz right-hd">
+                <div class="atoz-wrap"> 
+                  <ul class="col-md-11">
+                    <li><a href="http://guides.library.ualberta.ca/borrowing" class="gra und fac dis">Library Cards &amp; Borrowing Policies </a></li>
+                    <li><a href="http://guides.library.ualberta.ca/linking/" class="fac und gra dis" id="guides">Linking to resources</a></li>
+                    <li><a href="/epl" class="und gra per">L-Pass &amp; eplGO</a></li>
+                    <li><a href="/liaisonlibrarians/index.cfm" class="und gra fac dis">Subject Librarians</a></li>
+                  </ul>
+                  <h3 class="col-md-1">l</h3>
+                </div>
+                <div class="atoz-wrap">
+                  <ul class="col-md-11">
+                    <li><a href="/remote/index.cfm" class="dis und gra">Off-campus Access</a></li>
+                    <li><a href="http://guides.library.ualberta.ca/oa/" class="gra fac" id="guides">Open Access Publishing</a></li>
+                  </ul>
+                  <h3 class="col-md-1">o</h3>
+                </div>
+                <div class="atoz-wrap">
+                  <ul class="col-md-11">
+                    <li><a href="http://guides.library.ualberta.ca/disabilities" class="per" id="mainguides">Persons with Disabilities, Services for</a></li>    
+                    <li><a href="http://ualweb.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/29/1168/X/2" class="gra und fac dis">my PIN / my account</a></li>
+                    <li><a href="http://www.library.ualberta.ca/myaccount2/pin/" class="fac und gra dis">PIN numbers</a></li>
+                  </ul>
+                  <h3 class="col-md-1">p</h3>
+                </div>
+                <div class="atoz-wrap">
+                  <ul class="col-md-11">
+                    <li><a href="http://www.library.ualberta.ca/readinglist/index.cfm" class="fac">Reading List / Reserve Services</a></li>
+                    <li><a href="/recommend_purchase/index.cfm" class="und gra fac dis ext">Recommend a Purchase</a></li>
+                    <li><a href="/askus/" class="fac gra und dis">Reference</a></li> 
+                    <li><a href="/reserverequest/" class="fac">Reserve Request Form</a></li>
+                  </ul>
+                  <h3 class="col-md-1">r</h3>
+                </div>
+                <div class="atoz-wrap">
+                  <ul class="col-md-11">
+                    <li><a href="/services/students/computing/study" class="gra und">Study and Work Space</a></li>
+                    <li><a href="/liaisonlibrarians/index.cfm" class="und gra fac dis">Subject Librarians</a></li>
+                  </ul>
+                  <h3 class="col-md-1">s</h3>
+                </div>
+                <div class="atoz-wrap">
+                  <ul class="col-md-11">
+                    <li><a href="/studenttraining" class="und gra">Workshops</a></li>
+                  </ul>
+                  <h3 class="col-md-1" id="sm">w</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+    <!-- End Services Pane -->
+
+    <!-- Start Subjects Pane -->
+    <div class="pane" id="subjects-pane"><a name="subjects" class="anchor"></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-11 col-md-11">
+            <h2>Subject Guides</h2>
+          </div>
+          <div class="col-xs-1 col-md-1">
+            <a data-scroll href="#top" class="up-arrow"><img src="/assets/up.png" class="up"/></a>
+          </div>
+        </div>
+        <div class="col-md-10 top-margin">
+          <div class="row">
+            <div class="col-md-4 col-xs-6 subjects" id="ag">
+              <div class="subject-title" id="lines2">
+                <h3><a href="#">Agricultural, Life &amp; Environmental Sciences</a></h3>
+              <div><a href="#">guides</a> <a href="#">databases</a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 subjects" id="arts">
+            <div class="subject-title" id="lines2">
+              <h3><a href="#">Arts: Humanities &amp; Social Sciences</a></h3>
+              <div><a href="#">guides</a> <a href="#">tutorials</a> <a href="#">databases</a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 subjects" id="aug">
+            <div class="subject-title" id="lines">
+              <h3><a href="#">Augustana Campus Library</a></h3>
+              <div><a href="#">guides</a> <a href="#">databases</a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 subjects" id="business">
+            <div class="subject-title" id="lines">
+              <h3><a href="#">Business</a></h3>
+              <div><a href="#">guides</a> <a href="#">tutorials</a> <a href="#">databases</a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 subjects" id="ed">
+            <div class="subject-title">
+              <h3><a href="#">Education</a></h3>
+              <div><a href="#">guides</a> <a href="#">tutorials</a> <a href="#">databases</a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 subjects" id="eng"> 
+            <div class="subject-title">
+              <h3><a href="#">Engineering</a></h3>
+              <div><a href="#">guides</a> <a href="#">databases</a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 subjects" id="health">
+            <div class="subject-title">
+              <h3><a href="#">Health Sciences</a></h3>
+              <div><a href="#">guides</a> <a href="#">tutorials</a> <a href="#">databases</a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 subjects" id="int">
+            <div class="subject-title" id="lines">
+              <h3><a href="#">Interdisciplinary Studies</a></h3>
+              <div><a href="#">guides</a> <a href="#">databases</a></div>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-6 subjects" id="law">
+              <div class="subject-title">
+                <h3><a href="#">Law</a></h3>
+                <div><a href="#">guides</a> <a href="#">tutorials</a> <a href="#">databases</a></div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-6 subjects" id="native">
+              <div class="subject-title">
+                <h3><a href="#">Native Studies</a></h3>
+                <div><a href="#">guides</a> <a href="#">databases</a></div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-6 subjects" id="physed">
+              <div class="subject-title" id="lines2">
+                <h3><a href="#">Physical Education &amp; Recreation</a></h3>
+                <div><a href="#">guides</a> <a href="#">databases</a></div>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-6 subjects" id="science">
+              <div class="subject-title">
+                <h3><a href="#">Science</a></h3>
+                <div><a href="#">guides</a> <a href="#">databases</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 top-margin hidden-xs">
+          <div class="browse-type">
+            <h3>Browse by Type</h3>
+            <ul class="arrows">
+              <li><a href="http://guides.library.ualberta.ca/">UAL Library Guides</a></li>
+              <li><a href="http://guides.library.ualberta.ca/booksinprint">Books in Print and National Bibliographies</a></li>
+              <li><a href="http://guides.library.ualberta.ca/aecontent.php?pid=57725&amp;sid=1857812">Citation Guides</a></li>
+              <li><a href="http://copyright.ualberta.ca">Copyright Information</a></li>
+              <li><a href="http://guides.library.ualberta.ca/data">Data Library</a></li>
+              <li><a href="http://guides.library.ualberta.ca/theses_dissertations">Dissertations/Theses</a></li>
+              <li><a href="http://guides.library.ualberta.ca/ebooks">E-Books</a></li>
+              <li><a href="http://guides.library.ualberta.ca/govtinfo">Government Info</a></li>
+              <li><a href="http://guides.library.ualberta.ca/maps">Maps</a></li>
+              <li><a href="http://guides.library.ualberta.ca/newspapers">Newspapers</a></li>
+              <li><a href="http://guides.library.ualberta.ca/patents">Patents</a></li>
+              <li><a href="http://guides.library.ualberta.ca/health_sciences_resources_for_mobile_devices">PDA Resources</a></li>
+              <li><a href="http://www.library.ualberta.ca/aboutus/health/rawlinson/index.cfm">Rawlinson Collection</a></li>
+              <li><a href="http://guides.library.ualberta.ca/academicpapers">Research, Writing and Citing</a></li>
+              <li><a href="http://guides.library.ualberta.ca/spatial">Spatial Data</a></li>
+              <li><a href="http://www.library.ualberta.ca/specialcollections/index.cfm">Special Collections</a></li>
+              <li><a href="http://guides.library.ualberta.ca/standards">Standards</a></li>
+              <li><a href="http://guides.library.ualberta.ca/statistics">Statistical Sources</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Subjects Pane -->
+   
+    <!-- Start Data Management Pane -->
+    <div class="pane rds" id="research-pane"><a name="research" class="anchor"></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-11 col-md-11">
+            <h2>Research Data Management</h2>
+          </div>
+          <div class="col-xs-1 col-md-1">
+            <a data-scroll href="#top" class="up-arrow"><img src="/assets/up-dark.png" class="up"/></a>
+          </div>       
+        </div>
+        <div class="row">    
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="/researchdata/begin" class="color1 rds-nav"> 
+                  <h3>Organize my data</h3>
+                  <p>How to prepare a data management plan &amp; protect your data</p>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="/researchdata/give-access" class="color2 rds-nav">
+                  <h3>Share my data</h3>
+                  <p>Why you would share, data sharing tools, metadata  &amp; how to get credit</p>
+                </a>
+              </div>
+            </div>
+            <div class="row top-margin">
+              <div class="col-md-6">
+                <a href="/researchdata/get-access" class="color3 rds-nav">
+                  <h3>Access existing data</h3>
+                  <p>How to locate data and access date tools, terms &amp; citations</p>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="/researchdata/preserve" class="color4 rds-nav">
+                  <h3>Archive my data</h3>
+                  <p>How to find a repository, prepare your data &amp; submit your data</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 hidden-xs">
+            <a class="twitter-timeline" href="https://twitter.com/wyman10/favorites" data-widget-id="499947651383578624">Favorite Tweets by @wyman10</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          </div>
+          <div class="col-md-9 extra-top-margin hidden-xs">
+            <p class="quote">Good data management is informed by funder and institutional policy and encompasses the full data lifecycle including collection, analysis, dissemination and potential reuse.</p>
+          </div>
+          <div class="col-md-3 top-margin hidden-xs">
+            <a href="https://dmp.library.ualberta.ca/" class="btn-blue btn">DMP Builder</a> <img src="http://beta.library.ualberta.ca/img/more-info.png" class="info-icon tooltip" title="DMP is a Library supported, web-based tool that guides you through developing your Data Management Plan (DMP)." >
+            <a href="https://dataverse.library.ualberta.ca/dvn/" class="btn-blue btn">Dataverse</a> <img src="http://beta.library.ualberta.ca/img/more-info.png" class="info-icon tooltip" title="Dataverse is a library supported, web-based tool to help you protect and share your research data." >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Data Management Pane -->
+
+    <!-- Start My Account Pane -->
+    <div class="pane" id="account-pane"><a name="account" class="anchor"></a>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-11 col-md-11">
+            <h2>My Account Login <span class="small">(for current students, staff and faculty)</a> </h2> 
+          </div>
+          <div class="col-xs-1 col-md-1">
+            <a data-scroll href="#top"><img src="/assets/up-dark.png" class="up"/></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7 extra-top-margin">
+            <div class="login"> 
+              <a type="button" class="btn ccid-login" href="https://myaccount.library.ualberta.ca">Login with your CCID</a><br/>
+              or 
+              <a href="../myaccount2/index.cfm" class="barcode">Login using your Barcode and Pin</a> 
+             <h3 class="nocase">Login to...</h3>
+              <ul class="alist">
+                <li>Pay fines online (only available with CCID login).</li>
+                <li>View your holds and checked out items including interlibrary loan items.</li>
+                <li>Customize your Ejournal and Databases lists.</li>
+                <li>View and edit your library room bookings.</li>
+              </ul>
+              <h3 class="noback">Related Policies and Services</h3>
+              <ul class="alist">
+                <li><a href="http://guides.library.ualberta.ca/borrowing">Library Cards</a></li>
+                <li><a href="http://guides.library.ualberta.ca/borrowing">Suspension of Borrowing Privileges</a></li>
+                <li><a href="http://www.library.ualberta.ca/aboutus/contactinfo/circ/">University of Alberta Library Service Desks</a></li>
+                <li><a href="http://www.library.ualberta.ca/emailnotification/">E-Mail Notification</a></li>
+                <li><a href="http://guides.library.ualberta.ca/borrowing">Privacy of Circulation Records</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-5 extra-top-margin">
+            <div class="login"> 
+              <h3>Fines <a href="http://guides.library.ualberta.ca/borrowing" class="h3-right">see all fines information</a></h3>
+              <ul>
+                <li>General Fines <strong>$2.00 per day per item</strong></li>
+                <li>Recalled Items <strong>$5.00 per day per item</strong></li>
+              </ul>
+            </div>
+            <div class="login hidden-xs"> 
+              <h3>Loan Periods <a href="http://guides.library.ualberta.ca/borrowing" class="h3-right">see all loan period information</a></h3>
+              <div class="row white top-margin">
+                <div class="col-md-6">UA Academic staff and UA Graduate Students</div>
+                <div class="col-md-6">Term loans, can be recalled after 2 weeks (Sept.-Jan., Jan.-May, May-Sept.)</div>
+              </div>
+              <div class="row white top-margin">
+                <div class="col-md-6">UA Non-academic staff and UA Undergraduate Students</div>
+                <div class="col-md-6">6-week loans, can be recalled after 2 weeks</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End My Account Pane -->

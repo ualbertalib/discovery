@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>University of Alberta Libraries</title>
+
+    <!-- Bootstrap -->
+    <link href="http://beta.library.ualberta.ca/css/bootstrap.min.css" rel="stylesheet">    
+    <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://beta.library.ualberta.ca/css/component.css" />
+
+    <!-- Custom css file for University of Alberta Libraries -->
+    <link href="http://beta.library.ualberta.ca/css/ualib-custom.css" rel="stylesheet">
+    <script src="http://beta.library.ualberta.ca/js/modernizr.custom.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Start Header and Navigation -->
+    <div class="navbar-fixed-top" id="top"><a name="top"></a>
+      <div class="container">
+        <div class="collapse navbar-collapse hidden-xs"> <!-- UofA Blade -->
+          <ul class="nav navbar-nav">
+            <li><a href="#">My UAlberta</a></li>
+            <li><a href="#">Find a Person</a></li>
+            <li><a href="#">ONEcard</a></li>
+            <li><a href="#">Bear Tracks</a></li>
+            <li><a href="#">Maps</a></li>
+            <li><a href="#">Email &amp; Apps</a></li>
+            <li><a href="#">eClass</a></li>
+            <li><a href="#" class="last">Libraries</a></li>
+            <li><img src="/assets/blade-element.jpg" class="hidden-sm"/><li>
+          </ul>
+        </div> <!-- End UofA Blade -->
+        <div class="row header">
+          <div class="container">
+            <div class="col-xs-8 col-md-6 col-sm-5">
+              <h1><a data-scroll href="#top"><img src="/assets/ualib-logo.png" class="ualogo" alt="University of Alberta Libraries"/></a></h1>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <h2>menu</h2><!-- Mobile menu button -->
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button><!-- End mobile menu button -->
+            <div class="col-xs-12 col-md-6 col-sm-7">
+              <ul class="ask">
+                <li><a href="#" class="ask-main">Ask Us</a></li>
+                <li><a href="#" class="hidden-xs">Text</a></li>
+                <li><a href="#" class="hidden-xs">Chat</a></li>
+                <li><a href="#" class="hidden-xs">Email</a></li>
+                <li><a href="#" class="last hidden-xs">Phone</a></li> 
+              </ul>
+            </div>
+            <div id="navbar" class="collapse col-xs-10"><!-- Mobile menu -->
+              <ul>
+                <li class="active"><a data-scroll href="#top"  data-toggle="collapse" data-target="#navbar">Search &amp; Home</a></li>
+                <li><a data-scroll href="#hours-anch" data-toggle="collapse" data-target="#navbar">Hours and Locations</a></li>
+                <li><a data-scroll href="#services-pane" data-toggle="collapse" data-target="#navbar">Services</a></li>
+                <li><a data-scroll href="#subjects-pane" data-toggle="collapse" data-target="#navbar">Subject Guides</a></li>
+                <li><a data-scroll href="#news-pane" data-toggle="collapse" data-target="#navbar">News &amp; Events</a></li>
+                <li><a data-scroll href="#research-pane" data-toggle="collapse" data-target="#navbar">Data Management</a></li>
+                <li><a data-scroll href="#account-pane" data-toggle="collapse" data-target="#navbar">My Account</a></li>
+                <li><a href="http://www.ualberta.ca">University of Alberta Home</a></li>
+              </ul>
+            </div><!-- End mobile menu -->
+          </div>
+        </div>
+        <div id="main-nav" class="hidden-xs"><!-- Non-mobile Navigation -->
+          <div class="col-sm-2 col-xs-2" id="home">
+            <div>
+              <h3><a data-scroll href="#top"><span></span>Search &amp; Home</a></h3>
+            </div>
+          </div>
+          <div class="col-sm-15 col-xs-15" id="services">
+            <div>
+              <h3><a data-scroll href="#services-pane"><span></span>Services</a></h3>
+              <p class="hidden-xs hidden-sm ">A complete list of the services available at our libraries.</p>
+            </div>
+          </div>
+          <div class="col-sm-15 col-xs-15" id="subjects">
+            <div>
+              <h3><a data-scroll href="#subjects-pane"><span></span>Subject Guides</a></h3>
+              <p class="hidden-sm hidden-xs">Let our librarians guide you to the information you need.</p>
+            </div>
+          </div>
+          <div class="col-sm-15 col-xs-15" id="news">
+            <div>
+              <h3><a data-scroll href="#news-pane"><span></span>News &amp; Events</a></h3>
+              <p class="hidden-sm hidden-xs">See library exhibits, announcments, and news.</p>
+            </div>
+          </div>
+          <div class="col-sm-15 col-xs-15" id="research">
+            <div>
+              <h3><a data-scroll href="#research-pane"><span></span>Data Management</a></h3>
+              <p class="hidden-sm hidden-xs">Tools to manage, share, and preserve your research data.</p>
+            </div>
+          </div>
+          <div class="col-sm-15 col-xs-15" id="account">
+            <div>
+              <h3><a data-scroll href="#account-pane"><span></span>My Account</a></h3>
+              <p class="hidden-sm hidden-xs">Login to renew books, place holds, pay fines, and more.</p>
+            </div>
+          </div>
+        </div><!-- End non-mobile navigation -->
+      </div>
+    </div>
+    <!-- End Header and Navigation -->
+
+{{ cms:page:content }}
+    
+        <!-- Start Footer -->
+    <div id="footer">
+      <div class="container">
+        <ul class="foot-nav">
+          <li><a href="#">Policies</a></li>
+          <li><a href="#">Employment</a></li>
+          <li><a href="#">Our People</a></li>
+          <li><a href="#">Our Collection</a></li>
+          <li><a href="#">Gifts and Donations</a></li>
+          <li><a href="#">Copyright</a></li> 
+        </ul>
+        <p>&copy; 2012 
+          <a href="/">University of Alberta Libraries</a> - <a href="http://www.ualberta.ca">University of Alberta</a>, Edmonton, AB, Canada T6G 2R3 | <a href="http://www.library.ualberta.ca/privacy/">Web Site Privacy Policy</a>
+        </p>
+      </div>
+    </div>
+ 
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://beta.library.ualberta.ca/js/bootstrap.min.js"></script>
+    <script src="http://beta.library.ualberta.ca/js/smooth-scroll.js"></script>
+    <script src="http://beta.library.ualberta.ca/js/waypoints.min.js"></script>
+    <script src="http://beta.library.ualberta.ca/js/jquery.hoverIntent.minified.js"></script>
+    <script src="http://beta.library.ualberta.ca/js/ualib-custom.js"></script>
+  </body>
+</html>
