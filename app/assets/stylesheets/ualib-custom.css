@@ -315,9 +315,6 @@ color: #fff;
 #databases{
 	float: right;
 }
-.collapse.in{
-	height: 20px;
-}
 .results-head{
 	margin-left:-5px;
 	margin-right: 10px;
