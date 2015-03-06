@@ -1,10 +1,11 @@
+require "csv"
 require_relative "../spec_helper.rb"
 
 include E
 
 describe Database do
 
-  let(:database_csv){ File.open(E::*("fixtures/database_record.csv")).read }
+  let(:database_csv){ CSV.read(E::*("fixtures/database_record.csv")).first }
   let(:db){ Database.new }
   let(:database_xml){ File.open(E::*("fixtures/database_record.xml")).read }
 
@@ -15,7 +16,7 @@ describe Database do
   it "should parse a database CSV object into a Ruby object" do
     db.parse(database_csv)
     expect(db.title).to eq "Web of Science Core Collection"
-    expect(db.subject).to eq "Native Health"
+    expect(db.language).to eq "english"
     expect(db.primary_url).to eq "http://webofknowledge.com/WOS"
   end
 
