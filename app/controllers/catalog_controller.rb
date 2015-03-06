@@ -38,14 +38,14 @@ class CatalogController < ApplicationController
 
       config.default_solr_params = { 
         :qt => 'search',
-        :rows => 10
+        :rows => 25
      }
     
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select' 
     
-    # items to show per page, each number in the array represent another option to choose from.
-    #config.per_page = [10,20,50,100]
+     #items to show per page, each number in the array represent another option to choose from.
+    config.per_page = [25,50,100]
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or 
     ## parameters included in the Blacklight-jetty document requestHandler.
@@ -109,17 +109,17 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
-    config.add_index_field 'title_display', :label => 'Title'
-    config.add_index_field 'title_vern_display', :label => 'Title'
+    #config.add_index_field 'title_display', :label => 'Title'
+    #config.add_index_field 'title_vern_display', :label => 'Title'
     config.add_index_field 'author_display', :label => 'Author'
     config.add_index_field 'author_vern_display', :label => 'Author'
     config.add_index_field 'format', :label => 'Format'
     config.add_index_field 'language_facet', :label => 'Language'
-    config.add_index_field 'published_display', :label => 'Published'
-    config.add_index_field 'published_vern_display', :label => 'Published'
-    config.add_index_field 'lc_callnum_display', :label => 'Call number'
-    config.add_index_field 'isbn_t', :label => 'ISBN'
-    config.add_index_field 'issn_t', :label => 'ISSN'
+    #config.add_index_field 'published_display', :label => 'Published'
+    #config.add_index_field 'published_vern_display', :label => 'Published'
+    config.add_index_field 'pub_date', :label => 'Publication Year'
+    #config.add_index_field 'isbn_t', :label => 'ISBN'
+    #config.add_index_field 'issn_t', :label => 'ISSN'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 

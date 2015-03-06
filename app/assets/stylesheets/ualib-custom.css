@@ -60,6 +60,12 @@ body.home{
 a{
 	color: #2c733b;
 }
+a{
+	text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active{
+	text-decoration: none;
+}
 .header{
 	
 	padding-bottom: 17px;
@@ -678,6 +684,28 @@ font-size: 27px;
 	margin-top: 20px;
 	margin-bottom: 0px;
 }
+.document-metadata dd, .document-metadata dt{
+	font-size: 14px;
+}
+.dl-horizontal dt {
+  width: 100px;
+}
+.dl-horizontal dd {
+  margin-left: 110px;
+}
+
+#documents .document {
+  margin-top: 2px;
+  padding-top: 2px;
+  border-bottom: 1px solid #ddd;
+}
+
+h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
+	text-decoration: none;
+	line-height: 28px;
+}
+
+
 
 @media (max-width: 768px) {
 	body{
