@@ -699,11 +699,25 @@ font-size: 27px;
   padding-top: 2px;
   border-bottom: 1px solid #ddd;
 }
+.document-counter{
+	font-size: 14px;
+}
 
 h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 	text-decoration: none;
 	line-height: 28px;
 }
+.results-img{
+	padding-left: 118px;
+	margin-top: -10px;
+}
+.results-img img{
+	height: 90px;
+}
+.blacklight-isbn_t{
+	display: none;
+}
+
 
 
 

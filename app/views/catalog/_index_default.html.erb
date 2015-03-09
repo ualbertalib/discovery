@@ -1,4 +1,5 @@
 <%# default partial to display solr document fields in catalog index view -%>
+<div class="col-md-9">
 <dl class="document-metadata dl-horizontal dl-invert">
   
   <% index_fields(document).each do |solr_fname, field| -%>
@@ -7,5 +8,15 @@
 	    <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_index_field_value document, :field => solr_fname %></dd>
     <% end -%>
   <% end -%>
+  </dl>
+</div>
+      <div class="col-md-3 results-img">
+      	<% isbn = render_document_show_field_value(document, "isbn_t").split(',') %>
+		<%=link_to image_tag("https://books.google.com/books?vid=ISBN"+isbn.first+"&printsec=frontcover&img=1&zoom=1"), document %>
 
-</dl>
+
+    </div>
+
+
+
+

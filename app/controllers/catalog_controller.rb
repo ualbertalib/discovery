@@ -118,7 +118,7 @@ class CatalogController < ApplicationController
     #config.add_index_field 'published_display', :label => 'Published'
     #config.add_index_field 'published_vern_display', :label => 'Published'
     config.add_index_field 'pub_date', :label => 'Publication Year'
-    #config.add_index_field 'isbn_t', :label => 'ISBN'
+    config.add_index_field 'isbn_t', :label => 'ISBN'
     #config.add_index_field 'issn_t', :label => 'ISSN'
 
     # solr fields to be displayed in the show (single result) view
