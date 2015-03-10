@@ -47,7 +47,7 @@
             <td><%= item[:call_number] %></td>
             <td><%= item[:copies] %> </td>
             <td><%= item[:status] %></td>
-            <td><%= item[:location] %></td></tr>
+            <td><%= @locations[item[:location].downcase] %></td></tr>
         <% end %>
       </table>
     <% end %>
