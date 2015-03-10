@@ -1,4 +1,4 @@
-<div id="content" class="col-md-9 show-document">
+<div id="content" class="col-md-9 show-document top-margin">
 
 
   <%= render 'previous_next_doc' %>
@@ -35,13 +35,13 @@
       </div>
     <% end %>
     <% end %>
-  
+
 
     <% unless @holdings.empty? %>
       <div id = "holdings">
         <% if @document["source"].first == "Symphony"  %>
       <table>
-        <tr><td>Call Number</td><td>Copies</td><td>Status</td><td>Location</td></tr>
+        <tr><th>Call Number</th><th>Copies</th><th>Status</th><th>Location</th></tr>
         <tr>
           <% for item in @holdings %> 
             <td><%= item[:call_number] %></td>
@@ -53,7 +53,7 @@
     <% end %>
         <% if @document["source"].first == "SFX"  %>
       <table>
-        <tr><td>Subscription</td><td>Coverage</td></tr>
+        <tr><th>Subscription</th><th>Coverage</th></tr>
             <tr>
               <% for item in @holdings %> 
             <td><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
@@ -68,8 +68,11 @@
 
     <%= @doc %>
   </div>
-   <% if @document[:isbn_t] %>
-    <div class="col-md-3 extra2-top-margin">
+
+    
+
+   <% if @document[:isbn_t]  %>
+    <div class="col-md-3 full-record-book-jacket">
       <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
     </div>
   <% end %>
@@ -89,7 +92,7 @@
 
 </div>
 
-<div id="sidebar" class="col-md-3">
+<div id="sidebar" class="col-md-3 top-margin">
    <%= render_document_sidebar_partial %>
 </div>
 
