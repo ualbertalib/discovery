@@ -7,6 +7,9 @@ class BentoController < ApplicationController
   include ERB::Util
 
   def index
+
+    load_lookup_tables
+
     @rows = 10
     @complete_count = 0
     if params["q"] then # refactor this
