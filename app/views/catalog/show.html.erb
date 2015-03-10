@@ -44,6 +44,16 @@
             <th>Location</th>
           </tr>
           <% for item in @holdings %> 
+            <td><%= item[:call_number] %></td>
+            <td><%= item[:copies] %> </td>
+            <td><%= @statuses[item[:status].downcase] %></td>
+            <td><%= @locations[item[:location].downcase] %></td></tr>
+        <% end %>
+      </table>
+    <% end %>
+        <% if @document["source"].first == "SFX"  %>
+      <table>
+        <tr><th>Subscription</th><th>Coverage</th></tr>
             <tr>
               <td><%= item[:call_number] %></td>
               <td><%= item[:copies] %> </td>

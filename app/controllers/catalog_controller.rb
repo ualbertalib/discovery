@@ -31,6 +31,7 @@ class CatalogController < ApplicationController
       @urls = create_ua_links(@document)
       @alternative_urls = create_alternative_links(@document)
     end
+    load_lookup_tables
   end
 
   configure_blacklight do |config|
