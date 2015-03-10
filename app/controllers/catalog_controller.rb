@@ -31,8 +31,7 @@ class CatalogController < ApplicationController
       @urls = create_ua_links(@document)
       @alternative_urls = create_alternative_links(@document)
     end
-    @locations ||= YAML.load_file('config/locations.yml')
-    @statuses ||= YAML.load_file('config/statuses.yml')
+    load_lookup_tables
   end
 
   configure_blacklight do |config|

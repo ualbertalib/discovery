@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   layout 'blacklight'
 
+  helper_method :load_lookup_tables
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -34,5 +36,10 @@ class ApplicationController < ActionController::Base
       session[:results] = nil
     end
     root_path
+  end
+
+  def load_lookup_tables
+    @locations ||= YAML.load_file("config/locations.yml")
+    @statuses ||= YAML.load_file("config/statuses.yml")
   end
 end
