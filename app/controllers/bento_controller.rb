@@ -9,11 +9,16 @@ class BentoController < ApplicationController
   def index
     @rows = 10
     @complete_count = 0
-    if params["q"] then
+    if params["q"] then # refactor this
       eds = get_eds_results
-      @eds_count = eds["count"]
-      eds.delete("count")
-      @eds = eds
+      if eds
+        @eds_count = eds["count"]
+        eds.delete("count")
+        @eds = eds
+      else
+        @eds_count = 0
+        @eds = "No Results"
+      end
     else
       @eds_count = 0
       @eds = "Empty Search"
@@ -97,18 +102,20 @@ class BentoController < ApplicationController
     documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
     @complete_count += documents["count"]
     results = session[:results]['SearchResult']['Data']['Records']
-    results.each do |result|
-      metadata = {}
-      if has_restricted_access?(result) then
-        metadata[:title] = "This result cannot be shown to guests."
-      else
-        metadata[:title] = show_title(result)
+    if results then
+      results.each do |result|
+        metadata = {}
+        if has_restricted_access?(result) then
+          metadata[:title] = "This result cannot be shown to guests."
+        else
+          metadata[:title] = show_title(result)
+        end
+        metadata[:author] = show_authors(result) if has_authors?(result)
+        metadata[:url] = result["PLink"]
+        metadata[:format] = show_pubtype(result) if has_pubtype?(result)
+        documents[result["ResultId"]] = metadata
       end
-      metadata[:author] = show_authors(result) if has_authors?(result)
-      metadata[:url] = result["PLink"]
-      metadata[:format] = show_pubtype(result) if has_pubtype?(result)
-      documents[result["ResultId"]] = metadata
+      documents
     end
-    documents
   end
 end
