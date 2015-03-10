@@ -58,10 +58,10 @@ def ingest_marc
 end
 
 def ingest_databases
-    db = Databases.new(@c.database_csv)
+    db = Databases.new(@c.path)
     db.xml_records.each_with_index do |record, index|
       db_vocabulary = DatabaseVocabulary.from_xml(record)
-      Dir.mkdir(@c.path) unless File.exists? @c.path
+      Dir.mkdir(@c.expand_path) unless File.exists? @c.expand_path
       File.open("#{@c.path}/#{index}.xml", "w"){ |f| f.write db_vocabulary.to_xml }
     end
     batch_ingester = BatchIngest.new

@@ -72,6 +72,6 @@ databases:
   namespace: ""
   vocabulary: DatabaseVocabulary
   mode: directory
-  path: "data/databases"
-  database_csv: "data/databases.csv"
+  expand_path: "data/databases"
+  path: "data/databases.csv"
   endpoint: http://www.library.ualberta.ca/batchjobs/SFX/dbMetadata/dbdump_csv.php
