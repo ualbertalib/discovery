@@ -344,9 +344,9 @@ color: #fff;
 	padding:0 20px;
 	background-color: #eceef3;
 }
-#ejournals{
-	
-}
+.results h3 span{
+	display: block;
+	}
 #databases{
 	float: right;
 }
@@ -358,8 +358,9 @@ color: #fff;
 	color: #000;
 	font-size: 21px;
 	display: block;
-	height: 30px;
+	height: 50px;
 	margin-left: -10px;
+	margin-top: 10px;
 }
 .results h3#print{
 	height: 45px;
@@ -761,6 +762,9 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 	border-left: 3px solid #fff;
 	border-bottom: 1px solid #fff;
 	background-color: #eceff4;
+}
+#holdings table td.call-number{
+	min-width: 250px;
 }
 .panel-default > .panel-heading{
 	background-color: #eceff4;
