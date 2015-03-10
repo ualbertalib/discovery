@@ -24,9 +24,11 @@
        <% clean_params = deep_clean(params) %>
        <% params = clean_params %>
 
-	<% unless params[:fromDetail] == 'y' and session[:results] %>
+  <% if session[:results] %>
+	<%# unless params[:fromDetail] == 'y'%>
 	    <% search(options) %>
-	<% end %>
+      <%# end %>
+    <% end %>
 <% end %>
 
 <script type="text/javascript">
