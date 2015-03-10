@@ -37,6 +37,7 @@
   }
 </script>
 
+<% if session[:results]['SearchRequestGet'] %>
 <% show_numlimiters.times do |i| %>
 <script type="text/javascript">
   $(document).ready(function() {
@@ -46,6 +47,7 @@
     });
   });
 </script>
+<% end %>
 <% end %>
 
 <div id="sidebar" class="span3">
