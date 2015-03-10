@@ -17,7 +17,7 @@ class BentoController < ApplicationController
         @eds = eds
       else
         @eds_count = 0
-        @eds = "No Results"
+        @eds = ""
       end
     else
       @eds_count = 0
