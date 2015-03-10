@@ -74,3 +74,4 @@ databases:
   mode: directory
   path: "data/databases"
   database_csv: "data/databases.csv"
+  endpoint: http://www.library.ualberta.ca/batchjobs/SFX/dbMetadata/dbdump_csv.php
