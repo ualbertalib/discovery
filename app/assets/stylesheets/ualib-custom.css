@@ -301,6 +301,35 @@ color: #fff;
 	background-color:#4d82a1;
 	color: #fff;
 }
+.btn-ltblue{
+	background-color: #B2C6D1;
+	color: #333;
+	border: #4C6F84;
+	padding: 6px 8px;
+	font-size: 16px;
+	margin-top: 5px;
+}
+.btn-ltblue:hover{
+	background-color: #7e9db2;
+	color: #efefef;
+}
+.hold{
+	background-color: #557185;
+	-webkit-background-size: 8px;
+	background-size: 8px;
+	color: #fff;
+	padding: 6px 10px;
+	font-size: 16px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 18px;
+	width: 100%;
+}
+.hold:hover{
+	background-color: #7e9db2;
+	color: #fff;
+}
+
 .all{
 	text-align: right;
 	padding: 8px 10px 0 10px;
@@ -469,7 +498,7 @@ a.see-all-results{
 	display: block;
 }
 #electronic_access span.url-label{
-	width: 160px;
+	width: 100px;
 	text-align: right;
 	font-size: 18px;
 	font-weight: normal;
@@ -478,11 +507,12 @@ a.see-all-results{
 }
 #electronic_access a{
 	display: inline-block;
-font-size: 18px;
+	font-size: 18px;
 	padding: 5px 10px;
-	background-color:#B2C6D1;
+	background-color:#eceff4;
+	border: 1px solid #B2C6D1;
 	color: #000;
-	margin-left: 18px;
+	margin-left: 10px;
 	border-radius: 5px;
 }
 #electronic_access a:hover, #electronic_access a:focus, #electronic_access a:active{
@@ -717,9 +747,33 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 .blacklight-isbn_t{
 	display: none;
 }
-
-
-
+#holdings{
+	padding-top: 10px;
+}
+#holdings table th{
+	font-weight: bold;
+	background-color: #B2C6D1;
+	padding: 5px 25px 5px 10px;
+	border-left: 3px solid #fff;
+}
+#holdings table td{
+	padding: 5px 25px 5px 15px;
+	border-left: 3px solid #fff;
+	border-bottom: 1px solid #fff;
+	background-color: #eceff4;
+}
+.panel-default > .panel-heading{
+	background-color: #eceff4;
+}
+#previousNextDocument{
+	padding-bottom: 10px;
+}
+.full-record-book-jacket{
+	padding-top: 80px;
+}
+.panel .nav>li>a{
+	border-right:none;
+}
 
 @media (max-width: 768px) {
 	body{
