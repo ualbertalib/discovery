@@ -1,3 +1,8 @@
+<% @local_symphony_limit = 15 %>
+<% @local_ejournal_limit = 15 %>
+<% @local_eds_limit = 10 %>
+<% @local_database_limit = 10 %>
+
 <div class="container" id="search-results">
     <div class="row results-head top-margin">
    		<div class="col-md-6">
@@ -30,7 +35,7 @@
 
             <ul>
             	<% i = 1%>
-				<% @symphony.each do |id,symphony| %>
+				<% @symphony.take(@local_symphony_limit).each do |id,symphony| %>
         <li>
              <div class="col-md-10">
               <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %></em></a><span class="date">(<%= symphony[:year].first if symphony[:year]%>)</span>
@@ -71,7 +76,7 @@
         <ul>       
           <% i = 1 %> 
           <% if @eds.instance_of? Hash %>
-          <% @eds.each do |id,article| %>
+          <% @eds.take(@local_eds_limit).each do |id,article| %>
             <li>
                 <div class="col-md-10">
                   <span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> </a> 
@@ -106,7 +111,7 @@
             </h3>       
         	<ul>
           		<% i = 1 %>
-				<% @ejournals.each do |id,ejournals| %>
+				<% @ejournals.take(@local_ejournal_limit).each do |id,ejournals| %>
           <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ejournals[:title] %></a></li>
             		<% i+=1 %>
 				<% end %>
@@ -123,7 +128,7 @@
              </h3>
  				<ul>       
                     <% i = 1 %> 
-					<% @databases.each do |id,database| %>
+					<% @databases.take(@local_database_limit).each do |id,database| %>
             			<li><span><%= i %>.</span> <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database[:title] %></a></li>
           			   <% i+=1 %>
                     <% end %>
