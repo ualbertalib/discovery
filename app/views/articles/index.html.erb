@@ -24,9 +24,11 @@
        <% clean_params = deep_clean(params) %>
        <% params = clean_params %>
 
-	<% unless params[:fromDetail] == 'y' and session[:results] %>
+  <% if session[:results] %>
+	<%# unless params[:fromDetail] == 'y'%>
 	    <% search(options) %>
-	<% end %>
+      <%# end %>
+    <% end %>
 <% end %>
 
 <script type="text/javascript">
@@ -37,6 +39,7 @@
   }
 </script>
 
+<% if session[:results]['SearchRequestGet'] %>
 <% show_numlimiters.times do |i| %>
 <script type="text/javascript">
   $(document).ready(function() {
@@ -46,6 +49,7 @@
     });
   });
 </script>
+<% end %>
 <% end %>
 
 <div id="sidebar" class="span3">
