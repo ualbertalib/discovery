@@ -102,10 +102,14 @@ class BentoController < ApplicationController
 
     search(options)
 
-    documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
-    @complete_count += documents["count"]
-    results = session[:results]['SearchResult']['Data']['Records']
-    if results then
+    # refactor
+    if session[:results]['SearchResult']
+      documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
+      @complete_count += documents["count"]
+    end
+
+    if session[:results]['SearchResult'] then
+      results = session[:results]['SearchResult']['Data']['Records']
       results.each do |result|
         metadata = {}
         if has_restricted_access?(result) then
