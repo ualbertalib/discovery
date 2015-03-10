@@ -762,6 +762,9 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 	border-bottom: 1px solid #fff;
 	background-color: #eceff4;
 }
+#holdings table td.call-number{
+	min-width: 250px;
+}
 .panel-default > .panel-heading{
 	background-color: #eceff4;
 }

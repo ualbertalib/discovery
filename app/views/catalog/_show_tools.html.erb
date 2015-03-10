@@ -13,7 +13,7 @@
   </div>
 
   <div class="panel-body">
-    <% if @urls.blank? && @document["source"] == "Symphony" %>
+    <% if @urls.blank? && @document["source"].first == "Symphony" %>
       <%= link_to "Place Hold", "https://myaccount.library.ualberta.ca/index.php?hldCatKey=#{@document.id}", :class => "btn hold" %>
     <% end %>
   <ul class="nav">

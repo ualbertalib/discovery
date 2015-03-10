@@ -1,99 +1,79 @@
 <div id="content" class="col-md-9 show-document top-margin">
-
-
   <%= render 'previous_next_doc' %>
-
-   
-<% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
-<% content_for(:head) { render_link_rel_alternates } -%>
-<%# this should be in a partial -%>
-
-<div id="document" class="document <%= render_document_class %>" itemscope  itemtype="<%= @document.itemtype %>">
-  <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-md-9">
-  
-    <% # bookmark/folder functions -%>
-    <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
-
-    <% if @urls %>
-    <% unless @urls.empty? && @alternative_urls.empty? %>
-
-      <div id ="electronic_access">
-        
-      <% unless @urls.empty? %>
-          <% @urls.each do |url| %>
-            <span class="url-label">URL:</span> <a href="<%= Rails.application.config.proxy+url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span></a>
-          <% end %>
-        <% end %>
-        <% if (@urls.empty?) && (!@alternative_urls.empty?) %>
-          <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
-          <% @alternative_urls.each do |url| %>
-            <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %></a>
-          <% end %>
-
-        <% end %>
-        
-      </div>
-    <% end %>
-    <% end %>
-
-
-    <% unless @holdings.empty? %>
-      <div id = "holdings">
-        <% if @document["source"].first == "Symphony"  %>
-      <table>
-        <tr><th>Call Number</th><th>Copies</th><th>Status</th><th>Location</th></tr>
-        <tr>
-          <% for item in @holdings %> 
-            <td><%= item[:call_number] %></td>
-            <td><%= item[:copies] %> </td>
-            <td><%= item[:status] %></td>
-            <td><%= item[:location] %></td></tr>
-        <% end %>
-      </table>
-    <% end %>
-        <% if @document["source"].first == "SFX"  %>
-      <table>
-        <tr><th>Subscription</th><th>Coverage</th></tr>
-            <tr>
-              <% for item in @holdings %> 
-            <td><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
-            <td><%= item[1][:coverage] %> </td>
-          </tr>
-        <% end %>
-      </table>
-    <% end %>
-
-      </div>
-    <% end %>
-
-    <%= @doc %>
-  </div>
-
+  <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
+  <% content_for(:head) { render_link_rel_alternates } -%>
+  <div id="document" class="document <%= render_document_class %>" itemscope itemtype="<%= @document.itemtype %>">
+    <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-md-9">
+      <% # bookmark/folder functions -%>
+      <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
     
-
-   <% if @document[:isbn_t]  %>
+      <% if @urls %>
+        <% unless @urls.empty? && @alternative_urls.empty? %>
+          <div id ="electronic_access">
+            <% unless @urls.empty? %>
+              <% @urls.each do |url| %>
+                <span class="url-label">URL:</span> 
+                <a href="<%= Rails.application.config.proxy+url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span>
+                </a>
+              <% end %>
+            <% end %>
+            <% if (@urls.empty?) && (!@alternative_urls.empty?) %>
+              <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
+              <% @alternative_urls.each do |url| %>
+                <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %></a>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     <div class="col-md-3 full-record-book-jacket">
-      <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+      <% if @document[:isbn_t]  %>
+        <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+      <% end %>
+    </div>
+  </div>
+  <% unless @holdings.empty? %>
+    <div id = "holdings" class="col-md-12">
+      <% if @document["source"].first == "Symphony"  %>
+        <table>
+          <tr>
+            <th class="call-number">Call Number</th>
+            <th>Copies</th>
+            <th>Status</th>
+            <th>Location</th>
+          </tr>
+          <% for item in @holdings %> 
+            <tr>
+              <td><%= item[:call_number] %></td>
+              <td><%= item[:copies] %> </td>
+              <td><%= item[:status] %></td>
+              <td><%= item[:location] %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+      <% if @document["source"].first == "SFX"  %>
+        <table>
+          <tr>
+            <th>Subscription</th>
+            <th>Coverage</th>
+          </tr>
+          <% for item in @holdings %> 
+            <tr>    
+              <td><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
+              <td><%= item[1][:coverage] %> </td>
+            </tr>
+          <% end %>
+          
+        </table>
+      <% end %>
     </div>
   <% end %>
 </div>
 
-
-
-  <%# <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
-  <%#   <!-- 
-  <%#        // COinS, for Zotero among others. 
-  <%#        // This document_partial_name(@document) business is not quite right,
-  <%#        // but has been there for a while. 
-  <%#   -->
-  <%#   <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>
-  <%#   "></span>
-  <%# <% end %>
-
-</div>
-
 <div id="sidebar" class="col-md-3 top-margin">
-   <%= render_document_sidebar_partial %>
+  <%= render_document_sidebar_partial %>
 </div>
 
 
