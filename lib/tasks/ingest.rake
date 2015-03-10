@@ -38,7 +38,11 @@ end
 
 def run batch_ingester
   method = "from_#{@c.mode}".to_sym
-  batch_ingester.send method, @c.path, @c.vocabulary
+  if @c.expand_path
+    batch_ingester.send method, @c.expand_path, @c.vocabulary
+  else
+    batch_ingester.send method, @c.path, @c.vocabulary
+  end
 end
 
 def configure batch_ingester
@@ -62,7 +66,7 @@ def ingest_databases
     db.xml_records.each_with_index do |record, index|
       db_vocabulary = DatabaseVocabulary.from_xml(record)
       Dir.mkdir(@c.expand_path) unless File.exists? @c.expand_path
-      File.open("#{@c.path}/#{index}.xml", "w"){ |f| f.write db_vocabulary.to_xml }
+      File.open("#{@c.expand_path}/#{index}.xml", "w"){ |f| f.write db_vocabulary.to_xml }
     end
     batch_ingester = BatchIngest.new
     configure batch_ingester
