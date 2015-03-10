@@ -50,8 +50,6 @@
          <div class="col-md-9">
           <p class="result-details author"><%= symphony[:author] %></p> 
           <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
-          <p class="result-details location">Status: <%= symphony[:status].first if symphony[:status]%></p> 
-          <p class="result-details location">Location: <%= symphony[:location].first if symphony[:location]%></p> 
         </div>
         <% if symphony[:isbn] %>
         <div class="col-md-3">
