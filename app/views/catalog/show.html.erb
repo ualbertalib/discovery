@@ -48,7 +48,7 @@
               <td><%= item[:call_number] %></td>
               <td><%= item[:copies] %> </td>
               <td><%= @statuses[item[:status].downcase] %></td>
-              <td><a href="http://www.library.ualberta.ca/sirsi/index.cfm?location=o<%= item[:location] %>" <%= @locations[item[:location].downcase].titleize %></a></td>
+              <td><a href="http://www.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>"><%= @locations[item[:location].downcase].titleize %></a></td>
             </tr>
           <% end %>
         </table>

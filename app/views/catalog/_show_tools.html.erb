@@ -44,7 +44,7 @@
     <%- end -%>
 
     <li class="send_correction">
-      <%= link_to "http://www.library.ualberta.ca/typo_catalogue/index.cfm?001=#{@document['id']}{001}&user_id=WUAARCHIVE"
+    <%= link_to "Send Correction", "http://www.library.ualberta.ca/typo_catalogue/index.cfm?001=#{@document['id']}{001}&user_id=WUAARCHIVE" %>
     </li>
     
     <%# if respond_to? :librarian_view_catalog_path and @document.respond_to?(:to_marc) %>
@@ -54,7 +54,6 @@
     <%# end %>
    
     <li><a href="/bookmarks">Bookmarks</a></li>
-    <li><%= link_to 'More options', advanced_search_path(params), :class=>'advanced_search'%></li>
   </ul>
 </div>
 </div>
