@@ -6,6 +6,14 @@
     <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-md-9">
       <% # bookmark/folder functions -%>
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
+
+      <% if @document["format"].include? "Database" %>
+      <table>
+        <tr><th>URL</th></tr>
+        <tr><td><a href="<%= @document["primary_url_tesim"].first %>" target='_blank'><%= @document["primary_url_tesim"].first %></a></td>
+        </tr>
+      </table>
+      <% end %>
     
       <% if @urls %>
         <% unless @urls.empty? && @alternative_urls.empty? %>
