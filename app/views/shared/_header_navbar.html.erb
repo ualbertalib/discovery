@@ -1,45 +1,56 @@
-<div class="navbar navbar-default" role="navigation" id="top">
+<!-- Start Header and Navigation -->
+    <div class="" id="top"><a name="top"></a>
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-     
-        </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse hidden-xs"> <!-- UofA Blade -->
           <ul class="nav navbar-nav">
-            <li><a href="https://myualberta.ualberta.ca/home/">My UAlberta</a></li>
-            <li><a href="http://webapps.srv.ualberta.ca/search/">Find a Person</a></li>
-            <li><a href="http://www.onecard.ualberta.ca/">ONEcard</a></li>
-            <li><a href="https://www.beartracks.ualberta.ca/">Bear Tracks</a></li>
-            <li><a href="http://www.campusmap.ualberta.ca/">Maps</a></li>
-            <li><a href="https://sites.google.com/a/ualberta.ca/startpage/home">Email &amp; Apps</a></li>
-            <li><a href="https://sites.google.com/a/ualberta.ca/startpage/home">eClass</a></li>
-            <li><a href="https://library.ualberta.ca" class="last">Libraries</a></li>
-            <li><img src="<%= image_path 'blade-element.jpg' %>" class="hidden-sm"></li><li>
-          </li></ul>
-        </div><!--/.nav-collapse -->
-     
-
-    <div class="row header">
-      <div class="container">
-        <div class="col-md-6 col-sm-5 col-xs-8">
-          <h1><%= link_to image_tag('ualib-logo.png', :class => 'ualogo'), '/', data: { no_turbolink: true } %></h1>
-        </div>
-        <div class="col-md-6 col-sm-7 col-xs-4">
-          <ul class="ask">
-            <li><a href="/askus" class="ask-main">Ask Us</a></li>
-            <li><a href="/askus" class="hidden-xs">Text</a></li>
-            <li><a href="/askus" class="hidden-xs">Chat</a></li>
-            <li><a href="/email" class="hidden-xs">Email</a></li>
-            <li><a href="/askus" class="last hidden-xs">Phone</a></li> 
+            <li><a href="#">My UAlberta</a></li>
+            <li><a href="#">Find a Person</a></li>
+            <li><a href="#">ONEcard</a></li>
+            <li><a href="#">Bear Tracks</a></li>
+            <li><a href="#">Maps</a></li>
+            <li><a href="#">Email &amp; Apps</a></li>
+            <li><a href="#">eClass</a></li>
+            <li><a href="#" class="last">Libraries</a></li>
+            <li><img src="/assets/blade-element.jpg" class="hidden-sm"/><li>
           </ul>
+        </div> <!-- End UofA Blade -->
+        <div class="row header">
+          <div class="container">
+            <div class="col-xs-8 col-md-6 col-sm-5">
+              <h1>
+                <%= link_to image_tag('ualib-logo.png', :class => 'ualogo', :alt =>'University of Alberta Libraries'), '/', data: { no_turbolink: true } %>
+              </h1>
+            </div>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <h2>menu</h2><!-- Mobile menu button -->
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button><!-- End mobile menu button -->
+            <div class="col-xs-12 col-md-6 col-sm-7">
+              <ul class="ask">
+                <li><a href="#" class="ask-main">Ask Us</a></li>
+                <li><a href="#" class="hidden-xs">Text</a></li>
+                <li><a href="#" class="hidden-xs">Chat</a></li>
+                <li><a href="#" class="hidden-xs">Email</a></li>
+                <li><a href="#" class="last hidden-xs">Phone</a></li> 
+              </ul>
+            </div>
+            <div id="navbar" class="collapse col-xs-10"><!-- Mobile menu -->
+              <ul>
+                <li class="active"><a data-scroll href="#top"  data-toggle="collapse" data-target="#navbar">Search &amp; Home</a></li>
+                <li><a data-scroll href="#hours-anch" data-toggle="collapse" data-target="#navbar">Hours and Locations</a></li>
+                <li><a data-scroll href="#services-pane" data-toggle="collapse" data-target="#navbar">Services</a></li>
+                <li><a data-scroll href="#subjects-pane" data-toggle="collapse" data-target="#navbar">Subject Guides</a></li>
+                <li><a data-scroll href="#news-pane" data-toggle="collapse" data-target="#navbar">News &amp; Events</a></li>
+                <li><a data-scroll href="#research-pane" data-toggle="collapse" data-target="#navbar">Data Management</a></li>
+                <li><a data-scroll href="#account-pane" data-toggle="collapse" data-target="#navbar">My Account</a></li>
+                <li><a href="http://www.ualberta.ca">University of Alberta Home</a></li>
+              </ul>
+            </div><!-- End mobile menu -->
+          </div>
         </div>
-      </div>
-    </div>
       <ul id="main-nav" class="small">
            <li class="col-sm-2" id="home">
               <h3><%= link_to 'Search & Hours', '/', data: { no_turbolink: true } %></h3>

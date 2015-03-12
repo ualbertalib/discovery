@@ -14,10 +14,10 @@
     <![endif]-->
 
     <title>University of Alberta Libraries</title>
-    <%= opensearch_description_tag application_name, opensearch_catalog_path(:format => 'xml', :only_path => false) %>
     <%# favicon_link_tag asset_path('favicon.ico') %>
     <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Abel", "sticky-footer", "ualib-discovery" %>
+    <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Abel", "sticky-footer" %>
+    <%= stylesheet_link_tag comfy_cms_render_css_path(1, "secondary-pages") %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= content_for(:head) %> 
@@ -28,18 +28,13 @@
     <![endif]-->
 
   </head>
-  <body class="<%= render_body_class %>">
+  <body>
     <div class="wrapper">
   <%= render :partial => 'shared/header_navbar' %>
 
-  <%= render partial: 'shared/ajax_modal' %>
 
   <div id="main-container" class="container">
-    <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
-
-    <div class="row">
       <%= yield %>
-    </div>
   </div>
 
   <%= render :partial => 'shared/footer' %>
