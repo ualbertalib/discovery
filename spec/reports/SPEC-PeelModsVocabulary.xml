@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PeelModsVocabulary" tests="3" time="0.271938614" failures="0" errors="0" skipped="0" timestamp="2015-03-10T10:39:09-06:00">
-  <testcase name="PeelModsVocabulary should be a Dublin Core OM vocabulary with a terminology-based solrizer" time="0.00021008">
+<testsuite name="PeelModsVocabulary" tests="3" time="0.271995636" failures="0" errors="0" skipped="0" timestamp="2015-03-12T09:31:41-06:00">
+  <testcase name="PeelModsVocabulary should be a Dublin Core OM vocabulary with a terminology-based solrizer" time="0.001066286">
   </testcase>
-  <testcase name="PeelModsVocabulary should hold all the MODS elements" time="0.005813862">
+  <testcase name="PeelModsVocabulary should hold all the MODS elements" time="0.006513744">
   </testcase>
-  <testcase name="PeelModsVocabulary should have the fields tagged for Solr indexing" time="0.265730132">
+  <testcase name="PeelModsVocabulary should have the fields tagged for Solr indexing" time="0.264145466">
   </testcase>
 </testsuite>

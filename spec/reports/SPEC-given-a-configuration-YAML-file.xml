@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="given a configuration YAML file" tests="2" time="0.001403555" failures="0" errors="0" skipped="0" timestamp="2015-03-10T10:39:09-06:00">
-  <testcase name="given a configuration YAML file should parse the file into the object fields" time="0.000673409">
+<testsuite name="given a configuration YAML file" tests="2" time="0.001726664" failures="0" errors="0" skipped="0" timestamp="2015-03-12T09:31:41-06:00">
+  <testcase name="given a configuration YAML file should parse the file into the object fields" time="0.000916917">
   </testcase>
-  <testcase name="given a configuration YAML file should return a class name from a vocabulary name" time="0.00057173">
+  <testcase name="given a configuration YAML file should return a class name from a vocabulary name" time="0.000590795">
   </testcase>
 </testsuite>
