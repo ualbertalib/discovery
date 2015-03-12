@@ -1,0 +1,358 @@
+
+/*begin custom styles by Natasha Nunn at University of Alberta Libraries 2014/2015 */
+body{
+	font-size: 175%;
+}
+.header{
+	padding-bottom: 17px;
+}
+h1{
+	margin-top: 23px;
+}
+h5{
+	font-size: 120%;
+}
+.top-margin{
+	margin-top: 10px;
+}
+.extra-top-margin{
+	margin-top: 20px;
+}
+.extra2-top-margin{
+	margin-top: 30px;
+}
+ 
+.btn-small{
+background-color: #1b460c;
+color: #efefef;
+}
+.btn-small:hover, .btn-small:active, .btn-small:focus{
+background-color: #0d2f10;
+color: #fff;
+}
+.btn-xsmall{
+	background-color: #B2C6D1;
+	padding: 5px;
+	color: #333;
+}
+.btn-xsmall:hover, .btn-xsmall:active, .btn-xsmall:focus{
+	background-color:#4d82a1;
+	color: #fff;
+}
+.btn-ltblue{
+	background-color: #B2C6D1;
+	color: #333;
+	border: #4C6F84;
+	padding: 6px 8px;
+	font-size: 16px;
+	margin-top: 5px;
+}
+.btn-ltblue:hover{
+	background-color: #7e9db2;
+	color: #efefef;
+}
+.hold{
+	background-color: #557185;
+	-webkit-background-size: 8px;
+	background-size: 8px;
+	color: #fff;
+	padding: 6px 10px;
+	font-size: 16px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 18px;
+	width: 100%;
+}
+.hold:hover{
+	background-color: #7e9db2;
+	color: #fff;
+}
+
+.all{
+	text-align: right;
+	padding: 8px 10px 0 10px;
+	font-size: 15px;
+}
+.all span{
+	font-size: 12px;
+}
+.results{
+	border: 10px solid #fff;
+	border-width: 0 10px;
+	padding:0 20px;
+	background-color: #eceef3;
+}
+.results h3 span{
+	display: block;
+	}
+#databases{
+	float: right;
+}
+.results-head{
+	margin-left:-5px;
+	margin-right: 10px;
+}
+.results h3{
+	color: #000;
+	font-size: 21px;
+	display: block;
+	height: 50px;
+	margin-left: -10px;
+	margin-top: 10px;
+}
+.results h3#print{
+	height: 45px;
+}
+.results h3 a{
+	font-size: 15px;
+	float: right;
+	background-color: #fff;
+	padding: 7px;
+	border-radius: 4px;
+	font-weight: bold;
+	margin-top: -5px;
+
+}
+.results-bottom a{
+	float: left;
+	margin-bottom: 10px;
+	display: block;
+text-align: center;
+font-size: 18px;
+	padding: 5px;
+	background-color:#B2C6D1;
+	color: #000;
+}
+
+.results h3 a:hover, .results-bottom a:hover{
+	background-color:#d1dde4;
+	text-decoration: none;
+	color: #000;
+}
+.results ul{
+	padding: 0;
+	list-style: none;
+	font-size: 16px;
+}
+.results ul li{
+	background-color: #fff;
+	margin-bottom: 2px;
+	padding: 5px;
+	overflow: hidden;
+}
+.results li span{
+	font-size: 12px;
+}
+.results span.date{
+	margin-left: 0;
+	font-size: 11px;
+	font-weight: bold;
+	font-family: arial, sans-serif;
+	margin-left: 5px;
+	}
+.results .col-md-10, .results .col-md-2{
+	padding-right: 4px;
+	padding-left: 4px;
+}
+.results#articles .col-md-10{
+	padding-right: 10px;
+}
+.results ul li a.full-record{
+	border-radius: 4px;
+	padding: 3px;
+	background-color:#4C6F84; 
+	margin-top: 3px;
+	display: block;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+}
+.results ul li a:hover.full-record{
+		background-color: #000;
+		text-decoration: none;
+		color: #efefef;
+		cursor: pointer;
+	}
+.results ul li a.pdf-link{
+	background-color:#B2C6D1;
+	padding: 1px 3px;
+	text-align: center; 
+	border-radius: 4px;
+	color: #000;
+	font-size: 13px;
+}
+.results ul li a:hover.pdf-link{
+	background-color:#B2D6C0;
+	text-decoration:none;
+	}
+.results-more{
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+a.see-all-results{
+	padding-right: 25px;
+	background-image:url(go-arrow.png);
+	background-repeat: no-repeat;
+	background-position: center right;
+	font-size: 12px;
+}
+.date{
+	text-align: center;
+}
+.status{
+	font-weight: bold;
+}
+
+.results ul li:hover{
+	background-color: #f6f9fa;
+}
+.results ul li img{
+	width: 45px;
+	border: 1px solid #999;
+	margin-top: 3px;
+	}
+.results ul li a{
+	font-size: 16px;
+}
+.results ul li a:hover{
+	text-decoration: none;
+	}
+
+.result-details{
+	margin-bottom: 0;
+	margin-top: 5px;
+}
+.more-results{
+	font-size: 14px;
+}
+.results ul li a.more-locations{
+	font-size: 14px;
+}
+#electronic_access{
+	font-size: 16px;
+}
+#electronic_access span{
+	font-size: 14px;
+	display: block;
+}
+#electronic_access span.url-label{
+	width: 100px;
+	text-align: right;
+	font-size: 18px;
+	font-weight: normal;
+	color: #777777;
+	display: inline-block;
+}
+#electronic_access a{
+	display: inline-block;
+	font-size: 18px;
+	padding: 5px 10px;
+	background-color:#eceff4;
+	border: 1px solid #B2C6D1;
+	color: #000;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+#electronic_access a:hover, #electronic_access a:focus, #electronic_access a:active{
+	text-decoration: none;
+	background-color:#d1dde4;
+	color: #333;
+}
+.outlined{
+	border: solid 1px #d9e4ea; 
+	margin-top: 15px;
+	padding: 15px;
+	font-size: 19px;
+	line-height: 28px;
+	text-align: center;
+}
+.outlined>p{
+	margin-bottom: 0;
+}
+.outlined>p>a{
+	background-color: #4C6F84;
+	display: inline-block;
+	padding: 3px 10px;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	margin-left:10px;
+	border-radius: 4px;
+}
+.outlined>p>a:hover{
+	background-color:#4d82a1;
+	text-decoration: none;
+}
+#search-results .form-inline .form-control {
+	width: 200px;
+	font-size: 15px;
+	padding: 10px;
+}
+#search-results .form-inline{
+	margin: 0  0 15px 0;
+}
+
+.document-metadata dd, .document-metadata dt{
+	font-size: 14px;
+}
+.dl-horizontal dt {
+  width: 100px;
+}
+.dl-horizontal dd {
+  margin-left: 110px;
+}
+
+#documents .document {
+  margin-top: 2px;
+  padding-top: 2px;
+  border-bottom: 1px solid #ddd;
+}
+.document-counter{
+	font-size: 14px;
+}
+
+h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
+	text-decoration: none;
+	line-height: 28px;
+}
+.results-img{
+	padding-left: 118px;
+	margin-top: -10px;
+}
+.results-img img{
+	height: 90px;
+}
+.blacklight-isbn_t{
+	display: none;
+}
+#holdings{
+	padding-top: 10px;
+}
+#holdings table th{
+	font-weight: bold;
+	background-color: #B2C6D1;
+	padding: 5px 25px 5px 10px;
+	border-left: 3px solid #fff;
+}
+#holdings table td{
+	padding: 5px 25px 5px 15px;
+	border-left: 3px solid #fff;
+	border-bottom: 1px solid #fff;
+	background-color: #eceff4;
+}
+#holdings table td.call-number{
+	min-width: 250px;
+}
+.panel-default > .panel-heading{
+	background-color: #eceff4;
+}
+#previousNextDocument{
+	padding-bottom: 10px;
+}
+.full-record-book-jacket{
+	padding-top: 80px;
+}
+.panel .nav>li>a{
+	border-right:none;
+}
+
