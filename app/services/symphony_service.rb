@@ -11,8 +11,9 @@ class SymphonyService
     document = Nokogiri::XML(open(url).read)
     nodes = document.xpath("//xmlns:ItemInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
     nodes.each do |node|
-      if node.at_xpath("//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == item_id
-        return node.at_xpath("//xmlns:currentLocationID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+      current_node = node
+      if current_node.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == item_id
+        return current_node.at_xpath(".//xmlns:currentLocationID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
       end
     end
   end
