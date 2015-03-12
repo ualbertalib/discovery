@@ -13,4 +13,14 @@ module MarcModule
   def get_marc_subfield(document, tag)
     document.xpath("subfield[@code='#{tag}']").text
   end
+
+  def get_marc_id(document)
+    raw_id = document.xpath("//controlfield[@tag='001']").text
+    if raw_id.first.match(/^[[:alpha:]]$/)
+      raw_id.slice!(0)
+      return raw_id
+    else
+      return raw_id
+    end
+  end
 end

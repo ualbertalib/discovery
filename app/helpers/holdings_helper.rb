@@ -1,4 +1,5 @@
 require_relative "../services/sfx_service.rb"
+require_relative "../services/symphony_service.rb"
 require_relative "../services/marc_module.rb"
 
 module HoldingsHelper
@@ -24,13 +25,14 @@ module HoldingsHelper
   private
 
   def populate_print_holdings(options = {})
+    id = options[:id]
     item = options[:item]
     items = options[:items]
     item_data = {}
     item_data[:call_number] = get_marc_subfield(item, 'a')
     item_data[:copies] = get_marc_subfield(item, 'c')
-    item_data[:status] = get_marc_subfield(item, 'l')
     item_data[:location] = get_marc_subfield(item, 'm')
+    item_data[:status] = SymphonyService.new.get_status(id, item_data[:location])
     items << item_data
   end
 
@@ -53,7 +55,7 @@ module HoldingsHelper
     items = []
     doc = nokogiri options[:document]
     for item in marc_field(doc, options[:field]) do
-      self.send options[:method].to_sym, {:items => items, :item => item, :additional => options[:additional_arg]}
+      self.send options[:method].to_sym, {:id => get_marc_id(doc), :items => items, :item => item, :additional => options[:additional_arg]}
     end
     items
   end
