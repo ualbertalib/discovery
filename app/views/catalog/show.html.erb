@@ -72,7 +72,7 @@
               <td><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
               <td><%= item[1][:coverage] %> </td>
               <% unless item[1][:our_target].empty? %>
-                <td><iframe src="https://tal.scholarsportal.info/alberta/sfx/?tag=<% item[1][:our_target] %>" width="150" height="40" align="middle" frameborder="0" scrolling="no"><p>Your browser does not support iframes.</p></td>
+                <td><iframe src="https://tal.scholarsportal.info/alberta/sfx/?tag=<%= item[1][:our_target] %>" width="150" height="40" align="middle" frameborder="0" scrolling="no"><p>Your browser does not support iframes.</p></td>
               <% end %>
             </tr>
           <% end %>
