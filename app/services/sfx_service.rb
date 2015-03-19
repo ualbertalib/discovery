@@ -14,9 +14,10 @@ class SFXService
 
     sfx_results_for(document.id).xpath("//target").each do |target|
       unless local_targets.include? name(target)
-        @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: our(target) }) if @targets[id(target)]
+        @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: our_links[target] }) if @targets[id(target)]
       end
     end
+    @our_links = eval(File.open("config/our_links.rb"))
   end
 
   private
@@ -39,15 +40,6 @@ class SFXService
 
   def name(target)
    target.xpath("target_name").text
-  end
-
-  def our(target)
-   original_target = target.xpath("target_name").text
-   if original_target.include? "TAYLOR_FRANCIS"
-     return "Taylor_and_Francis_Journals_Online"
-   else
-     return ""
-   end
   end
 
   def display_name(target)
