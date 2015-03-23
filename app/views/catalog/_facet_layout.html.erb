@@ -1,3 +1,4 @@
+<% unless facet_field.field == "owning_library_tesim" %>
 <div class="panel panel-default facet_limit blacklight-<%= facet_field.field.parameterize %> <%= 'facet_limit-active' if facet_field_in_params?(facet_field.field) %>">
   <div class="<%= "collapsed" if should_collapse_facet?(facet_field) %> collapse-toggle panel-heading" data-toggle="collapse" data-target="#<%= facet_field_id(facet_field) %>">
     <h5 class="panel-title">
@@ -10,5 +11,5 @@
     </div>
   </div>
 </div>
-
+<% end %>
 
