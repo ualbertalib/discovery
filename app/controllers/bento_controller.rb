@@ -38,7 +38,7 @@ class BentoController < ApplicationController
     ejournals.delete("count")
     @ejournals = ejournals
 
-    symphony = populate(CatalogController, {source: 'Symphony'})
+    symphony = populate(CatalogController, {source: 'Symphony', electronic_tesim: false})
     @symphony_count = symphony["count"]
     symphony.delete("count")
     @symphony = symphony
