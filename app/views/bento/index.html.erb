@@ -1,5 +1,6 @@
 <% @local_symphony_limit = 15 %>
 <% @local_ejournal_limit = 10 %>
+<% @local_ebook_limit = 10 %>
 <% @local_eds_limit = 15 %>
 <% @local_database_limit = 10 %>
 
@@ -118,6 +119,23 @@
 			</ul>
               <% if @ejournals_count>0 %>
 			<div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-md-12">View all Electronic Journals</a></div>
+             <% end %>
+		</div>
+		<div class="col-md-4 results" id="ebooks">
+        	<h3><span class="col-md-6">Electronic Books</span> 
+                <% if @ebooks_count>0 %>
+                    <a href="/ebooks?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ebooks_count %> results</a>
+                 <% end %>
+            </h3>       
+        	<ul>
+          		<% i = 1 %>
+				<% @ebooks.take(@local_ebook_limit).each do |id,ebooks| %>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ebooks[:title] %></a></li>
+            		<% i+=1 %>
+				<% end %>
+			</ul>
+              <% if @ebooks_count>0 %>
+			<div class="results-bottom"><a href="/ebooks?q=<%= @query %>" class="col-md-12">View all Electronic Books</a></div>
              <% end %>
 		</div>
 		<div class="col-md-4 results extra-top-margin" id="databases">

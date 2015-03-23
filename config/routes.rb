@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  blacklight_for :catalog, :ejournals, :databases, :symphony
+  blacklight_for :catalog, :ejournals, :databases, :symphony, :ebooks
   Blacklight::Marc.add_routes(self)
   devise_for :users
 

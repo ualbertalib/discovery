@@ -38,11 +38,15 @@ class BentoController < ApplicationController
     ejournals.delete("count")
     @ejournals = ejournals
 
-    symphony = populate(CatalogController, {source: 'Symphony', electronic_tesim: false})
+    symphony = populate(CatalogController, {source: 'Symphony', electronic_tesim: 'false'})
     @symphony_count = symphony["count"]
     symphony.delete("count")
     @symphony = symphony
 
+    ebooks = populate(CatalogController, {owning_library_tesim:'uainternet', format: 'Book'})
+    @ebooks_count = ebooks["count"]
+    ebooks.delete("count")
+    @ebooks = ebooks
   end
 
   private
