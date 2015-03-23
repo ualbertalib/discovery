@@ -434,7 +434,7 @@ module Blacklight::ArticlesHelperBehavior
       if (params[:search_field]).present?
         url << "&search_field=" << params[:search_field].to_s
       end
-      return url
+      return url.gsub("&sort=relevance","") # hack to get rid of buggy sort behaviour. Sam Popowich
     else
       return ''
     end
