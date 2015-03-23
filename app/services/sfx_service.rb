@@ -12,12 +12,13 @@ class SFXService
       @targets[sfx_id(target)] = {id: sfx_id(target), coverage: coverage}
     end
 
+    @our_links = eval(File.open("config/our_links.rb").read)
+
     sfx_results_for(document.id).xpath("//target").each do |target|
       unless local_targets.include? name(target)
-        @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: our_links[target] }) if @targets[id(target)]
+        @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: @our_links[name(target)] }) if @targets[id(target)]
       end
     end
-    @our_links = eval(File.open("config/our_links.rb"))
   end
 
   private
