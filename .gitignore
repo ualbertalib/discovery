@@ -21,3 +21,4 @@ token.txt
 /data
 /solr/solr/blacklight-core/data
 /solr/logs
+config/database.yml
