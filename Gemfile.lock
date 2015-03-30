@@ -247,6 +247,16 @@ GEM
     rspec-mocks (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
+    rspec-rails (3.2.1)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-solr (1.0.1)
+      rspec
     rspec-support (3.2.2)
     ruby_parser (3.6.4)
       sexp_processor (~> 4.1)
@@ -336,6 +346,8 @@ DEPENDENCIES
   om
   rails (= 4.2)
   rspec
+  rspec-rails
+  rspec-solr
   sass-rails (~> 5.0.1)
   sdoc (~> 0.4.0)
   selenium-webdriver

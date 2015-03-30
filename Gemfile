@@ -59,6 +59,8 @@ group :test, :development do
   gem 'ci_reporter_rspec'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem 'rspec-solr'
 end
 gem 'blacklight_google_analytics'
 gem 'comfortable_mexican_sofa', '~> 1.12.0'
