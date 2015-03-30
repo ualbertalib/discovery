@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DatabaseVocabulary" tests="3" time="0.585835028" failures="0" errors="0" skipped="0" timestamp="2015-03-12T12:55:53-06:00">
-  <testcase name="DatabaseVocabulary should be a database OM Vocabulary with a terminology-based solrizer" time="0.000231632">
+<testsuite name="DatabaseVocabulary" tests="3" time="0.565268435" failures="0" errors="0" skipped="0" timestamp="2015-03-30T11:26:42-06:00">
+  <testcase name="DatabaseVocabulary should be a database OM Vocabulary with a terminology-based solrizer" time="0.00026454">
   </testcase>
-  <testcase name="DatabaseVocabulary should hold all the database object fields" time="0.004919558">
+  <testcase name="DatabaseVocabulary should hold all the database object fields" time="0.004852368">
   </testcase>
-  <testcase name="DatabaseVocabulary should have the fields tagged for solr indexing" time="0.580460321">
+  <testcase name="DatabaseVocabulary should have the fields tagged for solr indexing" time="0.559919619">
   </testcase>
 </testsuite>

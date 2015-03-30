@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="StatusHelper#fetch_symphony_status" tests="1" time="0.081019116" failures="0" errors="0" skipped="0" timestamp="2015-03-12T12:55:53-06:00">
-  <testcase name="StatusHelper#fetch_symphony_status should get a live status from symphony web-services" time="0.080848905">
+<testsuite name="StatusHelper#fetch_symphony_status" tests="1" time="0.090339777" failures="0" errors="0" skipped="0" timestamp="2015-03-30T11:26:42-06:00">
+  <testcase name="StatusHelper#fetch_symphony_status should get a live status from symphony web-services" time="0.090013907">
   </testcase>
 </testsuite>
