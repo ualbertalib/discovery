@@ -3,6 +3,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rspec"
 require "yaml"
 require "active_support/inflector"
+require "capybara/rspec"
+require "capybara/rails"
 require_relative "../lib/ingest/dublin_core_om"
 require_relative "../lib/ingest/peel_mods_om"
 require_relative "../lib/ingest/database"

@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_lookup_tables
-    @locations ||= YAML.load_file("config/locations.yml")
-    @statuses ||= YAML.load_file("config/statuses.yml")
+    @locations ||= YAML.load_file("#{Rails.root}/config/locations.yml")
+    @statuses ||= YAML.load_file("#{Rails.root}/config/statuses.yml")
   end
 end
