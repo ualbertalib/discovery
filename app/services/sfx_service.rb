@@ -12,7 +12,7 @@ class SFXService
       @targets[sfx_id(target)] = {id: sfx_id(target), coverage: coverage}
     end
 
-    @our_links = eval(File.open("config/our_links.rb").read)
+    @our_links = eval(File.open("#{Rails.root}/config/our_links.rb").read)
 
     sfx_results_for(document.id).xpath("//target").each do |target|
       unless local_targets.include? name(target)
