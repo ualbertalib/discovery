@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="home page" tests="2" time="3.043726634" failures="0" errors="0" skipped="0" timestamp="2015-03-30T14:16:53-06:00">
-  <testcase name="home page welcomes the user" time="0.410121206">
+<testsuite name="home page" tests="2" time="2.468739459" failures="0" errors="0" skipped="0" timestamp="2015-03-31T15:00:37-06:00">
+  <testcase name="home page welcomes the user" time="0.373950188">
   </testcase>
-  <testcase name="home page provides a search box" time="2.633350086">
+  <testcase name="home page provides a search box" time="2.09450117">
   </testcase>
   <system-err>
 DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
@@ -13,6 +13,5 @@ You can opt into the new behavior and remove this warning by setting:
 
  (called from get at /home/asdp/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/forwardable.rb:183)
 [DEPRECATION] `RSolr.escape` is deprecated (and incorrect).  Use `Rsolr.solr_escape` instead.
-DEPRECATION WARNING: You are calling a `*_path` helper with the `only_path` option explicitly set to `false`. This option will stop working on path helpers in Rails 5. Use the corresponding `*_url` helper instead. (called from _app_views_layouts_blacklight_html_erb__1353267563333251181_53415620 at /home/asdp/workspace/discovery/app/views/layouts/blacklight.html.erb:17)
   </system-err>
 </testsuite>

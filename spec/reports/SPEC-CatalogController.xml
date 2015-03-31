@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CatalogController" tests="2" time="0.132351619" failures="0" errors="0" skipped="1" timestamp="2015-03-31T15:00:33-06:00">
+  <testcase name="CatalogController should have a collection name" time="0.13204485">
+  </testcase>
+  <testcase name="CatalogController should load status and location tables (PENDING)" time="4.2276e-05">
+    <skipped/>
+  </testcase>
+</testsuite>

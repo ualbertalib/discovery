@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Database" tests="3" time="0.002299333" failures="0" errors="0" skipped="0" timestamp="2015-03-30T14:17:01-06:00">
-  <testcase name="Database should parse a single database record into a database object" time="0.000571397">
-  </testcase>
-  <testcase name="Database should parse a database CSV object into a Ruby object" time="0.000492094">
-  </testcase>
-  <testcase name="Database should return a basic xml represenation" time="0.001048781">
-  </testcase>
-</testsuite>

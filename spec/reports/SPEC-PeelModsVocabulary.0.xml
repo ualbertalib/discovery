@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PeelModsVocabulary" tests="3" time="0.274832421" failures="0" errors="0" skipped="0" timestamp="2015-03-30T14:17:03-06:00">
-  <testcase name="PeelModsVocabulary should be a Dublin Core OM vocabulary with a terminology-based solrizer" time="0.000228589">
-  </testcase>
-  <testcase name="PeelModsVocabulary should hold all the MODS elements" time="0.006374235">
-  </testcase>
-  <testcase name="PeelModsVocabulary should have the fields tagged for Solr indexing" time="0.268032039">
-  </testcase>
-</testsuite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Search by ID" tests="1" time="0.000512273" failures="0" errors="1" skipped="0" timestamp="2015-03-31T15:00:33-06:00">
+  <testcase name="Search by ID should return only one result" time="9.2834e-05">
+    <error type="NoMethodError" message="undefined method `uses_transaction?' for RSpec::ExampleGroups::SearchByID:Class">
+undefined method `uses_transaction?' for RSpec::ExampleGroups::SearchByID:Class (NoMethodError)
+NoMethodError:
+undefined method `uses_transaction?' for RSpec::ExampleGroups::SearchByID:Class
+/home/asdp/.rvm/gems/ruby-2.2.0/gems/activerecord-4.2.0/lib/active_record/fixtures.rb:922:in `run_in_transaction?'
+/home/asdp/.rvm/gems/ruby-2.2.0/gems/activerecord-4.2.0/lib/active_record/fixtures.rb:935:in `setup_fixtures'
+/home/asdp/.rvm/gems/ruby-2.2.0/gems/activerecord-4.2.0/lib/active_record/fixtures.rb:824:in `before_setup'    </error>
+  </testcase>
+</testsuite>

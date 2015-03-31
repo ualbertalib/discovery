@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SFXService" tests="1" time="0.955824835" failures="0" errors="0" skipped="0" timestamp="2015-03-31T15:00:40-06:00">
+  <testcase name="SFXService should return a list of targets" time="0.955660689">
+  </testcase>
+</testsuite>

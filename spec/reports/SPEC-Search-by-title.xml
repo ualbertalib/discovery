@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Search by title" tests="1" time="0.000440493" failures="0" errors="1" skipped="0" timestamp="2015-03-31T15:00:33-06:00">
+  <testcase name="Search by title should return only one title" time="6.5999e-05">
+    <error type="NoMethodError" message="undefined method `uses_transaction?' for RSpec::ExampleGroups::SearchByTitle:Class">
+undefined method `uses_transaction?' for RSpec::ExampleGroups::SearchByTitle:Class (NoMethodError)
+NoMethodError:
+undefined method `uses_transaction?' for RSpec::ExampleGroups::SearchByTitle:Class
+/home/asdp/.rvm/gems/ruby-2.2.0/gems/activerecord-4.2.0/lib/active_record/fixtures.rb:922:in `run_in_transaction?'
+/home/asdp/.rvm/gems/ruby-2.2.0/gems/activerecord-4.2.0/lib/active_record/fixtures.rb:935:in `setup_fixtures'
+/home/asdp/.rvm/gems/ruby-2.2.0/gems/activerecord-4.2.0/lib/active_record/fixtures.rb:824:in `before_setup'    </error>
+  </testcase>
+</testsuite>
