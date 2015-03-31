@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="home page" tests="2" time="2.468739459" failures="0" errors="0" skipped="0" timestamp="2015-03-31T15:00:37-06:00">
-  <testcase name="home page welcomes the user" time="0.373950188">
+<testsuite name="home page" tests="2" time="2.583634651" failures="0" errors="0" skipped="0" timestamp="2015-03-31T15:27:31-06:00">
+  <testcase name="home page welcomes the user" time="0.374832154">
   </testcase>
-  <testcase name="home page provides a search box" time="2.09450117">
+  <testcase name="home page provides a search box" time="2.208495827">
   </testcase>
   <system-err>
 DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
