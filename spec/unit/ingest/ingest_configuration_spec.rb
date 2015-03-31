@@ -1,15 +1,13 @@
-require_relative "../spec_helper.rb"
+require_relative "../../spec_helper.rb"
 
 include E
 
 context "given a configuration YAML file" do
 
-  let(:config_yaml){ YAML.load_file(E::*("../config/ingest.yml")) }
+  let(:config_yaml){ YAML.load_file(E::*("fixtures/ingest.yml")) }
   let(:config){ IngestConfiguration.new("era", config_yaml) }
 
   it "should parse the file into the object fields" do
-    expect(Rails.application.config.solr).to eq config.solr
-    expect(Rails.application.config.proxy).to eq config.proxy
     expect(config.schema).to eq "dublin_core"
     expect(config.root).to eq "//xmlns:OAI-PMH"
     expect(config.delimiter).to eq "//xmlns:record"
