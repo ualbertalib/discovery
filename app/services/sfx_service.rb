@@ -28,11 +28,11 @@ class SFXService
   end
 
   def raw_targets(doc)
-    raw_targets = marc_field(doc, '866')
+    marc_field(doc, '866')
   end
 
   def sfx_id(target)
-    BigDecimal.new(get_marc_subfield(target, 's')).to_i  
+    BigDecimal.new(get_marc_subfield(target, 's')).to_i
   end
 
   def local_targets

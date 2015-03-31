@@ -14,6 +14,8 @@ require_relative "../lib/ingest/batch_ingest"
 require_relative "../lib/tasks/ingest_configuration"
 require_relative "../app/helpers/holdings_helper.rb"
 require_relative "../app/helpers/status_helper.rb"
+require_relative "../app/services/marc_module.rb"
+require_relative "../app/services/sfx_service.rb"
 
 
 module E

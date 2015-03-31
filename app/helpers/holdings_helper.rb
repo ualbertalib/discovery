@@ -4,7 +4,7 @@ require_relative "../services/marc_module.rb"
 
 module HoldingsHelper
   include MarcModule
-  
+
   def create_ua_links(document)
      create_holdings({document: document, field: '856', method: 'populate_links', additional_arg: "ua" })
   end
