@@ -12,10 +12,10 @@
                 <div class="search-row">
                   <div class="form-group col-sm-9 col-md-8 col-lg-9">
                     <label class="sr-only" for="q">Search Library Resouces</label>
-                    <input autofocus="autofocus" class="search_q q form-control" id="q" name="q" placeholder="search books, articles, journals, ebooks, databases, ejournals..." type="text">
+                       <input autofocus="autofocus" class="search_q q form-control" id="q" name="q" placeholder="search books, articles, journals, ebooks, databases, ejournals..." type="text">
                   </div>
                   <div class="form-group col-xs-12 col-sm-3 col-md-4 col-lg-3">
-                    <button name="search-button" id="search-button" class="btn btn-green main-search">search <span>everything</span></button><a class="btn btn-green-small" href="/advanced">advanced</a><a class="btn btn-help visible-xs-inline-block" href="#">get <br/>help</a>
+                    <button type="submit" class="btn btn-green main-search">search <span>everything</span></button><a class="btn btn-green-small" href="/advanced">advanced</a><a class="btn btn-help visible-xs-inline-block" href="#">get <br/>help</a>
                   </div>
                 </div>
                 <div class="row hidden-xs">
@@ -38,28 +38,41 @@
                     <li><a href="#">Advanced Search</a></li>
                     <li><a href="#">Classic Catalogue</a></li>
                   </ul>
+                   <ul class="browse-options clearfix">
+                    <li><a href="/databases">Databases AtoZ </a></li>
+                    <li><a href="/ejournals">Electronic Journals AtoZ </a></li>                      
+                    <li><a href="http://www.library.ualberta.ca/digitization/" class="hidden-xs">Digital Collections</a></li>
+                     <li><a href="https://bpsc.library.ualberta.ca/" class="hidden-xs">Special Collections</a></li>
+                  </ul>
                 </div>       
               </div>
             </div><!-- End search box -->
-            <div class="row">
-              <div class="col-md-12">
-                <div class="browse"><!-- Browse box -->
-                  <h2 class="hidden-xs">Browse Library Resources</h2>
-                  <ul class="browse-options clearfix">
-                    <li><a href="/databases">Databases AtoZ </a></li>
-                    <li><a href="/ejournals">Electronic Journals AtoZ </a></li>                        
-                    <li><a href="http://www.library.ualberta.ca/digitization/" class="hidden-xs">Digital Collections</a></li>
-                  </ul>
-                </div><!-- End browse box -->
-              </div>
-            </div>
+           
           </div><!-- End search and browse -->
-          <div class="col-md-5 hours-wrap"><!-- Hours widget -->
-            <div class="hours" id="hours"><a name="hours" id="hours-anch"></a>
-              <h2>Library Hours &amp; Locations <a href="https://hours.library.ualberta.ca" class="hidden-xs">see all</a></h2>
-              <script src="http://hours.library.ualberta.ca/widget-hours-all-js.php"></script>           
-            </div>
-          </div><!-- End hours widget -->
+          <div class="col-md-5 hours-wrap">
+            <div class="hours" id="hours">
+              
+          
+              <h2><a href="hours">All Library Hours &amp; Locations
+                </a>
+              </h2>
+              <a href="library-select">Choose your Library</a>
+             </div>
+            <div class="row">
+               <div class="col-md-4">
+               Something
+             </div> 
+           <div class="col-md-8">
+             
+             
+            <div class="twitter top-margin"><!-- twitter widget -->
+              <a class="twitter-timeline" href="https://twitter.com/uofalibraries/favorites" data-widget-id="346675024738017280" border-color="#ffffff" data-chrome="nofooter transparent" height="400">Favorite Tweets by @uofalibraries</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div><!-- End twitter widget -->
+           
+               </div>
+              </div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,10 +91,7 @@
         </div>
         <div class="row">
           <div class="col-xs-12 col-md-3 news-side">
-            <div class="twitter top-margin">
-              <a class="twitter-timeline" href="https://twitter.com/uofalibraries/favorites" data-widget-id="346675024738017280" border-color="#ffffff" data-chrome="nofooter transparent" height="479">Favorite Tweets by @uofalibraries</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </div>
+           
             <div class="social-icons">
               <a href="/fb"><img src="https://library.ualberta.ca/2012assets/facebook-icon_normal.png" alt="facebook-icon"></a>
               <a href="http://www.youtube.com/user/ualibrary2010"><img src="https://library.ualberta.ca/2012assets/youtube-icon_normal.png" alt="youtube-icon"></a>
