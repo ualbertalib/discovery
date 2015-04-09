@@ -26,10 +26,10 @@
 
     <%= render 'previous_next_doc' %>
 
-  <% @page_title = Sanitize.clean(show_title(record)) << " - Detailed Record - Blacklight" %>
+  <% @page_title = sanitize(show_title(record)) << " - Detailed Record - Blacklight" %>
 
   <%# this should be in a partial -%>
-  <div id="document" class="<%= render_document_class %>">
+  <div id="document" class="render_document_class">
     <div id="doc_<%= params[:dbid] %>_<%= params[:an] %>">
     
 
