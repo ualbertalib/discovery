@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HoldingsHelper#fetch_symphony_holdings" tests="1" time="0.186687514" failures="0" errors="0" skipped="0" timestamp="2015-03-31T15:27:26-06:00">
-  <testcase name="HoldingsHelper#fetch_symphony_holdings should return a set of Symphony print holdings" time="0.186392955">
+<testsuite name="HoldingsHelper#fetch_symphony_holdings" tests="1" time="5.509050586" failures="0" errors="0" skipped="0" timestamp="2015-04-09T12:14:56-06:00">
+  <testcase name="HoldingsHelper#fetch_symphony_holdings should return a set of Symphony print holdings" time="5.50875543">
   </testcase>
 </testsuite>

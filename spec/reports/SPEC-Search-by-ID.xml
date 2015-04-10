@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Search by ID" tests="1" time="0.000507813" failures="0" errors="1" skipped="0" timestamp="2015-03-31T15:27:26-06:00">
-  <testcase name="Search by ID should return only one result" time="9.4071e-05">
+<testsuite name="Search by ID" tests="1" time="0.000609506" failures="0" errors="1" skipped="0" timestamp="2015-04-09T12:14:56-06:00">
+  <testcase name="Search by ID should return only one result" time="0.000119648">
     <error type="NoMethodError" message="undefined method `uses_transaction?' for RSpec::ExampleGroups::SearchByID:Class">
 undefined method `uses_transaction?' for RSpec::ExampleGroups::SearchByID:Class (NoMethodError)
 NoMethodError:

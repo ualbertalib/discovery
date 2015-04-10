@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative '../../spec_helper'
 
   describe 'home page' do
     include Capybara::DSL
@@ -16,10 +16,4 @@ require_relative '../spec_helper'
       expect(page).to have_content('My Account Login')
     end
 
-    it "provides a search box" do
-      visit '/'
-      fill_in 'q', with: "Global Warming"
-      click_button 'search'
-      expect(current_path).to eq "/results"
-     end
   end

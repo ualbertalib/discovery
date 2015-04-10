@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BentoController" tests="5" time="0.00029051" failures="0" errors="0" skipped="5" timestamp="2015-04-09T12:14:56-06:00">
+  <testcase name="BentoController should populate database results (PENDING)" time="1.8976e-05">
+    <skipped/>
+  </testcase>
+  <testcase name="BentoController should populate ejournal results (PENDING)" time="1.069e-05">
+    <skipped/>
+  </testcase>
+  <testcase name="BentoController should populate symphony results (PENDING)" time="9.26e-06">
+    <skipped/>
+  </testcase>
+  <testcase name="BentoController should populate ebook results (PENDING)" time="9.493e-06">
+    <skipped/>
+  </testcase>
+  <testcase name="BentoController should populate IDS results (PENDING)" time="8.878e-06">
+    <skipped/>
+  </testcase>
+</testsuite>

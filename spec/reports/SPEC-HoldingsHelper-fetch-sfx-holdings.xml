@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HoldingsHelper#fetch_sfx_holdings" tests="1" time="4.231635829" failures="0" errors="0" skipped="0" timestamp="2015-03-31T15:27:27-06:00">
-  <testcase name="HoldingsHelper#fetch_sfx_holdings should return a set of SFX link URLs" time="4.231318992">
+<testsuite name="HoldingsHelper#fetch_sfx_holdings" tests="1" time="3.770992674" failures="0" errors="0" skipped="0" timestamp="2015-04-09T12:15:01-06:00">
+  <testcase name="HoldingsHelper#fetch_sfx_holdings should return a set of SFX link URLs" time="3.770825998">
   </testcase>
 </testsuite>
