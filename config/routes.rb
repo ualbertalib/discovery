@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   blacklight_for :catalog, :ejournals, :databases, :symphony, :ebooks
   Blacklight::Marc.add_routes(self)
 
+  devise_for :users
+
   get "articles", to: "articles#index"
   get "articles/:dbid/:an", to: "articles#detail", constraints: {an: /[^V]+/ }
   get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }

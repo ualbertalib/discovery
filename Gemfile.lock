@@ -334,7 +334,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   comfortable_mexican_sofa (~> 1.12.0)
   devise
-  devise-guests (~> 0.3)
+  devise-guests
   ebsco-discovery-service-api (= 1.0.4)
   factory_girl (~> 4.0)
   htmlentities
