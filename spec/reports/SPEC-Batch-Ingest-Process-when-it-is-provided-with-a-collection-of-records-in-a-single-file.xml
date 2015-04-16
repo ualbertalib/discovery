@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Batch Ingest Process when it is provided with a collection of records in a single file" tests="1" time="0.226701052" failures="0" errors="0" skipped="0" timestamp="2015-04-09T12:15:13-06:00">
-  <testcase name="Batch Ingest Process when it is provided with a collection of records in a single file should process and ingest every record in the file" time="0.226557537">
+<testsuite name="Batch Ingest Process when it is provided with a collection of records in a single file" tests="1" time="0.231060795" failures="0" errors="0" skipped="0" timestamp="2015-04-16T15:40:52-06:00">
+  <testcase name="Batch Ingest Process when it is provided with a collection of records in a single file should process and ingest every record in the file" time="0.230916527">
   </testcase>
 </testsuite>

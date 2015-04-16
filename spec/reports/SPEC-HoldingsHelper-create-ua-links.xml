@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="HoldingsHelper#create_ua_links" tests="1" time="0.001589103" failures="0" errors="0" skipped="0" timestamp="2015-04-09T12:15:01-06:00">
-  <testcase name="HoldingsHelper#create_ua_links should return a set of UA link URLs" time="0.001456793">
+<testsuite name="HoldingsHelper#create_ua_links" tests="1" time="0.005293669" failures="0" errors="0" skipped="0" timestamp="2015-04-16T15:40:46-06:00">
+  <testcase name="HoldingsHelper#create_ua_links should return a set of UA link URLs" time="0.004876948">
   </testcase>
 </testsuite>

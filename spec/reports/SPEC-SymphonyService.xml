@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SymphonyService" tests="1" time="0.236138337" failures="0" errors="0" skipped="0" timestamp="2015-04-09T12:15:12-06:00">
-  <testcase name="SymphonyService returns an item status" time="0.235962175">
+<testsuite name="SymphonyService" tests="1" time="0.19112022" failures="0" errors="0" skipped="0" timestamp="2015-04-16T15:40:54-06:00">
+  <testcase name="SymphonyService returns an item status" time="0.190681404">
   </testcase>
 </testsuite>

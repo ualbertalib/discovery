@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MarcModule" tests="3" time="0.002515147" failures="0" errors="0" skipped="0" timestamp="2015-04-09T12:15:13-06:00">
-  <testcase name="MarcModule should return a nokogiri document of a marc record" time="0.000694914">
+<testsuite name="MarcModule" tests="3" time="0.001962521" failures="0" errors="0" skipped="0" timestamp="2015-04-16T15:40:53-06:00">
+  <testcase name="MarcModule should return a nokogiri document of a marc record" time="0.000493668">
   </testcase>
-  <testcase name="MarcModule should return the value of a marc field" time="0.000755406">
+  <testcase name="MarcModule should return the value of a marc field" time="0.000518122">
   </testcase>
-  <testcase name="MarcModule should return the value of a marc subfield" time="0.000878377">
+  <testcase name="MarcModule should return the value of a marc subfield" time="0.000730517">
   </testcase>
 </testsuite>
