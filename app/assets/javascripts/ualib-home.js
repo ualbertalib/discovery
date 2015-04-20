@@ -73,4 +73,22 @@ $(document).ready(function () {
     $('#main-search').attr('action', '/ejournals');
     $('#q').attr('placeholder', 'search ejournals...');
   });
+  $( ".hours-select" ).change(function () {
+    var library = "";
+    var location = "";
+    $( "select option:selected" ).each(function() {
+      library += $( this ).text() + " ";
+      location = $(this).val();
+    });
+    imagestring ="/assets/lib-icons/"+location+".png";
+    $( ".library-picker" ).text(library);
+    $( ".lib-pick img" ).attr( "src", imagestring);
+  })
+ $(".news-square").hoverIntent(
+    function() {
+      $(this).find(".details").fadeIn(250);
+    },    
+    function() {
+      $(this).find(".details").fadeOut(250);
+  });
     });

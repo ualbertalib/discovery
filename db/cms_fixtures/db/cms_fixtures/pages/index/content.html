@@ -1,27 +1,28 @@
- <!-- Start Search and Hours Pane -->
+  <!-- Start Search and Hours Pane -->
     <div id="search-pane" class="pane">
       <div class="container">
         <div class="row">
-          <div class="col-md-7"><!-- Search and browse -->
-            <div class="search"><!-- Search box -->
-              <h2>Search Library Resources</h2>
+            <div class="col-md-9">
+              <div class="search-box col-md-12">
+                    <div class="col-md-9">
+              <h2 class="search-header"><span class="glyphicon glyphicon-search"></span> Search Library Resources</h2>
              <div id="test"></div>
               <!-- Main search form, placeholder and search string changed with javascript-->
               <form accept-charset="UTF-8" action="/results" class="search-query-form form-inline clearfix navbar-form" method="get" id="main-search">
                 <div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
                 <div class="search-row">
-                  <div class="form-group col-sm-9 col-md-8 col-lg-9">
-                    <label class="sr-only" for="q">Search Library Resouces</label>
-                       <input autofocus="autofocus" class="search_q q form-control" id="q" name="q" placeholder="search books, articles, journals, ebooks, databases, ejournals..." type="text">
+                  <div class="form-group col-sm-8 col-md-7 col-lg-8">
+                    <label class="sr-only" for="q">search everything...</label>
+                    <input autofocus="autofocus" class="search_q q form-control" id="q" name="q" placeholder="search everything..." type="text">
                   </div>
                   <div class="form-group col-xs-12 col-sm-3 col-md-4 col-lg-3">
-                    <button type="submit" class="btn btn-green main-search">search <span>everything</span></button><a class="btn btn-green-small" href="/advanced">advanced</a><a class="btn btn-help visible-xs-inline-block" href="#">get <br/>help</a>
+                    <button type="submit" class="btn btn-green main-search">search <span>everything</span></button><a class="btn btn-green-small" href="http://ross.library.ualberta.ca/advanced">advanced</a><a class="btn btn-help visible-xs-inline-block" href="#">get <br/>help</a>
                   </div>
                 </div>
                 <div class="row hidden-xs">
-                  <div class="col-md-12 top-margin">
-                    <p class="search-options">you are searching </p>
-                    <button type="button" class="btn btn-blue selector" id="everything-limit">Everything</button>
+                  <div class="col-md-12 select-btns top-margin">
+                   
+                    <button type="button" class="btn btn-blue selector" id="everything-limit">everything</button>
                     <button type="button" class="btn btn-ltblue selector" id="shelves-limit">books, journals &amp; ebooks</button>
                     <button type="button" class="btn btn-ltblue selector" id="articles-limit">articles</button>
                     <button type="button" class="btn btn-ltblue selector" id="databases-limit">databases</button>
@@ -29,133 +30,168 @@
                   </div>
                 </div>
               </form><!-- End search form -->
-              <div class="row hidden-xs">
-                <div class="col-md-12">
-                  <p class="search-more-info">more options and information:</p>
-                  <ul class="search-extra-links">
-                    <li><a href="#">Get Search Help</a></li>
-                    <li><a href="#">About Our New Search</a></li>
-                    <li><a href="#">Advanced Search</a></li>
-                    <li><a href="#">Classic Catalogue</a></li>
+ <ul class="search-help">
+                    <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> Get Search Help</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> About Our New Search</a></li>
                   </ul>
-                   <ul class="browse-options clearfix">
-                    <li><a href="/databases">Databases AtoZ </a></li>
-                    <li><a href="/ejournals">Electronic Journals AtoZ </a></li>                      
-                    <li><a href="http://www.library.ualberta.ca/digitization/" class="hidden-xs">Digital Collections</a></li>
+            </div>
+             <div class="col-md-3">
+             
+            <h3 class="also-explore">also explore</h3>
+                  <ul class="browse-options">
+                     <li><a href="databases" class="hidden-xs">Databases A to Z</a></li>                  
+                    <li><a href="https://www.library.ualberta.ca/digitization/" class="hidden-xs">Digital Collections</a></li>
                      <li><a href="https://bpsc.library.ualberta.ca/" class="hidden-xs">Special Collections</a></li>
                   </ul>
-                </div>       
-              </div>
-            </div><!-- End search box -->
-           
-          </div><!-- End search and browse -->
-          <div class="col-md-5 hours-wrap">
-            <div class="hours" id="hours">
-              
-          
-              <h2><a href="hours">All Library Hours &amp; Locations
-                </a>
-              </h2>
-              <a href="library-select">Choose your Library</a>
-             </div>
-            <div class="row">
-               <div class="col-md-4">
-               Something
-             </div> 
-           <div class="col-md-8">
-             
-             
-            <div class="twitter top-margin"><!-- twitter widget -->
-              <a class="twitter-timeline" href="https://twitter.com/uofalibraries/favorites" data-widget-id="346675024738017280" border-color="#ffffff" data-chrome="nofooter transparent" height="400">Favorite Tweets by @uofalibraries</a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </div><!-- End twitter widget -->
-           
-               </div>
-              </div>
+            </div>
           </div>
+           
+            <div class="row top-margin">
+ <div class="col-md-8">
+          <div class="front-box">
+            <a name="hours" id="hours-anch"></a>
+             
+             <div class="row">
+             <div class="col-md-8 lib-pick"><img src="/assets/lib-icons/3.png" class="float-left"/>
+            <h3 class="library-picker">Rutherford Library</h3>today's hours<div class="selected-hours"><script type="text/javascript" src="http://hours.library.ualberta.ca/widget-hours-js.php?location1=3&display=status"></script></div>
+             </div>
+              <div class="col-md-4">
+              
+                <p class="not-your-library"><span class="glyphicon glyphicon-arrow-left"></span> not your library?</p>
+                <select class="form-control hours-select">
+                  <option value="20">Choose your Library</option>
+                  <option value="1">Cameron - Main Floor &amp; 2nd Floor Study Areas</option>
+                  <option value="2">Cameron - Service Desk, Reserve/Holds, floors 3 &amp; 4</option>
+                  <option value="11">Cameron - Knowledge Common &amp; Study Hall</option>
+                  <option value="3">Rutherford Library North</option>
+                  <option value="13">Rutherford Library South Study Area</option>
+                  <option value="12">Bruce Peel Special Collections</option>
+                   <option value="4">John W. Scott Health Sciences</option>
+                  <option value="5">HT Coutts Education Library</option>
+                  <option value="6">J.A. Weir Law Library</option>
+                  <option value="7">Winspear Business Library</option>
+                  <option value="8">St. Joseph's College Library</option>
+                    <option value="9">Augustana Library</option>
+                  <option value="18">Augustana 24/7Group/classroom access</option>
+                  <option value="10">Bibliothèque Saint-Jean</option>
+                  <option value="14">Book and Record Depository</option>
+                  
+                  <option value="17">Chat Service</option>
+
+</select></div>
+
+
+
+           </div>
+      
+           <h2 class="hours-header"><a href="http://hours.library.ualberta.ca">All Library Hours &amp; Locations<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></h2>
+
+         </div>
+         </div>
+
+            <div class="col-md-4 quick-links">
+              
+         
+       <a href="services/reserve-a-group-room" class="reserve-quick-link">
+                Reserve a Group Room
+        </a>
+     
+       <a href="https://myaccount.library.ualberta.ca" class="account-quick-link">Login to My Account with your CCID</a>
+          
+            
+             
+      
+           </div>
+             </div>
+           </div>
+
+             <div class="col-md-3">
+               <div class="feedback-box">
+              <a href="#"><span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <span class="glyphicon glyphicon-star"></span> <br/>What can we do better? </a>
+            </div>
+              <div class="front-box extra-top-margin" id="tweets">
+             <a class="twitter-timeline" href="https://twitter.com/uofalibraries/favorites" data-widget-id="346675024738017280" border-color="#ffffff" data-chrome="noheader nofooter transparent" height="285">Favorite Tweets by @uofalibraries</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+             </div>
+           
+            </div>
+
+           
+        </div>
+        
+
+
         </div>
       </div>
-    </div>
+   
     <!-- End Search and Hours Pane -->
         
     <!-- News and Events Pane -->
-    <div id="news-pane" class="pane"><a name="news" class="anchor"></a>
+    <div id="news-pane" class="pane">
       <div class="container">
         <div class="row">
-          <div class="col-xs-11 col-md-11">
-            <h2>News &amp; Events</h2>
-          </div>
-          <div class="col-xs-1 col-md-1">
-            <a data-scroll href="#top"><img src="/assets/up.png" class="up"/></a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-md-3 news-side">
-           
-            <div class="social-icons">
-              <a href="/fb"><img src="https://library.ualberta.ca/2012assets/facebook-icon_normal.png" alt="facebook-icon"></a>
-              <a href="http://www.youtube.com/user/ualibrary2010"><img src="https://library.ualberta.ca/2012assets/youtube-icon_normal.png" alt="youtube-icon"></a>
-              <a href="/services/alerts/rss_feeds"><img src="https://library.ualberta.ca/2012assets/rss-icon_normal.png" alt="rss-icon"></a>
-              <a href="http://www.flickr.com/photos/uofalibraries"><img src="https://library.ualberta.ca/2012assets/flickr-icon_normal.png" alt="flickr-icon"></a>
-            </div>
-            <a href="#" class="international hidden-xs">Our International Intiatives</a>
-          </div>
-          <div class="top-margin col-md-9 hidden-xs">
-              <div class="col-md-4">
-                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/1.jpg" alt="img01"/>
+
+               <div class="col-sm-4 news-square">
+                <div class="details">
+                  <h2>We are going to the dogs</h2>
+                  <p>Pet therapy available in the libraries</p>
+                </div>
+                <img src="/assets/pet.jpg" alt="img01" class="slide"/>
               </div>
-              <div class="col-md-4">
-                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/2.jpg" alt="img02"/>
-              </div>
-              <div class="col-md-4">
-                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/3.jpg" alt="img03"/>
-              </div>
-              <div class="col-md-4 extra-top-margin">
-                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/4.jpg" alt="img01"/>
-              </div>
-              <div class="col-md-4 extra-top-margin">
-                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/5.jpg" alt="img02"/>
-              </div>
-              <div class="col-md-4 extra-top-margin">
-                <img src="http://beta.library.ualberta.ca/img/news-images/thumbs/6.jpg" alt="img03"/>
-              </div>
-            <div class="col-md-12 hidden-xs">
-              <div class="col-md-12 librarian-profiles-title extra2-top-margin">
-                <h3>Meet some of our librarians</h3>
-              </div>
-              <div class="col-md-12">
-            <div class="row">
-              <div class="col-md-1 direction">&lt;</div>
-              <div class="col-md-10">
-                <div class="row">
-                  <div class="col-md-4 librarian-profiles">
-                    <div class="librarian-info">
-                      <h4>Gerald Beasley</h4> <p>Chief Librarian</p> <br/>
-                    </div>
-                    <img src="http://beta.library.ualberta.ca/img/librarians/lib1.png"> 
-                  </div>
-                  <div class="col-md-4 librarian-profiles">
-                    <div class="librarian-info">
-                      <h4>Amanda Wakaruk</h4><p>Government Information Librarian</p> 
-                    </div>
-                    <img src="http://beta.library.ualberta.ca/img/librarians/lib2.png">
-                  </div>
-                  <div class="col-md-4 librarian-profiles" id="last">
-                    <div class="librarian-info">
-                      <h4>Chuck Humphry</h4><p>Data Library Coordinator</p> 
-                      </div>
-                        <img src="http://beta.library.ualberta.ca/img/librarians/lib3.png">
-                      </div>
-                    </div>                      
-                  </div>
-                  <div class="col-md-1 direction">&gt;</div>
+               <div class="col-sm-4 news-square">
+                <div class="news-stories">
+                  <h2>Other News</h2>
+                  <ul>
+                  <li><a href="#"><span>Posted Monday, April 13, 2015</span>Invitation to Participate in Research Data Management Week</a></li>
+                    <li><a href="#"><span>Posted Monday, March 23, 2015</span>Tri-Council Open Access Policy on Publications Announced</a></li>
+                  <li><a href="#"><span>Posted Monday, March 03, 2015</span>Bruce Peel Library Closure - April 2015 to January 2016 </a></li>
+                  </ul>
+                  <a href="http://ualbertalibrarynews.blogspot.ca/">ALL OUR NEWS<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
                 </div>
               </div>
+              <div class="col-sm-4 news-square">
+                <img src="/assets/destress.jpg" alt="img03" class="slide"/>
+              </div>
+               <div class="col-sm-4 news-square">
+                <div class="details">
+                  <h3>We have Extended hours in many of our Libraries</h3>
+                </div>
+                <img src="/assets/hours.jpg" alt="our latest hours" class="slide"/>
+              </div>
+            
+               <div class="col-sm-4 news-square">
+                <div class="details">
+                  <h2>Staff Profile - Sarah Polkinghorne</h2>
+                  <p>Some thing some  thisnk</p>
+                  <ul class="search-help">
+
+                  <li><a href="">See more about Sarah</a></li>
+                  <li><a href="">See all our People</a></li>
+                </ul>
+           
+                  
+                </div>
+                <img src="/assets/sarah.jpg" alt="our people: Sarah Polkinghorne" class="slide"/>
+              </div>
+             
+              
+               <div class="col-sm-4 news-square">
+                <div class="connections">
+                   <a href="#" class="international hidden-xs" class="slide">Our International Intiatives</a>
+                  <br/><br/>Connect with us<br/>
+              <a href="/fb"><img src="https://library.ualberta.ca/2012assets/facebook-icon_normal.png" alt="facebook-icon"></a>
+              <a href="http://www.youtube.com/user/ualibrary2010"><img src="https://library.ualberta.ca//2012assets/youtube-icon_normal.png" alt="youtube-icon"></a>
+              <a href="/services/alerts/rss_feeds"><img src="https://library.ualberta.ca//2012assets/rss-icon_normal.png" alt="rss-icon"></a>
+              <a href="http://www.flickr.com/photos/uofalibraries"><img src="https://library.ualberta.ca//2012assets/flickr-icon_normal.png" alt="flickr-icon"></a>
+             
+        
+            </div>
+
             </div>
           </div>
         </div>
       </div>    
-    </div>    
+
     <!-- End news and events Pane -->
 
     <!-- Start Services Pane -->
