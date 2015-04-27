@@ -21,7 +21,7 @@
  It is *not* a good example to work from. 
 -->
 <config>
-  <luceneMatchVersion>4.9</luceneMatchVersion>
+  <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
   <!--  The DirectoryFactory to use for indexes.
         solr.StandardDirectoryFactory, the default, is filesystem based.
         solr.RAMDirectoryFactory is memory based, not persistent, and doesn't work with replication. -->
@@ -30,6 +30,9 @@
   <!--  Neil -->
   <lib dir="/opt/solr/lib/contrib/analysis-extras/lib" />
   <lib dir="/opt/solr/lib/contrib/analysis-extras/lucene-libs" />
+  <!-- Sam - for dev  -->
+  <lib dir="../lib/contrib/analysis-extras/lib" />
+  <lib dir="../lib/contrib/analysis-extras/lucene-libs" />
 
   <dataDir>${solr.blacklight-core.data.dir:}</dataDir>
   
