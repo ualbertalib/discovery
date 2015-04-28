@@ -21,7 +21,9 @@ h5{
 .extra2-top-margin{
 	margin-top: 30px;
 }
- 
+ #main-container{
+	padding-top: 30px;
+}
 .btn-small{
 background-color: #1b460c;
 color: #efefef;
