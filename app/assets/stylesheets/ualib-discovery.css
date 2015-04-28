@@ -283,6 +283,9 @@ a.see-all-results{
 	background-color:#4d82a1;
 	text-decoration: none;
 }
+#search-results{
+	padding-top: 30px;
+}
 #search-results .form-inline .form-control {
 	width: 200px;
 	font-size: 15px;

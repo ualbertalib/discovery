@@ -168,6 +168,7 @@ ul.ask{
 }
 #main-nav{
 	margin: 15px 0;
+	list-style: none;
 }
 
 #main-nav>div>div{
@@ -178,8 +179,8 @@ ul.ask{
 	height: 120px;
 }
 #main-nav>div>div:hover{
-background-color: #fffef2;
-	}
+	background-color: #fffef2;
+}
 #main-nav h3{
 	margin: 0;
 	margin-bottom: 5px;
@@ -191,7 +192,7 @@ background-color: #fffef2;
 	margin-bottom: 0;
 	color: #333;
 }
-#main-nav #services{
+#main-nav #home{
 	padding-left: 0;
 }
 #main-nav #account{
@@ -231,8 +232,11 @@ background-color: #fffef2;
 }
 #main-nav.small>div>div{
 	border-bottom: 4px #cdd1d3 solid;
-		margin-bottom: 0;
-		height:55px;
+	margin-bottom: 0;
+	height:55px;
+}
+#main-nav.small>div>div:hover{
+	border-bottom: 4px #999 solid;
 }
 #main-nav.small>div>div.active{
 	border-bottom: 4px #365367 solid;
@@ -274,7 +278,6 @@ background-color: #fffef2;
 	background-color: #eceff4;
 	margin-bottom: 20px;
 	padding: 0px 0px 0px 0px;
-	
 }	
 .browse{
 	margin-top: -10px;
@@ -679,12 +682,12 @@ label.mod{
 	margin-top: 5px;
 }
 .btn-blue{
-	background: url("search-choice-icon.png") #4C6F84 no-repeat 5px center;
+	background: url("search-choice-icon.png") #4C6F84 no-repeat 8px center;
 	-webkit-background-size: 8px;
 	background-size: 8px;
 	color: #fff;
 	border: #557185;
-	padding: 6px 8px 6px 20px;
+	padding: 6px 12px 6px 22px;
 	font-size: 16px;
 	margin-top: 5px;
 }
@@ -705,9 +708,9 @@ label.mod{
 }
 .btn-ltblue{
 	background-color: #B2C6D1;
-	color: #efefef;
+	color: #444;
 	border: #4C6F84;
-	padding: 6px 8px;
+	padding: 6px 10px;
 		font-size: 16px;
 		margin-top: 5px;
 }
@@ -1068,9 +1071,9 @@ ul.foot-nav{
 }
 .foot-nav li a{
 	display: block;
-	padding: 0px 10px;
+	padding: 0px 15px;
 	color: #ecf4e5;
-	font-size: 17px;
+	font-size: 19px;
 }
 #footer{
 	  background: url("footer-bg.jpg") #1b4724 repeat-x;
@@ -1079,14 +1082,26 @@ ul.foot-nav{
 #footer p{
 	float: right;
 	color: #fff;
+	font-size: 80%;
 }
 #footer p a{
-	color: #ecf4e5;
+	color: #ecf4e5;	
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 0px 3px;
 }
-#footer p a:hover, .foot-nav li a:hover{
+.foot-nav li a:hover{
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.4);
 	text-decoration: none;
+}
+#footer p a:hover{
+	background-color: transparent;
+	text-decoration: none;
+}
+#footer p.copyright{
+	margin-bottom: 5px;
+	margin-top:15px;
 }
 .rds .rds-nav{
 	display: block;

@@ -51,26 +51,43 @@
             </div><!-- End mobile menu -->
           </div>
         </div>
-      <ul id="main-nav" class="small">
-           <li class="col-sm-2" id="home">
-              <h3><%= link_to 'Search & Hours', '/', data: { no_turbolink: true } %></h3>
-          </li>
-          <li class="col-sm-2" id="services">
-            <h3><%= link_to 'Services', '/#services', data: { no_turbolink: true } %></h3>
-          </li>
-          <li class="col-sm-2" id="subjects">
-              <h3><%= link_to 'Subject Guides', '/#subjects', data: { no_turbolink: true } %></h3>
-          </li>
-          <li class="col-sm-2" id="research">
-            <h3><%= link_to 'Researcher Tools', '/#research', data: { no_turbolink: true } %></h3>
-          </li>
-          <li class="col-sm-2" id="news">
-           <h3><%= link_to 'News & Events', '/#news', data: { no_turbolink: true } %></h3>
-          </li>
-          <li class="col-sm-2" id="account">
-              <h3><%= link_to 'My Account', '/#account', data: { no_turbolink: true } %></h3>
-          </li>
-        </ul>
+     <div id="main-nav" class="small">
+          <div class="col-xs-2 col-sm-2" id="home" style="display: block;">
+            <div>
+              <h3><a href="/"><span></span>Search &amp; Home</a></h3>
+            </div>
+          </div>
+          <div class="col-sm-2" id="services">
+            <div>
+              <h3><a href="/#services-pane"><span></span>Services</a></h3>
+            
+            </div>
+          </div>
+          <div class="col-sm-2" id="subjects">
+            <div>
+              <h3><a href="/#subjects"><span></span>Subject Guides</a></h3>
+             
+            </div>
+          </div>
+          <div class="col-sm-2" id="news">
+            <div>
+              <h3><a href="/#news-pane"><span></span>News &amp; Events</a></h3>
+              
+            </div>
+          </div>
+          <div class="col-sm-2" id="research">
+            <div>
+              <h3><a href="/#research-pane"><span></span>Data Management</a></h3>
+             
+            </div>
+          </div>
+          <div class="col-sm-2" id="account">
+            <div>
+              <h3><a href="/#account-pane"><span></span>My Account</a></h3>
+             
+            </div>
+          </div>
+        </div>
       </div>
   
     </div>
