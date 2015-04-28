@@ -21,6 +21,9 @@ h5{
 .extra2-top-margin{
 	margin-top: 30px;
 }
+.no-margin{
+	margin: 0px;
+}
  #main-container{
 	padding: 30px 0 40px 0;
 }
@@ -33,9 +36,9 @@ background-color: #0d2f10;
 color: #fff;
 }
 .btn-xsmall{
-	background-color: #B2C6D1;
+	
 	padding: 5px;
-	color: #333;
+	color: #fff;
 }
 .btn-xsmall:hover, .btn-xsmall:active, .btn-xsmall:focus{
 	background-color:#4d82a1;
@@ -227,6 +230,8 @@ a.see-all-results{
 }
 .more-results{
 	font-size: 14px;
+	width: 100%;
+	padding-bottom: 40px;
 }
 .results ul li a.more-locations{
 	font-size: 14px;

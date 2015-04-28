@@ -365,6 +365,10 @@ label.mod{
 .search-header{
 	color:  #38566c;
 	padding-top: 10px;
+	padding-bottom: 0;
+}
+.hours-header{
+	padding-bottom: 0;
 }
 .hours-header a{
 	background-color: #4C6F84;
