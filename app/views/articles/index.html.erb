@@ -51,30 +51,39 @@
 </script>
 <% end %>
 <% end %>
-
-<div id="sidebar" class="span3">
- <%= render :partial=>'search_links' %>
-
- <% if has_search_parameters? %>
-
- <%= render :partial=>'facets' %>
-<% end %>
-</div><!--/well -->
-
-<div id="content" class="span9">
+<div class="row">
+  <div class="col-md-6">
+    <h2>results for <em></em> in Articles</h2>
+      <form class="form-inline" role="form">
+        <div class="form-group">   
+          <input type="text" class="form-control" placeholder="search again" name="q">
+        </div>
+        <button type="submit" class="btn btn-small">search</button>
+      </form>
+    </div> 
+    <div class="col-md-6 outlined">
+      <p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html">chat with us!</a></p>
+    </div>
+  </div>
+<div class="row">
+  <div id="sidebar" class="col-md-3 col-sm-4">
+    <% if has_search_parameters? %>
+      <%= render :partial=>'facets' %>
+    <% end %>
+  </div><!--/well -->
+  <div id="content" class="col-md-9 col-sm-8">
     
-    <%= render :partial=>'search_form' %>
+   
 
     <% unless has_search_parameters? %>
 	    <%= render 'home' %>
     <% else %>
 
-      <h2 class="hide-text top-content-title"><%= t('blacklight.search.search_results_header') %></h2>
+      
 
       <% @page_title = t('blacklight.search.title', :application_name => application_name) %>
 
-      <h2>Search Results</h2>
-      <%= render :partial=>'constraints' %>
+     
       <%= render :partial=>'sort_and_per_page' %>
       <%= render :partial=>'search_results' %>
       <%= render :partial=>'results_pagination' %>
@@ -83,3 +92,4 @@
 </div>
 <%# render :partial=>'debug' %>
 <div class="modal">Loading...</div>
+</div>
