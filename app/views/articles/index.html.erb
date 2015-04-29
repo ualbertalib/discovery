@@ -52,18 +52,16 @@
 <% end %>
 <% end %>
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <h2>results for <em></em> in Articles</h2>
-      <form class="form-inline" role="form">
+      <form class="form-inline" role="form" action='/results'>
         <div class="form-group">   
           <input type="text" class="form-control" placeholder="search again" name="q">
         </div>
         <button type="submit" class="btn btn-small">search</button>
       </form>
     </div> 
-    <div class="col-md-6 outlined">
-      <p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html">chat with us!</a></p>
-    </div>
+  
   </div>
 <div class="row">
   <div id="sidebar" class="col-md-3 col-sm-4">
@@ -85,11 +83,17 @@
 
      
       <%= render :partial=>'sort_and_per_page' %>
-      <%= render :partial=>'search_results' %>
-      <%= render :partial=>'results_pagination' %>
+      <div class="article-wrap">
+        <%= render :partial=>'search_results' %>
+      </div>
+      <div class="bottom-sort">
+        <%= render :partial=>'sort_and_per_page' %>
+      </div>
     <% end %>
 
 </div>
 <%# render :partial=>'debug' %>
+
 <div class="modal">Loading...</div>
 </div>
+

@@ -55,11 +55,15 @@ $(document).ready(function () {
   });
   $( "#everything-limit" ).click(function() { 
     $('#main-search').attr('action', '/results');
-    $('#q').attr('placeholder', 'search books, articles, journals, ebooks, databases, ejournals...');
+    $('#q').attr('placeholder', 'search everything...');
   });
   $( "#shelves-limit" ).click(function() { 
     $('#main-search').attr('action', '/symphony');
-    $('#q').attr('placeholder', 'search books, journals & ebooks...');
+    $('#q').attr('placeholder', 'search print books & journals...');
+  });
+  $( "#ebooks-limit" ).click(function() { 
+    $('#main-search').attr('action', '/ebooks');
+    $('#q').attr('placeholder', 'search ebooks...');
   });
   $( "#articles-limit" ).click(function() { 
     $('#main-search').attr('action', '/articles');
