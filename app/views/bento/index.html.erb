@@ -1,188 +1,194 @@
-<% @local_symphony_limit = 15 %>
+<% @local_symphony_limit = 5 %>
 <% @local_ejournal_limit = 10 %>
-<% @local_ebook_limit = 10 %>
-<% @local_eds_limit = 15 %>
+<% @local_ebook_limit = 5 %>
+<% @local_eds_limit = 10 %>
 <% @local_database_limit = 10 %>
 
 <div class="container" id="search-results">
     <div class="row results-head top-margin">
    		<div class="col-md-6">
         <h2> 
-            <% if @query =='' %>
-                All Records
-            <% else %>
-                <%= @complete_count %>  results for <em><%= @query %></em>
-            <% end %>
+          <% if @query =='' %>
+              All Records
+          <% else %>
+              <%= @complete_count %>  results for <em><%= @query %></em>
+          <% end %>
         </h2>
-			<form class="form-inline" role="form">
-            	<div class="form-group">   
-                    <input type="text" class="form-control" placeholder="search again" name="q">
-                </div>
-                <button type="submit" class="btn btn-small">search</button>
-            </form>
-		</div> 
-        <div class="col-md-6 outlined">
-       		<p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html">chat with us!</a></p>
-       	</div>
+    		<form class="form-inline" role="form">
+          <div class="form-group">   
+            <input type="text" class="form-control" placeholder="search again" name="q">
+          </div>
+          <button type="submit" class="btn btn-small">search</button>
+        </form>
+		  </div> 
+      <div class="col-md-6 outlined">
+       	<p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html">chat with us!</a></p>
+      </div>
     </div>
     <div class="results-wrap top-margin">
-    	<div class="col-md-4 results" id="books">
-            
-            <h3 id="print"><span class="col-md-6">Print Books and Journals</span>
-                <% if @symphony_count>10 %>
-                    <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=false&q=<%= @query %>" class="col-md-6 see-all-results"><%= @symphony_count %> results</a>
-                <% end %>
-                </h3>
-
-            <ul>
-            	<% i = 1%>
-				<% @symphony.take(@local_symphony_limit).each do |id,symphony| %>
-        <li>
-             <div class="col-md-10">
-              <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %></em></a><span class="date">(<%= symphony[:year].first if symphony[:year]%>)</span>
-              
-             
-            </div>
-            <div class="col-md-2">
-
-         <button type="button" class="btn btn-xsmall" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>">more</button>
-       </div>
-<div class="more-results collapse" id="<%= i %>">
-         <div class="col-md-9">
-          <p class="result-details author"><%= symphony[:author] %></p> 
-          <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
-        </div>
-        <% if symphony[:isbn] %>
-        <div class="col-md-3">
-           <a href="/catalog/<%= id %>"><img src="https://books.google.com/books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
-         </div>
-       <% end %>
-           </div>
-         </li>
-      
-            		<% i+=1 %>
-				<% end %>
-			</ul>
-			<div class="results-bottom">
-                <% if @symphony_count>10 %>
-				    <a href="/symphony?q=<%= @query %>" class="col-md-12">View all Books and Journals</a>
-                <% end %>
-			</div>
-        </div> <div class="col-md-4 results" id="articles"> 
-         <h3><span class="col-md-6">Articles</span>
-             <% if @eds_count>0 %>
-                    <a href="/articles?q=<%= @query %>" class="col-md-6 see-all-results"><%= @eds_count %> results</a>
-                 <% end %>
-             </h3>
-        <ul>       
-          <% i = 1 %> 
-          <% if @eds.instance_of? Hash %>
-          <% @eds.take(@local_eds_limit).each do |id,article| %>
+      <div class="col-md-4 rcol">
+    	<div class="col-md-12 results" > 
+        <div id="books"> <!-- start of books and journals pane -->
+          <h3 id="print"><span class="col-md-6">Print Books and Journals</span>
+            <% if @symphony_count>10 %>
+              <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=false&q=<%= @query %>" class="col-md-6 see-all-results"><%= @symphony_count %> results</a>
+            <% end %>
+          </h3>     
+          <ul>
+          <% i = 1%>
+          <% @symphony.take(@local_symphony_limit).each do |id,symphony| %>
             <li>
+              <div class="row no-margin">
                 <div class="col-md-10">
-                  <span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> </a> 
-                 </div>
-                 <div class="col-md-2">
-
-         <button type="button" class="btn btn-xsmall" data-toggle="collapse" data-target="#article<%= i %>" aria-controls="article<%= i %>">more</button>
-       </div>
-<div class="more-results collapse" id="article<%= i %>">
-         <div class="col-md-12">
-          <p class="result-details author"><%= article[:author] %></p> 
-          <p class="result-details location">(<%= article[:format] %>)</p>
-         
-        </div>
-
-     </li>
-                   <% i+=1 %>
-                    <% end %>
-        </ul>
-                 <% if @eds_count>0 %>
-                   <div class="results-bottom"><a href="/articles?q=<%= @query %>" class="col-md-12">View all Articles</a></div>
-              <% end %>
-             <% else %>
-               <p><%= @eds %></p>
-               <% end %>
+                  <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %></em></a><span class="date">(<%= symphony[:year].first if symphony[:year]%>)</span>
+                  <p><em><%= symphony[:subtitle] %></em> </p>
+                </div>
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-xsmall" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>">more</button>
+                </div>
               </div>
-		<div class="col-md-4 results" id="ejournals">
-        	<h3><span class="col-md-6">Electronic Journals</span> 
-                <% if @ejournals_count>0 %>
-                    <a href="/ejournals?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ejournals_count %> results</a>
-                 <% end %>
-            </h3>       
-        	<ul>
-          		<% i = 1 %>
-				<% @ejournals.take(@local_ejournal_limit).each do |id,ejournals| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ejournals[:title] %></a></li>
-            		<% i+=1 %>
-				<% end %>
-			</ul>
-              <% if @ejournals_count>0 %>
-			<div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-md-12">View all Electronic Journals</a></div>
-             <% end %>
-		</div>
-		<div class="col-md-4 results" id="ebooks">
+              <div class="more-results collapse" id="<%= i %>">
+                <div class="col-md-9">
+                  <p class="result-details author"><%= symphony[:author] %></p> 
+                  <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
+                </div>
+                <% if symphony[:isbn] %>
+                  <div class="col-md-3">
+                    <a href="/catalog/<%= id %>"><img src="https://books.google.com/books?vid=ISBN<%= symphony[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+            <% i+=1 %>
+            <% end %>
+          </ul>
+          <div class="results-bottom">
+            <% if @symphony_count>10 %>
+              <a href="/symphony?q=<%= @query %>" class="col-md-12">View all Books and Journals</a>
+            <% end %>
+          </div>
+        </div> 
+      </div><!-- end of books and journals pane -->
 
-        	<h3><span class="col-md-6">Electronic Books</span> 
-                <% if @ebooks_count>0 %>
-                    <a href="/ebooks?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ebooks_count %> results</a>
-                 <% end %>
-            </h3>       
-        	<ul>
-          		<% i = 1 %>
-				<% @ebooks.take(@local_ebook_limit).each do |id,ebooks| %>
-          <li>
-            <div class="row no-margin">
-          <div class="col-md-10">
-            <span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ebooks[:title] %></a><span class="date">(<%= ebooks[:year].first if ebooks[:year]%>)</span>
-            <p><em><%= ebooks[:subtitle] %></em> </p>
-            
-             
+      <div class="col-md-12 results extra-top-margin" ><!-- start of ebooks pane -->
+        <div id="ebooks">
+          <h3><span class="col-md-6">eBooks</span> 
+            <% if @ebooks_count>0 %>
+              <a href="/ebooks?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ebooks_count %> results</a>
+            <% end %>
+          </h3>       
+          <ul>
+            <% i = 1 %>
+            <% @ebooks.take(@local_ebook_limit).each do |id,ebooks| %>
+            <li>
+              <div class="row no-margin">
+                <div class="col-md-10">
+                  <span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ebooks[:title] %></a><span class="date">(<%= ebooks[:year].first if ebooks[:year]%>)</span>
+                  <p><em><%= ebooks[:subtitle] %></em> </p>
+                </div>
+                <div class="col-md-2">
+                  <button type="button" class="btn btn-xsmall btn-primary" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>">more</button>
+                </div>
+              </div>
+              <div class="collapse" id="<%= i %>">
+                <div class="col-md-9">
+                  <p class="result-details author">author: <%= ebooks[:author] %></p> 
+                  <p class="result-details location">Call Number: <%= ebooks[:call_number].first if ebooks[:call_number]%></p> 
+                </div>
+                <% if ebooks[:isbn] %>
+                  <div class="col-md-3">
+                    <a href="/catalog/<%= id %>"><img src="https://books.google.com/books?vid=ISBN<%= ebooks[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
+                  </div>
+                <% end %>
+              </div>
+            </li>
+            <% i+=1 %>
+            <% end %>
+          </ul>
+          <% if @ebooks_count>0 %>
+            <div class="results-bottom"><a href="/ebooks?q=<%= @query %>" class="col-md-12">View all Electronic Books</a></div>
+          <% end %>
+        </div>
+      </div><!-- end of ebooks pane -->
+    </div>
+    
+
+    <div class="col-md-4 results" id="articles"> <!-- start of articles pane -->
+      <h3><span class="col-md-6">Articles</span>
+        <% if @eds_count>0 %>
+          <a href="/articles?q=<%= @query %>" class="col-md-6 see-all-results"><%= @eds_count %> results</a>
+        <% end %>
+      </h3>
+      <ul>       
+        <% i = 1 %> 
+        <% if @eds.instance_of? Hash %>
+        <% @eds.take(@local_eds_limit).each do |id,article| %>
+        <li>
+          <div class="row no-margin">
+            <div class="col-md-10">
+              <span><%= i %>.</span> <a href="<%= article[:url] %>"><%= article[:title] %> </a> 
             </div>
             <div class="col-md-2">
-
-         <button type="button" class="btn btn-xsmall btn-primary" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>">more</button>
-       </div>
-     </div>
-
-<div class="collapse" id="<%= i %>">
-         <div class="col-md-9">
-          <p class="result-details author">author: <%= ebooks[:author] %></p> 
-          <p class="result-details location">Call Number: <%= ebooks[:call_number].first if ebooks[:call_number]%></p> 
-        </div>
-        <% if ebooks[:isbn] %>
-        <div class="col-md-3">
-           <a href="/catalog/<%= id %>"><img src="https://books.google.com/books?vid=ISBN<%= ebooks[:isbn].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1"></a>
-         </div>
-       <% end %>
-     </div>
-          
-         </li>
-      
-                <% i+=1 %>
+              <button type="button" class="btn btn-xsmall btn-primary" data-toggle="collapse" data-target="#article<%= i %>" aria-controls="article<%= i %>">more</button>
+            </div>
+          </div>
+          <div class="collapse" id="article<%= i %>">
+            <div class="col-md-12">
+              <p class="result-details author"><%= article[:author] %></p> 
+              <p class="result-details location">(<%= article[:format] %>)</p>
+            </div>
+          </div>
+        </li>
+        <% i+=1 %>
         <% end %>
       </ul>
-              <% if @ebooks_count>0 %>
-			<div class="results-bottom"><a href="/ebooks?q=<%= @query %>" class="col-md-12">View all Electronic Books</a></div>
-             <% end %>
-		</div>
-		<div class="col-md-4 results extra-top-margin" id="databases">
+        <% if @eds_count>0 %>
+          <div class="results-bottom"><a href="/articles?q=<%= @query %>" class="col-md-12">View all Articles</a></div>
+        <% end %>
+        <% else %>
+          <p><%= @eds %></p>
+        <% end %>
+    </div><!-- end of articles pane -->
+		
+
+    <div class="col-md-4 results" id="ejournals"><!-- start of ejournals pane -->
+      <h3><span class="col-md-6">Electronic Journals</span> 
+        <% if @ejournals_count>0 %>
+          <a href="/ejournals?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ejournals_count %> results</a>
+        <% end %>
+      </h3>       
+      <ul>
+        <% i = 1 %>
+				<% @ejournals.take(@local_ejournal_limit).each do |id,ejournals| %>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ejournals[:title] %></a></li>
+          <% i+=1 %>
+				<% end %>
+			</ul>
+      <% if @ejournals_count>0 %>
+			 <div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-md-12">View all Electronic Journals</a></div>
+      <% end %>
+		</div><!-- end of ejournals pane -->
+
+
+		<div class="col-md-4 results extra-top-margin" id="databases"><!-- start of databases pane -->
  			<h3><span class="col-md-6">Databases</span>
-             <% if @database_count>0 %>
-                    <a href="/databases?q=<%= @query %>" class="col-md-6 see-all-results"><%= @database_count %> results</a>
-                 <% end %>
-             </h3>
- 				<ul>       
-                    <% i = 1 %> 
-					<% @databases.take(@local_database_limit).each do |id,database| %>
-            			<li><span><%= i %>.</span> <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database[:title] %></a></li>
-          			   <% i+=1 %>
-                    <% end %>
-				</ul>
-                 <% if @database_count>0 %>
-			         <div class="results-bottom"><a href="/databases?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
-                <% end %>
-              </div>
-      </div>
-      </div>
+        <% if @database_count>0 %>
+          <a href="/databases?q=<%= @query %>" class="col-md-6 see-all-results"><%= @database_count %> results</a>
+        <% end %>
+      </h3>
+ 			<ul>       
+        <% i = 1 %> 
+				<% @databases.take(@local_database_limit).each do |id,database| %>
+          <li><span><%= i %>.</span> <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database[:title] %></a></li>
+          <% i+=1 %>
+        <% end %>
+			</ul>
+      <% if @database_count>0 %>
+        <div class="results-bottom"><a href="/databases?q=<%= @query %>" class="col-md-12">View all Databases</a></div>
+      <% end %>
+    </div><!-- end of databases pane -->
+  
+
+  </div>
+</div>
 

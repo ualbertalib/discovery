@@ -11,4 +11,5 @@ Rails.application.config.assets.precompile += %w( sticky-footer.css )
 Rails.application.config.assets.precompile += %w( waypoints.min.js )
 Rails.application.config.assets.precompile += %w( smooth-scroll.js )
 Rails.application.config.assets.precompile += %w( ualib-home.js )
+Rails.application.config.assets.precompile += %w( ualib-discovery.js )
 

@@ -91,4 +91,6 @@ $(document).ready(function () {
     function() {
       $(this).find(".details").fadeOut(250);
   });
+
+
     });
