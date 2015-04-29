@@ -61,6 +61,7 @@ h2 span.small{
 }
 .navbar-nav {
 	float: right;
+	padding-bottom: 10px;
 }
 #navbar li{
 	list-style: none;
@@ -514,13 +515,10 @@ label.mod{
 	margin-top: 10px;
 	min-height: 60px;
 	padding-bottom: 0;
-}
-#subjects-pane .subject-title h3 a{
-	line-height: 20px;
-	display: block;
+	line-height: 30px;
 	letter-spacing:1px;
-	padding: 0px 44px 5px 5px;
-	font-size: 15px;
+	padding: 0px 5px 5px 85px;
+	font-size: 22px;
 	color: #fff;	
 }
 #subjects-pane .subject-title div{
@@ -548,6 +546,7 @@ label.mod{
 }
 #ag{
 	background-image: url("subject-images/ag.png");
+	background-position: 0px 10px;
 }
 #arts{
 	background-image: url("subject-images/arts.png");
