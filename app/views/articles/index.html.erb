@@ -54,10 +54,10 @@
 <div class="row">
   <div class="col-md-12">
     <h2> results for <em>
-            <% if params[:q] =='' %>
-               	everything
+           <% if (defined? params[:q]) %>
+               	 <%= params[:q] %>
             <% else %>
-              <%= params[:q] %>
+             everything
             <% end %></em>
     in Articles</h2>
       <form class="form-inline" role="form" action='/results'>
@@ -77,6 +77,10 @@
   </div><!--/well -->
   <div id="content" class="col-md-9 col-sm-8">
     
+               <div class="user-filters">
+                  <%= params[:facetfilter]%> <a href="/articles" class="start-over">Start Over</a>
+               </div>
+   
    
 
     <% unless has_search_parameters? %>

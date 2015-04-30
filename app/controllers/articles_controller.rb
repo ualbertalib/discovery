@@ -6,4 +6,5 @@ class ArticlesController < ApplicationController
 
  include Blacklight::Catalog
   
+  
 end 
