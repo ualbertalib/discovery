@@ -43,7 +43,7 @@ h1{
 h2{
 	font-size: 24px;
 	margin-top: 10px;
-	margin-bottom: 0px;
+	margin-bottom: 10px;
 }
 h2 span.small{
 	font-size: 60%;
@@ -131,7 +131,8 @@ ul.ask{
 	margin-bottom: 0;
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.4);
-	margin-left: 110px;
+	margin-left: 0px;
+	padding: 0;
 }
 .ask li{
 	float: left;
@@ -155,7 +156,7 @@ ul.ask{
 	color: #FBED32;
 	font-size: 16px;
 	letter-spacing: 1px;
-	margin-top: -30px;
+	margin-top: -20px;
 	border-right: none;
 	margin-left: 5px;
 	background: url("ask-icon.png") no-repeat left bottom;
@@ -309,6 +310,9 @@ ul.ask{
 	background-color: #222;
 	color: #fff475;
 }
+.quick-links{
+	margin-top: 20px;
+}
 .quick-links a{ 
 	background-size: 40px 38px;
 	display: block;
@@ -329,7 +333,7 @@ ul.ask{
 }
 .account-quick-link{
 		background-image: url("account-icon-white.png");
-		background-position: 8px 25px;
+		background-position: 8px 10px;
 }
 .up{
 	float: right;
@@ -481,12 +485,12 @@ label.mod{
 }
 .subjects{
 	background-repeat: no-repeat;
-	background-position: 120px 10px;
+	background-position: 97% 50%;
 	background-size: 50px;
 	border: solid 2px #452325;
 	border-width: 0 4px 4px 0;
 	background-color: #340d0d;
-	height: 143px;
+	height: 120px;
 	padding: 0 5px;
 }
 .subjects:hover{
@@ -517,7 +521,7 @@ label.mod{
 	padding-bottom: 0;
 	line-height: 30px;
 	letter-spacing:1px;
-	padding: 0px 5px 5px 85px;
+	padding: 10px;
 	font-size: 22px;
 	color: #fff;	
 }
@@ -546,7 +550,6 @@ label.mod{
 }
 #ag{
 	background-image: url("subject-images/ag.png");
-	background-position: 0px 10px;
 }
 #arts{
 	background-image: url("subject-images/arts.png");
@@ -723,6 +726,7 @@ label.mod{
 		margin-left: 0px;
 		margin-top: 0
 }
+
 .btn-small{
 	background-color: #1b460c;
 	color: #efefef;
@@ -769,13 +773,17 @@ label.mod{
 }
 #news-pane{
 	background-color: #4C6F84;
+	color: #fff;
 }
-
 .news-square{
-    padding-bottom: 33%;
+    padding-bottom: 80%;
+    margin-right: 20px;
     position: relative;
     overflow: hidden;
     margin-bottom: 15px;
+}
+.news-square{
+	color: #4C6F84;
 }
 .news-square .slide, .news-square div{
 	position:absolute;
@@ -885,47 +893,25 @@ font-size: 12px;
 	background-color: rgba(255, 255, 255, 0.2);
 	padding: 10px;
 }
-.librarian-profiles-title{
-		background-color: rgba(255, 255, 255, 0.6);
+.profile-links{
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
-.librarian-profiles-title h3{
-	margin: 5px 0;
-	}
-.librarian-profiles{
-	padding: 10px;
-	background-color: rgba(255, 255, 255, 0.2);
-	border-right: 3px solid #cdd7de;
+.details h2{
+	padding-bottom: 0px;subj
 }
-.librarian-profiles:hover{
-	background-color: rgba(255, 255, 255, 0.3);
-	}
-.librarian-profiles h4{
-	color: #efefef;
-	margin-bottom: 0;
-	}
-.librarian-info{
-	text-align: right;
-		margin-right: 10px;
-}
-.librarian-profiles div{
-	float: left;
-	width: 120px;
-}
-.librarian-profiles img{
-	float: right;
-	width: 70px;
-}
-.direction{
-	background-color: rgba(255, 255, 255, 0.1);
-	color: #cdd7de;
-	font-size: 51px;
-	font-family: arial;
-	padding: 14px 0px;
+.profile-links>li>a{
+	background-color: #333;
+	color: #fff;
+	padding: 5px 10px;
+	display: block;
+	text-decoration: none;
 	text-align: center;
 }
-.direction:hover{
-	background-color: rgba(255, 255, 255, 0.15);
-}
+.profile-links>li>a:hover{
+	background-color: #777;
+	}
 .slide img{
 	width: 100%;
 }
@@ -1305,6 +1291,10 @@ border-radius: 3px;
 		padding-top: 0px;
 		font-size: 12px;
 	}
+	.news-square{
+    	padding-bottom: 39%;
+    {
+}
 
 
 }
@@ -1366,6 +1356,7 @@ border-radius: 3px;
 		padding: 10px 15px;
 		margin-bottom: 0;
 	}
+	
 	.atoz-wrap{
 		background-color: #404545;
 		padding: 5px 10px;
@@ -1428,12 +1419,15 @@ border-radius: 3px;
 	}
 	.subjects{
 		background-size:70px;
-		background-position: 10px 20px;
-		height: 190px;
+		background-position: 20px 20px;
+		height: 180px;
+	}
+	#ag{
+		background-position: 0px 10px;
 	}
 	#subjects-pane .subject-title h3 a{
 		line-height: 35px;
-		padding: 10px 4px 10px 90px;
+		padding: 10px;
 		font-size: 23px;
 		color: #fff;	
 	}
@@ -1455,7 +1449,7 @@ border-radius: 3px;
 	}
 	#subjects-pane .subject-title h3{
 		min-height: 20px;
-		padding-bottom: 0;
+		padding: 0px 5px 5px 85px;
 	}
 	#aug{
 		background-position: 10px 30px;
@@ -1487,6 +1481,10 @@ border-radius: 3px;
 	#news-title{
 		margin-top: 10px;
 	}
+	.news-square{
+    	padding-bottom: 33%;
+    	margin-right: 0px;
+	}
 }
 @media (min-width: 992px){
 	.mine{
@@ -1496,8 +1494,15 @@ border-radius: 3px;
 	#top{
 		padding-top: 10px;
 	}
+	#subjects-pane .subject-title h3{
+		line-height: 35px;
+		padding: 10px 4px 10px 90px;
+	}
 	#footer{
 		margin-top: 270px;
+	}
+	.account-quick-link{
+		background-position: 8px 25px;
 	}
 	h2{
 		font-size: 26px;
@@ -1510,10 +1515,14 @@ border-radius: 3px;
     .hours-wrap{
 		margin-top: 0px;
 	}
+	.quick-links{
+		margin-top: 0px;
+	}
 	.browse{
 		padding-bottom:2px;
 		margin-top: 30px; 
 	}
+
 	.cta{
 		margin-top: 30px; 
 		padding: 2px;
