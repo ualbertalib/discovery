@@ -53,7 +53,13 @@
 <% end %>
 <div class="row">
   <div class="col-md-12">
-    <h2>results for <em></em> in Articles</h2>
+    <h2> results for <em>
+            <% if params[:q] =='' %>
+               	everything
+            <% else %>
+              <%= params[:q] %>
+            <% end %></em>
+    in Articles</h2>
       <form class="form-inline" role="form" action='/results'>
         <div class="form-group">   
           <input type="text" class="form-control" placeholder="search again" name="q">
