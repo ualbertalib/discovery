@@ -899,7 +899,7 @@ font-size: 12px;
 	margin: 0;
 }
 .details h2{
-	padding-bottom: 0px;subj
+	padding-bottom: 0px;
 }
 .profile-links>li>a{
 	background-color: #333;
@@ -1293,10 +1293,7 @@ border-radius: 3px;
 	}
 	.news-square{
     	padding-bottom: 39%;
-    {
-}
-
-
+       }
 }
 @media (min-width: 768px){
 	.top-margin{
