@@ -76,13 +76,11 @@
     <% end %>
   </div><!--/well -->
   <div id="content" class="col-md-9 col-sm-8">
-    
-    <div class="user-filters">
-      <% if defined? params[:facetfilter] %>
-        <%= params[:facetfilter]%>
-      <% end %> <a href="/articles" class="start-over">Start Over</a>
+     <% if params %>
+               <div class="user-filters">
+                  <%= params[:eds_action]%> <a href="/articles">Start Over</a>
                </div>
-   
+      <% end %>
    
 
     <% unless has_search_parameters? %>

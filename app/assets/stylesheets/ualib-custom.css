@@ -374,6 +374,7 @@ label.mod{
 }
 .hours-header{
 	padding-bottom: 0;
+	margin-bottom: 0;
 }
 .hours-header a{
 	background-color: #4C6F84;
@@ -936,9 +937,17 @@ font-size: 12px;
 	text-align: center;
 	margin-top: 20px;
 }
+.lib-pick{
+	margin: 5px 0;
+}
 .library-picker{
-	margin: 0px;
 	font-size: 20px;
+	text-transform: uppercase;
+}
+.library-picker h3{
+	margin: 0px 0px 7px 0px;
+	font-size: 21px;
+	 text-transform: capitalize;
 }
 .international{
 	color: #fff;
@@ -1019,6 +1028,10 @@ dl#locations-table{
 	font-size: 22px;
 	margin-top: -10px;
 	text-transform: lowercase;
+}
+.selected-hours{
+	font-weight: bold;
+	font-size: 18px;
 }
 .not-your-library{
 	margin: 5px 0 0 0;

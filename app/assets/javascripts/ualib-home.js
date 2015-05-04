@@ -77,6 +77,7 @@ $(document).ready(function () {
     $('#main-search').attr('action', '/ejournals');
     $('#q').attr('placeholder', 'search ejournals...');
   });
+   $( ".library-picker" ).html( getHoursLocationStatus(4) );
   $( ".hours-select" ).change(function () {
     var library = "";
     var location = "";
@@ -87,6 +88,7 @@ $(document).ready(function () {
     imagestring ="/assets/lib-icons/"+location+".png";
     $( ".library-picker" ).text(library);
     $( ".lib-pick img" ).attr( "src", imagestring);
+    $( ".library-picker" ).html( getHoursLocationStatus(location) );
   })
  $(".news-square").hoverIntent(
     function() {
@@ -95,6 +97,6 @@ $(document).ready(function () {
     function() {
       $(this).find(".details").fadeOut(250);
   });
+});
 
 
-    });
