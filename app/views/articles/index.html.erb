@@ -21,8 +21,8 @@
 
 <% if has_search_parameters? %>
        <% options = generate_api_query(params) %>
-       <% clean_params = deep_clean(params) %>
-       <% params = clean_params %>
+       <%# <% clean_params = deep_clean(params) %>
+       <%# <% params = clean_params %>
 
   <% if session[:results] %>
 	<%# unless params[:fromDetail] == 'y'%>
@@ -39,7 +39,7 @@
   }
 </script>
 
-<% if session[:results]['SearchRequestGet'] %>
+<% if session[:results] && session[:results]['SearchRequestGet'] %>
 <% show_numlimiters.times do |i| %>
 <script type="text/javascript">
   $(document).ready(function() {
@@ -77,8 +77,10 @@
   </div><!--/well -->
   <div id="content" class="col-md-9 col-sm-8">
     
-               <div class="user-filters">
-                  <%= params[:facetfilter]%> <a href="/articles" class="start-over">Start Over</a>
+    <div class="user-filters">
+      <% if defined? params[:facetfilter] %>
+        <%= params[:facetfilter]%>
+      <% end %> <a href="/articles" class="start-over">Start Over</a>
                </div>
    
    

@@ -3,7 +3,7 @@
 
     <% else %>
     
-    <% if session[:results]['SearchResult']['Data']['Records'].present? %>
+    <% if session[:results] && session[:results]['SearchResult'] && session[:results]['SearchResult']['Data'] && session[:results]['SearchResult']['Data']['Records'].present? %>
 <div id="documents">
     <% session[:results]['SearchResult']['Data']['Records'].each do |result| %>
 

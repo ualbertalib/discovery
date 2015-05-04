@@ -238,7 +238,7 @@ module Blacklight::ArticlesHelperBehavior
 
     link = ""
     # generate the link for the target record
-    if session[:results]['SearchResult']['Data']['Records'].present?
+    if session[:results] && session[:results]['SearchResult'] && session[:results]['SearchResults']['Data'] && session[:results]['SearchResult']['Data']['Records'].present?
       session[:results]['SearchResult']['Data']['Records'].each do |result|
         nextId = show_resultid(result).to_s
         if nextId == params[:resultId].to_s
@@ -716,7 +716,7 @@ module Blacklight::ArticlesHelperBehavior
   # show available facets
   def show_facets
     facets = '';
-    if session[:results]['SearchResult']['AvailableFacets'].present?
+    if session[:results] && session[:results]['SearchResult'] && session[:results]['SearchResult']['AvailableFacets'].present?
       session[:results]['SearchResult']['AvailableFacets'].each do |facet|
         facets = facets + '<div class="facet_limit blacklight-' + facet['Id'] + '"><h5 class="twiddle">' + facet['Label'] + '<i class="icon-chevron"></i></h5><ul style="display: block;">'
         facet.each do |key, val|
