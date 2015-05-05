@@ -50,7 +50,12 @@
     <updateHandler class="solr.DirectUpdateHandler2">
         <updateLog>
               <str name="dir">${solr.data.dir:}</str>
-	  </updateLog>
+            </updateLog>
+            <autoCommit>
+              <maxDocs>10000</maxDocs>
+              <maxTime>1000</maxTime>
+              <openSearcher>false</openSearcher>
+            </autoCommit>
     </updateHandler>
      
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
