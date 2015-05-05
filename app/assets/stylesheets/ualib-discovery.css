@@ -462,15 +462,24 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 }
 .user-filters{
 	min-height: 20px;
-  padding: 19px;
+  padding: 5px 25px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
   border-radius: 4px;
+}
+.user-filters .col-sm-10{
+padding: 15px 0;
 }
 .start-over{
 	float: right;
 	font-size: 13px;
 	margin-top: 5px;
 }
-
+.ufacet{
+	  border: 1px solid #e3e3e3;
+	  background-color: #fff;
+	  font-size: 13px;
+	  display: inline-block;
+	  padding: 5px 10px;
+}

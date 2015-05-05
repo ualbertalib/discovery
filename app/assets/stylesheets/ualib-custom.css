@@ -31,7 +31,7 @@ a:active, a:visited, a:hover{
 a.anchor {
 	display: block;
 	position: relative;
-	top: -220px;
+	top: -270px;
 	visibility: hidden;
 }
 .minus{
@@ -592,7 +592,7 @@ label.mod{
 	background-size: 40px;
 }
 #account-pane{
-	padding-bottom: 30px;
+	min-height: 730px;
 }
 #account-pane h3 a{
 	float: right;
