@@ -943,11 +943,17 @@ font-size: 12px;
 .library-picker{
 	font-size: 20px;
 	text-transform: uppercase;
+	display: block;
+	background-color: #fff;
+	padding-bottom: 5px;
 }
 .library-picker h3{
 	margin: 0px 0px 7px 0px;
 	font-size: 21px;
 	 text-transform: capitalize;
+	background-color: #eceff4;
+	padding-bottom: 5px;
+
 }
 .international{
 	color: #fff;
@@ -1036,6 +1042,7 @@ dl#locations-table{
 .not-your-library{
 	margin: 5px 0 0 0;
 	font-size: 16px;
+	text-align: center;
 }
 .not-your-library span{
  	font-size: 80%;
