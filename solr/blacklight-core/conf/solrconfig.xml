@@ -21,7 +21,7 @@
  It is *not* a good example to work from. 
 -->
 <config>
-  <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
+  <luceneMatchVersion>4.9</luceneMatchVersion>
   <!--  The DirectoryFactory to use for indexes.
         solr.StandardDirectoryFactory, the default, is filesystem based.
         solr.RAMDirectoryFactory is memory based, not persistent, and doesn't work with replication. -->
@@ -30,9 +30,6 @@
   <!--  Neil -->
   <lib dir="/opt/solr/lib/contrib/analysis-extras/lib" />
   <lib dir="/opt/solr/lib/contrib/analysis-extras/lucene-libs" />
-  <!-- Sam - for dev  -->
-  <lib dir="../lib/contrib/analysis-extras/lib" />
-  <lib dir="../lib/contrib/analysis-extras/lucene-libs" />
 
   <dataDir>${solr.blacklight-core.data.dir:}</dataDir>
   
@@ -50,12 +47,12 @@
     <updateHandler class="solr.DirectUpdateHandler2">
         <updateLog>
               <str name="dir">${solr.data.dir:}</str>
-            </updateLog>
-            <autoCommit>
-              <maxDocs>10000</maxDocs>
-              <maxTime>1000</maxTime>
-              <openSearcher>false</openSearcher>
-            </autoCommit>
+	</updateLog>
+	<autoCommit>
+	  <maxDocs>10000</maxDocs>
+	  <maxTime>1000</maxTime>
+	  <openSearcher>false</openSearcher>
+	</autoCommit>
     </updateHandler>
      
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
@@ -462,6 +459,135 @@
       <str>spellcheck</str>
     </arr>
   </requestHandler>
+
+  <!-- Neil imported these selected Request Handlers from Henry's "collection1", the default in solrCloud -->
+
+  <!-- Request Handlers 
+
+       http://wiki.apache.org/solr/SolrRequestHandler
+
+       Incoming queries will be dispatched to a specific handler by name
+       based on the path specified in the request.
+
+       Legacy behavior: If the request path uses "/select" but no Request
+       Handler has that name, and if handleSelect="true" has been specified in
+       the requestDispatcher, then the Request Handler is dispatched based on
+       the qt parameter.  Handlers without a leading '/' are accessed this way
+       like so: http://host/app/[core/]select?qt=name  If no qt is
+       given, then the requestHandler that declares default="true" will be
+       used or the one named "standard".
+
+       If a Request Handler is declared with startup="lazy", then it will
+       not be initialized until the first request that uses it.
+
+    -->
+
+  <!-- realtime get handler, guaranteed to return the latest stored fields of
+       any document, without the need to commit or open a new searcher.  The
+       current implementation relies on the updateLog feature being enabled.
+
+       ** WARNING **
+       Do NOT disable the realtime get handler at /get if you are using
+       SolrCloud otherwise any leader election will cause a full sync in ALL
+       replicas for the shard in question. Similarly, a replica recovery will
+       also always fetch the complete index from the leader because a partial
+       sync will not be possible in the absence of this handler.
+  -->
+  <requestHandler name="/get" class="solr.RealTimeGetHandler">
+     <lst name="defaults">
+       <str name="omitHeader">true</str>
+       <str name="wt">json</str>
+       <str name="indent">true</str>
+     </lst>
+  </requestHandler>
+
+ 
+  <!-- Update Request Handler.  
+       
+       http://wiki.apache.org/solr/UpdateXmlMessages
+
+       The canonical Request Handler for Modifying the Index through
+       commands specified using XML, JSON, CSV, or JAVABIN
+
+       Note: Since solr1.1 requestHandlers requires a valid content
+       type header if posted in the body. For example, curl now
+       requires: -H 'Content-type:text/xml; charset=utf-8'
+       
+       To override the request content type and force a specific 
+       Content-type, use the request parameter: 
+         ?update.contentType=text/csv
+       
+       This handler will pick a response format to match the input
+       if the 'wt' parameter is not explicit
+    -->
+  <requestHandler name="/update" class="solr.UpdateRequestHandler">
+    <!-- See below for information on defining 
+         updateRequestProcessorChains that can be used by name 
+         on each Update Request
+      -->
+    <!--
+       <lst name="defaults">
+         <str name="update.chain">dedupe</str>
+       </lst>
+       -->
+  </requestHandler>
+
+  <!-- Admin Handlers
+
+       Admin Handlers - This will register all the standard admin
+       RequestHandlers.  
+    -->
+  <requestHandler name="/admin/" 
+                  class="solr.admin.AdminHandlers" />
+  <!-- This single handler is equivalent to the following... -->
+  <!--
+     <requestHandler name="/admin/luke"       class="solr.admin.LukeRequestHandler" />
+     <requestHandler name="/admin/system"     class="solr.admin.SystemInfoHandler" />
+     <requestHandler name="/admin/plugins"    class="solr.admin.PluginInfoHandler" />
+     <requestHandler name="/admin/threads"    class="solr.admin.ThreadDumpHandler" />
+     <requestHandler name="/admin/properties" class="solr.admin.PropertiesRequestHandler" />
+     <requestHandler name="/admin/file"       class="solr.admin.ShowFileRequestHandler" >
+    -->
+  
+  <!-- Solr Replication
+
+       The SolrReplicationHandler supports replicating indexes from a
+       "master" used for indexing and "slaves" used for queries.
+
+       http://wiki.apache.org/solr/SolrReplication 
+
+       It is also necessary for SolrCloud to function (in Cloud mode, the
+       replication handler is used to bulk transfer segments when nodes 
+       are added or need to recover).
+
+       https://wiki.apache.org/solr/SolrCloud/
+    -->
+  <requestHandler name="/replication" class="solr.ReplicationHandler" > 
+    <!--
+       To enable simple master/slave replication, uncomment one of the 
+       sections below, depending on whether this solr instance should be
+       the "master" or a "slave".  If this instance is a "slave" you will 
+       also need to fill in the masterUrl to point to a real machine.
+    -->
+    <!--
+       <lst name="master">
+         <str name="replicateAfter">commit</str>
+         <str name="replicateAfter">startup</str>
+         <str name="confFiles">schema.xml,stopwords.txt</str>
+       </lst>
+    -->
+    <!--
+       <lst name="slave">
+         <str name="masterUrl">http://your-master-hostname:8983/solr</str>
+         <str name="pollInterval">00:00:60</str>
+       </lst>
+    -->
+  </requestHandler>
+
+
+  <!-- Neil imported these selected Request Handlers from Henry's "collection1", the default in solrCloud *** END ***-->
+
+
 
 <!-- Spell Check
 
