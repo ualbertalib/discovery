@@ -159,7 +159,7 @@ ul.ask{
 	margin-top: -20px;
 	border-right: none;
 	margin-left: 5px;
-	background: url("ask-icon.png") no-repeat left bottom;
+	background: image-url("ask-icon.png") no-repeat left bottom;
 	-webkit-background-size: 24%;
 	background-size: 24%;
 	padding-left: 20px;
@@ -201,20 +201,20 @@ ul.ask{
 	padding-right: 0;
 }
 #main-nav #services p{
-	background: url("services-icon.png") no-repeat left 10px;
+	background: image-url("services-icon.png") no-repeat left 10px;
 }
 
 #main-nav #subjects p{
-	background: url("subjects-icon.png") no-repeat left 10px;
+	background: image-url("subjects-icon.png") no-repeat left 10px;
 }
 #main-nav #research p{
-	background: url("research-icon.png") no-repeat left 10px;
+	background: image-url("research-icon.png") no-repeat left 10px;
 }
 #main-nav #news p{
-	background: url("news-icon.png") no-repeat left 10px;
+	background: image-url("news-icon.png") no-repeat left 10px;
 }
 #main-nav #account p{
-	background: url("account-icon.png") no-repeat left 10px;
+	background: image-url("account-icon.png") no-repeat left 10px;
 }
 #main-nav.small h3{
 	background:none;
@@ -242,7 +242,7 @@ ul.ask{
 }
 #main-nav.small>div>div.active{
 	border-bottom: 4px #365367 solid;
-	background: url("nav-select.png") #fff no-repeat center bottom;
+	background: image-url("nav-select.png") #fff no-repeat center bottom;
 	}
 #main-nav, #main-nav p{
 	 transition: all 1s;
@@ -324,7 +324,7 @@ ul.ask{
 	margin-bottom: 5px;
 }
 .reserve-quick-link{
-		background-image: url("room.png");
+		background-image: image-url("room.png");
 		background-position: 8px 8px;
 }
 .quick-links a:hover{ 
@@ -332,7 +332,7 @@ ul.ask{
 	background-color: #38566c;
 }
 .account-quick-link{
-		background-image: url("account-icon-white.png");
+		background-image: image-url("account-icon-white.png");
 		background-position: 8px 10px;
 }
 .up{
@@ -546,49 +546,49 @@ label.mod{
 	background-color: #f7e9e9;
 }
 .browse-type{
-	background-image: url("research-back.jpg");
+	background-image: image-url("research-back.jpg");
 	padding: 10px;
 }
 #ag{
-	background-image: url("subject-images/ag.png");
+	background-image: image-url("subject-images/ag.png");
 }
 #arts{
-	background-image: url("subject-images/arts.png");
+	background-image: image-url("subject-images/arts.png");
 	
 }
 #aug{
-	background-image: url("subject-images/aug.png");
+	background-image: image-url("subject-images/aug.png");
 	background-size: 45px;
 }
 #business{
-	background-image: url("subject-images/bus.png");
+	background-image: image-url("subject-images/bus.png");
 	background-size: 45px;
 }
 #ed{
-	background-image: url("subject-images/ed.png");
+	background-image: image-url("subject-images/ed.png");
 }
 #eng{
-	background-image: url("subject-images/eng.png");
+	background-image: image-url("subject-images/eng.png");
 }
 #health{
-	background-image: url("subject-images/health.png");
+	background-image: image-url("subject-images/health.png");
 }
 #int{
-	background-image: url("subject-images/inter.png");
+	background-image: image-url("subject-images/inter.png");
 	background-size: 40px;
 }
 #law{
-	background-image: url("subject-images/law.png");
+	background-image: image-url("subject-images/law.png");
 }
 #native{
-	background-image: url("subject-images/native.png");
+	background-image: image-url("subject-images/native.png");
 	background-size: 40px;
 }
 #physed{
-	background-image: url("subject-images/physed.png");
+	background-image: image-url("subject-images/physed.png");
 }
 #science{
-	background-image: url("subject-images/science.png");
+	background-image: image-url("subject-images/science.png");
 	background-size: 40px;
 }
 #account-pane{
@@ -687,7 +687,7 @@ label.mod{
 	margin-top: 5px;
 }
 .btn-blue{
-	background: url("search-choice-icon.png") #4C6F84 no-repeat 8px center;
+	background: image-url("search-choice-icon.png") #4C6F84 no-repeat 8px center;
 	-webkit-background-size: 8px;
 	background-size: 8px;
 	color: #fff;
@@ -697,7 +697,7 @@ label.mod{
 	margin-top: 5px;
 }
 .btn-help{
-	background: url("question.png") #4C6F84 no-repeat left 7px;
+	background: image-url("question.png") #4C6F84 no-repeat left 7px;
 	padding: 4px 8px 4px 20px;
 	font-size: 13px;
 	margin-left: 5px;
@@ -733,7 +733,7 @@ label.mod{
 	color: #efefef;
 	}
 .btn-green-small{
-		background:url("adv.png") #4C6F84 no-repeat center bottom;
+		background:image-url("adv.png") #4C6F84 no-repeat center bottom;
 	color: #efefef;
 	font-size: 11px;
 	padding: 3px 5px 22px 3px;
@@ -928,7 +928,7 @@ font-size: 12px;
 }
 #tweets{
 	padding: 5px 0 5px 10px;
-	background-image: url("twitter_normal.png");
+	background-image: image-url("twitter_normal.png");
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -962,7 +962,7 @@ font-size: 12px;
 	color: #cdd7de;
 	display: block;
 	padding:12px 10px;
-	background-image: url("inter.png");
+	background-image: image-url("inter.png");
 	background-repeat: no-repeat;
 	background-position: 5px center;
 	padding-left: 115px;
@@ -1083,7 +1083,7 @@ ul.foot-nav{
 	font-size: 19px;
 }
 #footer{
-	  background: url("footer-bg.jpg") #1b4724 repeat-x;
+	  background: image-url("footer-bg.jpg") #1b4724 repeat-x;
 	  padding-bottom: 5px;
 }
 #footer p{
@@ -1260,7 +1260,7 @@ border-radius: 3px;
 		display: none;
 	}
 	.header{
-		background: url("banner.png") #1b4724 no-repeat center;
+		background: image-url("banner.png") #1b4724 no-repeat center;
 	 	background-size: 100% 100%;
 	 	padding-bottom: 3px;
 	}
@@ -1278,7 +1278,7 @@ border-radius: 3px;
 		font-size: 15px;	
 	}
 	#top{
-		background: url("banner-bg.jpg") repeat-x center 49px #fff;
+		background: image-url("banner-bg.jpg") repeat-x center 49px #fff;
 	}	
 	.col-sm-15 {
         width: 20%;
@@ -1400,39 +1400,39 @@ border-radius: 3px;
 		padding-top: 40px;
 	}
 	#writing{
-		background-image: url("writing-icon.png");
+		background-image: image-url("writing-icon.png");
 		background-size: 55px 55px;
 	}
 	#reserve-room{
-		background-image: url("room.png");
+		background-image: image-url("room.png");
 		background-size: 63px 60px;
 	}
 	#workshops{
-		background-image: url("workshop.png");
+		background-image: image-url("workshop.png");
 		background-size: 65px 65px;
 	}
 	#space-dir{
-		background-image: url("space-icon.png");
+		background-image: image-url("space-icon.png");
 		background-size: 60px 60px;
 	}
 	#eresources{
-		background-image: url("eresources-icon.png");
+		background-image: image-url("eresources-icon.png");
 		background-size: auto 55px;
 	}
 	#librarians{
-		background-image: url("librarians-icon.png");
+		background-image: image-url("librarians-icon.png");
 		background-size: 78px 65px;
 	}
 	#reserves{
-		background-image: url("reserves-icon.png");
+		background-image: image-url("reserves-icon.png");
 		background-size: 78px 60px;
 	}
 	#refworks{
-		background-image: url("refworks-icon.png");
+		background-image: image-url("refworks-icon.png");
 		background-size: 65px 65px;
 	}
 	#ask-service{
-		background-image: url("ask-service.png");
+		background-image: image-url("ask-service.png");
 		background-size: 65px 65px;
 	}
 	.subjects{
@@ -1569,32 +1569,32 @@ border-radius: 3px;
   		font-size: 13px;
   	}
   	#main-nav.small #home h3{
-		background: url("home-icon.png") no-repeat left 5px;
+		background: image-url("home-icon.png") no-repeat left 5px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #services h3{
-		background: url("services-icon.png") no-repeat left 5px;
+		background: image-url("services-icon.png") no-repeat left 5px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #subjects h3{
-		background: url("subjects-icon.png") no-repeat left 5px;
+		background: image-url("subjects-icon.png") no-repeat left 5px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #research h3{
-		background: url("research-icon.png") no-repeat left 5px;
+		background: image-url("research-icon.png") no-repeat left 5px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #news h3{
-		background: url("news-icon.png") no-repeat left 5px;
+		background: image-url("news-icon.png") no-repeat left 5px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #account h3{
-		background: url("account-icon.png") no-repeat left 5px;
+		background: image-url("account-icon.png") no-repeat left 5px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
