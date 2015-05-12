@@ -7,7 +7,7 @@ namespace :ingest do
     mode = args.file.split("|").last
     batch_ingester = BatchIngest.new
     batch_ingester.ingester = Ingester.new
-    batch_ingester.solr = "http://localhost:8983/solr"
+    batch_ingester.solr = "http://localhost:8983/solr" # don't use hard-coded solr. Replace with config/ingest.yml value
     batch_ingester.root = "//xmlns:mods"
     batch_ingester.record_delimiter = "//xmlns:mods"
     batch_ingester.namespace = {"xmlns" => "http://www.loc.gov/mods/v3"}

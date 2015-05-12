@@ -1,8 +1,11 @@
 require_relative "./ingester.rb"
 
 class BatchIngest
-  
   attr_writer :ingester, :root, :namespace, :record_delimiter
+
+  def initialize(args ={})
+    @solr_url = args[:solr_url]
+  end
 
   def from_file(file, vocabulary)
     read file
@@ -23,7 +26,7 @@ class BatchIngest
   end
 
   def solr=(solr_url)
-    @ingester.solr_object = RSolr.connect(solr_url)
+    @ingester.solr_object = RSolr.connect(solr_url, url: @solr_url)
   end
 
   private
