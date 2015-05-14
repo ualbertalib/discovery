@@ -5,7 +5,7 @@ include E
 describe "Batch Ingest Process" do
 
   let(:batch_ingester){ BatchIngest.new }
-  let(:ingester){ instance_double(Ingester) }
+  let(:ingester){ instance_double(Ingester, :commit=>"", :add_document=>"") }
   let(:root_element){ "//xmlns:OAI-PMH" }
   let(:record_delimiter){ "//xmlns:record" }
   let(:namespace){ {"xmlns" => "http://www.openarchives.org/OAI/2.0/"} }

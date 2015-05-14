@@ -11,11 +11,12 @@ describe "Metadata ingest pipeline" do
     let(:dc){ DublinCoreVocabulary.from_xml(File.open(E::*("fixtures/dublin_core_record.xml"))) }
 
     it "should connect to the Solr instance" do
-      rsolr = double
+      rsolr = double("solr object", :commit => "")
       ingester.solr_object = rsolr
       expect(rsolr).to receive(:add)
-      expect(rsolr).to receive(:commit)
       ingester.add_document dc.to_solr
+      expect(rsolr).to receive(:commit)
+      ingester.commit
     end
   end
 end
