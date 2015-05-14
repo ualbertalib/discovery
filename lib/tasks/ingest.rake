@@ -25,13 +25,12 @@ task :ingest, [:collection] do |t, args|
 
   when "database"
     ingest_databases
-
   end
 
 end
 
 def ingest_mods_or_dublin_core
-  batch_ingester = BatchIngest.new
+  batch_ingester = BatchIngest.new(solr_url: @c.solr)
   configure batch_ingester
   run batch_ingester
 end
@@ -63,12 +62,10 @@ end
 
 def ingest_databases
     db = Databases.new(@c.path)
-    db.xml_records.each_with_index do |record, index|
-      db_vocabulary = DatabaseVocabulary.from_xml(record)
-      Dir.mkdir(@c.expand_path) unless File.exists? @c.expand_path
-      File.open("#{@c.expand_path}/#{index}.xml", "w"){ |f| f.write db_vocabulary.to_xml }
-    end
-    batch_ingester = BatchIngest.new
+    File.open(@c.expand_path, "w"){ |f|
+      f.write db.xml_file
+    }
+    batch_ingester = BatchIngest.new(solr_url: @c.solr)
     configure batch_ingester
     run batch_ingester
 end

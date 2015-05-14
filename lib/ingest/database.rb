@@ -10,8 +10,6 @@ class Database
 
   def to_xml
     builder = Nokogiri::XML::Builder.new do |xml|
-      xml.root {
-        xml.databases {
           xml.database {
             xml.id_ @id
             xml.core @core
@@ -79,9 +77,7 @@ class Database
             xml.type "Database"
             xml.electronic true
           }
-        }
-      }
     end
-    builder.doc.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::AS_XML).gsub("\n", "").gsub('""', '"')
+    builder.doc.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::AS_XML | Nokogiri::XML::Node::SaveOptions::NO_DECLARATION).gsub("\n", "").gsub('""', '"')
   end
 end

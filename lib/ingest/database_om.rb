@@ -2,7 +2,7 @@ require_relative "./vocabulary"
 
 class DatabaseVocabulary < Vocabulary
   set_terminology do |t|
-    t.root(path: "databases")
+#    t.root(path: "databases")
     t.id(index_as: :stored_searchable)
     t.core(index_as: :stored_searchable)
     t.db_display(index_as: :stored_searchable)

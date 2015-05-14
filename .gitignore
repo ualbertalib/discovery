@@ -21,3 +21,4 @@ token.txt
 /data
 /solr/logs
 /solr/blacklight-core/data
+/spec/reports

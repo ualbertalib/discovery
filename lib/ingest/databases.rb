@@ -1,5 +1,6 @@
 require "csv"
 require_relative "./database.rb"
+require_relative "./database_om.rb"
 
 class Databases
 
@@ -13,6 +14,17 @@ class Databases
       db.parse(row)
       @xml_records <<  db.to_xml
     end
+  end
+
+  def xml_file
+    output = "<?xml version=\"1.0\"?><root><databases>"
+    @xml_records.each do |record|
+      db_vocabulary = DatabaseVocabulary.from_xml(record)
+      output += db_vocabulary.to_xml.gsub('<?xml version="1.0"?>', "")
+
+    end
+    output += "</databases></root>"
+    output
   end
 
 end

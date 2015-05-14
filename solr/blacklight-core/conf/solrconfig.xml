@@ -54,8 +54,8 @@
               <str name="dir">${solr.data.dir:}</str>
 	</updateLog>
 	<autoCommit>
-	  <maxDocs>10000</maxDocs>
-	  <maxTime>1000</maxTime>
+	  <maxDocs>100000</maxDocs>
+	  <maxTime>30000</maxTime>
 	  <openSearcher>false</openSearcher>
 	</autoCommit>
     </updateHandler>

@@ -71,7 +71,7 @@ databases:
   delimiter: "//database"
   namespace: ""
   vocabulary: DatabaseVocabulary
-  mode: directory
-  expand_path: "data/databases"
+  mode: file
+  expand_path: "data/databases.xml"
   path: "data/databases.csv"
   endpoint: http://www.library.ualberta.ca/batchjobs/SFX/dbMetadata/dbdump_csv.php
