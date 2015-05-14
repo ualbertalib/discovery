@@ -5,7 +5,10 @@ class Ingester
 
   def add_document(vocabulary)
     add vocabulary
-    commit
+  end
+
+  def commit
+    @solr_object.commit
   end
 
 private
@@ -14,7 +17,4 @@ private
     @solr_object.add vocabulary
   end
 
-  def commit
-    @solr_object.commit
-  end
 end

@@ -15,6 +15,7 @@ class BatchIngest
       solr[:id] = solr["id_tesim"].first
       add solr if solr[:id]
     end
+    @ingester.commit
   end
 
   def from_directory(dir, vocabulary)
