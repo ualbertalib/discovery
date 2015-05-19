@@ -64,6 +64,14 @@ h2 span.small{
 	color: #efefef;
 	font-size: 80%;
 }
+.up-arrow .glyphicon-chevron-up{
+	color: #efefef;
+	font-size: 150%;
+	margin: 20px 20px 0px 0px;
+}
+.dark .glyphicon-chevron-up{
+		color: #666;
+}
 .navbar-nav {
 	float: right;
 	padding-bottom: 8px;
@@ -267,13 +275,7 @@ ul.ask{
   height:100%;
   top:0;
   left: 0;
-
-  /* edit: added z-index */
   z-index: 1;
-
-  /* edit: fixes overlap error in IE7/8, 
-     make sure you have an empty gif */
-  background-image: url('empty.gif');
 }  
 .pane{
 		padding: 15px 0 20px 0;

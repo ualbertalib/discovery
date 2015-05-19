@@ -25,7 +25,7 @@ h5{
 	margin: 0px;
 }
  #main-container{
-	padding: 30px 0 40px 0;
+	padding: 30px 40px 40px 40px;
 }
 .btn-small{
 background-color: #1b460c;
@@ -408,7 +408,7 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
   background-color: #fff;
   border-color: #ccc;
 }
-.sidenav .facet_limit ul{
+.articles-facets .facet_limit ul{
 	padding: 10px;
 	border: #ddd 1px solid;
 	border-width: 0px 1px 1px 1px;
@@ -416,10 +416,10 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 	border-bottom-left-radius: 3px;
 	border-bottom-right-radius: 3px;
 }
-.sidenav .facet_limit ul li{
+.articles-facets .facet_limit ul li{
 	margin-bottom: 5px;
 }
-.sidenav .facet_limit ul li span{
+.articles-facets .facet_limit ul li span{
 	float: right;
 }
 .facets-collapse .form ul{

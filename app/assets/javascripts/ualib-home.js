@@ -85,7 +85,7 @@ $(document).ready(function () {
       library += $( this ).text() + " ";
       location = $(this).val();
     });
-    imagestring ="/assets/lib-icons/"+location+".png";
+    imagestring ="https://www.library.ualberta.ca/2015assets/lib-icons/"+location+".png";
     $( ".library-picker" ).text(library);
     $( ".lib-pick img" ).attr( "src", imagestring);
     $( ".library-picker" ).html( getHoursLocationStatus(location) );
