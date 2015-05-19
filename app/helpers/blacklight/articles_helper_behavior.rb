@@ -26,7 +26,7 @@ module Blacklight::ArticlesHelperBehavior
   require "htmlentities" # for deconding/encoding URLs
   require "cgi"
   require 'open-uri'
-  require_relative 'ebsco-discovery-service-api'
+  require_relative './ebsco-discovery-service-api'
 
   include EDSApi
   
