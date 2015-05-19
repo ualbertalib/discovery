@@ -43,7 +43,6 @@ gem 'spring',        group: :development
 gem "blacklight", "5.9.3"
 gem "jettywrapper", "~> 2.0.3"
 gem "blacklight-marc", "~> 5.5.0"
-gem "ebsco-discovery-service-api", "1.0.4"
 gem "om"
 gem "devise"
 gem "devise-guests"

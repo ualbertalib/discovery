@@ -26,6 +26,9 @@ module Blacklight::ArticlesHelperBehavior
   require "htmlentities" # for deconding/encoding URLs
   require "cgi"
   require 'open-uri'
+  require_relative 'ebsco-discovery-service-api'
+
+  include EDSApi
   
   def html_unescape(text)
     return CGI.unescape(text)
@@ -76,39 +79,45 @@ module Blacklight::ArticlesHelperBehavior
         @api_password = f.readline.strip
         @api_profile = f.readline.strip
     }
-    if authenticated_user?
-      session[:debugNotes] << "<p>Sending NO as guest.</p>"
-      @connection.uid_init(@api_userid, @api_password, @api_profile, 'n')
-    else
-      session[:debugNotes] << "<p>Sending YES as guest.</p>"
-      @connection.uid_init(@api_userid, @api_password, @api_profile, 'y')      
-    end
 
-    # generate a new authentication token if their isn't one or the one stored on server is invalid or expired
-    if has_valid_auth_token?
-      @auth_token = getAuthToken
-    else
-      @connection.uid_authenticate(:json)
-      @auth_token = @connection.show_auth_token
-      writeAuthToken(@auth_token)
-    end
-    
-    # generate a new session key if there isn't one, or if the existing one is invalid
-    if session[:session_key].present?
-      if session[:session_key].include?('Error')
-        @session_key = @connection.create_session(@auth_token)
-        session[:session_key] = @session_key
-        get_info
-      else 
-        @session_key = session[:session_key]
-      end
-    else
-      @session_key = @connection.create_session(@auth_token, 'n')
-      session[:session_key] = @session_key
-      get_info
-    end
+    @connection.ip_init(@api_profile, 'n')
+    @connection.ip_authenticate(:json)
+    @session_key = @connection.create_session
+    get_info
 
-    # at this point, we should have a valid authentication and session token
+    # if authenticated_user?
+    #   session[:debugNotes] << "<p>Sending NO as guest.</p>"
+    #   @connection.uid_init(@api_userid, @api_password, @api_profile, 'n')
+    # else
+    #   session[:debugNotes] << "<p>Sending YES as guest.</p>"
+    #   @connection.uid_init(@api_userid, @api_password, @api_profile, 'y')      
+    # end
+    #
+    # # generate a new authentication token if their isn't one or the one stored on server is invalid or expired
+    # if has_valid_auth_token?
+    #   @auth_token = getAuthToken
+    # else
+    #   @connection.uid_authenticate(:json)
+    #   @auth_token = @connection.show_auth_token
+    #   writeAuthToken(@auth_token)
+    # end
+    #
+    # # generate a new session key if there isn't one, or if the existing one is invalid
+    # if session[:session_key].present?
+    #   if session[:session_key].include?('Error')
+    #     @session_key = @connection.create_session(@auth_token)
+    #     session[:session_key] = @session_key
+    #     get_info
+    #   else 
+    #     @session_key = session[:session_key]
+    #   end
+    # else
+    #   @session_key = @connection.create_session(@auth_token, 'n')
+    #   session[:session_key] = @session_key
+    #   get_info
+    # end
+    #
+    # # at this point, we should have a valid authentication and session token
 
   end
 
