@@ -18,7 +18,7 @@ module EDSApi
 	  
 	  # Init the object with userid and pass.
 		def uid_init(userid, password, profile, guest = 'y')
-			@debug_notes = "<p>Setting guest as " << guest.to_s << "</p>"
+			#@debug_notes = "<p>Setting guest as " << guest.to_s << "</p>"
 			@userid = userid
 			@password = password
 			@profile = profile
@@ -41,7 +41,7 @@ module EDSApi
 			req["Content-Type"] = "application/xml"
 			req["Accept"] = "application/json" #if format == :json
 			req.body = xml
-			@debug_notes << "<p>UID Authentication Call to " << uri.to_s << ": " << xml << "</p>";
+			#@debug_notes << "<p>UID Authentication Call to " << uri.to_s << ": " << xml << "</p>";
 			https = Net::HTTP.new(uri.hostname, uri.port)
 			https.use_ssl = true
 			https.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -131,7 +131,7 @@ module EDSApi
 			req['x-authenticationToken'] = @auth_token
 			req['x-sessionToken'] = @session_token
 			req['Accept'] = 'application/json' #if format == :json
-			@debug_notes << "<p>RETRIEVE Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << " and session token: " << req['x-sessionToken'].to_s << "</p>";
+			#@debug_notes << "<p>RETRIEVE Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << " and session token: " << req['x-sessionToken'].to_s << "</p>";
 
 			Net::HTTP.start(uri.hostname, uri.port) { |http|
   			begin
@@ -193,7 +193,7 @@ module EDSApi
 			loop do
 				result = JSON.parse(super(options, format))
 				if result.has_key?('ErrorNumber')
-					@debug_notes << "<p>Found ERROR " << result['ErrorNumber'].to_s
+					#@debug_notes << "<p>Found ERROR " << result['ErrorNumber'].to_s
 					case result['ErrorNumber']
 					      when "108"
 						      @session_token = self.create_session
