@@ -4,7 +4,7 @@ $(document).ready(function () {
         	return old=='more' ?  'less' : 'more';
     	});
 	});
-	$('#sortAndPerPage .css-dropdown .btn ul, .sidenav .facet_limit ul').css('display', 'none');
+	$('#sortAndPerPage .css-dropdown .btn ul, .articles-facets .facet_limit ul').css('display', 'none');
 	$('#sortAndPerPage .css-dropdown .btn').click(function(){
 		$(this).find('ul').toggle();
 	});
