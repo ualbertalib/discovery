@@ -1,3 +1,15 @@
+# *** WARNING *** Don't change this file ! 
+#
+# This file is a placeholder.  In Dev/Test/Prod, this file will
+# be replaced by ansible, whence we have 3 separate templates, one
+# for each environment! 
+# See:
+# [nmacgreg@its004nm2 ansible-dev-master]$ ls -al roles/blacklight-application/templates/database*
+# -rwxrwxr-x. 1 nmacgreg nmacgreg 643 Apr 22 09:01 roles/blacklight-application/templates/database.yml
+# -rw-rw-r--. 1 nmacgreg nmacgreg 470 May 11 09:45 roles/blacklight-application/templates/database.yml.prod.j2
+# -rw-rw-r--. 1 nmacgreg nmacgreg 508 Mar 26 11:07 roles/blacklight-application/templates/database.yml.test.j2
+
+
 # SQLite version 3.x
 #   gem install sqlite3
 #

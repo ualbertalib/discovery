@@ -1,3 +1,8 @@
+# *** WARNING *** 
+# Ansible contains customized copies of this file, for Test & Prod environments.
+# Why? Specifically, to address the changing URL for solr, and Neil's inability to
+# use lineinfile to achieve the desired results.
+
 solr: http://localhost:8983/solr
 
 proxy: http://login.ezproxy.library.ualberta.ca/login?url=
