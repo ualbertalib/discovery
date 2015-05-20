@@ -107,12 +107,12 @@ class BentoController < ApplicationController
     search(options)
 
     # refactor
-    if session[:results]['SearchResult']['Statistics']['TotalHits']
+    if session[:results] and session[:results]['SearchResult'] and session[:results]['SearchResult']['Statistics'] and session[:results]['SearchResult']['Statistics']['TotalHits']
       documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
       @complete_count += documents["count"]
     end
 
-    if session[:results]['SearchResult']['Data']['Records'] then
+    if session[:results] and session[:results]['SearchResult'] and session[:results]['SearchResult'] and session[:results]['SearchResult']['Data'] and session[:results]['SearchResult']['Data']['Records'] then
       results = session[:results]['SearchResult']['Data']['Records']
       results.each do |result|
         metadata = {}
