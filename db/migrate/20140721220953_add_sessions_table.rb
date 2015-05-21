@@ -2,7 +2,7 @@ class AddSessionsTable < ActiveRecord::Migration
   def change
     create_table :sessions do |t|
       t.string :session_id, :null => false
-      t.column :data, :longtext
+      t.column :data, :text, :limit => 4294967295
       t.timestamps
     end
 
