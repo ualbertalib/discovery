@@ -389,6 +389,8 @@
                 <assertionsResultsToSave>0</assertionsResultsToSave>
                 <bytes>true</bytes>
                 <threadCounts>true</threadCounts>
+                <sampleCount>true</sampleCount>
+                <connectTime>true</connectTime>
               </value>
             </objProp>
             <stringProp name="TestPlan.comments">This is for use with Jenkins, where you need the Performance Plugin</stringProp>
