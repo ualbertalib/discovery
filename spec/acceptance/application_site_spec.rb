@@ -1,10 +1,11 @@
 require "open-uri"
+require_relative "./application_url.rb"
 
-APPLICATION_URL = "https://search-test.library.ualberta.ca"
+include ApplicationURL
 
 describe "UALDiscovery" do
   it "should at least respond " do
-    open(APPLICATION_URL) do |f|
+    open(URL) do |f|
       @status = f.status
     end
     expect(@status).to eq ["200", "OK"]
@@ -13,7 +14,7 @@ describe "UALDiscovery" do
   it "should be up" do
     profile = Selenium::WebDriver::Firefox::Profile.new
     driver = Selenium::WebDriver.for :firefox, :profile => profile
-    base_url = APPLICATION_URL
+    base_url = URL
     accept_next_alert = true
     driver.manage.timeouts.implicit_wait = 30
     verification_errors = []
