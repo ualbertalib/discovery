@@ -10,43 +10,22 @@ class BentoController < ApplicationController
 
     load_lookup_tables
 
+    collections = ["databases", "sfx", "symphony", "ebooks", "eds"]
+    threads = []
+
     @rows = 10
     @complete_count = 0
-    if params["q"] then # refactor this
-      eds = get_eds_results
-      if eds
-        @eds_count = eds["count"]
-        eds.delete("count")
-        @eds = eds
-      else
-        @eds_count = 0
-        @eds = ""
+
+    collections.each do |collection|
+      threads << Thread.new do
+        self.send("populate_#{collection}")
       end
-    else
-      @eds_count = 0
-      @eds = "Empty Search"
     end
 
-    databases = populate(CatalogController, {format: 'Database'})
-    @database_count = databases["count"]
-    databases.delete("count")
-    @rows = 5
-    @databases = databases
+    threads.each do |thread|
+      thread.join
+    end
 
-    ejournals = populate(CatalogController, {source: 'SFX'})
-    @ejournals_count = ejournals["count"]
-    ejournals.delete("count")
-    @ejournals = ejournals
-
-    symphony = populate(CatalogController, {source: 'Symphony', electronic_tesim: 'false'})
-    @symphony_count = symphony["count"]
-    symphony.delete("count")
-    @symphony = symphony
-
-    ebooks = populate(CatalogController, {location_tesim:'uainternet', format: 'Book'})
-    @ebooks_count = ebooks["count"]
-    ebooks.delete("count")
-    @ebooks = ebooks
   end
 
   private
@@ -62,6 +41,53 @@ class BentoController < ApplicationController
       documents[doc.as_json["id"]] = metadata
     end
     documents
+  end
+
+  def populate_databases
+    databases = populate(CatalogController, {format: 'Database'})
+    @database_count = databases["count"]
+    databases.delete("count")
+    @rows = 5
+    @databases = databases
+  end
+
+  def populate_sfx
+    ejournals = populate(CatalogController, {source: 'SFX'})
+    @ejournals_count = ejournals["count"]
+    ejournals.delete("count")
+    @ejournals = ejournals
+  end
+
+  def populate_symphony
+    symphony = populate(CatalogController, {source: 'Symphony', electronic_tesim: 'false'})
+    @symphony_count = symphony["count"]
+    symphony.delete("count")
+    @symphony = symphony
+
+  end
+
+  def populate_ebooks
+    ebooks = populate(CatalogController, {location_tesim:'uainternet', format: 'Book'})
+    @ebooks_count = ebooks["count"]
+    ebooks.delete("count")
+    @ebooks = ebooks
+  end
+
+  def populate_eds
+    if params["q"] then # refactor this
+      eds = get_eds_results
+      if eds
+        @eds_count = eds["count"]
+        eds.delete("count")
+        @eds = eds
+      else
+        @eds_count = 0
+        @eds = ""
+      end
+    else
+      @eds_count = 0
+      @eds = "Empty Search"
+    end
   end
 
   def populate_metadata(doc)
