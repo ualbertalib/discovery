@@ -1,5 +1,4 @@
 require "open-uri"
-require_relative "./application_url.rb"
 
 include ApplicationURL
 
