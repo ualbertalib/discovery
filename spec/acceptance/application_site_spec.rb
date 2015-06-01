@@ -1,13 +1,13 @@
 require "open-uri"
 
-APPLICATION_URL = "http://search-test.library.ualberta.ca"
+APPLICATION_URL = "https://search-test.library.ualberta.ca"
 
 describe "UALDiscovery" do
   it "should at least respond " do
     open(APPLICATION_URL) do |f|
       @status = f.status
     end
-    expect(@status).to eq ["200", "OK "]
+    expect(@status).to eq ["200", "OK"]
   end
 
   it "should be up" do
