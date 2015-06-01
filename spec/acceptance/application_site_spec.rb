@@ -1,6 +1,6 @@
 require "open-uri"
 
-APPLICATION_URL = "http://localhost:3000"
+APPLICATION_URL = "http://search-test.library.ualberta.ca"
 
 describe "UALDiscovery" do
   it "should at least respond " do
