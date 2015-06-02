@@ -150,6 +150,14 @@ $(document).ready(function () {
 
 chart.render();
 }
+  if ($("#headlines").length){
+    $('#headlines').FeedEk({
+    FeedUrl:'http://ualbertalibrarynews.blogspot.ca/feeds/posts/default',
+    MaxCount : 3,
+    DateFormat: 'LLL',
+    ShowDesc : false
+  });
+  }
 });
 
 
