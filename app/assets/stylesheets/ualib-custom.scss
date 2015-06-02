@@ -793,7 +793,7 @@ label.mod{
 .news-square{
 	color: #4C6F84;
 }
-.news-square .slide, .news-square div{
+.news-square .slide, .news-square>div{
 	position:absolute;
     height:100%;
     width:100%;
@@ -822,18 +822,24 @@ label.mod{
 	margin:0;
 	padding: 0;
 }
-.news-stories li a{
-	color: #333;
+.news-stories li{
+	
 	list-style: none;
-	font-size: 18px;
-	display: block;
-	padding: 12px 15px;
 	background-color: #fff;
 	margin-bottom: 1px;
 }
-.news-stories li a span{
+.news-stories li a{
+		font-size: 18px;
+		color: #333;
+		display: block;
+		padding: 0px 15px 10px 15px;
+		width: 96%;
+		line-height: 28px;
+}
+.news-stories .itemDate{
 display: block;
 font-size: 12px;
+padding: 4px 15px 2px 15px;
 }
 .news-stories li a:hover{
 	background-color: #e8eff3;
