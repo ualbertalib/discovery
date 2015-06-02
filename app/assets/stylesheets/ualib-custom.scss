@@ -1117,131 +1117,111 @@ ul.foot-nav{
 	margin-bottom: 5px;
 	margin-top:15px;
 }
-.rds .rds-nav{
-	display: block;
-	padding: 0 70px;
-	box-shadow: 0px 4px 10px rgba(50, 50, 50, 0.3);
-	text-align: center;
-	padding: 25px 10px 15px 10px;
-	border-radius: 5px;
-	margin-bottom: 20px;
+#research-pane{
+	background-color: #000;
 }
-.rds .rds-nav:hover{
-	text-decoration: none;
+#research-pane h2{
+	color: #fff;
 }
-.rds .rds-nav>h3{
-		color: #fff;
-	font-size: 27px;
-	margin-left: 0;
-text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-letter-spacing: 1px;
-font-weight: bold;
+.grid{
+	margin-top: 0px;
 }
-.rds .rds-nav>p{
-	color: #efefef;
-	font-size: 17px;
-	}
-.rds .rds-nav>h3>span{
-	display: block;
-	margin-bottom: 4px;
+.boxes h3{
+	font-size: 28px;
 }
-.rds-sub a{
-	font-size: 17px;
-font-weight: bold;
-padding: 5px 10px;
-background-color: #333;
-text-transform: lowercase;
-color: #fff;
-margin: 3px;
-border-radius: 3px;
-
-}
-
-.rds-sub a:hover{
-	background-color: #666;
-}
-
-.rds li{
-	margin-left: 20px;
-	list-style: disc;
-}
-.rds li li{
-	list-style: circle;
-}
-.rds h4{
-	background-color: transparent;
-	font-size: 15px;
-	font-weight: bold;
-	padding: 0;
-}
-.rds .quote{
-	font-size: 24px;
-	line-height: 38px;
-	color: #333;
-	
-}
-.rds .color1{
-	background-color: #a11a1a;
-}
-.rds .color1:hover, .rds .active-color1, .rds .active-color1:hover{
-	background-color: #c90e0e;
-	}
-.rds .color2{
-	background-color: #445d42;
-}
-.rds .color2:hover, .rds .active-color2, .rds .active-color2:hover{
-	background-color: #347c2f;
-	}
-.rds .color3{
-	background-color: #354762;
-}
-.rds .color3:hover, .rds .active-color3, .rds .active-color3:hover{
-	background-color: #1f5099;
-	}
-.rds .color4{
-	background-color: #413746;
-}
-.rds .color4:hover, .rds .active-color4, .rds .active-color4:hover{
-	background-color: #4f2162;
-	}
-.rds .active-color5, .rds .active-color5:hover{
-	background-color: #666;
-	}
-.rds{
-	padding-bottom: 30px;
-}
-.rds h3{
-		text-transform: normal;
-		font-size: 25px;
-		font-weight: normal;
-	}
-	.rds h4{
-		font-size: 22px;
-		font-weight: normal;
-		padding: 10px 0;
-		background-color: transparent;
-	}
-	.rds p, .rds ul{
+.boxes p{
 	font-size: 18px;
+	margin-bottom: 15px;
 }
-.rds ul li{
-	margin-left: 30px;
-	list-style: disc;
-	line-height: 27px;
-}
-.rds-side{
+.boxes>.first-row{
+	padding-bottom:30%;
 	background-color: #fff;
-	padding: 0 20px 20px 20px;
-	border: 1px solid #a8b2aa;
+	border: solid 5px #000;
+	border-width: 10px 5px 5px 5px;
 }
-.rds-side p{
-	font-size: 16px;
-	margin-top: 10px;
-	margin-bottom: 20px;
+.boxes>.second-row{
+	padding-bottom:30%;
+	background-color: #fff;
+	border: solid 5px #000;
+	border-width: 5px 5px 10px 5px;
 }
-.rds-side h3{
-	margin-top: 20px;
-	margin-bottom: 0px;
+.boxes>div>div{
+	position: absolute;
+	top:0;
+	left:0;
+	padding: 10px 30px 10px 30px;
+	text-align: center;
+}
+.boxes>div:hover{
+	background-color: #f8fafe;
+}
+.boxes>div.others>div{
+	width: 100%;
+	height: 50%;
+}
+.boxes>div.others>div h3{
+	margin-top: 0;
+	}
+.boxes>div.others:hover{
+	background-color: #fff;
+}
+.boxes>div.others>div.measure{
+	top:50%;
+}
+.boxes>div.others>div.pub-support{
+	border-bottom: 10px solid #000;
+}
+.boxes>div.others>div.measure:hover, .boxes>div.others>div.pub-support:hover{
+	background-color: #f8fafe;
+}
+.boxes>div.others h3 span{
+	font-size: 30px;
+}
+#chartContainer{
+	width: 90%;
+	height:90%;
+}
+.boxes .open-access{
+	background-image: asset_url("crystal.jpg");
+	background-repeat: no-repeat;
+	background-position: bottom center;
+}
+.boxes .rds{
+	background-image: asset_url("rds.jpg");
+	background-repeat: no-repeat;
+}
+.boxes .era{
+	background-image: asset_url("era.jpg");
+	background-repeat: no-repeat;
+}
+.boxes .era p{
+	padding-top: 155px;
+}
+.boxes .era p em{
+	font-weight: bold;
+	font-size: 28px;
+	margin-bottom: 15px;
+	}
+.boxes .rds h3{
+	padding-top: 140px;
+}
+.boxes .rds p{
+	padding-right: 30px;
+	padding-left: 30px;
+	}
+.boxes .tool-link{
+	background-color: #333;
+	display: inline-block;
+	color: #fff;
+	padding: 4px 8px;
+	font-size: 18px;
+	margin: auto;
+}
+.boxes .tool-link span{
+	font-size: 15px;
+}
+.boxes .tool-link:hover{
+	background-color: #000;
 }
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
