@@ -116,7 +116,7 @@
     <div class="col-md-4 results" id="articles"> <!-- start of articles pane -->
       <h3><span class="col-md-6">Articles</span>
         <% if @eds_count>0 %>
-          <a href="/articles?q=<%= @query %>" class="col-md-6 see-all-results"><%= @eds_count %> results</a>
+          <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-md-6 see-all-results"><%= @eds_count %> results</a>
         <% end %>
       </h3>
       <ul>       
@@ -143,7 +143,7 @@
         <% end %>
       </ul>
         <% if @eds_count>0 %>
-          <div class="results-bottom"><a href="/articles?q=<%= @query %>" class="col-md-12">View all Articles</a></div>
+          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-md-12">View all Articles</a></div>
         <% end %>
         <% else %>
           <p><%= @eds %></p>
