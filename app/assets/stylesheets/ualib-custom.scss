@@ -1,21 +1,3 @@
-/* CSS for sticky footers*/
-* {
-	margin: 0;
-}
-html, body {
-	height: 100%;
-}
-.wrapper {
-	min-height: 100%;
-	height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
-	height: 100%;
-	margin: 0 auto -180px; /* the bottom margin is the negative value of the footer's height */
-}
-.footer, .push {
-	height: 180px; /* .push must be the same height as .footer */
-}
-
-
 
 /*used to create 5 column layout - from http://www.wearesicc.com/quick-tips-5-column-layout-with-twitter-bootstrap/ */
 .col-xs-15,
@@ -860,7 +842,7 @@ display: block;
 font-size: 12px;
 padding: 4px 15px 2px 15px;
 }
-.news-stories li a:hover{
+.news-stories li:hover{
 	background-color: #e8eff3;
 }
 .news-stories>a{
