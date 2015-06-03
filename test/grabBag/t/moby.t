@@ -5,6 +5,7 @@ use WWW::Mechanize;
 use Test::More; 
 
 my $mech = WWW::Mechanize->new();  				
+my $testCount=50;
 #my $url="https://tottenham.library.ualberta.ca/users/sign_in";		# The HAproxy interface: not until you ditch the self-signed cert.  Requirements: "yum install perl-Crypt-SSLeay perl-LWP-Protocol-https" 
 my $host="search-test.library.ualberta.ca";
 $host = $ENV{"TARGETHOSTNAME"}  if defined $ENV{"TARGETHOSTNAME"};
@@ -20,7 +21,7 @@ my $bigWhale = "/var/tmp/mobyDick.txt";
 
 my $a ; $searchString = undef;
 open (RANDWORDS, "-|", 'sort -R /var/tmp/mobyDick.txt  | awk -F" " \'{ print $1, $2, $3;}\'') || die "Can't get random words: $!";   # hardcoded filename, sorry
-for ($a=1; $a< 101; $a ++) {
+for ($a=1; $a< ($testCount+1); $a ++) {
 	do  {
 		#print "Generating random words...\n";
 		$searchString = <RANDWORDS>;
@@ -35,4 +36,4 @@ for ($a=1; $a< 101; $a ++) {
 }
 close RANDWORDS;	
 
-done_testing 100;
+done_testing $testCount;
