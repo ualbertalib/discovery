@@ -6,7 +6,7 @@ require 'json'
 # Once this gem is installed, you can find demo code that makes use of the gem here:
 # http://www.lh2cc.net/dse/efrierson/ruby/eds-alpha-demo.zip
 
-module EDSApi
+  module EDSApi
 	API_URL = "http://eds-api.ebscohost.com/"
 	API_URL_S = "https://eds-api.ebscohost.com/"
 	

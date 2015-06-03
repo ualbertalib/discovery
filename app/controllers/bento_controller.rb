@@ -30,6 +30,8 @@ class BentoController < ApplicationController
 
   private
 
+  #desperately needs refactoring
+
   def populate(controller, facet)
     @query = params[:q]
     documents = {}
