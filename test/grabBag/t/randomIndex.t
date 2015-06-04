@@ -3,14 +3,28 @@
 use strict;
 use WWW::Mechanize;
 use JSON; 
+use Storable;
 use Test::More tests => 11; 
 
-my @randomSearches = &selectRandom;
+my $DEBUG = 0; $DEBUG = $ENV{"DEBUG"} if defined $ENV{"DEBUG"}; 
+
+# setup
+my $realm = "test";                                     # use the test realm by default
+$realm = $ENV{"REALM"}  if defined $ENV{"REALM"};       # but load it from the environment variable, if it was specified
+my $host="search-test.library.ualberta.ca";             # use the Test environment by default
+# config.txt contains a serialized hash-of-hashes, configuration file for this set of tests, integrated with Jenkins parameters
+my $lookup = retrieve 'config.txt';                   # get a static data structure from a file
+$host = $lookup->{$realm}{'appserver'} if defined $lookup->{$realm}{'appserver'};
+my $solrHost="solr-test.library.ualberta.ca:8080";	# a default value -- the test realm
+$solrHost = $lookup->{$realm}{'solr'} if defined $lookup->{$realm}{'solr'};
+my $solrCollection="discovery-test";			# a default value, eg test realm
+$solrCollection = $lookup->{$realm}{'solrCollection'} if defined $lookup->{$realm}{'solrCollection'};
+$DEBUG && print "We're in $realm, so I'll be using appserver=$host with solrserver=$solrHost and solrCollection=$solrCollection\n";
+
+my @randomSearches = &selectRandom($solrHost, $solrCollection);
 print "==================\n";
 
 my $mech = WWW::Mechanize->new();  				
-my $host="search-test.library.ualberta.ca";
-$host = $ENV{"TARGETHOSTNAME"}  if defined $ENV{"TARGETHOSTNAME"};
 my $url="https://$host";
 
 $mech->get( $url );    		# Visit the sign_in page
@@ -20,14 +34,16 @@ foreach my $searchString (@randomSearches) {
 	ok( $mech->status == 200, "$host: Searching for random string: $searchString" );
 }
 
+
 # ======================================================================================
 sub selectRandom {
+my $solrHost=shift;  # retrieve input parameter
+my $solrCollection=shift;  # retrieve input parameter
+
 my $mech = WWW::Mechanize->new();  				
 
 # make an initial connection, in which solr will tell us the size of the index...
-my $solrHost="solr-test.library.ualberta.ca";
-$solrHost=$ENV{"SOLRHOSTNAME"}  if defined $ENV{"SOLRHOSTNAME"};
-my $baseURL="http://$solrHost:8080/solr/discovery-test/select?&wt=json";    # does this need to be parameterized, a la  $host ... probably, for Jenkins
+my $baseURL="http://$solrHost/solr/$solrCollection/select?&wt=json";    # parameterized !  
 my $rows=1;
 $mech->get( $baseURL . "&rows=$rows"  );
 

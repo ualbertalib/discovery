@@ -3,14 +3,22 @@
 use strict;
 use WWW::Mechanize;
 use Test::More; 
+use Storable;
 
+my $DEBUG = 0; $DEBUG = $ENV{"DEBUG"} if defined $ENV{"DEBUG"}; 
 my $mech = WWW::Mechanize->new();  				
 my $testCount=50;
-#my $url="https://tottenham.library.ualberta.ca/users/sign_in";		# The HAproxy interface: not until you ditch the self-signed cert.  Requirements: "yum install perl-Crypt-SSLeay perl-LWP-Protocol-https" 
-my $host="search-test.library.ualberta.ca";
-$host = $ENV{"TARGETHOSTNAME"}  if defined $ENV{"TARGETHOSTNAME"};
-my $url="https://$host";  
 
+# setup
+my $realm = "test";                                     # use the test realm by default
+$realm = $ENV{"REALM"}  if defined $ENV{"REALM"};       # but load it from the environment variable, if it was specified
+my $host="search-test.library.ualberta.ca";             # use the Test environment by default
+# config.txt contains a serialized hash-of-hashes, configuration file for this set of tests, integrated with Jenkins parameters
+my $lookup = retrieve 'config.txt';                   # get a static data structure from a file
+$host = $lookup->{$realm}{'appserver'} if defined $lookup->{$realm}{'appserver'};
+$DEBUG && print "We're in $realm, so I'll be using $host\n";
+
+my $url="https://$host";  
 
 $mech->get( $url );    		# Visit the sign_in page
 my $searchString;
