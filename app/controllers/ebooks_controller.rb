@@ -8,7 +8,7 @@ class EbooksController < CatalogController
 
   def show_only solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
-    solr_parameters[:fq] << 'owning_library_tesim:"UAINTERNET"'
+    solr_parameters[:fq] << 'location_tesim:"uainternet"'
     solr_parameters[:fq] << 'format:"Book"'
   end
 
