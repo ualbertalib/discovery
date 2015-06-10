@@ -125,16 +125,19 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
-    config.add_show_field 'title_display', :label => 'Title'
-    config.add_show_field 'title_vern_display', :label => 'Title'
+    # config.add_show_field 'title_display', :label => 'Title'
+    # config.add_show_field 'title_vern_display', :label => 'Title'
     config.add_show_field 'subtitle_display', :label => 'Subtitle'
     config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
+    config.add_show_field 'edition_tesim', :label => "Edition"
     config.add_show_field 'author_display', :label => 'Author'
     config.add_show_field 'author_vern_display', :label => 'Author'
     config.add_show_field 'format', :label => 'Format'
     config.add_show_field 'language_facet', :label => 'Language'
+    config.add_show_field 'publisher_tesim', :label => 'Publisher'
     config.add_show_field 'published_display', :label => 'Published'
     config.add_show_field 'published_vern_display', :label => 'Published'
+    config.add_show_field 'pub_date', :label => 'Year'
     config.add_show_field 'lc_callnum_display', :label => 'Call number'
     config.add_show_field 'isbn_t', :label => 'ISBN'
     config.add_show_field 'issn_t', :label => 'ISSN'
