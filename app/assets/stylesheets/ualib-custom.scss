@@ -247,17 +247,29 @@ ul.ask{
 	min-height: 40px;
 }
 #main-nav.small>div>div{
-	border-bottom: 4px #cdd1d3 solid;
+	border-bottom: 6px #cdd1d3 solid;
 	margin-bottom: 0;
 	height:55px;
 }
 #main-nav.small>div>div:hover{
-	border-bottom: 4px #999 solid;
+	border-bottom: 6px #999 solid;
 }
 #main-nav.small>div>div.active{
-	border-bottom: 4px #365367 solid;
-	background: asset_url("nav-select.png") #fff no-repeat center bottom;
+	border-bottom: 6px #404545 solid;
+	background-color: #fffef2;
 	}
+#main-nav.small>div#news>div.active{
+	border-bottom: 6px #4C6F84 solid;
+}
+#main-nav.small>div#subjects>div.active{
+	border-bottom: 6px #452325 solid;
+}
+#main-nav.small>div#research>div.active{
+	border-bottom: 6px #000 solid;
+}
+#main-nav.small>div#account>div.active{
+	border-bottom: 6px #fff solid;
+}
 #main-nav, #main-nav p{
 	 transition: all 1s;
   -moz-transition: all 1s; /* Firefox 4 */
@@ -503,7 +515,7 @@ label.mod{
 	padding: 0 5px;
 }
 .subjects:hover{
-	background-color: #280808;
+	background-color: #3b0d0d;
 	}
 #subjects-pane h2{
 	color: #fff;
