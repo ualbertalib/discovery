@@ -146,6 +146,10 @@ class CatalogController < ApplicationController
     config.add_show_field 'summary_tesim', :label => 'Summary'
     config.add_show_field 'earlier_title_tesim', :label => 'Earlier title'
     config.add_show_field 'later_title_tesim', :label => 'Later title'
+    config.add_show_field 'subject_t', :label => 'Subject'
+    config.add_show_field 'subject_addl_t', :label => 'Additional subject'
+    config.add_show_field 'subject_era_facet', :label => 'Time period'
+    config.add_show_field 'subject_geo_facet', :label => 'Geographic subject'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
