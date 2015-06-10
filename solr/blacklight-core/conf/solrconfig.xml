@@ -106,6 +106,9 @@
 
        <str name="qf">
          id^100000
+         isbn_t^100000
+         issn_t^100000
+         lc_callnum_display^100000
          title_unstem_search^100000
          title_tesim^100000
          subtitle_unstem_search^50000
@@ -127,13 +130,14 @@
          subject_addl_t^50
          title_series_unstem_search^25
          title_series_t^10
-         isbn_t
-         issn_t
          text
          source
        </str>
        <str name="pf">
          id^1000000
+         isbn_t^1000000
+         issn_t^1000000
+         lc_callnum_display^1000000
          title_unstem_search^1000000
          title_tesim^1000000
          subtitle_unstem_search^500000
