@@ -8,7 +8,13 @@
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
       <% if @document["format"].include? "Database" %>
-      <table>
+        <table>
+          <tr><th>Abstract</th></tr>
+          <tr><td><%= @document["abstract_tesim"].first %></td></tr>
+          <% if @document["coverage_tesim"] %>
+          <tr><th>Coverage</th></tr>
+          <tr><td><%= @document["coverage_tesim"].first %></td></tr>
+        <% end %>
         <tr><th>URL</th></tr>
         <% if @document["primary_url_tesim"] %>
         <tr><td><a href="<%= @document["primary_url_tesim"].first %>" target='_blank'><%= @document["primary_url_tesim"].first %></a></td>
@@ -17,7 +23,12 @@
         <tr><td><a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= @document["id_tesim"].first %>" target='_blank'>http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= @document["id_tesim"].first %></a></><td>
         </tr>
       <% end %>
+       <% if @document["conditions_tesim"] %>
+          <tr><th>Conditions</th></tr>
+          <tr><td><%= @document["conditions_tesim"].first %></td></tr>
+        <% end %>
       </table>
+      <br />
       <% end %>
     
       <% if @urls %>
