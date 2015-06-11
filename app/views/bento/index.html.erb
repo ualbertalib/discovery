@@ -179,7 +179,7 @@
  			<ul>       
         <% i = 1 %> 
 				<% @databases.take(@local_database_limit).each do |id,database| %>
-          <li><span><%= i %>.</span> <a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= id %>"><%= database[:title] %></a></li>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"><%= database[:title] %></a></li>
           <% i+=1 %>
         <% end %>
 			</ul>
