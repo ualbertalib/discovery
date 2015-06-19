@@ -61,7 +61,7 @@ class BentoController < ApplicationController
   end
 
   def populate_symphony
-    symphony = populate(CatalogController, {source: 'Symphony', electronic_tesim: 'false'})
+    symphony = populate(CatalogController, {source: 'Symphony', electronic_tesim: 'Print'})
     @symphony_count = symphony["count"]
     symphony.delete("count")
     @symphony = symphony
