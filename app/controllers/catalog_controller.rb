@@ -87,7 +87,7 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'electronic_tesim', :label => 'Print or Online?'
+    config.add_facet_field 'electronic_tesim', :label => 'Print or Online?', collapse: false
     config.add_facet_field 'location_tesim', :label => 'Library'
     config.add_facet_field 'lc_1letter_facet', :label => 'Call Number' 
     config.add_facet_field 'format', :label => 'Format'
@@ -98,7 +98,7 @@ class CatalogController < ApplicationController
        :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     }
     config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20 
-    config.add_facet_field 'language_facet', :label => 'Language', :limit => true 
+    config.add_facet_field 'language_facet', :label => 'Language', :limit => 10
     config.add_facet_field 'subject_geo_facet', :label => 'Geographic Region' 
     config.add_facet_field 'subject_era_facet', :label => 'Time Period'
     config.add_facet_field 'owning_library_tesim', :label => 'Owning Library'
