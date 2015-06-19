@@ -10,5 +10,7 @@ describe SymphonyService do
     expect(status).to eq "CURRICULUM"
     status = SymphonyService.new.get_status("5843133", "0162031173931", "UASCITECH")
     expect(status).to eq "ON_SHELF"
+    status = SymphonyService.new.get_status("ocn5843133", "0162031173931", "UASCITECH")
+    expect(status).to eq "NO_HOLDINGS_FOUND"
   end
 end
