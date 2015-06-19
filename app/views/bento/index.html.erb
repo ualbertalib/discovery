@@ -31,7 +31,7 @@
         <div id="books"> <!-- start of books and journals pane -->
           <h3 id="print"><span class="col-md-6">Print Books and Journals</span>
             <% if @symphony_count>10 %>
-              <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=false&q=<%= @query %>" class="col-md-6 see-all-results"><%= @symphony_count %> results</a>
+              <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=Print&q=<%= @query %>" class="col-md-6 see-all-results"><%= @symphony_count %> results</a>
             <% end %>
           </h3>     
           <ul>
