@@ -9,7 +9,7 @@ solr: http://localhost:8983/solr
 
 proxy: http://login.ezproxy.library.ualberta.ca/login?url=
 
-collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases"]
+collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services"]
 
 era:
    schema: dublin_core
@@ -82,3 +82,12 @@ databases:
   expand_path: "data/databases.xml"
   path: "data/databases.csv"
   endpoint: http://www.library.ualberta.ca/batchjobs/SFX/dbMetadata/dbdump_csv.php
+
+services:
+  schema: services
+  root: "//records"
+  delimiter: "//record"
+  namespace: ""
+  vocabulary: PromotedServicesVocabulary
+  mode: file
+  path: "config/promoted_services/service_records.xml"

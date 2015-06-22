@@ -740,6 +740,7 @@
    <copyField source="subtitle_t" dest="subtitle_unstem_search"/>
    <copyField source="title_addl_t" dest="title_addl_unstem_search"/>
    <copyField source="title_added_entry_t" dest="title_added_entry_unstem_search"/>
+   <copyField source="format_tesim" dest="format"/>
    <copyField source="title_series_t" dest="title_series_unstem_search"/>
    <copyField source="author_t" dest="author_unstem_search"/>
    <copyField source="author_addl_t" dest="author_addl_unstem_search"/>

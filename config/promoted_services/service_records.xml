@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<records>
+  <record>
+    <id>service001</id>
+    <title>Browzine</title>
+    <url>http://guides.library.ualberta.ca/browzine</url>
+    <source>services</source>
+    <format>service</format>
+  </record>
+  <record>
+    <id>service002</id>
+    <title>ERA (Education &amp; Research Archive)</title>
+    <url>https://era.library.ualberta.ca/public/home</url>
+    <source>services</source>
+    <format>service</format>
+  </record>
+  <record>
+    <id>service003</id>
+    <title>Peel's Prairie Provinces</title>
+    <url>http://peel.library.ualberta.ca/index.html</url>
+    <source>services</source>
+    <format>digital collection</format>
+  </record>
+  <record>
+    <id>service004</id>
+    <title>Sir Samuel Steele Collection</title>
+    <url>http://steele.library.ualberta.ca/index.html</url>
+    <source>services</source>
+    <format>digital collection</format>
+  </record>
+  <record>
+    <id>service005</id>
+    <title>CIHM (Canadian Institute for Historical Microreproductions)</title>
+    <url>http://canadiana.library.ualberta.ca/index.html</url>
+    <source>services</source>
+    <format>digital collection</format>
+  </record>
+  <record>
+    <id>service006</id>
+    <title>Web Archiving</title>
+    <url>http://www.library.ualberta.ca/webarchive/</url>
+    <source>services</source>
+    <format>digital collection</format>
+  </record>
+  <record>
+    <id>service007</id>
+    <title>Magee Photograph Collection</title>
+    <url>http://digitallibrary.uleth.ca/cdm/landingpage/collection/magee</url>
+    <source>services</source>
+    <format>digital collection</format>
+  </record>
+  <record>
+    <id>service008</id>
+    <title>Oblates in the West</title>
+    <url>http://oblatesinthewest.library.ualberta.ca/eng/</url>
+    <source>services</source>
+    <format>digital collection</format>
+  </record>
+  <record>
+    <id>service009</id>
+    <title>University of Alberta Centenary Collection</title>
+    <url>http://www.ualbertacentennial.ca/</url>
+    <source>services</source>
+    <format>digital collection</format>
+  </record>
+  <record>
+    <id>service010</id>
+    <title>Pierre Ouvrard Master Bookbinder</title>
+    <url>http://ouvrard.library.ualberta.ca/english/exhibit.htm</url>
+    <source>services</source>
+    <format>digital collection</format>
+  </record>
+  <record>
+    <id>service011</id>
+    <title>Refworks</title>
+    <url>http://guides.library.ualberta.ca/refworks</url>
+    <source>services</source>
+    <format>service</format>
+  </record>
+  <record>
+    <id>service012</id>
+    <title>Library Hours</title>
+    <url>https://hours.library.ualberta.ca/</url>
+    <source>services</source>
+    <format>service</format>
+  </record>
+  <record>
+    <id>service013</id>
+    <title>Bruce Peel Special Collections</title>
+    <url>https://bpsc.library.ualberta.ca/</url>
+    <source>services</source>
+    <format>service</format>
+  </record>
+</records>

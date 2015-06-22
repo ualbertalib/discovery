@@ -3,6 +3,7 @@ require "#{Rails.root}/lib/ingest/dublin_core_om.rb"
 require "#{Rails.root}/lib/ingest/peel_mods_om.rb"
 require "#{Rails.root}/lib/ingest/databases.rb"
 require "#{Rails.root}/lib/ingest/database_om.rb"
+require "#{Rails.root}/lib/ingest/promoted_services_om.rb"
 require_relative "./ingest_configuration.rb"
 
 require "yaml"
@@ -17,7 +18,7 @@ task :ingest, [:collection] do |t, args|
 
   case @c.schema
 
-  when "mods", "dublin_core"
+  when "mods", "dublin_core", "services"
     ingest_mods_or_dublin_core
 
   when "marc"
@@ -26,7 +27,6 @@ task :ingest, [:collection] do |t, args|
   when "database"
     ingest_databases
   end
-
 end
 
 def ingest_mods_or_dublin_core

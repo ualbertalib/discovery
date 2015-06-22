@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<records>
+  <record>
+    <id>service001</id>
+    <title>Browzine</title>
+    <url>http://guides.library.ualberta.ca/browzine</url>
+    <source>services</source>
+    <format>service</format>
+  </record>
+</records>
