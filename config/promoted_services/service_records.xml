@@ -6,6 +6,7 @@
     <url>http://guides.library.ualberta.ca/browzine</url>
     <source>services</source>
     <format>service</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service002</id>
@@ -13,6 +14,7 @@
     <url>https://era.library.ualberta.ca/public/home</url>
     <source>services</source>
     <format>service</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service003</id>
@@ -20,6 +22,7 @@
     <url>http://peel.library.ualberta.ca/index.html</url>
     <source>services</source>
     <format>digital collection</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service004</id>
@@ -27,6 +30,7 @@
     <url>http://steele.library.ualberta.ca/index.html</url>
     <source>services</source>
     <format>digital collection</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service005</id>
@@ -34,6 +38,7 @@
     <url>http://canadiana.library.ualberta.ca/index.html</url>
     <source>services</source>
     <format>digital collection</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service006</id>
@@ -41,6 +46,7 @@
     <url>http://www.library.ualberta.ca/webarchive/</url>
     <source>services</source>
     <format>digital collection</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service007</id>
@@ -48,6 +54,7 @@
     <url>http://digitallibrary.uleth.ca/cdm/landingpage/collection/magee</url>
     <source>services</source>
     <format>digital collection</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service008</id>
@@ -55,6 +62,7 @@
     <url>http://oblatesinthewest.library.ualberta.ca/eng/</url>
     <source>services</source>
     <format>digital collection</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service009</id>
@@ -62,6 +70,7 @@
     <url>http://www.ualbertacentennial.ca/</url>
     <source>services</source>
     <format>digital collection</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service010</id>
@@ -69,6 +78,7 @@
     <url>http://ouvrard.library.ualberta.ca/english/exhibit.htm</url>
     <source>services</source>
     <format>digital collection</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service011</id>
@@ -76,6 +86,7 @@
     <url>http://guides.library.ualberta.ca/refworks</url>
     <source>services</source>
     <format>service</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service012</id>
@@ -83,12 +94,14 @@
     <url>https://hours.library.ualberta.ca/</url>
     <source>services</source>
     <format>service</format>
+    <electronic>Online</electronic>
   </record>
   <record>
     <id>service013</id>
     <title>Bruce Peel Special Collections</title>
     <url>https://bpsc.library.ualberta.ca/</url>
     <source>services</source>
-    <format>service</format>
+    <format>library</format>
+    <electronic>Online</electronic>
   </record>
 </records>

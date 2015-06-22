@@ -8,5 +8,6 @@ class PromotedServicesVocabulary < Vocabulary
     t.url(:index_as => :stored_searchable)
     t.source(:index_as => :stored_searchable)
     t.format(:index_as => :stored_searchable)
+    t.electronic(:index_as => :stored_searchable)
   end
 end

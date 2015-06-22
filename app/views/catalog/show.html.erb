@@ -30,7 +30,7 @@
       </table>
       <br />
       <% end %>
-      <% if (@document["format"].include?("service") or @document["format"].include?("digital collection")) %>
+      <% if (@document["format"].include?("service") or @document["format"].include?("digital collection") or @document["format"].include?("library")) %>
         <table>
           <tr><th>URL: <a href="<%= @document["url_tesim"].first %>" target=_blank><%= @document["url_tesim"].first %></a></th></tr>
       </table>
