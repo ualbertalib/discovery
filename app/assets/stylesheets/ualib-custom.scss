@@ -28,6 +28,7 @@ a:active, a:visited, a:hover{
 .header{
 	background: none;
 	background-color: #1b4a26;
+	padding-bottom: 20px;
 }
 a.anchor {
 	display: block;
@@ -39,8 +40,206 @@ a.anchor {
 	margin-top: -13px;
 }
 h1{
-	margin-top: 5px;
+	margin: 10px 0px 15px 0px;
 }
+.home h1, .french-home h1{
+	margin: 23px 0px 10px 0px;
+}
+h2{
+  padding-bottom: 10px;
+  font-size: 36px;
+}
+.main-container{
+	padding: 5px 20px;
+}
+.main-container p, .main-container li{
+  font-size: 18px;
+  font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+}
+.ua-logo{
+	width: 190px;
+}
+
+	
+
+/* Custom styles -- Navigation
+-------------------------------------------------- */
+.navbar-nav{
+	float: right;
+	padding:5px 0px;
+}
+.home .navbar-nav, .french-home .navbar-nav{
+	float: right;
+	padding: 0px 0px 8px 0px;
+}
+.navbar-nav>li{
+	border-right:1px solid #efefef;
+}
+.navbar-nav>li.last{
+	border: none;
+}
+.navbar-nav>li>a{
+	font-size: 15px;
+	padding: 5px 10px;
+	color: #999;
+}
+.navbar-collapse{
+	padding-right: 0;
+}
+.navbar-toggle{
+	padding: 0px 7px 6px 7px;
+	text-align: center;
+	margin-right: 0px;
+}
+.navbar-toggle h2{
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0;
+	padding: 3px 0;
+}
+.navbar-toggle .icon-bar{
+	width: 28px;
+}
+.navbar-toggle span{
+	background-color: #1b4724;
+}
+.navbar-toggle, .navbar-toggle:active, .navbar-toggle:focus{
+	background-color: #eceef3;
+}
+.navbar-toggle:hover{
+	background-color: #fff;
+}
+#navbar li{
+	list-style: none;
+}
+#navbar li>a{
+	color: #fff;
+	display: block;
+	padding: 5px 10px;
+	margin-bottom: 2px;
+	background-color: #eceef3;
+	color: #000;
+	font-size: 17px;
+}
+#navbar li>a:hover{
+	background-color: #fff;
+}
+.banner-container{
+	background: asset_url("banner-bg2.jpg") repeat-x bottom #1b4a26;
+}
+.nav-container{
+	background-color: #eceff4;
+	padding: 5px 0px;
+}
+.lib-nav{
+	margin: 0px;
+	padding: 0px;
+}
+.lib-nav li{
+	list-style: none;
+	float: left;
+	background-color: #fff;
+}
+.lib-nav li a{
+	display: block;
+	padding: 7px 5px 7px 22px;
+	font-size: 15px;
+	-webkit-background-size: 20px;
+	background-size: 16px;
+	background-repeat: no-repeat;
+	background-position: 4px 9px;
+	border:1px solid #eceff4;
+	border-width:0px 5px 0px 0px;
+	line-height: 20px;
+}
+.lib-nav li#home a{
+	background-image: asset_url("home-icon.png");	
+}
+.lib-nav li#services a{
+	background-image: asset_url("services-icon.png");
+}
+.lib-nav li#subjects a{
+	background-image: asset_url("subjects-icon.png");
+}
+.lib-nav li#research a{
+	background-image: asset_url("research-icon.png");
+}
+.lib-nav li#news a{
+	background-image: asset_url("news-icon.png");	
+}
+.lib-nav li#account a{
+	background-image: asset_url("account-icon.png");
+}
+.lib-nav li a:hover{
+	background-color: #fefdf6;
+}
+.ask-sm{
+	margin: 13px 0px 0px 0px;
+}
+.ask-sm a.ask-main{
+	display: block;
+	padding:5px;
+	text-align: center;
+	text-transform: lowercase;
+	color: #FBED32;
+	font-size: 16px;
+	letter-spacing: 1px;
+	margin: 0px 0px 0px 0px;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.ask-sm a.ask-main:hover{
+	color: #fff;
+	background-position: 3px 3px;
+}
+
+
+/* Custom styles - Footer
+-------------------------------------------------- */
+.footer{
+	  background: asset_url("footer-bg.jpg") #1b4724 repeat-x;
+	  padding-bottom: 5px;
+}
+.footer p{
+	color: #fff;
+	font-size: 80%;
+	margin:20px;
+}
+.footer p a{
+	color: #ecf4e5;	
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.2);
+	padding: 0px 3px;
+}
+ul.foot-nav{
+	float: right;
+	margin: 25px -10px 0px -10px;
+}
+.foot-nav li{
+	float: left;
+	list-style: none;
+}
+.foot-nav li a{
+	display: block;
+	padding: 0px 5px;
+	color: #ecf4e5;
+	font-size: 14px;
+}
+.foot-nav li a:hover{
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+}
+.footer p a:hover{
+	background-color: transparent;
+	text-decoration: none;
+}
+.footer p.copyright{
+	margin-bottom: 5px;
+	margin-top:15px;
+	text-align: right;
+}
+
 h2{
 	font-size: 24px;
 	margin-top: 10px;
@@ -269,6 +468,24 @@ ul.ask{
 }
 #main-nav.small>div#account>div.active{
 	border-bottom: 6px #fff solid;
+}
+#main-nav.small>div>div.active{
+	border-bottom: 5px #365367 solid;
+	}
+#main-nav.small>#news>div.active{
+	border-bottom: 5px #4C6F84 solid;
+}
+#main-nav.small>#services>div.active{
+	border-bottom: 5px #404545 solid;
+}
+#main-nav.small>#subjects>div.active{
+	border-bottom: 5px #452325 solid;
+}
+#main-nav.small>#research>div.active{
+	border-bottom: 5px #000 solid;
+}
+#main-nav.small>#account>div.active{
+	border-bottom: 5px #fff solid;
 }
 #main-nav, #main-nav p{
 	 transition: all 1s;
@@ -1245,9 +1462,7 @@ ul.foot-nav{
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
 @media (min-width: 492px){
-	h1{
-		margin-top: 23px;	
-	}
+	
 	h2{
 		font-size: 30px;
 	}	
@@ -1351,8 +1566,8 @@ ul.foot-nav{
 		font-size: 22px;
 		margin-top: -6px;
 		padding-left: 33px;
-		-webkit-background-size: 26%;
-		background-size: 26%;
+		-webkit-background-size: 27px;
+		background-size: 27px;
 	}
 	.services-bx{
 		border-radius: 50%;
@@ -1663,6 +1878,72 @@ ul.foot-nav{
 	#locations-table dd{
 		width: 16%;
 		padding-top: 0px;
+	}
+}
+
+
+/* Custom Styles for larger screens (this is a MOBILE First stylesheet)
+-------------------------------------------------- */
+
+@media (min-width: 768px){
+	.ask-sm a.ask-main{
+		display: block;
+		padding: 3px 10px 3px 40px;
+		text-transform: lowercase;
+		color: #FBED32;
+		font-size: 18px;
+		letter-spacing: 1px;
+		margin: 5px 0px 0px 5px;
+		background: asset_url("ask-icon.png") no-repeat left bottom;
+		-webkit-background-size: 24%;
+		background-size: 24%;
+		float: right;
+		background-color: rgb(0, 0, 0);
+		background-color: rgba(0, 0, 0, 0.4);
+		background-position: 10px -24px;
+		text-align: left;
+	}
+	.ask-sm a.ask-main:hover{
+		color: #fff;
+		background-position: 10px 5px;
+	}
+	.ua-logo{
+		width: 220px;
+	}
+	.foot-nav li a{
+		padding: 0px 15px;
+		font-size: 19px;
+	}
+	.footer p{
+		float: right;
+		margin: 0px;
+	}
+	.footer p.copyright{
+	text-align: left;
+	}
+}
+@media (min-width: 992px){
+	.main-container{
+		padding: 20px 20px;
+	}
+	.lib-nav li a{
+		font-size: 16px;
+		padding: 7px 20px 7px 38px;
+		background-position: 15px 9px;
+	}
+	.ua-logo{
+		width: 230px;
+	}
+}
+@media (min-width: 1200px){
+	.main-container{
+		padding: 25px 20px;
+	}
+	.lib-nav li a{
+		font-size: 18px;
+	}
+	.ua-logo{
+		width: 250px;
 	}
 }
 

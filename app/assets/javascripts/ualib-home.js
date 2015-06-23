@@ -747,28 +747,37 @@ $(document).ready(function () {
   $( "#everything-limit" ).click(function() { 
     $('#main-search').attr('action', '/results');
     $('#q').attr('placeholder', 'search everything...');
+    $('#fr-q').attr('placeholder', 'tout rechercher...');
   });
   $( "#shelves-limit" ).click(function() { 
     $('#main-search').attr('action', '/symphony');
     $('#q').attr('placeholder', 'search print books & journals...');
+    $('#fr-q').attr('placeholder', 'recherche livre imprimé et revues...');
   });
   $( "#ebooks-limit" ).click(function() { 
     $('#main-search').attr('action', '/ebooks');
     $('#q').attr('placeholder', 'search ebooks...');
+    $('#fr-q').attr('placeholder', 'recherche livres numériques...');
   });
   $( "#articles-limit" ).click(function() { 
     $('#main-search').attr('action', '/articles');
     $('#q').attr('placeholder', 'search articles...');
+    $('#fr-q').attr('placeholder', 'recherche articles...');
   });
   $( "#databases-limit" ).click(function() { 
     $('#main-search').attr('action', '/databases');
     $('#q').attr('placeholder', 'search databases...');
+    $('#fr-q').attr('placeholder', 'recherche bases de données...');
   });
   $( "#ejournals-limit" ).click(function() { 
     $('#main-search').attr('action', '/ejournals');
     $('#q').attr('placeholder', 'search ejournals...');
+    $('#fr-q').attr('placeholder', 'recherche journaux électroniques...');
   });
-   $( ".library-picker" ).html( getHoursLocationStatus(4) );
+
+  if ($(".hours-select").length){
+  var default_location = $( ".hours-select" ).val();
+  $( ".library-picker" ).html( getHoursLocationStatus(default_location) );
   $( ".hours-select" ).change(function () {
     var library = "";
     var location = "";
@@ -781,6 +790,7 @@ $(document).ready(function () {
     $( ".lib-pick img" ).attr( "src", imagestring);
     $( ".library-picker" ).html( getHoursLocationStatus(location) );
   })
+}
  $(".news-square").hoverIntent(
     function() {
       $(this).find(".details").fadeIn(250);
@@ -845,6 +855,15 @@ chart.render();
     $('#headlines').FeedEk({
     FeedUrl:'https://ualbertalibrarynews.blogspot.ca/feeds/posts/default',
     MaxCount : 3,
+    DateFormat: 'LLL',
+    ShowDesc : false
+  });
+  }
+
+   if ($("#headlines-fr").length){
+    $('#headlines-fr').FeedEk({
+    FeedUrl:'http://blogs.library.ualberta.ca/biblioblogue/?feed=rss',
+    MaxCount : 12,
     DateFormat: 'LLL',
     ShowDesc : false
   });

@@ -7,7 +7,11 @@ body{
 	padding-bottom: 3px;
 }
 h1{
-	margin-top: 23px;
+	margin: 10px 0px 15px 0px;
+}
+h2{
+  padding-bottom: 10px;
+  font-size: 36px;
 }
 h5{
 	font-size: 120%;
@@ -198,7 +202,7 @@ font-size: 18px;
 	margin-bottom: 0;
 }
 a.see-all-results{
-	background-image:url(go-arrow.png);
+	background-image:asset_url("go-arrow.png");
 	background-repeat: no-repeat;
 	background-position: center right;
 }
@@ -483,3 +487,4 @@ padding: 15px 0;
 	  display: inline-block;
 	  padding: 5px 10px;
 }
+
