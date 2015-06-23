@@ -28,6 +28,7 @@ a:active, a:visited, a:hover{
 .header{
 	background: none;
 	background-color: #1b4a26;
+	padding-bottom: 20px;
 }
 a.anchor {
 	display: block;
@@ -41,12 +42,13 @@ a.anchor {
 h1{
 	margin: 10px 0px 15px 0px;
 }
+.home h1, .french-home h1{
+	margin: 23px 0px 10px 0px;
+}
 h2{
   padding-bottom: 10px;
   font-size: 36px;
 }
-
-
 .main-container{
 	padding: 5px 20px;
 }
@@ -62,9 +64,13 @@ h2{
 
 /* Custom styles -- Navigation
 -------------------------------------------------- */
-.nav{
+.navbar-nav{
 	float: right;
-	margin: 5px 0px;
+	padding:5px 0px;
+}
+.home .navbar-nav, .french-home .navbar-nav{
+	float: right;
+	padding: 0px 0px 8px 0px;
 }
 .navbar-nav>li{
 	border-right:1px solid #efefef;
@@ -167,10 +173,10 @@ h2{
 .lib-nav li a:hover{
 	background-color: #fefdf6;
 }
-.ask{
+.ask-sm{
 	margin: 13px 0px 0px 0px;
 }
-.ask a.ask-main{
+.ask-sm a.ask-main{
 	display: block;
 	padding:5px;
 	text-align: center;
@@ -182,7 +188,7 @@ h2{
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.4);
 }
-.ask a.ask-main:hover{
+.ask-sm a.ask-main:hover{
 	color: #fff;
 	background-position: 3px 3px;
 }
@@ -233,16 +239,6 @@ ul.foot-nav{
 	margin-top:15px;
 	text-align: right;
 }
-
-
-
-
-
-
-
-
-
-
 
 h2{
 	font-size: 24px;
@@ -450,17 +446,32 @@ ul.ask{
 	min-height: 40px;
 }
 #main-nav.small>div>div{
-	border-bottom: 4px #cdd1d3 solid;
+	border-bottom: 5px #cdd1d3 solid;
 	margin-bottom: 0;
 	height:55px;
 }
 #main-nav.small>div>div:hover{
-	border-bottom: 4px #999 solid;
+	border-bottom: 5px #999 solid;
 }
 #main-nav.small>div>div.active{
-	border-bottom: 4px #365367 solid;
-	background: asset_url("nav-select.png") #fff no-repeat center bottom;
+	border-bottom: 5px #365367 solid;
 	}
+#main-nav.small>#news>div.active{
+	border-bottom: 5px #4C6F84 solid;
+}
+#main-nav.small>#services>div.active{
+	border-bottom: 5px #404545 solid;
+}
+#main-nav.small>#subjects>div.active{
+	border-bottom: 5px #452325 solid;
+}
+#main-nav.small>#research>div.active{
+	border-bottom: 5px #000 solid;
+}
+#main-nav.small>#account>div.active{
+	border-bottom: 5px #fff solid;
+}
+	
 #main-nav, #main-nav p{
 	 transition: all 1s;
   -moz-transition: all 1s; /* Firefox 4 */
@@ -1860,7 +1871,7 @@ ul.foot-nav{
 -------------------------------------------------- */
 
 @media (min-width: 768px){
-	.ask a.ask-main{
+	.ask-sm a.ask-main{
 		display: block;
 		padding: 3px 10px 3px 40px;
 		text-transform: lowercase;
@@ -1877,7 +1888,7 @@ ul.foot-nav{
 		background-position: 10px -24px;
 		text-align: left;
 	}
-	.ask a.ask-main:hover{
+	.ask-sm a.ask-main:hover{
 		color: #fff;
 		background-position: 10px 5px;
 	}

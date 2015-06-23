@@ -13,7 +13,7 @@
       <meta http-equiv="cleartype" content="on">
     <![endif]-->
 
-    <title>University of Alberta Libraries</title>
+    <title>Bibliothèques de l'Université de l'Alberta</title>
     <%= opensearch_description_tag application_name, opensearch_catalog_path(:format => 'xml', :only_path => false) %>
     <%# favicon_link_tag asset_path('favicon.ico') %>
     <%= favicon_link_tag 'favicon.ico' %>
@@ -27,26 +27,26 @@
     <![endif]-->
 
   </head>
-  <body class="home">
+   <body class="french-home">
     <!-- Start Header and Navigation -->
     <div class="navbar-fixed-top" id="top"><a name="top"></a>
       <div class="container">
         <div class="collapse navbar-collapse hidden-xs"> <!-- UofA Blade -->
           <ul class="nav navbar-nav">
              <li><a href="https://myualberta.ualberta.ca/home/">My UAlberta</a></li>
-            <li><a href="http://webapps.srv.ualberta.ca/search/">Find a Person</a></li>
+            <li><a href="http://webapps.srv.ualberta.ca/search/">Trouver une personne</a></li>
             <li><a href="http://www.onecard.ualberta.ca/">ONEcard</a></li>
             <li><a href="https://www.beartracks.ualberta.ca/">Bear Tracks</a></li>
-            <li><a href="http://www.campusmap.ualberta.ca/">Maps</a></li>
-            <li><a href="https://weblogin.srv.ualberta.ca/">Email &amp; Apps</a></li>
+            <li><a href="http://www.campusmap.ualberta.ca/">Cartes</a></li>
+            <li><a href="https://weblogin.srv.ualberta.ca/">Courriel et Applis</a></li>
             <li><a href="https://eclass.srv.ualberta.ca/portal/">eClass</a></li>
-            <li><a href="https://www.library.ualberta.ca/" class="last">Libraries</a></li>
+            <li><a href="https://www.library.ualberta.ca/" class="last">Bibliothèques</a></li>
           </ul>
         </div> <!-- End UofA Blade -->
         <div class="row header">
           <div class="container">
             <div class="col-xs-8 col-md-6 col-sm-5">
-              <h1><a data-scroll href="#top"><%= image_tag "ualib-logo.png", :class => "ualogo", :alt => "University of Alberta Libraries" %></a></h1>
+              <h1><a data-scroll href="#top"><%= image_tag "ualib-logo-french.png", :class => "ualogo", :alt => "University of Alberta Libraries" %></a></h1>
             </div>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <h2>menu</h2><!-- Mobile menu button -->
@@ -57,23 +57,22 @@
             </button><!-- End mobile menu button -->
             <div class="col-xs-12 col-md-6 col-sm-7 ask-front">
               <ul class="ask">
-                <li><a href="https://www.library.ualberta.ca/askus/" class="ask-main">Ask Us</a></li>
-                <li><a href="https://www.library.ualberta.ca/askus/" class="hidden-xs">Text</a></li>
-                <li><a href="https://www.library.ualberta.ca/askus/" class="hidden-xs">Chat</a></li>
-                <li><a href="https://www.library.ualberta.ca/ereference/email/" class="hidden-xs">Email</a></li>
-                <li><a href="https://www.library.ualberta.ca/askus/" class="last hidden-xs">Phone</a></li> 
+                <li><a href="https://www.library.ualberta.ca/askus/" class="ask-main">question?</a></li>
+                <li><a href="https://www.library.ualberta.ca/askus/" class="hidden-xs">texto</a></li>
+                <li><a href="https://www.library.ualberta.ca/askus/" class="hidden-xs">chat</a></li>
+                <li><a href="https://www.library.ualberta.ca/ereference/email/" class="hidden-xs">courriel</a></li>
+                <li><a href="https://www.library.ualberta.ca/askus/" class="last hidden-xs">téléphone</a></li> 
               </ul>
             </div>
             <div id="navbar" class="collapse col-xs-10"><!-- Mobile menu -->
               <ul>
                 <li class="active"><a data-scroll href="#top"  data-toggle="collapse" data-target="#navbar">Search &amp; Home</a></li>
-                <li><a data-scroll href="#hours-anch" data-toggle="collapse" data-target="#navbar">Hours and Locations</a></li>
-                 <li><a data-scroll href="#news-pane" data-toggle="collapse" data-target="#navbar">News &amp; Events</a></li>
+                <li><a data-scroll href="#hours-anch" data-toggle="collapse" data-target="#navbar">Heures et localisations</a></li>
                 <li><a data-scroll href="#services-pane" data-toggle="collapse" data-target="#navbar">Services</a></li>
-                <li><a data-scroll href="#subjects-pane" data-toggle="collapse" data-target="#navbar">Subject Guides</a></li>
-               
-                <li><a data-scroll href="#research-pane" data-toggle="collapse" data-target="#navbar">Research Support</a></li>
-                <li><a data-scroll href="#account-pane" data-toggle="collapse" data-target="#navbar">My Account</a></li>
+                <li><a data-scroll href="#subjects-pane" data-toggle="collapse" data-target="#navbar">Guides par sujet</a></li>
+                <li><a data-scroll href="#news-pane" data-toggle="collapse" data-target="#navbar">Nouvelles</a></li>
+                <li><a data-scroll href="#research-pane" data-toggle="collapse" data-target="#navbar">Soutien à la recherche</a></li>
+                <li><a data-scroll href="#account-pane" data-toggle="collapse" data-target="#navbar">Mon Dossier</a></li>
                 <li><a href="http://www.ualberta.ca">University of Alberta Home</a></li>
               </ul>
             </div><!-- End mobile menu -->
@@ -85,35 +84,34 @@
               <h3><a data-scroll href="#top"><span></span>Search &amp; Home</a></h3>
             </div>
           </div>
-            <div class="col-sm-15 col-xs-15" id="news">
-            <div>
-              <h3><a data-scroll href="#news-pane"><span></span>News &amp; Events</a></h3>
-              <p class="hidden-sm hidden-xs">See library exhibits, announcments, and news.</p>
-            </div>
-          </div>
           <div class="col-sm-15 col-xs-15" id="services">
             <div>
               <h3><a data-scroll href="#services-pane"><span></span>Services</a></h3>
-              <p class="hidden-xs hidden-sm ">A complete list of the services available at our libraries.</p>
+              <p class="hidden-xs hidden-sm ">Une liste complète des services disponibles dans nos bibliothèques.</p>
             </div>
           </div>
           <div class="col-sm-15 col-xs-15" id="subjects">
             <div>
-              <h3><a data-scroll href="#subjects-pane"><span></span>Subject Guides</a></h3>
-              <p class="hidden-sm hidden-xs">Let our librarians guide you to the information you need.</p>
+              <h3><a data-scroll href="#subjects-pane"><span></span>Guides par sujet</a></h3>
+              <p class="hidden-sm hidden-xs">Nos bibliothècaires vous guident pour trouver l'information dont vous avez besoin.</p>
             </div>
           </div>
-        
+          <div class="col-sm-15 col-xs-15" id="news">
+            <div>
+              <h3><a data-scroll href="#news-pane"><span></span>Nouvelles</a></h3>
+              <p class="hidden-sm hidden-xs">Voyez les expositions, annonces et nouvelles des bibliothèques.</p>
+            </div>
+          </div>
           <div class="col-sm-15 col-xs-15" id="research">
             <div>
-              <h3><a data-scroll href="#research-pane"><span></span>Research Support</a></h3>
-              <p class="hidden-sm hidden-xs">Help to manage, share, and preserve your research.</p>
+              <h3><a data-scroll href="#research-pane"><span></span>Recherche</a></h3>
+              <p class="hidden-sm hidden-xs">Pour vous aider à gérer, partager et préserver vos recherches.</p>
             </div>
           </div>
           <div class="col-sm-15 col-xs-15" id="account">
             <div>
-              <h3><a data-scroll href="#account-pane"><span></span>My Account</a></h3>
-              <p class="hidden-sm hidden-xs">Login to renew books, place holds, pay fines, and more.</p>
+              <h3><a data-scroll href="#account-pane"><span></span>Mon Dossier</a></h3>
+              <p class="hidden-sm hidden-xs">Ouvrez une session pour renouveler vos documents, placer des requêtes, et bien plus. </p>
             </div>
           </div>
         </div><!-- End non-mobile navigation -->
