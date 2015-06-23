@@ -859,6 +859,15 @@ chart.render();
     ShowDesc : false
   });
   }
+
+   if ($("#headlines-fr").length){
+    $('#headlines-fr').FeedEk({
+    FeedUrl:'http://blogs.library.ualberta.ca/biblioblogue/?feed=rss',
+    MaxCount : 12,
+    DateFormat: 'LLL',
+    ShowDesc : false
+  });
+  }
 });
 
 
