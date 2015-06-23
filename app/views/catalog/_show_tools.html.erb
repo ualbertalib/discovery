@@ -39,7 +39,7 @@
     <%- end -%>
     <%- if @document.respond_to?( :to_sms_text ) -%>
       <li class="sms">
-      <%= link_to t('Text me this item'), sms_catalog_path(:id => @document), {:id => 'smsLink', :data => {:ajax_modal => "trigger"}} %>
+      <%= link_to t('Text me a link to this item'), sms_catalog_path(:id => @document), {:id => 'smsLink', :data => {:ajax_modal => "trigger"}} %>
       </li>
     <%- end -%>
 
