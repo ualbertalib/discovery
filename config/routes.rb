@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get "symphony/range_limit" => "symphony#range_limit"
+  get "ejournals/range_limit" => "ejournals#range_limit"
+  get "databases/range_limit" => "databases#range_limit"
+  get "articles/range_limit" => "articles#range_limit"
+
   get "articles", to: "articles#index"
   get "articles/:dbid/:an", to: "articles#detail", constraints: {an: /[^V]+/ }
   get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }
