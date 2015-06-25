@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- Mobile viewport optimization h5bp.com/ad -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <!--[if IEMobile]>
+      <meta http-equiv="cleartype" content="on">
+    <![endif]-->
+
+    <title>Bibliothèques de l'Université de l'Alberta</title>
+    <%# favicon_link_tag asset_path('favicon.ico') %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Abel", "sticky-footer" %>
+    <%= stylesheet_link_tag comfy_cms_render_css_path(1, "secondary-pages") %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= content_for(:head) %> 
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="wrapper">
+  <%= render :partial => 'shared/header_navbar_french' %>
+
+
+  <div id="main-container" class="container">
+      <%= yield %>
+  </div>
+
+  <%= render :partial => 'shared/footer_french' %>
+  </body>
+</html>
