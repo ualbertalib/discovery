@@ -727,7 +727,8 @@ $(document).ready(function () {
         }, {offset: 300});
     $('#subjects-pane').waypoint(function(direction) {
         $("#subjects>div").toggleClass('active', direction === 'down');
-        $("#services>div").removeClass('active', direction === 'down');
+        $("#services>div").removeClass('active', direction === 'down'); 
+        $("#reserch>div").removeClass('active', direction === 'down');
         }, {offset: 300});
     $('#research-pane').waypoint(function(direction) {
         $("#research>div").toggleClass('active', direction === 'down');
