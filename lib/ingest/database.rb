@@ -75,7 +75,7 @@ class Database
             xml.subject @subject
             xml.display_single_search @display_single_search
             xml.type "Database"
-            xml.electronic true
+            xml.electronic "Online"
           }
     end
     builder.doc.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::AS_XML | Nokogiri::XML::Node::SaveOptions::NO_DECLARATION).gsub("\n", "").gsub('""', '"')
