@@ -129,16 +129,20 @@ h2{
 }
 .nav-container{
 	background-color: #eceff4;
-	padding: 5px 0px;
+	padding: 5px 0px 0px 0px;
 }
 .lib-nav{
 	margin: 0px;
+	margin-left: -0px;
 	padding: 0px;
 }
 .lib-nav li{
 	list-style: none;
 	float: left;
-	background-color: #fff;
+	padding-right: 0px;
+}
+.lib-nav li.first{
+	padding-left: 0px;
 }
 .lib-nav li a{
 	display: block;
@@ -149,8 +153,9 @@ h2{
 	background-repeat: no-repeat;
 	background-position: 4px 9px;
 	border:1px solid #eceff4;
-	border-width:0px 5px 0px 0px;
+	border-width:0px 0px 5px 0px;
 	line-height: 20px;
+	background-color: #fff;
 }
 .lib-nav li#home a{
 	background-image: asset_url("home-icon.png");	
@@ -172,6 +177,7 @@ h2{
 }
 .lib-nav li a:hover{
 	background-color: #fefdf6;
+	border-color:#999;
 }
 .ask-sm{
 	margin: 13px 0px 0px 0px;
@@ -443,12 +449,13 @@ ul.ask{
 #main-nav.small h3{
 	padding-left: 5px;
 	padding-top: 0px;
-	min-height: 40px;
+
 }
 #main-nav.small>div>div{
-	border-bottom: 6px #cdd1d3 solid;
 	margin-bottom: 0;
-	height:55px;
+	height:50px;
+	border-bottom: 6px #eceff4 solid;
+	border-top: 6px #eceff4 solid;
 }
 #main-nav.small>div>div:hover{
 	border-bottom: 6px #999 solid;
@@ -1790,34 +1797,40 @@ ul.foot-nav{
   		font-size: 13px;
   	}
   	#main-nav.small #home h3{
-		background: asset_url("home-icon.png") no-repeat left 5px;
+		background: asset_url("home-icon.png") no-repeat left 0px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #services h3{
-		background: asset_url("services-icon.png") no-repeat left 5px;
+		background: asset_url("services-icon.png") no-repeat left 0px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #subjects h3{
-		background: asset_url("subjects-icon.png") no-repeat left 5px;
+		background: asset_url("subjects-icon.png") no-repeat left 0px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #research h3{
-		background: asset_url("research-icon.png") no-repeat left 5px;
+		background: asset_url("research-icon.png") no-repeat left 0px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #news h3{
-		background: asset_url("news-icon.png") no-repeat left 5px;
+		background: asset_url("news-icon.png") no-repeat left 0px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
 	#main-nav.small #account h3{
-		background: asset_url("account-icon.png") no-repeat left 5px;
+		background: asset_url("account-icon.png") no-repeat left 0px;
 		-webkit-background-size: 20px;
 		background-size: 20px;
+	}
+	.home h1.sm-head{
+		margin: 13px 0px 5px 0px;
+	}
+	ul#ask-sm{
+		margin-top: 15px;
 	}
 	.browse-options>li>a{
 		font-size: 15px;
@@ -1860,7 +1873,7 @@ ul.foot-nav{
   	#main-nav.small h3{
 		font-size: 17px;
 		padding-left: 25px;
-		padding-top: 8px;
+		padding-top: 0px;
 	}
   	.form-inline .form-control {
 		font-size: 18px;
@@ -1928,8 +1941,8 @@ ul.foot-nav{
 	}
 	.lib-nav li a{
 		font-size: 16px;
-		padding: 7px 20px 7px 38px;
-		background-position: 15px 9px;
+		padding: 7px 10px 7px 30px;
+		background-position: 10px 9px;
 	}
 	.ua-logo{
 		width: 230px;

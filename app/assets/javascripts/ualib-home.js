@@ -694,7 +694,7 @@ $(document).ready(function () {
   function setHeight() { //Set the scroll offset height depending on the height of the header
     offset = ($(".navbar-fixed-top").height()+15);
     if (offset>300) {
-      offset=offset-120;
+      offset=offset-135;
     }
     smoothScroll.init({
       speed: 60, // Integer. How fast to complete the scroll in milliseconds
