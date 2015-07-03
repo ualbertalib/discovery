@@ -694,7 +694,7 @@ $(document).ready(function () {
   function setHeight() { //Set the scroll offset height depending on the height of the header
     offset = ($(".navbar-fixed-top").height()+15);
     if (offset>300) {
-      offset=offset-120;
+      offset=offset-135;
     }
     smoothScroll.init({
       speed: 60, // Integer. How fast to complete the scroll in milliseconds
@@ -727,7 +727,8 @@ $(document).ready(function () {
         }, {offset: 300});
     $('#subjects-pane').waypoint(function(direction) {
         $("#subjects>div").toggleClass('active', direction === 'down');
-        $("#services>div").removeClass('active', direction === 'down');
+        $("#services>div").removeClass('active', direction === 'down'); 
+        $("#reserch>div").removeClass('active', direction === 'down');
         }, {offset: 300});
     $('#research-pane').waypoint(function(direction) {
         $("#research>div").toggleClass('active', direction === 'down');
