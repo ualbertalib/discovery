@@ -7,6 +7,17 @@
       <% # bookmark/folder functions -%>
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
+      <% if @subjects  %>
+      <div id="subjects">
+        <p class="blacklight-subject_topic_facet">Subjects</p>
+        <ul>
+          <% @subjects.each do |subject| %>
+            <li><a href="/<%= params[:controller] %>?f%5Belectronic_tesim%5D%5B%5D=Print&f%5Bsubject_topic_facet%5D%5B%5D=<%= subject %>&q=&view=brief"><%= subject %></a></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
       <% if @document["format"].include? "Database" %>
         <table>
           <tr><th>Abstract</th></tr>
@@ -109,5 +120,4 @@
 <div id="sidebar" class="col-md-3 top-margin">
   <%= render_document_sidebar_partial %>
 </div>
-
 
