@@ -89,8 +89,8 @@ class CatalogController < ApplicationController
     # facet bar
     config.add_facet_field 'electronic_tesim', :label => 'Print or Online?', collapse: false
     config.add_facet_field 'location_tesim', :label => 'Library', sort: 'index'
-    config.add_facet_field 'lc_1letter_facet', :label => 'Call Number' 
-    config.add_facet_field 'format', :label => 'Format'
+    config.add_facet_field 'lc_1letter_facet', :label => 'Call Number', :limit => 10
+    config.add_facet_field 'format', :label => 'Format', :limit => 10
     config.add_facet_field 'pub_date', :label => 'Publication Year', :range => true
     # config.add_facet_field 'example_query_facet_field', :label => 'Published Since', :query => {
     #    :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },
@@ -99,8 +99,8 @@ class CatalogController < ApplicationController
     # }
     config.add_facet_field 'subject_topic_facet', :label => 'Subject', :limit => 20 
     config.add_facet_field 'language_facet', :label => 'Language', :limit => 10
-    config.add_facet_field 'subject_geo_facet', :label => 'Geographic Region' 
-    config.add_facet_field 'subject_era_facet', :label => 'Time Period'
+    config.add_facet_field 'subject_geo_facet', :label => 'Geographic Region', :limit => 10 
+    config.add_facet_field 'subject_era_facet', :label => 'Time Period', :limit => 10
     config.add_facet_field 'owning_library_tesim', :label => 'Owning Library'
 
 
