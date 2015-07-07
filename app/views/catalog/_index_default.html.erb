@@ -7,6 +7,12 @@
        <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_index_field_value document, :field => solr_fname %></dd>
       <% end -%>
     <% end -%>
+  <% if document.to_json["source"] %> 
+    <% @holdings = fetch_symphony_holdings(document) if document["source"].first == "Symphony" %>
+    <% @holdings.each do |h| %>
+      <dt class="blacklight-format">Copies available at</dt><dd class="blacklight-format"><%= @locations[h[:location].downcase] %></dd>
+    <% end %>
+  <% end %>
   </dl>
 </div>
 <div class="col-md-3 results-img">
