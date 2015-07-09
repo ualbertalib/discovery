@@ -37,6 +37,10 @@ class CatalogController < ApplicationController
       @subjects = @document["subject_topic_facet"]
     end
     load_lookup_tables
+
+    @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
+    @document['published_display'] = "#{@document['publisher_tesim'].first}, #{@document['published_display'].first}" if(@document['publisher_tesim'] and @document['published_display'])
+    @document.delete('publisher_tesim') if @document['published_display']
   end
 
   configure_blacklight do |config|
@@ -132,8 +136,8 @@ class CatalogController < ApplicationController
     # config.add_show_field 'title_display', :label => 'Title'
     # config.add_show_field 'title_vern_display', :label => 'Title'
     #config.add_show_field 'title_addl_t', :label => 'Full/Alternate Title(s)'
-    config.add_show_field 'subtitle_display', :label => 'Subtitle'
-    config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
+    # config.add_show_field 'subtitle_display', :label => 'Subtitle'
+    # config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
     config.add_show_field 'edition_tesim', :label => "Edition"
     config.add_show_field 'author_display', :label => 'Author'
     config.add_show_field 'author_vern_display', :label => 'Author'
