@@ -138,6 +138,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'title_addl_t', :label => 'Full/Alternate Title(s)'
     # config.add_show_field 'subtitle_display', :label => 'Subtitle'
     # config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
+    config.add_show_field 'alternate_display_tesim', :label => "Original"
     config.add_show_field 'edition_tesim', :label => "Edition"
     config.add_show_field 'author_display', :label => 'Author'
     config.add_show_field 'author_vern_display', :label => 'Author'
