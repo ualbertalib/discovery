@@ -131,7 +131,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display 
     # config.add_show_field 'title_display', :label => 'Title'
     # config.add_show_field 'title_vern_display', :label => 'Title'
-    config.add_show_field 'title_addl_t', :label => 'Full/Alternate Title(s)'
+    #config.add_show_field 'title_addl_t', :label => 'Full/Alternate Title(s)'
     config.add_show_field 'subtitle_display', :label => 'Subtitle'
     config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
     config.add_show_field 'edition_tesim', :label => "Edition"
