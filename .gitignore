@@ -22,3 +22,4 @@ token.txt
 /solr/logs
 /solr/blacklight-core/data
 /spec/reports
+/solr-jetty/solr/blacklight-core/conf/solrconfig.xml
