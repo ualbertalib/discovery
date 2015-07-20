@@ -967,23 +967,30 @@ label.mod{
 	background-color: #1b460c;
 	color: #efefef;
 	padding: 6px 15px;
-		font-size: 20px;
-		margin-left: 0px;
-		margin-top: 0
+	font-size: 20px;
+	margin-left: 0px;
+	margin-top: 0
 }
 
 .btn-small{
 	background-color: #1b460c;
 	color: #efefef;
 	}
+.btn-sm-ad{
+	background:#4C6F84;
+	color: #efefef;
+	font-size: 11px;
+	padding: 8px 5px;
+	margin-left: 5px;
+	}
 .btn-green-small{
-		background:asset_url("adv.png") #4C6F84 no-repeat center bottom;
+	background:asset_url("adv.png") #4C6F84 no-repeat center bottom;
 	color: #efefef;
 	font-size: 11px;
 	padding: 3px 5px 22px 3px;
 	margin-left: 5px;
 	}
-.btn-blue:hover, .btn-green-small:focus, .btn-green-small:hover{
+.btn-blue:hover, .btn-green-small:focus, .btn-green-small:hover, .btn-sm-ad:hover{
 	background-color: #4C6F84;
 	color: #fff;
 	}
