@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   get "/advanced", to: "advanced#index"
 
+  resources :forms 
+  post "forms/send_email" => "forms#send_email"
+
   comfy_route :cms_admin, :path => '/admin'
 
   # Make sure this routeset is defined last
