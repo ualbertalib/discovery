@@ -1,6 +1,6 @@
 <div class="col-md-12"><h2> 
           results for <em>
-            <% if params[:q] =='' %>
+            <% if params[:q] =='' || !params[:q] %>
                	everything
             <% else %>
             	<%= params[:q] %>
