@@ -1473,6 +1473,19 @@ ul.foot-nav{
 .boxes .tool-link:hover{
 	background-color: #000;
 }
+.label-and-count label{
+  display: inline-flex;
+  margin-right: 10px;
+}
+.label-and-count .facet-label{
+	padding-left:20px;
+	padding-right: 0px;
+}
+.label-and-count .facet-count{
+	font-size: 12px;
+	padding-top: 6px;
+	padding-left: 10px;
+	}
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
 @media (min-width: 492px){
