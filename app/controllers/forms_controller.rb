@@ -10,6 +10,6 @@ class FormsController < ApplicationController
 
   def send_email
     logger.info "Send Email Called"
-    CorrectionsMailer.corrections_email(params[:item_id], params[:message]).deliver_now
+    CorrectionsMailer.corrections_email(params[:item_id], params[:message], "#{request.protocol + request.host}").deliver_now
   end
 end
