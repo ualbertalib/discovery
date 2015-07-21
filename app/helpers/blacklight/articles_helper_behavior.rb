@@ -711,7 +711,7 @@ module Blacklight::ArticlesHelperBehavior
     currentYear = timeObj.year
     fiveYearsPrior = currentYear - 5
     tenYearsPrior = currentYear - 10
-    dateString << '<div class="facet_limit blacklight-date"><h5 class="twiddle">Date<i class="icon-chevron"></i></h5><ul style="display: block;">'
+    dateString << '<div class="facet_limit blacklight-date"><h5 class="twiddle">Publication Year<i class="icon-chevron"></i></h5><ul style="display: block;">'
     dateString << '<li><a href="' << request.fullpath.split("?")[0] << "?" << generate_next_url << '&eds_action=addlimiter(DT1:' << fiveYearsPrior.to_s << '-01/' << currentYear.to_s << '-12)">Last 5 Years</a></li>'
     dateString << '<li><a href="' << request.fullpath.split("?")[0] << "?" << generate_next_url << '&eds_action=addlimiter(DT1:' << tenYearsPrior.to_s << '-01/' << currentYear.to_s << '-12)">Last 10 Years</a></li>'
     dateString << '</ul></div>'
