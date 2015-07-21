@@ -13,7 +13,18 @@
     width: 20%;
     float: left;
 }
-
+.outages{
+	font-size: 18px;
+	background-color: #452325;
+	color: #fff;
+	padding: 8px;
+	margin-bottom: 10px;
+	display: none;
+}
+.outages p{
+	padding: 0;
+	margin: 0;
+}
 /*begin custom styles by Natasha Nunn at University of Alberta Libraries 2014/2015 */
 body{
 	font-family: 'Abel', sans-serif;
