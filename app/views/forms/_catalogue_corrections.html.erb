@@ -1,0 +1,14 @@
+<!doctype html>
+
+<h2>Report Error, Typo, or Make Suggestion</h2>
+
+<%= form_tag({controller: "forms", action: "send_email"}, method: "post") do %>
+  <p><strong>Enter details on the typo or your suggestion in the space provided below:</strong></p>
+  <p><textarea name="message" rows=7 cols=45></textarea></p>
+  <input name="item_id" type="hidden" value="<%= @item_id %>">
+  <input type=submit value="Submit Typo or Broken Link" />
+  <p>&nbsp;</p>
+  <p>Note: You will not receive a response. If you are experiencing problems and would like a response please use the <a href="http://www.library.ualberta.ca/askus/">Ask Us</a> service.</p>
+<% end %>
+
+</html>
