@@ -44,7 +44,7 @@
     <%- end -%>
 
     <li class="send_correction">
-    <%= link_to "Send Correction", "http://www.library.ualberta.ca/typo_catalogue/index.cfm?001=#{@document['id']}{001}&user_id=WUAARCHIVE" %>
+    <%= link_to "Send Correction", "/forms/catalogue_corrections?item_id=#{@document['id']}" %>
     </li>
     
     <%# if respond_to? :librarian_view_catalog_path and @document.respond_to?(:to_marc) %>
