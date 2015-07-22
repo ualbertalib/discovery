@@ -1,5 +1,6 @@
 <%# default partial to display solr document fields in catalog index view -%>
 <div class="col-md-9">
+
   <dl class="document-metadata dl-horizontal dl-invert">
     <% index_fields(document).each do |solr_fname, field| -%>
       <% if should_render_index_field? document, field %>
@@ -7,12 +8,15 @@
        <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_index_field_value document, :field => solr_fname %></dd>
       <% end -%>
     <% end -%>
-    <% if document.to_json["source"] and document.to_json["source"].first == "Symphony" %> 
-    <% @holdings = fetch_symphony_holdings(document) if document.to_json["source"].first == "Symphony" %>
-    <% @holdings.each do |h| %>
-      <dt class="blacklight-format">Copies available at</dt><dd class="blacklight-format"><%= @locations[h[:location].downcase] %></dd>
-    <% end %>
+    <% if document.to_h["source"] and document.to_h["source"].first == "Symphony" %> 
+      <% @holdings = fetch_symphony_holdings(document) if document.to_h["source"].first == "Symphony" %>
+      <% @location_strings = [] %>
+      <dt class="blacklight-format">Copies available at</dt><dd class="blacklight-format">
+      <%= @holdings.each { |h| @location_strings << @locations[h[:location].downcase] }; @location_strings.uniq.join(", ") %></dd>
   <% end %>
+    <% if document.to_h["format"].first == "Book" and document.to_h["electronic_tesim"].first == "Online" %>
+        <dt class="blacklight-ebook"></dt>Format note: <dd class="blacklight-ebook">This is an eBook.</dd>
+    <% end %>
   </dl>
 </div>
 <div class="col-md-3 results-img">

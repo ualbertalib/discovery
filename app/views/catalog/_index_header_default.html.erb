@@ -12,7 +12,9 @@
          <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
          </span>
          <%= link_to_document document, :label=>document_show_link_field(document), :counter => counter %>
-         <% if document["ua_only_tesim"].first == "1" %> <%= image_tag "icn_uofa.gif" %> <% end %>
+         <% if document["ua_only_tesim"] %>
+           <% if document["ua_only_tesim"].first == "1" %> <%= image_tag "icn_uofa.gif" %> <% end %>
+         <% end %>
         </h5>
 
         <% # bookmark functions for items/docs -%>

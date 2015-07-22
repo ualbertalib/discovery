@@ -46,8 +46,10 @@
           <tr><th>Conditions</th></tr>
           <tr><td><%= @document["conditions_tesim"].first %></td></tr>
         <% end %>
-      </table>
-    <% if @document["ua_only_tesim"].first == "1" %> <%= image_tag("icn_uofa.gif") %> <% end %>
+        </table>
+        <% if @document["ua_only_tesim"] %>
+          <% if @document["ua_only_tesim"].first == "1" %> <%= image_tag("icn_uofa.gif") %> <% end %>
+        <% end %>
       <br />
       <% end %>
       <% if (@document["format"].include?("service") or @document["format"].include?("digital collection") or @document["format"].include?("library")) %>
