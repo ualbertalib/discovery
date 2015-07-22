@@ -82,7 +82,13 @@
         <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
       <% end %>
     </div>
-  </div>
+</div>
+</div>
+  <div id="sidebar" class="col-md-3 top-margin">
+  <%= render_document_sidebar_partial %>
+</div>
+
+
   <% unless @holdings.empty? %>
     <div id = "holdings" class="col-md-12">
       <% if @document["source"].first == "Symphony"  %>
@@ -129,7 +135,5 @@
   <% end %>
 </div>
 
-<div id="sidebar" class="col-md-3 top-margin">
-  <%= render_document_sidebar_partial %>
-</div>
+
 

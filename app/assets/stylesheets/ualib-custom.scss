@@ -79,6 +79,10 @@ h2{
 	float: right;
 	padding:5px 0px;
 }
+.version{
+	padding-top: 10px;
+	display: block;
+}
 .home .navbar-nav, .french-home .navbar-nav{
 	float: right;
 	padding: 0px 0px 8px 0px;
@@ -1670,6 +1674,10 @@ ul.foot-nav{
 		background-image: asset_url("workshop.png");
 		background-size: 65px 65px;
 	}
+	#tutorials{
+		background-image: asset_url("tutorial-icon.png");
+		background-size: 65px 65px;
+	}
 	#space-dir{
 		background-image: asset_url("space-icon.png");
 		background-size: 60px 60px;
@@ -1688,6 +1696,10 @@ ul.foot-nav{
 	}
 	#refworks{
 		background-image: asset_url("refworks-icon.png");
+		background-size: 65px 65px;
+	}
+	#interloans{
+		background-image: asset_url("interloan-icon.png");
 		background-size: 65px 65px;
 	}
 	#ask-service{
