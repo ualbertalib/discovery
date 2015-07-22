@@ -1,4 +1,5 @@
 require "nokogiri"
+require 'yaml'
 
 class Database
 
@@ -72,12 +73,17 @@ class Database
             xml.rank @rank
             xml.description @description
             #xml.subject_id_redundant @subject_id_redundant
-            xml.minor @minor
+            xml.minor db_subject(@minor_id)
             xml.display_single_search @display_single_search
             xml.type "Database"
             xml.electronic "Online"
           }
     end
     builder.doc.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::AS_XML | Nokogiri::XML::Node::SaveOptions::NO_DECLARATION).gsub("\n", "").gsub('""', '"')
+  end
+
+  def db_subject(minor)
+    database_subjects = YAML.load_file("#{Rails.root}/config/database_subjects.yml")
+    database_subjects[minor].to_s
   end
 end

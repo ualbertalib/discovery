@@ -262,6 +262,7 @@
        <str name="facet.field">subject_era_facet</str>
        <str name="facet.field">subject_geo_facet</str>
        <str name="facet.field">subject_topic_facet</str>
+       <str name="facet.field">minor_tesim</str>
        
        <str name="spellcheck">true</str>
        <str name="spellcheck.dictionary">default</str>
