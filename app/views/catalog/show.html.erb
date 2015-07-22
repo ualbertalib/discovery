@@ -112,6 +112,9 @@
           <% end %>
           
         </table>
+        <% if @document[:issn_t] %>
+          <p style="font-size:70%"><a href="https://erms.library.ualberta.ca/coral/terms/?issn=<%= @document[:issn_t].first %>" target="_blank">ill</a></p>
+        <% end %>
       <% end %>
     </div>
   <% end %>
