@@ -40,8 +40,14 @@
             <li>
               <div class="row no-margin">
                 <div class="col-md-10">
-                  <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %></em></a><span class="date">(<%= symphony[:year].first if symphony[:year]%>)</span>
-                   <% if symphony[:subtitle] %><p><em><%= symphony[:subtitle] %></em> </p><% end %>
+                  <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %>
+                  <% if symphony[:subtitle] %>: <%= symphony[:subtitle] %><% end %></em></a>
+                  <% if symphony[:year] %>
+                    <span class="date">(<%= symphony[:year].first%>)</span>
+                  <% end %>
+                  <% if symphony[:format] %>
+                    <span class="date"><%= symphony[:format].first %></span>
+                  <% end %>
                 </div>
                 <div class="col-md-2">
                   <button type="button" class="btn btn-xsmall btn-primary" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>">more</button>
