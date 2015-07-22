@@ -153,6 +153,7 @@ class BentoController < ApplicationController
         metadata[:author] = show_authors(result) if has_authors?(result)
         metadata[:url] = result["PLink"]
         metadata[:format] = show_pubtype(result) if has_pubtype?(result)
+        metadata[:source] = show_titlesource(result) if has_titlesource?(result)
         documents[result["ResultId"]] = metadata
       end
       documents
