@@ -2,10 +2,10 @@ require "nokogiri"
 
 class Database
 
-  attr_accessor :id, :core, :display, :language, :resource_type, :conditions_of_use, :title, :search_title, :software, :branding, :ua_only, :new, :user_contact, :local_access_info, :abstract, :coverage, :url, :conditions, :date_added_old, :date_updated_old, :author, :contributor, :unit_library , :comments, :single_search_id, :primary_url, :primary_url_type, :supp_info, :order_title, :cdrom, :concurrent_limits, :short_description, :sponsor, :stats_link, :vendor_link, :vendor_id, :open_url, :open_url_date, :date_added, :date_updated, :error_message, :loishole_logo, :french_title, :french_order_title, :french_short_description, :french_supp_info, :french_user_contact, :french_local_access_info, :french_abstract, :french_coverage, :french_conditions, :french_primary_url, :french_primary_url_type, :french_sponsor, :ccid_authentication, :publish, :subject_id, :record_id, :rank, :description, :subject_id_redundant, :subject, :display_single_search, :format
+  attr_accessor :id, :core, :display, :language, :resource_type, :conditions_of_use, :title, :search_title, :software, :branding, :ua_only, :new, :user_contact, :local_access_info, :abstract, :coverage, :url, :conditions, :date_added_old, :date_updated_old, :author, :contributor, :unit_library , :comments, :single_search_id, :primary_url, :primary_url_type, :supp_info, :order_title, :cdrom, :concurrent_limits, :short_description, :sponsor, :stats_link, :vendor_link, :vendor_id, :open_url, :open_url_date, :date_added, :date_updated, :error_message, :loishole_logo, :french_title, :french_order_title, :french_short_description, :french_supp_info, :french_user_contact, :french_local_access_info, :french_abstract, :french_coverage, :french_conditions, :french_primary_url, :french_primary_url_type, :french_sponsor, :ccid_authentication, :publish, :minor_id, :record_id, :rank, :description, :subject_id_redundant, :minor, :display_single_search, :format
 
   def parse csv
-    @id, @core, @display, @language, @resource_type, @conditions_of_use, @title, @search_title, @software, @branding, @ua_only, @new, @user_contact, @local_access_info, @abstract, @coverage, @url, @conditions, @date_added_old, @date_updated_old, @author, @contributor, @unit_library , @comments, @single_search_id, @primary_url, @primary_url_type, @supp_info, @order_title, @cdrom, @concurrent_limits, @short_description, @sponsor, @stats_link, @vendor_link, @vendor_id, @open_url, @open_url_date, @date_added, @date_updated, @error_message, @loishole_logo, @french_title, @french_order_title, @french_short_description, @french_supp_info, @french_user_contact, @french_local_access_info, @french_abstract, @french_coverage, @french_conditions, @french_primary_url, @french_primary_url_type, @french_sponsor, @ccid_authentication, @publish, @subject_id, @record_id, @rank, @description, @subject_id_redundant, @subject, @display_single_search = csv
+    @id, @core, @display, @language, @resource_type, @conditions_of_use, @title, @search_title, @software, @branding, @ua_only, @new, @user_contact, @local_access_info, @abstract, @coverage, @url, @conditions, @date_added_old, @date_updated_old, @author, @contributor, @unit_library , @comments, @single_search_id, @primary_url, @primary_url_type, @supp_info, @order_title, @cdrom, @concurrent_limits, @short_description, @sponsor, @stats_link, @vendor_link, @vendor_id, @open_url, @open_url_date, @date_added, @date_updated, @error_message, @loishole_logo, @french_title, @french_order_title, @french_short_description, @french_supp_info, @french_user_contact, @french_local_access_info, @french_abstract, @french_coverage, @french_conditions, @french_primary_url, @french_primary_url_type, @french_sponsor, @ccid_authentication, @publish, @minor_id, @record_id, @rank, @description, @subject_id_redundant, @minor, @display_single_search = csv
   end
 
   def to_xml
@@ -67,12 +67,12 @@ class Database
             xml.french_sponsor @french_sponsor
             xml.ccid_authentication @ccid_authentication
             xml.publish @publish
-            xml.subject_id @subject_id
+            xml.minor_id @minor_id
             xml.record_id @record_id
             xml.rank @rank
             xml.description @description
-            xml.subject_id_redundant @subject_id_redundant
-            xml.subject @subject
+            #xml.subject_id_redundant @subject_id_redundant
+            xml.minor @minor
             xml.display_single_search @display_single_search
             xml.type "Database"
             xml.electronic "Online"
