@@ -11,7 +11,7 @@
 # how to start up solr, generally for automated testing. 
 
 development:
-  url: <%= Rails.application.config.solr || "http://localhost:8983/solr" %>
+  url: <%= "http://tottenham.library.ualberta.ca:8080/solr/discovery" %>
 test: &test
   url: <%= Rails.application.config.solr %>
 production:
