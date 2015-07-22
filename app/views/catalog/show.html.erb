@@ -18,7 +18,7 @@
       </div>
     <% end %>
 
-      <% if @document["format"].include? "Database" %>
+    <% if @document["format"].include? "Database" %>
         <table>
           <tr><th>Abstract</th></tr>
           <tr><td><%= @document["abstract_tesim"].first %></td></tr>
@@ -47,6 +47,7 @@
           <tr><td><%= @document["conditions_tesim"].first %></td></tr>
         <% end %>
       </table>
+    <% if @document["ua_only_tesim"].first == "1" %> <%= image_tag("icn_uofa.gif") %> <% end %>
       <br />
       <% end %>
       <% if (@document["format"].include?("service") or @document["format"].include?("digital collection") or @document["format"].include?("library")) %>
