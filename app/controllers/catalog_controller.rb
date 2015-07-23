@@ -21,6 +21,7 @@ class CatalogController < ApplicationController
   end
 
   def show
+    @subjects = []
     super
     @holdings = []
     if @document["source"]
@@ -34,7 +35,11 @@ class CatalogController < ApplicationController
     end
 
     if @document["subject_topic_facet"]
-      @subjects = @document["subject_topic_facet"]
+      @subjects << @document["subject_topic_facet"]
+    end
+
+    if @document["subject_addl_t"]
+      @subjects << @document["subject_addl_t"]
     end
 
     if @document["author_display"]

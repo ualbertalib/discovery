@@ -12,7 +12,7 @@
         <p class="blacklight-subject_topic_facet">Subjects</p>
         <ul>
           <% @subjects.each do |subject| %>
-            <li><a href="/<%= params[:controller] %>?f%5Bsubject_topic_facet%5D%5B%5D=<%= subject %>&q=&view=brief"><%= subject %></a></li>
+            <li><a href="/<%= params[:controller] %>?f%5Bsubject_topic_facet%5D%5B%5D=<%= subject.first %>&q=&view=brief"><%= subject.first %></a></li>
         <% end %>
         </ul>
       </div>
