@@ -140,8 +140,8 @@ class CatalogController < ApplicationController
     #config.add_index_field 'published_display', :label => 'Published'
     #config.add_index_field 'published_vern_display', :label => 'Published'
     config.add_index_field 'pub_date', :label => 'Publication Year'
-    config.add_index_field 'isbn_t', :label => 'ISBN'
-    config.add_index_field 'issn_t', :label => 'ISSN'
+    #config.add_index_field 'isbn_tesim', :label => 'ISBN'
+    #config.add_index_field 'issn_tesim', :label => 'ISSN'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
@@ -164,7 +164,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'size_tesim', :label => 'Size'
     config.add_show_field 'description_tesim', :label => 'Description'
     config.add_show_field 'isbn_tesim', :label => 'ISBN'
-    config.add_show_field 'issn_t', :label => 'ISSN'
+    config.add_show_field 'issn_tesim', :label => 'ISSN'
     config.add_show_field 'summary_holdings_tesim', :label => 'Library has'
     config.add_show_field 'general_note_tesim', :label => 'General Note'
     config.add_show_field 'local_note_tesim', :label => 'Note'
