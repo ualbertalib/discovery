@@ -115,12 +115,17 @@
             <th>Item Type</th>
           </tr>
           <% for item in @holdings %> 
+            <%= item %>
             <tr>
               <td><%= item[:call_number] %></td>
               <td><%= item[:copies] %> </td>
               <td><%= @statuses[item[:status].to_s.downcase] %></td>
               <td><a href="http://www.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>"><%= @locations[item[:location].downcase] %></a></td>
-              <td><%= @item_types[item[:item_type].downcase] %></td>
+              <% if item[:item_type] and !item[:item_type].blank? %>
+                <td><%= @item_types[item[:item_type].downcase] %></td>
+              <% else %>
+                <td></td>
+              <% end %>
             </tr>
           <% end %>
         </table>
