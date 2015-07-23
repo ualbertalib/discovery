@@ -8,11 +8,12 @@ class Databases
 
   def initialize(filename)
     @xml_records = []
+    database_subjects = YAML.load_file("#{Rails.root}/config/database_subjects.yml")
     CSV.foreach(filename) do |row|
       next if row.first=="RECORDID"
       db = Database.new
       db.parse(row)
-      @xml_records <<  db.to_xml
+      @xml_records <<  db.to_xml(database_subjects)
     end
   end
 

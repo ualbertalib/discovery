@@ -9,7 +9,7 @@ class Database
     @id, @core, @display, @language, @resource_type, @conditions_of_use, @title, @search_title, @software, @branding, @ua_only, @new, @user_contact, @local_access_info, @abstract, @coverage, @url, @conditions, @date_added_old, @date_updated_old, @author, @contributor, @unit_library , @comments, @single_search_id, @primary_url, @primary_url_type, @supp_info, @order_title, @cdrom, @concurrent_limits, @short_description, @sponsor, @stats_link, @vendor_link, @vendor_id, @open_url, @open_url_date, @date_added, @date_updated, @error_message, @loishole_logo, @french_title, @french_order_title, @french_short_description, @french_supp_info, @french_user_contact, @french_local_access_info, @french_abstract, @french_coverage, @french_conditions, @french_primary_url, @french_primary_url_type, @french_sponsor, @ccid_authentication, @publish, @minor_id, @record_id, @rank, @description, @subject_id_redundant, @minor, @display_single_search = csv
   end
 
-  def to_xml
+  def to_xml(subjects)
     builder = Nokogiri::XML::Builder.new do |xml|
           xml.database {
             xml.id_ @id
@@ -73,7 +73,7 @@ class Database
             xml.rank @rank
             xml.description @description
             #xml.subject_id_redundant @subject_id_redundant
-            xml.minor db_subject(@minor_id)
+            xml.minor subjects[@minor_id]
             xml.display_single_search @display_single_search
             xml.type "Database"
             xml.electronic "Online"
@@ -82,8 +82,4 @@ class Database
     builder.doc.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::AS_XML | Nokogiri::XML::Node::SaveOptions::NO_DECLARATION).gsub("\n", "").gsub('""', '"')
   end
 
-  def db_subject(minor)
-    database_subjects = YAML.load_file("#{Rails.root}/config/database_subjects.yml")
-    database_subjects[minor].to_s
-  end
 end
