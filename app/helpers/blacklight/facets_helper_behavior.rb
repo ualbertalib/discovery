@@ -195,7 +195,11 @@ module Blacklight::FacetsHelperBehavior
     facet_config = facet_configuration_for_field(field)
     
     value = if item.respond_to? :label
-      item.label
+        if @locations[item.label]
+          @locations[item.label]
+        else
+          item.label
+        end
     else
       facet_value_for_facet_item(item)
     end
