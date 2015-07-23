@@ -104,69 +104,9 @@
 
 
 <% unless @holdings.empty? %>
-  <% @unavailable = false %>
-    <div id = "holdings" class="col-md-12">
-      <% if @document["source"].first == "Symphony"  %>
-        <table>
-          <tr>
-            <th class="call-number">Call Number</th>
-            <th>Copy</th>
-            <th>Location/Status</th>
-            <th>Library</th>
-            <% if @document["format"].include? "Journal" %>
-              <th>Library has</th>
-            <% end %>
-            <th>Item Type</th>
-          </tr>
-          <% for item in @holdings %> 
-            <% @unavailable = true if @statuses[item[:status].to_s.downcase] == "unavailable" %>
-            <tr>
-              <td><%= item[:call_number] %></td>
-              <td><%= item[:copies] %> </td>
-              <td><%= @statuses[item[:status].to_s.downcase] %></td>
-              <td><a href="http://www.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>"><%= @locations[item[:location].downcase] %></a></td>
-              <% if @document["format"].include? "Journal" %>
-              <% if item[:summary_holdings] %>
-                <td><%= item[:summary_holdings] %></td>
-              <% end %>
-            <% end %>
-              <% if item[:item_type] and !item[:item_type].blank? %>
-                <td><%= @item_types[item[:item_type].downcase] %></td>
-              <% else %>
-                <td></td>
-              <% end %>
-            </tr>
-          <% end %>
-        </table>
-        <% if @unavailable %>
-          <p>Note: For access to <strong>unavailable</strong> items, please contact any University of Alberta Libraries service desk in person or at www.library.ualberta.ca/askus.</p>
-        <% end %>
-      <% end %>
-      <% if @document["source"].first == "SFX"  %>
-        <table>
-          <tr>
-            <th>Subscription</th>
-            <th>Coverage</th>
-            <th>Our Usage Rights</th>
-          </tr>
-          <% for item in @holdings %> 
-            <tr>    
-              <td><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
-              <td><%= item[1][:coverage] %> </td>
-              <% if item[1][:our_target] %>
-                <td><%= item[1][:our_target].html_safe %></td>
-              <% end %>
-            </tr>
-          <% end %>
-          
-        </table>
-        <% if @document[:issn_t] %>
-          <p style="font-size:70%"><a href="https://erms.library.ualberta.ca/coral/terms/?issn=<%= @document[:issn_t].first %>" target="_blank">ill</a></p>
-        <% end %>
-      <% end %>
-    </div>
+  <%= render "holdings" %>
   <% end %>
-</div>
+  </div>
 
 
 
