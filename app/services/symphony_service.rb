@@ -6,6 +6,8 @@ class SymphonyService
     @parameters = "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&titleID="
   end
 
+  #needs refactoring!
+
   def get_status(id, item_id, library)
     url = @ws_endpoint+@method+@parameters+id+"&libraryFilter="+library
     if valid? id
