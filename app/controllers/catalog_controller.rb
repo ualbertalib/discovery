@@ -168,6 +168,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'bibliography_note_tesim', :label => 'Bibliography Note'
     config.add_show_field 'earlier_title_tesim', :label => 'Earlier title'
     config.add_show_field 'later_title_tesim', :label => 'Later title'
+    config.add_show_field 'gmd_tesim', :label => 'Object type'
     # config.add_show_field 'subject_topic_facet', :label => 'Subject'
     # config.add_show_field 'subject_addl_t', :label => 'Additional subject'
     # config.add_show_field 'subject_era_facet', :label => 'Time period'

@@ -129,6 +129,7 @@
          author_addl_t^50
          subject_addl_unstem_search^250
          subject_addl_t^50
+         gmd_tesim^50
          title_series_unstem_search^25
          title_series_t^10
          text
@@ -159,6 +160,7 @@
          author_addl_t^500
          subject_addl_unstem_search^2500
          subject_addl_t^500
+         gmd_tesim^500
          title_series_unstem_search^250
          title_series_t^100
          text^10
