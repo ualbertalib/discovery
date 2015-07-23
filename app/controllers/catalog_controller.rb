@@ -163,7 +163,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'material_type_display', :label => 'Pages'
     config.add_show_field 'size_tesim', :label => 'Size'
     config.add_show_field 'description_tesim', :label => 'Description'
-    config.add_show_field 'isbn_t', :label => 'ISBN'
+    config.add_show_field 'isbn_tesim', :label => 'ISBN'
     config.add_show_field 'issn_t', :label => 'ISSN'
     config.add_show_field 'summary_holdings_tesim', :label => 'Library has'
     config.add_show_field 'general_note_tesim', :label => 'General Note'
