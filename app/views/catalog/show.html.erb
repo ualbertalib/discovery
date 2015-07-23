@@ -23,7 +23,7 @@
        <p class="blacklight-author_facet">Find more by <%= @authors.count > 1 ? "these authors" : "this author" %></p>
        <ul>
           <% @authors.each do |author| %>
-            <li><a href="/<%= params[:controller] %>??utf8=✓&op=AND&all_fields=&title=&author=<%= author.split(" ").join("+") %>&subject=&utf8=✓&search_field=dummy_range&range%5Bpub_date%5D%5Bbegin%5D=&range%5Bpub_date%5D%5Bend%5D=&commit=Limit&sort=score+desc%2C+pub_date_sort+desc%2C+title_sort+asc&search_field=advanced"><%= author %></a></li>
+            <li><a href="/<%= params[:controller] %>?utf8=✓&op=AND&all_fields=&title=&author=<%= author.split(" ").join("+") %>&subject=&utf8=✓&search_field=dummy_range&range%5Bpub_date%5D%5Bbegin%5D=&range%5Bpub_date%5D%5Bend%5D=&commit=Limit&sort=score+desc%2C+pub_date_sort+desc%2C+title_sort+asc&search_field=advanced"><%= author %></a></li>
           <% end %>
        </ul>
      </div>
@@ -119,7 +119,7 @@
               <td><%= item[:copies] %> </td>
               <td><%= @statuses[item[:status].to_s.downcase] %></td>
               <td><a href="http://www.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>"><%= @locations[item[:location].downcase] %></a></td>
-              <td><%= item[:item_type].downcase %></td>
+              <td><%= @item_types[item[:item_type].downcase] %></td>
             </tr>
           <% end %>
         </table>
