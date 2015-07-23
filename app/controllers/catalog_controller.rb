@@ -35,6 +35,7 @@ class CatalogController < ApplicationController
 
     if @document["subject_topic_facet"]
       @subjects = @document["subject_topic_facet"]
+      @authors = @document["author_display"]
     end
     load_lookup_tables
 

@@ -12,11 +12,21 @@
         <p class="blacklight-subject_topic_facet">Subjects</p>
         <ul>
           <% @subjects.each do |subject| %>
-            <li><a href="/<%= params[:controller] %>?f%5Belectronic_tesim%5D%5B%5D=Print&f%5Bsubject_topic_facet%5D%5B%5D=<%= subject %>&q=&view=brief"><%= subject %></a></li>
+            <li><a href="/<%= params[:controller] %>?f%5Bsubject_topic_facet%5D%5B%5D=<%= subject %>&q=&view=brief"><%= subject %></a></li>
         <% end %>
         </ul>
       </div>
     <% end %>
+     <% if @authors %>
+     <div id="authors">
+       <p class="blacklight-author_facet">Find more by <%= @authors.count > 1 ? "these authors" : "this author" %></p>
+       <ul>
+          <% @authors.each do |author| %>
+            <li><a href="/<%= params[:controller] %>?author=<%= author %>&q=&view=brief"><%= author %></a></li>
+          <% end %>
+       </ul>
+     </div>
+   <% end %>
 
     <% if @document["format"].include? "Database" %>
         <table>
