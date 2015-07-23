@@ -34,6 +34,7 @@ module HoldingsHelper
     item_data[:copies] = get_marc_subfield(item, 'c')
     item_data[:location] = get_marc_subfield(item, 'm')
     item_data[:status] = SymphonyService.new.get_status(id, item_data[:item_id], item_data[:location])
+    item_data[:item_type] = SymphonyService.new.get_item_type(id, item_data[:item_id], item_data[:location])
     items << item_data
   end
 

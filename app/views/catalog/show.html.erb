@@ -100,6 +100,7 @@
             <th>Copy</th>
             <th>Location</th>
             <th>Library</th>
+            <th>Item Type</th>
           </tr>
           <% for item in @holdings %> 
             <tr>
@@ -107,6 +108,7 @@
               <td><%= item[:copies] %> </td>
               <td><%= @statuses[item[:status].to_s.downcase] %></td>
               <td><a href="http://www.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>"><%= @locations[item[:location].downcase] %></a></td>
+              <td><%= item[:item_type].downcase %></td>
             </tr>
           <% end %>
         </table>
