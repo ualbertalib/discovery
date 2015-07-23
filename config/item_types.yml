@@ -1,0 +1,33 @@
+av: audio-visual
+av-equip: audio-visual equipment
+bkmat_agl: bookable material - alberta government library
+bkmat_ahs: bookable material - alberta health services
+book: book
+curr_book: curriculum book
+curr_media: curriculum media
+delme: to delete after load
+distance: distance
+equipment: equipment
+e-resource: electronic resource
+gov_doc: government document
+ill-book: interlibrary loan book
+local_loan: local loan
+mag_media: magnetic media
+magazine: magazine
+map: map
+media: media
+microform: microform
+musicscore: music score
+musicsound: music sound recording
+new-book: new books
+newspaper: newspaper
+no_loan: no loan
+noitem: no item found
+pamphlet: pamphlet
+paperback: paperback
+periodical: periodical
+ref-book: reference book
+short_loan: short loan
+software: software
+unknown: unknown item type
+video: video
