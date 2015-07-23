@@ -162,8 +162,6 @@
          title_series_unstem_search^250
          title_series_t^100
          text^10
-         isbn_t^100
-         issn_t^100
        </str>
        <str name="author_qf">
          author_unstem_search^200

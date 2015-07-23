@@ -35,8 +35,12 @@ class CatalogController < ApplicationController
 
     if @document["subject_topic_facet"]
       @subjects = @document["subject_topic_facet"]
+    end
+
+    if @document["author_display"]
       @authors = @document["author_display"]
     end
+
     load_lookup_tables
 
     @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
@@ -131,7 +135,7 @@ class CatalogController < ApplicationController
     #config.add_index_field 'published_vern_display', :label => 'Published'
     config.add_index_field 'pub_date', :label => 'Publication Year'
     config.add_index_field 'isbn_t', :label => 'ISBN'
-    #config.add_index_field 'issn_t', :label => 'ISSN'
+    config.add_index_field 'issn_t', :label => 'ISSN'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
@@ -152,7 +156,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'pub_date', :label => 'Year'
     config.add_show_field 'material_type_display', :label => 'Pages'
     config.add_show_field 'size_tesim', :label => 'Size'
-    config.add_show_field 'description_testim', :label => 'Description'
+    config.add_show_field 'description_tesim', :label => 'Description'
     config.add_show_field 'isbn_t', :label => 'ISBN'
     config.add_show_field 'issn_t', :label => 'ISSN'
     config.add_show_field 'general_note_tesim', :label => 'General Note'
