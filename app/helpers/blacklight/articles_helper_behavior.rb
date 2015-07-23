@@ -176,6 +176,7 @@ module Blacklight::ArticlesHelperBehavior
     #repace the raw query, adding searchmode and fieldcode
     changeQuery = newoptions["query-1"]
     uri = Addressable::URI.new
+    newoptions["query-1"] = newoptions["query-1"].gsub(",","")
     uri.query_values = newoptions
     searchquery = uri.query
     searchtermindex = searchquery.index('query-1=') + 8
