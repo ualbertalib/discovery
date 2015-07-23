@@ -75,11 +75,12 @@
           <div id ="electronic_access">
             <% unless @urls.empty? %>
               <% @urls.each do |url| %>
-                <span class="url-label">URL:</span> 
+                <span class="url-label">URL:</span>
                 <a href="<%= Rails.application.config.proxy+url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span>
                 </a>
               <% end %>
             <% end %>
+
             <% if (@urls.empty?) && (!@alternative_urls.empty?) %>
               <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
               <% @alternative_urls.each do |url| %>

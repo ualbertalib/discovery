@@ -46,10 +46,10 @@ module HoldingsHelper
     display = get_marc_subfield(item, '3')
     # I don't love this logic. Should be able to make it a single line.
     if (type=="ua")
-      items << {url: url, display: display} if (display == "University of Alberta Access" or display == "Free Access")
+      items << {url: url, display: display} if (display == "University of Alberta Access" or display.include? "Free Access")
     end
     if (type=="alternative")
-      items << {url: url, display: display} if (display != "University of Alberta Access" and display != "Free Access")
+      items << {url: url, display: display} if (display != "University of Alberta Access" and !display.include? "Free Access")
     end
   end
 
