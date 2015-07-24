@@ -112,11 +112,11 @@
          lc_callnum_display^100000
          title_unstem_search^100000
          title_tesim^100000
-         subtitle_unstem_search^50000
+         subtitle_unstem_search^100000
          title_t^25000
-         subtitle_t^10000
-         title_addl_unstem_search^5000
-         title_addl_t^2500
+         subtitle_t^25000
+         title_addl_unstem_search^25000
+         title_addl_t^25000
          title_added_entry_unstem_search^1500
          title_added_entry_t^1250
          subject_topic_unstem_search^1000
@@ -142,11 +142,11 @@
          lc_callnum_display^1000000
          title_unstem_search^1000000
          title_tesim^1000000
-         subtitle_unstem_search^500000
+         subtitle_unstem_search^1000000
          title_t^250000
-         subtitle_t^100000
+         subtitle_t^250000
          source^100000
-         title_addl_unstem_search^50000
+         title_addl_unstem_search^250000
          title_addl_t^25000
          title_added_entry_unstem_search^15000
          title_added_entry_t^12500
