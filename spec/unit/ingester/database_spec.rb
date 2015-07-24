@@ -69,12 +69,11 @@ describe DatabaseVocabulary do
     expect(database.french_sponsor).to eq [""]
     expect(database.ccid_authentication).to eq ["0"]
     expect(database.publish).to eq ["1"]
-    expect(database.subject_id).to eq [""]
+    expect(database.minor_id).to eq [""]
     expect(database.record_id).to eq [""]
     expect(database.rank).to eq [""]
     expect(database.description).to eq [""]
-    expect(database.subject_id_redundant).to eq [""]
-    expect(database.subject).to eq [""]
+    expect(database.minor).to eq [""]
     expect(database.display_single_search).to eq [""]
   end
 
@@ -135,12 +134,11 @@ describe DatabaseVocabulary do
     expect(database.to_solr["french_sponsor_tesim"]).to eq database.french_sponsor
     expect(database.to_solr["ccid_authentication_tesim"]).to eq database.ccid_authentication
     expect(database.to_solr["publish_tesim"]).to eq database.publish
-    expect(database.to_solr["subject_id_tesim"]).to eq database.subject_id
+    expect(database.to_solr["minor_id_tesim"]).to eq database.minor_id
     expect(database.to_solr["record_id_tesim"]).to eq database.record_id
     expect(database.to_solr["rank_tesim"]).to eq database.rank
     expect(database.to_solr["description_tesim"]).to eq database.description
-    expect(database.to_solr["subject_id_redundant_tesim"]).to eq database.subject_id_redundant
-    expect(database.to_solr["subject_tesim"]).to eq database.subject
+    expect(database.to_solr["minor_tesim"]).to eq database.minor
     expect(database.to_solr["display_single_search_tesim"]).to eq database.display_single_search
   end
 end
