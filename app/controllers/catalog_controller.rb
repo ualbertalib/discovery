@@ -160,7 +160,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'published_display', :label => 'Published'
     config.add_show_field 'published_vern_display', :label => 'Published'
     config.add_show_field 'pub_date', :label => 'Year'
-    config.add_show_field 'material_type_display', :label => 'Pages'
+    config.add_show_field 'material_type_display', :label => 'Contains'
     config.add_show_field 'size_tesim', :label => 'Size'
     config.add_show_field 'description_tesim', :label => 'Description'
     config.add_show_field 'isbn_tesim', :label => 'ISBN'
