@@ -154,6 +154,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'edition_tesim', :label => "Edition"
     config.add_show_field 'author_display', :label => 'Author'
     config.add_show_field 'author_vern_display', :label => 'Author'
+    config.add_show_field 'uniform_title_tesim', :label => 'Uniform Title'
     config.add_show_field 'format', :label => 'Format'
     config.add_show_field 'language_facet', :label => 'Language'
     config.add_show_field 'publisher_tesim', :label => 'Publisher'
