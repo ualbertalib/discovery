@@ -776,6 +776,10 @@ $(document).ready(function () {
     $('#fr-q').attr('placeholder', 'recherche journaux électroniques...');
   });
 
+  $("#searchclear").click(function(){
+    $("#q").val('');
+});
+
   if ($(".hours-select").length){
   var default_location = $( ".hours-select" ).val();
   $( ".library-picker" ).html( getHoursLocationStatus(default_location) );
