@@ -153,6 +153,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'alternate_display_tesim', :label => "Original"
     config.add_show_field 'edition_tesim', :label => "Edition"
     config.add_show_field 'author_display', :label => 'Author'
+    config.add_show_field 'author_addl_t', :label => "Additional authors/performers"
     config.add_show_field 'author_vern_display', :label => 'Author'
     config.add_show_field 'uniform_title_tesim', :label => 'Uniform Title'
     config.add_show_field 'format', :label => 'Format'
@@ -177,6 +178,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'earlier_title_tesim', :label => 'Earlier title'
     config.add_show_field 'later_title_tesim', :label => 'Later title'
     config.add_show_field 'gmd_tesim', :label => 'Object type'
+    config.add_show_field 'performers_tesim', :label => 'Performers'
     # config.add_show_field 'subject_topic_facet', :label => 'Subject'
     # config.add_show_field 'subject_addl_t', :label => 'Additional subject'
     # config.add_show_field 'subject_era_facet', :label => 'Time period'
