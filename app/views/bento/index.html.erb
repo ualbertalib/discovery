@@ -33,7 +33,10 @@
             <% if @symphony_count>10 %>
               <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=Print&q=<%= @query %>" class="col-md-6 see-all-results"><%= @symphony_count %> results</a>
             <% end %>
-          </h3>     
+          </h3>  
+           <% if @symphony_count == 0 %>
+              <p class="no-results">No Print Books or Journals were found<p>
+            <% end %>   
           <ul>
           <% i = 1%>
           <% @symphony.take(@local_symphony_limit).each do |id,symphony| %>
@@ -82,7 +85,10 @@
             <% if @ebooks_count>0 %>
               <a href="/ebooks?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ebooks_count %> results</a>
             <% end %>
-          </h3>       
+          </h3>
+           <% if @ebooks_count == 0 %>
+              <p class="no-results">No eBooks were found<p>
+            <% end %>        
           <ul>
             <% i = 1 %>
             <% @ebooks.take(@local_ebook_limit).each do |id,ebooks| %>
@@ -125,6 +131,9 @@
           <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-md-6 see-all-results"><%= @eds_count %> results</a>
         <% end %>
       </h3>
+       <% if @eds_count == 0 %>
+              <p class="no-results">No Articles were found<p>
+            <% end %> 
       <ul>       
         <% i = 1 %> 
         <% if @eds.instance_of? Hash %>
@@ -162,7 +171,10 @@
         <% if @ejournals_count>0 %>
           <a href="/ejournals?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ejournals_count %> results</a>
         <% end %>
-      </h3>       
+      </h3>
+       <% if @ejournals_count == 0 %>
+              <p class="no-results">No eJournals were found<p>
+            <% end %>        
       <ul>
         <% i = 1 %>
 				<% @ejournals.take(@local_ejournal_limit).each do |id,ejournals| %>
@@ -182,6 +194,9 @@
           <a href="/databases?q=<%= @query %>" class="col-md-6 see-all-results"><%= @database_count %> results</a>
         <% end %>
       </h3>
+       <% if @database_count == 0 %>
+              <p class="no-results">No Databases were found<p>
+            <% end %> 
  			<ul>       
         <% i = 1 %> 
 				<% @databases.take(@local_database_limit).each do |id,database| %>
