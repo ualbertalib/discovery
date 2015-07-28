@@ -29,13 +29,13 @@
       <div class="col-md-4 rcol">
     	<div class="col-md-12 results" > 
         <div id="books"> <!-- start of books and journals pane -->
-          <h3 id="print"><span class="col-md-6">Print Books and Journals</span>
+          <h3 id="print"><span class="col-md-6">Books and more</span>
             <% if @symphony_count>10 %>
               <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=Print&q=<%= @query %>" class="col-md-6 see-all-results"><%= @symphony_count %> results</a>
             <% end %>
           </h3>  
            <% if @symphony_count == 0 %>
-              <p class="no-results">No Print Books or Journals were found<p>
+              <p class="no-results">No material was found<p>
             <% end %>   
           <ul>
           <% i = 1%>
@@ -67,7 +67,7 @@
           </ul>
           <div class="results-bottom">
             <% if @symphony_count>10 %>
-              <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=Print&q=<%= @query %>" class="col-md-12">View all Books and Journals</a>
+              <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=Print&q=<%= @query %>" class="col-md-12">View all Books and more</a>
             <% end %>
           </div>
         </div> 
@@ -75,13 +75,13 @@
 
       <div class="col-md-12 results extra-top-margin" ><!-- start of ebooks pane -->
         <div id="ebooks">
-          <h3><span class="col-md-6">eBooks</span> 
+          <h3><span class="col-md-6">eBooks and more</span> 
             <% if @ebooks_count>0 %>
               <a href="/ebooks?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ebooks_count %> results</a>
             <% end %>
           </h3>
            <% if @ebooks_count == 0 %>
-              <p class="no-results">No eBooks were found<p>
+              <p class="no-results">No materials were found<p>
             <% end %>        
           <ul>
             <% i = 1 %>
@@ -112,7 +112,7 @@
             <% end %>
           </ul>
           <% if @ebooks_count>0 %>
-            <div class="results-bottom"><a href="/ebooks?q=<%= @query %>" class="col-md-12">View all Electronic Books</a></div>
+            <div class="results-bottom"><a href="/ebooks?q=<%= @query %>" class="col-md-12">View all eBooks and more</a></div>
           <% end %>
         </div>
       </div><!-- end of ebooks pane -->
