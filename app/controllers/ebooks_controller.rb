@@ -8,8 +8,9 @@ class EbooksController < CatalogController
 
   def show_only solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
+    solr_parameters[:fq] << 'source:"Symphony"'
     solr_parameters[:fq] << 'electronic_tesim:"Online"'
-    solr_parameters[:fq] << 'format:"Book"'
+    #solr_parameters[:fq] << 'format:"Book"'
   end
 
   def index
