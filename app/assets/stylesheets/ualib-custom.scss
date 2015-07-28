@@ -642,6 +642,12 @@ label.mod{
 	padding-top: 10px;
 	padding-bottom: 0;
 }
+.tooltip.bottom .tooltip-inner {
+    background-color:#4C6F84;
+}
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #4C6F84;
+}  
 .hours-header{
 	padding-bottom: 0;
 	margin-bottom: 0;
