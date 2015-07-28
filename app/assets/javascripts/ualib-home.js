@@ -803,7 +803,8 @@ $(document).ready(function () {
     function() {
       $(this).find(".details").fadeOut(250);
   });
-
+ 
+ $('[data-toggle="tooltip"]').tooltip()
  
    if ($("#chartContainer").length){
         var chart = new CanvasJS.Chart("chartContainer",
