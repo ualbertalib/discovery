@@ -26,8 +26,11 @@ class CatalogController < ApplicationController
     super
     @holdings = []
     if @document["source"]
-      @holdings = fetch_symphony_holdings(@document) if @document["source"].first == "Symphony"
-      @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
+      if @document["source"].first == "Symphony"
+        @holdings = fetch_symphony_holdings(@document)
+        @holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
+      end
+        @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
     end
 
     if @document["url_fulltext_display"]
