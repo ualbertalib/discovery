@@ -18,11 +18,11 @@
       <p style="font-size:75%"> If you login with a barcode and PIN, click <a href="http://ualweb.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/57/5?&searchdata1=<%= @document["id"] %>&user_id=WUAARCHIVE">here</>.</p>
     <% end %>
   <ul class="nav">
-   <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>
-        <li class="cite">
-         <%= link_to 'View Citation (MLA/APA/Chicago)', citation_catalog_path(:id => @document), {:id => 'citeLink', :data => {:ajax_modal => "trigger"}} %>
-        </li>
-      <% end %>
+   <%# <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>
+   <%#      <li class="cite">
+   <%#       <%= link_to 'View Citation (MLA/APA/Chicago)', citation_catalog_path(:id => @document), {:id => 'citeLink', :data => {:ajax_modal => "trigger"}} %>
+   <%#      </li>
+   <%#    <% end %>
       <% if @document.export_formats.keys.include?( :refworks_marc_txt ) %>
         <li class="refworks">
           <%= link_to t('blacklight.tools.refworks'), refworks_export_url(:id => @document), :target => "_blank"  %>        
