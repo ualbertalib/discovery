@@ -43,7 +43,7 @@ module HoldingsHelper
     item_data[:location] = get_marc_subfield(item, 'm')
     item_data[:status] = SymphonyService.new.get_status(id, item_data[:item_id], item_data[:location])
     item_data[:item_type] = SymphonyService.new.get_item_type(id, item_data[:item_id], item_data[:location])
-    item_data[:summary_holdings] = SymphonyService.new.get_summary_holdings(id, item_data[:item_id], item_data[:location])
+    # commented out by Natasha to fix bug item_data[:summary_holdings] = SymphonyService.new.get_summary_holdings(id, item_data[:item_id], item_data[:location])
     items << item_data
   end
 
