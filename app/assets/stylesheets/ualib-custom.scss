@@ -70,9 +70,7 @@ h2{
 .ua-logo{
 	width: 190px;
 }
-.padding-top{
-	padding-top:20px;
-}
+
 
 	
 
@@ -758,6 +756,10 @@ label.mod{
 }
 #research-pane{
 	background-color: #C7D28A;
+}
+#research-pane .research{
+	background: asset_url("research-image.jpg") no-repeat center center #fff;
+
 }
 #subjects-pane{
 	font-size: 110%;
