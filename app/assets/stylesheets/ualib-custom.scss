@@ -39,7 +39,7 @@ a:active, a:visited, a:hover{
 .header{
 	background: none;
 	background-color: #1b4a26;
-	padding-bottom: 20px;
+	padding-bottom: 0px;
 }
 a.anchor {
 	display: block;
@@ -81,8 +81,11 @@ h2{
 	padding:5px 0px;
 }
 .version{
-	padding-top: 10px;
+	padding-top: 5px;
 	display: block;
+}
+.version span{
+	display: none;
 }
 .home .navbar-nav, .french-home .navbar-nav{
 	float: right;
@@ -204,9 +207,9 @@ h2{
 	text-align: center;
 	text-transform: lowercase;
 	color: #FBED32;
-	font-size: 16px;
+	font-size: 15px;
 	letter-spacing: 1px;
-	margin: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 5px;
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.4);
 }
@@ -314,7 +317,7 @@ h2 span.small{
 	background-color: #fff;
 }
 .nav>li>a {
-	font-size: 15px;
+	font-size: 11px;
 	padding: 5px 10px;
 	border-right: 1px solid #eee;
 }
@@ -355,7 +358,8 @@ h2 span.small{
 .ualogo{
 	width: 100%;
 	min-width: 220px;
-	max-width: 300px
+	max-width: 300px;
+	margin-top:-30px;
 }
 .navbar-form{
 	padding: 0px 15px;
@@ -391,7 +395,7 @@ ul.ask{
 	color: #FBED32;
 	font-size: 16px;
 	letter-spacing: 1px;
-	margin-top: -20px;
+	margin-top: -27px;
 	border-right: none;
 	margin-left: 5px;
 	background: asset_url("ask-icon.png") no-repeat left bottom;
@@ -1538,6 +1542,9 @@ ul.foot-nav{
 		margin-top: 8px;
 		margin-bottom: 5px;
 	}
+	.ualogo{
+		margin-top:0px;
+	}
 	ul.ask{
 		margin-left: 190px;
 	}
@@ -1605,6 +1612,9 @@ ul.foot-nav{
 	.top-margin{
 		margin-top: 10px;
 	}
+	#top{
+		padding-top: 10px;
+	}
 	.pane{
 		padding: 30px 0;
 	} 
@@ -1613,9 +1623,6 @@ ul.foot-nav{
 	}
 	.extra2-top-margin{
 		margin-top: 30px;
-	}
-	#top{
-		padding-top: 20px;
 	}
 	.header{
 		background-color: transparent;
@@ -1802,9 +1809,16 @@ ul.foot-nav{
 		height: 200px;
 		display: none;
 	}
-	#top{
+	.nav>li>a {
+		font-size: 15px;
+	}
+	.version{
 		padding-top: 10px;
 	}
+	.version span{
+		display: inline;
+	}
+	
 	#subjects-pane .subject-title h3{
 		line-height: 35px;
 		padding: 10px 4px 10px 90px;
