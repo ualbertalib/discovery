@@ -752,12 +752,12 @@ $(document).ready(function () {
   });
   $( "#shelves-limit" ).click(function() { 
     $('#main-search').attr('action', '/symphony');
-    $('#q').attr('placeholder', 'search print books & journals...');
+    $('#q').attr('placeholder', 'search books and more...');
     $('#fr-q').attr('placeholder', 'recherche livre imprimé et revues...');
   });
   $( "#ebooks-limit" ).click(function() { 
     $('#main-search').attr('action', '/ebooks');
-    $('#q').attr('placeholder', 'search ebooks...');
+    $('#q').attr('placeholder', 'search ebooks and more...');
     $('#fr-q').attr('placeholder', 'recherche livres numériques...');
   });
   $( "#articles-limit" ).click(function() { 
