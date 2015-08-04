@@ -46,8 +46,14 @@ my @knownBad = ( 	"All the yard-arms",
 			"honourable whalemen allowances",
 			"OR anything else fails", 		 # Aug 04, 2015 - Henry notices uppercase AND & OR operators crash the app if they appear first
 			"AND anything else fails",
+			"--WHALE song",				# Neat! Anything with "--<word> <word>" fails
 			"global",				# Kenton's intriging error releated to the MySQL max-packet-size vs session_id for this ONE query.  Weird.
-			"--WHALE song",				# Neat!
+			"New",					# So, these all might be related -- searches that return a very large number of results? 
+			"York",					# 
+			"Canada",				# 
+			"United",				# 
+			"New York",				# 
+			"United States",			# 
 		);
 my $count=0;
 foreach $searchString (@knownBad) {
