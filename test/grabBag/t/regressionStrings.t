@@ -47,6 +47,7 @@ my @knownBad = ( 	"All the yard-arms",
 			"OR anything else fails", 		 # Aug 04, 2015 - Henry notices uppercase AND & OR operators crash the app if they appear first
 			"AND anything else fails",
 			"global",				# Kenton's intriging error releated to the MySQL max-packet-size vs session_id for this ONE query.  Weird.
+			"--WHALE song",				# Neat!
 		);
 my $count=0;
 foreach $searchString (@knownBad) {
