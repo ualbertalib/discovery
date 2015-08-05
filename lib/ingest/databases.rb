@@ -1,4 +1,5 @@
 require "csv"
+require "logger"
 require_relative "./database.rb"
 require_relative "./database_om.rb"
 
@@ -7,6 +8,7 @@ class Databases
   attr_reader :xml_records
 
   def initialize(filename)
+    @@ingest_log = Logger.new('log/ingest.log')
     @xml_records = []
     database_subjects = YAML.load_file("#{Rails.root}/config/database_subjects.yml")
     CSV.foreach(filename) do |row|
@@ -15,6 +17,7 @@ class Databases
       db.parse(row)
       @xml_records <<  db.to_xml(database_subjects)
     end
+    @@ingest_log.info("-- Preparing to ingest #{@xml_records.size} records...")
   end
 
   def xml_file
