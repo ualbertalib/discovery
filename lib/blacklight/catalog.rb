@@ -2,6 +2,7 @@
 module Blacklight::Catalog
   extend ActiveSupport::Concern
   extend ActiveSupport::Autoload
+  extend Deprecation
 
   eager_autoload do
     autoload :ComponentConfiguration
@@ -13,27 +14,32 @@ module Blacklight::Catalog
   include Blacklight::Catalog::ComponentConfiguration
   include Blacklight::Facet
 
+  # rubocop:disable Style/ConstantName
+  # @deprecated use blacklight_config.search_history_window instead
   SearchHistoryWindow = 100 # how many searches to save in session history
+  # rubocop:enable Style/ConstantName
 
   # The following code is executed when someone includes blacklight::catalog in their
   # own controller.
   included do
     helper_method :sms_mappings, :has_search_parameters?
 
-    # Whenever an action raises SolrHelper::InvalidSolrID, this block gets executed.
-    # Hint: the SolrHelper #get_solr_response_for_doc_id method raises this error,
-    # which is used in the #show action here.
-    rescue_from Blacklight::Exceptions::InvalidSolrID, :with => :invalid_solr_id_error
+    # When an action raises Blacklight::Exceptions::RecordNotFound, handle 
+    # the exception appropriately.
+    rescue_from Blacklight::Exceptions::RecordNotFound, with: :invalid_document_id_error
+
+    # Deprecated:
+    rescue_from Blacklight::Exceptions::InvalidSolrID, with: :invalid_document_id_error
 
     record_search_parameters
   end
 
     # get search results from the solr index
     def index
-      (@response, @document_list) = get_search_results
+      (@response, @document_list) = search_results(params, search_params_logic)
 
       respond_to do |format|
-        format.html { preferred_view }
+        format.html { store_preferred_view }
         format.rss  { render :layout => false }
         format.atom { render :layout => false }
         format.json do
@@ -45,23 +51,16 @@ module Blacklight::Catalog
       end
     end
 
-    # get single document from the solr index
+    # get a single document from the index
+    # to add responses for formats other than html or json see _Blacklight::Document::Export_
     def show
-      @response, @document = get_solr_response_for_doc_id params[:id]
+      @response, @document = fetch params[:id]
 
       respond_to do |format|
-        format.html {setup_next_and_previous_documents}
+        format.html { setup_next_and_previous_documents }
+        format.json { render json: { response: { document: @document } } }
 
-        format.json { render json: {response: {document: @document}}}
-
-        # Add all dynamically added (such as by document extensions)
-        # export formats.
-        @document.export_formats.each_key do | format_name |
-          # It's important that the argument to send be a symbol;
-          # if it's a string, it makes Rails unhappy for unclear reasons.
-          format.send(format_name.to_sym) { render :text => @document.export_as(format_name), :layout => false }
-        end
-
+        additional_export_formats(@document, format)
       end
     end
 
@@ -81,8 +80,8 @@ module Blacklight::Catalog
     # displays values and pagination links for a single facet field
     def facet
       @facet = blacklight_config.facet_fields[params[:id]]
-      @response = get_facet_field_response(@facet.field, params)
-      @display_facet = @response.facets.first
+      @response = get_facet_field_response(@facet.key, params)
+      @display_facet = @response.aggregations[@facet.key]
 
       @pagination = facet_paginator(@facet, @display_facet)
 
@@ -110,7 +109,7 @@ module Blacklight::Catalog
     end
 
     def action_documents
-      get_solr_response_for_document_ids(params[:id])
+      fetch(Array(params[:id]))
     end
 
     def action_success_redirect_path
@@ -134,13 +133,23 @@ module Blacklight::Catalog
     # do not specifiy the view, set the view parameter to the value stored in the
     # session. This enables a user with a session to do subsequent searches and have
     # them default to the last used view.
-    def preferred_view
+    def store_preferred_view
       session[:preferred_view] = params[:view] if params[:view]
-      params[:view] ||= session[:preferred_view]
     end
 
+    alias_method :preferred_view, :store_preferred_view
+    deprecation_deprecate :preferred_view
+
     ##
-    # Render additional response formats, as provided by the blacklight configuration
+    # Render additional response formats for the index action, as provided by the
+    # blacklight configuration
+    #
+    # example:
+    #
+    #   config.index.respond_to.txt = Proc.new { render text: "A list of docs." }
+    #
+    # Make sure your format has a well known mime-type or is registered in
+    # config/initializers/mime_types.rb
     def additional_response_formats format
       blacklight_config.index.respond_to.each do |key, config|
         format.send key do
@@ -153,10 +162,17 @@ module Blacklight::Catalog
             instance_exec &config
           when Symbol, String
             send config
-          else
-            # no-op, just render the page
           end
         end
+      end
+    end
+
+    ##
+    # Render additional export formats for the show action, as provided by
+    # the document extension framework. See _Blacklight::Document::Export_
+    def additional_export_formats(document, format)
+      document.export_formats.each_key do | format_name |
+        format.send(format_name.to_sym) { render text: document.export_as(format_name), layout: false }
       end
     end
 
@@ -179,11 +195,9 @@ module Blacklight::Catalog
     # First, try to render an appropriate template (e.g. index.endnote.erb)
     # If that fails, just concatenate the document export responses with a newline. 
     def render_document_export_format format_name
-      begin
-        render
-      rescue ActionView::MissingTemplate
-        render text: @response.documents.map { |x| x.export_as(format_name) if x.exports_as? format_name }.compact.join("\n"), layout: false
-      end    
+      render
+    rescue ActionView::MissingTemplate
+      render text: @response.documents.map { |x| x.export_as(format_name) if x.exports_as? format_name }.compact.join("\n"), layout: false
     end
 
     # override this method to change the JSON response from #index 
@@ -286,10 +300,20 @@ module Blacklight::Catalog
       flash[:error].blank?
     end
 
+    ##
     # when a request for /catalog/BAD_SOLR_ID is made, this method is executed.
     # Just returns a 404 response, but you can override locally in your own
     # CatalogController to do something else -- older BL displayed a Catalog#inde
     # page with a flash message and a 404 status.
+    def invalid_document_id_error *args
+      Deprecation.silence(Blacklight::Catalog) do
+        invalid_solr_id_error *args
+      end
+    end
+
+    ##
+    # DEPRECATED; this method will be removed in Blacklight 6.0 and the functionality
+    # moved to invalid_document_id_error
     def invalid_solr_id_error(exception)
       error_info = {
         "status" => "404",
@@ -312,6 +336,7 @@ module Blacklight::Catalog
         end
       end
     end
+    deprecation_deprecate invalid_solr_id_error: :invalid_document_id_error
 
     def start_new_search_session?
       action_name == "index"

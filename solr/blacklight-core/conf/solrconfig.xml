@@ -225,27 +225,15 @@
        <int name="ps">3</int>
        <float name="tie">0.01</float>
        <!-- NOT using marc_display because it is large and will slow things down for search results -->
-       <str name="fl">*</str>
-       <!--   id,  -->
-       <!--   score, -->
-       <!--   author_display, -->
-       <!--   format,  -->
-       <!--   isbn_t,  -->
-       <!--   language_facet,  -->
-       <!--   lc_callnum_display, -->
-       <!--   material_type_display,  -->
-       <!--   published_display, -->
-       <!--   pub_date, -->
-       <!--   title_display, -->
-       <!--   subject_topic_facet, -->
-       <!--   subject_geo_facet, -->
-       <!--   subject_era_facet, -->
-       <!--   subtitle_display, -->
-       <!--   url_fulltext_display, -->
-       <!--   url_suppl_display, -->
-       <!--   source, -->
-       <!--   issn_t, -->
-       <!-- </str> -->
+       <str name="fl">id,
+         score,
+         *_tesim,
+         *_display,
+         author_addl_t,
+         format,
+         pub_date,
+         title_series_t,
+       </str>
 
        <str name="facet">true</str>
        <str name="facet.mincount">1</str>
@@ -253,17 +241,13 @@
        <str name="facet.field">electronic_tesim</str>
        <str name="facet.field">location_tesim</str>
        <str name="facet.field">format</str>
-       <str name="facet.field">source</str>
        <str name="facet.field">lc_1letter_facet</str>
-       <str name="facet.field">lc_alpha_facet</str>
-       <str name="facet.field">lc_b4cutter_facet</str>
        <str name="facet.field">language_facet</str>
        <str name="facet.field">pub_date</str>
        <str name="facet.field">subject_era_facet</str>
        <str name="facet.field">subject_geo_facet</str>
        <str name="facet.field">subject_topic_facet</str>
        <str name="facet.field">minor_tesim</str>
-       
        <str name="spellcheck">true</str>
        <str name="spellcheck.dictionary">default</str>
        <str name="spellcheck.onlyMorePopular">true</str>
