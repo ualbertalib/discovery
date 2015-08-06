@@ -56,10 +56,13 @@ my @knownBad = ( 	"All the yard-arms",
 			"United States",			# 
 		);
 my $count=0;
+my $result; 
 foreach $searchString (@knownBad) {
 	$DEBUG && print "Trying $searchString...\n";
-	eval {$mech->submit_form( fields    => { q => $searchString, },);  };
+	eval {$result = $mech->submit_form( fields    => { q => $searchString, },);  };
 	ok ($mech->status == 200, "$host: Search for $searchString") ;
+	$count ++;
+	unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ;   #  Ugh, in Prod, we try to return a pretty error, not a bare 500
 	$count ++;
 }
 done_testing $count;
