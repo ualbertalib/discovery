@@ -228,6 +228,7 @@
        <str name="fl">id,
          score,
          *_tesim,
+         title_display,
          subtitle_display,
          author_display,
          author_vern_display,
