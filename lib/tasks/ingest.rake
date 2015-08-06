@@ -1,3 +1,4 @@
+require "logger"
 require "#{Rails.root}/lib/ingest/batch_ingest.rb"
 require "#{Rails.root}/lib/ingest/dublin_core_om.rb"
 require "#{Rails.root}/lib/ingest/peel_mods_om.rb"
@@ -12,9 +13,13 @@ require "yaml"
 
 desc 'ingest records' # add config parameter for directory ingest?
 task :ingest, [:collection] do |t, args|
+  @@ingest_log = Logger.new('log/ingest.log')
+  @@ingest_log.info("--- Starting ingest on #{Time.now} ---")
   @c = IngestConfiguration.new(args.collection, @config_file)
 
   Rake::Task["fetch"].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
+
+  @@ingest_log.info("Starting #{@c.schema} ingest for #{args.collection}")
 
   case @c.schema
 
@@ -27,6 +32,8 @@ task :ingest, [:collection] do |t, args|
   when "database"
     ingest_databases
   end
+
+  @@ingest_log.info("--- Finished ingest on #{Time.now} ---")
 end
 
 def ingest_mods_or_dublin_core

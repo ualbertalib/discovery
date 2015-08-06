@@ -7,7 +7,7 @@ class CatalogController < ApplicationController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
   include HoldingsHelper
-  include BlacklightAdvancedSearch::ParseBasicQ
+  #include BlacklightAdvancedSearch::ParseBasicQ
 
   self.solr_search_params_logic << :show_only
 

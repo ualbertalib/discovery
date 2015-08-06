@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Database" tests="3" time="0.004631729" failures="0" errors="0" skipped="0" timestamp="2015-04-16T15:40:52-06:00">
-  <testcase name="Database should parse a single database record into a database object" time="0.001964333">
+<testsuite name="Database" tests="5" time="0.014686604" failures="0" errors="0" skipped="0" timestamp="2015-08-05T15:29:34-06:00">
+  <testcase name="Database should parse a single database record into a database object" time="0.000865853">
   </testcase>
-  <testcase name="Database should parse a database CSV object into a Ruby object" time="0.000861736">
+  <testcase name="Database should parse a database CSV object into a Ruby object" time="0.000747603">
   </testcase>
-  <testcase name="Database should return a basic xml represenation" time="0.001251449">
+  <testcase name="Database should return a basic xml represenation" time="0.003482096">
+  </testcase>
+  <testcase name="Database should split a multi-record file into component records " time="0.004722946">
+  </testcase>
+  <testcase name="Database should produce a correct, multi-record xml file" time="0.004290024">
   </testcase>
 </testsuite>

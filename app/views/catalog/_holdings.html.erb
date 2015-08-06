@@ -24,7 +24,7 @@
                 <td><%= item[:summary_holdings] %></td>
               <% end %>
             <% end %>
-              <% if item[:item_type] and !item[:item_type].blank? %>
+              <% if item[:item_type] and !item[:item_type].blank? and item[:item_type].is_a? String %>
                 <td><%= @item_types[item[:item_type].downcase] %></td>
               <% else %>
                 <td></td>
