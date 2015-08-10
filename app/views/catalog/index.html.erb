@@ -5,7 +5,7 @@ results for <em>
                  <% elsif params[:all_fields]
                  @terms = []
                  @terms << params[:all_fields] if !params[:all_fields].blank?
-                 @terms << params[title] if !params[:title].blank?
+                 @terms << params[:title] if !params[:title].blank?
                  @terms << params[:author] if !params[:author].blank?
                  @terms << params[:subject] if !params[:subject].blank?
                %>
