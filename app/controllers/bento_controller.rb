@@ -69,7 +69,7 @@ class BentoController < ApplicationController
   end
 
   def populate_ebooks
-    ebooks = populate(CatalogController, isource_tesim:'Symphony', format: 'Online'})
+    ebooks = populate(CatalogController, {source_tesim:'Symphony', format: 'Online'})
     @ebooks_count = ebooks["count"]
     ebooks.delete("count")
     @ebooks = ebooks
