@@ -30,9 +30,11 @@
    <% end %>
 
     <% if @document["format"].include? "Database" %>
-        <table>
+      <table>
+        <% if @document["abstract_tesim"] %>
           <tr><th>Abstract</th></tr>
           <tr><td><%= @document["abstract_tesim"].first %></td></tr>
+        <% end %>
           <% if @document["coverage_tesim"] %>
           <tr><th>Coverage</th></tr>
           <tr><td><%= @document["coverage_tesim"].first %></td></tr>
