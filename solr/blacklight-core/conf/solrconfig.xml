@@ -94,7 +94,8 @@
        <int name="rows">10</int>
 
        <str name="q.alt">*:*</str>
-       <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
+       <!-- <str name="mm">2&#38;lt;&#45;1 5&#38;lt;&#45;2 6&#38;lt;90%</str> -->
+       <str name="mm">0</str>
 
        <!-- this qf and pf are used by default, if not otherwise specified by
             client. The default blacklight_config will use these for the
@@ -132,8 +133,8 @@
          gmd_tesim^50
          title_series_unstem_search^25
          title_series_t^10
-         text
-         source
+         <!-- text -->
+         <!-- source -->
        </str>
        <str name="pf">
          id^1000000
