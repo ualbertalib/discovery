@@ -12,7 +12,9 @@
       <% @holdings = fetch_symphony_locations(document) if document.to_h["source"].first == "Symphony" %>
       <% @location_strings = [] %>
       <dt class="blacklight-format">Copies available at</dt><dd class="blacklight-format">
-      <%= @holdings.each { |h| @location_strings << @locations[h.downcase] }; @location_strings.uniq.join(", ") %></dd>
+      <% if @holdings and @locations %>
+        <%= @holdings.each { |h| @location_strings << @locations[h.downcase] }; @location_strings.uniq.join(", ") if @holdings %></dd>
+    <% end %>
   <% end %>
     <% if document.to_h["format"].first == "Book" and document.to_h["electronic_tesim"].first == "Online" %>
         <dt class="blacklight-ebook"></dt>Format note: <dd class="blacklight-ebook">This is an eBook.</dd>
