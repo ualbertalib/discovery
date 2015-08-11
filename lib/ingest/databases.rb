@@ -25,7 +25,6 @@ class Databases
     @xml_records.each do |record|
       db_vocabulary = DatabaseVocabulary.from_xml(record)
       output += db_vocabulary.to_xml.gsub('<?xml version="1.0"?>', "")
-
     end
     output += "</databases></root>"
     output

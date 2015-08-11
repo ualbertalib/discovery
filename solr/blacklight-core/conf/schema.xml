@@ -537,6 +537,7 @@
    <field name="holdings" type="text" indexed="false" stored="true" multiValued = "true"/>
    <field name="electronic_tesim" type="string" indexed="true" stored="true" multiValued = "true"/>
    <field name="minor_tesim" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="title_sort" type="string" indexed="true" stored="false"/>
 
     <!-- NOTE:  not all possible Solr field types are represented in the dynamic fields -->
 
@@ -751,6 +752,7 @@
    <copyField source="type_tesim" dest="format"/>
    <copyField source="resource_type_tesim" dest="format"/>
    <copyField source="title_tesim" dest="title_display"/>
+   <copyField source="title_tesim" dest="title_sort"/>
    <copyField source="source_tesim" dest="source"/>
    
    <!-- sort fields -->

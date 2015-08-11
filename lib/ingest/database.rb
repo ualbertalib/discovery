@@ -79,7 +79,8 @@ class Database
             xml.electronic "Online"
           }
     end
-    builder.doc.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::AS_XML | Nokogiri::XML::Node::SaveOptions::NO_DECLARATION).gsub("\n", "").gsub('""', '"')
+    builder.doc.to_xml(:save_with => Nokogiri::XML::Node::SaveOptions::AS_XML | Nokogiri::XML::Node::SaveOptions::NO_DECLARATION).gsub("\n", "").gsub('""', '"').gsub("&eacute;", "é")
+
   end
 
 end
