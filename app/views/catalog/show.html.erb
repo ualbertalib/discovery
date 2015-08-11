@@ -78,8 +78,16 @@
             <% unless @urls.empty? %>
               <% @urls.each do |url| %>
                 <span class="url-label">URL:</span>
+
+                <% if url[:url].include? "databases" %>
+
+                <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span>
+                </a>
+              <% else %>
                 <a href="<%= Rails.application.config.proxy+url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span>
                 </a>
+
+              <% end %>
               <% end %>
             <% end %>
 
