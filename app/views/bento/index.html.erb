@@ -19,7 +19,7 @@
             <input type="text" class="form-control" placeholder="search again" name="q">
           </div>
           <div class="form-group"> 
-          <button type="submit" class="btn btn-small">search</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a>
+            <button type="submit" class="btn btn-small">search</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a> <%= link_to image_tag("list.png", size: "35x35"), catalog_index_path(:q => params['q']) %>
         </div>
         </form>
 		  </div> 
