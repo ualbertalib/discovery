@@ -81,7 +81,7 @@ databases:
   mode: file
   expand_path: "data/databases.xml"
   path: "data/databases.csv"
-  endpoint: http://www2.library.ualberta.ca/batchjobs/SFX/dbMetadata/dbdump_csv.php
+  endpoint: http://web.library.ualberta.ca/batchjobs/SFX/dbMetadata/dbdump_csv.php
 
 services:
   schema: services
