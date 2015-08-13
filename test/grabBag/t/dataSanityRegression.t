@@ -43,30 +43,30 @@ ok (defined($result) , "Did we get content?") ; $count++;
 unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ;   #  Ugh, in Prod, we try to return a pretty error, not a bare 500
 $count ++;
 
-my $content = $result->decoded_content; 
+# We are searching for this:
 #          <h3><span class="col-md-6">eBooks and more</span> 
 #              <a href="/ebooks?q=shakespeare" class="col-md-6 see-all-results">4464 results</a>
-
+my $content = $result->decoded_content; 
 my $match;
-($match) = $content =~ qr/(Books and more.*\n.*)>(\d+)( results)/m ;
+($match) = $content =~ qr/(Books and more.*\n.*>)(\d+)( results)/m ;
 #if ($content =~ qr/eBooks and more.*\n.*(\d+) results/m) {  # multi-line match
 if (defined $match) {  # multi-line match
-	print "I found a match\n";
-	print "The match was: $match\n\n";
-	print "extracted number was: $2\n" if defined $2;
+	$DEBUG && print "I found a match\n";
+	$DEBUG && print "The match was: $match\n\n";
+	$DEBUG && print "extracted number was: $2\n" if defined $2;
 	
 } else {
-	print "No match found\n";
+	$DEBUG && print "No match found\n";
 }
 
-like ($result->decoded_content, qr/(Books and more.*\n.*)>(\d+)( results)/m, "Results contain a count of the number of books"); $count++;
+like ($result->decoded_content, qr/(Books and more.*\n.*>)(\d+)( results)/m, "Results contain a count of the number of books"); $count++;
 ok (defined $2, "Extraction of count successful"); $count++;
 if (defined $2) {
 	ok ($2 > 14000, "Count of books should exceed 14,000, actual: $2"); $count++;	# 14157 on Aug 12, 2015, but this will change over time
 }
 
 # Now, repeat that for eBooks
-like ($result->decoded_content, qr/(eBooks and more.*\n.*)>(\d+)( results)/m, "Results contain a count of the number of ebooks"); $count++;
+like ($result->decoded_content, qr/(eBooks and more.*\n.*>)(\d+)( results)/m, "Results contain a count of the number of ebooks"); $count++;
 ok (defined $2, "Extraction of count successful"); $count++;
 if (defined $2) {
 	ok ($2 > 4000, "Count of ebooks should exceed 4,000, actual: $2"); $count++;	# 4467 on Aug 12, 2015, but this will change if we get more
