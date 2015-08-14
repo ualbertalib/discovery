@@ -7,12 +7,24 @@
             <th>Copy</th>
             <th>Location/Status</th>
             <th>Library</th>
-            <% if @document["format"].include? "Journal" %>
-              <th>Library has</th>
-            <% end %>
             <th>Item Type</th>
           </tr>
+
+          <br />
+          <strong>Library has:</strong>
+          <% @summary_holdings = [] %>
+          <% for item in @holdings %>
+            <% @summary_holdings << item[:summary_holdings] %>
+            <% end %> 
+
+            <% for sh in @summary_holdings.uniq %>
+              <%= sh %>
+            <% end %>
+            <br />
+            <br />
+
           <% for item in @holdings %> 
+
             <% @unavailable = true if @statuses[item[:status].to_s.downcase] == "unavailable" %>
             <tr>
               <td><%= item[:call_number] %></td>
@@ -20,9 +32,6 @@
               <td><%= @statuses[item[:status].to_s.downcase] %></td>
               <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= @locations[item[:location].downcase] %></a></td>
               <% if @document["format"].include? "Journal" %>
-              <% if item[:summary_holdings] %>
-                <td><%= item[:summary_holdings] %></td>
-              <% end %>
             <% end %>
               <% if item[:item_type] and !item[:item_type].blank? and item[:item_type].is_a? String %>
                 <td><%= @item_types[item[:item_type].downcase] %></td>

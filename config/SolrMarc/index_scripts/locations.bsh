@@ -1,0 +1,16 @@
+import org.marc4j.marc.Record;
+
+org.solrmarc.index.SolrIndexer indexer = null;
+
+public String getLocations(Record record){
+
+  String val = indexer.getFirstFieldVal(record, "926m");
+
+  if (val != null){
+    return val.toLowerCase().replaceAll("_", "").replaceAll("-", "");
+  }
+  else {
+    return val;
+  }
+}
+
