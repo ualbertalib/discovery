@@ -14,15 +14,11 @@ RSpec.feature "Ejournals page test", :type => :feature do
     expect(page).to have_text("results for in electronic journals")
     expect(page).to have_text("1 - 14 of 14")
 
-    # fill_in "q", :with => "accountancy"
-    # click_button "search"
-    #
-    # expect(page).to have_text("6 results for accountancy")
-    #
-    # fill_in "q", :with => "agricola"
-    # click_button "search"
-    #
-    # expect(page).to have_text("1 results for agricola")
+    fill_in "q", :with => "accountancy"
+    click_button "search"
+
+    expect(page).to have_text("results for accountancy in electronic journals")
+    expect(page).to have_text("1 - 6 of 6")
 
   end
 end
