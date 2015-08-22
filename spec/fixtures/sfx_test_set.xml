@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<collection xmlns="http://www.loc.gov/MARC21/slim">
+ <!-- FIRST INCREMENTAL -->
+ <!-- INSTANCE:sfxlcl41 -->
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">01015589</subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Publishers weekly</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">New York, NY</subfield>
+   <subfield code="b">Reed Business Information</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0000-0019</subfield>
+  </datafield>
+  <datafield tag="776" ind1="" ind2="">
+   <subfield code="x">2150-4008</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921332001</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997. </subfield>
+   <subfield code="b">$obj-&gt;parsedDate('&gt;=','1997',undef,undef)</subfield>
+   <subfield code="c">L</subfield>
+   <subfield code="s">1000000000002159</subfield>
+   <subfield code="t">1000000000001505</subfield>
+   <subfield code="x">Academic Search Complete:Full Text</subfield>
+   <subfield code="z">1000000000671051</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000125212</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997. </subfield>
+   <subfield code="s">111038004962001</subfield>
+   <subfield code="t">111038004962000</subfield>
+   <subfield code="x">Canadian Reference Centre:Full Text</subfield>
+   <subfield code="z">111038333129000</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997. </subfield>
+   <subfield code="s">3580000000000016</subfield>
+   <subfield code="t">3580000000000013</subfield>
+   <subfield code="x">EBSCOhost Library &amp; Information Science Source:Full Text</subfield>
+   <subfield code="z">3580000000007640</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1998. </subfield>
+   <subfield code="s">3450000000000061</subfield>
+   <subfield code="t">3450000000000049</subfield>
+   <subfield code="x">EBSCOhost OmniFile Full Text Select:Full Text</subfield>
+   <subfield code="z">3450000000028829</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997. </subfield>
+   <subfield code="s">1000000000002115</subfield>
+   <subfield code="t">1000000000001465</subfield>
+   <subfield code="x">Education Research Complete:Full Text</subfield>
+   <subfield code="z">1000000000715646</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1994 until 2011. </subfield>
+   <subfield code="s">111037301464002</subfield>
+   <subfield code="t">111037301464000</subfield>
+   <subfield code="x">Factiva:Full Text</subfield>
+   <subfield code="z">111037302894000</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1995 issue: 48. </subfield>
+   <subfield code="s">110976638852341</subfield>
+   <subfield code="t">110976638852340</subfield>
+   <subfield code="x">Free E- Journals:Full Text</subfield>
+   <subfield code="z">1000000000485631</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 2000 until 2002. </subfield>
+   <subfield code="s">1000000000001286</subfield>
+   <subfield code="t">1000000000000667</subfield>
+   <subfield code="x">Gale Cengage Contemporary Women's Issues:Full Text</subfield>
+   <subfield code="z">1000000000212221</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1990. </subfield>
+   <subfield code="s">111088000914001</subfield>
+   <subfield code="t">111088000914000</subfield>
+   <subfield code="x">Gale Cengage CPI.Q:Full Text</subfield>
+   <subfield code="z">1000000001051952</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1990. </subfield>
+   <subfield code="s">111031861479000</subfield>
+   <subfield code="t">111031861411000</subfield>
+   <subfield code="x">Gale Cengage Literature Resource Center:Full Text</subfield>
+   <subfield code="z">111031861902000</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997. </subfield>
+   <subfield code="s">1000000000002160</subfield>
+   <subfield code="t">1000000000001506</subfield>
+   <subfield code="x">Literary Reference Center:Full Text</subfield>
+   <subfield code="z">1000000000666804</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997. </subfield>
+   <subfield code="s">110976114395371</subfield>
+   <subfield code="t">110976114395369</subfield>
+   <subfield code="x">MasterFILE Premier:Full Text</subfield>
+   <subfield code="z">111013713707002</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997. </subfield>
+   <subfield code="s">110976039380296</subfield>
+   <subfield code="t">110976039380294</subfield>
+   <subfield code="x">MAS Ultra - School Edition:Full Text</subfield>
+   <subfield code="z">111069624483000</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1996. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">2550000000162439</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1996. </subfield>
+   <subfield code="s">2400000000000007</subfield>
+   <subfield code="t">2400000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Trade &amp; Industry New Platform:Full Text</subfield>
+   <subfield code="z">2550000000129062</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Information Technology</subfield>
+   <subfield code="x">Information Science and Systems</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Library and Information Sciences</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">sc 78001886 </subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">ABCA bulletin</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">A B C A BULLETIN</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Urbana, Ill.,</subfield>
+   <subfield code="b">[American Business Communication Association]</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-0383</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921332002</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1969 until 1984. </subfield>
+   <subfield code="b">$obj-&gt;parsedDate('&gt;=','1969',undef,undef) &amp;&amp; $obj-&gt;parsedDate('&lt;=','1984',undef,undef)</subfield>
+   <subfield code="c">G</subfield>
+   <subfield code="s">3230000000000051</subfield>
+   <subfield code="t">3230000000000047</subfield>
+   <subfield code="x">SAGE Deep Backfile Package 2012:Full Text</subfield>
+   <subfield code="z">10920000000045475</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Trade and Commerce</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">   61065941 </subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Communications of the ACM</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ASSOCIATION FOR COMPUTING MACHINERY COMMUNICATIONS</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">COMMUN ACM</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">COMM ACM</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ASSOCIATION FOR COMPUTING MACHINERY COMMUNICATIONS OF THE ACM</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">COMMUNICATIONS OF THE ASSOCIATION FOR COMPUTING MACHINERY</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">COMMUN. ACM</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">[New York]</subfield>
+   <subfield code="b">Association for Computing Machinery, Inc.</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-0782</subfield>
+  </datafield>
+  <datafield tag="776" ind1="" ind2="">
+   <subfield code="x">1557-7317</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921332003</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1958 volume: 1 issue: 1. </subfield>
+   <subfield code="b">$obj-&gt;parsedDate("&gt;=",1958,1,1)</subfield>
+   <subfield code="c">L</subfield>
+   <subfield code="s">110976704639515</subfield>
+   <subfield code="t">110976704639514</subfield>
+   <subfield code="x">ACM Digital Library:Full Text</subfield>
+   <subfield code="z">110977319504706</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1999. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000123472</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Information Technology</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Mathematical Sciences</subfield>
+   <subfield code="x">Applied Mathematics</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Telecommunications Technology</subfield>
+   <subfield code="x">Communication Networks &amp; Technology</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Telecommunications Technology</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">   72625231 </subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Planning</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">Planning (U.S.)</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">Planning (U.K.)</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Chicago, Ill.</subfield>
+   <subfield code="b">American Planning Association</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-2610</subfield>
+  </datafield>
+  <datafield tag="776" ind1="" ind2="">
+   <subfield code="x">2162-4577</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921332004</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1993. </subfield>
+   <subfield code="s">1000000000002159</subfield>
+   <subfield code="t">1000000000001505</subfield>
+   <subfield code="x">Academic Search Complete:Full Text</subfield>
+   <subfield code="z">1000000000670867</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1993. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000125102</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1993. </subfield>
+   <subfield code="s">1000000000002156</subfield>
+   <subfield code="t">1000000000001503</subfield>
+   <subfield code="x">EBSCOhost Environment Complete:Full Text</subfield>
+   <subfield code="z">1000000000651041</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1993. </subfield>
+   <subfield code="s">3580000000000014</subfield>
+   <subfield code="t">3580000000000012</subfield>
+   <subfield code="x">EBSCOhost Legal Source:Full Text</subfield>
+   <subfield code="z">3580000000008070</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1993. </subfield>
+   <subfield code="s">3450000000000061</subfield>
+   <subfield code="t">3450000000000049</subfield>
+   <subfield code="x">EBSCOhost OmniFile Full Text Select:Full Text</subfield>
+   <subfield code="z">2670000000679150</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 2002. </subfield>
+   <subfield code="s">111037301464002</subfield>
+   <subfield code="t">111037301464000</subfield>
+   <subfield code="x">Factiva:Full Text</subfield>
+   <subfield code="z">1000000000776852</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1993. </subfield>
+   <subfield code="s">110976114395371</subfield>
+   <subfield code="t">110976114395369</subfield>
+   <subfield code="x">MasterFILE Premier:Full Text</subfield>
+   <subfield code="z">110976116300182</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1987. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">2550000000162306</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Economics</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Engineering</subfield>
+   <subfield code="x">Industrial Engineering</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Social Sciences</subfield>
+   <subfield code="x">Developmental Issues &amp; Socioeconomic Studies</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">  2002238702</subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Abacus</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ABACUS OXFORD</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ABACUS A JOURNAL OF ACCOUNTING FINANCE AND BUSINESS STUDIES</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Sydney, N.S.W.</subfield>
+   <subfield code="b">Blackwell Publishing Limited</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-3072</subfield>
+  </datafield>
+  <datafield tag="776" ind1="" ind2="">
+   <subfield code="x">1467-6281</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333005</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1965. Most recent 1 year(s) not available. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000123028</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997 volume: 33 issue: 1. </subfield>
+   <subfield code="s">2430000000000037</subfield>
+   <subfield code="t">2430000000000021</subfield>
+   <subfield code="x">CRKN Wiley Online Library:Full Text</subfield>
+   <subfield code="z">2430000000116890</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1965. Most recent 1 year(s) not available. </subfield>
+   <subfield code="s">1000000000001117</subfield>
+   <subfield code="t">1000000000000564</subfield>
+   <subfield code="x">Humanities International Complete:Full Text</subfield>
+   <subfield code="z">1000000000717072</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1965 volume: 1 issue: 1 until 1996 volume: 32 issue: 2. </subfield>
+   <subfield code="s">1000000000002782</subfield>
+   <subfield code="t">1000000000002101</subfield>
+   <subfield code="x">Wiley Online Library Economics, Finance and Accounting backfiles:Full Text</subfield>
+   <subfield code="z">1000000001305065</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Trade and Commerce</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Law</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|ger-d</controlfield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Absatzwirtschaft</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Düsseldorf</subfield>
+   <subfield code="b">Handelsblatt-GmbH</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-3374</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333006</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 2013. </subfield>
+   <subfield code="s">111037301464002</subfield>
+   <subfield code="t">111037301464000</subfield>
+   <subfield code="x">Factiva:Full Text</subfield>
+   <subfield code="z">3400000000276756</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Marketing and Sales</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">   58003817 </subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Academy of Management journal</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACAD MANAGE J</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACADEMY OF MANAGEMENT JOURNAL (AMJ)</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACADEMY OF MANAGEMENT JOURNAL</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">JOURNAL OF THE ACADEMY OF MANAGEMENT  </subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACAD. MANAGE. J</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Ada, Ohio</subfield>
+   <subfield code="b">Academy of Management</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-4273</subfield>
+  </datafield>
+  <datafield tag="776" ind1="" ind2="">
+   <subfield code="x">1948-0989</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333007</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1963. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000123030</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1963 volume: 6 issue: 1 until 2009 volume: 52 issue: 6. </subfield>
+   <subfield code="s">111081201237001</subfield>
+   <subfield code="t">111081201237000</subfield>
+   <subfield code="x">JSTOR Arts and Sciences IV:Full Text</subfield>
+   <subfield code="z">111082312354000</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1963 volume: 6 issue: 1 until 2009 volume: 52 issue: 6. </subfield>
+   <subfield code="s">111006221384001</subfield>
+   <subfield code="t">111006221384000</subfield>
+   <subfield code="x">JSTOR Business Collection:Full Text</subfield>
+   <subfield code="z">111006223850027</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1963 until 1985. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">2550000000159517</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1987 until 2001. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">2550000000159516</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1963 until 1985. </subfield>
+   <subfield code="s">2610000000000087</subfield>
+   <subfield code="t">2610000000000087</subfield>
+   <subfield code="x">ProQuest Entrepreneurship New Platform:Full Text</subfield>
+   <subfield code="z">2550000000176352</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1987 until 2001. </subfield>
+   <subfield code="s">2610000000000087</subfield>
+   <subfield code="t">2610000000000087</subfield>
+   <subfield code="x">ProQuest Entrepreneurship New Platform:Full Text</subfield>
+   <subfield code="z">2550000000176351</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Business Management</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Economics</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">   44035340 </subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Accountancy</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACCOUNTANCY THE LEADING MAGAZINE FOR FINANCE IN BUSINESS</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">Accountancy (U.K.)</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">[London]</subfield>
+   <subfield code="b">[Society of Incorporated Accountants and Auditors]</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-4664</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333008</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 2003 until 2010. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000123035</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1994 until 2007. </subfield>
+   <subfield code="s">111037301464002</subfield>
+   <subfield code="t">111037301464000</subfield>
+   <subfield code="x">Factiva:Full Text</subfield>
+   <subfield code="z">1000000000120327</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Trade and Commerce</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Law</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Accountancy Ireland</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Dublin</subfield>
+   <subfield code="b">Institute of Chartered Accountants in Ireland</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-4699</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333009</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1996. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">2550000000159526</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1996. </subfield>
+   <subfield code="s">2400000000000008</subfield>
+   <subfield code="t">2400000000000008</subfield>
+   <subfield code="x">ProQuest Accounting and Tax Database New Platform:Full Text</subfield>
+   <subfield code="z">2550000000129693</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Arts and Humanities</subfield>
+   <subfield code="x">Current Events &amp; News</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Arts and Humanities</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Trade and Commerce</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Law</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|dut-d</controlfield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">De Accountant</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Amsterdam,</subfield>
+   <subfield code="b">Nederlandsch Instituut van Accountants.</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-4729</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333010</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 2002 until 2010. </subfield>
+   <subfield code="s">110976638852341</subfield>
+   <subfield code="t">110976638852340</subfield>
+   <subfield code="x">Free E- Journals:Full Text</subfield>
+   <subfield code="z">3340000000000812</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Trade and Commerce</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">sn 85011308 </subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Accounting and business research</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACCOUNTING &amp; BUSINESS RESEARCH</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACCOUNT BUS RES</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACCOUNT. BUS. RES</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">[London,]</subfield>
+   <subfield code="b">[Institute of Chartered Accountants in England and Wales]</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-4788</subfield>
+  </datafield>
+  <datafield tag="776" ind1="" ind2="">
+   <subfield code="x">2159-4260</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333013</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1982 until 2010. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000123037</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1987 until 2010. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">3440000000000377</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1987 until 2010. </subfield>
+   <subfield code="s">2400000000000008</subfield>
+   <subfield code="t">2400000000000008</subfield>
+   <subfield code="x">ProQuest Accounting and Tax Database New Platform:Full Text</subfield>
+   <subfield code="z">2550000000129709</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1970 volume: 1 issue: 1 until 1996 volume: 27 issue: 1. </subfield>
+   <subfield code="s">1000000000002877</subfield>
+   <subfield code="t">1000000000002195</subfield>
+   <subfield code="x">Taylor &amp; Francis Business, Management and Economics Online Archive:Full Text</subfield>
+   <subfield code="z">3360000000373488</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1997 volume: 27 issue: 2. </subfield>
+   <subfield code="s">1000000000002413</subfield>
+   <subfield code="t">1000000000001760</subfield>
+   <subfield code="x">Taylor &amp; Francis Social Science and Humanities Library:Full Text</subfield>
+   <subfield code="z">3370000000003386</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Law</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Law</subfield>
+   <subfield code="x">Investment Laws</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Law</subfield>
+   <subfield code="x">Taxation Laws</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">29008222</subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="4">
+   <subfield code="a">The Accounting review</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACCOUNTING REVIEW</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACCOUNT REV</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ACCOUNT. REV</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">[Sarasota, Fla., etc.]</subfield>
+   <subfield code="b">American Accounting Association.</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-4826</subfield>
+  </datafield>
+  <datafield tag="776" ind1="" ind2="">
+   <subfield code="x">1558-7967</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333014</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1926. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000123048</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1995 until 2011. </subfield>
+   <subfield code="s">3450000000000061</subfield>
+   <subfield code="t">3450000000000049</subfield>
+   <subfield code="x">EBSCOhost OmniFile Full Text Select:Full Text</subfield>
+   <subfield code="z">3450000000026678</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1926 volume: 1 issue: 1 until 2009 volume: 84 issue: 6. </subfield>
+   <subfield code="s">111081201237001</subfield>
+   <subfield code="t">111081201237000</subfield>
+   <subfield code="x">JSTOR Arts and Sciences IV:Full Text</subfield>
+   <subfield code="z">111082312354001</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1926 volume: 1 issue: 1 until 2009 volume: 84 issue: 6. </subfield>
+   <subfield code="s">111006221384001</subfield>
+   <subfield code="t">111006221384000</subfield>
+   <subfield code="x">JSTOR Business Collection:Full Text</subfield>
+   <subfield code="z">111006223850028</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1988 until 2012. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">2550000000159531</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1988 until 2012. </subfield>
+   <subfield code="s">2400000000000008</subfield>
+   <subfield code="t">2400000000000008</subfield>
+   <subfield code="x">ProQuest Accounting and Tax Database New Platform:Full Text</subfield>
+   <subfield code="z">2550000000129706</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1926 until 1995. </subfield>
+   <subfield code="s">3410000000000021</subfield>
+   <subfield code="t">3410000000000020</subfield>
+   <subfield code="x">ProQuest PAO Periodicals Archive Online New Platform:Full Text</subfield>
+   <subfield code="z">3410000000007683</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Accounting and Auditing</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Business Management</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Finance</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">General and Others</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Business, Economy and Management</subfield>
+   <subfield code="x">Trade and Commerce</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Adhesives age</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ADHES AGE</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Atlanta, etc.</subfield>
+   <subfield code="b">Access Intelligence, LLC</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-821X</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333015</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1994 until 2004. </subfield>
+   <subfield code="s">111037301464002</subfield>
+   <subfield code="t">111037301464000</subfield>
+   <subfield code="x">Factiva:Full Text</subfield>
+   <subfield code="z">111037302894010</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1992 until 1999. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">2550000000159544</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1992 until 1999. </subfield>
+   <subfield code="s">2400000000000007</subfield>
+   <subfield code="t">2400000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Trade &amp; Industry New Platform:Full Text</subfield>
+   <subfield code="z">2550000000127680</subfield>
+  </datafield>
+  <datafield tag="650" ind1="" ind2="4">
+   <subfield code="a">Chemistry</subfield>
+   <subfield code="x">Chemical Engineering</subfield>
+  </datafield>
+ </record>
+ <record>
+  <leader>-----nas-a2200000z--4500</leader>
+  <controlfield tag="008">150820uuuuuuuuuxx-uu-|------u|----|eng-d</controlfield>
+  <datafield tag="010" ind1="" ind2="">
+   <subfield code="a">   78648129 </subfield>
+  </datafield>
+  <datafield tag="245" ind1="" ind2="0">
+   <subfield code="a">Administrative Science Quarterly</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ADM SCI Q</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ADMIN SCI QUART</subfield>
+  </datafield>
+  <datafield tag="210" ind1="" ind2="">
+   <subfield code="a">ADM. SCI. Q</subfield>
+  </datafield>
+  <datafield tag="260" ind1="" ind2="">
+   <subfield code="a">Ithaca, N.Y.</subfield>
+   <subfield code="b">Cornell University, Johnson Graduate School</subfield>
+  </datafield>
+  <datafield tag="022" ind1="" ind2="">
+   <subfield code="a">0001-8392</subfield>
+  </datafield>
+  <datafield tag="776" ind1="" ind2="">
+   <subfield code="x">1930-3815</subfield>
+  </datafield>
+  <datafield tag="090" ind1="" ind2="">
+   <subfield code="a">954921333016</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1956. </subfield>
+   <subfield code="s">1000000000001224</subfield>
+   <subfield code="t">1000000000000630</subfield>
+   <subfield code="x">Business Source Complete:Full Text</subfield>
+   <subfield code="z">1000000000123063</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1995 until 2000. </subfield>
+   <subfield code="s">3450000000000061</subfield>
+   <subfield code="t">3450000000000049</subfield>
+   <subfield code="x">EBSCOhost OmniFile Full Text Select:Full Text</subfield>
+   <subfield code="z">3450000000026685</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1956. </subfield>
+   <subfield code="s">1000000000003191</subfield>
+   <subfield code="t">1000000000002497</subfield>
+   <subfield code="x">EBSCOhost Political Science Complete:Full Text</subfield>
+   <subfield code="z">1000000002098212</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1990. </subfield>
+   <subfield code="s">1000000000002115</subfield>
+   <subfield code="t">1000000000001465</subfield>
+   <subfield code="x">Education Research Complete:Full Text</subfield>
+   <subfield code="z">2670000000148099</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1956 volume: 1 issue: 1 until 2011 volume: 56 issue: 4. </subfield>
+   <subfield code="s">111081201237001</subfield>
+   <subfield code="t">111081201237000</subfield>
+   <subfield code="x">JSTOR Arts and Sciences IV:Full Text</subfield>
+   <subfield code="z">111082312354002</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1956 volume: 1 issue: 1 until 2011 volume: 56 issue: 4. </subfield>
+   <subfield code="s">111006221384001</subfield>
+   <subfield code="t">111006221384000</subfield>
+   <subfield code="x">JSTOR Business Collection:Full Text</subfield>
+   <subfield code="z">111006223850029</subfield>
+  </datafield>
+  <datafield tag="866" ind1="" ind2="">
+   <subfield code="a">Available from 1987 until 2001. </subfield>
+   <subfield code="s">2550000000000007</subfield>
+   <subfield code="t">2550000000000007</subfield>
+   <subfield code="x">ProQuest ABI/INFORM Complete New Platform:Full Text</subfield>
+   <subfield code="z">2550000000159548</subfield>
+ </datafield>
+ </record>
+ </collection>

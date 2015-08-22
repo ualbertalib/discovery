@@ -1,0 +1,2279 @@
+<?xml version="1.0"?><root><databases>
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>212</minor_id>
+  <record_id>Nutrition</record_id>
+  <rank/>
+  <description/>
+  <minor>Nutrition</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>22</minor_id>
+  <record_id>Biochemistry</record_id>
+  <rank/>
+  <description/>
+  <minor>Biochemistry</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>98</minor_id>
+  <record_id>Human Ecology</record_id>
+  <rank/>
+  <description/>
+  <minor>Human Ecology</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>510</minor_id>
+  <record_id>Plant Science</record_id>
+  <rank/>
+  <description/>
+  <minor>Plant Science</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>96</minor_id>
+  <record_id>Food and Nutrition</record_id>
+  <rank/>
+  <description/>
+  <minor>Food and Nutrition</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>621</minor_id>
+  <record_id>Environnement</record_id>
+  <rank/>
+  <description/>
+  <minor>Environnement</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>100</minor_id>
+  <record_id>Resource Economics and Environmental Sociology</record_id>
+  <rank/>
+  <description/>
+  <minor>Resource Economics and Environmental Sociology</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>180</minor_id>
+  <record_id>Agriculture, Life &amp; Environmental Sciences</record_id>
+  <rank/>
+  <description/>
+  <minor>Agriculture, Life &amp; Environmental Sciences</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>95</minor_id>
+  <record_id>Agriculture</record_id>
+  <rank/>
+  <description/>
+  <minor>Agriculture</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>97</minor_id>
+  <record_id>Forestry</record_id>
+  <rank/>
+  <description/>
+  <minor>Forestry</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>99</minor_id>
+  <record_id>Renewable Resources</record_id>
+  <rank/>
+  <description/>
+  <minor>Renewable Resources</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>249</minor_id>
+  <record_id>Ressources en francais</record_id>
+  <rank/>
+  <description/>
+  <minor>Ressources en francais</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>44</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>Agricola</title>
+  <search_title>Agricola</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>Agricola (1970 to the present) covers U.S. agricultural and life sciences information. It consists of over 3.3 milion citations to journal articles, monographs, theses, patents, and technical reports. Subject areas include:  agricultural economics and rural sociology, agricultural production, animal sciences, chemistry, entomology, food and human nutrition, forestry, natural resources, pesticides, plant science, soils and fertilizers, and water resources. Also includes related areas such as biology and biotechnology, botany, ecology, and natural history. Agricola corresponds to the Bibliography of Agriculture. </abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>ALternate access old link - changed September 4, 2014:http://www.nal.usda.gov/ag98/March 31/07 - Removed ERL/SilverPlatter link:http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=AGRIJan 23/07 - removed Alternative Access (WebSpirs 4.3):http://spwebs.silverplatter.com/uofalberta?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (Changed May 1/04):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Local server (changed Dec 17/04):http://erl.ebdon.library.ualberta.ca:8590/agr?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(AG)Link to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/agr?</comments>
+  <single_search_id>EBSCOAgricola</single_search_id>
+  <primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=ehost</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>agricola</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:46:39</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-09-04 07:08:25</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es Agricola offre des ressources portant sur les sciences de l'agriculture et de la vie publi&#xE9;es aux &#xC9;tats-Unis depuis 1970. Elle comprend plus de 3,3 millions de citations d'articles de p&#xE9;riodiques, de livres, de th&#xE8;ses, de brevets et de rapports techniques. L'&#xE9;conomie agricole, la sociologie rurale, la production agricole, les sciences animales, la chimie, l'entomologie, l'alimentation et la nutrition humaine, la foresterie, les ressources naturelles, les pesticides, les sciences v&#xE9;g&#xE9;tales, les sols et les engrais, ainsi que les ressources en eau font partie des sujets couverts. Des domaines connexes tels que la biologie, la biotechnologie, la botanique, l'&#xE9;cologie et l'histoire naturelle y sont &#xE9;galement abord&#xE9;s. Agricola est l'&#xE9;quivalent de la base de donn&#xE9;es Bibliography of Agriculture.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.ebscohost.com/login.aspx?defaultdb=agr&amp;profile=web</french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>84</minor_id>
+  <record_id>Biological Sciences</record_id>
+  <rank/>
+  <description/>
+  <minor>Biological Sciences</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>637</minor_id>
+  <record_id>Aboriginal Sports and Recreation</record_id>
+  <rank/>
+  <description/>
+  <minor>Aboriginal Sports and Recreation</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>46</minor_id>
+  <record_id>Physiology</record_id>
+  <rank/>
+  <description/>
+  <minor>Physiology</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>22</minor_id>
+  <record_id>Biochemistry</record_id>
+  <rank/>
+  <description/>
+  <minor>Biochemistry</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>98</minor_id>
+  <record_id>Human Ecology</record_id>
+  <rank/>
+  <description/>
+  <minor>Human Ecology</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>118</minor_id>
+  <record_id>Chemical Engineering</record_id>
+  <rank/>
+  <description/>
+  <minor>Chemical Engineering</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>510</minor_id>
+  <record_id>Plant Science</record_id>
+  <rank/>
+  <description/>
+  <minor>Plant Science</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>212</minor_id>
+  <record_id>Nutrition</record_id>
+  <rank/>
+  <description/>
+  <minor>Nutrition</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>621</minor_id>
+  <record_id>Environnement</record_id>
+  <rank/>
+  <description/>
+  <minor>Environnement</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>96</minor_id>
+  <record_id>Food and Nutrition</record_id>
+  <rank/>
+  <description/>
+  <minor>Food and Nutrition</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>100</minor_id>
+  <record_id>Resource Economics and Environmental Sociology</record_id>
+  <rank/>
+  <description/>
+  <minor>Resource Economics and Environmental Sociology</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>180</minor_id>
+  <record_id>Agriculture, Life &amp; Environmental Sciences</record_id>
+  <rank/>
+  <description/>
+  <minor>Agriculture, Life &amp; Environmental Sciences</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>95</minor_id>
+  <record_id>Agriculture</record_id>
+  <rank/>
+  <description/>
+  <minor>Agriculture</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>508</minor_id>
+  <record_id>Nanoscience and Nanotechnology</record_id>
+  <rank/>
+  <description/>
+  <minor>Nanoscience and Nanotechnology</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>99</minor_id>
+  <record_id>Renewable Resources</record_id>
+  <rank/>
+  <description/>
+  <minor>Renewable Resources</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>97</minor_id>
+  <record_id>Forestry</record_id>
+  <rank/>
+  <description/>
+  <minor>Forestry</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>114</minor_id>
+  <record_id>Physical Education &amp; Recreation</record_id>
+  <rank/>
+  <description/>
+  <minor>Physical Education &amp; Recreation</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>47</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>CAB Abstracts</title>
+  <search_title>CAB Abstracts</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>&lt;p&gt;CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including:  crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism. Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on:  human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International. &lt;/p&gt;&lt;p&gt;Also includes full text from a number of journals, conference proceedings, and review articles.&lt;/p&gt;</abstract>
+  <coverage>1910-present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>08/12/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments>Old URL (Changed January 13, 2014):http://isiknowledge.com/cabiOld URL on Silverplatter: http://web5s.silverplatter.com/webspirs/start.ws?customer=uofalberta&amp;databases=CABILocal Server (changed May 2/05):http://erl.ebdon.library.ualberta.ca:8590/pais?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CABI)Local server (changed Dec. 17/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?sp.form.first.p=srchmain.htm&amp;sp.dbid.p=S(CI)Direct to menu (changed Aug/04):http://erl.ebdon.library.ualberta.ca:8590/cabab?</comments>
+  <single_search_id/>
+  <primary_url>http://webofknowledge.com/?DestApp=CABI&amp;editions=ABSTRACTS</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info>Internet Explorer 9 Users - If you encounter problems, please use &lt;a href="http://support.microsoft.com/kb/956197"&gt;Compatibility Mode&lt;/a&gt;</supp_info>
+  <order_title>cab abstracts</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Agriculture and biological sciences</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-12-17 07:54:36</open_url_date>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2014-01-13 14:47:03</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>84</minor_id>
+  <record_id>Biological Sciences</record_id>
+  <rank/>
+  <description/>
+  <minor>Biological Sciences</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>49</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>SIRIC (Soybean Insect Research Information Center)</title>
+  <search_title>SIRIC Soybean Insect Research Information Center</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>0</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>SIRIC (Soybean Insect Research Information Center) collects and indexes the world's research literature on soybean-related arthropods. </abstract>
+  <coverage/>
+  <url/>
+  <conditions/>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>06/09/2003</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments/>
+  <single_search_id/>
+  <primary_url>http://insectweb.inhs.uiuc.edu/Soy/Siric/</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>siric (soybean insect research information center)</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Soybean-related arthropods</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>N</open_url>
+  <open_url_date/>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2003-06-09 00:00:00</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>95</minor_id>
+  <record_id>Agriculture</record_id>
+  <rank/>
+  <description/>
+  <minor>Agriculture</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>49</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>Database - Citation</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>SIRIC (Soybean Insect Research Information Center)</title>
+  <search_title>SIRIC Soybean Insect Research Information Center</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>0</ua_only>
+  <new/>
+  <user_contact>scitech</user_contact>
+  <local_access_info/>
+  <abstract>SIRIC (Soybean Insect Research Information Center) collects and indexes the world's research literature on soybean-related arthropods. </abstract>
+  <coverage/>
+  <url/>
+  <conditions/>
+  <date_added_old>2000-06-26</date_added_old>
+  <date_updated_old>06/09/2003</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>scitech</unit_library>
+  <comments/>
+  <single_search_id/>
+  <primary_url>http://insectweb.inhs.uiuc.edu/Soy/Siric/</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>siric (soybean insect research information center)</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Soybean-related arthropods</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>N</open_url>
+  <open_url_date/>
+  <date_added>2000-06-26 00:00:00</date_added>
+  <date_updated>2003-06-09 00:00:00</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>180</minor_id>
+  <record_id>Agriculture, Life &amp; Environmental Sciences</record_id>
+  <rank/>
+  <description/>
+  <minor>Agriculture, Life &amp; Environmental Sciences</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>61</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>E-journal</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>ABI Inform Complete</title>
+  <search_title>ABI Inform Complete</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>business</user_contact>
+  <local_access_info/>
+  <abstract>&lt;b&gt;&lt;i&gt;ABI Inform Complete&lt;/i&gt;&lt;/b&gt; includes full-text journals, dissertations, working papers, key business and economics periodicals such as the Economist, country-and industry-focused reports, and downloadable data.  It comprises the following titles:  &lt;ul class="arrows indent"&gt;&lt;li&gt;&lt;b&gt;&lt;i&gt;&lt;a href="http://search.proquest.com/abidateline/advanced?accountid=14474"&gt;ABI Inform Dateline&lt;/a&gt;&lt;/i&gt;&lt;/b&gt;: Includes local and regional business publications, including McClatchey Tribune titles, with news about issues such as local companies, analysis, and information on local markets . &lt;li&gt;&lt;b&gt;&lt;i&gt;&lt;a href="http://search.proquest.com/abiglobal/advanced?accountid=14474"&gt;ABI Inform Global&lt;/a&gt;&lt;/i&gt;&lt;/b&gt;: Includes in-depth coverage for thousands of publications, most of which are available in full text.&lt;li&gt;&lt;b&gt;&lt;i&gt;&lt;a href="http://search.proquest.com/abitrade/advanced?accountid=14474"&gt;ABI Inform Trade &amp; Industry&lt;/a&gt;&lt;/i&gt;&lt;/b&gt;: Includes in-depth coverage of companies, products, executives, trends and other topics.&lt;/ul&gt;</abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposesonly, and does not systematically download or retainsubstantial portions of information. </conditions>
+  <date_added_old>2000-06-27</date_added_old>
+  <date_updated_old>09/21/2005</date_updated_old>
+  <author/>
+  <contributor/>
+  <unit_library>business</unit_library>
+  <comments>Old URL (Changed May 15, 2012):http://www.proquest.com/pqdauto?COPT=U1BMPTEmREJTPTM@Old link (changed January 20/02):http://www.umi.com/pqdauto?ts=0Old link (changed Sep 4/02): http://www.umi.com/pqdauto?COPT=U1BMPTEmREJTPTM@</comments>
+  <single_search_id/>
+  <primary_url>http://search.proquest.com/abicomplete/advanced?accountid=14474</primary_url>
+  <primary_url_type>Web</primary_url_type>
+  <supp_info/>
+  <order_title>abi inform complete</order_title>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description>Business &amp; management articles including  engineering, health, education sectors</short_description>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id>1</vendor_id>
+  <open_url>Y</open_url>
+  <open_url_date>2004-07-07 07:54:50</open_url_date>
+  <date_added>2000-06-27 00:00:00</date_added>
+  <date_updated>2015-02-12 13:24:26</date_updated>
+  <error_message/>
+  <loishole_logo>0</loishole_logo>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description>Articles portant sur les affaires et la gestion, l'ing&#xE9;nierie, la sant&#xE9; et l'&#xE9;ducation.</french_short_description>
+  <french_supp_info>Interface en fran&#xE7;ais disponible.</french_supp_info>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract>La base de donn&#xE9;es &lt;B&gt;ABI Inform&lt;/B&gt; indexe et fournit le r&#xE9;sum&#xE9; analytique d'articles provenant de plus de mille p&#xE9;riodiques du domaine des affaires publi&#xE9;s depuis 1970. Le texte int&#xE9;gral d'articles provenant d'environ 600 des mille p&#xE9;riodiques index&#xE9;s est &#xE9;galement inclus.</french_abstract>
+  <french_coverage>Depuis 1970</french_coverage>
+  <french_conditions>L'utilisation de cette ressource est limit&#xE9;e aux membres de la communaut&#xE9; universitaire et aux usagers se trouvant sur place, c'est-&#xE0;-dire dans une biblioth&#xE8;que de la University of Alberta. Il est interdit d'utiliser cette ressource &#xE0; des fins autres que la recherche ou l'enseignement individuel et non commercial. Il est &#xE9;galement interdit d'effectuer le t&#xE9;l&#xE9;chargement syst&#xE9;matique du contenu de cette ressource ou d'en retirer des quantit&#xE9;s substantielles d'information par d'autres moyens.</french_conditions>
+  <french_primary_url>http://search.proquest.com/abiglobal/advanced?accountid=14474 </french_primary_url>
+  <french_primary_url_type>Acc&#xE8;s</french_primary_url_type>
+  <french_sponsor/>
+  <ccid_authentication>0</ccid_authentication>
+  <publish>1</publish>
+  <minor_id>147</minor_id>
+  <record_id>Small Business</record_id>
+  <rank/>
+  <description/>
+  <minor>Small Business</minor>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+
+<database>
+  <id>61</id>
+  <core/>
+  <db_display/>
+  <language>english</language>
+  <resource_type>E-journal</resource_type>
+  <conditions_of_use>0</conditions_of_use>
+  <title>ABI Inform Complete</title>
+  <search_title>ABI Inform Complete</search_title>
+  <software/>
+  <branding>none</branding>
+  <ua_only>1</ua_only>
+  <new/>
+  <user_contact>business</user_contact>
+  <local_access_info/>
+  <abstract>&lt;b&gt;&lt;i&gt;ABI Inform Complete&lt;/i&gt;&lt;/b&gt; includes full-text journals, dissertations, working papers, key business and economics periodicals such as the Economist, country-and industry-focused reports, and downloadable data.  It comprises the following titles:  &lt;ul class="arrows indent"&gt;&lt;li&gt;&lt;b&gt;&lt;i&gt;&lt;a href="http://search.proquest.com/abidateline/advanced?accountid=14474"&gt;ABI Inform Dateline&lt;/a&gt;&lt;/i&gt;&lt;/b&gt;: Includes local and regional business publications, including McClatchey Tribune titles, with news about issues such as local companies, analysis, and information on local markets . &lt;li&gt;&lt;b&gt;&lt;i&gt;&lt;a href="http://search.proquest.com/abiglobal/advanced?accountid=14474"&gt;ABI Inform Global&lt;/a&gt;&lt;/i&gt;&lt;/b&gt;: Includes in-depth coverage for thousands of publications, most of which are available in full text.&lt;li&gt;&lt;b&gt;&lt;i&gt;&lt;a href="http://search.proquest.com/abitrade/advanced?accountid=14474"&gt;ABI Inform Trade &amp; Industry&lt;/a&gt;&lt;/i&gt;&lt;/b&gt;: Includes in-depth coverage of companies, products, executives, trends and other topics.&lt;/ul&gt;</abstract>
+  <coverage>1970 - present</coverage>
+  <url/>
+  <conditions>Use of this product is restricted to membersof the University of Alberta community andto users of the Library's physical facilities.It is the responsibility of each user to ensurethat he or she uses this product for individual,non-commercial educational or research purposes</conditions>
+  <date_added_old/>
+  <date_updated_old/>
+  <author/>
+  <contributor/>
+  <unit_library/>
+  <comments/>
+  <single_search_id/>
+  <primary_url/>
+  <primary_url_type/>
+  <supp_info/>
+  <order_title/>
+  <cdrom/>
+  <concurrent_limits/>
+  <short_description/>
+  <sponsor/>
+  <stats_link/>
+  <vendor_link/>
+  <vendor_id/>
+  <open_url/>
+  <open_url_date/>
+  <date_added/>
+  <date_updated/>
+  <error_message/>
+  <loishole_logo/>
+  <french_title/>
+  <french_order_title/>
+  <french_short_description/>
+  <french_supp_info/>
+  <french_user_contact/>
+  <french_local_access_info/>
+  <french_abstract/>
+  <french_coverage/>
+  <french_conditions/>
+  <french_primary_url/>
+  <french_primary_url_type/>
+  <french_sponsor/>
+  <ccid_authentication/>
+  <publish/>
+  <minor_id/>
+  <record_id/>
+  <rank/>
+  <description/>
+  <minor/>
+  <display_single_search/>
+  <type>Database</type>
+  <electronic>Online</electronic>
+</database>
+</databases></root>

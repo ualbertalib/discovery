@@ -9,7 +9,7 @@ solr: http://localhost:8983/solr
 
 proxy: http://login.ezproxy.library.ualberta.ca/login?url=
 
-collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services"]
+collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set"]
 
 era:
    schema: dublin_core
@@ -50,6 +50,11 @@ sfx_test:
   schema: marc
   path: "data/sfx.xml"
 
+sfx_test_set:
+  config: "config/SolrMarc/sfx_config.properties"
+  schema: marc
+  path: "spec/fixtures/sfx_test_set.xml"
+
 symphony:
   config: "config/SolrMarc/symphony_config.properties"
   schema: marc
@@ -82,6 +87,16 @@ databases:
   expand_path: "data/databases.xml"
   path: "data/databases.csv"
   endpoint: http://web.library.ualberta.ca/batchjobs/SFX/dbMetadata/dbdump_csv.php
+
+database_test_set:
+  schema: database
+  root: "//databases"
+  delimiter: "//database"
+  namespace: ""
+  vocabulary: DatabaseVocabulary
+  mode: file
+  expand_path: "spec/fixtures/databases.xml"
+  path: "spec/fixtures/database_test_set.csv"
 
 services:
   schema: services
