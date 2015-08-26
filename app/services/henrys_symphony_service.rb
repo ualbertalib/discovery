@@ -30,6 +30,7 @@ class SymphonyService
           end
         end
       end
+    nodes
   end
 
   private
