@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DublinCoreVocabulary" tests="4" time="0.068166139" failures="0" errors="0" skipped="0" timestamp="2015-08-05T15:29:35-06:00">
-  <testcase name="DublinCoreVocabulary should be a Dublin Core OM vocabulary with a terminology-based solrizer" time="0.000848539">
+<testsuite name="DublinCoreVocabulary" tests="4" time="0.053173016" failures="0" errors="0" skipped="0" timestamp="2015-08-27T10:36:44-06:00">
+  <testcase name="DublinCoreVocabulary should be a Dublin Core OM vocabulary with a terminology-based solrizer" time="0.00073846">
   </testcase>
-  <testcase name="DublinCoreVocabulary should hold all the Dublin Core Core Elements" time="0.001683633">
+  <testcase name="DublinCoreVocabulary should hold all the Dublin Core Core Elements" time="0.00146647">
   </testcase>
-  <testcase name="DublinCoreVocabulary should hold fields for admin and technical metadata (non-DC)" time="0.001019599">
+  <testcase name="DublinCoreVocabulary should hold fields for admin and technical metadata (non-DC)" time="0.0009376">
   </testcase>
-  <testcase name="DublinCoreVocabulary should have the fields tagged for Solr indexing" time="0.064211036">
+  <testcase name="DublinCoreVocabulary should have the fields tagged for Solr indexing" time="0.049680946">
   </testcase>
 </testsuite>
