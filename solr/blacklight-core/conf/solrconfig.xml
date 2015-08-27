@@ -241,6 +241,7 @@
          format,
          pub_date,
          title_series_t,
+         marc_display
        </str>
 
        <str name="facet">true</str>
