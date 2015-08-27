@@ -39,12 +39,16 @@ class SymphonyService
   end
 
   def get(path, item_id)
-      nodes = @document.xpath("//xmlns:ItemInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
-      nodes.each do |node|
-        current_node = node
-        if current_node.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == item_id
-          return current_node.at_xpath(path, :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+      nodes = @document.xpath("//xmlns:ItemInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard") if @document
+      if nodes
+        nodes.each do |node|
+          current_node = node
+          if current_node.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == item_id
+            return current_node.at_xpath(path, :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+          end
         end
+      else
+        return "NO_HOLDINGS_FOUND"
       end
     nodes
   end
