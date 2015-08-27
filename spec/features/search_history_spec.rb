@@ -1,12 +1,6 @@
 require_relative "../rake_helper"
 require_relative "../spec_helper"
 
-include RakeTasks
-
-initialize_rake_tasks
-delete_solr_index
-ingest_all_test_sets
-
 RSpec.feature "Search history test", :type => :feature do
   scenario "User wants to see their search history" do
     visit "/search_history"

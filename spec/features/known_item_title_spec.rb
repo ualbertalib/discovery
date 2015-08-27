@@ -3,17 +3,13 @@ require_relative "./relevance_helper"
 describe "Search by title" do
   it "should return only one title" do
 
-    # in this case, there are two editions (2011 and 2012)
-    resp = solr_response("title_display", '"Clojure programming"', "select")
+    resp = solr_response("title_display", '"Shakespeare at the Globe"', "select")
     docs = resp['response']['docs']
     hits = docs.size
-    expect(hits).to eq 2
-    expect(docs.first['title_display'].first).to eq "Clojure programming"
-    expect(docs.last['title_display'].first).to eq "Clojure programming"
-    expect(docs.first['author_display'].first).to eq "Emerick, Chas"
-    expect(docs.last['author_display'].first).to eq "Emerick, Chas"
-    expect(docs.first['pub_date'].first).to eq "2011"
-    expect(docs.last['pub_date'].first).to eq "2012"
+    expect(hits).to eq 1
+    expect(docs.first['title_display'].first).to eq "Shakespeare at the Globe"
+    expect(docs.first['author_display'].first).to eq "Beckerman, Bernard"
+    expect(docs.first['pub_date'].first).to eq "1966"
 
 
     # resp = solr_response("title_display", '"The Great Gatsby"', "select")
