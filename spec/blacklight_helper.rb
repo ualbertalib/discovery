@@ -20,8 +20,6 @@ require_relative "../app/helpers/status_helper.rb"
 require_relative "../app/services/marc_module.rb"
 require_relative "../app/services/sfx_service.rb"
 require_relative "../app/services/symphony_service.rb"
-require_relative "acceptance/application_url.rb"
-
 
 module E
   def *(path)

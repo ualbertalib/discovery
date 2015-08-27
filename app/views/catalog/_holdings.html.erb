@@ -11,6 +11,7 @@
           </tr>
 
           <br />
+          <% if @document["format"].first == "Journal" %>
           <strong>Library has:</strong>
           <% @summary_holdings = [] %>
           <% for item in @holdings %>
@@ -22,6 +23,7 @@
             <% end %>
             <br />
             <br />
+          <% end %>
 
           <% for item in @holdings %> 
 
