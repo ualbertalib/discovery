@@ -10,20 +10,17 @@ class BentoController < ApplicationController
 
     load_lookup_tables
 
-    collections = ["databases", "sfx", "symphony", "ebooks", "eds"]
+    collections = ["databases", "sfx", "symphony", "ebooks"] #, "eds"]
     threads = []
 
     @rows = 10
     @complete_count = 0
 
-    collections.each do |collection|
-      threads << Thread.new do
-        self.send("populate_#{collection}")
-      end
-    end
+    @eds_count = 0   #EDS is returning "401 unauthorized"
+    @eds = "Empty Search"
 
-    threads.each do |thread|
-      thread.join
+    collections.each do |collection|
+      self.send("populate_#{collection}")
     end
 
   end
@@ -32,10 +29,10 @@ class BentoController < ApplicationController
 
   #desperately needs refactoring
 
-  def populate(controller, facet)
+  def populate(facet)
     @query = params[:q]
     documents = {}
-    (@solr_response, @document_list) = controller.new.get_search_results(:q => @query, :f => facet)
+    (@solr_response, @document_list) = self.get_search_results(:q => @query, :f => facet)
     documents["count"] = @solr_response["response"]["numFound"]
     @complete_count += documents["count"]
     @document_list.each do |doc|
@@ -45,34 +42,28 @@ class BentoController < ApplicationController
     documents
   end
 
+  def populate_collection(options = {})
+    collection = populate(options)
+    count = collection["count"]
+    collection.delete("count")
+    return collection, count
+  end
+
   def populate_databases
-    databases = populate(CatalogController, {format: 'Database'})
-    @database_count = databases["count"]
-    databases.delete("count")
     @rows = 5
-    @databases = databases
+    @databases, @database_count = populate_collection({format: 'Database'})
   end
 
   def populate_sfx
-    ejournals = populate(CatalogController, {source: 'SFX'})
-    @ejournals_count = ejournals["count"]
-    ejournals.delete("count")
-    @ejournals = ejournals
+    @ejournals, @ejournals_count = populate_collection({source: 'SFX'})
   end
 
   def populate_symphony
-    symphony = populate(CatalogController, {source: 'Symphony', electronic_tesim: 'Print'})
-    @symphony_count = symphony["count"]
-    symphony.delete("count")
-    @symphony = symphony
-
+    @symphony, @symphony_count = populate_collection({source: 'Symphony', electronic_tesim: 'Print'})
   end
 
   def populate_ebooks
-    ebooks = populate(CatalogController, {source:'Symphony', electronic_tesim: 'Online'})
-    @ebooks_count = ebooks["count"]
-    ebooks.delete("count")
-    @ebooks = ebooks
+    @ebooks, @ebooks_count = populate_collection({source: 'Symphony', electronic_tesim: 'Online'})
   end
 
   def populate_eds
