@@ -10,7 +10,7 @@ class BentoController < ApplicationController
 
     load_lookup_tables
 
-    collections = ["databases", "sfx", "symphony", "ebooks"] #, "eds"]
+    collections = ["databases", "sfx", "symphony", "ebooks", "eds"]
     threads = []
 
     @rows = 10
