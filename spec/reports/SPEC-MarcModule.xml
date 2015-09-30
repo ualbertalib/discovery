@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MarcModule" tests="3" time="0.002603174" failures="0" errors="0" skipped="0" timestamp="2015-08-27T10:36:44-06:00">
-  <testcase name="MarcModule should return a nokogiri document of a marc record" time="0.000672261">
-  </testcase>
-  <testcase name="MarcModule should return the value of a marc field" time="0.00073642">
-  </testcase>
-  <testcase name="MarcModule should return the value of a marc subfield" time="0.000925614">
-  </testcase>
-</testsuite>

@@ -1,11 +1,11 @@
 class SymphonyService
 
-  def initialize(id)
+  def initialize(id, xml_response=nil)
     @ws_endpoint = "https://ws.library.ualberta.ca/symws3/rest/standard/"
     @method = "lookupTitleInfo"
     @parameters = "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeMarcHoldings=true&titleID="
     if valid? id
-      xml_response = open(@ws_endpoint+@method+@parameters+id).read
+      xml_response ||= open(@ws_endpoint+@method+@parameters+id).read
       @document = Nokogiri::XML(xml_response)
     end
   end

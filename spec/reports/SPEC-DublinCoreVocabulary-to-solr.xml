@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="DublinCoreVocabulary#to_solr" tests="1" time="0.00361504" failures="0" errors="0" skipped="0" timestamp="2015-08-27T10:36:44-06:00">
-  <testcase name="DublinCoreVocabulary#to_solr should include Solr-tagged fields in a hash" time="0.003419288">
-  </testcase>
-</testsuite>

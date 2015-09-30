@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Batch Ingest Process when it is provided with a collection of files in a directory" tests="1" time="0.234590947" failures="0" errors="0" skipped="0" timestamp="2015-08-27T10:36:44-06:00">
-  <testcase name="Batch Ingest Process when it is provided with a collection of files in a directory should process and ingest every record in the directory" time="0.234362445">
-  </testcase>
-</testsuite>
