@@ -179,7 +179,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'description_tesim', :label => 'Description'
     config.add_show_field 'isbn_tesim', :label => 'ISBN'
     config.add_show_field 'issn_tesim', :label => 'ISSN'
-    config.add_show_field 'summary_holdings_tesim', :label => 'Library has'
     config.add_show_field 'general_note_tesim', :label => 'General Note'
     config.add_show_field 'local_note_tesim', :label => 'Note'
     config.add_show_field 'contents_tesim', :label => 'Contents'
