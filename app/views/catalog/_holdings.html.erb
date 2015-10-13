@@ -30,7 +30,7 @@
             <% @unavailable = true if @statuses[item[:status].to_s.downcase] == "unavailable" %>
             <tr>
               <td><%= item[:call_number] %></td>
-              <td><%= item[:copies] %> </td>a
+              <td><%= item[:copies] %> </td>
               <td><%= @statuses[item[:status].to_s.downcase] %></td>
               <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= @locations[item[:location].downcase.gsub("_","")] %></a></td>
               <% if @document["format"].include? "Journal" %>
