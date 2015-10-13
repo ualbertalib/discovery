@@ -11,6 +11,21 @@ class SymphonyService
   end
 
   #needs refactoring!
+  
+  def items
+    raw_items = @document.xpath("//xmlns:CallInfo")
+    items = []
+    for item in raw_items do
+      item_id = item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+      call = item.at_xpath(".//xmlns:callNumber", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+      status = get_status(item_id)
+      copies = item.at_xpath(".//xmlns:numberOfCopies", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+      type = get_item_type(item_id)
+      location = item.at_xpath(".//xmlns:libraryID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+      items << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies}
+    end
+    items
+  end
 
   def get_status(item_id)
     get(".//xmlns:currentLocationID", item_id)
@@ -18,6 +33,14 @@ class SymphonyService
 
   def get_item_type(item_id)
     get(".//xmlns:itemTypeID", item_id)
+  end
+
+  def get_call_number(item_id)
+    get(".//xmlns:callNumber", item_id)
+  end
+
+  def get_location(item_id)
+    get(".//xmlns:libraryID", item_id)
   end
 
   def get_summary_holdings(item_id)

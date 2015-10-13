@@ -33,7 +33,8 @@ class CatalogController < ApplicationController
           @holdings = fetch_symphony_holdings(@document)
         }
         time2 = Benchmark.realtime{
-          @holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
+          #@holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
+          @holdings
         }
         log_symphony_service_benchmarks(holdings_log, time1, time2)
       end

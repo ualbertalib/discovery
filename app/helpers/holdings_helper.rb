@@ -45,6 +45,7 @@ module HoldingsHelper
       item_data[:location] = get_marc_subfield(item, 'm')
       symphony_response = options[:symphony_response]
       populate_holdings_log.puts "symphony_response.class=#{symphony_response.class}"
+      items = symphony_response.items
       item_data[:status] = symphony_response.get_status(item_data[:item_id])
       item_data[:item_type] = symphony_response.get_item_type(item_data[:item_id])
       item_data[:summary_holdings] = symphony_response.get_summary_holdings(item_data[:item_id])
@@ -76,11 +77,11 @@ module HoldingsHelper
     create_holdings_log.puts "doc.class=#{doc.class}"
     id = get_marc_id(doc)
     symphony_response = SymphonyService.new(id)
-    for item in marc_field(doc, options[:field]) do
-      create_holdings_log.puts "marc_id=#{id}, method=#{options[:method]}, item.class=#{item.class}, additional=#{options[:additional_arg]}, items.length=#{items.length}"
-      self.send options[:method].to_sym, {:id => get_marc_id(doc), :items => items, :item => item, :additional => options[:additional_arg], :symphony_response=>symphony_response}
-    end
-    items
+    # for item in marc_field(doc, options[:field]) do
+    #   create_holdings_log.puts "marc_id=#{id}, method=#{options[:method]}, item.class=#{item.class}, additional=#{options[:additional_arg]}, items.length=#{items.length}"
+    #   self.send options[:method].to_sym, {:id => get_marc_id(doc), :items => items, :item => item, :additional => options[:additional_arg], :symphony_response=>symphony_response}
+    # end
+    symphony_response.items
   end
 
 end
