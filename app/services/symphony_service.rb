@@ -44,10 +44,11 @@ class SymphonyService
       item_id = id(item)
       call = get(".//xmlns:callNumber", item_id)
       status = get("currentLocationID", item_id)
+      status == "CHECKEDOUT" ? due = get("dueDate") : ""
       copies = get("numberOfCopies", item_id)
       type = get("itemTypeID", item_id)
       location = get("libraryID", item_id)
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies}
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due}
   end
 
   def holdings_items

@@ -31,7 +31,11 @@
             <tr>
               <td><%= item[:call] %></td>
               <td><%= item[:copies] %> </td>
-              <td><%= @statuses[item[:status].to_s.downcase] %></td>
+              <% if item[:status] == "CHECKEDOUT" %>
+                <td><%= Date.parse(item[:due]) %></td>
+              <% else %>
+                <td><%= @statuses[item[:status].to_s.downcase] %></td>
+              <% end %>
               <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= @locations[item[:location].downcase.gsub("_","")] %></a></td>
               <% if @document["format"].include? "Journal" %>
             <% end %>
