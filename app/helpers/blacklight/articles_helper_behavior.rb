@@ -183,7 +183,7 @@ module Blacklight::ArticlesHelperBehavior
     searchquery.insert searchtermindex, searchquery_extras
     
     # , : ( ) - unencoding expected punctuation
-    searchquery = searchquery.gsub('%28','(').gsub('%3A',':').gsub('%29',')').gsub('%23',',')
+    searchquery = searchquery.gsub('%28','(').gsub('%3A',':').gsub('%29',')').gsub('%23',',').gsub('%26', '&').gsub('%3B', ';').gsub('&quot', '%22')
     return searchquery
   end
     
