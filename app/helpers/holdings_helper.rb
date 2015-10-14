@@ -17,15 +17,4 @@ module HoldingsHelper
     SFXService.new(document).targets
   end
 
-  # Used in the index view
-  # Might as well rewrite this to use the same logic as holdings above.
-  def fetch_symphony_locations(document)
-    locations = []
-    doc = nokogiri document
-    for item in marc_field(doc, '926') do
-      locations << get_marc_subfield(item, 'm')
-    end
-    locations
-  end
-
 end
