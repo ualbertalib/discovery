@@ -30,11 +30,10 @@ class CatalogController < ApplicationController
       log_document_holdings(holdings_log)
       if @document["source"].first == "Symphony"
         time1 = Benchmark.realtime{
-          @holdings = fetch_symphony_holdings(@document)
+          @holdings = holdings(@document, :items)
         }
         time2 = Benchmark.realtime{
-          #@holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
-          @holdings
+          @holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
         }
         log_symphony_service_benchmarks(holdings_log, time1, time2)
       end
@@ -43,8 +42,7 @@ class CatalogController < ApplicationController
     holdings_log.close
 
     if @document["url_fulltext_display"]
-      @urls = create_ua_links(@document)
-      @alternative_urls = create_alternative_links(@document)
+      @urls = holdings(@document, :links)
     end
 
     if @document["subject_topic_facet"]

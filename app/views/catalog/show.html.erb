@@ -71,35 +71,25 @@
       </table>
       <br />
       <% end %>
-    
+
       <% if @urls %>
-        <% unless @urls.empty? && @alternative_urls.empty? %>
-          <div id ="electronic_access">
-            <% unless @urls.empty? %>
-              <% @urls.each do |url| %>
+        <div id ="electronic_access">
+            <% @urls.each do |location,url| %>
+                <% if location.include? "University of Alberta Access" or location.include? "Free" %>
                 <span class="url-label">URL:</span>
 
-                <% if url[:url].include? "databases" %>
+                <% if url.include? "databases" %>
+                  <a href="<%= url %>" target="_blank"><%= location %> <span><%= url %></span>
+                  </a>
 
-                <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span>
-                </a>
               <% else %>
-                <a href="<%= Rails.application.config.proxy+url[:url] %>" target="_blank"><%= url[:display] %> <span><%= url[:url] %></span>
-                </a>
-
+                  <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= location %> <span><%= url %></span>
+                  </a>
+                <% end %>
               <% end %>
               <% end %>
-            <% end %>
-
-            <% if (@urls.empty?) && (!@alternative_urls.empty?) %>
-              <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
-              <% @alternative_urls.each do |url| %>
-                <a href="<%= url[:url] %>" target="_blank"><%= url[:display] %></a>
-              <% end %>
-            <% end %>
           </div>
         <% end %>
-      <% end %>
     </div>
     <div class="col-md-3 full-record-book-jacket">
       <% if @document[:isbn_t] %>

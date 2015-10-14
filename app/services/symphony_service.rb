@@ -15,7 +15,13 @@ class SymphonyService
     items
   end
 
-  def get_summary_holdings(item_id)
+  def links
+    populate_electronic_items
+  end
+
+  private
+
+  def summary_holdings
      nodes.each do |node|
         current_node = node
         if label(current_node)
@@ -25,8 +31,6 @@ class SymphonyService
         end
       end
   end
-
-  private
 
   def ws_endpoint
     "https://ws.library.ualberta.ca/symws3/rest/standard/"
@@ -48,11 +52,26 @@ class SymphonyService
       copies = get(item, "numberOfCopies")
       type = get(item, "itemTypeID")
       location = get(item, "libraryID")
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due}
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings}
+  end
+
+  def populate_electronic_items
+    items = {}
+    
+    link_items.each do |item|
+      if label(item).text == "Electronic access" then
+        items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+      end
+    end
+    items
   end
 
   def holdings_items
     @document.xpath("//xmlns:CallInfo")
+  end
+
+  def link_items
+    @document.xpath("//xmlns:MarcEntryInfo")
   end
 
   def nodes
