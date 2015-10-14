@@ -1,55 +1,26 @@
 class SymphonyService
 
   def initialize(id, xml_response=nil)
-    @ws_endpoint = "https://ws.library.ualberta.ca/symws3/rest/standard/"
-    @method = "lookupTitleInfo"
-    @parameters = "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeMarcHoldings=true&titleID="
     if valid? id
-      xml_response ||= open(@ws_endpoint+@method+@parameters+id).read
+      xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id).read
       @document = Nokogiri::XML(xml_response)
     end
   end
 
-  #needs refactoring!
-  
   def items
-    raw_items = @document.xpath("//xmlns:CallInfo")
     items = []
-    for item in raw_items do
-      item_id = item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
-      call = item.at_xpath(".//xmlns:callNumber", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
-      status = get_status(item_id)
-      copies = item.at_xpath(".//xmlns:numberOfCopies", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
-      type = get_item_type(item_id)
-      location = item.at_xpath(".//xmlns:libraryID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
-      items << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies}
+    for item in holdings_items do
+      items << populate(item)
     end
     items
   end
 
-  def get_status(item_id)
-    get(".//xmlns:currentLocationID", item_id)
-  end
-
-  def get_item_type(item_id)
-    get(".//xmlns:itemTypeID", item_id)
-  end
-
-  def get_call_number(item_id)
-    get(".//xmlns:callNumber", item_id)
-  end
-
-  def get_location(item_id)
-    get(".//xmlns:libraryID", item_id)
-  end
-
   def get_summary_holdings(item_id)
-      nodes = @document.xpath("//xmlns:MarcEntryInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
-      nodes.each do |node|
+     nodes.each do |node|
         current_node = node
-        if current_node.at_xpath(".//xmlns:label", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
-          if current_node.at_xpath(".//xmlns:label", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == "Library has"
-            return current_node.at_xpath(".//xmlns:text", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+        if label(current_node)
+          if label(current_node).text == "Library has"
+            return node_text(current_node)
           end
         end
       end
@@ -57,22 +28,63 @@ class SymphonyService
 
   private
 
+  def ws_endpoint
+    "https://ws.library.ualberta.ca/symws3/rest/standard/"
+  end
+
+  def ws_method
+    "lookupTitleInfo"
+  end
+
+  def ws_parameters
+    "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeMarcHoldings=true&titleID="
+  end
+
+  def populate(item)
+      item_id = id(item)
+      call = get(".//xmlns:callNumber", item_id)
+      status = get("currentLocationID", item_id)
+      copies = get("numberOfCopies", item_id)
+      type = get("itemTypeID", item_id)
+      location = get("libraryID", item_id)
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies}
+  end
+
+  def holdings_items
+    @document.xpath("//xmlns:CallInfo")
+  end
+
+  def nodes
+    @document.xpath("//xmlns:MarcEntryInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+  end
+
+  def label(current_node)
+    current_node.at_xpath(".//xmlns:label", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+  end
+
+  def node_text(current_node)
+    current_node.at_xpath(".//xmlns:text", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+  end
+
   def valid? id
     id.match /^[0-9]*$/
   end
 
-  def get(path, item_id)
-      nodes = @document.xpath("//xmlns:ItemInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard") if @document
-      if nodes
-        nodes.each do |node|
-          current_node = node
-          if current_node.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == item_id
-            return current_node.at_xpath(path, :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+  def id(item)
+    item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+  end
+
+  def get(node, item_id)
+      items = @document.xpath("//xmlns:ItemInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard") if @document
+      if items
+        items.each do |item|
+          if item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == item_id
+            return item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
           end
         end
       else
         return "NO_HOLDINGS_FOUND"
       end
-    nodes
+    items
   end
 end
