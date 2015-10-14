@@ -14,7 +14,7 @@
 
   <div class="panel-body">
     <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" %>
-      <%= link_to "Place Hold", "https://myaccount.library.ualberta.ca/index.php?hldCatKey=#{@document.id}", :class => "btn hold" %>
+      <%= link_to "Place Hold", "https://myaccount.library.ualberta.ca/createholds.php?hldCatKey=#{@document.id}", :class => "btn hold" %>
       <p style="font-size:75%"> If you login with a barcode and PIN, click <a href="http://www.library.ualberta.ca/permalink/opac/<%= @document["id"] %>/WUAARCHIVE">here</>.</p>
     <% end %>
   <ul class="nav">
