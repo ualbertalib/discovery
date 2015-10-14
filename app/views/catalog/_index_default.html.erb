@@ -13,7 +13,7 @@
       <% @location_strings = [] %>
       <dt class="blacklight-format">Copies available at</dt><dd class="blacklight-format">
       <% if @holdings and @locations %>
-        <%= @holdings.each { |h| @location_strings << @locations[h.downcase] }; @location_strings.uniq.join(", ") if @holdings %></dd>
+        <%= @holdings.each { |h| @location_strings << @locations[h[:location].downcase] }; @location_strings.uniq.join(", ") if @holdings %></dd>
     <% end %>
   <% end %>
     <% if document.to_h["format"].first == "Book" and document.to_h["electronic_tesim"].first == "Online" %>
