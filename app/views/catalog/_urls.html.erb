@@ -1,0 +1,17 @@
+
+        <div id ="electronic_access">
+            <% @urls.each do |location,url| %>
+                <% if location.include? "University of Alberta Access" or location.include? "Free" %>
+                <span class="url-label">URL:</span>
+
+                <% if url.include? "databases" %>
+                  <a href="<%= url %>" target="_blank"><%= location %> <span><%= url %></span>
+                  </a>
+
+              <% else %>
+                  <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= location %> <span><%= url %></span>
+                  </a>
+                <% end %>
+              <% end %>
+              <% end %>
+          </div>
