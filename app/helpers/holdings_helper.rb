@@ -18,6 +18,7 @@ module HoldingsHelper
   end
 
   # Used in the index view
+  # Might as well rewrite this to use the same logic as holdings above.
   def fetch_symphony_locations(document)
     locations = []
     doc = nokogiri document

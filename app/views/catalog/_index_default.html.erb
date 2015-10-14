@@ -8,8 +8,8 @@
        <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_index_field_value document, :field => solr_fname %></dd>
       <% end -%>
     <% end -%>
-    <% if document.to_h["source"] and document.to_h["source"].first == "Symphony" %> 
-      <% @holdings = fetch_symphony_locations(document) if document.to_h["source"].first == "Symphony" %>
+    <% if document.to_h["source_tesim"] and document.to_h["source_tesim"].first == "Symphony" %> 
+      <% @holdings = holdings(document, :items) if document.to_h["source_tesim"].first == "Symphony" %>
       <% @location_strings = [] %>
       <dt class="blacklight-format">Copies available at</dt><dd class="blacklight-format">
       <% if @holdings and @locations %>

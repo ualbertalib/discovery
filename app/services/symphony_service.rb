@@ -48,7 +48,7 @@ class SymphonyService
       item_id = id(item)
       call = get(item, "callNumber")
       status = get(item, "currentLocationID")
-      status == "CHECKEDOUT" ? due = get("dueDate") : ""
+      status == "CHECKEDOUT" ? due = get(item, "dueDate") : ""
       copies = get(item, "numberOfCopies")
       type = get(item, "itemTypeID")
       location = get(item, "libraryID")
