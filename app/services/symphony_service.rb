@@ -42,12 +42,12 @@ class SymphonyService
 
   def populate(item)
       item_id = id(item)
-      call = get(".//xmlns:callNumber", item_id)
-      status = get("currentLocationID", item_id)
+      call = get(item, "callNumber")
+      status = get(item, "currentLocationID")
       status == "CHECKEDOUT" ? due = get("dueDate") : ""
-      copies = get("numberOfCopies", item_id)
-      type = get("itemTypeID", item_id)
-      location = get("libraryID", item_id)
+      copies = get(item, "numberOfCopies")
+      type = get(item, "itemTypeID")
+      location = get(item, "libraryID")
       {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due}
   end
 
@@ -75,17 +75,7 @@ class SymphonyService
     item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
   end
 
-  def get(node, item_id)
-      items = @document.xpath("//xmlns:ItemInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard") if @document
-      if items
-        items.each do |item|
-          if item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == item_id
-            return item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
-          end
-        end
-      else
-        return "NO_HOLDINGS_FOUND"
-      end
-    items
+  def get(item, node)
+    item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
   end
 end
