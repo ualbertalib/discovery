@@ -169,7 +169,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kramdown (1.9.0)
-    libv8 (3.16.14.12)
+    libv8 (3.16.14.13)
     logger (1.2.8)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)

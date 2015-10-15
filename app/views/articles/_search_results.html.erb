@@ -56,18 +56,22 @@
   <% end %>
   
   <% if has_any_fulltext?(result) %>
-  <dt class="blacklight-fulltext">Full-Text:</dt>
+  <dt class="blacklight-fulltext">Availability:</dt>
   <dd class="blacklight-fulltext">
   <% if has_pdf?(result) %>
-    <%= link_to "PDF Full Text", show_pdf_title_link(result) %>
+    <%# link_to "PDF Full Text", show_pdf_title_link(result) %>
+    Full Text Available
   <% elsif has_html?(result) %>
-    <%= link_to "HTML Full Text", show_best_fulltext_link(result), :target => "_blank" %>
+    <% link_to "HTML Full Text", show_best_fulltext_link(result), :target => "_blank" %>
+    Full Text Available
   <% elsif has_smartlink?(result) %>
-    <%= link_to "Linked Full Text", show_smartlink_title_link(result) %>
+    <% link_to "Linked Full Text", show_smartlink_title_link(result) %>
+    Full Text Available
   <% elsif has_ebook?(result) %>
-    <%= link_to "eBook Full Text", show_ebook_title_link(result) %>
-  <% else %>
-    <%= show_best_fulltext_link_detail(result) %>
+    <%# link_to "eBook Full Text", show_ebook_title_link(result) %>
+    Full Text Available
+  <%# else %>
+    <%#= show_best_fulltext_link_detail(result) %>
   <% end %>
   </dd>
   <% elsif has_ill?(result) %>

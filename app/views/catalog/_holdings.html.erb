@@ -32,7 +32,7 @@
               <td><%= item[:call] %></td>
               <td><%= item[:copies] %> </td>
               <% if item[:status] == "CHECKEDOUT" %>
-                <td><%= Date.parse(item[:due]) %></td>
+                <td>Due: <%= Date.parse(item[:due]) %></td>
               <% else %>
                 <td><%= @statuses[item[:status].to_s.downcase] %></td>
               <% end %>

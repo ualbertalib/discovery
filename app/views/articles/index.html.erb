@@ -77,14 +77,14 @@
   </div><!--/well -->
   <div id="content" class="col-md-9 col-sm-8">
      <% if params[:eds_action] || params[:facetfilter] || params[:limiter] %>
-               <div class="user-filters">
+       <div class="user-filters">
                 <div class="row">
                 <div class="col-sm-10">
                   <% if params[:eds_action] %>
                     <% epr = params[:eds_action].split(/\W+/) %>
-                    <span class="ufacet">
-                      <%= epr[2] %> 
-                    </span>
+                    <!-- <span class="ufacet">
+                        <%# epr[2] = "y" ? "yes" : "no" %> 
+                        </span> -->
                   <% end %>
                   <% if params[:facetfilter] %>
                     <% fpr = params[:facetfilter] %>
@@ -95,18 +95,20 @@
                       </span>
                     <% end -%>
                   <% end %>
+
                   <% if params[:limiter] %>
                     <% lpr = params[:limiter] %>
                     <% lpr.each do |lf| -%>
                       <% lufacet = lf.split(':') %> 
+                    <!-- 
                       <span class="ufacet">
-                        <%= lufacet[1] %>
-                      </span>
+                        <%# lufacet[1] %>
+                        </span> -->
                     <% end -%>
                   <% end %>
                 </div>
                 <div class="col-sm-2">
-                  <%= link_to 'Clear All Facets', articles_path(:q => params[:q]), :class => 'start-over' %>
+                  <%= link_to 'Clear All Limits', articles_path(:q => params[:q]), :class => 'start-over' %>
                   <%= link_to 'Start Over', results_path, :class => 'start-over' %>
                 </div>
               </div>
