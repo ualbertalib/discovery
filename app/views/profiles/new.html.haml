@@ -1,0 +1,53 @@
+%h1 New Staff Profile
+= form_for :profile, url: profiles_path do |f|
+	%ul.profile-form
+		%li
+			= f.label :first_name
+			= f.text_field :first_name
+		%li
+			= f.label :last_name
+			= f.text_field  :last_name
+		%li
+			= f.label :job_title
+			= f.text_field :job_title
+		%li
+			= f.label :unit
+			= f.text_field :unit
+		%li
+			= f.label :email
+			= f.text_field :email
+		%li
+			= f.label :phone
+			= f.text_field :phone
+		%li
+			= f.label :campus_address
+			= f.text_field :campus_address
+		%li
+			= f.label :expertise
+			= f.text_field  :expertise
+		%li
+			= f.label :introduction
+			= f.text_area :introduction
+		%li
+			= f.label :publications
+			= f.text_area :publications
+		%li
+			= f.label :staff_since
+			= f.text_field :staff_since
+		%li
+			= f.label :links
+			= f.text_field :url_field
+		%li
+			= f.label :orcid
+			= f.text_field :orcid
+		%li
+			= f.label :committees
+			= f.text_field  :committees
+		%li
+			= f.label :personal_interests
+			= f.text_area :personal_interests
+		%li
+			= f.label :home_page_opt_in
+			= f.radio_button :opt_in, "value", id: 'true'
+			= f.radio_button :opt_in, "value", id: 'false'
+		= f.submit :class => 'btn btn-success'

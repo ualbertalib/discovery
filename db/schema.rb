@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225182321) do
+ActiveRecord::Schema.define(version: 20151015165809) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -144,6 +144,27 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "comfy_cms_snippets", ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true
   add_index "comfy_cms_snippets", ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position"
 
+  create_table "profiles", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "job_title"
+    t.string   "unit"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "campus_address"
+    t.string   "expertise"
+    t.text     "introduction"
+    t.text     "publications"
+    t.integer  "staff_since"
+    t.string   "links"
+    t.string   "orcid"
+    t.string   "committees"
+    t.text     "personal_interests"
+    t.boolean  "opt_in"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "searches", force: :cascade do |t|
     t.text     "query_params"
     t.integer  "user_id"
@@ -155,8 +176,8 @@ ActiveRecord::Schema.define(version: 20150225182321) do
   add_index "searches", ["user_id"], name: "index_searches_on_user_id"
 
   create_table "sessions", force: :cascade do |t|
-    t.string   "session_id", null: false
-    t.text     "data"
+    t.string   "session_id",                    null: false
+    t.text     "data",       limit: 4294967295
     t.datetime "created_at"
     t.datetime "updated_at"
   end

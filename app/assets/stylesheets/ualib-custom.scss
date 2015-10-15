@@ -1529,7 +1529,66 @@ ul.foot-nav{
 	font-size: 12px;
 	padding-top: 6px;
 	padding-left: 10px;
-	}
+}
+
+
+/* Styles for Profile Application */
+.profile-form>li{
+	list-style: none;
+	margin: 10px 0px;
+}
+.profile-form>li>label{
+	width: 150px;
+	text-align: right;
+	margin-right: 5px;
+}
+.profile-form .btn-success{
+	margin-left: 160px;
+	font-size: 20px;
+}
+.staff{
+	width: 100%;
+}
+.staff th{
+	padding: 10px 40px 10px 10px;
+	border: 1px solid #fff;
+	border-width: 1px 1px 0px 1px;
+	background-color: #efefef;
+	cursor: pointer;
+}
+.staff th h3{
+	font-size: 19px;
+	background: url("sort.png") no-repeat right center;
+	padding-right: 20px;
+	display: inline;
+} 
+.staff th.phone{
+	width:120px;
+}
+.staff th.first-name{
+	width:180px;
+}
+.staff th.blank{
+	border: none;
+	background: none;
+}
+.staff td{
+	padding: 10px;
+	border: 1px solid #efefef;
+	font-size: 16px;
+}
+.staff td img{
+
+}
+.staff td h3{
+	font-size: 20px;
+}
+.a-profile{
+	list-style: none;
+}
+.a-photo{
+	float: right;
+}
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
 @media (min-width: 492px){

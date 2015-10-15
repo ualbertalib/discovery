@@ -11,4 +11,5 @@ $(document).ready(function () {
 	$('.facet_limit .twiddle').click(function(){
 		$(this).parent().find('ul').toggle();
 	});
+	$(".staff").stupidtable();
 });

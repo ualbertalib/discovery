@@ -1,0 +1,74 @@
+%h1
+  Library Staff
+ 
+%table.staff
+  %thead
+    %tr
+      %th.blank
+      %th.first-name{"data-sort" => "string"}
+        %h3
+          First Name
+      %th.last-name{"data-sort" => "string"}
+        %h3
+          Last Name
+      %th{"data-sort" => "string"}
+        %h3
+          Job Title
+      %th{"data-sort" => "string"}
+        %h3
+          Unit
+      %th{"data-sort" => "string"}
+        %h3
+          Email
+      %th.phone{"data-sort" => "string"}      
+        %h3
+          Phone
+      %th{"data-sort" => "string"}      
+        %h3
+          Building
+      %th{"data-sort" => "string"}      
+        %h3
+          Expertise
+  - @profiles.each do |profile|
+    %tr
+      - @photo_link = "staff-photos/thumbs/"+profile.last_name.downcase+".jpg"
+      - @no_photo = "staff-photos/thumbs/none.jpg"
+      - if(profile.introduction.presence || profile.publications.presence || profile.links.presence || profile.personal_interests.presence)
+        - if Rails.application.assets.find_asset @photo_link
+          %td
+            = link_to image_tag(@photo_link), profile_path(profile.id)
+        - else
+          %td
+            = link_to image_tag(@no_photo), profile_path(profile.id)
+        %td
+          %h3
+            = link_to(profile.first_name.capitalize, profile_path(profile.id)) 
+        %td
+          %h3
+            = link_to(profile.last_name.capitalize, profile_path(profile.id)) 
+      - else
+        - if Rails.application.assets.find_asset @photo_link
+          %td
+            = image_tag(@photo_link)
+        - else
+          %td 
+            = image_tag(@no_photo)
+        %td
+          %h3
+            = profile.first_name.capitalize
+        %td
+          %h3
+            = profile.last_name.capitalize
+      %td
+        = profile.job_title
+      %td      
+        = profile.unit
+      %td     
+        = profile.email
+      %td      
+        = profile.phone
+      %td      
+        = profile.campus_address
+      %td      
+        = profile.expertise
+ 
