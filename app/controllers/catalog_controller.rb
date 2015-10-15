@@ -42,7 +42,7 @@ class CatalogController < ApplicationController
     holdings_log.close
 
     if @document["url_fulltext_display"]
-      @urls = holdings(@document, :links)
+      @ua_urls, @non_ua_urls = holdings(@document, :links)
     end
 
     if @document["subject_topic_facet"]

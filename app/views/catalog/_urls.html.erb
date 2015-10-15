@@ -1,17 +1,26 @@
-
-        <div id ="electronic_access">
-            <% @urls.each do |location,url| %>
-                <% if location.include? "University of Alberta Access" or location.include? "Free" %>
+<div id ="electronic_access">
+           <% unless @ua_urls.empty? %>
+             <% @ua_urls.each do |location,url| %>
                 <span class="url-label">URL:</span>
 
                 <% if url.include? "databases" %>
-                  <a href="<%= url %>" target="_blank"><%= location %> <span><%= url %></span>
-                  </a>
+                  <a href="<%= url %>" target="_blank"><%= location %> <span><%= url %></span></a>
+                <% else %>
+                   <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= location %> <span><%= url %></span></a>
+                 <% end %>
+               <% end %> 
+             <% else %>
+                  <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
+             <% @non_ua_urls.each do |location,url| %>
+                <span class="url-label">URL:</span>
 
-              <% else %>
-                  <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= location %> <span><%= url %></span>
-                  </a>
-                <% end %>
-              <% end %>
-              <% end %>
-          </div>
+                <% if url.include? "databases" %>
+                  <a href="<%= url %>" target="_blank"><%= location %> <span><%= url %></span></a>
+                <% else %>
+                   <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= location %> <span><%= url %></span></a>
+                 <% end %>
+               <% end %> 
+             <% end %>
+        </div>
+
+
