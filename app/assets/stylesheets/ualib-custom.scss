@@ -321,6 +321,9 @@ h2 span.small{
 	padding: 5px 10px;
 	border-right: 1px solid #eee;
 }
+.nav>li.last>a {
+	border-right:none;
+}
 .nav>li>img{
 	margin-top: -10px;
 }
