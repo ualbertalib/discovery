@@ -1557,13 +1557,13 @@ ul.foot-nav{
 	cursor: pointer;
 }
 .staff th h3{
-	font-size: 19px;
+	font-size: 18px;
 	background: url("sort.png") no-repeat right center;
 	padding-right: 20px;
 	display: inline;
 } 
-.staff th.phone{
-	width:120px;
+.staff th.email h3, .staff th.phone h3, .staff th.actions h3{
+	background-image:none;
 }
 .staff th.first-name{
 	width:180px;
@@ -1575,13 +1575,10 @@ ul.foot-nav{
 .staff td{
 	padding: 10px;
 	border: 1px solid #efefef;
-	font-size: 16px;
-}
-.staff td img{
-
+	font-size: 15px;
 }
 .staff td h3{
-	font-size: 20px;
+	font-size: 21px;
 }
 .a-profile{
 	list-style: none;

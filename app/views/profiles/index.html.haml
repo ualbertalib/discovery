@@ -1,6 +1,7 @@
 %h1
   Library Staff
- 
+  - if session[:admin] 
+    TESTINT
 %table.staff
   %thead
     %tr
@@ -17,10 +18,10 @@
       %th{"data-sort" => "string"}
         %h3
           Unit
-      %th{"data-sort" => "string"}
+      %th.email
         %h3
           Email
-      %th.phone{"data-sort" => "string"}      
+      %th.phone     
         %h3
           Phone
       %th{"data-sort" => "string"}      
@@ -64,11 +65,12 @@
       %td      
         = profile.unit
       %td     
-        = profile.email
-      %td      
+        = mail_to profile.email, profile.email
+      %td.phone     
         = profile.phone
       %td      
         = profile.campus_address
       %td      
         = profile.expertise
+
  
