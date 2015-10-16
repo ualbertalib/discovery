@@ -7,7 +7,7 @@
 		-
 	= @profile.job_title
 
-= image_tag("staff-photos/"+@profile.last_name.downcase+".jpg", :class => "a-photo")
+= image_tag("staff-photos/"+@profile.first_name.downcase+"-"+@profile.last_name.downcase+".jpg", :class => "a-photo")
 %ul.a-profile
 	%li
 		= @profile.unit

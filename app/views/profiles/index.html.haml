@@ -32,7 +32,7 @@
           Expertise
   - @profiles.each do |profile|
     %tr
-      - @photo_link = "staff-photos/thumbs/"+profile.last_name.downcase+".jpg"
+      - @photo_link = "staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
       - @no_photo = "staff-photos/thumbs/none.jpg"
       - if(profile.introduction.presence || profile.publications.presence || profile.links.presence || profile.personal_interests.presence)
         - if Rails.application.assets.find_asset @photo_link
