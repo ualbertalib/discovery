@@ -5,7 +5,7 @@ class Ingester
   attr_writer :solr_object
 
   def initialize
-    @@ingest_log = Logger.new("log/ingest.log")
+    @@ingest_log = Logger.new("#{Rails.root}/log/ingest.log")
   end
 
   def add_document(vocabulary)
