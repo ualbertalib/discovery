@@ -3,6 +3,10 @@ class ProfilesController < ApplicationController
 	
 	def index
     	@profiles = Profile.all.order(:first_name)
+    	 respond_to do |format|
+    		format.html
+    		format.csv { send_data @profiles.to_csv }
+  end
   	end
 	
 	def show

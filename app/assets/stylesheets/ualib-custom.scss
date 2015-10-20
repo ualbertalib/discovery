@@ -1535,12 +1535,24 @@ ul.foot-nav{
 /* Styles for Profile Application */
 .profile-form>li{
 	list-style: none;
-	margin: 10px 0px;
+	margin: 20px 0px;
+	font-family: 'Open Sans', Arial, sans-serif;
 }
 .profile-form>li>label{
 	width: 150px;
 	text-align: right;
 	margin-right: 5px;
+	font-weight: bold;
+}
+.profile-form>li>textarea{
+	width:600px;
+	height: 200px;
+	vertical-align: top;
+}
+.profile-form>li.radio>label{
+	width:auto;
+	padding-left: 0px;
+	padding-right: 20px;
 }
 .profile-form .btn-success{
 	margin-left: 160px;
@@ -1548,6 +1560,8 @@ ul.foot-nav{
 }
 .staff{
 	width: 100%;
+	table-layout: fixed;
+	border-collapse:collapse;
 }
 .staff th{
 	padding: 10px 40px 10px 10px;
@@ -1565,12 +1579,16 @@ ul.foot-nav{
 .staff th.email h3, .staff th.phone h3, .staff th.actions h3{
 	background-image:none;
 }
-.staff th.first-name{
-	width:180px;
-}
 .staff th.blank{
 	border: none;
 	background: none;
+	width: 100px;
+}
+.staff th.email{
+	width: 200px;
+}
+.staff th.last-name{
+	width: 140px;
 }
 .staff td{
 	padding: 10px;
@@ -1578,13 +1596,76 @@ ul.foot-nav{
 	font-size: 15px;
 }
 .staff td h3{
-	font-size: 21px;
+	font-size: 20px;
+}
+.staff td.photo{
+	width: 60px;
+}
+.staff td.email{
+	width: 200px;
 }
 .a-profile{
+	margin-top: 20px;
+}
+.a-profile ul{
 	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.a-profile h2{
+	font-size: 50px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+}
+.a-profile h3{
+	margin-top: 0px;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+.a-profile li{
+	padding-top: 15px;
+}
+.a-profile h4{
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+.a-profile h4.inline{
+	display: inline;
+}
+.vcard span{
+	display: block;
+}
+.vcard .fn span{
+	display: inline;
 }
 .a-photo{
 	float: right;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.in-nav{
+	padding: 0;
+}
+.in-nav li{
+	display: inline;
+	list-style: none;
+	margin-bottom: 15px;
+	margin-top: 30px;
+}
+.staff-back{
+	padding: 5px 10px;
+	margin-right: 2px;
+	background-color: #efefef;
+	border-radius: 4px;
+}
+.staff-back:hover{
+	background-color: #daded8;
+	text-decoration: none;
+}
+.staff-back span{
+	font-size: 15px;
 }
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */

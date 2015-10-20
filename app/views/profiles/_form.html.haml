@@ -45,8 +45,10 @@
 		%li
 			= f.label :personal_interests
 			= f.text_area :personal_interests
-		%li
-			= f.label :home_page_opt_in
+		%li.radio
+			Do you want your profile to show up on the UofA Libraries hompage?
+			= f.label :no
 			= f.radio_button :opt_in, "value", id: 'true'
+			= f.label :yes
 			= f.radio_button :opt_in, "value", id: 'false'
 		= f.submit :class => 'btn btn-success'
