@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
   	end
 	
 	def show
-    	@profile = Profile.find(params[:id])
+    	@profile = Profile.friendly.find(params[:id])
 	end
 
 	def new
@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def edit
-		@profile = Profile.find(params[:id])
+		@profile = Profile.friendly.find(params[:id])
 	end
 
 	def create
@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def update
-  		@profile = Profile.find(params[:id])
+  		@profile = Profile.friendly.find(params[:id])
  
 		if @profile.update(profile_params)
 			redirect_to @profile
@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
 	end
 
 	def destroy
-  		@profile = Profile.find(params[:id])
+  		@profile = Profile.friendly.find(params[:id])
   		@profile.destroy
  
   		redirect_to profiles_path

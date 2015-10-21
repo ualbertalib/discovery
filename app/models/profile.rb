@@ -1,4 +1,10 @@
 class Profile < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :full_name, use: :slugged
+	def full_name
+    	"#{first_name}-#{last_name}"
+  	end
+
 	def self.to_csv(options = {})
   		CSV.generate(options) do |csv|
     	csv << column_names

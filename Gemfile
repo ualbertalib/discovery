@@ -63,3 +63,4 @@ end
 gem 'blacklight_google_analytics'
 gem 'comfortable_mexican_sofa', '~> 1.12.0'
 gem "blacklight_range_limit"
+gem 'friendly_id'
