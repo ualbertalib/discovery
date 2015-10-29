@@ -4,9 +4,9 @@
                 <span class="url-label">URL:</span>
 
                 <% if url.include? "databases" %>
-                  <a href="<%= url %>" target="_blank"><%= location %> <span><%= url %></span></a>
+                  <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
                 <% else %>
-                   <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= location %> <span><%= url %></span></a>
+                  <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= render "eaccess_label", location: location %> <span><%= url %></span></a>
                  <% end %>
                <% end %> 
              <% else %>
@@ -15,9 +15,9 @@
                 <span class="url-label">URL:</span>
 
                 <% if url.include? "databases" %>
-                  <a href="<%= url %>" target="_blank"><%= location %> <span><%= url %></span></a>
+                  <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
                 <% else %>
-                   <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= location %> <span><%= url %></span></a>
+                   <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= render "eaccess_label", location: location %> <span><%= url %></span></a>
                  <% end %>
                <% end %> 
              <% end %>
