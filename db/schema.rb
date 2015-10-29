@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021163326) do
+ActiveRecord::Schema.define(version: 20151029171613) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       null: false
@@ -164,6 +164,7 @@ ActiveRecord::Schema.define(version: 20151021163326) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.string   "slug"
+    t.string   "liason"
   end
 
   add_index "profiles", ["slug"], name: "index_profiles_on_slug"
