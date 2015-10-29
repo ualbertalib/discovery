@@ -66,12 +66,12 @@ class SymphonyService
     non_ua_items = {}
       if @document then
         link_items.each do |item|
-          if label(item).text == "Electronic access" then
-            if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") then
-              ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
-            else
-              non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
-            end
+          if label(item) and label(item).text == "Electronic access" then
+              if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") then
+                ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+              else
+                non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+              end
           end
         end
       end
