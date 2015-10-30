@@ -7,12 +7,34 @@
       <% # bookmark/folder functions -%>
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
 
-      <% if @subjects  %>
+    
+    </div>
+    <div class="col-md-3 full-record-book-jacket">
+      <% if @document[:isbn_t] %>
+        <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+      <% end %>
+    </div>
+</div>
+</div>
+  <div id="sidebar" class="col-md-3 top-margin">
+  <%= render_document_sidebar_partial %>
+</div>
+
+<div class="col-sm-12">
+  <% if @subjects  %>
       <div id="subjects">
         <p class="blacklight-subject_topic_facet">Subjects</p>
-        <ul>
-          <% @subjects.each do |subject| %>
-            <li><a href="/<%= params[:controller] %>?q=<%= subject %>&view=brief"><%= subject %></a></li>
+        <ul class="subject-chain-links">
+          <% @subjects.each do |subject| %><li>
+          <%  subject=subject.reverse! %>
+          <% subject.each_with_index do |asubject, index| %>
+        
+            <a href="/<%= params[:controller] %>?q=<%= asubject %>&view=brief"><%= asubject %></a> 
+            <% unless index == subject.size - 1  %>
+              <span class="glyphicon glyphicon-menu-right"></span>
+             <% end %>
+        <% end %>
+        </li>
         <% end %>
         </ul>
       </div>
@@ -36,22 +58,10 @@
       <% if @ua_urls or @non_ua_urls %>
         <%= render "urls" %>
         <% end %>
-    </div>
-    <div class="col-md-3 full-record-book-jacket">
-      <% if @document[:isbn_t] %>
-        <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
-      <% end %>
-    </div>
-</div>
-</div>
-  <div id="sidebar" class="col-md-3 top-margin">
-  <%= render_document_sidebar_partial %>
-</div>
-
 
 <% unless @holdings.empty? %>
   <%= render "holdings" %>
   <% end %>
   </div>
-
+</div>
 

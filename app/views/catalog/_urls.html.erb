@@ -1,26 +1,28 @@
 <div id ="electronic_access">
-           <% unless @ua_urls.empty? %>
-             <% @ua_urls.each do |location,url| %>
-                <span class="url-label">URL:</span>
-
+  <% unless @ua_urls.empty? %>
+    <% @ua_urls.each do |location,url| %>
+      <div class="row">
+          <% if url.include? "databases" %>
+            <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
+          <% else %>
+            <a href="<%= Rails.application.config.proxy+url %>" target="_blank">
+              <%= render "eaccess_label", location: location %> <span><%= url %></span></a>
+          <% end %>
+      </div>
+          <% end %> 
+        <% else %>
+          <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
+            <% @non_ua_urls.each do |location,url| %>
+               <div class="row">
                 <% if url.include? "databases" %>
                   <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
                 <% else %>
                   <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= render "eaccess_label", location: location %> <span><%= url %></span></a>
-                 <% end %>
-               <% end %> 
-             <% else %>
-                  <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
-             <% @non_ua_urls.each do |location,url| %>
-                <span class="url-label">URL:</span>
-
-                <% if url.include? "databases" %>
-                  <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
-                <% else %>
-                   <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= render "eaccess_label", location: location %> <span><%= url %></span></a>
-                 <% end %>
-               <% end %> 
-             <% end %>
-        </div>
+                <% end %>
+             
+            </div>
+              <% end %> 
+            <% end %>
+          </div>
 
 
