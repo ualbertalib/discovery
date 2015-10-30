@@ -25,11 +25,11 @@
       <div id="subjects">
         <p class="blacklight-subject_topic_facet">Subjects</p>
         <ul class="subject-chain-links">
-          <% @subjects.each do |subject| %><li>
-          <%  subject=subject.reverse! %>
-          <% subject.each_with_index do |asubject, index| %>
-        
-            <a href="/<%= params[:controller] %>?q=<%= asubject %>&view=brief"><%= asubject %></a> 
+          <% @subjects.each do |subject| %>
+            <li>
+            <% subject=subject.reverse! %>
+            <% subject.each_with_index do |asubject, index| %> 
+              <a href="/<%= params[:controller] %>?q=<% i = 0 %><% while( i <= index ) %><%= subject[i].gsub(" ", "+") %><% unless i == index %> AND <% end %><% i+= 1 %><% end %>&view=brief&search_field=subject"><%= asubject %></a> 
             <% unless index == subject.size - 1  %>
               <span class="glyphicon glyphicon-menu-right"></span>
              <% end %>
