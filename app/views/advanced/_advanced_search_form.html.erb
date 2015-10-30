@@ -22,6 +22,10 @@
           <%= render 'advanced/advanced_search_fields' %>
         </div>
       </div>
+  <div class="sort-submit-buttons clearfix">
+    <%= render 'advanced_search_submit_btns' %>
+  </div>
+    </div>
       
       <div class="limit-criteria">
         <h3 class="limit-criteria-heading"><%= t('blacklight_advanced_search.form.limit_criteria_heading_html')%></h3>
@@ -38,9 +42,5 @@
 
   <hr>
 
-  <div class="sort-submit-buttons clearfix">
-    <%= render 'advanced_search_submit_btns' %>
-  </div>
-    </div>
 
 <% end %>
