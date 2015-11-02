@@ -6,8 +6,6 @@
     <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-md-9">
       <% # bookmark/folder functions -%>
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
-
-    
     </div>
     <div class="col-md-3 full-record-book-jacket">
       <% if @document[:isbn_t] %>
@@ -29,7 +27,16 @@
             <li>
             <% subject=subject.reverse! %>
             <% subject.each_with_index do |asubject, index| %> 
-              <a href="/<%= params[:controller] %>?q=<% i = 0 %><% while( i <= index ) %><%= subject[i].gsub(" ", "+") %><% unless i == index %> AND <% end %><% i+= 1 %><% end %>&view=brief&search_field=subject"><%= asubject %></a> 
+            <% i = 0 %>
+            <% sbstring = "" %>
+            <% while( i <= index ) %>
+              <% sbstring = sbstring + subject[i].gsub(" ", "+") %>
+                <% unless i == index %> 
+                  <% sbstring = sbstring + " AND " %>
+                <% end %>
+                <% i+= 1 %>
+              <% end %>
+              <a href="/<%= params[:controller] %>?q=<%= sbstring %>&view=brief&search_field=subject"><%= asubject %></a> 
             <% unless index == subject.size - 1  %>
               <span class="glyphicon glyphicon-menu-right"></span>
              <% end %>
