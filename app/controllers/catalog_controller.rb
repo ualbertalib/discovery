@@ -45,12 +45,10 @@ class CatalogController < ApplicationController
       @ua_urls, @non_ua_urls = holdings(@document, :links)
     end
 
-    if @document["subject_topic_facet"]
-      @subjects << @document["subject_topic_facet"]
-    end
-
-    if @document["subject_addl_t"]
-      @subjects << @document["subject_addl_t"]
+    if @document["subject_t"]
+      @document["subject_t"].each do |subject|
+        @subjects << subject.split(/\s(?=[A-Z])/).reverse
+      end
     end
 
     if @document["author_display"]
