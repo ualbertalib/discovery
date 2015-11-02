@@ -55,11 +55,11 @@ class BentoController < ApplicationController
   end
 
   def populate_sfx
-    @ejournals, @ejournals_count = populate_collection({source: 'SFX'})
+    @ejournals, @ejournals_count = populate_collection({format: 'Journal'})
   end
 
   def populate_symphony
-    @symphony, @symphony_count = populate_collection({source: 'Symphony', electronic_tesim: 'Print'})
+    @symphony, @symphony_count = populate_collection({source: 'Symphony'})
   end
 
   def populate_ebooks
@@ -116,7 +116,7 @@ class BentoController < ApplicationController
     session[:current_url] = request.original_url
     eds_connect
     params["includefacets"] = "y"
-    params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
+    #params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
     params["resultsperpage"] = 100
     if has_search_parameters? then
       clean_params = deep_clean(params)
