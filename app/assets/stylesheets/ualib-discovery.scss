@@ -235,6 +235,13 @@ font-size: 18px;
 .results ul li a.more-locations{
 	font-size: 14px;
 }
+.subject-chain-links li{
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+.subject-chain-links li span{
+	font-size: 10px;
+}
 .no-results{
 	text-align: center;
 	background-color: #fff;
@@ -248,12 +255,10 @@ font-size: 18px;
 	display: block;
 }
 #electronic_access span.url-label{
-	width: 100px;
-	text-align: right;
+	float: right;
 	font-size: 18px;
 	font-weight: normal;
 	color: #777777;
-	display: inline-block;
 }
 #electronic_access a{
 	display: inline-block;
@@ -269,6 +274,10 @@ font-size: 18px;
 	text-decoration: none;
 	background-color:#d1dde4;
 	color: #333;
+}
+#electronic_access .row{
+	margin-bottom: 5px;
+	padding-left: 20px;
 }
 .outlined{
 	border: solid 1px #d9e4ea; 
@@ -309,10 +318,10 @@ font-size: 18px;
 	font-size: 14px;
 }
 .dl-horizontal dt {
-  width: 100px;
+  width: 140px;
 }
 .dl-horizontal dd {
-  margin-left: 110px;
+  margin-left: 145px;
 }
 
 #documents .document {
