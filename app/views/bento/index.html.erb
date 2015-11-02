@@ -48,7 +48,7 @@
                   <span><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %>
                   <% if symphony[:subtitle] %>: <%= symphony[:subtitle] %><% end %></em></a>
                   <% if symphony[:year] %>
-                    <span class="date">(<%= symphony[:year].first%>)</span>
+                    <span class="date"><%= "(#{symphony[:year].first})" %></span>
                   <% end %>
                   <% if symphony[:format] %>
                     <span class="date"><%= symphony[:format].first %></span>
@@ -61,7 +61,7 @@
               <div class="collapse" id="<%= i %>">
                 <div class="col-md-9">
                   <p class="result-details author"><%= symphony[:author] %></p> 
-                  <p class="result-details location">Call Number: <%= symphony[:call_number].first if symphony[:call_number]%></p> 
+                  <!-- <p class="result-details location">Call Number: <%#= symphony[:call_number].first if symphony[:call_number]%></p> -->
                 </div>
                 <% if symphony[:isbn] %>
                   <div class="col-md-3">
