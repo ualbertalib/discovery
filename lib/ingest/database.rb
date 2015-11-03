@@ -18,8 +18,8 @@ class Database
             xml.language @language
             xml.resource_type @resource_type
             xml.conditions_of_use @conditions_of_use
-            xml.title @title
-            xml.search_title @search_title
+            xml.title @title.gsub("&eacute;", "é")
+            xml.search_title @search_title.gsub("&eacut", "")
             xml.software @software
             xml.branding @branding
             xml.ua_only @ua_only
