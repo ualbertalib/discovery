@@ -31,7 +31,7 @@
       <div class="col-md-4 rcol">
     	<div class="col-md-12 results" > 
         <div id="books"> <!-- start of books and journals pane -->
-          <h3 id="print"><span class="col-md-6">Books and more</span>
+          <h3 id="print"><span class="col-md-6">Books, media, and more</span>
             <% if @symphony_count>10 %>
               <a href="/symphony?f%5Belectronic_tesim%5D%5B%5D=At+Library&q=<%= @query %>" class="col-md-6 see-all-results"><%= @symphony_count %> results</a>
             <% end %>
@@ -128,7 +128,7 @@
     
 
     <div class="col-md-4 results" id="articles"> <!-- start of articles pane -->
-      <h3><span class="col-md-6">Articles</span>
+      <h3><span class="col-md-6">Ebsco Discovery Service</span>
         <% if @eds_count>0 %>
           <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-md-6 see-all-results"><%= @eds_count %> results</a>
         <% end %>
@@ -169,7 +169,7 @@
 		
 
     <div class="col-md-4 results" id="ejournals"><!-- start of ejournals pane -->
-      <h3><span class="col-md-6">Electronic Journals</span> 
+      <h3><span class="col-md-6">Journals</span> 
         <% if @ejournals_count>0 %>
           <a href="/ejournals?q=<%= @query %>" class="col-md-6 see-all-results"><%= @ejournals_count %> results</a>
         <% end %>
