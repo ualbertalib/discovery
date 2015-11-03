@@ -34,7 +34,15 @@
               <% if item[:status] == "CHECKEDOUT" %>
                 <td>Due: <%= Date.parse(item[:due]) %></td>
               <% else %>
-                <td><%= @statuses[item[:status].to_s.downcase] %></td>
+                <td><%= @statuses[item[:status].to_s.downcase] %>
+                <% if @unavailable %>
+                  <p style="font-size: small"><strong>Note: For access, please contact any University of Alberta Libraries service desk in person or at <a href="http://www.library.ualberta.ca/askus" target="_blank">www.library.ualberta.ca/askus.</a></strong></p>
+                <% end %>
+                <% if item[:public_note] %>
+                  <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
+                <% end %>
+              
+              </td>
               <% end %>
               <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= @locations[item[:location].downcase.gsub("_","")] %></a></td>
               <% if @document["format"].include? "Journal" %>
@@ -45,11 +53,9 @@
                 <td></td>
               <% end %>
             </tr>
+            <% @unavailable = false %>
           <% end %>
         </table>
-        <% if @unavailable %>
-          <p>Note: For access to <strong>unavailable</strong> items, please contact any University of Alberta Libraries service desk in person or at www.library.ualberta.ca/askus.</p>
-        <% end %>
       <% end %>
       <% if @document["source"].first == "SFX"  %>
         <table>

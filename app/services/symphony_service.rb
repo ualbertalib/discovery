@@ -58,7 +58,8 @@ class SymphonyService
       copies = get(item, "numberOfCopies")
       type = get(item, "itemTypeID")
       location = get(item, "libraryID")
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings}
+      public_note = get(item, "publicNote")
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note}
   end
 
   def populate_electronic_items
