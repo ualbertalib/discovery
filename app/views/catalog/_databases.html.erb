@@ -22,7 +22,7 @@
       <% if @document["minor_tesim"] %>
         <tr><th>Subjects</th></tr>
         <tr><td>
-            <% for subject in @document["minor_tesim"] %>
+            <% for subject in @document["subject_topic_facet"] %>
             <%= subject %><br />
       <% end %>
           </td></tr>
