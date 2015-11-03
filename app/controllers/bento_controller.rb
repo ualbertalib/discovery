@@ -59,7 +59,7 @@ class BentoController < ApplicationController
   end
 
   def populate_symphony
-    @symphony, @symphony_count = populate_collection({source: 'Symphony', electronic_tesim: 'Print'})
+    @symphony, @symphony_count = populate_collection({source: 'Symphony'})
   end
 
   def populate_ebooks
