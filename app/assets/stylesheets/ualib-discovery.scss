@@ -521,6 +521,15 @@ padding: 15px 0;
 	}
 	#databases{
 		float: right;
+	}
+	.results h3{
+		font-size: 16px;
 	}	
+}
+
+@media (min-width: 1200px){
+	.results h3{
+		font-size: 21px;
+	}
 }
 
