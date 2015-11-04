@@ -4,7 +4,8 @@ class DatabaseVocabulary < Vocabulary
   set_terminology do |t|
 #    t.root(path: "databases")
     t.id(index_as: :stored_searchable)
-    t.name(index_as: :stored_searchable)
+    t.title(index_as: :stored_searchable)
+    t.description(index_as: :stored_searchable)
     t.url(index_as: :stored_searchable)
     t.more_info(index_as: :stored_searchable)
     t.enable_proxy(index_as: :stored_searchable)

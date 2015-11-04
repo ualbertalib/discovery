@@ -1,6 +1,5 @@
 require "csv"
 require "logger"
-require_relative "./database.rb"
 require_relative "./database_om.rb"
 
 class Databases
@@ -14,8 +13,12 @@ class Databases
       for subject in database_subjects do
         data = JSON.parse(open("http://lgapi.libapps.com/1.1/assets?site_id=165&key=0d26849c8a09f1da841bc84d4216b8d5&asset_types=10&subject_ids=#{subject['id']}").read)
         for db in data do
-          db["subject_id"] = subject["id"]
-          db["subject_name"] = subject["name"]
+          db["subject"] = subject["name"]
+          db["type"] = "Database"
+          db["electronic"] = "Online"
+          db["title"] = db["name"]
+          db["more_info"] = db["more-info"]
+          db["enable_proxy"] = db["enable-proxy"]
           @xml_records <<  db.to_xml
         end
       end

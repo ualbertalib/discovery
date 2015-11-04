@@ -754,6 +754,7 @@
    <copyField source="title_tesim" dest="title_display"/>
    <copyField source="title_tesim" dest="title_sort"/>
    <copyField source="source_tesim" dest="source"/>
+   <copyField source="subject_tesim" dest="subject_topic_facet"/>
    
    <!-- sort fields -->
    <copyField source="pub_date" dest="pub_date_sort"/>
