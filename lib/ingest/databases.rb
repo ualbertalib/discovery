@@ -7,16 +7,18 @@ class Databases
 
   attr_reader :xml_records
 
-  def initialize(filename)
+  def initialize
     @@ingest_log = Logger.new('log/ingest.log')
     @xml_records = []
-    database_subjects = YAML.load_file("#{Rails.root}/config/database_subjects.yml")
-    CSV.foreach(filename) do |row|
-      next if row.first=="RECORDID"
-      db = Database.new
-      db.parse(row)
-      @xml_records <<  db.to_xml(database_subjects)
-    end
+    database_subjects = JSON.parse(open("http://lgapi.libapps.com/1.1/subjects?site_id=165&key=0d26849c8a09f1da841bc84d4216b8d5").read)
+      for subject in database_subjects do
+        data = JSON.parse(open("http://lgapi.libapps.com/1.1/assets?site_id=165&key=0d26849c8a09f1da841bc84d4216b8d5&asset_types=10&subject_ids=#{subject['id']}").read)
+        for db in data do
+          db["subject_id"] = subject["id"]
+          db["subject_name"] = subject["name"]
+          @xml_records <<  db.to_xml
+        end
+      end
     @@ingest_log.info("-- Preparing to ingest #{@xml_records.size} records...")
   end
 
@@ -24,10 +26,9 @@ class Databases
     output = "<?xml version=\"1.0\"?><root><databases>"
     @xml_records.each do |record|
       db_vocabulary = DatabaseVocabulary.from_xml(record)
-      output += db_vocabulary.to_xml.gsub('<?xml version="1.0"?>', "")
+      output += db_vocabulary.to_xml.gsub('<?xml version="1.0" encoding="UTF-8"?>', "")
     end
     output += "</databases></root>"
-    output
   end
 
 end
