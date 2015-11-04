@@ -8,7 +8,7 @@ class EjournalsController < CatalogController
   
   def show_only solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
-    solr_parameters[:fq] << "source:SFX"
+    solr_parameters[:fq] << "format: 'Journal'"
   end
 
   def index
