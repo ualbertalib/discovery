@@ -44,7 +44,7 @@
         <tr><td><a href="<%= Rails.application.config.proxy%><%= @document["primary_url_tesim"].first %>" target='_blank'><%= @document["primary_url_tesim"].first %></a></td>
         </tr>
       <% else %>
-        <tr><td><a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= @document["id_tesim"].first %>" target='_blank'>http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= @document["id_tesim"].first %></a></><td>
+        <tr><td><a href="<%= @document['url_tesim'].first %>" target='_blank'><%= @document['url_tesim'].first %></a></><td>
         </tr>
       <% end %>
       <% if @document["minor_tesim"] %>
