@@ -25,8 +25,8 @@
         <ul class="subject-chain-links">
           <% @subjects.each do |subject| %>
             <li>
-            <% subject=subject.reverse! %>
-            <% subject.each_with_index do |asubject, index| %> 
+            <%# subject=subject.reverse! %>
+            <% subject.each_with_index do |subject, index| %> 
             <% i = 0 %>
             <% sbstring = "" %>
             <% while( i <= index ) %>
@@ -36,7 +36,7 @@
                 <% end %>
                 <% i+= 1 %>
               <% end %>
-              <a href="/<%= params[:controller] %>?q=<%= sbstring %>&view=brief&search_field=subject"><%= asubject %></a> 
+              <a href="/<%= params[:controller] %>?q=<%= sbstring %>&view=brief&search_field=subject"><%= subject %></a> 
             <% unless index == subject.size - 1  %>
               <span class="glyphicon glyphicon-menu-right"></span>
              <% end %>
