@@ -15,8 +15,8 @@
           <% end %>
         </h2>
     		<form class="form-inline" role="form">
-          <div class="form-group">   
-            <input type="text" class="form-control" placeholder="search again" name="q">
+          <div class="form-group">  <label class="search-again" for="search-again">search again</label> 
+            <input type="text" class="form-control" placeholder="search again" name="q" id="search-again" title="search again">
           </div>
           <div class="form-group"> 
             <button type="submit" class="btn btn-small">search</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a> <%# link_to image_tag("list.png", size: "35x35"), catalog_index_path(:q => params['q']) %>
@@ -54,13 +54,14 @@
                     <span class="date"><%= symphony[:format].first %></span>
                   <% end %>
                 </div>
+                <% if symphony[:author] %>
                 <div class="col-sm-2">
-                  <button type="button" class="btn btn-xsmall btn-primary" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>">more</button>
+                  <button type="button" class="btn btn-xsmall btn-primary" data-toggle="collapse" data-target="#<%= i %>" aria-controls="<%= i %>" title="more">more</button>
                 </div>
               </div>
               <div class="collapse" id="<%= i %>">
                 <div class="col-sm-9">
-                  <p class="result-details author"><%= symphony[:author] %></p> 
+                  <p class="result-details author"><em>author:</em> <%= symphony[:author] %></p> 
                   <!-- <p class="result-details location">Call Number: <%#= symphony[:call_number].first if symphony[:call_number]%></p> -->
                 </div>
                 <% if symphony[:isbn] %>
@@ -69,6 +70,7 @@
                   </div>
                 <% end %>
               </div>
+              <% end %>
             </li>
             <% i+=1 %>
             <% end %>
@@ -102,7 +104,7 @@
               <span><%= i %>.</span> <a href="http://login.ezproxy.library.ualberta.ca/login?url=<%= article[:url] %>" target="_blank"><%= article[:title] %> </a> (<%= article[:format] %>) 
              </div>
             <div class="col-sm-2">
-              <button type="button" class="btn btn-xsmall btn-primary" data-toggle="collapse" data-target="#article<%= i %>" aria-controls="article<%= i %>">more</button>
+              <button type="button" class="btn btn-xsmall btn-primary" data-toggle="collapse" data-target="#article<%= i %>" aria-controls="article<%= i %>" title="more">more</button>
             </div>
           </div>
           <div class="collapse" id="article<%= i %>">
