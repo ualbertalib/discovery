@@ -17,8 +17,8 @@ class Databases
           db["type"] = "Database"
           db["electronic"] = "Online"
           db["title"] = db["name"]
-          db["more_info"] = db["more-info"]
-          db["enable_proxy"] = db["enable-proxy"]
+          db["moreinfo"] = db["meta"]["more_info"]
+          db["enableproxy"] = db["meta"]["enable_proxy"]
           @xml_records <<  db.to_xml
         end
       end
