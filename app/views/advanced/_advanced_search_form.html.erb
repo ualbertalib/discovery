@@ -1,4 +1,4 @@
-<p>For articles advanced search, click <a href="http://search.ebscohost.com/login.aspx?authtype=ip,guest&custid=s5940188&groupid=main&profid=eds">here</a>.</p>
+
 
 <% unless (search_context_str = render_search_to_s( advanced_search_context)).blank? %>
     <div class="constraints well search_history">
@@ -22,6 +22,10 @@
           <%= render 'advanced/advanced_search_fields' %>
         </div>
       </div>
+  <div class="sort-submit-buttons clearfix">
+    <%= render 'advanced_search_submit_btns' %>
+  </div>
+    </div>
       
       <div class="limit-criteria">
         <h3 class="limit-criteria-heading"><%= t('blacklight_advanced_search.form.limit_criteria_heading_html')%></h3>
@@ -38,9 +42,5 @@
 
   <hr>
 
-  <div class="sort-submit-buttons clearfix">
-    <%= render 'advanced_search_submit_btns' %>
-  </div>
-    </div>
 
 <% end %>

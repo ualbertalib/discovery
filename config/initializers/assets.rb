@@ -10,4 +10,5 @@ Rails.application.config.assets.precompile += %w( ualib-home.css )
 Rails.application.config.assets.precompile += %w( ualib-discovery.css )
 Rails.application.config.assets.precompile += %w( ualib-home.js )
 Rails.application.config.assets.precompile += %w( ualib-discovery.js )
+Rails.application.config.assets.precompile += %w( stupidtable.js )
 

@@ -1,0 +1,61 @@
+%h1
+  Library Staff
+  - if session[:admin] 
+    TESTINT
+%table.staff
+  %thead
+    %tr
+      %th.blank
+      %th.first-name{"data-sort" => "string"}
+        %h3
+          First Name
+      %th.last-name{"data-sort" => "string"}
+        %h3
+          Last Name
+      %th.job-title{"data-sort" => "string"}
+        %h3
+          Job Title
+      %th.unit{"data-sort" => "string"}
+        %h3
+          Unit
+      %th.email
+        %h3
+          Email
+      %th.phone     
+        %h3
+          Phone
+      %th.building{"data-sort" => "string"}      
+        %h3
+          Building
+      %th.expertise{"data-sort" => "string"}      
+        %h3
+          Expertise
+  - @profiles.each do |profile|
+    %tr
+      - @photo_link = "staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
+      - @no_photo = "staff-photos/thumbs/none.jpg"
+      - if Rails.application.assets.find_asset @photo_link
+        %td
+          = link_to image_tag(@photo_link), profile_path(profile)
+      - else
+        %td
+          = link_to image_tag(@no_photo), profile_path(profile)
+      %td
+        %h3
+          = link_to(profile.first_name.capitalize, profile_path(profile)) 
+      %td
+        %h3
+          = link_to(profile.last_name.capitalize, profile_path(profile)) 
+      %td
+        = profile.job_title
+      %td      
+        = profile.unit
+      %td   
+        = mail_to profile.email, profile.email
+      %td    
+        = profile.phone
+      %td      
+        = profile.campus_address
+      %td      
+        = profile.expertise
+

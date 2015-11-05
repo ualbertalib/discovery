@@ -1,0 +1,71 @@
+.a-profile
+	= link_to profiles_path, class: "staff-back" do
+		<span class="glyphicon glyphicon-chevron-left"></span>  All Staff	
+	- @photo_link = "staff-photos/"+@profile.first_name.downcase+"-"+@profile.last_name.downcase+".jpg"
+	- if Rails.application.assets.find_asset @photo_link
+		= image_tag(@photo_link, :class => "a-photo")
+	.vcard
+		%h2.fn
+			%span.given-name
+				= @profile.first_name
+			%span.family-name
+				= @profile.last_name
+		%h3.title
+			= @profile.job_title
+		= mail_to @profile.email, @profile.email, class: "email"
+		%span.tel
+			= @profile.phone
+		%span.adr
+			%span.street-address
+				= @profile.campus_address
+	%ul
+		-if @profile.unit.presence
+			%li.unit
+				%h4.inline
+					Unit:
+				= @profile.unit
+		-if @profile.expertise.presence
+			%li.expertise
+				%h4.inline
+					Expertise:
+				= @profile.expertise
+		-if @profile.staff_since
+			%li.staff-since
+				%h4.inline
+					Staff Since:
+				= @profile.staff_since
+		-if @profile.liason
+			%li.staff-since
+				%h4.inline
+					Liason Subject:
+				= @profile.liason
+		-if @profile.introduction.presence
+			%li.introduction
+				%h4
+					Introduction
+				= @profile.introduction
+		-if @profile.publications.presence
+			%li.publications
+				%h4
+					Publications
+				= @profile.publications
+		-if @profile.links.presence
+			%li.links
+				%h4.inline
+					Links:
+				= link_to @profile.links, @profile.links
+		-if @profile.orcid.presence
+			%li.orcid
+				%h4.inline
+					ORCID:
+				= link_to @profile.orcid, "https://orcid.org/"+@profile.orcid
+		-if @profile.committees.presence
+			%li.committees
+				%h4.inline
+					Committees:
+				= @profile.committees
+		-if @profile.personal_interests.presence
+			%li.personal_interests
+				%h4
+					Personal Interests
+				= @profile.personal_interests

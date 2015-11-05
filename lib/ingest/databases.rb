@@ -6,6 +6,7 @@ class Databases
 
   attr_reader :xml_records
 
+<<<<<<< HEAD
   def initialize
     @@ingest_log = Logger.new('log/ingest.log')
     @xml_records = []
@@ -22,6 +23,18 @@ class Databases
           @xml_records <<  db.to_xml
         end
       end
+=======
+  def initialize(filename)
+    @@ingest_log = Logger.new("#{Rails.root}/log/ingest.log")
+    @xml_records = []
+    database_subjects = YAML.load_file("#{Rails.root}/config/database_subjects.yml")
+    CSV.foreach(filename) do |row|   # just need to change this read JSON, instead of CSV
+      next if row.first=="RECORDID"
+      db = Database.new
+      db.parse(row)
+      @xml_records <<  db.to_xml(database_subjects)
+    end
+>>>>>>> master
     @@ingest_log.info("-- Preparing to ingest #{@xml_records.size} records...")
   end
 

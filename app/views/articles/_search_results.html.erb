@@ -19,11 +19,12 @@
   <% if has_restricted_access?(result) %>
     <h5 class="index_title"><%= show_resultid(result) %>. This result cannot be shown to guests.  <%= link_to "Please log in to see this result.", show_detail_link(result, show_resultid(result), params[:q]) %></h5>    
   <% else %>
-    <h5 class="index_title"><%= show_resultid(result) %>. <%= link_to show_title(result), show_plink(result) %></h5>    
+    <h5 class="index_title"><%= show_resultid(result) %>. <%= link_to show_title(result), show_plink(result), :target => "_blank" %></h5>    
   <% end %>
         <%# bookmark functions for items/docs %>
         <%# render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
 </div>
+
 <% unless has_restricted_access?(result) %>
 <dl class="dl-horizontal dl-invert">
 
@@ -55,36 +56,40 @@
   <dd class="blacklight-abstract"><%= show_subjects(result) %></dd>  
   <% end %>
   
-  <% if has_any_fulltext?(result) %>
-  <dt class="blacklight-fulltext">Full-Text:</dt>
-  <dd class="blacklight-fulltext">
-  <% if has_pdf?(result) %>
-    <%= link_to "PDF Full Text", show_pdf_title_link(result) %>
-  <% elsif has_html?(result) %>
-    <%= link_to "HTML Full Text", show_best_fulltext_link(result), :target => "_blank" %>
-  <% elsif has_smartlink?(result) %>
-    <%= link_to "Linked Full Text", show_smartlink_title_link(result) %>
-  <% elsif has_ebook?(result) %>
-    <%= link_to "eBook Full Text", show_ebook_title_link(result) %>
-  <% else %>
-    <%= show_best_fulltext_link_detail(result) %>
+  <%# if has_any_fulltext?(result) %>
+  <!-- <dt class="blacklight&#45;fulltext">Availability:</dt> -->
+  <!-- <dd class="blacklight&#45;fulltext"> -->
+  <%# if has_pdf?(result) %>
+    <%# link_to "PDF Full Text", show_pdf_title_link(result) %>
+    <%# Full Text Available
+  <%# elsif has_html?(result) %>
+    <%# link_to "HTML Full Text", show_best_fulltext_link(result), :target => "_blank" %>
+    <%# Full Text Available
+  <%# elsif has_smartlink?(result) %>
+    <%# link_to "Linked Full Text", show_smartlink_title_link(result) %>
+    <%# Full Text Available
+  <%# elsif has_ebook?(result) %>
+    <%# link_to "eBook Full Text", show_ebook_title_link(result) %>
+    <%# Full Text Available
+  <%# else %>
+    <%#= show_best_fulltext_link_detail(result) %>
   <% end %>
-  </dd>
-  <% elsif has_ill?(result) %>
-  <dt class="blacklight-ill">Full-Text:</dt>
-  <dd class="blacklight-ill"><%= show_ill(result) %></dd>  
-  <% end %>
+  <!-- </dd> -->
+  <%# elsif has_ill?(result) %>
+  <!-- <dt class="blacklight&#45;ill">Full&#45;Text:</dt> -->
+  <!-- <dd class="blacklight&#45;ill"><%= show_ill(result) %></dd>   -->
+  <%# end %>
 
 </dl>
-<% else %>
-    <dl class="dl-horizontal dl-invert">
+<%# else %>
+    <!-- dl class="dl-horizontal dl-invert">
   <dt class="blacklight-author_display">Note:</dt>
-  <dd class="blacklight-author_display">This result cannot be displayed unless you are <%= link_to "logged in", new_user_session_path %>.</dd>
-    </dl>
+  <dd class="blacklight-author_display">This result cannot be displayed unless you are <%#= link_to "logged in", new_user_session_path %>.</dd>
+  </dl> -->
 <% end %>
 </div>
     
     <% end %>
 </div>
   <% end %>
-  <% end %>    
+  <%# end %>    

@@ -1,0 +1,47 @@
+
+      <table>
+        <% if @document["abstract_tesim"] %>
+          <tr><th>Abstract</th></tr>
+          <tr><td><%= @document["abstract_tesim"].first %></td></tr>
+        <% end %>
+    
+        <% if @document["coverage_tesim"] %>
+          <tr><th>Coverage</th></tr>
+          <tr><td><%= @document["coverage_tesim"].first %></td></tr>
+        <% end %>
+        <tr><th>URL</th></tr>
+    
+        <% if @document["primary_url_tesim"] %>
+        <tr><td><a href="<%= Rails.application.config.proxy%><%= @document["primary_url_tesim"].first %>" target='_blank'><%= @document["primary_url_tesim"].first %></a></td>
+        </tr>
+          <% else %>
+        <tr><td><a href="http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= @document["id_tesim"].first %>" target='_blank'>http://library.ualberta.ca/databases/databaseinfo/index.cfm?ID=<%= @document["id_tesim"].first %></a></><td>
+        </tr>
+      <% end %>
+      
+      <% if @document["minor_tesim"] %>
+        <tr><th>Subjects</th></tr>
+        <tr><td>
+            <% for subject in @document["subject_topic_facet"] %>
+            <%= subject %><br />
+      <% end %>
+          </td></tr>
+      
+      <% if @document["conditions_tesim"] %>
+          <tr><th>Conditions</th></tr>
+          <tr><td><%= @document["conditions_tesim"].first %></td></tr>
+        <% end %>
+        </table>
+      
+        <% if @document["ua_only_tesim"] %>
+          <% if @document["ua_only_tesim"].first == "1" %> <%= image_tag("icn_uofa.gif") %> <% end %>
+        <% end %>
+      <br />
+      <% end %>
+      
+      <% if (@document["format"].include?("service") or @document["format"].include?("digital collection") or @document["format"].include?("library")) %>
+        <table>
+          <tr><th>URL: <a href="<%= @document["url_tesim"].first %>" target=_blank><%= @document["url_tesim"].first %></a></th></tr>
+      </table>
+      <br />
+    <% end %>

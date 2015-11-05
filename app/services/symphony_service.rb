@@ -1,55 +1,117 @@
 class SymphonyService
 
   def initialize(id, xml_response=nil)
-    @ws_endpoint = "https://ws.library.ualberta.ca/symws3/rest/standard/"
-    @method = "lookupTitleInfo"
-    @parameters = "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeMarcHoldings=true&titleID="
     if valid? id
-      xml_response ||= open(@ws_endpoint+@method+@parameters+id).read
+      xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id).read
       @document = Nokogiri::XML(xml_response)
+    else
+      @document = nil
     end
   end
 
-  #needs refactoring!
-
-  def get_status(item_id)
-    get(".//xmlns:currentLocationID", item_id)
-  end
-
-  def get_item_type(item_id)
-    get(".//xmlns:itemTypeID", item_id)
-  end
-
-  def get_summary_holdings(item_id)
-      nodes = @document.xpath("//xmlns:MarcEntryInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
-      nodes.each do |node|
-        current_node = node
-        if current_node.at_xpath(".//xmlns:label", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
-          if current_node.at_xpath(".//xmlns:label", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == "Library has"
-            return current_node.at_xpath(".//xmlns:text", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
-          end
-        end
+  def items
+    items = []
+    if @document then
+      for item in holdings_items do
+        items << populate(item)
       end
+    end
+    items
+  end
+
+  def links
+    ua, nonua = populate_electronic_items
+    puts nonua
+    return ua, nonua
   end
 
   private
 
-  def valid? id
-    id.match /^[0-9]*$/
-  end
-
-  def get(path, item_id)
-      nodes = @document.xpath("//xmlns:ItemInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard") if @document
-      if nodes
-        nodes.each do |node|
-          current_node = node
-          if current_node.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text == item_id
-            return current_node.at_xpath(path, :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+  def summary_holdings
+     nodes.each do |node|
+        current_node = node
+        if label(current_node)
+          if label(current_node).text == "Library has"
+            return node_text(current_node)
           end
         end
-      else
-        return "NO_HOLDINGS_FOUND"
       end
-    nodes
+  end
+
+  def ws_endpoint
+    "https://ws.library.ualberta.ca/symws3/rest/standard/"
+  end
+
+  def ws_method
+    "lookupTitleInfo"
+  end
+
+  def ws_parameters
+    "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeMarcHoldings=true&titleID="
+  end
+
+  def populate(item)
+      item_id = id(item)
+      call = get(item, "callNumber")
+      status = get(item, "currentLocationID")
+      status == "CHECKEDOUT" ? due = get(item, "dueDate") : ""
+      copies = get(item, "numberOfCopies")
+      type = get(item, "itemTypeID")
+      location = get(item, "libraryID")
+      public_note = get(item, "publicNote")
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note}
+  end
+
+  def populate_electronic_items
+    ua_items = {}
+    non_ua_items = {}
+      if @document then
+        link_items.each do |item|
+          if label(item) and label(item).text == "Electronic access" then
+              if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") then
+                ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+              else
+                non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+              end
+          end
+        end
+      end
+    return ua_items, non_ua_items
+  end
+
+  def holdings_items
+    @document.xpath("//xmlns:CallInfo")
+  end
+
+  def link_items
+    @document.xpath("//xmlns:MarcEntryInfo")
+  end
+
+  def nodes
+    @document.xpath("//xmlns:MarcEntryInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+  end
+
+  def label(current_node)
+    current_node.at_xpath(".//xmlns:label", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+  end
+
+  def node_text(current_node)
+    current_node.at_xpath(".//xmlns:text", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+  end
+
+  def valid? id
+    (id =~ /^[0-9]*$/) == 0
+  end
+
+  def id(item)
+    if item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+      return item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    end
+  end
+
+  def get(item, node)
+    if item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+      return item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    end
   end
 end
