@@ -1,0 +1,74 @@
+<div id="content" class="col-md-9 show-document top-margin">
+  <%= render 'previous_next_doc' %>
+  <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
+  <% content_for(:head) { render_link_rel_alternates } -%>
+  <div id="document" class="document <%= render_document_class %>" itemscope itemtype="<%= @document.itemtype %>">
+    <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-md-9">
+      <% # bookmark/folder functions -%>
+      <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
+    </div>
+    <div class="col-md-3 full-record-book-jacket">
+      <% if @document[:isbn_t] %>
+        <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+      <% end %>
+    </div>
+</div>
+</div>
+  <div id="sidebar" class="col-md-3 top-margin">
+  <%= render_document_sidebar_partial %>
+</div>
+
+<div class="col-sm-12">
+  <% if @subjects  %>
+      <div id="subjects">
+        <p class="blacklight-subject_topic_facet">Subjects</p>
+        <ul class="subject-chain-links">
+          <% @subjects.each do |subject| %>
+            <li>
+            <% subject=subject.reverse! %>
+            <% subject.each_with_index do |asubject, index| %> 
+            <% i = 0 %>
+            <% sbstring = "" %>
+            <% while( i <= index ) %>
+              <% sbstring = sbstring + subject[i].gsub(" ", "+") %>
+                <% unless i == index %> 
+                  <% sbstring = sbstring + " AND " %>
+                <% end %>
+                <% i+= 1 %>
+              <% end %>
+              <a href="/<%= params[:controller] %>?q=<%= sbstring %>&view=brief&search_field=subject"><%= asubject %></a> 
+            <% unless index == subject.size - 1  %>
+              <span class="glyphicon glyphicon-menu-right"></span>
+             <% end %>
+        <% end %>
+        </li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+     <% if @authors %>
+     <div id="authors">
+       <p class="blacklight-author_facet">Find more by <%= @authors.count > 1 ? "these authors" : "this author" %></p>
+       <ul>
+          <% @authors.each do |author| %>
+            <li><a href="/<%= params[:controller] %>?utf8=✓&op=AND&all_fields=&title=&author="<%= author.split(" ").join("+") %>"&subject=&utf8=✓&search_field=dummy_range&range%5Bpub_date%5D%5Bbegin%5D=&range%5Bpub_date%5D%5Bend%5D=&commit=Limit&sort=score+desc%2C+pub_date_sort+desc%2C+title_sort+asc&search_field=advanced"><%= author %></a></li>
+          <% end %>
+       </ul>
+     </div>
+   <% end %>
+
+   <% if @document["format"].include? "Database" %>
+     <%= render "databases" %>
+      <% end %>
+
+      <% if @ua_urls or @non_ua_urls %>
+        <%= render "urls" %>
+        <% end %>
+
+<% unless @holdings.empty? %>
+  <%= render "holdings" %>
+  <% end %>
+  </div>
+</div>
+
