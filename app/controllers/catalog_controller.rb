@@ -47,7 +47,7 @@ class CatalogController < ApplicationController
     if @document["subject_t"]
     @subjects = []
       @document["subject_t"].each do |subject|
-        @subjects << subject.split(/\s(?=[A-Z])/).reverse
+        @subjects << subject.split(/\s(?=[A-Z])\s(?=[a-z])/).reverse
       end
     end
 
