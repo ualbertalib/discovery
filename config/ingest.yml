@@ -85,18 +85,17 @@ curriculum:
 databases:
   schema: database
   root: "//databases"
-  delimiter: "//database"
+  delimiter: "//hash"
   namespace: ""
   vocabulary: DatabaseVocabulary
   mode: file
   expand_path: "data/databases.xml"
-  path: "data/databases.csv"
-  endpoint: http://web.library.ualberta.ca/batchjobs/SFX/dbMetadata/dbdump_csv.php
+  path: "data/databases.xml"
 
 database_test_set:
   schema: database
   root: "//databases"
-  delimiter: "//database"
+  delimiter: "//hash"
   namespace: ""
   vocabulary: DatabaseVocabulary
   mode: file
