@@ -4,19 +4,25 @@ class SymphonyService
     if valid? id
       xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id).read
       @document = Nokogiri::XML(xml_response)
+    else
+      @document = nil
     end
   end
 
   def items
     items = []
-    for item in holdings_items do
-      items << populate(item)
+    if @document then
+      for item in holdings_items do
+        items << populate(item)
+      end
     end
     items
   end
 
   def links
-    populate_electronic_items
+    ua, nonua = populate_electronic_items
+    puts nonua
+    return ua, nonua
   end
 
   private
@@ -52,18 +58,25 @@ class SymphonyService
       copies = get(item, "numberOfCopies")
       type = get(item, "itemTypeID")
       location = get(item, "libraryID")
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings}
+      public_note = get(item, "publicNote")
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note}
   end
 
   def populate_electronic_items
-    items = {}
-    
-    link_items.each do |item|
-      if label(item).text == "Electronic access" then
-        items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+    ua_items = {}
+    non_ua_items = {}
+      if @document then
+        link_items.each do |item|
+          if label(item) and label(item).text == "Electronic access" then
+              if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") then
+                ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+              else
+                non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+              end
+          end
+        end
       end
-    end
-    items
+    return ua_items, non_ua_items
   end
 
   def holdings_items
@@ -87,14 +100,18 @@ class SymphonyService
   end
 
   def valid? id
-    id.match /^[0-9]*$/
+    (id =~ /^[0-9]*$/) == 0
   end
 
   def id(item)
-    item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    if item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+      return item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    end
   end
 
   def get(item, node)
-    item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    if item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+      return item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    end
   end
 end

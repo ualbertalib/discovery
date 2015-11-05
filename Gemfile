@@ -5,7 +5,7 @@ source 'http://rubygems.org'
 gem 'rails', '4.2'
 # User mysql as database adapter for dev, test, and prod
 gem 'sqlite3', group: :workstation
-gem 'mysql2'
+gem 'mysql2', '~>0.3.20'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.1'
 # Use Uglifier as compressor for JavaScript assets
@@ -63,3 +63,4 @@ end
 gem 'blacklight_google_analytics'
 gem 'comfortable_mexican_sofa', '~> 1.12.0'
 gem "blacklight_range_limit"
+gem 'friendly_id'

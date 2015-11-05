@@ -860,7 +860,7 @@ chart.render();
   if ($("#headlines").length){
     $('#headlines').FeedEk({
     FeedUrl:'https://ualbertalibrarynews.blogspot.ca/feeds/posts/default',
-    MaxCount : 3,
+    MaxCount : 4,
     DateFormat: 'LLL',
     ShowDesc : false
   });
@@ -868,8 +868,8 @@ chart.render();
 
    if ($("#headlines-fr").length){
     $('#headlines-fr').FeedEk({
-    FeedUrl:'http://blogs.library.ualberta.ca/biblioblogue/?feed=rss',
-    MaxCount : 12,
+    FeedUrl:'http://uabsj.blogspot.ca/feeds/posts/default',
+    MaxCount : 4,
     DateFormat: 'LLL',
     ShowDesc : false
   });

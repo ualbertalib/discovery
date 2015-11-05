@@ -21,7 +21,7 @@
  It is *not* a good example to work from. 
 -->
 <config>
-  <luceneMatchVersion>LUCENE_40</luceneMatchVersion>
+  <luceneMatchVersion>4.10.4</luceneMatchVersion>
   <!--  The DirectoryFactory to use for indexes.
         solr.StandardDirectoryFactory, the default, is filesystem based.
         solr.RAMDirectoryFactory is memory based, not persistent, and doesn't work with replication. -->
@@ -94,8 +94,7 @@
        <int name="rows">10</int>
 
        <str name="q.alt">*:*</str>
-       <!-- <str name="mm">2&#38;lt;&#45;1 5&#38;lt;&#45;2 6&#38;lt;90%</str> -->
-       <str name="mm">0</str>
+       <str name="mm">2&lt;-1 5&lt;-2 6&lt;90%</str>
 
        <!-- this qf and pf are used by default, if not otherwise specified by
             client. The default blacklight_config will use these for the
@@ -120,6 +119,7 @@
          title_addl_t^25000
          title_added_entry_unstem_search^1500
          title_added_entry_t^1250
+         publisher_tesim^1000
          subject_topic_unstem_search^1000
          subject_unstem_search^750
          subject_topic_facet^625
@@ -132,6 +132,7 @@
          subject_addl_unstem_search^250
          subject_addl_t^50
          gmd_tesim^50
+         summary_holdings_tesim^50
          title_series_unstem_search^25
          title_series_t^10
          <!-- text -->
@@ -152,6 +153,7 @@
          title_addl_t^25000
          title_added_entry_unstem_search^15000
          title_added_entry_t^12500
+         publisher_tesim^10000
          subject_topic_unstem_search^10000
          subject_unstem_search^7500
          subject_topic_facet^6250
@@ -164,6 +166,7 @@
          subject_addl_unstem_search^2500
          subject_addl_t^500
          gmd_tesim^500
+         summary_holdings_tesim^500
          title_series_unstem_search^250
          title_series_t^100
          text^10

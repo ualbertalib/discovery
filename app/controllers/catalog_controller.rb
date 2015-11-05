@@ -42,15 +42,13 @@ class CatalogController < ApplicationController
     holdings_log.close
 
     if @document["url_fulltext_display"]
-      @urls = holdings(@document, :links)
+      @ua_urls, @non_ua_urls = holdings(@document, :links)
     end
 
-    if @document["subject_topic_facet"]
-      @subjects << @document["subject_topic_facet"]
-    end
-
-    if @document["subject_addl_t"]
-      @subjects << @document["subject_addl_t"]
+    if @document["subject_t"]
+      @document["subject_t"].each do |subject|
+        @subjects << subject.split(/\s(?=[A-Z])/).reverse
+      end
     end
 
     if @document["author_display"]
@@ -116,7 +114,7 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'electronic_tesim', :label => 'Print or Online?', collapse: false
+    config.add_facet_field 'electronic_tesim', :label => 'Access', collapse: false
     config.add_facet_field 'location_tesim', :label => 'Library', sort: 'index'
     config.add_facet_field 'lc_1letter_facet', :label => 'Call Number', :limit => 10
     config.add_facet_field 'format', :label => 'Format', :limit => 10
@@ -127,10 +125,9 @@ class CatalogController < ApplicationController
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
     config.add_facet_field 'subject_topic_facet', :label => 'Subject', :limit => 20 
-    config.add_facet_field 'minor_tesim', :label => 'Subject', :limit => 20 
     config.add_facet_field 'language_facet', :label => 'Language', :limit => 10
     config.add_facet_field 'subject_geo_facet', :label => 'Geographic Region', :limit => 10 
-    config.add_facet_field 'subject_era_facet', :label => 'Time Period', :limit => 10
+    config.add_facet_field 'subject_era_facet', :label => 'Historic Period', :limit => 10
     config.add_facet_field 'owning_library_tesim', :label => 'Owning Library'
 
 
@@ -161,6 +158,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'title_addl_t', :label => 'Full/Alternate Title(s)'
     # config.add_show_field 'subtitle_display', :label => 'Subtitle'
     # config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
+    config.add_show_field 'section_tesim', :label => "Section/Number"
     config.add_show_field 'alternate_display_tesim', :label => "Original"
     config.add_show_field 'edition_tesim', :label => "Edition"
     config.add_show_field 'author_display', :label => 'Author'

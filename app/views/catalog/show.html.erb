@@ -6,13 +6,42 @@
     <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-md-9">
       <% # bookmark/folder functions -%>
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
+    </div>
+    <div class="col-md-3 full-record-book-jacket">
+      <% if @document[:isbn_t] %>
+        <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+      <% end %>
+    </div>
+</div>
+</div>
+  <div id="sidebar" class="col-md-3 top-margin">
+  <%= render_document_sidebar_partial %>
+</div>
 
-      <% if @subjects  %>
+<div class="col-sm-12">
+  <% if @subjects  %>
       <div id="subjects">
         <p class="blacklight-subject_topic_facet">Subjects</p>
-        <ul>
+        <ul class="subject-chain-links">
           <% @subjects.each do |subject| %>
-            <li><a href="/<%= params[:controller] %>?f%5Bsubject_topic_facet%5D%5B%5D=<%= subject.first %>&q=&view=brief"><%= subject.first %></a></li>
+            <li>
+            <% subject=subject.reverse! %>
+            <% subject.each_with_index do |asubject, index| %> 
+            <% i = 0 %>
+            <% sbstring = "" %>
+            <% while( i <= index ) %>
+              <% sbstring = sbstring + subject[i].gsub(" ", "+") %>
+                <% unless i == index %> 
+                  <% sbstring = sbstring + " AND " %>
+                <% end %>
+                <% i+= 1 %>
+              <% end %>
+              <a href="/<%= params[:controller] %>?q=<%= sbstring %>&view=brief&search_field=subject"><%= asubject %></a> 
+            <% unless index == subject.size - 1  %>
+              <span class="glyphicon glyphicon-menu-right"></span>
+             <% end %>
+        <% end %>
+        </li>
         <% end %>
         </ul>
       </div>
@@ -33,25 +62,13 @@
      <%= render "databases" %>
       <% end %>
 
-      <% if @urls %>
+      <% if @ua_urls or @non_ua_urls %>
         <%= render "urls" %>
         <% end %>
-    </div>
-    <div class="col-md-3 full-record-book-jacket">
-      <% if @document[:isbn_t] %>
-        <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
-      <% end %>
-    </div>
-</div>
-</div>
-  <div id="sidebar" class="col-md-3 top-margin">
-  <%= render_document_sidebar_partial %>
-</div>
-
 
 <% unless @holdings.empty? %>
   <%= render "holdings" %>
   <% end %>
   </div>
-
+</div>
 
