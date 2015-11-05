@@ -22,7 +22,6 @@ class CatalogController < ApplicationController
   end
 
   def show
-    @subjects = []
     super
     @holdings = []
     holdings_log = File.open("./log/holdings.log", "w")
@@ -46,6 +45,7 @@ class CatalogController < ApplicationController
     end
 
     if @document["subject_t"]
+    @subjects = []
       @document["subject_t"].each do |subject|
         @subjects << subject.split(/\s(?=[A-Z])/).reverse
       end
