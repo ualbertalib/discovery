@@ -97,7 +97,7 @@ label.search-again{
 	border-width: 0 10px;
 	padding:10px 20px 40px 20px;
 	background-color: #eceef3;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .results h3 span{
 	display: block;
@@ -209,6 +209,15 @@ font-size: 18px;
 }
 .status{
 	font-weight: bold;
+}
+.as-list, .as-grid{
+	font-size: 14px;
+	margin-top: 15px;
+	float: right;
+	vertical-align: top;
+}
+.as-list span, .as-grid span{
+	font-size: 18px;
 }
 .results ul li:hover{
 	background-color: #f6f9fa;

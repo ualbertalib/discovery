@@ -19,15 +19,19 @@
             <input type="text" class="form-control" placeholder="search again" name="q" id="search-again" title="search again">
           </div>
           <div class="form-group"> 
-            <button type="submit" class="btn btn-small">search</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a> <%# link_to image_tag("list.png", size: "35x35"), catalog_index_path(:q => params['q']) %>
+            <button type="submit" class="btn btn-small">search</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a>
+            
         </div>
         </form>
 		  </div> 
       <div class="col-sm-6 outlined hidden-xs">
-       	<p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html" target="_blank">chat with us!</a></p>
+       	<p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html" target="_blank">chat with us!</a></p> 
       </div>
+      <%= link_to catalog_index_path(:q => params['q']), :class => "as-list" do %>
+        <span class="glyphicon glyphicon-list"></span> view results as a list
+      <% end %>
     </div>
-    <div class="results-wrap top-margin">
+    <div class="results-wrap">
       <div class="col-sm-4 rcol">
     	<div class="col-sm-12 results" > 
         <div id="books"> <!-- start of books and journals pane -->

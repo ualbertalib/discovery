@@ -1,4 +1,7 @@
-<div class="col-md-12"><h2> 
+<div class="col-md-12">
+<div class="row">
+          <div class="col-sm-6">
+  <h2> 
 Results for <em>
             <% if params[:q] and params[:q] =='' %>
                    everything 
@@ -14,8 +17,9 @@ Results for <em>
             <% else %>
             	<%= params[:q] %>
 			<% end %>
-    </em> in <%= @collection_name %>
+    </em> 
         </h2>
+        
 			<form class="form-inline" role="form">
             	<div class="form-group">   
                     <input type="text" class="form-control" placeholder="search again" name="q">
@@ -23,7 +27,15 @@ Results for <em>
                 <button type="submit" class="btn btn-small">search</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a> <%# link_to image_tag("grid.png", size: "30x30"), results_path(:q => params['q']) %>
 
             </form>
-		</div> 
+		</div>  
+      <div class="col-sm-6 outlined hidden-xs">
+        <p>Questions about your results or your research? <a href="http://library.ualberta.ca/askus/chatref.html" target="_blank">chat with us!</a></p> 
+      </div>
+    <%= link_to results_path(:q => params['q']), :class => "as-grid" do %>
+        <span class="glyphicon glyphicon-th-large"></span> view results as a grid
+      <% end %>
+    </div>
+    <div class="row top-margin">
 <div id="sidebar" class="col-md-3 col-sm-4">
   <%= render 'search_sidebar' %>
 </div>
@@ -34,5 +46,6 @@ Results for <em>
   <% else %>
     <%= render 'search_results' %>
   <% end %>
+</div>
 </div>
 
