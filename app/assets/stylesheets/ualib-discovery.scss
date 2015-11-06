@@ -155,14 +155,14 @@ font-size: 18px;
 	overflow: hidden;
 }
 .results li span{
-	font-size: 12px;
+	font-size: 14px;
 }
 .results span.date{
 	margin-left: 0;
-	font-size: 11px;
+	font-size: 12px;
 	font-weight: bold;
 	font-family: arial, sans-serif;
-	margin-left: 5px;
+	text-align: left;
 	}
 .results .col-md-10, .results .col-md-2{
 	padding-right: 4px;
@@ -239,6 +239,14 @@ font-size: 18px;
 	margin-bottom: 0;
 	margin-top: 5px;
 }
+.author-result-list{
+	display: block;
+	font-size: 14px;
+	
+}
+.number-result-list{
+	margin-left: -13px;
+}
 .more-results{
 	font-size: 14px;
 	width: 100%;
@@ -249,7 +257,6 @@ font-size: 18px;
 }
 .subject-chain-links li{
 	margin-bottom: 10px;
-	font-size: 14px;
 }
 .subject-chain-links li span{
 	font-size: 10px;
