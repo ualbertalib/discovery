@@ -395,6 +395,9 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 #holdings table td.call-number{
 	min-width: 250px;
 }
+.holding-status, .holding-type{
+	text-transform: capitalize;
+}
 .panel-default > .panel-heading{
 	background-color: #eceff4;
 }
