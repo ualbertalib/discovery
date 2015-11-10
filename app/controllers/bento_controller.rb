@@ -10,7 +10,7 @@ class BentoController < ApplicationController
 
     load_lookup_tables
 
-    collections = ["databases", "sfx", "symphony", "ebooks", "eds"]
+    collections = ["databases", "sfx", "symphony", "eds"]
     threads = []
 
     @rows = 10
@@ -60,10 +60,6 @@ class BentoController < ApplicationController
 
   def populate_symphony
     @symphony, @symphony_count = populate_collection({source: 'Symphony'})
-  end
-
-  def populate_ebooks
-    @ebooks, @ebooks_count = populate_collection({source: 'Symphony', electronic_tesim: 'Online'})
   end
 
   def populate_eds

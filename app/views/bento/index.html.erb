@@ -92,7 +92,7 @@
     <div class="col-sm-4 results" id="articles"> <!-- start of articles pane -->
       <h3><span class="col-sm-6">Articles, E-Books, and more</span>
         <% if @eds_count>0 %>
-          <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-sm-6 see-all-results"><%= @eds_count %> results</a>
+          <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-6 see-all-results"><%= @eds_count %> results</a>
         <% end %>
       </h3>
        <% if @eds_count == 0 %>
@@ -122,7 +122,7 @@
         <% end %>
       </ul>
         <% if @eds_count>10 %>
-          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-sm-12">View all Articles, E-Books, and more</a></div>
+          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-12">View all Articles, E-Books, and more</a></div>
         <% end %>
         <% else %>
           <p><%= @eds %></p>
