@@ -50,7 +50,7 @@ class CatalogController < ApplicationController
         if subject.include? ","
           @subjects << [subject]
         else
-          @subjects << subject.split(/\s(?=[A-Z])/)
+          @subjects << subject.split(" -- ")
         end
       end
     end
@@ -128,6 +128,7 @@ class CatalogController < ApplicationController
     #    :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
+    config.add_facet_field 'author_display', :label => 'Author', :limit => 20 
     config.add_facet_field 'subject_topic_facet', :label => 'Subject', :limit => 20 
     config.add_facet_field 'language_facet', :label => 'Language', :limit => 10
     config.add_facet_field 'subject_geo_facet', :label => 'Geographic Region', :limit => 10 
