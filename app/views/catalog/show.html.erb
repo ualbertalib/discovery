@@ -19,7 +19,7 @@
             <% while( i <= index ) %>
               <% sbstring = sbstring + subject[i].gsub(" ", "+") %>
                 <% unless i == index %> 
-                  <% sbstring = sbstring + " AND " %>
+                  <% sbstring = sbstring + "+" %>
                 <% end %>
                 <% i+= 1 %>
               <% end %>
