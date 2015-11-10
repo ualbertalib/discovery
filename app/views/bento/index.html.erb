@@ -35,7 +35,7 @@
       <div class="col-sm-4 rcol">
     	<div class="col-sm-12 results" > 
         <div id="books"> <!-- start of books and journals pane -->
-          <h3 id="print"><span class="col-sm-6">Books, media, and more</span>
+          <h3 id="print"><span class="col-sm-6">Books, media &amp; more</span>
             <% if @symphony_count>10 %>
               <a href="/symphony?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @symphony_count %> results</a>
             <% end %>
@@ -68,7 +68,7 @@
           </ul>
           <div class="results-bottom">
             <% if @symphony_count>10 %>
-              <a href="/symphony?q=<%= @query %>" class="col-sm-12">View all Books, media, and more</a>
+              <a href="/symphony?q=<%= @query %>" class="col-sm-12">View all books, media &amp; more</a>
             <% end %>
           </div>
         </div> 
@@ -77,13 +77,13 @@
     
 
     <div class="col-sm-4 results" id="articles"> <!-- start of articles pane -->
-      <h3><span class="col-sm-6">Discovery Service (EBSCO)</span>
+      <h3><span class="col-sm-6">Articles, ebooks &amp; more</span>
         <% if @eds_count>0 %>
           <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-sm-6 see-all-results"><%= @eds_count %> results</a>
         <% end %>
       </h3>
        <% if @eds_count == 0 %>
-              <p class="no-results">No Articles were found<p>
+              <p class="no-results">No results were found<p>
             <% end %> 
       <ul>       
         <% i = 1 %> 
@@ -100,7 +100,7 @@
         <% end %>
       </ul>
         <% if @eds_count>10 %>
-          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-sm-12">View all Articles</a></div>
+          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-sm-12">View all articles, ebooks &amp; more</a></div>
         <% end %>
         <% else %>
           <p><%= @eds %></p>
@@ -125,7 +125,7 @@
 				<% end %>
 			</ul>
       <% if @ejournals_count>0 %>
-			 <div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-sm-12">View all Electronic Journals</a></div>
+			 <div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-sm-12">View all electronic journals</a></div>
       <% end %>
 		</div><!-- end of ejournals pane -->
 
