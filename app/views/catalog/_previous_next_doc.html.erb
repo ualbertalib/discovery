@@ -12,9 +12,8 @@
     </div>
 
     <div class="pull-right search-widgets">
-        <%= link_back_to_catalog :class => 'btn btn-ltblue' %>
-        
-        <%=link_to "#{t('blacklight.search.start_over')}", "/", :class => 'btn btn-ltblue' %> 
- 	</div>
+        <%= link_back_to_catalog(label: 'Back to Search Results', :class => 'btn btn-ltblue') %>
+        <%=link_to "Start Over", "/", :class => 'btn btn-ltblue' %>
+  	</div>
   </div>
 <% end %>
