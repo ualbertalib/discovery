@@ -50,7 +50,7 @@ class CatalogController < ApplicationController
         if subject.include? ","
           @subjects << [subject]
         else
-          @subjects << subject.split(/\s(?=[A-Z])/)
+          @subjects << subject.split(" -- ")
         end
       end
     end
