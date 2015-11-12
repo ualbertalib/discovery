@@ -1,227 +1,3 @@
-/* =============================================================
-
-  Smooth Scroll v4.5
-  Animate scrolling to anchor links, by Chris Ferdinandi.
-  http://gomakethings.com
-
-  Additional contributors:
-  https://github.com/cferdinandi/smooth-scroll#contributors
-
-  Free to use under the MIT License.
-  http://gomakethings.com/mit/
-
- * ============================================================= */
-
-window.smoothScroll = (function (window, document, undefined) {
-
-  'use strict';
-
-  // Default settings
-  // Private {object} variable
-  var _defaults = {
-    speed: 500,
-    easing: 'easeInOutCubic',
-    offset: 0,
-    updateURL: false,
-    callbackBefore: function () {},
-    callbackAfter: function () {}
-  };
-
-  // Merge default settings with user options
-  // Private method
-  // Returns an {object}
-  var _mergeObjects = function ( original, updates ) {
-    for (var key in updates) {
-      original[key] = updates[key];
-    }
-    return original;
-  };
-
-  // Calculate the easing pattern
-  // Private method
-  // Returns a decimal number
-  var _easingPattern = function ( type, time ) {
-    if ( type == 'easeInQuad' ) return time * time; // accelerating from zero velocity
-    if ( type == 'easeOutQuad' ) return time * (2 - time); // decelerating to zero velocity
-    if ( type == 'easeInOutQuad' ) return time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time; // acceleration until halfway, then deceleration
-    if ( type == 'easeInCubic' ) return time * time * time; // accelerating from zero velocity
-    if ( type == 'easeOutCubic' ) return (--time) * time * time + 1; // decelerating to zero velocity
-    if ( type == 'easeInOutCubic' ) return time < 0.5 ? 4 * time * time * time : (time - 1) * (2 * time - 2) * (2 * time - 2) + 1; // acceleration until halfway, then deceleration
-    if ( type == 'easeInQuart' ) return time * time * time * time; // accelerating from zero velocity
-    if ( type == 'easeOutQuart' ) return 1 - (--time) * time * time * time; // decelerating to zero velocity
-    if ( type == 'easeInOutQuart' ) return time < 0.5 ? 8 * time * time * time * time : 1 - 8 * (--time) * time * time * time; // acceleration until halfway, then deceleration
-    if ( type == 'easeInQuint' ) return time * time * time * time * time; // accelerating from zero velocity
-    if ( type == 'easeOutQuint' ) return 1 + (--time) * time * time * time * time; // decelerating to zero velocity
-    if ( type == 'easeInOutQuint' ) return time < 0.5 ? 16 * time * time * time * time * time : 1 + 16 * (--time) * time * time * time * time; // acceleration until halfway, then deceleration
-    return time; // no easing, no acceleration
-  };
-
-  // Calculate how far to scroll
-  // Private method
-  // Returns an integer
-  var _getEndLocation = function ( anchor, headerHeight, offset ) {
-    var location = 0;
-    if (anchor.offsetParent) {
-      do {
-        location += anchor.offsetTop;
-        anchor = anchor.offsetParent;
-      } while (anchor);
-    }
-    location = location - headerHeight - offset;
-    if ( location >= 0 ) {
-      return location;
-    } else {
-      return 0;
-    }
-  };
-
-  // Determine the document's height
-  // Private method
-  // Returns an integer
-  var _getDocumentHeight = function () {
-    return Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    );
-  };
-
-  // Convert data-options attribute into an object of key/value pairs
-  // Private method
-  // Returns an {object}
-  var _getDataOptions = function ( options ) {
-
-    if ( options === null || options === undefined  ) {
-      return {};
-    } else {
-      var settings = {}; // Create settings object
-      options = options.split(';'); // Split into array of options
-
-      // Create a key/value pair for each setting
-      options.forEach( function(option) {
-        option = option.trim();
-        if ( option !== '' ) {
-          option = option.split(':');
-          settings[option[0]] = option[1].trim();
-        }
-      });
-
-      return settings;
-    }
-
-  };
-
-  // Update the URL
-  // Private method
-  // Runs functions
-  var _updateURL = function ( anchor, url ) {
-    if ( (url === true || url === 'true') && history.pushState ) {
-      history.pushState( {pos:anchor.id}, '', anchor );
-    }
-  };
-
-  // Start/stop the scrolling animation
-  // Public method
-  // Runs functions
-  var animateScroll = function ( toggle, anchor, options, event ) {
-
-    // Options and overrides
-    options = _mergeObjects( _defaults, options || {} ); // Merge user options with defaults
-    var overrides = _getDataOptions( toggle ? toggle.getAttribute('data-options') : null );
-    var speed = parseInt(overrides.speed || options.speed, 10);
-    var easing = overrides.easing || options.easing;
-    var offset = parseInt(overrides.offset || options.offset, 10);
-    var updateURL = overrides.updateURL || options.updateURL;
-
-    // Selectors and variables
-    var fixedHeader = document.querySelector('[data-scroll-header]'); // Get the fixed header
-    var headerHeight = fixedHeader === null ? 0 : (fixedHeader.offsetHeight + fixedHeader.offsetTop); // Get the height of a fixed header if one exists
-    var startLocation = window.pageYOffset; // Current location on the page
-    var endLocation = _getEndLocation( document.querySelector(anchor), headerHeight, offset ); // Scroll to location
-    var animationInterval; // interval timer
-    var distance = endLocation - startLocation; // distance to travel
-    var documentHeight = _getDocumentHeight();
-    var timeLapsed = 0;
-    var percentage, position;
-
-    // Prevent default click event
-    if ( toggle && toggle.tagName === 'A' && event ) {
-      event.preventDefault();
-    }
-
-    // Update URL
-    _updateURL(anchor, updateURL);
-
-    // Stop the scroll animation when it reaches its target (or the bottom/top of page)
-    // Private method
-    // Runs functions
-    var _stopAnimateScroll = function (position, endLocation, animationInterval) {
-      var currentLocation = window.pageYOffset;
-      if ( position == endLocation || currentLocation == endLocation || ( (window.innerHeight + currentLocation) >= documentHeight ) ) {
-        clearInterval(animationInterval);
-        options.callbackAfter( toggle, anchor ); // Run callbacks after animation complete
-      }
-    };
-
-    // Loop scrolling animation
-    // Private method
-    // Runs functions
-    var _loopAnimateScroll = function () {
-      timeLapsed += 16;
-      percentage = ( timeLapsed / speed );
-      percentage = ( percentage > 1 ) ? 1 : percentage;
-      position = startLocation + ( distance * _easingPattern(easing, percentage) );
-      window.scrollTo( 0, Math.floor(position) );
-      _stopAnimateScroll(position, endLocation, animationInterval);
-    };
-
-    // Set interval timer
-    // Private method
-    // Runs functions
-    var _startAnimateScroll = function () {
-      options.callbackBefore( toggle, anchor ); // Run callbacks before animating scroll
-      animationInterval = setInterval(_loopAnimateScroll, 16);
-    };
-
-    // Reset position to fix weird iOS bug
-    // https://github.com/cferdinandi/smooth-scroll/issues/45
-    if ( window.pageYOffset === 0 ) {
-      window.scrollTo( 0, 0 );
-    }
-
-    // Start scrolling animation
-    _startAnimateScroll();
-
-  };
-
-  // Initialize Smooth Scroll
-  // Public method
-  // Runs functions
-  var init = function ( options ) {
-
-    // Feature test before initializing
-    if ( 'querySelector' in document && 'addEventListener' in window && Array.prototype.forEach ) {
-
-      // Selectors and variables
-      options = _mergeObjects( _defaults, options || {} ); // Merge user options with defaults
-      var toggles = document.querySelectorAll('[data-scroll]'); // Get smooth scroll toggles
-
-      // When a toggle is clicked, run the click handler
-      Array.prototype.forEach.call(toggles, function (toggle, index) {
-        toggle.addEventListener('click', animateScroll.bind( null, toggle, toggle.getAttribute('href'), options ), false);
-      });
-
-    }
-
-  };
-
-  // Return public methods
-  return {
-    init: init,
-    animateScroll: animateScroll
-  };
-
-})(window, document);
 
 // Generated by CoffeeScript 1.6.2
 /*!
@@ -231,6 +7,7 @@ Licensed under the MIT license.
 https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 */
 (function(){var t=[].indexOf||function(t){for(var e=0,n=this.length;e<n;e++){if(e in this&&this[e]===t)return e}return-1},e=[].slice;(function(t,e){if(typeof define==="function"&&define.amd){return define("waypoints",["jquery"],function(n){return e(n,t)})}else{return e(t.jQuery,t)}})(window,function(n,r){var i,o,l,s,f,u,c,a,h,d,p,y,v,w,g,m;i=n(r);a=t.call(r,"ontouchstart")>=0;s={horizontal:{},vertical:{}};f=1;c={};u="waypoints-context-id";p="resize.waypoints";y="scroll.waypoints";v=1;w="waypoints-waypoint-ids";g="waypoint";m="waypoints";o=function(){function t(t){var e=this;this.$element=t;this.element=t[0];this.didResize=false;this.didScroll=false;this.id="context"+f++;this.oldScroll={x:t.scrollLeft(),y:t.scrollTop()};this.waypoints={horizontal:{},vertical:{}};this.element[u]=this.id;c[this.id]=this;t.bind(y,function(){var t;if(!(e.didScroll||a)){e.didScroll=true;t=function(){e.doScroll();return e.didScroll=false};return r.setTimeout(t,n[m].settings.scrollThrottle)}});t.bind(p,function(){var t;if(!e.didResize){e.didResize=true;t=function(){n[m]("refresh");return e.didResize=false};return r.setTimeout(t,n[m].settings.resizeThrottle)}})}t.prototype.doScroll=function(){var t,e=this;t={horizontal:{newScroll:this.$element.scrollLeft(),oldScroll:this.oldScroll.x,forward:"right",backward:"left"},vertical:{newScroll:this.$element.scrollTop(),oldScroll:this.oldScroll.y,forward:"down",backward:"up"}};if(a&&(!t.vertical.oldScroll||!t.vertical.newScroll)){n[m]("refresh")}n.each(t,function(t,r){var i,o,l;l=[];o=r.newScroll>r.oldScroll;i=o?r.forward:r.backward;n.each(e.waypoints[t],function(t,e){var n,i;if(r.oldScroll<(n=e.offset)&&n<=r.newScroll){return l.push(e)}else if(r.newScroll<(i=e.offset)&&i<=r.oldScroll){return l.push(e)}});l.sort(function(t,e){return t.offset-e.offset});if(!o){l.reverse()}return n.each(l,function(t,e){if(e.options.continuous||t===l.length-1){return e.trigger([i])}})});return this.oldScroll={x:t.horizontal.newScroll,y:t.vertical.newScroll}};t.prototype.refresh=function(){var t,e,r,i=this;r=n.isWindow(this.element);e=this.$element.offset();this.doScroll();t={horizontal:{contextOffset:r?0:e.left,contextScroll:r?0:this.oldScroll.x,contextDimension:this.$element.width(),oldScroll:this.oldScroll.x,forward:"right",backward:"left",offsetProp:"left"},vertical:{contextOffset:r?0:e.top,contextScroll:r?0:this.oldScroll.y,contextDimension:r?n[m]("viewportHeight"):this.$element.height(),oldScroll:this.oldScroll.y,forward:"down",backward:"up",offsetProp:"top"}};return n.each(t,function(t,e){return n.each(i.waypoints[t],function(t,r){var i,o,l,s,f;i=r.options.offset;l=r.offset;o=n.isWindow(r.element)?0:r.$element.offset()[e.offsetProp];if(n.isFunction(i)){i=i.apply(r.element)}else if(typeof i==="string"){i=parseFloat(i);if(r.options.offset.indexOf("%")>-1){i=Math.ceil(e.contextDimension*i/100)}}r.offset=o-e.contextOffset+e.contextScroll-i;if(r.options.onlyOnScroll&&l!=null||!r.enabled){return}if(l!==null&&l<(s=e.oldScroll)&&s<=r.offset){return r.trigger([e.backward])}else if(l!==null&&l>(f=e.oldScroll)&&f>=r.offset){return r.trigger([e.forward])}else if(l===null&&e.oldScroll>=r.offset){return r.trigger([e.forward])}})})};t.prototype.checkEmpty=function(){if(n.isEmptyObject(this.waypoints.horizontal)&&n.isEmptyObject(this.waypoints.vertical)){this.$element.unbind([p,y].join(" "));return delete c[this.id]}};return t}();l=function(){function t(t,e,r){var i,o;if(r.offset==="bottom-in-view"){r.offset=function(){var t;t=n[m]("viewportHeight");if(!n.isWindow(e.element)){t=e.$element.height()}return t-n(this).outerHeight()}}this.$element=t;this.element=t[0];this.axis=r.horizontal?"horizontal":"vertical";this.callback=r.handler;this.context=e;this.enabled=r.enabled;this.id="waypoints"+v++;this.offset=null;this.options=r;e.waypoints[this.axis][this.id]=this;s[this.axis][this.id]=this;i=(o=this.element[w])!=null?o:[];i.push(this.id);this.element[w]=i}t.prototype.trigger=function(t){if(!this.enabled){return}if(this.callback!=null){this.callback.apply(this.element,t)}if(this.options.triggerOnce){return this.destroy()}};t.prototype.disable=function(){return this.enabled=false};t.prototype.enable=function(){this.context.refresh();return this.enabled=true};t.prototype.destroy=function(){delete s[this.axis][this.id];delete this.context.waypoints[this.axis][this.id];return this.context.checkEmpty()};t.getWaypointsByElement=function(t){var e,r;r=t[w];if(!r){return[]}e=n.extend({},s.horizontal,s.vertical);return n.map(r,function(t){return e[t]})};return t}();d={init:function(t,e){var r;e=n.extend({},n.fn[g].defaults,e);if((r=e.handler)==null){e.handler=t}this.each(function(){var t,r,i,s;t=n(this);i=(s=e.context)!=null?s:n.fn[g].defaults.context;if(!n.isWindow(i)){i=t.closest(i)}i=n(i);r=c[i[0][u]];if(!r){r=new o(i)}return new l(t,r,e)});n[m]("refresh");return this},disable:function(){return d._invoke.call(this,"disable")},enable:function(){return d._invoke.call(this,"enable")},destroy:function(){return d._invoke.call(this,"destroy")},prev:function(t,e){return d._traverse.call(this,t,e,function(t,e,n){if(e>0){return t.push(n[e-1])}})},next:function(t,e){return d._traverse.call(this,t,e,function(t,e,n){if(e<n.length-1){return t.push(n[e+1])}})},_traverse:function(t,e,i){var o,l;if(t==null){t="vertical"}if(e==null){e=r}l=h.aggregate(e);o=[];this.each(function(){var e;e=n.inArray(this,l[t]);return i(o,e,l[t])});return this.pushStack(o)},_invoke:function(t){this.each(function(){var e;e=l.getWaypointsByElement(this);return n.each(e,function(e,n){n[t]();return true})});return this}};n.fn[g]=function(){var t,r;r=arguments[0],t=2<=arguments.length?e.call(arguments,1):[];if(d[r]){return d[r].apply(this,t)}else if(n.isFunction(r)){return d.init.apply(this,arguments)}else if(n.isPlainObject(r)){return d.init.apply(this,[null,r])}else if(!r){return n.error("jQuery Waypoints needs a callback function or handler option.")}else{return n.error("The "+r+" method does not exist in jQuery Waypoints.")}};n.fn[g].defaults={context:r,continuous:true,enabled:true,horizontal:false,offset:0,triggerOnce:false};h={refresh:function(){return n.each(c,function(t,e){return e.refresh()})},viewportHeight:function(){var t;return(t=r.innerHeight)!=null?t:i.height()},aggregate:function(t){var e,r,i;e=s;if(t){e=(i=c[n(t)[0][u]])!=null?i.waypoints:void 0}if(!e){return[]}r={horizontal:[],vertical:[]};n.each(r,function(t,i){n.each(e[t],function(t,e){return i.push(e)});i.sort(function(t,e){return t.offset-e.offset});r[t]=n.map(i,function(t){return t.element});return r[t]=n.unique(r[t])});return r},above:function(t){if(t==null){t=r}return h._filter(t,"vertical",function(t,e){return e.offset<=t.oldScroll.y})},below:function(t){if(t==null){t=r}return h._filter(t,"vertical",function(t,e){return e.offset>t.oldScroll.y})},left:function(t){if(t==null){t=r}return h._filter(t,"horizontal",function(t,e){return e.offset<=t.oldScroll.x})},right:function(t){if(t==null){t=r}return h._filter(t,"horizontal",function(t,e){return e.offset>t.oldScroll.x})},enable:function(){return h._invoke("enable")},disable:function(){return h._invoke("disable")},destroy:function(){return h._invoke("destroy")},extendFn:function(t,e){return d[t]=e},_invoke:function(t){var e;e=n.extend({},s.vertical,s.horizontal);return n.each(e,function(e,n){n[t]();return true})},_filter:function(t,e,r){var i,o;i=c[n(t)[0][u]];if(!i){return[]}o=[];n.each(i.waypoints[e],function(t,e){if(r(i,e)){return o.push(e)}});o.sort(function(t,e){return t.offset-e.offset});return n.map(o,function(t){return t.element})}};n[m]=function(){var t,n;n=arguments[0],t=2<=arguments.length?e.call(arguments,1):[];if(h[n]){return h[n].apply(null,t)}else{return h.aggregate.call(null,n)}};n[m].settings={resizeThrottle:100,scrollThrottle:30};return i.on("load.waypoints",function(){return n[m]("refresh")})})}).call(this);
+
 
 
 /*
@@ -688,57 +465,57 @@ hh:"%d hours",d:"a day",dd:"%d days",M:"a month",MM:"%d months",y:"a year",yy:"%
 
 (function($){$.fn.FeedEk=function(opt){var def=$.extend({FeedUrl:"http://rss.cnn.com/rss/edition.rss",MaxCount:5,ShowDesc:true,ShowPubDate:true,CharacterLimit:0,TitleLinkTarget:"_blank",DateFormat:"",DateFormatLang:"en"},opt);var id=$(this).attr("id"),i,s="",dt;$.ajax({url:"https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num="+def.MaxCount+"&output=json&q="+encodeURIComponent(def.FeedUrl)+"&hl=en&callback=?",dataType:"json",success:function(data){$("#"+id).empty();$.each(data.responseData.feed.entries,function(e,item){if(def.ShowPubDate){dt=new Date(item.publishedDate);if($.trim(def.DateFormat).length>0){try{moment.locale(def.DateFormatLang);s+='<li><div class="itemDate">posted '+moment(dt).format(def.DateFormat)+"</div>"}catch(e){s+='<div class="itemDate">posted '+dt.toLocaleDateString()+"</div>"}}else{s+='<div class="itemDate">posted '+dt.toLocaleDateString()+"</div>"}}s+='<div class="itemTitle"><a href="'+item.link+'" target="'+def.TitleLinkTarget+'" >'+item.title+"</a></div>";if(def.ShowDesc){if(def.DescCharacterLimit>0&&item.content.length>def.DescCharacterLimit){s+='<div class="itemContent">'+item.content.substr(0,def.DescCharacterLimit)+"...</div>"}else{s+='<div class="itemContent">'+item.content+"</div>"}}});$("#"+id).append('<ul class="feedEkList">'+s+"</ul>")}})}})(jQuery);
 
+jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,f,a,h,g){return jQuery.easing[jQuery.easing.def](e,f,a,h,g)},easeInQuad:function(e,f,a,h,g){return h*(f/=g)*f+a},easeOutQuad:function(e,f,a,h,g){return -h*(f/=g)*(f-2)+a},easeInOutQuad:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f+a}return -h/2*((--f)*(f-2)-1)+a},easeInCubic:function(e,f,a,h,g){return h*(f/=g)*f*f+a},easeOutCubic:function(e,f,a,h,g){return h*((f=f/g-1)*f*f+1)+a},easeInOutCubic:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f+a}return h/2*((f-=2)*f*f+2)+a},easeInQuart:function(e,f,a,h,g){return h*(f/=g)*f*f*f+a},easeOutQuart:function(e,f,a,h,g){return -h*((f=f/g-1)*f*f*f-1)+a},easeInOutQuart:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f*f+a}return -h/2*((f-=2)*f*f*f-2)+a},easeInQuint:function(e,f,a,h,g){return h*(f/=g)*f*f*f*f+a},easeOutQuint:function(e,f,a,h,g){return h*((f=f/g-1)*f*f*f*f+1)+a},easeInOutQuint:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f*f*f+a}return h/2*((f-=2)*f*f*f*f+2)+a},easeInSine:function(e,f,a,h,g){return -h*Math.cos(f/g*(Math.PI/2))+h+a},easeOutSine:function(e,f,a,h,g){return h*Math.sin(f/g*(Math.PI/2))+a},easeInOutSine:function(e,f,a,h,g){return -h/2*(Math.cos(Math.PI*f/g)-1)+a},easeInExpo:function(e,f,a,h,g){return(f==0)?a:h*Math.pow(2,10*(f/g-1))+a},easeOutExpo:function(e,f,a,h,g){return(f==g)?a+h:h*(-Math.pow(2,-10*f/g)+1)+a},easeInOutExpo:function(e,f,a,h,g){if(f==0){return a}if(f==g){return a+h}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a}return h/2*(-Math.pow(2,-10*--f)+2)+a},easeInCirc:function(e,f,a,h,g){return -h*(Math.sqrt(1-(f/=g)*f)-1)+a},easeOutCirc:function(e,f,a,h,g){return h*Math.sqrt(1-(f=f/g-1)*f)+a},easeInOutCirc:function(e,f,a,h,g){if((f/=g/2)<1){return -h/2*(Math.sqrt(1-f*f)-1)+a}return h/2*(Math.sqrt(1-(f-=2)*f)+1)+a},easeInElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k)==1){return e+l}if(!j){j=k*0.3}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}return -(g*Math.pow(2,10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j))+e},easeOutElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k)==1){return e+l}if(!j){j=k*0.3}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}return g*Math.pow(2,-10*h)*Math.sin((h*k-i)*(2*Math.PI)/j)+l+e},easeInOutElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k/2)==2){return e+l}if(!j){j=k*(0.3*1.5)}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}if(h<1){return -0.5*(g*Math.pow(2,10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j))+e}return g*Math.pow(2,-10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j)*0.5+l+e},easeInBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}return i*(f/=h)*f*((g+1)*f-g)+a},easeOutBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}return i*((f=f/h-1)*f*((g+1)*f+g)+1)+a},easeInOutBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}if((f/=h/2)<1){return i/2*(f*f*(((g*=(1.525))+1)*f-g))+a}return i/2*((f-=2)*f*(((g*=(1.525))+1)*f+g)+2)+a},easeInBounce:function(e,f,a,h,g){return h-jQuery.easing.easeOutBounce(e,g-f,0,h,g)+a},easeOutBounce:function(e,f,a,h,g){if((f/=g)<(1/2.75)){return h*(7.5625*f*f)+a}else{if(f<(2/2.75)){return h*(7.5625*(f-=(1.5/2.75))*f+0.75)+a}else{if(f<(2.5/2.75)){return h*(7.5625*(f-=(2.25/2.75))*f+0.9375)+a}else{return h*(7.5625*(f-=(2.625/2.75))*f+0.984375)+a}}}},easeInOutBounce:function(e,f,a,h,g){if(f<g/2){return jQuery.easing.easeInBounce(e,f*2,0,h,g)*0.5+a}return jQuery.easing.easeOutBounce(e,f*2-g,0,h,g)*0.5+h*0.5+a}});
 
 $(document).ready(function () {
-  var offset;
-  function setHeight() { //Set the scroll offset height depending on the height of the header
-    offset = ($(".navbar-fixed-top").height()+15);
-    if (offset>300) {
-      offset=offset-135;
-    }
-    smoothScroll.init({
-      speed: 60, // Integer. How fast to complete the scroll in milliseconds
-      easing: 'easeInOutCubic', // Easing pattern to use
-      updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
-      offset: offset// Integer. How far to offset the scrolling anchor location in pixels
-    });  
-  };
-  setHeight();
-  $(window).resize(setHeight);
-  
-  $(document).on("scroll",function(){
-    if($(document).scrollTop()>100){
+ 
+ //jQuery to collapse the navbar on scroll
+$(window).scroll(function() {
+    if ($("#main-nav").offset().top > 300) {
       $("#main-nav").removeClass("large").addClass("small");
       $("#main-nav .col-sm-15").removeClass("col-sm-15 col-xs-15").addClass("col-sm-2");
-      $("#home").show();
+      $("#home-nav").show();
       $("#news-title").show();
-    } else{
+  } else {
       $("#main-nav").removeClass("small").addClass("large");
       $("#main-nav .col-sm-2").removeClass("col-sm-2").addClass("col-sm-15 col-xs-15");
-      $("#home").hide();
+      $("#home-nav").hide();
       $("#news-title").hide();
     }
-    $('#news-pane').waypoint(function(direction) {
-        $("#news>div").toggleClass('active', direction === 'down');
+      $('#news').waypoint(function(direction) {
+        $("#news-nav>div").toggleClass('active', direction === 'down');
         }, {offset: 300});
-    $('#services-pane').waypoint(function(direction){
-        $("#services>div").toggleClass('active', direction === 'down');
-        $("#news>div").removeClass('active', direction === 'down');
+    $('#services').waypoint(function(direction){
+        $("#services-nav>div").toggleClass('active', direction === 'down');
+        $("#news-nav>div").removeClass('active', direction === 'down');
         }, {offset: 300});
-    $('#subjects-pane').waypoint(function(direction) {
-        $("#subjects>div").toggleClass('active', direction === 'down');
-        $("#services>div").removeClass('active', direction === 'down'); 
-        $("#reserch>div").removeClass('active', direction === 'down');
+    $('#subjects').waypoint(function(direction) {
+        $("#subjects-nav>div").toggleClass('active', direction === 'down');
+        $("#services-nav>div").removeClass('active', direction === 'down'); 
+        $("#reserch-nav>div").removeClass('active', direction === 'down');
         }, {offset: 300});
-    $('#research-pane').waypoint(function(direction) {
-        $("#research>div").toggleClass('active', direction === 'down');
-        $("#subjects>div").removeClass('active', direction === 'down');
+    $('#research').waypoint(function(direction) {
+        $("#research-nav>div").toggleClass('active', direction === 'down');
+        $("#subjects-nav>div").removeClass('active', direction === 'down');
         }, {offset: 300});
-    $('#account-pane').waypoint(function(direction) {
-        $("#account>div").toggleClass('active', direction === 'down');
-        $("#research>div").removeClass('active', direction === 'down');
+    $('#account').waypoint(function(direction) {
+        $("#account-nav>div").toggleClass('active', direction === 'down');
+        $("#research-nav>div").removeClass('active', direction === 'down');
         }, {offset:600});
   });
+
+
+//jQuery for page scrolling feature - requires jQuery Easing plugin
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top-180
+        }, 500, 'easeInOutExpo');
+        event.preventDefault();
+    });
+}); 
+ 
   $( ".selector" ).click(function() {
     $(".selector").removeClass("btn-blue");
     $(".selector").addClass("btn-ltblue");

@@ -38,8 +38,9 @@
 
   </head>
   <body class="home">
+    <div id="top"></div>
     <!-- Start Header and Navigation -->
-    <div class="navbar-fixed-top" id="top"><a name="top"></a>
+    <div class="navbar-fixed-top" id="banner-back">
       <div class="container">
         <div class="col-sm-2 hidden-xs"><a href="/francais" class="version" data-no-turbolink="true"><span>version</span> française</a></div>
         <div class="collapse navbar-collapse hidden-xs"> <!-- UofA Blade -->
@@ -78,7 +79,7 @@
             <div id="navbar" class="collapse col-xs-10"><!-- Mobile menu -->
               <ul>
                 <li class="active"><a data-scroll href="#top"  data-toggle="collapse" data-target="#navbar">Search &amp; Home</a></li>
-                <li><a data-scroll href="#news-pane" data-toggle="collapse" data-target="#navbar">News &amp; Events</a></li>
+                <li><a class="page-scroll" href="news-pane">News &amp; Events</a></li>
                 <li><a data-scroll href="#hours-anch" data-toggle="collapse" data-target="#navbar">Hours and Locations</a></li>
                  <li><a data-scroll href="#news-pane" data-toggle="collapse" data-target="#navbar">News &amp; Events</a></li>
                 <li><a data-scroll href="#services-pane" data-toggle="collapse" data-target="#navbar">Services</a></li>
@@ -92,38 +93,38 @@
           </div>
         </div>
         <div id="main-nav" class="hidden-xs"><!-- Non-mobile Navigation -->
-          <div class="col-sm-2 col-xs-2" id="home">
+          <div class="col-sm-2 col-xs-2" id="home-nav">
             <div>
               <h3><a data-scroll href="#top"><span></span>Search &amp; Home</a></h3>
             </div>
           </div>
-          <div class="col-sm-15 col-xs-15" id="news">
+          <div class="col-sm-15 col-xs-15" id="news-nav">
             <div>
-              <h3><a data-scroll href="#news-pane"><span></span>News &amp; Events</a></h3>
+              <h3><a class="page-scroll" href="#news"><span></span>News &amp; Events</a></h3>
               <p class="hidden-sm hidden-xs">See library exhibits, announcments, and news.</p>
             </div>
           </div>
-          <div class="col-sm-15 col-xs-15" id="services">
+          <div class="col-sm-15 col-xs-15" id="services-nav">
             <div>
-              <h3><a data-scroll href="#services-pane"><span></span>Services</a></h3>
+              <h3><a class="page-scroll" href="#services"><span></span>Services</a></h3>
               <p class="hidden-xs hidden-sm ">A complete list of the services available at our libraries.</p>
             </div>
           </div>
-          <div class="col-sm-15 col-xs-15" id="subjects">
+          <div class="col-sm-15 col-xs-15" id="subjects-nav">
             <div>
-              <h3><a data-scroll href="#subjects-pane"><span></span>Subject Guides</a></h3>
+              <h3><a class="page-scroll" href="#subjects"><span></span>Subject Guides</a></h3>
               <p class="hidden-sm hidden-xs">Let our librarians guide you to the information you need.</p>
             </div>
           </div>
-          <div class="col-sm-15 col-xs-15" id="research">
+          <div class="col-sm-15 col-xs-15" id="research-nav">
             <div>
-              <h3><a data-scroll href="#research-pane"><span></span>Research Support</a></h3>
+              <h3><a class="page-scroll" href="#research"><span></span>Research Support</a></h3>
               <p class="hidden-sm hidden-xs">Help to manage, share, and preserve your research.</p>
             </div>
           </div>
-          <div class="col-sm-15 col-xs-15" id="account">
+          <div class="col-sm-15 col-xs-15" id="account-nav">
             <div>
-              <h3><a data-scroll href="#account-pane"><span></span>My Account</a></h3>
+              <h3><a class="page-scroll" href="#account"><span></span>My Account</a></h3>
               <p class="hidden-sm hidden-xs">Login to renew books, place holds, pay fines, and more.</p>
             </div>
           </div>
@@ -137,6 +138,6 @@
         <!-- Start Footer -->
 	<%= render :partial => 'shared/footer' %>
  
- 
+
   </body>
 </html>

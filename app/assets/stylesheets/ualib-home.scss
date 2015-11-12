@@ -1,24 +1,25 @@
-body{
+#top{
 	padding-top: 70px;
 }
 
 
 
 @media (min-width: 492px){
-	body{
+	#top{
 		padding-top: 100px;
 	}
 }
 
 
 @media (min-width: 768px){
-	body{
+	#top{
 		padding-top: 220px;
 	}
 }
 
 @media (min-width: 992px){
-	body{
+	#top{
 		padding-top: 340px;
 	}
 }
+
