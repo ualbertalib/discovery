@@ -13,7 +13,21 @@ class SymphonyService
     items = []
     if @document then
       for item in holdings_items do
-        items << populate(item)
+        if item.xpath(".//xmlns:ItemInfo").size == 1
+          items << populate(item)
+        else
+          item.xpath(".//xmlns:ItemInfo").each do |subitem|
+            item_id = id(subitem)
+            call = get(item, "callNumber")
+            copies = get(item, "numberOfCopies")
+            location = get(item, "libraryID")
+            status = get(subitem, "currentLocationID")
+            status == "CHECKEDOUT" ? due = get(subitem, "dueDate") : ""
+            type = get(subitem, "itemTypeID")
+            public_note = get(subitem, "publicNote")
+            items << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
+          end
+        end
       end
     end
     items
