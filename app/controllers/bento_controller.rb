@@ -13,7 +13,6 @@ class BentoController < ApplicationController
     collections = ["databases", "sfx", "symphony", "eds"]
     threads = []
 
-    @rows = 10
     @complete_count = 0
 
     @eds_count = 0   #EDS is returning "401 unauthorized"
@@ -32,7 +31,7 @@ class BentoController < ApplicationController
   def populate(facet)
     @query = params[:q]
     documents = {}
-    (@solr_response, @document_list) = self.get_search_results(:q => @query, :f => facet)
+    (@solr_response, @document_list) = self.get_search_results(:q => @query, :f => facet, :rows => 100)
     documents["count"] = @solr_response["response"]["numFound"]
     @complete_count += documents["count"]
     @document_list.each do |doc|
