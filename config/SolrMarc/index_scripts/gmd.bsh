@@ -1,0 +1,16 @@
+import org.marc4j.marc.Record;
+
+org.solrmarc.index.SolrIndexer indexer = null;
+
+public String getGMD(Record record){
+
+  String val = indexer.getFirstFieldVal(record, "245h");
+  
+  if (val != null){
+    return val.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(":", "");
+  }
+  else {
+    return val;
+  }
+}
+
