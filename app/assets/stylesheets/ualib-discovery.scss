@@ -8,6 +8,7 @@ body{
 }
 h1{
 	margin: 10px 0px 15px 0px;
+	font-family: "Open Sans", sans-serif;
 }
 h2{
   padding-bottom: 10px;
@@ -341,10 +342,11 @@ font-size: 18px;
 }
 
 .document-metadata dd, .document-metadata dt{
-	font-size: 14px;
+	font-size: 15px;
 }
 .dl-horizontal dt {
-  width: 140px;
+  width: 160px;
+  margin-right: 5px;
 }
 .dl-horizontal dd {
   margin-left: 145px;
@@ -393,6 +395,9 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 }
 #holdings table td.call-number{
 	min-width: 250px;
+}
+.holding-status, .holding-type{
+	text-transform: capitalize;
 }
 .panel-default > .panel-heading{
 	background-color: #eceff4;

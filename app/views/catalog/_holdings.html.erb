@@ -34,7 +34,7 @@
               <% if item[:status] == "CHECKEDOUT" %>
                 <td>Due: <%= Date.parse(item[:due]) %></td>
               <% else %>
-                <td><%= @statuses[item[:status].to_s.downcase] %>
+                <td class="holding-status"><%= @statuses[item[:status].to_s.downcase] %>
                 <% if @unavailable %>
                   <p style="font-size: small"><strong>Note: For access, please contact any University of Alberta Libraries service desk in person or at <a href="http://www.library.ualberta.ca/askus" target="_blank">www.library.ualberta.ca/askus.</a></strong></p>
                 <% end %>
@@ -48,7 +48,7 @@
               <% if @document["format"].include? "Journal" %>
             <% end %>
               <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
-                <td><%= @item_types[item[:type].downcase] %></td>
+                <td class="holding-type"><%= @item_types[item[:type].downcase] %></td>
               <% else %>
                 <td></td>
               <% end %>
