@@ -47,7 +47,7 @@ class SymphonyService
   end
 
   def ws_parameters
-    "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeMarcHoldings=true&titleID="
+    "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeAvailabilityInfo=true&includeMarcHoldings=true&titleID="
   end
 
   def populate(item)
@@ -59,7 +59,7 @@ class SymphonyService
       type = get(item, "itemTypeID")
       location = get(item, "libraryID")
       public_note = get(item, "publicNote")
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note}
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
   end
 
   def populate_electronic_items
@@ -85,6 +85,10 @@ class SymphonyService
 
   def link_items
     @document.xpath("//xmlns:MarcEntryInfo")
+  end
+
+  def holdable
+    @document.xpath("//xmlns:holdable").text
   end
 
   def nodes

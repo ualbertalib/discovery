@@ -30,6 +30,7 @@ class CatalogController < ApplicationController
       if @document["source"].first == "Symphony"
         time1 = Benchmark.realtime{
           @holdings = holdings(@document, :items)
+          @holdable = @holdings.first[:holdable]
         }
         time2 = Benchmark.realtime{
           @holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
