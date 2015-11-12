@@ -16,17 +16,7 @@ class SymphonyService
         if item.xpath(".//xmlns:ItemInfo").size == 1
           items << populate(item)
         else
-          item.xpath(".//xmlns:ItemInfo").each do |subitem|
-            item_id = id(subitem)
-            call = get(item, "callNumber")
-            copies = get(item, "numberOfCopies")
-            location = get(item, "libraryID")
-            status = get(subitem, "currentLocationID")
-            status == "CHECKEDOUT" ? due = get(subitem, "dueDate") : ""
-            type = get(subitem, "itemTypeID")
-            public_note = get(subitem, "publicNote")
-            items << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
-          end
+          items.concat populate_subitems(item)
         end
       end
     end
@@ -74,6 +64,22 @@ class SymphonyService
       location = get(item, "libraryID")
       public_note = get(item, "publicNote")
       {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
+  end
+
+  def populate_subitems(item)
+    subitems = []
+    item.xpath(".//xmlns:ItemInfo").each do |subitem|
+      item_id = id(subitem)
+      call = get(item, "callNumber")
+      copies = get(item, "numberOfCopies")
+      location = get(item, "libraryID")
+      status = get(subitem, "currentLocationID")
+      status == "CHECKEDOUT" ? due = get(subitem, "dueDate") : ""
+      type = get(subitem, "itemTypeID")
+      public_note = get(subitem, "publicNote")
+      subitems << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
+    end
+    subitems
   end
 
   def populate_electronic_items
