@@ -25,7 +25,6 @@
   <div class="sort-submit-buttons clearfix">
     <%= render 'advanced_search_submit_btns' %>
   </div>
-    </div>
       
       <div class="limit-criteria">
         <h3 class="limit-criteria-heading"><%= t('blacklight_advanced_search.form.limit_criteria_heading_html')%></h3>
@@ -42,5 +41,10 @@
 
   <hr>
 
+  <!-- this second search button seems to need to be here for search to work. -->
+  <div class="sort-submit-buttons clearfix">
+    <%= render 'advanced_search_submit_btns' %>
+  </div>
+    </div>
 
 <% end %>
