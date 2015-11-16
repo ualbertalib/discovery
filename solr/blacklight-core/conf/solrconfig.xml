@@ -122,7 +122,6 @@
          publisher_tesim^1000
          subject_topic_unstem_search^1000
          subject_unstem_search^750
-         subject_topic_facet^625
          subject_t^500
          author_unstem_search^250
          author_addl_unstem_search^250

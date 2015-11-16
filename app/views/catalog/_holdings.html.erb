@@ -4,7 +4,6 @@
         <table>
           <tr>
             <th class="call-number">Call Number</th>
-            <th>Copy</th>
             <th>Location/Status</th>
             <th>Library</th>
             <th>Item Type</th>
@@ -30,7 +29,6 @@
             <% @unavailable = true if @statuses[item[:status].to_s.downcase] == "unavailable" %>
             <tr>
               <td><%= item[:call] %></td>
-              <td><%= item[:copies] %> </td>
               <% if item[:status] == "CHECKEDOUT" %>
                 <td>Due: <%= Date.parse(item[:due]) %></td>
               <% else %>

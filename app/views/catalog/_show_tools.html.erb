@@ -13,9 +13,9 @@
   </div>
 
   <div class="panel-body">
-    <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" %>
+    <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
       <%= link_to "Place Hold", "https://myaccount.library.ualberta.ca/createholds.php?hldCatKey=#{@document.id}", :class => "btn hold" %>
-      <p style="font-size:75%"> If you login with a barcode and PIN, click <a href="http://www.library.ualberta.ca/permalink/opac/<%= @document["id"] %>/WUAARCHIVE">here</>.</p>
+      <p style="font-size:75%"> If you login with a barcode and PIN, click <a href="http://www.library.ualberta.ca/permalink/opac/<%= @document["id"] %>/WUAARCHIVE">here</a>.</p>
     <% end %>
   <ul class="nav">
    <%# <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>

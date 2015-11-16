@@ -36,7 +36,7 @@
     	<div class="col-sm-12 results" > 
         <div id="books"> <!-- start of books and journals pane -->
           <h3 id="print"><span class="col-sm-6">Books, media &amp; more</span>
-            <% if @symphony_count>10 %>
+            <% if @symphony_count>@local_symphony_limit %>
               <a href="/symphony?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @symphony_count %> results</a>
             <% end %>
           </h3>  
@@ -44,7 +44,7 @@
               <p class="no-results">No material was found<p>
             <% end %>   
           <ul>
-          <% i = 1%>
+            <% i = 1%>
           <% @symphony.take(@local_symphony_limit).each do |id,symphony| %>
             <li>
               <div class="row no-margin">
@@ -67,7 +67,7 @@
             <% end %>
           </ul>
           <div class="results-bottom">
-            <% if @symphony_count>10 %>
+            <% if @symphony_count>@local_symphony_limit %>
               <a href="/symphony?q=<%= @query %>" class="col-sm-12">View all books, media &amp; more</a>
             <% end %>
           </div>
@@ -100,7 +100,7 @@
         <% end %>
       </ul>
         <% if @eds_count>10 %>
-          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y&eds_action=addfacetfilter%28SourceType%3AAcademic+Journals%29" class="col-sm-12">View all articles, ebooks &amp; more</a></div>
+          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-12">View all articles, ebooks &amp; more</a></div>
         <% end %>
         <% else %>
           <p><%= @eds %></p>

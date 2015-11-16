@@ -13,7 +13,11 @@ class SymphonyService
     items = []
     if @document then
       for item in holdings_items do
-        items << populate(item)
+        if item.xpath(".//xmlns:ItemInfo").size == 1
+          items << populate(item)
+        else
+          items.concat populate_subitems(item)
+        end
       end
     end
     items
@@ -47,7 +51,7 @@ class SymphonyService
   end
 
   def ws_parameters
-    "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeMarcHoldings=true&titleID="
+    "?clientID=Primo&marcEntryFilter=ALL&includeItemInfo=true&includeAvailabilityInfo=true&includeMarcHoldings=true&titleID="
   end
 
   def populate(item)
@@ -59,7 +63,23 @@ class SymphonyService
       type = get(item, "itemTypeID")
       location = get(item, "libraryID")
       public_note = get(item, "publicNote")
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note}
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
+  end
+
+  def populate_subitems(item)
+    subitems = []
+    item.xpath(".//xmlns:ItemInfo").each do |subitem|
+      item_id = id(subitem)
+      call = get(item, "callNumber")
+      copies = get(item, "numberOfCopies")
+      location = get(item, "libraryID")
+      status = get(subitem, "currentLocationID")
+      status == "CHECKEDOUT" ? due = get(subitem, "dueDate") : ""
+      type = get(subitem, "itemTypeID")
+      public_note = get(subitem, "publicNote")
+      subitems << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
+    end
+    subitems
   end
 
   def populate_electronic_items
@@ -68,7 +88,7 @@ class SymphonyService
       if @document then
         link_items.each do |item|
           if label(item) and label(item).text == "Electronic access" then
-              if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") then
+            if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") or (item.at_xpath(".//xmlns:text").text.include? "NEOS") then
                 ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
               else
                 non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
@@ -85,6 +105,10 @@ class SymphonyService
 
   def link_items
     @document.xpath("//xmlns:MarcEntryInfo")
+  end
+
+  def holdable
+    @document.xpath("//xmlns:holdable").text
   end
 
   def nodes
