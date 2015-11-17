@@ -47,13 +47,9 @@ class CatalogController < ApplicationController
 
     if @document["subject_t"]
     @subjects = []
-      @document["subject_t"].each do |subject|
-        if subject.include? ","
-          @subjects << [subject]
-        else
-          @subjects << subject.split(" -- ")
+        @document["subject_t"].each do |subject|
+            @subjects << subject.split("--")
         end
-      end
     end
 
     if @document["author_display"]

@@ -7,7 +7,7 @@
       <% # bookmark/folder functions -%>
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
        <% if @subjects  %>
-      <div id="subjects">
+      <div id="subject-list">
         <p class="blacklight-subject_topic_facet">Subjects</p>
         <ul class="subject-chain-links">
           <% @subjects.each do |subject| %>
