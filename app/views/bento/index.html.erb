@@ -36,7 +36,7 @@
     	<div class="col-sm-12 results" > 
         <div id="books"> <!-- start of books and journals pane -->
           <h3 id="print"><span class="col-sm-6">Books, media &amp; more</span>
-            <% if @symphony_count>@local_symphony_limit %>
+            <% if @symphony_count>0 %>
               <a href="/symphony?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @symphony_count %> results</a>
             <% end %>
           </h3>  
@@ -67,7 +67,7 @@
             <% end %>
           </ul>
           <div class="results-bottom">
-            <% if @symphony_count>@local_symphony_limit %>
+            <% if @symphony_count>0 %>
               <a href="/symphony?q=<%= @query %>" class="col-sm-12">View all books, media &amp; more</a>
             <% end %>
           </div>
