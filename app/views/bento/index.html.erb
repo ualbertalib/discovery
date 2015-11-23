@@ -11,7 +11,7 @@
           <% if @query =='' %>
               All Records
           <% else %>
-              <%= @complete_count %>  results for <em><%= @query %></em>
+              <%= number_with_delimiter(@complete_count) %>  results for <em><%= @query %></em>
           <% end %>
         </h2>
     		<form class="form-inline" role="form">
