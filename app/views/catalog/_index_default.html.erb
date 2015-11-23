@@ -26,10 +26,12 @@
   </dl>
 </div>
 <div class="col-md-3 results-img">
-  <% isbn = render_document_show_field_value(document, "isbn_t") %>
-    <% if !isbn.blank? %>
-		  <%=link_to image_tag("https://books.google.com/books?vid=ISBN"+isbn.split(',').first+"&printsec=frontcover&img=1&zoom=1"), document %>
-    <% end -%>
+  
+   
+		  <% if document.to_h["isbn_tesim"] %>
+        <img src="https://books.google.com/books?vid=ISBN<%= document.to_h["isbn_tesim"].first %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
+      <% end %>
+  
 </div>
 
 
