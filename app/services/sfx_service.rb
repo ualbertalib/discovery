@@ -16,7 +16,7 @@ class SFXService
 
     sfx_results_for(document.id).xpath("//target").each do |target|
       unless local_targets.include? name(target)
-        @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: @our_links[name(target)]}) if @targets[id(target)]
+        @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: @our_links[name(target)], note: note(target)}) if @targets[id(target)]
       end
     end
   end
@@ -49,6 +49,10 @@ class SFXService
 
   def url(target) 
     target.xpath("target_url").text
+  end
+
+  def note(target)
+    target.xpath("note").text
   end
 
   def id(target)
