@@ -5,7 +5,9 @@ class Ingester
   attr_writer :solr_object
 
   def initialize
-    @@ingest_log = Logger.new("#{Rails.root}/log/ingest.log")
+    log_config = YAML.load_file("#{Rails.root}/config/logger.yml")
+    log_file = file.open(log_config['log_path'], File::WRONLY|File::APPEND)
+    @@ingest_log = Logger.new(log_file)
   end
 
   def add_document(vocabulary)

@@ -13,7 +13,14 @@ require "yaml"
 
 desc 'ingest records' # add config parameter for directory ingest?
 task :ingest, [:collection] do |t, args|
-  @@ingest_log = Logger.new('log/ingest.log')
+  log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
+  if File.exists? log_config['log_path']
+    log_file = File.open(log_config['log_path'], File::WRONLY|File::APPEND)
+  else
+    log_file = File.open(log_config['log_path'], File::WRONLY|File::CREAT)
+  end
+
+  @@ingest_log = Logger.new(log_file)
   @@ingest_log.info("--- Starting ingest on #{Time.now} ---")
   @c = IngestConfiguration.new(args.collection, @config_file)
 
