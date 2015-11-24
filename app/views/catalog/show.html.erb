@@ -64,9 +64,14 @@
      <%= render "databases" %>
       <% end %>
 
-      <% if @ua_urls or @non_ua_urls %>
-        <%= render "urls" %>
+      <% if @ua_urls %>
+        <%= render "main_url_display" %>
+      <% end %>
+      <% if @non_ua_urls %>
+        <% if @ua_urls.empty? %>
+          <%= render "urls" %>
         <% end %>
+      <% end %>
 
 <% unless @holdings.empty? %>
   <%= render "holdings" %>
