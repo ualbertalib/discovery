@@ -10,8 +10,14 @@
          <% counter = document_counter_with_offset(document_counter) %>
          <span class="document-counter">
          <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
-         </span>
-         <%= link_to_document document, :label=>document_show_link_field(document), :counter => counter %>
+       </span>
+
+       <% if document.to_h['subtitle_display'] %>
+              <% @combined_title = "#{document.to_h['title_display'].to_a.first}: #{document.to_h['subtitle_display'].to_a.first}" %>
+              <%= link_to_document document, :label=>@combined_title, :counter => counter %>
+            <% else %>
+              <%= link_to_document document, :label=>document_show_link_field(document), :counter => counter %>
+            <% end %>
          <% if document["ua_only_tesim"] %>
            <% if document["ua_only_tesim"].first == "1" %> <%= image_tag "icn_uofa.gif" %> <% end %>
          <% end %>
