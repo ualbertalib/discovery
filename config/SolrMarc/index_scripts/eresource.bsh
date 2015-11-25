@@ -4,9 +4,9 @@ org.solrmarc.index.SolrIndexer indexer = null;
 
 public String isElectronic(Record record){
 
-  String val = indexer.getFirstFieldVal(record, "856a");
+  String val = indexer.getFirstFieldVal(record, "8563");
 
-  if (val != null){
+  if ((val != null) && (val.contains("Access"))){
     return "Online";
   }
   else {
