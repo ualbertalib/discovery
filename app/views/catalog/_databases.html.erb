@@ -3,7 +3,7 @@
         <tr><th>URL</th></tr>
     
         <% if @document["url_tesim"] %>
-          <tr><td><a href="<%= Rails.application.config.proxy %><%= @document["url_tesim"].first %>" target='_blank'><%= @document["url_tesim"].first %></a></td>
+          <tr><td><a href="<%# Rails.application.config.proxy %><%= @document["url_tesim"].first %>" target='_blank'><%= @document["url_tesim"].first %></a></td>
         </tr>
       <% end %>
       
