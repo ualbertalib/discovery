@@ -560,6 +560,7 @@
     <dynamicField name="*_tesm" type="text_en" stored="true" indexed="false" multiValued="true"/>
     <dynamicField name="*_tesi" type="text_en" stored="true" indexed="true" multiValued="false"/>
     <dynamicField name="*_tesim" type="text_en_splitting" stored="true" indexed="true" multiValued="true"/>
+    <dynamicField name="location_tesim" type="string" stored="true" indexed="true" multiValued="true"/>
     <dynamicField name="*_teiv" type="text_en" stored="false" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
     <dynamicField name="*_teimv" type="text_en" stored="false" indexed="true" multiValued="true" termVectors="true" termPositions="true" termOffsets="true"/>
     <dynamicField name="*_tesiv" type="text_en" stored="true" indexed="true" multiValued="false" termVectors="true" termPositions="true" termOffsets="true"/>
