@@ -18,7 +18,8 @@ class Databases
           db["type"] = "Database"
           db["electronic"] = "Online"
           db["title"] = db["name"]
-          db["description"] = db["description"] + "<br />" + db["meta"]["more_info"]
+          db["databasedescription"] = db["description"] + "<br />" + db["meta"]["more_info"]
+          db["description"] = ""
           db["enableproxy"] = db["meta"]["enable_proxy"]
           if @xml_records[db['id']]
             @xml_records[db['id']]['subject'].concat db['subject']

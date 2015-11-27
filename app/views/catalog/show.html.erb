@@ -6,6 +6,10 @@
     <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-sm-9">
       <% # bookmark/folder functions -%>
       <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
+      <% if @document.to_h["databasedescription_tesim"] %>
+        <%= @document.to_h["databasedescription_tesim"].first.html_safe %>
+      <% end %>
+      <br /><br />
        <% if @subjects  %>
       <div id="subject-list">
         <p class="blacklight-subject_topic_facet">Subjects</p>
