@@ -115,7 +115,7 @@
         <% end %>
       </h3>
        <% if @ejournals_count == 0 %>
-              <p class="no-results">No eJournals were found<p>
+              <p class="no-results">No journals were found<p>
             <% end %>        
       <ul>
         <% i = 1 %>
@@ -125,7 +125,7 @@
 				<% end %>
 			</ul>
       <% if @ejournals_count>0 %>
-			 <div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-sm-12">View all electronic journals</a></div>
+			 <div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-sm-12">View all journals</a></div>
       <% end %>
 		</div><!-- end of ejournals pane -->
 
@@ -137,7 +137,7 @@
         <% end %>
       </h3>
        <% if @database_count == 0 %>
-              <p class="no-results">No Databases were found<p>
+              <p class="no-results">No databases were found<p>
             <% end %> 
  			<ul>       
         <% i = 1 %> 
@@ -147,7 +147,7 @@
         <% end %>
 			</ul>
       <% if @database_count>0 %>
-        <div class="results-bottom"><a href="/databases?q=<%= @query %>" class="col-sm-12">View all Databases</a></div>
+        <div class="results-bottom"><a href="/databases?q=<%= @query %>" class="col-sm-12">View all databases</a></div>
       <% end %>
     </div><!-- end of databases pane -->
   
