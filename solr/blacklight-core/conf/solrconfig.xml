@@ -133,6 +133,7 @@
          gmd_tesim^50
          summary_holdings_tesim^50
          title_series_unstem_search^25
+         local_note_tesim^25
          title_series_t^10
          <!-- text -->
          <!-- source -->
@@ -167,6 +168,7 @@
          gmd_tesim^500
          summary_holdings_tesim^500
          title_series_unstem_search^250
+         local_note_tesim^250
          title_series_t^100
          text^10
        </str>
