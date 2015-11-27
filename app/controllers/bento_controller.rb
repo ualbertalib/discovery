@@ -110,9 +110,14 @@ class BentoController < ApplicationController
     documents = {}
     session[:current_url] = request.original_url
     eds_connect
+    params["q"] = params["q"].downcase.gsub("l'", "").gsub("d'", "")
     params["includefacets"] = "y"
     #params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
-    params["resultsperpage"] = 100
+      params["searchmode"]="all"
+      params["view"]="brief"
+      params["pagenumber"]=1
+      params["highlight"]="y"
+      params["resultsperpage"] = 100
     if has_search_parameters? then
       clean_params = deep_clean(params)
       params = clean_params
