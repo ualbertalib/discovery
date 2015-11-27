@@ -753,6 +753,7 @@
    <copyField source="type_tesim" dest="format"/>
    <copyField source="resource_type_tesim" dest="format"/>
    <copyField source="title_tesim" dest="title_display"/>
+   <copyField source="title_tesim" dest="title_t"/>
    <copyField source="title_tesim" dest="title_sort"/>
    <copyField source="source_tesim" dest="source"/>
    <copyField source="subject_tesim" dest="subject_topic_facet"/>
