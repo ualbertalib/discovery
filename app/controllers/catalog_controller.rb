@@ -24,22 +24,14 @@ class CatalogController < ApplicationController
   def show
     super
     @holdings = []
-    holdings_log = File.open("./log/holdings.log", "w")
     if @document["source"]
-      log_document_holdings(holdings_log)
       if @document["source"].first == "Symphony"
-        time1 = Benchmark.realtime{
           @holdings = holdings(@document, :items)
           @holdable = @holdings.first[:holdable]
-        }
-        time2 = Benchmark.realtime{
           @holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
-        }
-        log_symphony_service_benchmarks(holdings_log, time1, time2)
       end
         @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
     end
-    holdings_log.close
 
     if @document["url_fulltext_display"]
       @ua_urls, @non_ua_urls = holdings(@document, :links)
@@ -270,17 +262,5 @@ class CatalogController < ApplicationController
     config.spell_max = 5
   end
 
-  def log_document_holdings(holdings_log)
-    holdings_log.puts "document.class=#{@document.class}"
-    holdings_log.puts @document["source"].length
-    holdings_log.puts "<SolrDocument>"
-    holdings_log.puts @document.inspect
-    holdings_log.puts "</SolrDocument>"
-  end
-
-  def log_symphony_service_benchmarks(holdings_log, time1, time2)
-    holdings_log.puts time1
-    holdings_log.puts time2
-  end
 
 end 
