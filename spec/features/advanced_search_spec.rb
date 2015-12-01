@@ -1,8 +1,8 @@
 require_relative "../rake_helper"
 require_relative "../spec_helper"
 
-RSpec.feature "Basic Search", :type => :feature do
-  scenario "User does a simple search" do
+RSpec.feature "Advanced Search", :type => :feature do
+  scenario "User does an advanced search" do
     visit "/advanced"
 
     fill_in "title", :with => "accountancy"
