@@ -25,7 +25,6 @@ class SymphonyService
 
   def links
     ua, nonua = populate_electronic_items
-    puts nonua
     return ua, nonua
   end
 
