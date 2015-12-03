@@ -1,5 +1,5 @@
 <% @local_symphony_limit = 15 %>
-<% @local_ejournal_limit = 10 %>
+<% @local_journal_limit = 10 %>
 <% @local_ebook_limit = 5 %>
 <% @local_eds_limit = 10 %>
 <% @local_database_limit = 10 %>
@@ -108,26 +108,26 @@
     </div><!-- end of articles pane -->
 		
 
-    <div class="col-sm-4 results" id="ejournals"><!-- start of ejournals pane -->
+    <div class="col-sm-4 results" id="ejournals"><!-- start of journals pane -->
       <h3><span class="col-sm-6">Journals</span> 
-        <% if @ejournals_count>0 %>
-          <a href="/ejournals?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @ejournals_count %> results</a>
+        <% if @journals_count>0 %>
+          <a href="/journals?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @journals_count %> results</a>
         <% end %>
       </h3>
-       <% if @ejournals_count == 0 %>
+       <% if @journals_count == 0 %>
               <p class="no-results">No journals were found<p>
             <% end %>        
       <ul>
         <% i = 1 %>
-				<% @ejournals.take(@local_ejournal_limit).each do |id,ejournals| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= ejournals[:title] %></a></li>
+				<% @journals.take(@local_journal_limit).each do |id,journals| %>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journals[:title] %></a></li>
           <% i+=1 %>
 				<% end %>
 			</ul>
-      <% if @ejournals_count>0 %>
-			 <div class="results-bottom"><a href="/ejournals?q=<%= @query %>" class="col-sm-12">View all journals</a></div>
+      <% if @journals_count>0 %>
+			 <div class="results-bottom"><a href="/journals?q=<%= @query %>" class="col-sm-12">View all journals</a></div>
       <% end %>
-		</div><!-- end of ejournals pane -->
+		</div><!-- end of journals pane -->
 
 
 		<div class="col-sm-4 results extra-top-margin" id="databases"><!-- start of databases pane -->

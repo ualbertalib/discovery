@@ -6,13 +6,13 @@ Rails.application.routes.draw do
 
   get 'errors/internal_server_error'
 
-  blacklight_for :catalog, :ejournals, :databases, :symphony, :ebooks
+  blacklight_for :catalog, :journals, :databases, :symphony, :ebooks
   Blacklight::Marc.add_routes(self)
 
   devise_for :users
 
   get "symphony/range_limit" => "symphony#range_limit"
-  get "ejournals/range_limit" => "ejournals#range_limit"
+  get "journals/range_limit" => "journals#range_limit"
   get "databases/range_limit" => "databases#range_limit"
   get "articles/range_limit" => "articles#range_limit"
   get "ebooks/range_limit" => "ebooks#range_limit"
