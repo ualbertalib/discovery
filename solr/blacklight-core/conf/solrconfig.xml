@@ -135,6 +135,8 @@
          title_series_unstem_search^25
          local_note_tesim^25
          title_series_t^10
+         section_number_tesim^10
+         section_name_tesim^10
          <!-- text -->
          <!-- source -->
        </str>
@@ -170,6 +172,8 @@
          title_series_unstem_search^250
          local_note_tesim^250
          title_series_t^100
+         section_number_tesim^100
+         section_name_tesim^100
          text^10
        </str>
        <str name="author_qf">

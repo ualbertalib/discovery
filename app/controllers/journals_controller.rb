@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 #
-class EjournalsController < CatalogController
+class JournalsController < CatalogController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
 
@@ -13,7 +13,7 @@ class EjournalsController < CatalogController
 
   def index
     super
-    @collection_name = "electronic journals"
+    @collection_name = "journals"
   end
 
 end
