@@ -1,4 +1,5 @@
 require_relative "../rails_helper"
+#require_relative "../rake_helper"
 
 describe CatalogController, type: :controller do
 
@@ -20,4 +21,16 @@ describe CatalogController, type: :controller do
     expect(statuses['trad_med']).to eq "traditional medicine"
     expect(statuses['sust_agric']).to eq "sustainable agriculture resource centre"
   end
+
+  it "should load item type table" do
+    get :index
+    item_types = assigns(:item_types)
+    expect(item_types['av']).to eq "audio-visual"
+    expect(item_types['mag_media']).to eq "magnetic media"
+  end
+
+  it "should contain results in the results viewi (#index)"
+
+  it "should render contain a single record in the show view (#show)"
+
 end
