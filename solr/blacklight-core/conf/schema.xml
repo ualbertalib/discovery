@@ -539,6 +539,7 @@
    <field name="minor_tesim" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="title_sort" type="string" indexed="true" stored="false"/>
    <field name="location_tesim" type="string" stored="true" indexed="true" multiValued="true"/>
+   <field name="deleted" type="text" indexed="false" stored="false"/>
 
     <!-- NOTE:  not all possible Solr field types are represented in the dynamic fields -->
 
