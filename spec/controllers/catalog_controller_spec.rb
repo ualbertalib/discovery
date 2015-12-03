@@ -1,5 +1,5 @@
 require_relative "../rails_helper"
-#require_relative "../rake_helper"
+require_relative "../rake_helper"
 
 describe CatalogController, type: :controller do
 
