@@ -31,25 +31,30 @@ describe BentoController, type: :controller do
   end
 
   it "should populate journal results" do
-    # journals_count = assigns(:journals_count)
-    # journals = assigns(:journals)
-    # expect(journals_count).to eq 65
-    # expect(journals.size).to eq journals_count
-    # expect(journals.first).to be_a Array
-    # expect(journals.first.first).to eq "1000163"
-    # expect(journals.first[1]).to be_a Hash
-    # expect(journals.first[1][:title]).to eq "Infection control and hospital epidemiology"
+    journals_count = assigns(:journals_count)
+    journals = assigns(:journals)
+    expect(journals_count).to eq 65
+    expect(journals.size).to eq journals_count
+    expect(journals.first).to be_a Array
+    expect(journals["1000163"].to_s).to eq '{:title=>"Infection control and hospital epidemiology", :isbn=>nil, :issn=>nil, :year=>["1988"], :call_number=>nil, :format=>["Serial"], :electronic=>["Online"]}'
+    expect(journals["1000174"][:title]).to eq "Libraries & culture"
+    expect(journals["954921332001"][:title]).to eq "Publishers weekly"
   end
 
   it "should populate symphony results" do
-    # symphony_count = assigns(:symphony_count)
-    # symphony = assigns(:symphony)
-    # expect(symphony_count).to eq 10000
-    # expect(symphony.size).to eq 100 # because a limit is set in the controller
-    # expect(symphony.first).to be_a Array
-    # expect(symphony.first.first).to eq "100000"
-    # expect(symphony.first[1]).to be_a Hash
-    # expect(symphony.first[1][:title]).to eq "All about winter safety"
+    symphony_count = assigns(:symphony_count)
+    symphony = assigns(:symphony)
+    expect(symphony_count).to eq 10000
+    expect(symphony.size).to eq 100 # because a limit is set in the controller
+    expect(symphony.first).to be_a Array
+    expect(symphony["100000"].to_s).to eq  '{:title=>"All about winter safety", :isbn=>nil, :issn=>nil, :year=>["1975"], :call_number=>nil, :format=>["Book"], :electronic=>["At Library"]}'
+    expect(symphony["1000000"][:title]).to eq "Wage and salary administration"
+    expect(symphony["1000000"][:electronic].first).to eq "At Library"
+    expect(symphony["1000010"][:title]).to eq "Enquête sur le salaire annuel garanti"
   end
 
+  # figure out how to test for EDS results.
+
 end
+
+
