@@ -1,4 +1,3 @@
-#require_relative "../rake_helper"
 require_relative "../spec_helper"
 
 RSpec.feature "Database record test", :type => :feature do

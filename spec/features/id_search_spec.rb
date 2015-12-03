@@ -1,4 +1,3 @@
-require_relative "../rake_helper"
 require_relative "./relevance_helper"
 
 describe "Search by ID" do

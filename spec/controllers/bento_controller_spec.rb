@@ -1,5 +1,4 @@
 require_relative "../rails_helper.rb"
-require_relative "../rake_helper.rb"
 
 describe BentoController, type: :controller do
 
