@@ -57,6 +57,9 @@
                   <% if symphony[:format] and symphony[:format].first != "Unknown" %>
                     <span class="date"><%= symphony[:format].first %></span>
                   <% end %>
+                  <% if symphony[:electronic].first == "Online" %>
+                    <span class="date">(<%= symphony[:electronic].first %>)</span>
+                  <% end %>
                   <% if symphony[:author] %>
                     <span class="author-result-list"><%= symphony[:author] %></span>
                   <% end %>
@@ -120,7 +123,7 @@
       <ul>
         <% i = 1 %>
 				<% @journals.take(@local_journal_limit).each do |id,journals| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journals[:title] %></a></li>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journals[:title] %> (<%= journals[:electronic].first == "Online" ? "Online" : "Print" %>)</a></li>
           <% i+=1 %>
 				<% end %>
 			</ul>

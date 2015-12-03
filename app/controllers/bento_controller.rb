@@ -88,6 +88,7 @@ class BentoController < ApplicationController
       metadata[:year] = doc.as_json["pub_date"]
       metadata[:call_number] = doc.as_json["lc_callnum_display"] # this isn't the correct field. Just a place holder for now
       metadata[:format] = doc.as_json["format"]
+      metadata[:electronic] = doc.as_json["electronic_tesim"]
       #Symphony: location(s), call number(s), checked out or in: these depend on item
       #record, not bib record.
       #Ejournals: coverage statement
