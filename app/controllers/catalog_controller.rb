@@ -50,7 +50,12 @@ class CatalogController < ApplicationController
 
     load_lookup_tables
 
-    @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
+    if @document['title_display']
+      @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
+    else
+      @document['title_display'] = "Untitled document"
+    end
+
     @document['published_display'] = "#{@document['publisher_tesim'].first}, #{@document['published_display'].first}" if(@document['publisher_tesim'] and @document['published_display'])
     @document.delete('publisher_tesim') if @document['published_display']
   end
