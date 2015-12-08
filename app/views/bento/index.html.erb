@@ -80,7 +80,7 @@
     
 
     <div class="col-sm-4 results" id="articles"> <!-- start of articles pane -->
-      <h3><span class="col-sm-6">Articles, ebooks &amp; more</span>
+      <h3><span class="col-sm-6">Articles &amp; more</span>
         <% if @eds_count>0 %>
           <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-6 see-all-results"><%= @eds_count %> results</a>
         <% end %>
@@ -103,7 +103,7 @@
         <% end %>
       </ul>
         <% if @eds_count>10 %>
-          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-12">View all articles, ebooks &amp; more</a></div>
+          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-12">View all articles &amp; more</a></div>
         <% end %>
         <% else %>
           <p><%= @eds %></p>
