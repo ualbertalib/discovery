@@ -17,7 +17,7 @@
     <%= opensearch_description_tag application_name, opensearch_catalog_path(:format => 'xml', :only_path => false) %>
     <%# favicon_link_tag asset_path('favicon.ico') %>
     <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic|Abel", "ualib-home" %>
+    <%= stylesheet_link_tag    "application", "ualib-home" %>
     <%= javascript_include_tag "application", "ualib-home" %>
     <script src="https://hours.library.ualberta.ca/widget-hours-current.php" type="text/javascript"></script>
     <script>
@@ -79,11 +79,10 @@
             <div id="navbar" class="collapse col-xs-10"><!-- Mobile menu -->
               <ul>
                 <li class="active"><a data-scroll href="#top"  data-toggle="collapse" data-target="#navbar">Search &amp; Home</a></li>
-                <li><a class="page-scroll" href="news-pane">News &amp; Events</a></li>
                 <li><a data-scroll href="#hours-anch" data-toggle="collapse" data-target="#navbar">Hours and Locations</a></li>
-                 <li><a data-scroll href="#news-pane" data-toggle="collapse" data-target="#navbar">News &amp; Events</a></li>
-                <li><a data-scroll href="#services-pane" data-toggle="collapse" data-target="#navbar">Services</a></li>
-                <li><a data-scroll href="#subjects-pane" data-toggle="collapse" data-target="#navbar">Subject Guides</a></li>
+                 <li><a class="page-scroll" href="#news">News &amp; Events</a></li>
+                <li><a class="page-scroll" href="#services">Services</a></li>
+                <li><a class="page-scroll" href="#subjects">Subject Guides</a></li>
                 <li><a data-scroll href="#research-pane" data-toggle="collapse" data-target="#navbar">Research Support</a></li>
                 <li><a data-scroll href="#account-pane" data-toggle="collapse" data-target="#navbar">My Account</a></li>
                 <li><a href="/francais" >Version Française</a></li>
