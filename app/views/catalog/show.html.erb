@@ -77,9 +77,12 @@
         <% end %>
       <% end %>
 
-<% unless @holdings.empty? %>
+<% unless @holdings.nil? || @holdings.empty? %>
   <%= render "holdings" %>
-  <% end %>
+<% end %>
+<% if @holdings.nil? %>
+  <p>Data temporarily unavailable.</p>
+<% end %>
   </div>
 </div>
 

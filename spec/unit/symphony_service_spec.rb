@@ -15,8 +15,7 @@ describe SymphonyService do
     expect(s.first[:status]).to eq "CURRICULUM"
     s = SymphonyService.new("5843133", second_record).items
     expect(s.first[:status]).to eq "CHECKEDOUT"
-    s = SymphonyService.new("5ocn5843133", third_record).items
-    expect(s.first).to be_nil # this no longer fails gracefully, but the logic in the controller makes up for it
+    expect { SymphonyService.new("5ocn5843133", third_record).items }.to raise_error SymphonyService::Error::InvalidIdError
   end
 
   it "returns a call number" do
@@ -61,5 +60,31 @@ describe SymphonyService do
     s = SymphonyService.new("5843133", second_record).items
     expect(s.first[:summary_holdings]).to eq 0
   end
+
+  describe 'timeout handling' do
+    before do
+      allow(OpenURI).to receive(:open_uri) { raise Timeout::Error }
+    end
+
+    it { expect { SymphonyService.new("2661760") }.to raise_error SymphonyService::Error::HTTPError }
+  end
+
+  describe 'http error handling' do
+    before do
+      allow(OpenURI).to receive(:open_uri) { raise OpenURI::HTTPError.new('', nil) }
+    end
+
+    it { expect { SymphonyService.new("2661760") }.to raise_error SymphonyService::Error::HTTPError }
+  end
+
+  describe 'other error handling' do
+    before do
+      allow(OpenURI).to receive(:open_uri) { raise Exception }
+    end
+
+    it { expect { SymphonyService.new("2661760") }.to raise_error Exception }
+  end
+
+  it { expect { SymphonyService.new("invalid_id") }.to raise_error SymphonyService::Error::InvalidIdError }
 
 end

@@ -26,9 +26,11 @@ class CatalogController < ApplicationController
     @holdings = []
     if @document["source"]
       if @document["source"].first == "Symphony"
-          @holdings = holdings(@document, :items)
+        @holdings = holdings(@document, :items)
+        unless @holdings.nil? || @holdings.first.nil?
           @holdable = @holdings.first[:holdable]
           @holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
+        end
       end
         @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
     end
