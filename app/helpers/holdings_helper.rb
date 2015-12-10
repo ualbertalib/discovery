@@ -17,7 +17,12 @@ module HoldingsHelper
   end
 
   def fetch_sfx_holdings(document)
-    SFXService.new(document).targets
+    begin
+      SFXService.new(document).targets
+    rescue SFXService::Error::HTTPError => e
+      logger.error e.message
+      nil
+    end
   end
 
 end
