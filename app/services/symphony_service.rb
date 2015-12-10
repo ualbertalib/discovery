@@ -14,7 +14,7 @@ class SymphonyService
   def initialize(id, xml_response=nil)
     if valid? id
       begin
-        xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id).read
+        xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id, :read_timeout => Rails.configuration.symphony_timeout).read
         @document = Nokogiri::XML(xml_response)
       rescue *EXCEPTIONS => e
         raise Error::HTTPError, "SymphonyService: " + e.message
