@@ -541,7 +541,7 @@ $(function() {
   $( "#ejournals-limit" ).click(function() { 
     $('#main-search').attr('action', '/ejournals');
     $('#q').attr('placeholder', 'search journals...');
-    $('#fr-q').attr('placeholder', 'recherche journaux électroniques...');
+    $('#fr-q').attr('placeholder', 'recherche journaux...');
   });
 
   $("#searchclear").click(function(){
