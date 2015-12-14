@@ -91,6 +91,7 @@ databases:
   mode: file
   expand_path: "data/databases.xml"
   path: "data/databases.xml"
+  test: false
 
 database_test_set:
   schema: database
@@ -99,8 +100,9 @@ database_test_set:
   namespace: ""
   vocabulary: DatabaseVocabulary
   mode: file
-  expand_path: "spec/fixtures/databases.xml"
-  path: "spec/fixtures/database_test_set.csv"
+  expand_path: "spec/fixtures/database_test_set.xml"
+  path: "spec/fixtures/databases_test_set.xml"
+  test: true
 
 services:
   schema: services

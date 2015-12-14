@@ -16,11 +16,10 @@ describe RecordMailer do
       @email = RecordMailer.email_record(@documents,details,{:host =>'projectblacklight.org', :protocol => 'https'}) 
     end
     it "should receive the TO paramater and send the email to that address" do
-      puts @email.to
       expect(@email.to.first).to eq 'test@test.com'
     end
     it "should start the subject w/ Item Record:" do
-      expect(@email.subject).to match /^Item Record:/
+      expect(@email.subject).to match /^From University of Alberta Libraries: The horn/
     end
     it "should put the title of the item in the subject" do
       expect(@email.subject).to match /The horn/
