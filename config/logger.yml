@@ -2,7 +2,7 @@ development:
   log_path: "log/ingest.log"
 
 test:
-  log_path: "/var/log/blacklight_ingest.log"
+  log_path: "log/ingest.log"
 
 production:
   log_path:"/var/log/blacklight_ingest.log"

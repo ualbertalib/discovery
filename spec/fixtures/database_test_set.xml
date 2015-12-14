@@ -1,0 +1,437 @@
+<?xml version="1.0"?><root><databases>
+<hash>
+  <id>9963538</id>
+  <name>CAB Abstracts</name>
+  <description/>
+  <url>http://www.library.ualberta.ca/databases/databaseinfo/index.cfm?ID=47</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>-1</az-vendor-id>
+  <meta>
+    <target>0</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info>Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on: human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International.&lt;br /&gt;
+&lt;br /&gt;
+Also includes full text from a number of journals, conference proceedings, and review articles.</more-info>
+    <desc-pos type="integer">2</desc-pos>
+    <enable-proxy type="integer">0</enable-proxy>
+  </meta>
+  <created>2015-04-22 23:07:41</created>
+  <updated>2015-12-01 18:37:07</updated>
+  <slug-id>335009</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Agricultural, Food &amp; Nutritional Science</subject>
+    <subject>Agricultural, Life and Environmental Sciences</subject>
+    <subject>Agriculture</subject>
+    <subject>Animal Science</subject>
+    <subject>Biochemistry</subject>
+    <subject>Chemical Engineering</subject>
+    <subject>Crops &amp; Food</subject>
+    <subject>Environnement</subject>
+    <subject>Food Science</subject>
+    <subject>Forest Economics</subject>
+    <subject>Forest Sciences</subject>
+    <subject>Human Ecology</subject>
+    <subject>Nanotechnology</subject>
+    <subject>Physiology</subject>
+    <subject>Plant Science</subject>
+    <subject>Renewable  Resources</subject>
+    <subject>Resource Economics &amp; Environmental Sociology</subject>
+    <subject>Soil Science</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>CAB Abstracts</title>
+  <databasedescription>CAB Abstracts (1910 to the present) includes international coverage of all aspects of agriculture, horticulture, animal production and forestry including: crop production, plant protection and breeding; forestry and forest products; soil science, land use and water management; animal husbandry, health, breeding, nutrition and parasitology; dairy science and technology, agricultural engineering; economics; rural development, sociology and education; leisure, recreation and tourism.&lt;br /&gt;Many topics in the sciences basic to these activities are also covered, including the physiology, biochemistry, ecology, genetics, and biosystematics of the plants, animals, and microorganisms that are indexed as domesticated organisms, genetic resources, pests, pathogens, hosts, or potential economic resources. In human health and medicine, the emphasis is on: human nutrition, community and public health, tropical diseases, communicable diseases including AIDS, medical mycology, entomology, and parasitology. CABI = Centre for Agriculture and Biosciences International.&lt;br /&gt;
+&lt;br /&gt;
+Also includes full text from a number of journals, conference proceedings, and review articles.</databasedescription>
+  <enableproxy type="integer">0</enableproxy>
+</hash>
+
+<hash>
+  <id>11710064</id>
+  <name>Advances in Polymer Science</name>
+  <description/>
+  <url>http://springerlink.metapress.com/link.asp?id=104935</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">1</enable-proxy>
+    <target>0</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:27</created>
+  <updated>2015-06-22 16:55:48</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Physics</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>Advances in Polymer Science</title>
+  <databasedescription>Fulltext of electronically published titles from Springer's &lt;B&gt;&lt;I&gt;Advances in Polymer Science&lt;/B&gt;&lt;/I&gt; series.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">1</enableproxy>
+</hash>
+
+<hash>
+  <id>11710100</id>
+  <name>America: History and Life with Full Text</name>
+  <description/>
+  <url>http://www.library.ualberta.ca/databases/databaseinfo/index.cfm?ID=70</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">0</enable-proxy>
+    <target>2</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:27</created>
+  <updated>2015-11-30 21:29:43</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Architecture &amp; Design</subject>
+    <subject>Arts</subject>
+    <subject>Canadian Studies</subject>
+    <subject>Film and Media</subject>
+    <subject>First Nations, Metis and Inuit</subject>
+    <subject>Histoire canadienne</subject>
+    <subject>History</subject>
+    <subject>History of Science and Technology</subject>
+    <subject>History, Canada and United States</subject>
+    <subject>Human Ecology</subject>
+    <subject>Italian</subject>
+    <subject>Latin American Studies</subject>
+    <subject>Material Culture</subject>
+    <subject>Native Studies</subject>
+    <subject>Religion</subject>
+    <subject>Social Work</subject>
+    <subject>Sociology</subject>
+    <subject>Spanish</subject>
+    <subject>Women's Studies</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>America: History and Life with Full Text</title>
+  <databasedescription>&lt;B&gt;America: History and Life with Full Text&lt;/B&gt; covers all aspects of the history of Canada and  the United States from prehistorical times to the present. Coverage is very  broad and takes in many areas including: popular culture, anthropology,  folklore, sociology, cultural studies, business, the arts, law, education and  genealogy. Published since 1964.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">0</enableproxy>
+</hash>
+
+<hash>
+  <id>11710137</id>
+  <name>Archives Search</name>
+  <description/>
+  <url>http://www.collectionscanada.gc.ca/lac-bac/search-recherche/arch.php?Language=eng</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">0</enable-proxy>
+    <target>0</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:27</created>
+  <updated>2015-06-22 17:10:41</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Divers</subject>
+    <subject>First Nations, Metis and Inuit</subject>
+    <subject>Histoire canadienne</subject>
+    <subject>History</subject>
+    <subject>History, Canada and United States</subject>
+    <subject>Information gouvernementale</subject>
+    <subject>Native Studies</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>Archives Search</title>
+  <databasedescription>Archives Search is the National Archives of Canada's online research and consultation tool.  It provides information about and collections of the National Archives.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">0</enableproxy>
+</hash>
+
+<hash>
+  <id>11710226</id>
+  <name>Bibliography of Native North Americans</name>
+  <description/>
+  <url>http://www.library.ualberta.ca/databases/databaseinfo/index.cfm?ID=3009</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">0</enable-proxy>
+    <target>0</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:27</created>
+  <updated>2015-12-01 18:15:08</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Canadian Indian Treaties</subject>
+    <subject>Canadian Studies</subject>
+    <subject>First Nations, Metis and Inuit</subject>
+    <subject>History, Canada and United States</subject>
+    <subject>Human Ecology</subject>
+    <subject>Native Studies</subject>
+    <subject>Polar Studies</subject>
+    <subject>Religion</subject>
+    <subject>Social Work</subject>
+    <subject>Sociology</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>Bibliography of Native North Americans</title>
+  <databasedescription>The &lt;b&gt;&lt;i&gt;Bibliography of Native North Americans&lt;/b&gt;&lt;/i&gt;, from &lt;b&gt;&lt;i&gt;Human Relations Area Files (HRAF)&lt;/b&gt;&lt;/i&gt;, is an electronic publication that contains the citations from the cumulative eight volumes of the &lt;b&gt;&lt;i&gt;Ethnographic Bibliography of North America&lt;/b&gt;&lt;/i&gt; as well as additional new citations.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">0</enableproxy>
+</hash>
+
+<hash>
+  <id>11710328</id>
+  <name>Canadiana</name>
+  <description/>
+  <url>http://www.library.ualberta.ca/databases/databaseinfo/index.cfm?ID=170</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">0</enable-proxy>
+    <target>0</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info>&lt;p&gt;&lt;b&gt;Canadiana Discovery Portal&lt;/b&gt;  enables users to search across the valuable and diverse digital collections of Canada�s libraries, museums, and archives.&lt;/p&gt;</more-info>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:28</created>
+  <updated>2015-12-01 18:57:36</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Architecture &amp; Design</subject>
+    <subject>Arts</subject>
+    <subject>Curriculum and Instruction (K-12)</subject>
+    <subject>First Nations, Metis and Inuit</subject>
+    <subject>Histoire</subject>
+    <subject>Histoire canadienne</subject>
+    <subject>History</subject>
+    <subject>History of Science and Technology</subject>
+    <subject>History, Canada and United States</subject>
+    <subject>Law</subject>
+    <subject>Native Studies</subject>
+    <subject>Polar Studies</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>Canadiana</title>
+  <databasedescription>&lt;p&gt;&lt;B&gt;Early Canadiana Online&lt;/B&gt; is a full text online collection of books, pamphlets, and periodicals documenting Canadian history from the first European contact to the late 19th century. The collection is particularly strong in literature, women's history, native studies, travel and exploration, and the history of French Canada. The collection includes books published up to 1940 and periodicals published up to 1920.&lt;/p&gt;&lt;br /&gt;&lt;p&gt;&lt;b&gt;Canadiana Discovery Portal&lt;/b&gt;  enables users to search across the valuable and diverse digital collections of Canada�s libraries, museums, and archives.&lt;/p&gt;</databasedescription>
+  <enableproxy type="integer">0</enableproxy>
+</hash>
+
+<hash>
+  <id>11710440</id>
+  <name>CPI.Q.   (Canadian Periodicals Index)</name>
+  <description/>
+  <url>http://www.library.ualberta.ca/databases/databaseinfo/index.cfm?ID=160</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">0</enable-proxy>
+    <target>2</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:28</created>
+  <updated>2015-12-01 19:53:29</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Anglais langue seconde</subject>
+    <subject>Architecture &amp; Design</subject>
+    <subject>Arts</subject>
+    <subject>Beaux-Arts et sciences humaines</subject>
+    <subject>Canadian Indian Treaties</subject>
+    <subject>Canadian Studies</subject>
+    <subject>Commodities</subject>
+    <subject>Divers</subject>
+    <subject>Drama</subject>
+    <subject>Économie</subject>
+    <subject>English Language &amp; Literature</subject>
+    <subject>Film and Media</subject>
+    <subject>First Nations, Metis and Inuit</subject>
+    <subject>French</subject>
+    <subject>French-Canadian Literature</subject>
+    <subject>Histoire</subject>
+    <subject>Histoire canadienne</subject>
+    <subject>History</subject>
+    <subject>History, Canada and United States</subject>
+    <subject>Human Ecology</subject>
+    <subject>Humanities and Social Sciences</subject>
+    <subject>Italian</subject>
+    <subject>Native Studies</subject>
+    <subject>Physical Education &amp; Recreation</subject>
+    <subject>Polar Studies</subject>
+    <subject>Political Science</subject>
+    <subject>Public Health</subject>
+    <subject>Religion</subject>
+    <subject>Renewable  Resources</subject>
+    <subject>Resource Economics &amp; Environmental Sociology</subject>
+    <subject>Science politique</subject>
+    <subject>Small Business &amp; Entrepreneurship</subject>
+    <subject>Sociology</subject>
+    <subject>Spanish</subject>
+    <subject>Writing</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>CPI.Q.   (Canadian Periodicals Index)</title>
+  <databasedescription>&lt;B&gt;CPI.Q.&lt;/B&gt; indexes more than 400 titles (covering 1988 to present) with full text articles from over 160 of these periodicals (covering 1995 to present) as  well as Gale Research reference data and the full text of selected sections of The Globe and Mail. CPI.Q. indexes Canadian and International journals, magazines, newspapers, and other references covering a broad range of topics,  from current affairs and technology to arts and culture, geography, history,business and more.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">0</enableproxy>
+</hash>
+
+<hash>
+  <id>11710667</id>
+  <name>First Nations Periodical Index</name>
+  <description/>
+  <url>http://www.lights.ca/sifc/search.html</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">0</enable-proxy>
+    <target>0</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:29</created>
+  <updated>2015-07-17 20:37:28</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Anthropology</subject>
+    <subject>Canadian Indian Treaties</subject>
+    <subject>First Nations, Metis and Inuit</subject>
+    <subject>Native Studies</subject>
+    <subject>Newspapers</subject>
+    <subject>Polar Studies</subject>
+    <subject>Social Work</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>First Nations Periodical Index</title>
+  <databasedescription>Searchable index of 20 Aboriginal newspapers, journals, and magazines, of mainly Canadian Native content.  A joint project of the Saskatchewan Indian Federated College, Saskatoon Campus, the Saskatchewan Indian Cultural Centre and the Library Services for Saskatchewan Aboriginal Peoples committee.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">0</enableproxy>
+</hash>
+
+<hash>
+  <id>11710765</id>
+  <name>Hospitality &amp; Tourism Complete</name>
+  <description/>
+  <url>http://search.ebscohost.com/login.aspx?defaultdb=hjh&amp;profile=ehost</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">1</enable-proxy>
+    <target>0</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:29</created>
+  <updated>2015-08-13 19:02:04</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Consumer Behaviour</subject>
+    <subject>Industry</subject>
+    <subject>Physical Education &amp; Recreation</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>Hospitality &amp; Tourism Complete</title>
+  <databasedescription>Covers scholarly research and industry news relating to all areas of hospitality and tourism, with coverage going back to the early 1960s.  Combines the records of three renowned collections: Cornell University?s former Hospitality database, Articles in Hospitality and Tourism (AHT), formerly co-produced by the Universities of Surrey and Oxford Brookes, and the Lodging, Restaurant &amp; Tourism Index (LRTI), formerly produced by Purdue University. Also contains full text for selected publications.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">1</enableproxy>
+</hash>
+
+<hash>
+  <id>11711195</id>
+  <name>Physical Education Index</name>
+  <description/>
+  <url>http://search.proquest.com/physicaleducation/advanced?accountid=14474</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>53106</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">1</enable-proxy>
+    <target>0</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">2</desc-pos>
+  </meta>
+  <created>2015-06-01 16:27:31</created>
+  <updated>2015-06-23 18:43:34</updated>
+  <slug-id>0</slug-id>
+  <subject type="array">
+    <subject>Aboriginal Sport &amp; Recreation</subject>
+    <subject>Education</subject>
+    <subject>Education - Adult</subject>
+    <subject>Education - Elementary</subject>
+    <subject>Education - Psychology</subject>
+    <subject>Education - Secondary</subject>
+    <subject>Education Policy Studies</subject>
+    <subject>Educational Administration &amp; Leadership</subject>
+    <subject>Health Education</subject>
+    <subject>Physical Education &amp; Recreation</subject>
+    <subject>Special Education</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <title>Physical Education Index</title>
+  <databasedescription>Covers  peer-reviewed journals, report literature, conference proceedings, trade magazines, patents, articles from the popular press, and many other publications in the field of Physical Education.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">1</enableproxy>
+</hash>
+

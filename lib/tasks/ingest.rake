@@ -75,10 +75,12 @@ def ingest_marc
 end
 
 def ingest_databases
-    db = Databases.new
-    File.open(@c.expand_path, "w"){ |f|
-      f.write db.xml_file
-    }
+    unless @c.test
+      db = Databases.new
+      File.open(@c.expand_path, "w"){ |f|
+        f.write db.xml_file
+      }
+    end
     batch_ingester = BatchIngest.new(solr_url: @c.solr)
     configure batch_ingester
     run batch_ingester
