@@ -27,9 +27,6 @@
       %th.building{"data-sort" => "string"}      
         %h3
           Building
-      %th.expertise{"data-sort" => "string"}      
-        %h3
-          Expertise
   - @profiles.each do |profile|
     %tr
       - @photo_link = "staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
@@ -56,6 +53,5 @@
         = profile.phone
       %td      
         = profile.campus_address
-      %td      
-        = profile.expertise
+ 
 

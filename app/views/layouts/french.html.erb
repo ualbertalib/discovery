@@ -17,7 +17,7 @@
     <%= opensearch_description_tag application_name, opensearch_catalog_path(:format => 'xml', :only_path => false) %>
     <%# favicon_link_tag asset_path('favicon.ico') %>
     <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic|Abel", "ualib-home" %>
+    <%= stylesheet_link_tag    "application", "ualib-home" %>
     <%= javascript_include_tag "application", "ualib-home" %>
     <script src="https://hours.library.ualberta.ca/widget-hours-current.php" type="text/javascript"></script>
     <script>
@@ -79,13 +79,13 @@
             <div id="navbar" class="collapse col-xs-10"><!-- Mobile menu -->
               <ul>
                 <li class="active"><a data-scroll href="#top"  data-toggle="collapse" data-target="#navbar">Recherche et Accueil</a></li>
-                <li><a data-scroll href="#news-pane" data-toggle="collapse" data-target="#navbar">Nouvelles</a></li>
+                <li><a data-scroll href="#news" data-toggle="collapse" data-target="#navbar">Nouvelles</a></li>
 
-                <li><a data-scroll href="#hours-anch" data-toggle="collapse" data-target="#navbar">Heures et localisations</a></li>
-                <li><a data-scroll href="#services-pane" data-toggle="collapse" data-target="#navbar">Services</a></li>
+                <li><a class="page-scroll" href="#hours-anch" data-toggle="collapse" data-target="#navbar">Heures et localisations</a></li>
+                <li><a class="page-scroll" href="#services" data-toggle="collapse" data-target="#navbar">Services</a></li>
                 <li><a href="http://guides.library.ualberta.ca/pageaccueil">Guides par sujet</a></li>
-                                <li><a data-scroll href="#research-pane" data-toggle="collapse" data-target="#navbar">Soutien à la recherche</a></li>
-                <li><a data-scroll href="#account-pane" data-toggle="collapse" data-target="#navbar">Mon Dossier</a></li>
+                                <li><a class="page-scroll" href="#research" data-toggle="collapse" data-target="#navbar">Soutien à la recherche</a></li>
+                <li><a dclass="page-scroll" href="#account" data-toggle="collapse" data-target="#navbar">Mon Dossier</a></li>
                 <li><a href="/">English Version</a></li>
                 <li><a href="http://www.ualberta.ca">University of Alberta Home</a></li>
               </ul>
