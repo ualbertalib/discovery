@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   get "/advanced", to: "advanced#index"
   
+  get "/permalink/opac/:id/:user" => "permalink#index"
   get "/permalink/opac/:id" => "permalink#index"
 
   match '/404', to: 'errors#file_not_found', via: :all
