@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get "/results", to: "bento#index"
 
   get "/advanced", to: "advanced#index"
+  
+  get "/permalink/opac/:id" => "permalink#index"
 
   match '/404', to: 'errors#file_not_found', via: :all
   match '/422', to: 'errors#unprocessable', via: :all
@@ -34,7 +36,6 @@ Rails.application.routes.draw do
   
   resources :forms 
   post "forms/send_email" => "forms#send_email"
-
 
   comfy_route :cms_admin, :path => '/admin'
 
