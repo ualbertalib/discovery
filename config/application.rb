@@ -26,6 +26,8 @@ module VanillaBlacklight
     config.solr = @c['solr']
     config.eager_load_paths += %W( #{Rails.root}/app/helpers/blacklight/articles_helper_behaviour )
     config.exceptions_app = self.routes
+    config.symphony_timeout = 1
+    config.sfx_timeout = 3
 
   end
 end

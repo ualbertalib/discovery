@@ -26,9 +26,11 @@ class CatalogController < ApplicationController
     @holdings = []
     if @document["source"]
       if @document["source"].first == "Symphony"
-          @holdings = holdings(@document, :items)
+        @holdings = holdings(@document, :items)
+        unless @holdings.nil? || @holdings.first.nil?
           @holdable = @holdings.first[:holdable]
           @holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
+        end
       end
         @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
     end
@@ -189,6 +191,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'performers_tesim', :label => 'Performers'
     config.add_show_field 'title_series_t', :label => 'Series'
     config.add_show_field 'publisher_number_tesim', :label => 'Publisher/issue number'
+    config.add_show_field 'subject_geo_facet', :label => 'Geographic subject'
     # config.add_show_field 'subject_topic_facet', :label => 'Subject'
     # config.add_show_field 'subject_addl_t', :label => 'Additional subject'
     # config.add_show_field 'subject_era_facet', :label => 'Time period'

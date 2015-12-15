@@ -8,11 +8,21 @@ module HoldingsHelper
   def holdings(document, method)
     doc = nokogiri document
     id = get_marc_id(doc)
-    SymphonyService.new(id).send(method)
+    begin
+      SymphonyService.new(id).send(method)
+    rescue SymphonyService::Error::HTTPError => e
+      logger.error e.message
+      nil
+    end
   end
 
   def fetch_sfx_holdings(document)
-    SFXService.new(document).targets
+    begin
+      SFXService.new(document).targets
+    rescue SFXService::Error::HTTPError => e
+      logger.error e.message
+      nil
+    end
   end
 
 end

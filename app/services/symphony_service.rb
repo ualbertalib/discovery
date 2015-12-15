@@ -1,10 +1,27 @@
 class SymphonyService
+  module Error 
+    class HTTPError < StandardError; end
+    class InvalidIdError < StandardError; end
+  end
+  EXCEPTIONS = [Timeout::Error,
+    Errno::EINVAL,
+    EOFError,
+    OpenURI::HTTPError,
+    Net::HTTPBadResponse,
+    Net::HTTPHeaderSyntaxError,
+    Net::ProtocolError]
 
   def initialize(id, xml_response=nil)
     if valid? id
-      xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id).read
-      @document = Nokogiri::XML(xml_response)
+      begin
+        xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id, :read_timeout => Rails.configuration.symphony_timeout).read
+        @document = Nokogiri::XML(xml_response)
+      rescue *EXCEPTIONS => e
+        raise Error::HTTPError, "SymphonyService: " + e.message
+        @document = nil
+      end
     else
+      raise Error::InvalidIdError
       @document = nil
     end
   end
@@ -25,7 +42,6 @@ class SymphonyService
 
   def links
     ua, nonua = populate_electronic_items
-    puts nonua
     return ua, nonua
   end
 

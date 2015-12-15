@@ -32,9 +32,3 @@ module RakeTasks
   end
 end
 
-include RakeTasks
-
-initialize_rake_tasks
-delete_solr_index
-ingest_all_test_sets
-
