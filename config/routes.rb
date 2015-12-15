@@ -25,6 +25,14 @@ Rails.application.routes.draw do
   get "/results", to: "bento#index"
 
   get "/advanced", to: "advanced#index"
+  
+  get "/permalink/opac/:id/:user", to: redirect("https://neos.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/57/5?searchdata1=%{id}{001}&user_id=%{user}")
+
+  get "/permalink/opac/:id", to: redirect("https://neos.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/57/5?searchdata1=%{id}{001}&user_id=WUAARCHIVE")
+
+  get "/permalink/opac_fr/:id/:user", to: redirect("https://neos.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/57/5?searchdata1=%{id}{001}&user_id=%{user}")
+
+  get "/permalink/opac_fr/:id", to: redirect("https://neos.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/57/5?searchdata1=%{id}{001}&user_id=WUAARCHIVE")
 
   match '/404', to: 'errors#file_not_found', via: :all
   match '/422', to: 'errors#unprocessable', via: :all
@@ -34,7 +42,6 @@ Rails.application.routes.draw do
   
   resources :forms 
   post "forms/send_email" => "forms#send_email"
-
 
   comfy_route :cms_admin, :path => '/admin'
 
