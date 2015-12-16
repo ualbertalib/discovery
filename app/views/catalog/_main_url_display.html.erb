@@ -5,7 +5,7 @@ var urls_html = "<br /> \
     <% @ua_urls.each do |location,url| %> \
       <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "").gsub("(","").gsub(")","") %>
       <div class=\"row\"> \
-    <a href=\"<%= Rails.application.config.proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc+")" %></span><span></a><% end %><% end %><br />";
+    <a href=\"<%= Rails.application.config.proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc.strip+")" %></span><span></a><% end %><% end %><br />";
 
 
 var urls_node = document.createElement('div');
