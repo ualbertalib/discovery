@@ -1,6 +1,13 @@
 
 <script language="javascript">
-var urls_html = "<br /><% unless @ua_urls.empty? %><% @ua_urls.each do |location,url| %><div class=\"row\"><a href=\"<%= Rails.application.config.proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access (<%= location.split(":").last.strip %>)</span><span></a><% end %><% end %><br />";
+var urls_html = "<br /> \
+<% unless @ua_urls.empty? %> \
+    <% @ua_urls.each do |location,url| %> \
+      <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "").gsub("(","").gsub(")","") %>
+      <div class=\"row\"> \
+    <a href=\"<%= Rails.application.config.proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc+")" %></span><span></a><% end %><% end %><br />";
+
+
 var urls_node = document.createElement('div');
 urls_node.setAttribute('id', 'electronic_access');
 urls_node.innerHTML = urls_html;
