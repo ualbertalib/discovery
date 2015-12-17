@@ -1161,7 +1161,24 @@ padding: 0px 15px 10px 15px;
 .news-stories>a:hover{
  	background-color: #99aebb;
 }
-
+.new-search-button{
+ 	background-color:#333;
+ 	color:#fff;
+ 	font-size:16px;
+ }
+.search-query-form{
+	margin-top: 0px;
+}
+#guidedFieldSelectors{
+	font-size: 16px;
+}
+#guidedFieldSelectors label{
+	padding-left:3px;
+	padding-right:25px;
+}
+#guidedFieldSelectors .radio{
+	display: inline;
+}
 /* item is invisible, but used for layout */
 .item,
 .item-content {
