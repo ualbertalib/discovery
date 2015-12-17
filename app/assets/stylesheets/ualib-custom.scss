@@ -1568,6 +1568,31 @@ ul.foot-nav{
 
 
 /* Styles for Profile Application */
+.profile-padding{
+	 margin: 10px 0px 10px 20px;
+}
+.profile-nav{
+	padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.profile-nav ul{
+	list-style: none;
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+.profile-nav li{
+	display: inline;
+}
+.profile-nav li a{
+    padding: 3px 10px;
+    background-color: #eceff4;;
+    display: inline-block;
+    margin-bottom: 1px;
+}
+.profile-nav li a:hover{
+	background-color: #efefef;
+}
 .profile-form>li{
 	list-style: none;
 	margin: 20px 0px;
@@ -1594,7 +1619,7 @@ ul.foot-nav{
 	font-size: 20px;
 }
 .staff{
-	width: 100%;
+	width: 94%;
 	table-layout: fixed;
 	border-collapse:collapse;
 }
