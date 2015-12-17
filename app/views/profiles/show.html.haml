@@ -34,8 +34,8 @@
 				%h4.inline
 					Staff Since:
 				= @profile.staff_since
-		-if @profile.liason
-			%li.staff-since
+		-if @profile.liason.presence
+			%li.liason
 				%h4.inline
 					Liason Subject:
 				= @profile.liason
