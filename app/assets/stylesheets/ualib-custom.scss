@@ -30,7 +30,7 @@
 
 /*begin custom styles by Natasha Nunn at University of Alberta Libraries 2014/2015 */
 body{
-	font-family: 'Abel', sans-serif;
+	font-family: "Abel", sans-serif;
     width: 100%;
     height: 100%;
 }
@@ -1161,7 +1161,24 @@ padding: 0px 15px 10px 15px;
 .news-stories>a:hover{
  	background-color: #99aebb;
 }
-
+.new-search-button{
+ 	background-color:#333;
+ 	color:#fff;
+ 	font-size:16px;
+ }
+.search-query-form{
+	margin-top: 0px;
+}
+#guidedFieldSelectors{
+	font-size: 16px;
+}
+#guidedFieldSelectors label{
+	padding-left:3px;
+	padding-right:25px;
+}
+#guidedFieldSelectors .radio{
+	display: inline;
+}
 /* item is invisible, but used for layout */
 .item,
 .item-content {
@@ -1551,6 +1568,31 @@ ul.foot-nav{
 
 
 /* Styles for Profile Application */
+.profile-padding{
+	 margin: 10px 0px 10px 20px;
+}
+.profile-nav{
+	padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.profile-nav ul{
+	list-style: none;
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+.profile-nav li{
+	display: inline;
+}
+.profile-nav li a{
+    padding: 3px 10px;
+    background-color: #eceff4;;
+    display: inline-block;
+    margin-bottom: 1px;
+}
+.profile-nav li a:hover{
+	background-color: #efefef;
+}
 .profile-form>li{
 	list-style: none;
 	margin: 20px 0px;
@@ -1577,7 +1619,7 @@ ul.foot-nav{
 	font-size: 20px;
 }
 .staff{
-	width: 100%;
+	width: 94%;
 	table-layout: fixed;
 	border-collapse:collapse;
 }
@@ -1642,11 +1684,12 @@ ul.foot-nav{
 }
 .a-profile li{
 	padding-top: 15px;
+	line-height: 28px;
 }
 .a-profile h4{
-	font-size: 22px;
+	font-size: 24px;
 	font-weight: bold;
-	margin-bottom: 0px;
+	margin-bottom: 5px;
 	margin-top: 0px;
 }
 .a-profile h4.inline{

@@ -53,12 +53,9 @@
 <% end %>
 <div class="row">
   <div class="col-md-12">
-    <h2> results for <em>
-           <% if (defined? params[:q]) %>
-               	 <%= params[:q] %>
-            <% else %>
-             everything
-            <% end %></em>
+           <% if ((defined? params[:q]) && !params[:q].empty?) %>
+             <h2>	Results for <em><%= params[:q] %></em> in Articles & more
+            <% end %>
     </h2>
       <form class="form-inline" role="form" action='/results'>
         <div class="form-group">   

@@ -128,6 +128,7 @@
          author_t^100
          author_addl_t^50
          contents_tesim^50
+         databasedescription_tesim^50
          subject_addl_unstem_search^250
          subject_addl_t^50
          gmd_tesim^50
@@ -165,6 +166,7 @@
          author_t^1000
          author_addl_t^500
          contents_tesim^500
+         databasedescription_tesim^500
          subject_addl_unstem_search^2500
          subject_addl_t^500
          gmd_tesim^500

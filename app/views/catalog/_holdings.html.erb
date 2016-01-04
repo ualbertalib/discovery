@@ -10,19 +10,6 @@
           </tr>
 
           <br />
-          <% if @document["format"].first == "Journal" %>
-          <strong>Library has:</strong>
-          <% @summary_holdings = [] %>
-          <% for item in @holdings %>
-            <% @summary_holdings << item[:summary_holdings] %>
-            <% end %> 
-
-            <% for sh in @summary_holdings.uniq %>
-              <%= sh %>
-            <% end %>
-            <br />
-            <br />
-          <% end %>
 
           <% for item in @holdings %> 
 
@@ -65,9 +52,9 @@
           </tr>
           <% for item in @holdings %> 
             <tr>    
-              <td><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
-              <td><%= item[1][:coverage] %> </td>
-              <td><%= item[1][:note].html_safe %></td>
+              <td style="width:25%"><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
+              <td style="width:25%"><%= item[1][:coverage] %> </td>
+              <td style="width:20%"><%= item[1][:note].html_safe %></td>
               <% if item[1][:our_target] %>
                 <td><%= item[1][:our_target].html_safe %></td>
               <% end %>

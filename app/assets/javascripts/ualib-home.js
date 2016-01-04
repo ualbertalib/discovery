@@ -530,7 +530,7 @@ $(function() {
   });
   $( "#articles-limit" ).click(function() { 
     $('#main-search').attr('action', '/articles');
-    $('#q').attr('placeholder', 'search articles, ebooks & more...');
+    $('#q').attr('placeholder', 'search articles & more...');
     $('#fr-q').attr('placeholder', 'recherche articles...');
   });
   $( "#databases-limit" ).click(function() { 
@@ -540,8 +540,8 @@ $(function() {
   });
   $( "#ejournals-limit" ).click(function() { 
     $('#main-search').attr('action', '/ejournals');
-    $('#q').attr('placeholder', 'search ejournals...');
-    $('#fr-q').attr('placeholder', 'recherche journaux électroniques...');
+    $('#q').attr('placeholder', 'search journals...');
+    $('#fr-q').attr('placeholder', 'recherche journaux...');
   });
 
   $("#searchclear").click(function(){
