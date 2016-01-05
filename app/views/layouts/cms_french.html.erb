@@ -12,8 +12,16 @@
     <!--[if IEMobile]>
       <meta http-equiv="cleartype" content="on">
     <![endif]-->
-
-    <title>Bibliothèques de l'Université de l'Alberta</title>
+<title>
+  <% if content_for(:title) %>
+    <%= yield(:title) %> - Bibliothèques
+  <% elsif @cms_page %>
+    <%= @cms_page.label %> - Bibliothèques 
+  <% else %>
+     Bibliothèques de l'Université de l'Alberta
+  <% end %>
+</title>
+  
     <%# favicon_link_tag asset_path('favicon.ico') %>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= favicon_link_tag 'ua-touch.png', :rel => 'apple-touch-icon', :type => 'image/png' %>

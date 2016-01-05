@@ -12,8 +12,15 @@
     <!--[if IEMobile]>
       <meta http-equiv="cleartype" content="on">
     <![endif]-->
-
-    <title>University of Alberta Libraries</title>
+<title>
+  <% if content_for(:title) %>
+    <%= yield(:title) %> - UofA Libraries
+  <% elsif @cms_page %>
+    <%= @cms_page.label %> - UofA Libraries
+  <% else %>
+     University of Alberta Libraries
+  <% end %>
+</title>
     <%# favicon_link_tag asset_path('favicon.ico') %>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= favicon_link_tag 'ua-touch.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
