@@ -1,6 +1,9 @@
 <div class="col-md-12">
 <div class="row">
-          <div class="col-sm-6">
+  <div class="col-sm-6">
+    <% if params[:q] == '' || !params[:q] %>
+      <h2>Begin your <%= @collection_name.downcase.singularize %> search here</h2>
+    <% else %>
   <h2> 
 Results for <em>
             <% if params[:q] and params[:q] =='' %>
@@ -18,23 +21,29 @@ Results for <em>
             	<%= params[:q] %>
 			<% end %>
 </em>  in <%= @collection_name %>
-        </h2>
+</h2>
+
+<% end %>
         
 			<form class="form-inline" role="form">
             	<div class="form-group">   
                     <input type="text" class="form-control" value="<%= params[:q] %>" name="q">
                 </div>
-                <button type="submit" class="btn btn-small">search again</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a> 
+                <button type="submit" class="btn btn-small"><%= (params["q"] and params[:q] != '') ? "search again" : "search" %></button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a> 
 
             </form>
 		</div>  
       <div class="col-sm-6 outlined hidden-xs">
         <p>Questions about your results or your research? <a href="https://search.library.ualberta.ca/ask-us" target="_blank">ask us!</a></p> 
       </div>
+
+      <% if params["q"] and params[:q] != '' %>
     <%= link_to results_path(:q => params['q']), :class => "as-grid" do %>
         <span class="glyphicon glyphicon-th-large"></span> view results as a grid
       <% end %>
-    </div>
+    <% end %>
+</div>
+<% if params["q"] and params[:q] != '' %>
     <div class="row top-margin">
 <div id="sidebar" class="col-md-3 col-sm-4">
   <%= render 'search_sidebar' %>
@@ -47,6 +56,7 @@ Results for <em>
     <%= render 'search_results' %>
   <% end %>
 </div>
-</div>
+    </div>
+  <% end %>
 </div>
 
