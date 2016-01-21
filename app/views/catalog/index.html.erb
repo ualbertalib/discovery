@@ -1,7 +1,7 @@
 <div class="col-md-12">
 <div class="row">
   <div class="col-sm-6">
-    <% if params[:q] == '' || !params[:q] %>
+    <% if params[:q] == '' || !params[:q] || !params[:f] %>
       <h2>Begin your <%= @collection_name.downcase.singularize %> search here</h2>
     <% else %>
   <h2> 
@@ -37,13 +37,13 @@ Results for <em>
         <p>Questions about your results or your research? <a href="https://search.library.ualberta.ca/ask-us" target="_blank">ask us!</a></p> 
       </div>
 
-      <% if params["q"] and params[:q] != '' %>
+      <% if (params["q"] and params[:q] != '') or params[:f] %>
     <%= link_to results_path(:q => params['q']), :class => "as-grid" do %>
         <span class="glyphicon glyphicon-th-large"></span> view results as a grid
       <% end %>
     <% end %>
 </div>
-<% if params["q"] and params[:q] != '' %>
+<% if (params["q"] and params[:q] != '') or params[:f] %>
     <div class="row top-margin">
 <div id="sidebar" class="col-md-3 col-sm-4">
   <%= render 'search_sidebar' %>
