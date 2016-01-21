@@ -613,10 +613,10 @@ ul.ask{
 	background-size: 40px 38px;
 	display: block;
 	background-repeat: no-repeat;
-	padding: 17px 5px 17px 60px;
+	padding: 13px 5px 13px 60px;
 	background-color: #4C6F84;
 	color: #fff;
-	font-size: 19px;
+	font-size: 18px;
 	margin-bottom: 5px;
 }
 .reserve-quick-link{
@@ -630,6 +630,11 @@ ul.ask{
 .account-quick-link{
 		background-image: asset_url("account-icon-white.png");
 		background-position: 8px 10px;
+}
+.quick-links a.refworks-quick-link{
+		background-image: url(/assets/eresources-icon.png);
+    background-size: 35px;
+		background-position: 12px 12px;
 }
 .up{
 	float: right;
@@ -2029,7 +2034,7 @@ ul.foot-nav{
 		margin-top: 270px;
 	}
 	.account-quick-link{
-		background-position: 8px 25px;
+		background-position: 8px 5px;
 	}
 	h2{
 		font-size: 26px;
