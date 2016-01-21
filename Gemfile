@@ -49,7 +49,7 @@ gem "devise-guests"
 gem "addressable", "2.3.7"
 gem "htmlentities"
 gem "activerecord-session_store"
-gem "nokogiri", "1.6.7"
+gem "nokogiri", "1.6.7.2"
 gem "factory_girl", "~> 4.0", group: [:test, :development]
 gem "rspec"
 gem "blacklight_advanced_search"
