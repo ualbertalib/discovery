@@ -2,7 +2,7 @@
 	= link_to profiles_path, class: "staff-back" do
 		<span class="glyphicon glyphicon-chevron-left"></span>  All Staff	
 	- @photo_link = "staff-photos/"+@profile.first_name.downcase+"-"+@profile.last_name.downcase+".jpg"
-	- if Rails.application.assets.find_asset @photo_link
+	- if assets_manifest.assets[@photo_link]
 		= image_tag(@photo_link, :class => "a-photo")
 	.vcard
 		%h2.fn
