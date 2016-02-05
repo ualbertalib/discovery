@@ -10,11 +10,9 @@
     <% end -%>
     <% if document.to_h["id"] =~ /^[0-9]*$/ %> 
     <% if document.to_h["source_tesim"] and document.to_h["source_tesim"].first == "Symphony" %> 
-      <% @holdings = holdings(document, :items) if document.to_h["source_tesim"].first == "Symphony" %>
-      <% @location_strings = [] %>
       <dt class="blacklight-format">Copies available at: </dt><dd class="blacklight-format">
-      <% if @holdings and @locations %>
-        <%= @holdings.each { |h| @location_strings << @locations[h[:location].downcase.gsub("_","")] }; @location_strings.uniq.join(", ") if @holdings %></dd>
+      <% if document["held_by_tesim"] %>
+        <%= document["held_by_tesim"].first.split.join(", ") %></dd>
     <% end %>
   <% end %>
 <% end %>
