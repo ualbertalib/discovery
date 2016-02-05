@@ -17,6 +17,7 @@ class Databases
           db["subject"] << subject["name"]
           db["type"] = "Database"
           db["electronic"] = "Online"
+          db["location"] = "uainternet"
           db["title"] = db["name"]
           db["databasedescription"] = db["description"] + "<br />" + db["meta"]["more_info"]
           db["description"] = ""
