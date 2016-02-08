@@ -12,5 +12,6 @@ class DatabaseVocabulary < Vocabulary
     t.subject(path: "subject/subject", index_as: :stored_searchable)
     t.type(index_as: :stored_searchable)
     t.electronic(index_as: :stored_searchable)
+    t.location(index_as: :stored_searchable)
   end
 end
