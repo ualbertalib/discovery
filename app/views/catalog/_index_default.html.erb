@@ -12,7 +12,12 @@
     <% if document.to_h["source_tesim"] and document.to_h["source_tesim"].first == "Symphony" %> 
       <dt class="blacklight-format">Copies available at: </dt><dd class="blacklight-format">
       <% if document["held_by_tesim"] %>
-        <%= document["held_by_tesim"].first.split.join(", ") %></dd>
+        <% @held_by_locations = [] %>
+        <% document["held_by_tesim"].first.split.each do |held_by| %>
+          <% @held_by_locations << @library_codes[held_by.to_i] %>
+        <% end %>
+        <%= @held_by_locations.join(", ") %>
+          </dd>
     <% end %>
   <% end %>
 <% end %>
