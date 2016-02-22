@@ -99,7 +99,7 @@ h2{
 }
 .home .navbar-nav, .french-home .navbar-nav{
 	float: right;
-	padding: 0px 0px 8px 0px;
+	padding: 4px 0px 4px 0px;
 }
 .navbar-nav>li{
 	border-right:1px solid #efefef;
@@ -228,7 +228,20 @@ h2{
 	color: #fff;
 	background-position: 3px 3px;
 }
-
+.new-search{
+	background-color:#FBED32;
+	font-size:18px;
+	padding:3px;
+	color:#333;
+	border-radius:5px;
+	margin-top: 22px;
+	margin-left: -50px;
+	text-align: center;
+}
+.new-search:hover{
+	background-color: #F4FA58;
+	color: #000;
+}
 
 /* Custom styles - Footer
 -------------------------------------------------- */
@@ -2122,7 +2135,7 @@ ul.foot-nav{
 		font-size: 15px;
 	}
 	#main-nav>div>div{
-		height: 140px;
+		height: 120px;
 	}
 	#main-nav.small>div>div{
 		margin-top: 0px;
