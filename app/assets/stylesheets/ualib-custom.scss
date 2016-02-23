@@ -99,7 +99,7 @@ h2{
 }
 .home .navbar-nav, .french-home .navbar-nav{
 	float: right;
-	padding: 0px 0px 8px 0px;
+	padding: 4px 0px 4px 0px;
 }
 .navbar-nav>li{
 	border-right:1px solid #efefef;
@@ -937,7 +937,7 @@ label.mod{
 }
 .browse-options{
 	list-style: none;
-	padding: 10px 0px 0px 0px;
+	padding: 10px 0px 10px 0px;
 }
 .hours-wrap{
 	margin-top: 10px;
@@ -1176,6 +1176,7 @@ padding: 0px 15px 10px 15px;
 }
 #guidedFieldSelectors{
 	font-size: 16px;
+	margin-left: 20px;
 }
 #guidedFieldSelectors label{
 	padding-left:3px;
@@ -2122,7 +2123,7 @@ ul.foot-nav{
 		font-size: 15px;
 	}
 	#main-nav>div>div{
-		height: 140px;
+		height: 120px;
 	}
 	#main-nav.small>div>div{
 		margin-top: 0px;
@@ -2209,6 +2210,23 @@ ul.foot-nav{
 	.ua-logo{
 		width: 220px;
 	}
+	.new-search{
+		background-color:#FBED32;
+		font-size:15px;
+		padding:3px;
+		color:#333;
+		border-radius:5px;
+		margin-top: 22px;
+		text-align: center;
+		margin-left: -50px;
+	}
+	.new-search:hover{
+		background-color: #F4FA58;
+		color: #000;
+	}
+	#guidedFieldSelectors{
+		margin-left: 0px;
+	}
 	.foot-nav li a{
 		padding: 0px 15px;
 		font-size: 19px;
@@ -2237,6 +2255,9 @@ ul.foot-nav{
 @media (min-width: 1200px){
 	.main-container{
 		padding: 25px 20px;
+	}
+	.new-search{
+		font-size:17px;
 	}
 	.lib-nav li a{
 		font-size: 18px;
