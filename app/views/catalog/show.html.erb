@@ -76,12 +76,12 @@
           <%= render "urls" %>
         <% end %>
       <% end %>
-
+      <%= @holdings %>
 <% unless @holdings.nil? || @holdings.empty? %>
   <%= render "holdings" %>
 <% end %>
 <% if @holdings.nil? %>
-  <p>Data temporarily unavailable.</p>
+ <p>Data temporarily unavailable.</p> 
 <% end %>
   </div>
 </div>
