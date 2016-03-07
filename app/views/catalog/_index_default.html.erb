@@ -10,7 +10,7 @@
     <% end -%>
     <% if document.to_h["id"] =~ /^[0-9]*$/ %> 
     <% if document.to_h["source_tesim"] and document.to_h["source_tesim"].first == "Symphony" %> 
-      <dt class="blacklight-format">Copies available at: </dt><dd class="blacklight-format">
+      <dt class="blacklight-format">Copies owned by: </dt><dd class="blacklight-format">
       <% if document["held_by_tesim"] %>
         <% @held_by_locations = [] %>
         <% document["held_by_tesim"].first.split.each do |held_by| %>
