@@ -17,7 +17,10 @@
             <tr>
               <td><%= item[:call] %></td>
               <% if item[:status] == "CHECKEDOUT" %>
-                <td>Due: <%= Date.parse(item[:due]) %></td>
+                <% if item[:due] %>
+                  <td>Due: <%= Date.parse(item[:due]) %></td>
+                <% else %><td>Unknown/Never</td>
+              <% end %>
               <% else %>
                 <td class="holding-status"><%= @statuses[item[:status].to_s.downcase] %>
                 <% if @unavailable %>

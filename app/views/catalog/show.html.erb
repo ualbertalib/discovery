@@ -78,9 +78,10 @@
       <% end %>
 
       <% if @holdings.nil? || @holdings.empty? %>
-
-      <br />
+        <% unless @document["format"].include? "Database" %>
+        <br />
         <%= "No copies found. This item may be lost or missing." %>
+      <% end %>
 
       <% else %>
   <%= render "holdings" %>
