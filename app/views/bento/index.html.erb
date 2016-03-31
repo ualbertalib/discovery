@@ -6,7 +6,8 @@
 
 <div class="container" id="search-results">
     <div class="row results-head top-margin">
-   		<div class="col-sm-6">
+      <div class="col-sm-6">
+        <%= params.has_key? "q" %>
         <h2> 
           <% if @query =='' %>
               All Records
@@ -16,7 +17,7 @@
         </h2>
     		<form class="form-inline" role="form">
           <div class="form-group">  <label class="search-again" for="search-again">search again</label> 
-            <input type="text" class="form-control" placeholder="search again" name="q" id="search-again" title="search again">
+            <input type="text" class="form-control" placeholder=<%= params.has_key?("q") ? params["q"] : "search again" %> name="q" id="search-again" title="search again">
           </div>
           <div class="form-group"> 
             <button type="submit" class="btn btn-small">search</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a>
