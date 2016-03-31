@@ -9,6 +9,8 @@ require_relative "./ingest_configuration.rb"
 
 require "yaml"
 
+import "lib/tasks/delete.rake"
+
 @config_file = YAML.load_file("#{Rails.root}/config/ingest.yml")
 
 desc 'ingest records' # add config parameter for directory ingest?
@@ -22,6 +24,7 @@ task :ingest, [:collection] do |t, args|
 
   @@ingest_log = Logger.new(log_file)
   @@ingest_log.info("--- Starting ingest on #{Time.now} ---")
+  @collection = args.collection
   @c = IngestConfiguration.new(args.collection, @config_file)
 
   Rake::Task["fetch"].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
@@ -34,9 +37,11 @@ task :ingest, [:collection] do |t, args|
     ingest_mods_or_dublin_core
 
   when "marc"
+    Rake::Task["delete"].invoke("sfx") if @collection.include? "sfx"
     ingest_marc
 
   when "database"
+    Rake::Task["delete"].invoke("databases")
     ingest_databases
   end
 
@@ -67,8 +72,6 @@ def configure batch_ingester
 end
 
 def ingest_marc
-  puts @c.path
-  puts @c.config
   ENV['MARC_FILE'] = @c.path
   ENV['CONFIG_PATH'] = @c.config
   Rake::Task["solr:marc:index"].invoke
