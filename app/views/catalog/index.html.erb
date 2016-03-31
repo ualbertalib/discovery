@@ -37,11 +37,6 @@ Results for <em>
         <p>Questions about your results or your research? <a href="https://search.library.ualberta.ca/ask-us" target="_blank">ask us!</a></p> 
       </div>
 
-      <% if params[:search_field] or params[:f] or params[:q] and params[:q]!='' %> 
-    <%= link_to results_path(:q => params['q']), :class => "as-grid" do %>
-        <span class="glyphicon glyphicon-th-large"></span> view results as a grid
-      <% end %>
-    <% end %>
 </div>
 <% if params[:search_field] or params[:f] or params[:q] and params[:q] != '' %> 
     <div class="row top-margin">
