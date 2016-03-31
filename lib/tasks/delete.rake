@@ -6,7 +6,17 @@ desc 'Delete all records from solr index'
 task :delete, [:records] do |t, args|
   @c = IngestConfiguration.new("databases", @config_file)
   solr = RSolr.connect :url=>@c.solr
-  # Add collection logic at some point, e.g. "source:Symphony"
-  solr.delete_by_query '*:*' #args.records
+  case args.records
+
+  when "databases"
+    solr.delete_by_query 'format:Database'
+  when "sfx"
+    solr.delete_by_query 'source:SFX'
+  when "symphony"
+    solr.delete_by_query 'source:Symphony'
+  else
+    solr.delete_by_query '*:*'
+  end
+
   solr.commit
 end
