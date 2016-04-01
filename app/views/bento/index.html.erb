@@ -7,7 +7,6 @@
 <div class="container" id="search-results">
     <div class="row results-head top-margin">
       <div class="col-sm-6">
-        <%= params.has_key? "q" %>
         <h2> 
           <% if @query =='' %>
               All Records
@@ -60,6 +59,9 @@
                   <% end %>
                   <% if symphony[:author] %>
                     <span class="author-result-list"><%= symphony[:author] %></span>
+                  <% end %>
+                  <% if symphony[:ual] %>
+                    <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> 
                   <% end %>
                 </div>
               
@@ -121,7 +123,9 @@
       <ul>
         <% i = 1 %>
 				<% @journals.take(@local_journal_limit).each do |id,journals| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journals[:title] %> (<%= journals[:electronic].first == "Online" ? "Online" : "Print" %>)</a></li>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journals[:title] %> (<%= journals[:electronic].first == "Online" ? "Online" : "Print" %>)</a>
+            <% if journals[:source].first == "SFX" %><img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> <% end %>
+          </li>
           <% i+=1 %>
 				<% end %>
 			</ul>
@@ -143,7 +147,9 @@
  			<ul>       
         <% i = 1 %> 
 				<% @databases.take(@local_database_limit).each do |id,database| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"><%= database[:title] %></a></li>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"><%= database[:title] %></a>
+            <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%" onclick="window.open('https://www.library.ualberta.ca/about-us/policies/restricted-resource-info');">
+          </li>
           <% i+=1 %>
         <% end %>
 			</ul>

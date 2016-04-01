@@ -89,12 +89,22 @@ class BentoController < ApplicationController
       metadata[:call_number] = doc.as_json["lc_callnum_display"] # this isn't the correct field. Just a place holder for now
       metadata[:format] = doc.as_json["format"]
       metadata[:electronic] = doc.as_json["electronic_tesim"]
+      metadata[:source] = doc.as_json["source_tesim"]
+      metadata[:locations] = doc.as_json["location_tesim"]
+      metadata[:ual] = false || belongs_to_ual?(doc.as_json["location_tesim"])
       #Symphony: location(s), call number(s), checked out or in: these depend on item
       #record, not bib record.
       #Ejournals: coverage statement
       #Articles: full text?, Link to PDF, Year of publication - not sure
       #these are possible. Depends on EDS API
       metadata
+  end
+
+  # There must be a functional way to write the following function...
+  def belongs_to_ual?(array_of_location_codes)
+    array_of_location_codes.each do |code|
+      break true if @locations[code].include? "University of Alberta"
+    end
   end
 
   def parse(field, doc, delimiter=" ")

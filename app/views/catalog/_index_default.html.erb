@@ -1,6 +1,8 @@
 <%# default partial to display solr document fields in catalog index view -%>
 <div class="col-md-9">
 
+  <% @ual = false %>
+
   <dl class="document-metadata dl-horizontal dl-invert">
     <% index_fields(document).each do |solr_fname, field| -%>
       <% if should_render_index_field? document, field %>
@@ -14,12 +16,17 @@
       <% if document["held_by_tesim"] %>
         <% @held_by_locations = [] %>
         <% document["held_by_tesim"].first.split.each do |held_by| %>
+          <% @ual = true if @library_codes[held_by.to_i].include? "University of Alberta" %>
           <% @held_by_locations << @library_codes[held_by.to_i] %>
         <% end %>
         <%= @held_by_locations.join(", ") %>
-          </dd>
+      </dd>
+      
     <% end %>
   <% end %>
+      <dt><dd>
+      <% if @ual or (document["source_tesim"] and document["source_tesim"].first == "SFX") or document["format"].first == "Database" %> <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/>.  <% end %>
+      </dd></dt>
 <% end %>
     <% if document.to_h["format"] and document.to_h["electronic_tesim"] %>
     <% if document.to_h["format"].first == "Book" and document.to_h["electronic_tesim"].include? "Online" %>
