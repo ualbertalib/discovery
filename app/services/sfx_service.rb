@@ -23,11 +23,9 @@ class SFXService
       @targets[sfx_id(target)] = {id: sfx_id(target), coverage: coverage}
     end
 
-    @our_links = eval(File.open("#{Rails.root}/config/our_links.rb").read)
-
     sfx_results_for(document.id).xpath("//target").each do |target|
       unless local_targets.include? name(target)
-        @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: @our_links[name(target)], note: note(target)}) if @targets[id(target)]
+        @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: our_link(target), note: note(target)}) if @targets[id(target)]
       end
     end
   end
@@ -73,6 +71,10 @@ class SFXService
 
   def id(target)
     BigDecimal.new(target.xpath("target_service_id").text).to_i
+  end
+
+  def our_link(target)
+    target.xpath("authentication").text if target.xpath("authentication").text.include? "tal.scholarsportal.info"
   end
 
 end
