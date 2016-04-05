@@ -1,0 +1,27 @@
+<div class="col-md-12">
+<div class="row">
+  <div class="col-sm-6">
+  <h2> 
+    Current New Book List (<%= Date.today.to_s %>)
+</h2>
+
+        
+			<form class="form-inline" role="form">
+            	<div class="form-group">   
+                    <input type="text" class="form-control" value="<%= params[:q] %>" name="q">
+                </div>
+                <button type="submit" class="btn btn-small"><%= (params["q"] and params[:q] != '') ? "search again" : "search" %></button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a> 
+
+            </form>
+		</div>  
+      <div class="col-sm-6 outlined hidden-xs">
+        <p>Questions about your results or your research? <a href="https://search.library.ualberta.ca/ask-us" target="_blank">ask us!</a></p> 
+      </div>
+
+</div>
+<div id="content" class="col-md-9 col-sm-8">
+  <%# render 'search_results' %>
+  <%= render_document_index %>
+</div>
+    </div>
+</div>
