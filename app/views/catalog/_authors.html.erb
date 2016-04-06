@@ -1,0 +1,9 @@
+
+     <div id="authors">
+       <p class="blacklight-author_facet">Find more by <%= @authors.count > 1 ? "these authors" : "this author" %></p>
+       <ul>
+          <% @authors.each do |author| %>
+            <li><a href="/<%= params[:controller] %>?f%5Bauthor_display%5D%5B%5D=<%= author.gsub(" ", "+") %>"><%= author %></a></li>
+          <% end %>
+       </ul>
+     </div>

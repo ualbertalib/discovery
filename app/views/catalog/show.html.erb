@@ -2,6 +2,7 @@
   <%= render 'previous_next_doc' %>
   <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
   <% content_for(:head) { render_link_rel_alternates } -%>
+
   <div id="document" class="document <%= render_document_class %>" itemscope itemtype="<%= @document.itemtype %>">
     <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-sm-9">
       <% # bookmark/folder functions -%>
@@ -9,44 +10,15 @@
       <% if @document.to_h["databasedescription_tesim"] %>
         <%= @document.to_h["databasedescription_tesim"].first.html_safe %>
       <% end %>
+     
       <br /><br />
-       <% if @subjects  %>
-      <div id="subject-list">
-        <p class="blacklight-subject_topic_facet">Subjects</p>
-        <ul class="subject-chain-links">
-          <% @subjects.each do |subject| %>
-             <li>
-            <%# subject=subject.reverse! %>
-            <% subject.each_with_index do |asubject, index| %> 
-            <% i = 0 %>
-            <% sbstring = "" %>
-            <% while( i <= index ) %>
-              <% sbstring = sbstring + subject[i].gsub("&","").gsub(" ", "+") %>
-                <% unless i == index %> 
-                  <% sbstring = sbstring + "+" %>
-                <% end %>
-                <% i+= 1 %>
-              <% end %>
-              <a href="/results?q=<%= sbstring %>&view=brief&search_field=subject"><%= asubject %></a> 
-            <% unless index == subject.size - 1  %>
-              <span class="glyphicon glyphicon-menu-right"></span>
-             <% end %>
-        <% end %>
-        </li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+     
+      <% if @subjects  %>
+        <%= render "subjects" %>
+      <% end %>
 
-     <% if @authors %>
-     <div id="authors">
-       <p class="blacklight-author_facet">Find more by <%= @authors.count > 1 ? "these authors" : "this author" %></p>
-       <ul>
-          <% @authors.each do |author| %>
-            <li><a href="/<%= params[:controller] %>?f%5Bauthor_display%5D%5B%5D=<%= author.gsub(" ", "+") %>"><%= author %></a></li>
-          <% end %>
-       </ul>
-     </div>
+    <% if @authors %>
+      <%= render "authors" %>
    <% end %>
 
     </div>
@@ -60,8 +32,6 @@
   <div id="sidebar" class="col-sm-3 top-margin">
   <%= render_document_sidebar_partial %>
 </div>
-
-
  
 <div class="col-sm-12">
    <% if @document["format"].include? "Database" %>
