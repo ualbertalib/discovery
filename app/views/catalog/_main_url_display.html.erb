@@ -3,7 +3,11 @@
 var urls_html = "<br /> \
 <% unless @ua_urls.empty? %> \
     <% @ua_urls.each do |location,url| %> \
-      <% location.include? "Free Access" ? @proxy = "" : @proxy = Rails.application.config.proxy %> \
+      <% if location.include? "Free Access" %> \
+             <% @proxy = "" %> \
+           <% else %> \
+             <% @proxy = Rails.application.config.proxy %> \
+                       <% end %> \
       <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "").gsub("(","").gsub(")","") %>
       <div class=\"row\"> \
     <a href=\"<%= @proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc.strip+")" %></span><span></a><% end %><% end %><br />";
