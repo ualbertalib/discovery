@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'errors/internal_server_error'
 
-  blacklight_for :catalog, :journals, :databases, :symphony, :ebooks
+  blacklight_for :catalog, :journals, :databases, :symphony, :ebooks, :new_books
   Blacklight::Marc.add_routes(self)
 
   devise_for :users
