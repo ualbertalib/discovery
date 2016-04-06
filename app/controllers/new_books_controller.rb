@@ -28,6 +28,6 @@ class NewBooksController < CatalogController
   end
 
   def read_id_file
-    File.open("#{Rails.root}/data/new_books.txt").read.split("|\r\n").take 10
+    File.open("#{Rails.root}/conf/new_books.txt").read.split("|\r\n").take 10
   end
 end 
