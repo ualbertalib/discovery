@@ -11,7 +11,7 @@ class Databases
     @xml_records = {}
     database_subjects = JSON.parse(open("http://lgapi.libapps.com/1.1/subjects?site_id=165&key=0d26849c8a09f1da841bc84d4216b8d5").read)
       for subject in database_subjects do
-        data = JSON.parse(open("http://lgapi.libapps.com/1.1/assets?site_id=165&key=0d26849c8a09f1da841bc84d4216b8d5&asset_types=10&subject_ids=#{subject['id']}").read)
+        data = JSON.parse(open("http://lgapi.libapps.com/1.1/assets?site_id=165&key=0d26849c8a09f1da841bc84d4216b8d5&asset_types=10&subject_ids=#{subject['id']}&expand=icons").read)
         for db in data do
           db["subject"] = []
           db["subject"] << subject["name"]
@@ -22,6 +22,7 @@ class Databases
           db["databasedescription"] = db["description"] + "<br />" + db["meta"]["more_info"]
           db["description"] = ""
           db["enableproxy"] = db["meta"]["enable_proxy"]
+          db["icons"] = db["icons"]
           if @xml_records[db['id']]
             @xml_records[db['id']]['subject'].concat db['subject']
             @xml_records[db['id']].merge db

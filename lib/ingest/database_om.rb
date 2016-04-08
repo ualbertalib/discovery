@@ -13,5 +13,6 @@ class DatabaseVocabulary < Vocabulary
     t.type(index_as: :stored_searchable)
     t.electronic(index_as: :stored_searchable)
     t.location(index_as: :stored_searchable)
+    t.icons(index_as: :stored_searchable)
   end
 end

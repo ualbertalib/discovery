@@ -25,7 +25,11 @@
     <% end %>
   <% end %>
       <dt><dd>
-      <% if @ual or (document["source_tesim"] and document["source_tesim"].first == "SFX") or document["format"].first == "Database" %> <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/>.  <% end %>
+      <% if @ual or (document["source_tesim"] and document["source_tesim"].first == "SFX") %> <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/>.
+      <% elsif document["format"].first == "Database" and (document["icons_tesim"] and document["icons_tesim"].first.include? "ualib-logo.png") %>
+         <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/>.
+
+      <% end %>
       </dd></dt>
 <% end %>
     <% if document.to_h["format"] and document.to_h["electronic_tesim"] %>
