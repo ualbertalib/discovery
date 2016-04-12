@@ -82,6 +82,7 @@ class BentoController < ApplicationController
       metadata = {}
       metadata[:title] = parse(doc.as_json["title_display"], doc) if doc.as_json["title_display"]
       metadata[:subtitle] = parse(doc.as_json["subtitle_display"], doc) if doc.as_json["subtitle_display"]
+      metadata[:edition] = parse(doc.as_json["edition_tesim"], doc) if doc.as_json["edition_tesim"]
       metadata[:author] = parse(doc.as_json["author_display"], doc, ", ") if doc.as_json["author_display"]
       metadata[:isbn] = doc.as_json["isbn_t"]
       metadata[:issn] = doc.as_json["issn_t"]

@@ -146,6 +146,7 @@ class CatalogController < ApplicationController
     #config.add_index_field 'title_display', :label => 'Title'
     #config.add_index_field 'title_vern_display', :label => 'Title'
     config.add_index_field 'author_display', :label => 'Author'
+    config.add_index_field 'edition_tesim', :label => 'Edition'
     config.add_index_field 'author_vern_display', :label => 'Author'
     config.add_index_field 'format', :label => 'Format'
     config.add_index_field 'language_facet', :label => 'Language'
@@ -165,7 +166,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'section_number_tesim', :label => "Section Number"
     config.add_show_field 'section_name_tesim', :label => "Section Name"
     config.add_show_field 'alternate_display_tesim', :label => "Original"
-    config.add_show_field 'edition_tesim', :label => "Edition"
+    #config.add_show_field 'edition_tesim', :label => "Edition"
     config.add_show_field 'author_display', :label => 'Author'
     config.add_show_field 'author_addl_t', :label => "Additional authors/performers"
     config.add_show_field 'author_vern_display', :label => 'Author'

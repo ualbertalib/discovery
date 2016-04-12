@@ -1,2 +1,2 @@
 <% # bookmark/folder functions -%>
-<a href="/catalog?q=&quot;<%= document.to_h['title_display'].first %>&quot;"><%= render_document_heading(document, :tag => :h1) %></a>
+<h1><a href="/catalog?q=&quot;<%= document.to_h['title_display'].first %>&quot;"><%= "#{document.to_h["title_display"].first}, #{document.to_h["edition_tesim"].first}" %></a></h1>

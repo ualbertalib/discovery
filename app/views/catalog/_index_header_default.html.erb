@@ -12,12 +12,11 @@
          <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
        </span>
 
-       <% if document.to_h['subtitle_display'] %>
-              <% @combined_title = "#{document.to_h['title_display'].to_a.first}: #{document.to_h['subtitle_display'].to_a.first}" %>
-              <%= link_to_document document, :label=>@combined_title, :counter => counter %>
-            <% else %>
-              <%= link_to_document document, :label=>document_show_link_field(document), :counter => counter %>
-            <% end %>
+       <% document.to_h['subtitle_display'] ? @subtitle = ": #{document.to_h['subtitle_display'].first}" : @subtitle = "" %>
+       <% document.to_h['edition_tesim'] ? @edition = ", #{document.to_h['edition_tesim'].first}" : @edition = "" %>
+       <% @combined_title = document.to_h['title_display'].first+@subtitle+@edition %>
+
+         <%= link_to_document document, :label=>@combined_title, :counter => counter %>
          <% if document["ua_only_tesim"] %>
            <% if document["ua_only_tesim"].first == "1" %> <%= image_tag "icn_uofa.gif" %> <% end %>
          <% end %>
