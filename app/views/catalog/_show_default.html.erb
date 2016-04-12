@@ -13,9 +13,12 @@
         <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/<%= params[:controller] %>?f%5Bauthor_display%5D%5B%5D=<%= render_document_show_field_value(document, :field => solr_fname).gsub(' ','+') %>"><%= render_document_show_field_value document, :field => solr_fname %></a></dd>
 
       <% elsif solr_fname == "author_addl_t" and @additional_authors %>
-         <% for author in @additional_authors %>
-        <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/catalog?q=&quot;<%= author.gsub(' ','+') %>&quot;"><%= author %></a></dd>
+           <dd class="blacklight-<%= solr_fname.parameterize %>">
+           
+           <% for author in @additional_authors %>
+             <a href="/catalog?q=&quot;<%= author.gsub(' ','+') %>&quot;"><%= author %></a><br />
          <% end %>
+           </dd>
 
       <% else %>
         <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
