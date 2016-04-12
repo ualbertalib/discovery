@@ -20,6 +20,16 @@
          <% end %>
            </dd>
 
+         <% elsif solr_fname == "contents_tesim" %>
+
+           <dd class="blacklight-<%= solr_fname.parameterize %>" style="width:115%;font-size:75%">
+           <ul>
+           <% render_document_show_field_value(document,:field=>solr_fname).split("--").each do |note| %> 
+
+             <li><%= note.gsub("&#39;", "'") %></li>
+
+         <% end %>
+           </ul></dd>
       <% else %>
         <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
     <% end %>
