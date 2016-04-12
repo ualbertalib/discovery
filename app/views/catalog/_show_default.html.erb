@@ -1,9 +1,20 @@
 <%# default partial to display solr document fields in catalog show view -%>
 <dl class="dl-horizontal  dl-invert">
+
+  <% @linked_fields = ["title_series_t", "uniform_title_tesim"] %>
+
   <% document_show_fields(document).each do |solr_fname, field| -%>
     <% if should_render_show_field? document, field %>
-	    <dt class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_label document, :field => solr_fname %></dt>
-	    <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
+      <dt class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_label document, :field => solr_fname %></dt>
+      <% if @linked_fields.include? solr_fname %>
+        <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/catalog?q=&quot;<%= render_document_show_field_value(document, :field => solr_fname).gsub(' ', '+') %>&quot;">   <%= render_document_show_field_value document, :field => solr_fname %></a></dd>
+      <% elsif solr_fname == "author_display" %>
+
+        <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/<%= params[:controller] %>?f%5Bauthor_display%5D%5B%5D=<%= render_document_show_field_value(document, :field => solr_fname).gsub(' ','+') %>"><%= render_document_show_field_value document, :field => solr_fname %></a></dd>
+
+      <% else %>
+        <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
+    <% end %>
     <% end -%>
   <% end -%>
 </dl>
