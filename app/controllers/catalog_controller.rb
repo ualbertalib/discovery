@@ -49,6 +49,10 @@ class CatalogController < ApplicationController
     if @document["author_display"]
       @authors = @document["author_display"]
     end
+    
+    if @document["author_addl_t"]
+      @additional_authors = @document["author_addl_t"]
+    end
 
     load_lookup_tables
 
@@ -65,7 +69,7 @@ class CatalogController < ApplicationController
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
 
-      config.default_solr_params = { 
+      config.default_solr_params = {
         :qt => 'search',
         :rows => 25
      }
