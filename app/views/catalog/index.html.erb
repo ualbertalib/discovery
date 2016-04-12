@@ -15,7 +15,7 @@ Results for <em>
                  @terms << params[:title] if !params[:title].blank?
                  @terms << params[:author] if !params[:author].blank?
                  @terms << params[:subject] if !params[:subject].blank?
-                 @terms << params["author_display"].first if !params["author_display"]
+                 @terms << params["author_display"].first if !params["author_display"].blank?
                %>
                     
                 <%= @terms.join(" #{params[:op]} ") %>
