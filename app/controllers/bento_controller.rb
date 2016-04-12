@@ -92,7 +92,7 @@ class BentoController < ApplicationController
       metadata[:electronic] = doc.as_json["electronic_tesim"]
       metadata[:source] = doc.as_json["source_tesim"]
       metadata[:locations] = doc.as_json["location_tesim"]
-      metadata[:ual] = false || belongs_to_ual?(doc.as_json["location_tesim"])
+      metadata[:ual] = belongs_to_ual?(doc.as_json["held_by_tesim"].first.split) if doc.as_json["held_by_tesim"]
       #Symphony: location(s), call number(s), checked out or in: these depend on item
       #record, not bib record.
       #Ejournals: coverage statement
@@ -101,11 +101,13 @@ class BentoController < ApplicationController
       metadata
   end
 
-  # There must be a functional way to write the following function...
+  # There must be a functional way to write the following function..
   def belongs_to_ual?(array_of_location_codes)
+    ual = false
     array_of_location_codes.each do |code|
-      break true if @locations[code].include? "University of Alberta"
+     ual = true if @library_codes[code.to_i].include? "University of Alberta"
     end
+    ual
   end
 
   def parse(field, doc, delimiter=" ")

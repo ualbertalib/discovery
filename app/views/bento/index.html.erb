@@ -127,9 +127,10 @@
             <% end %>        
       <ul>
         <% i = 1 %>
-				<% @journals.take(@local_journal_limit).each do |id,journals| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journals[:title] %> (<%= journals[:electronic].first == "Online" ? "Online" : "Print" %>)</a>
-            <% if journals[:source].first == "SFX" %><img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> <% end %>
+				<% @journals.take(@local_journal_limit).each do |id,journal| %>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journal[:title] %> (<%= journal[:electronic].first == "Online" ? "Online" : "Print" %>)</a>
+            <% if journal[:source].first == "SFX" or journal[:ual] %><img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> <% end %>
+            
           </li>
           <% i+=1 %>
 				<% end %>

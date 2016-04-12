@@ -1,2 +1,4 @@
 <% # bookmark/folder functions -%>
-  <h1><a href="/catalog?q=&quot;<%= document.to_h['title_display'].first %>&quot;"><%= "#{document.to_h["title_display"].first}" %></a> <%= ", #{document.to_h["edition_tesim"].first}" %></h1>
+<h1><a href="/catalog?q=&quot;<%= document.to_h['title_display'].first %>&quot;">
+    <%= "#{document.to_h["title_display"].first}" %></a> 
+<%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%></h1>
