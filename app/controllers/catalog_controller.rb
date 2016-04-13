@@ -198,7 +198,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'performers_tesim', :label => 'Performers'
     config.add_show_field 'title_series_t', :label => 'Series'
     config.add_show_field 'publisher_number_tesim', :label => 'Publisher/issue number'
-    config.add_show_field 'arrangement_testim', ;label => "Organization and Arrangement'
+    config.add_show_field 'arrangement_tesim', :label => "Organization and Arrangement"
+    config.add_show_field 'time_of_event_tesim', :label => "Date and Time of Event"
 
     # config.add_show_field 'subject_topic_facet', :label => 'Subject'
     # config.add_show_field 'subject_addl_t', :label => 'Additional subject'
