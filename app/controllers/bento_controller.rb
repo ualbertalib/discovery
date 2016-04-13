@@ -54,7 +54,8 @@ class BentoController < ApplicationController
   end
 
   def populate_sfx
-    @journals, @journals_count = populate_collection({format: 'Journal'})
+    #@journals, @journals_count = populate_collection({format: 'Journal'})
+    @journals, @journals_count = populate_collection({source: 'SFX'})
   end
 
   def populate_symphony
