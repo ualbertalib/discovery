@@ -24,11 +24,11 @@
        <%# <% clean_params = deep_clean(params) %>
        <%# <% params = clean_params %>
 
-  <% if session[:results] %>
+  <%# if session[:results] %>
 	<%# unless params[:fromDetail] == 'y'%>
 	    <% search(options) %>
       <%# end %>
-    <% end %>
+    <%# end %>
 <% end %>
 
 <script type="text/javascript">
@@ -56,7 +56,7 @@
            <% if ((defined? params[:q]) && !params[:q].empty?) %>
              <h2>	Results for <em><%= params[:q] %></em> in Articles & more
             <% end %>
-    </h2>
+             </h2>
       <form class="form-inline" role="form" action='/results'>
         <div class="form-group">   
           <input type="text" class="form-control" placeholder="search again" name="q">
@@ -129,9 +129,9 @@
       <div class="article-wrap">
         <%= render :partial=>'search_results' %>
       </div>
-      <div class="bottom-sort">
-        <%= render :partial=>'sort_and_per_page' %>
-      </div>
+      <!-- div class="bottom-sort">
+        <%# render :partial=>'sort_and_per_page' %>
+      </div -->
     <% end %>
 
 </div>
