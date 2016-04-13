@@ -203,6 +203,9 @@ class CatalogController < ApplicationController
     config.add_show_field 'issuing_body_tesim', :label => "Issuing Body"
     config.add_show_field 'supplementary_note_tesim', :label => "Supplementary Note"
     config.add_show_field 'title_history_tesim', :label => "Title History"
+    config.add_show_field 'numbering_tesim', :label => "Numbering System"
+    config.add_show_field 'use_repro_tesim', :label => "Use and Reproduction"
+    config.add_show_field 'language_note_tesim', :label => "Language Note"
 
     # config.add_show_field 'subject_topic_facet', :label => 'Subject'
     # config.add_show_field 'subject_addl_t', :label => 'Additional subject'
