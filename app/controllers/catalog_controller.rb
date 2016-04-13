@@ -201,6 +201,8 @@ class CatalogController < ApplicationController
     config.add_show_field 'arrangement_tesim', :label => "Organization and Arrangement"
     config.add_show_field 'time_of_event_tesim', :label => "Date and Time of Event"
     config.add_show_field 'issuing_body_tesim', :label => "Issuing Body"
+    config.add_show_field 'supplementary_note_tesim', :label => "Supplementary Note"
+    config.add_show_field 'title_history_tesim', :label => "Title History"
 
     # config.add_show_field 'subject_topic_facet', :label => 'Subject'
     # config.add_show_field 'subject_addl_t', :label => 'Additional subject'
