@@ -134,6 +134,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'subject_geo_facet', :label => 'Geographic Region', :limit => 10 
     config.add_facet_field 'subject_era_facet', :label => 'Historic Period', :limit => 10
     config.add_facet_field 'owning_library_tesim', :label => 'Owning Library'
+    config.add_facet_field 'institution_tesim', :label => 'Institution'
 
 
     # Have BL send all facet field names to Solr, which has been the default

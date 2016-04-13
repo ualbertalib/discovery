@@ -546,6 +546,7 @@
 
    <field name="holdings" type="text" indexed="false" stored="true" multiValued = "true"/>
    <field name="electronic_tesim" type="string" indexed="true" stored="true" multiValued = "true"/>
+   <field name="institution_tesim" type="string" indexed="true" stored="true" multiValued = "true"/>
    <field name="minor_tesim" type="string" indexed="true" stored="true" multiValued="true"/>
    <field name="title_sort" type="string" indexed="true" stored="false"/>
    <field name="location_tesim" type="string" stored="true" indexed="true" multiValued="true"/>

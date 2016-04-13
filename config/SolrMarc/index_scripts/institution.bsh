@@ -1,0 +1,79 @@
+import org.marc4j.marc.Record;
+
+org.solrmarc.index.SolrIndexer indexer = null;
+
+public Set getInstitutions(Record record){
+
+  Set institutions = new LinkedHashSet();
+  String code_string = indexer.getFirstFieldVal(record, "596a");
+  String[] codes = code_string.split(" ");
+  Hashtable institution_codes = new Hashtable();
+
+  institution_codes.put("1", "Alberta Government Library");
+  institution_codes.put("2", "Alberta Government Library");
+  institution_codes.put("3", "NorQuest College");
+  institution_codes.put("4", "Alberta Health Services");
+  institution_codes.put("5", "NorQuest College");
+  institution_codes.put("6", "Alberta Health Services");
+  institution_codes.put("7", "Alberta Health Services");
+  institution_codes.put("8", "Keyano College");
+  institution_codes.put("9", "Alberta Health Services");
+  institution_codes.put("10", "Alberta Health Services");
+  institution_codes.put("11", "Alberta Innovates");
+  institution_codes.put("12", "Alberta Innovates");
+  institution_codes.put("13", "NEOS Free Internet Resources");
+  institution_codes.put("14", "Alberta Innovates");
+  institution_codes.put("15", "Alberta Innovates");
+  institution_codes.put("16", "University of Alberta");
+  institution_codes.put("17", "Covenant Health");
+  institution_codes.put("18", "Covenant Health");
+  institution_codes.put("19", "Alberta Health Services");
+  institution_codes.put("20", "Alberta Health Services");
+  institution_codes.put("21", "Concordia University of Edmonton");
+  institution_codes.put("22", "Alberta Health Services");
+  institution_codes.put("23", "Burman University");
+  institution_codes.put("24", "MacEwan University");
+  institution_codes.put("25", "Alberta Health Services");
+  institution_codes.put("26", "Alberta Health Services");
+  institution_codes.put("27", "Alberta Health Services");
+  institution_codes.put("28", "Grande Prairie Regional College");
+  institution_codes.put("29", "MacEwan University");
+  institution_codes.put("30", "Alberta Health Services");
+  institution_codes.put("31", "King's University");
+  institution_codes.put("32", "Newman Theological College");
+  institution_codes.put("33", "Olds College");
+  institution_codes.put("34", "Concordia Lutheran Seminary");
+  institution_codes.put("35", "Red Deer College");
+  institution_codes.put("36", "Vanguard College");
+  institution_codes.put("37", "University of Alberta");
+  institution_codes.put("38", "University of Alberta");
+  institution_codes.put("39", "University of Alberta");
+  institution_codes.put("40", "University of Alberta");
+  institution_codes.put("41", "University of Alberta");
+  institution_codes.put("42", "University of Alberta");
+  institution_codes.put("43", "University of Alberta");
+  institution_codes.put("44", "University of Alberta");
+  institution_codes.put("45", "University of Alberta");
+  institution_codes.put("46", "University of Alberta");
+  institution_codes.put("47", "Alberta Health Services");
+  institution_codes.put("48", "University of Alberta");
+  institution_codes.put("49", "University of Alberta");
+  institution_codes.put("50", "University of Alberta");
+  institution_codes.put("51", "University of Alberta");
+  institution_codes.put("52", "Lakeland College");
+  institution_codes.put("53", "Lakeland College");
+  institution_codes.put("54", "Grande Prairie Regional College");
+  institution_codes.put("55", "MacEwan University");
+  institution_codes.put("56", "MacEwan University");
+  institution_codes.put("57", "MacEwan University");
+  institution_codes.put("58", "Alberta Health Services");
+  institution_codes.put("59", "Vanguard College");
+  institution_codes.put("60", "Grande Prairie Regional College");
+  institution_codes.put("61", "Lakeland College");
+
+ for (String code : codes){
+    institutions.add(institution_codes.get(code));
+  }
+ return institutions;
+}
+
