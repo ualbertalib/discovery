@@ -25,3 +25,4 @@ token.txt
 /solr-jetty/solr/blacklight-core/conf/solrconfig.xml
 # /config/solr.yml
 # /solr/blacklight-core/conf/solrconfig.xml
+/coverage
