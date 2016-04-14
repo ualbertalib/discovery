@@ -1,0 +1,99 @@
+import org.marc4j.marc.Record;
+
+org.solrmarc.index.SolrIndexer indexer = null;
+
+public Set getLocationFacet(Record record){
+
+  Set locations = new LinkedHashSet();
+  Set codes = indexer.getFieldList(record,"926m");
+  Hashtable location_codes = new Hashtable();
+
+  location_codes.put("aegeo", "Alberta Geological Survey");
+  location_codes.put("aginternet", "Alberta Government Library Internet");
+  location_codes.put("aglcap", "Alberta Government Library");
+  location_codes.put("ahsah", "Alberta Health Services Alberta Hospital Edmonton");
+  location_codes.put("ahsahe", "Alberta Health Services Alberta Hospital Edmonton");
+  location_codes.put("ahscenten", "Alberta Health Services Centennial Centre");
+  location_codes.put("ahserc", "Alberta Health Services Education Resource Centre");
+  location_codes.put("ahsmhrh", "Alberta Health Services Medicine Hat Regional Hospital");
+  location_codes.put("ahsqeii", "Alberta Health Services Queen Elizabeth II Hospital");
+  location_codes.put("ahsrah", "Alberta Health Services Royal Alexandra Hospital");
+  location_codes.put("ahsreddr", "Alberta Health Services Red Deer Regional Hospital");
+  location_codes.put("ahssturg", "Alberta Health Services SturgeonIn TransitionExpect Delays");
+  location_codes.put("ahsplc", "Alberta Health Services Peter Lougheed Centre");
+  location_codes.put("ahsrvgh", "Alberta Health Services Rockyview General Hospital");
+  location_codes.put("ahstbcc", "Alberta Health Services Tom Baker Cancer Centre");
+  location_codes.put("ahswhc", "Alberta Health Services Women's Health Centre Alberta Children's Hospital");
+  location_codes.put("ahsach", "Alberta Health Services Alberta Children's Hospital");
+  location_codes.put("ahsctr15", "Alberta Health Services Centre 15");
+  location_codes.put("ahsctr", "Alberta Health Services Centre 15");
+  location_codes.put("15", "Alberta Health Services Centre 15");
+  location_codes.put("ahscross", "Alberta Health Services Cross Cancer Institute");
+  location_codes.put("ahs_int", "Alberta Health Services Internet");
+  location_codes.put("ahsglenrse", "Alberta Health Services Glenrose Rehabilitation Hospital");
+  location_codes.put("ahsglenrs", "Alberta Health Services Glenrose Rehabilitation Hospital");
+  location_codes.put("aitfcalg", "Alberta Innovates Technology Futures Calgary");
+  location_codes.put("aitfc-fer", "Alberta Innovates Technology Futures CFer Technologies");
+  location_codes.put("aitfcfer", "Alberta Innovates Technology Futures CFer Technologies");
+  location_codes.put("aitfmw", "Alberta Innovates Technology Futures Mill Woods");
+  location_codes.put("aitfveg", "Alberta Innovates Technology Futures Vegreville");
+  location_codes.put("aitfdevon", "Alberta Innovates Technology Futures Devon");
+  location_codes.put("concordia", "Concordia University of Edmonton");
+  location_codes.put("concordsem", "Concordia Lutheran Seminary");
+  location_codes.put("covenantgn", "Covenant Health Grey Nuns Community Hospital");
+  location_codes.put("covenantmh", "Covenant Health Misericordia Community Hospital");
+  location_codes.put("cross", "Alberta Health Services Cross Cancer Institute");
+  location_codes.put("cuc", "Burman University");
+  location_codes.put("burman", "Burman University");
+  location_codes.put("gprc", "Grande Prairie Regional College");
+  location_codes.put("gprcfrvw", "Grande Prairie Regional College Fairview");
+  location_codes.put("gprcgp", "Grande Prairie Regional College Grande Prairie");
+  location_codes.put("gprcint", "Grande Prairie Regional College Internet");
+  location_codes.put("grmacacc", "MacEwan University Alberta College Campus");
+  location_codes.put("grmaccac", "MacEwan University Centre for Arts & Communications");
+  location_codes.put("grmacint", "MacEwan University Internet");
+  location_codes.put("grmacsoc", "MacEwan University South CampusOn the MoveExpect Delay");
+  location_codes.put("grmactsv", "MacEwan University Technical Services");
+  location_codes.put("grmacewan", "MacEwan University City Centre Campus");
+  location_codes.put("justiceca", "Justice Canada");
+  location_codes.put("keyano", "Keyano College");
+  location_codes.put("king", "King's University");
+  location_codes.put("kings", "King's University");
+  location_codes.put("lakelndl", "Lakeland College Lloydminster");
+  location_codes.put("lakelndll", "Lakeland College Lloydminster");
+  location_codes.put("lakelndin", "Lakeland College Internet");
+  location_codes.put("lakelndvr", "Lakeland College Vermilion");
+  location_codes.put("neosfree", "NEOS Free Internet Resources");
+  location_codes.put("neosfre", "NEOS Free Internet Resources");
+  location_codes.put("newman", "Newman Theological College");
+  location_codes.put("norqmain", "Norquest College Main Building");
+  location_codes.put("norqwest", "Norquest College Westmount");
+  location_codes.put("old", "Olds College");
+  location_codes.put("olds", "Olds College");
+  location_codes.put("reddeerc", "Red Deer College");
+  location_codes.put("taylor", "Vanguard College Taylor");
+  location_codes.put("uaarchiv", "University of Alberta Archives");
+  location_codes.put("uaarchives", "University of Alberta Archives");
+  location_codes.put("uaaug", "University of Alberta Augustana");
+  location_codes.put("uabard", "University of Alberta Book and Record Depository");
+  location_codes.put("uabsj", "University of Alberta Bibliotheque SaintJean");
+  location_codes.put("uabusi", "University of Alberta Winspear Business");
+  location_codes.put("uabusiness", "University of Alberta Winspear Business");
+  location_codes.put("uaeduc", "University of Alberta HT Coutts Education");
+  location_codes.put("uahlthsc", "University of Alberta JW Scott Health Sciences");
+  location_codes.put("uahss", "University of Alberta Rutherford Humanities & Social Science");
+  location_codes.put("uainternet", "University of Alberta Internet");
+  location_codes.put("ualaw", "University of Alberta JA Weir Law");
+  location_codes.put("uamath", "University of Alberta Cameron Mathematics");
+  location_codes.put("uascitech", "University of Alberta Cameron Science & Technology");
+  location_codes.put("uasjc", "University of Alberta St Joseph's College");
+  location_codes.put("uaspcol", "University of Alberta Bruce Peel Special Collections");
+  location_codes.put("uaspcoll", "University of Alberta Bruce Peel Special Collections");
+  location_codes.put("uatechserv", "University of Alberta Bibliographic Services");
+  location_codes.put("vanguard", "Vanguard College");
+  
+  for (String code : codes){
+    locations.add(location_codes.get(code.toLowerCase()));
+  }
+ return locations;
+}
