@@ -63,10 +63,10 @@
                     <span class="date">(<%= symphony[:electronic].first %>)</span>
                   <% end %>
                   <% if symphony[:author] %>
-                    <span class="author-result-list"><%= symphony[:author] %></span>
+                    <span class="author-result-list"><%= symphony[:author] %>
                   <% end %>
                   <% if symphony[:ual] %>
-                    <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> 
+                    <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> </span>
                   <% end %>
                 </div>
               
@@ -99,8 +99,8 @@
         <% @eds.take(@local_eds_limit).each do |id,article| %>
         <li>
           <div class="row no-margin">
-            <div class="col-sm-10">
-              <span><%= i %>.</span> <a href="http://login.ezproxy.library.ualberta.ca/login?url=<%= article[:url] %>" target="_blank"><%= article[:title] %> </a> (<%= article[:format] %>) 
+            <div class="col-sm-12">
+              <span class="number-result-list"><%= i %>.</span> <a href="http://login.ezproxy.library.ualberta.ca/login?url=<%= article[:url] %>" target="_blank"><%= article[:title] %> </a> <span class="date">(<%= article[:format] %>)</span>
              </div>
            </div>
         </li>
@@ -128,8 +128,8 @@
       <ul>
         <% i = 1 %>
 				<% @journals.take(@local_journal_limit).each do |id,journal| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journal[:title] %> (<%= journal[:electronic].first == "Online" ? "Online" : "Print" %>)</a>
-            <% if journal[:source].first == "SFX" or journal[:ual] %><img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> <% end %>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journal[:title] %></a> <span class="date">(<%= journal[:electronic].first == "Online" ? "Online" : "Print" %>)</span>
+            <% if journal[:source].first == "SFX" or journal[:ual] %><img alt="licensed for  U of A" title="licensed for  U of A" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> <% end %>
             
           </li>
           <% i+=1 %>

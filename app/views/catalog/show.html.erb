@@ -51,14 +51,11 @@
       <% if @holdings.nil? || @holdings.empty? %>
         <% unless @document["format"].include? "Database" %>
         <br />
-        <%= "No copies found. This item may be lost or missing." %>
+        <%= "No copies found. This item may be lost or missing, or the data may be temporarily unavailable. Please <a href='/ask-us' target='_blank'>ask us</a> for assistance.".html_safe %>
       <% end %>
 
       <% else %>
   <%= render "holdings" %>
-<% end %>
-<% if @holdings.nil? %>
- <p>Data temporarily unavailable.</p> 
 <% end %>
   </div>
 </div>
