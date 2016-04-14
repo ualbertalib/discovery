@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "databases/range_limit" => "databases#range_limit"
   get "articles/range_limit" => "articles#range_limit"
   get "ebooks/range_limit" => "ebooks#range_limit"
+  get "new_books/range_limit" => "new_books#range_limit"
 
   get "articles", to: "articles#index"
   get "articles/:dbid/:an", to: "articles#detail", constraints: {an: /[^V]+/ }
