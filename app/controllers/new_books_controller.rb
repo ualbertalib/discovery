@@ -3,24 +3,24 @@
 class NewBooksController < CatalogController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
+  
+  self.solr_search_params_logic << :show_only
+
+  def show_only solr_parameters, user_parameters
+    solr_parameters[:fq] ||= []
+    solr_parameters[:fq] << "id:(#{list_of_ids})"
+  end
 
   def index
     super
     @collection_name = "New Books"
-    @document_list = []
-    get_results(ids)
     render "new_books"
   end
 
   private
 
-  def get_results(list_of_ids)
-
-    for catkey in list_of_ids do
-      (solr_response, document_list) = self.get_search_results(:q => "", :f => {id: "#{catkey}"}, :rows => 1)
-      @document_list.concat document_list
-    end
-
+  def list_of_ids
+    ids.join(" OR ")
   end
 
   def ids
@@ -28,6 +28,6 @@ class NewBooksController < CatalogController
   end
 
   def read_id_file
-    File.open("#{Rails.root}/conf/new_books.txt").read.split("|\r\n").take 10
+    File.open("#{Rails.root}/data/new_books.txt").read.split("|\r\n").take 300
   end
 end 

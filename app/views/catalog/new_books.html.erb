@@ -19,9 +19,18 @@
       </div>
 
 </div>
+
+    <div class="row top-margin">
+<div id="sidebar" class="col-md-3 col-sm-4">
+  <%= render 'search_sidebar' %>
+</div>
 <div id="content" class="col-md-9 col-sm-8">
-  <%# render 'search_results' %>
-  <%= render_document_index %>
+  <% unless has_search_parameters? %>
+    <%# if there are no input/search related params, display the "home" partial -%>
+    <%= render 'search_results' %>
+  <% else %>
+    <%= render 'search_results' %>
+  <% end %>
 </div>
     </div>
 </div>
