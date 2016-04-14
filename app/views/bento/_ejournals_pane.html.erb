@@ -1,0 +1,22 @@
+
+      <h3><span class="col-sm-6">e-Journals</span> 
+        <% if @journals_count>0 %>
+          <a href="/journals?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @journals_count %> results</a>
+        <% end %>
+      </h3>
+       <% if @journals_count == 0 %>
+              <p class="no-results">No journals were found<p>
+            <% end %>        
+      <ul>
+        <% i = 1 %>
+				<% @journals.take(@local_journal_limit).each do |id,journal| %>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journal[:title] %></a> <span class="date">(<%= journal[:electronic].first == "Online" ? "Online" : "Print" %>)</span>
+            <% if journal[:source].first == "SFX" or journal[:ual] %><img alt="licensed for  U of A" title="licensed for  U of A" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> <% end %>
+            
+          </li>
+          <% i+=1 %>
+				<% end %>
+			</ul>
+      <% if @journals_count>0 %>
+			 <div class="results-bottom"><a href="/journals?q=<%= @query %>" class="col-sm-12">View all journals</a></div>
+      <% end %>
