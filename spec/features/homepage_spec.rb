@@ -2,7 +2,7 @@ require_relative '../spec_helper'
 
 RSpec.feature "Home Page", :type => :feature do
     scenario "welcomes the user" do
-      visit "/"
+      visit "/" # this doesn't work, I think because of the CMS. Going to have to figure out some other solution.
       expect(page).to have_title('University of Alberta Libraries')
       expect(page).to have_content('Search Library Resources')
         # test for presence of all content panes
