@@ -1,7 +1,7 @@
 <% # bookmark/folder functions -%>
 <% if document.to_h["title_display"].class == String %>
   <% @display_title = document.to_h["title_display"] %>
-<% elsif document.to_h["title_display"].class = Array %>
+<% elsif document.to_h["title_display"].class == Array %>
   <% @display_title = document.to_h["title_display"].first %>
 <% end %>
 <h1><a href="/catalog?q=&quot;<%= @display_title %>&quot;">

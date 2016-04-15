@@ -59,6 +59,7 @@ group :test, :development do
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'rspec-solr'
+  gem 'simplecov', :require => false
 end
 gem 'paperclip', '4.3.6'
 gem 'blacklight_google_analytics'

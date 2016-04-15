@@ -1,0 +1,21 @@
+
+ 			<h3><span class="col-sm-6">Databases</span>
+        <% if @database_count>0 %>
+          <a href="/databases?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @database_count %> results</a>
+        <% end %>
+      </h3>
+       <% if @database_count == 0 %>
+              <p class="no-results">No databases were found<p>
+            <% end %> 
+ 			<ul>       
+        <% i = 1 %> 
+				<% @databases.take(@local_database_limit).each do |id,database| %>
+          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"><%= database[:title] %></a>
+            <img alt="licensed for U of A only" title="licensed for U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%" onclick="window.open('https://www.library.ualberta.ca/about-us/policies/restricted-resource-info');">
+          </li>
+          <% i+=1 %>
+        <% end %>
+			</ul>
+      <% if @database_count>0 %>
+        <div class="results-bottom"><a href="/databases?q=<%= @query %>" class="col-sm-12">View all databases</a></div>
+      <% end %>

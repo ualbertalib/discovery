@@ -1,10 +1,12 @@
 require "json"
 require "blacklight/catalog"
+require "eds_helper"
 
 class BentoController < ApplicationController
   include Blacklight::Catalog
   include ArticlesHelper
   include ERB::Util
+  include EdsHelper
 
   def index
 
@@ -15,7 +17,7 @@ class BentoController < ApplicationController
 
     @complete_count = 0
 
-    @eds_count = 0   #EDS is returning "401 unauthorized"
+    @eds_count = 0
     @eds = "Empty Search"
 
     collections.each do |collection|
@@ -26,19 +28,20 @@ class BentoController < ApplicationController
 
   private
 
-  #desperately needs refactoring
-
   def populate(facet)
     @query = params[:q]
     documents = {}
-    (@solr_response, @document_list) = self.get_search_results(:q => @query, :f => facet, :rows => 100)
+    (@solr_response, @document_list) = search_results(facet)
     documents["count"] = @solr_response["response"]["numFound"]
     @complete_count += documents["count"]
     @document_list.each do |doc|
-      metadata = populate_metadata(doc)
-      documents[doc.as_json["id"]] = metadata
+      documents[doc.as_json["id"]] = populate_metadata(doc)
     end
     documents
+  end
+
+  def search_results(facet)
+    self.get_search_results(:q => @query, :f => facet, :rows => 100)
   end
 
   def populate_collection(options = {})
@@ -54,29 +57,11 @@ class BentoController < ApplicationController
   end
 
   def populate_sfx
-    #@journals, @journals_count = populate_collection({format: 'Journal'})
     @journals, @journals_count = populate_collection({source: 'SFX'})
   end
 
   def populate_symphony
     @symphony, @symphony_count = populate_collection({source: 'Symphony'})
-  end
-
-  def populate_eds
-    if params["q"] then # refactor this
-      eds = get_eds_results
-      if eds
-        @eds_count = eds["count"]
-        eds.delete("count")
-        @eds = eds
-      else
-        @eds_count = 0
-        @eds = ""
-      end
-    else
-      @eds_count = 0
-      @eds = "Empty Search"
-    end
   end
 
   def populate_metadata(doc)
@@ -94,75 +79,15 @@ class BentoController < ApplicationController
       metadata[:source] = doc.as_json["source_tesim"]
       metadata[:locations] = doc.as_json["location_tesim"]
       metadata[:ual] = belongs_to_ual?(doc.as_json["held_by_tesim"].first.split) if doc.as_json["held_by_tesim"]
-      #Symphony: location(s), call number(s), checked out or in: these depend on item
-      #record, not bib record.
-      #Ejournals: coverage statement
-      #Articles: full text?, Link to PDF, Year of publication - not sure
-      #these are possible. Depends on EDS API
       metadata
   end
 
-  # There must be a functional way to write the following function..
   def belongs_to_ual?(array_of_location_codes)
-    ual = false
-    array_of_location_codes.each do |code|
-     ual = true if @library_codes[code.to_i].include? "University of Alberta"
-    end
-    ual
+    array_of_location_codes.any? { |code| @library_codes[code.to_i].include? "University of Alberta" }
   end
 
   def parse(field, doc, delimiter=" ")
-    parsed_field = ""
-    if field.class.name == "String"
-      parsed_field = field
-    elsif field.class.name == "Array"
-      parsed_field = field.join(delimiter)
-    end
-    parsed_field
+    field.class.name == "String" ? field : field.join(delimiter)
   end
 
-  def get_eds_results
-    documents = {}
-    session[:current_url] = request.original_url
-    eds_connect
-    params["q"] = params["q"].downcase.gsub("l'", "").gsub("d'", "")
-    params["includefacets"] = "y"
-    #params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
-      params["searchmode"]="all"
-      params["view"]="brief"
-      params["pagenumber"]=1
-      params["highlight"]="y"
-      params["resultsperpage"] = 100
-    if has_search_parameters? then
-      clean_params = deep_clean(params)
-      params = clean_params
-      options = generate_api_query(params)
-    end
-
-    search(options)
-
-    # refactor
-    if session[:results] and session[:results]['SearchResult'] and session[:results]['SearchResult']['Statistics'] and session[:results]['SearchResult']['Statistics']['TotalHits']
-      documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
-      @complete_count += documents["count"]
-    end
-
-    if session[:results] and session[:results]['SearchResult'] and session[:results]['SearchResult'] and session[:results]['SearchResult']['Data'] and session[:results]['SearchResult']['Data']['Records'] then
-      results = session[:results]['SearchResult']['Data']['Records']
-      results.each do |result|
-        metadata = {}
-        if has_restricted_access?(result) then
-          metadata[:title] = "This result cannot be shown to guests."
-        else
-          metadata[:title] = show_title(result)
-        end
-        metadata[:author] = show_authors(result) if has_authors?(result)
-        metadata[:url] = result["PLink"]
-        metadata[:format] = show_pubtype(result) if has_pubtype?(result)
-        metadata[:source] = show_titlesource(result) if has_titlesource?(result)
-        documents[result["ResultId"]] = metadata
-      end
-      documents
-    end
-  end
 end

@@ -3,168 +3,58 @@
 <% @local_ebook_limit = 5 %>
 <% @local_eds_limit = 10 %>
 <% @local_database_limit = 10 %>
+
 <div class="needs-js"></div>
 <div class="container" id="search-results">
-    <div class="row results-head top-margin">
-      <div class="col-sm-6">
-        <h2> 
-          <% if @query =='' %>
-              All Records
-          <% else %>
-              <%= number_with_delimiter(@complete_count) %>  results for <em><%= @query %></em>
-          <% end %>
-        </h2>
-    		<form class="form-inline" role="form">
-          <div class="form-group">  <label class="search-again" for="search-again">search again</label> 
-            <input type="text" class="form-control" placeholder="<%= params.has_key?('q') ? params['q'] : 'search again' %>" name="q" id="search-again" title="search again">
-          </div>
-          <div class="form-group"> 
-            <button type="submit" class="btn btn-small">search</button><a class="btn btn-sm-ad" href="/advanced" data-no-turbolink="true">advanced</a>
-            
-        </div>
-        </form>
-      </div> 
-      <div class="col-sm-6 outlined hidden-xs">
-       	<p>Questions about your results or your research? <a href="https://search.library.ualberta.ca/ask-us" target="_blank">ask us!</a></p> 
-      </div>
-      <div style="float:right">
-        <%= link_to "Bookmarks", bookmarks_path %> | 
-        <%= link_to "Search History", search_history_path %>
-      </div>
-    </div>
-    <div class="results-wrap">
-      <div class="col-sm-4 rcol">
-    	<div class="col-sm-12 results" > 
-        <div id="books"> <!-- start of books and journals pane -->
-          <h3 id="print"><span class="col-sm-6">Books, media &amp; more</span>
-            <% if @symphony_count>0 %>
-              <a href="/symphony?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @symphony_count %> results</a>
-            <% end %>
-          </h3>  
-           <% if @symphony_count == 0 %>
-              <p class="no-results">No material was found<p>
-            <% end %>   
-          <ul>
-            <% i = 1%>
-            <% @symphony.take(@local_symphony_limit).each do |id,symphony| %>
-            <li>
-              <div class="row no-margin">
-                <div class="col-sm-12">
-                  <span class="number-result-list"><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %>
-                  <% if symphony[:subtitle] %>: <%= symphony[:subtitle]%><% end %>
-                  <% if symphony[:edition] %>, <%= symphony[:edition] %><% end %></em></a>
-                  <% if symphony[:year] %>
-                    <span class="date"><%= "(#{symphony[:year].first})" %></span>
-                  <% end %>
-                  <% if symphony[:format] and symphony[:format].first != "Unknown" %>
-                    <span class="date"><%= symphony[:format].first %></span>
-                  <% end %>
-                  <% if symphony[:electronic].first == "Online" %>
-                    <span class="date">(<%= symphony[:electronic].first %>)</span>
-                  <% end %>
-                  <% if symphony[:author] %>
-                    <span class="author-result-list"><%= symphony[:author] %>
-                  <% end %>
-                  <% if symphony[:ual] %>
-                    <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> </span>
-                  <% end %>
-                </div>
-              
-            </li>
-            <% i+=1 %>
-            <% end %>
-          </ul>
-          <div class="results-bottom">
-            <% if @symphony_count>0 %>
-              <a href="/symphony?q=<%= @query %>" class="col-sm-12">View all books, media &amp; more</a>
-            <% end %>
-          </div>
-        </div> 
-      </div><!-- end of books and journals pane -->
-    </div>
-    
-
-    <div class="col-sm-4 results" id="articles"> <!-- start of articles pane -->
-      <h3><span class="col-sm-6">Articles &amp; more</span>
-        <% if @eds_count>0 %>
-          <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-6 see-all-results"><%= @eds_count %> results</a>
-        <% end %>
-      </h3>
-       <% if @eds_count == 0 %>
-              <p class="no-results">No results were found<p>
-            <% end %> 
-      <ul>       
-        <% i = 1 %> 
-        <% if @eds.instance_of? Hash %>
-        <% @eds.take(@local_eds_limit).each do |id,article| %>
-        <li>
-          <div class="row no-margin">
-            <div class="col-sm-12">
-              <span class="number-result-list"><%= i %>.</span> <a href="http://login.ezproxy.library.ualberta.ca/login?url=<%= article[:url] %>" target="_blank"><%= article[:title] %> </a> <span class="date">(<%= article[:format] %>)</span>
-             </div>
-           </div>
-        </li>
-        <% i+=1 %>
-        <% end %>
-      </ul>
-        <% if @eds_count>10 %>
-          <div class="results-bottom"><a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-12">View all articles &amp; more</a></div>
-        <% end %>
+  <div class="row results-head top-margin">
+    <div class="col-sm-6">
+      <h2> 
+        <% if @query =='' %>
+          All Records
         <% else %>
-          <p><%= @eds %></p>
+          <%= number_with_delimiter(@complete_count) %>  results for <em><%= @query %></em>
         <% end %>
-    </div><!-- end of articles pane -->
-		
+      </h2>
 
-    <div class="col-sm-4 results" id="ejournals"><!-- start of journals pane -->
-      <h3><span class="col-sm-6">e-Journals</span> 
-        <% if @journals_count>0 %>
-          <a href="/journals?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @journals_count %> results</a>
-        <% end %>
-      </h3>
-       <% if @journals_count == 0 %>
-              <p class="no-results">No journals were found<p>
-            <% end %>        
-      <ul>
-        <% i = 1 %>
-				<% @journals.take(@local_journal_limit).each do |id,journal| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"> <%= journal[:title] %></a> <span class="date">(<%= journal[:electronic].first == "Online" ? "Online" : "Print" %>)</span>
-            <% if journal[:source].first == "SFX" or journal[:ual] %><img alt="licensed for  U of A" title="licensed for  U of A" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/> <% end %>
-            
-          </li>
-          <% i+=1 %>
-				<% end %>
-			</ul>
-      <% if @journals_count>0 %>
-			 <div class="results-bottom"><a href="/journals?q=<%= @query %>" class="col-sm-12">View all journals</a></div>
-      <% end %>
-		</div><!-- end of journals pane -->
+      <%= render "search_form" %>
+
+    </div> 
+
+    <div class="col-sm-6 outlined hidden-xs">
+      <p>Questions about your results or your research? <a href="https://search.library.ualberta.ca/ask-us" target="_blank">ask us!</a></p> 
+    </div>
+
+    <div style="float:right">
+      <%= link_to "Bookmarks", bookmarks_path %> | 
+      <%= link_to "Search History", search_history_path %>
+    </div>
+
+  </div>
+
+  <div class="results-wrap">
+    <div class="col-sm-4 rcol">
+      <div class="col-sm-12 results" > 
+        <div id="books"> <!-- start of books and journals pane -->
+        <%= render "books_and_journals_pane" %>
+        </div><!-- end of books and journals pane -->
+      </div>
 
 
-		<div class="col-sm-4 results extra-top-margin" id="databases"><!-- start of databases pane -->
- 			<h3><span class="col-sm-6">Databases</span>
-        <% if @database_count>0 %>
-          <a href="/databases?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @database_count %> results</a>
-        <% end %>
-      </h3>
-       <% if @database_count == 0 %>
-              <p class="no-results">No databases were found<p>
-            <% end %> 
- 			<ul>       
-        <% i = 1 %> 
-				<% @databases.take(@local_database_limit).each do |id,database| %>
-          <li><span><%= i %>.</span> <a href="catalog/<%= id %>"><%= database[:title] %></a>
-            <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%" onclick="window.open('https://www.library.ualberta.ca/about-us/policies/restricted-resource-info');">
-          </li>
-          <% i+=1 %>
-        <% end %>
-			</ul>
-      <% if @database_count>0 %>
-        <div class="results-bottom"><a href="/databases?q=<%= @query %>" class="col-sm-12">View all databases</a></div>
-      <% end %>
-    </div><!-- end of databases pane -->
-  
+      <div class="col-sm-4 results" id="articles"> <!-- start of articles pane -->
+        <%= render "articles_pane" %>
+      </div><!-- end of articles pane -->
+
+
+      <div class="col-sm-4 results" id="ejournals"><!-- start of journals pane -->
+        <%= render "ejournals_pane" %>
+      </div><!-- end of journals pane -->
+
+
+      <div class="col-sm-4 results extra-top-margin" id="databases"><!-- start of databases pane -->
+        <%= render "database_pane" %>
+      </div><!-- end of databases pane -->
+
 
     </div>
-    </div>
-    <%= render "shared/chatref" %>
+  </div>
+  <%= render "shared/chatref" %>
