@@ -11,7 +11,7 @@
         <% i = 1 %> 
 				<% @databases.take(@local_database_limit).each do |id,database| %>
           <li><span><%= i %>.</span> <a href="catalog/<%= id %>"><%= database[:title] %></a>
-            <img alt="licensed for  U of A only" title="licensed for  U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%" onclick="window.open('https://www.library.ualberta.ca/about-us/policies/restricted-resource-info');">
+            <img alt="licensed for U of A only" title="licensed for U of A only" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%" onclick="window.open('https://www.library.ualberta.ca/about-us/policies/restricted-resource-info');">
           </li>
           <% i+=1 %>
         <% end %>
