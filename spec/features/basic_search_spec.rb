@@ -14,7 +14,7 @@ RSpec.feature "Basic Search", :type => :feature do
     fill_in "q", :with => "agricola"
     click_button "search"
 
-    expect(page).to have_text("65,869 results for agricola")
+    expect(page).to have_text("65,870 results for agricola")
 
   end
 end
