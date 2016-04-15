@@ -3,6 +3,7 @@ var urls_html = '<br /><table><tr></tr><% if @document["url_tesim"] %><tr><td><a
 var urls_node = document.createElement('div');
 urls_node.setAttribute('id', 'electronic_access');
 urls_node.innerHTML = urls_html;
-node = document.querySelector("[itemprop=name]");
+var page_id = "doc_"+<%= @document["id"] %>;
+node = document.getElementById(page_id).getElementsByTagName("h1")[0];
 node.appendChild(urls_node);
 </script>
