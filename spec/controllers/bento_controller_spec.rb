@@ -51,7 +51,14 @@ describe BentoController, type: :controller do
     expect(symphony["1000010"][:title]).to eq "Enquête sur le salaire annuel garanti"
   end
 
-  # figure out how to test for EDS results.
+  it "should not populate EDS results" do
+    # this works for an empty search. I'll test a real search in a
+    # template test
+    eds_count = assigns(:eds_count)
+    eds = assigns(:eds)
+    expect(eds_count).to eq 0
+    expect(eds).to eq "Empty Search"
+  end
 
 end
 
