@@ -13,9 +13,7 @@
             <li>
               <div class="row no-margin">
                 <div class="col-sm-12">
-                  <span class="number-result-list"><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %>
-                  <% if symphony[:subtitle] %>: <%= symphony[:subtitle]%><% end %>
-                  <% if symphony[:edition] %>, <%= symphony[:edition] %><% end %></em></a>
+                  <span class="number-result-list"><%= i %>.</span> <a href="/catalog/<%= id %>"> <%= symphony[:title] %><% if symphony[:subtitle] %>: <%= symphony[:subtitle]%><% end %><% if symphony[:edition] %>, <%= symphony[:edition] %><% end %></em></a>
                   <% if symphony[:year] %>
                     <span class="date"><%= "(#{symphony[:year].first})" %></span>
                   <% end %>
