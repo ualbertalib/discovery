@@ -150,7 +150,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'edition_tesim', :label => 'Edition'
     config.add_index_field 'author_vern_display', :label => 'Author'
     config.add_index_field 'format', :label => 'Format'
-    config.add_index_field 'language_facet', :label => 'Language'
+    config.add_index_field 'language_note_tesim', :label => 'Language'
     #config.add_index_field 'published_display', :label => 'Published'
     #config.add_index_field 'published_vern_display', :label => 'Published'
     config.add_index_field 'pub_date', :label => 'Publication Year'
@@ -173,7 +173,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'author_vern_display', :label => 'Author'
     config.add_show_field 'uniform_title_tesim', :label => 'Uniform Title'
     config.add_show_field 'format', :label => 'Format'
-    config.add_show_field 'language_facet', :label => 'Language'
+    #config.add_show_field 'language_facet', :label => 'Language'
     config.add_show_field 'publisher_tesim', :label => 'Publisher'
     config.add_show_field 'published_display', :label => 'Published'
     config.add_show_field 'published_vern_display', :label => 'Published'
@@ -201,7 +201,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'arrangement_tesim', :label => "Organization and Arrangement"
     config.add_show_field 'time_of_event_tesim', :label => "Date and Time of Event"
     config.add_show_field 'issuing_body_tesim', :label => "Issuing Body"
-    config.add_show_field 'supplementary_note_tesim', :label => "Supplementary Note"
+    config.add_show_field 'supplementary_note_tesim', :label => "Supplement Note"
     config.add_show_field 'title_history_tesim', :label => "Title History"
     config.add_show_field 'numbering_tesim', :label => "Numbering System"
     config.add_show_field 'use_repro_tesim', :label => "Use and Reproduction"

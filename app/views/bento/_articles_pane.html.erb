@@ -1,7 +1,7 @@
 
       <h3><span class="col-sm-6">Articles &amp; more</span>
         <% if @eds_count>0 %>
-          <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-6 see-all-results"><%= @eds_count %> results</a>
+          <a href="/articles?q=<%= @query %>&includefacets=y&searchmode=all&view=brief&resultsperpage=20&pagenumber=1&highlight=y" class="col-sm-6 see-all-results"><%= number_with_delimiter(@eds_count) %> results</a>
         <% end %>
       </h3>
        <% if @eds_count == 0 %>

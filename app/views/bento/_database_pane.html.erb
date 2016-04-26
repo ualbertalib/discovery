@@ -1,7 +1,7 @@
 
  			<h3><span class="col-sm-6">Databases</span>
         <% if @database_count>0 %>
-          <a href="/databases?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @database_count %> results</a>
+          <a href="/databases?q=<%= @query %>" class="col-sm-6 see-all-results"><%= number_with_delimiter(@database_count) %> results</a>
         <% end %>
       </h3>
        <% if @database_count == 0 %>

@@ -6,4 +6,6 @@
 <% end %>
 <h1><a href="/catalog?q=&quot;<%= @display_title %>&quot;">
     <%= "#{@display_title}" %></a> 
-<%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%></h1>
+  <%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%></h1>
+<div id="eaccess">
+</div><br />

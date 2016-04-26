@@ -1,7 +1,7 @@
 
       <h3><span class="col-sm-6">e-Journals</span> 
         <% if @journals_count>0 %>
-          <a href="/journals?q=<%= @query %>" class="col-sm-6 see-all-results"><%= @journals_count %> results</a>
+          <a href="/journals?q=<%= @query %>" class="col-sm-6 see-all-results"><%= number_with_delimiter(@journals_count) %> results</a>
         <% end %>
       </h3>
        <% if @journals_count == 0 %>
