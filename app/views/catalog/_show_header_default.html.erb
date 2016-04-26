@@ -4,8 +4,8 @@
 <% elsif document.to_h["title_display"].class == Array %>
   <% @display_title = document.to_h["title_display"].first %>
 <% end %>
-<h1><a href="/catalog?q=&quot;<%= @display_title %>&quot;">
-    <%= "#{@display_title}" %></a> 
-  <%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%></h1>
+<h1>
+    <%= "#{@display_title}" %><%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%>
+</h1>
 <div id="eaccess">
 </div><br />
