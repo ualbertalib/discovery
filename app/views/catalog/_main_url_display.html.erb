@@ -8,7 +8,7 @@ var urls_html = "<br /> \
            <% else %> \
              <% @proxy = Rails.application.config.proxy %> \
                        <% end %> \
-      <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "").gsub("(","").gsub(")","") %> \
+      <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "") %> \
       <div class=\"row\"> \
     <a href=\"<%= @proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc.strip+")" %></span><span></a><% end %><% end %><br />";
 var urls_node = document.createElement('div');
