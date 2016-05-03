@@ -29,7 +29,7 @@ public Set getLocationFacet(Record record){
   location_codes.put("ahsctr", "Alberta Health Services Centre 15");
   location_codes.put("15", "Alberta Health Services Centre 15");
   location_codes.put("ahscross", "Alberta Health Services Cross Cancer Institute");
-  location_codes.put("ahs_int", "Alberta Health Services Internet");
+  location_codes.put("ahsint", "Alberta Health Services Internet");
   location_codes.put("ahsglenrse", "Alberta Health Services Glenrose Rehabilitation Hospital");
   location_codes.put("ahsglenrs", "Alberta Health Services Glenrose Rehabilitation Hospital");
   location_codes.put("aitfcalg", "Alberta Innovates Technology Futures Calgary");
