@@ -8,6 +8,9 @@
 <div class="container" id="search-results">
   <div class="row results-head top-margin">
     <div class="col-sm-6">
+    <% if !params[:search_field] and !params[:f] and !params[:q] or (params[:q] and params[:q]=='') %> <%# and Rails.env != "development" %> 
+    <h2>Begin your search here</h2>
+    <% else %>
       <h2> 
         <% if @query =='' %>
           All Records
@@ -15,7 +18,7 @@
           <%= number_with_delimiter(@complete_count) %>  results for <em><%= @query %></em>
         <% end %>
       </h2>
-
+      <% end %>
       <%= render "search_form" %>
 
     </div> 
@@ -30,6 +33,7 @@
     </div>
 
   </div>
+  <% if params[:search_field] or params[:f] or params[:q] and params[:q] != '' %> <%# or Rails.env == "development" %> 
 
   <div class="results-wrap">
     <div class="col-sm-4 rcol">
@@ -57,4 +61,5 @@
 
     </div>
   </div>
+<% end %>
   <%= render "shared/chatref" %>
