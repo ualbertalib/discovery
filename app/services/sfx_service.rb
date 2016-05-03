@@ -74,7 +74,7 @@ class SFXService
   end
 
   def our_link(target)
-    target.xpath("authentication").text if target.xpath("authentication").text.include? "tal.scholarsportal.info"
+    target.xpath("authentication").text.gsub("http", "https") if target.xpath("authentication").text.include? "tal.scholarsportal.info"
   end
 
 end
