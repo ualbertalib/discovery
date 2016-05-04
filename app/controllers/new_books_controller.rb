@@ -9,6 +9,7 @@ class NewBooksController < CatalogController
   def show_only solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << "id:(#{list_of_ids})"
+    puts solr_parameters
   end
 
   def index
@@ -28,6 +29,6 @@ class NewBooksController < CatalogController
   end
 
   def read_id_file
-    File.open("#{Rails.root}/data/new_books.txt").read.split("|\r\n").take 300
+    File.open("#{Rails.root}/config/new_books.txt").read.split("|\r\n").take 300
   end
 end 
