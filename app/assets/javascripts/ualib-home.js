@@ -539,7 +539,7 @@ $(function() {
     $('#fr-q').attr('placeholder', 'recherche bases de données...');
   });
   $( "#ejournals-limit" ).click(function() { 
-    $('#main-search').attr('action', '/ejournals');
+    $('#main-search').attr('action', '/journals');
     $('#q').attr('placeholder', 'search journals...');
     $('#fr-q').attr('placeholder', 'recherche journaux...');
   });
