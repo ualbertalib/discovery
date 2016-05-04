@@ -521,7 +521,7 @@ $(function() {
   $( "#everything-limit" ).click(function() { 
     $('#main-search').attr('action', '/results');
     $('#q').attr('placeholder', 'search everything...');
-    $('#fr-q').attr('placeholder', 'tout rechercher...');
+    $('#fr-q').attr('placeholder', 'chercher partout...');
   });
   $( "#shelves-limit" ).click(function() { 
     $('#main-search').attr('action', '/symphony');
