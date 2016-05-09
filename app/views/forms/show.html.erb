@@ -1,1 +1,3 @@
-<%= render params[:id] %>
+<% if params[:id] =~ /\A[-+]?[0-9]*\.?[0-9]+\Z/ %>
+  <%= render params[:id] %>
+<% end %>
