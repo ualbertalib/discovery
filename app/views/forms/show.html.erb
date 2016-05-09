@@ -1,3 +1,4 @@
-<% if params[:id] =~ /\A[-+]?[0-9]*\.?[0-9]+\Z/ %>
-  <%= render params[:id] %>
+<% if params[:id].to_i.is_a? Numeric %>
+  <% @item_id = params[:id] %>
+  <%= render @item_id %>
 <% end %>
