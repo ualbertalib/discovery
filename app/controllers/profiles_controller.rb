@@ -1,5 +1,4 @@
 class ProfilesController < ApplicationController
-	http_basic_authenticate_with name: "ualibraries", password: "discoverthi5", except: [:index, :show]
 	
 	def index
     	@profiles = Profile.all.order(:first_name)
