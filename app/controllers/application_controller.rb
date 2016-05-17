@@ -18,12 +18,10 @@ class ApplicationController < ActionController::Base
       connection.end_session(session[:session_key])
       session[:session_key] = nil
     end
-    if session[:results].present?
-      session[:results] = nil
-    end
-    if session[:current_url].present?
-      session[:current_url]
-    end
+    
+    @results = nil if @results
+    
+    @current_url if @current_url
   end
 
   def after_sign_out_path_for(resource)
@@ -32,9 +30,8 @@ class ApplicationController < ActionController::Base
       connection.end_session(session[:session_key])
       session[:session_key] = nil
     end
-    if session[:results].present?
-      session[:results] = nil
-    end
+
+    @results = nil if @results
     root_path
   end
 

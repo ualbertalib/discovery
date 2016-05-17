@@ -16,7 +16,7 @@ module EdsHelper
 
   def get_eds_results
     documents = {}
-    session[:current_url] = request.original_url
+    @current_url = request.original_url
     eds_connect
     params["q"] = params["q"].downcase.gsub("l'", "").gsub("d'", "")
     params["includefacets"] = "y"
@@ -35,13 +35,13 @@ module EdsHelper
     search(options)
 
     # refactor
-    if session[:results] and session[:results]['SearchResult'] and session[:results]['SearchResult']['Statistics'] and session[:results]['SearchResult']['Statistics']['TotalHits']
-      documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
+    if @results and @results['SearchResult'] and @results['SearchResult']['Statistics'] and @results['SearchResult']['Statistics']['TotalHits']
+      documents["count"] = @results['SearchResult']['Statistics']['TotalHits']
       @complete_count += documents["count"]
     end
 
-    if session[:results] and session[:results]['SearchResult'] and session[:results]['SearchResult'] and session[:results]['SearchResult']['Data'] and session[:results]['SearchResult']['Data']['Records'] then
-      results = session[:results]['SearchResult']['Data']['Records']
+    if @results and @results['SearchResult'] and @results['SearchResult'] and @results['SearchResult']['Data'] and @results['SearchResult']['Data']['Records'] then
+      results = @results['SearchResult']['Data']['Records']
       results.each do |result|
         metadata = {}
         if has_restricted_access?(result) then
