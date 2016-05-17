@@ -14,7 +14,7 @@
 
        <% document.to_h['subtitle_display'] ? @subtitle = ": #{document.to_h['subtitle_display'].first}" : @subtitle = "" %>
        <% document.to_h['edition_tesim'] ? @edition = ", #{document.to_h['edition_tesim'].first}" : @edition = "" %>
-       <% @combined_title = document.to_h['title_display'].first+@subtitle+@edition %>
+       <% document.to_h['title_display'].nil? ? @combined_title = "Untitled document" : @combined_title = document.to_h['title_display'].first+@subtitle+@edition%>
 
          <%= link_to_document document, :label=>@combined_title, :counter => counter %>
          <% if document["ua_only_tesim"] %>
