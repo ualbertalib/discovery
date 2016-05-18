@@ -15,7 +15,7 @@
 #   limitations under the License.
 %>
 
-<% session[:current_url] = request.original_url %>
+<% @current_url = request.original_url %>
 
 <% eds_connect %>
 
@@ -24,7 +24,7 @@
        <%# <% clean_params = deep_clean(params) %>
        <%# <% params = clean_params %>
 
-  <%# if session[:results] %>
+  <%# if @results %>
 	<%# unless params[:fromDetail] == 'y'%>
 	    <% search(options) %>
       <%# end %>
@@ -39,7 +39,7 @@
   }
 </script>
 
-<% if session[:results] && session[:results]['SearchRequestGet'] %>
+<% if @results && @results['SearchRequestGet'] %>
 <% show_numlimiters.times do |i| %>
 <script type="text/javascript">
   $(document).ready(function() {
