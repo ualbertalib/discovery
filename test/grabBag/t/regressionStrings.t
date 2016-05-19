@@ -63,6 +63,7 @@ foreach $searchString (@knownBad) {
 	ok ($mech->status == 200, "$host: Search for $searchString") ;
 	$count ++;
 	ok (defined($result) , "Did we get content?") ;
+	$count ++;
 	unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ;   #  Ugh, in Prod, we try to return a pretty error, not a bare 500
 	$count ++;
 }
