@@ -564,3 +564,43 @@ padding: 15px 0;
 	}
 }
 
+@media print {
+  .header { display: none }
+  .ualogo{ display: none }
+  a[href]:after {
+      content: none !important;
+    }
+  @documents .document { display: block }
+  #previousNextDocument{ display: none; }
+  #sidebar { display: none; }
+  .banner { display: none; }
+  .foot-nav {display: none; }
+  .copyright {display: none; }
+  .dl-horizontal {
+    margin-bottom: 0;
+  }
+  .dl-horizontal dt {
+    font-size: 75%;
+    float: left;
+    width: auto;
+    margin-left: 0;
+  }
+  .dl-horizontal dd {
+    font-size: 75%;
+     margin-left: 5px;
+  }
+  #subject-list {
+    font-size: 75%;
+    padding-top: 0px;
+    margin-top: -20px;
+    padding-bottom: 0;
+    margin-bottom: -20px;
+  }
+  #holdings table {
+    font-size: 75%;
+    margin-top: -50px;
+    padding-top: 0;
+    float: left;
+    width: auto;
+  }
+}
