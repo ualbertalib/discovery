@@ -5,7 +5,8 @@ This is the code base for the University of Alberta Libraries's
 discovery platform. Based on [Project
 Blacklight](projectblacklight.org).
 
-To get the application up and running,
+To get the application up and running:
+
 1. clone this repository (via ssh: `git clone git@github.com:ualbertalib/discovery`)
 2. run `bundle install`
 3. run `rake db:migrate`
