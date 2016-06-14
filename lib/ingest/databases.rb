@@ -23,6 +23,13 @@ class Databases
           db["description"] = ""
           db["enableproxy"] = db["meta"]["enable_proxy"]
           db["icons"] = db["icons"]
+          if ( db["az_vendor_id"] == "27150" )
+              db["languagenote"] = "English"
+          elsif ( db["az_vendor_id"] == "27151" )
+              db["languagenote"] = "French"
+          else
+              db["languagenote"] = "Other"
+          end
           if @xml_records[db['id']]
             @xml_records[db['id']]['subject'].concat db['subject']
             @xml_records[db['id']].merge db
