@@ -2,7 +2,7 @@
 <div class="col-md-12">
 <div class="row">
   <div class="col-sm-6">
-  <% if !params[:search_field] and !params[:f] and !params[:q] or (params[:q] and params[:q]=='') and Rails.env != "development" %> 
+  <% if !params[:search_field] and !params[:f] and !params[:q] or (params[:q] and params[:q]=='') and !Rails.env.development? %> 
     <h2>Begin your <%= @collection_name.downcase.singularize %> search here</h2>
     <% else %>
   <h2> 
@@ -28,6 +28,7 @@ Results for <em>
 			<% end %>
 </em>  in <%= @collection_name %>
 </h2>
+
 
 <% end %>
         

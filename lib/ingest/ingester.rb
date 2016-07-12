@@ -6,7 +6,10 @@ class Ingester
 
   def initialize
     log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
-    log_file = File.open(log_config['log_path'], File::WRONLY|File::APPEND)
+    log_dir, log_file = log_config['log_path'].split("/")
+    log_dir = "#{Rails.root}/#{log_dir}"
+    FileUtils.mkdir_p(log_dir) unless File.directory?(log_dir)
+    log_file = File.open(log_dir+"/"+log_file, File::WRONLY|File::APPEND|File::CREAT)
     @@ingest_log = Logger.new(log_file)
   end
 
