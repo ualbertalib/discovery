@@ -120,12 +120,7 @@ public String cleanDate(String date)
 public String getDate(Record record)
 {
     Set result = new LinkedHashSet();
-    if(SolrIndexer.getFieldList(record, "260c") != null){
       result = SolrIndexer.getFieldList(record, "260c");
-    }
-    else{
-      result = SolrIndexer.getFieldList(record, "264c");
-    }
 
     String date = org.solrmarc.tools.Utils.join(result, ", ");
     if (date == null || date.length() == 0)
