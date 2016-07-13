@@ -1,7 +1,7 @@
 
 /*begin custom styles by Natasha Nunn at University of Alberta Libraries 2014/2015 */
 body{
-	
+
 }
 .header{
 	padding-bottom: 3px;
@@ -45,7 +45,7 @@ background-color: #0d2f10;
 color: #fff;
 }
 .btn-xsmall{
-	
+
 	padding: 5px;
 	color: #fff;
 }
@@ -175,7 +175,7 @@ font-size: 18px;
 .results ul li a.full-record{
 	border-radius: 4px;
 	padding: 3px;
-	background-color:#4C6F84; 
+	background-color:#4C6F84;
 	margin-top: 3px;
 	display: block;
 	font-size: 14px;
@@ -191,7 +191,7 @@ font-size: 18px;
 .results ul li a.pdf-link{
 	background-color:#B2C6D1;
 	padding: 1px 3px;
-	text-align: center; 
+	text-align: center;
 	border-radius: 4px;
 	color: #000;
 	font-size: 13px;
@@ -243,7 +243,7 @@ font-size: 18px;
 .author-result-list{
 	display: block;
 	font-size: 14px;
-	
+
 }
 .number-result-list{
 	margin-left: -13px;
@@ -307,7 +307,7 @@ font-size: 18px;
 	padding-left: 20px;
 }
 .outlined{
-	border: solid 1px #d9e4ea; 
+	border: solid 1px #d9e4ea;
 	margin-top: 15px;
 	padding: 15px;
 	font-size: 19px;
@@ -345,11 +345,11 @@ font-size: 18px;
 	font-size: 15px;
 }
 .dl-horizontal dt {
-  width: 160px;
+  width: 220px;
   margin-right: 5px;
 }
 .dl-horizontal dd {
-  margin-left: 145px;
+  margin-left: 225px;
 }
 
 #documents .document {
@@ -483,7 +483,7 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 .twiddle{
 	background-color: #eceff4;
 	border:1px solid #ddd;
-	cursor: pointer;  
+	cursor: pointer;
 	padding: 15px;
   	border-radius: 3px;
   	font-size: 16px;
@@ -532,7 +532,7 @@ padding: 15px 0;
 }
 @media (min-width: 768px){
 	#main-container{
-		padding-top: 20px; 
+		padding-top: 20px;
 	}
 	#search-results .form-inline .form-control {
 		width: 200px;
@@ -555,7 +555,7 @@ padding: 15px 0;
 	}
 	.results h3{
 		font-size: 16px;
-	}	
+	}
 }
 
 @media (min-width: 1200px){
