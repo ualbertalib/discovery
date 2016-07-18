@@ -5,11 +5,12 @@
             <th>Location/Status</th>
             <th>Library</th>
             <th>Item Type</th>
+            <th>Action</th>
           </tr>
 
           <br />
 
-          <% for item in @holdings %> 
+          <% for item in @holdings %>
 
             <% @unavailable = true if @statuses[item[:status].to_s.downcase] == "unavailable" %>
             <tr>
@@ -27,7 +28,7 @@
                 <% if item[:public_note] %>
                   <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
                 <% end %>
-              
+
               </td>
               <% end %>
               <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= @locations[item[:location].downcase.gsub("_","")] %></a></td>
@@ -38,6 +39,15 @@
               <% else %>
                 <td></td>
               <% end %>
+              <td>
+                  <% if @document.respond_to?( :to_email_text ) %>
+                    <%= link_to "Email Me", email_catalog_path(:id => @document), {:id => 'emailLink', :class => 'lightboxLink'} %>
+                    &nbsp
+                  <%- end -%>
+                  <%- if @document.respond_to?( :to_sms_text ) -%>
+                    <%= link_to "Text Me", sms_catalog_path(:id => @document), {:id => 'smsLink', :class => 'lightboxLink'} %>
+                  <%- end -%>
+              </td>
             </tr>
             <% @unavailable = false %>
           <% end %>
