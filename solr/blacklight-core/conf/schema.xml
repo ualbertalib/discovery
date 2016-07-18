@@ -535,6 +535,8 @@
    <field name="subject_geo_facet" type="string" indexed="true" stored="true" multiValued="true" />
    <!-- pub_date is used for facet and display so it must be indexed and stored -->
    <field name="pub_date" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="aacr_pub_date" type="string" indexed="true" stored="true" multiValued="true"/>
+   <field name="rda_pub_date" type="string" indexed="true" stored="true" multiValued="true"/>
    <!-- pub_date sort uses new trie-based int fields, which are recommended for any int and are displayable, sortable, and range-quer
    we use 'tint' for faster range-queries. -->
    <field name="pub_date_sort" type="tint" indexed="true" stored="true" multiValued="false"/>
@@ -771,6 +773,8 @@
    <copyField source="subject_tesim" dest="subject_topic_facet"/>
    <copyField source="subject_tesim" dest="subject_t"/>
    <copyField source="issn_tesim" dest="issn_t"/>
+   <copyField source="aacr_pub_date" dest="pub_date"/>
+   <copyField source="rda_pub_date" dest="pub_date"/>
    
    <!-- sort fields -->
    <copyField source="pub_date" dest="pub_date_sort"/>

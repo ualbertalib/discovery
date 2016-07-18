@@ -2,4 +2,12 @@
 #
 # To ban all spiders from the entire site uncomment the next two lines:
 User-agent: *
-Disallow: /
+Disallow: /symphony
+Disallow: /journals
+Disallow: /databases
+Disallow: /articles
+Disallow: /ebooks
+Disallow: /results
+Disallow: /advanced
+Disallow: /catalog
+Disallow: /permalink
