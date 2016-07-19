@@ -9,6 +9,8 @@ class RecordMailer < ActionMailer::Base
     @count          = documents.length
     @documents      = documents
     @message        = details[:message]
+    @call           = details[:call]
+    @location       = details[:location]
     @url_gen_params = url_gen_params
 
     mail(:to => details[:to],  :subject => subject, :from => "no-reply@ualberta.ca")
@@ -17,7 +19,7 @@ class RecordMailer < ActionMailer::Base
   def sms_record(documents, details, url_gen_params)
     @documents      = documents
     @url_gen_params = url_gen_params
-    mail(:to => details[:to], :subject => "")
+    mail(:to => details[:to], :subject => details[:call])
   end
 
 end
