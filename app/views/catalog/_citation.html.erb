@@ -1,5 +1,5 @@
 
-<strong>Please note that as style guides change, University of Alberta Libraries cannot ensure the accuracy of these citations. Please verify the citation in the appropriate style guide.</strong>
+<strong>Please note that University of Alberta Libraries cannot ensure the accuracy of these citations. Please verify the citation in the appropriate style guide.</strong>
 <br /><br />
 <p>For in-depth citation information, please visit our <a href="http://guides.library.ualberta.ca/citing" target="_blank">Citation Guides</a></p>
 <br />
@@ -18,8 +18,11 @@
 <% end %>
 
 <%- if document.respond_to?(:export_as_chicago_citation_txt) -%>
-  <h4><%= t('blacklight.citation.chicago') %></h4>
+  <h4><%= t('blacklight.citation.chicago') %> (Notes-Bibliography Format)</h4>
   <%= document.send(:export_as_chicago_citation_txt).html_safe %>
 <%- end -%>
+
+<br />
+<br />
 
 <% end %>
