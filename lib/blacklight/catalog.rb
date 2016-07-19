@@ -242,7 +242,7 @@ module Blacklight::Catalog
 
      # Email Action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
      def email_action documents
-       mail = RecordMailer.email_record(documents, {:to => params[:to], :message => params[:message]}, url_options)
+       mail = RecordMailer.email_record(documents, {:to => params[:to], :message => params[:message], :call=>params[:call], :location=>params[:location]}, url_options)
        if mail.respond_to? :deliver_now
          mail.deliver_now
        else
@@ -253,7 +253,7 @@ module Blacklight::Catalog
      # SMS action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
      def sms_action documents
        to = "#{params[:to].gsub(/[^\d]/, '')}@#{params[:carrier]}"
-       mail = RecordMailer.sms_record(documents, { :to => to }, url_options)
+       mail = RecordMailer.sms_record(documents, { :to => to, :call => params[:call] }, url_options)
        if mail.respond_to? :deliver_now
          mail.deliver_now
        else
