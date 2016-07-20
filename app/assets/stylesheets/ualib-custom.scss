@@ -1574,7 +1574,7 @@ ul.foot-nav{
 
 @-moz-document url-prefix() {
     .facet-values .facet-label {
-        word-break: keep-all;
+        word-break: normal;
     }
 }
 
