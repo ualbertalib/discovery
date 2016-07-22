@@ -13,3 +13,13 @@ $(document).ready(function () {
 	});
 	$(".staff").stupidtable();
 });
+
+function setiFrameAttr() {
+    var myframes=document.getElementsByTagName("iframe");
+    for(var i = 0; i < myframes.length; i++) {
+       myframes[i].width = 'auto';
+    }
+}
+
+window.onload=setiFrameAttr;
+
