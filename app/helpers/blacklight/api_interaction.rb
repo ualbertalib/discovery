@@ -13,17 +13,21 @@ module Blacklight::API_Interaction
     #session[:debugNotes] = ""
 
     # creates EDS API connection object, initializing it with application login credentials
-    @connection = ConnectionHandler.new(2)
-    File.open(auth_file_location,"r") {|f|
+    begin
+      @connection = ConnectionHandler.new(2)
+      File.open(auth_file_location,"r") {|f|
         @api_userid = f.readline.strip
         @api_password = f.readline.strip
         @api_profile = f.readline.strip
-    }
+      }
+      @connection.ip_init(@api_profile, 'n')
+      @connection.ip_authenticate(:json)
+      @session_key = @connection.create_session
+      get_info
+    rescue StandardError => e
+      throw :eds_connection_error
+    end
 
-    @connection.ip_init(@api_profile, 'n')
-    @connection.ip_authenticate(:json)
-    @session_key = @connection.create_session
-    get_info
 
     # if authenticated_user?
     #   session[:debugNotes] << "<p>Sending NO as guest.</p>"
@@ -96,13 +100,13 @@ module Blacklight::API_Interaction
     else
       fieldcode = ""
     end
-    
+
     #should write something to allow this to be overridden
     searchmode = "AND"
-    
+
     #build 'query-1' API URL parameter
     searchquery_extras = searchmode + "," + fieldcode
-    
+
     #filter to make sure the only parameters put into the API query are those that are expected by the API
     edsKeys = ["eds_action","q","query-1","facetfilter[]","facetfilter","sort","includefacets","searchmode","view","resultsperpage","sort","pagenumber","highlight", "limiter", "limiter[]"]
     edsSubset  = {}
@@ -111,12 +115,12 @@ module Blacklight::API_Interaction
         edsSubset[key] = value
       end
     end
-    
+
     #rename parameters to expected names
     #action and query-1 were renamed due to Rails and Blacklight conventions respectively
     mappings = {"eds_action" => "action", "q" => "query-1"}
     newoptions = Hash[edsSubset.map {|k, v| [mappings[k] || k, v] }]
-    
+
     #repace the raw query, adding searchmode and fieldcode
     changeQuery = newoptions["query-1"]
     uri = Addressable::URI.new
@@ -125,12 +129,12 @@ module Blacklight::API_Interaction
     searchquery = uri.query
     searchtermindex = searchquery.index('query-1=') + 8
     searchquery.insert searchtermindex, searchquery_extras
-    
+
     # , : ( ) - unencoding expected punctuation
     searchquery = searchquery.gsub('%28','(').gsub('%3A',':').gsub('%29',')').gsub('%23',',').gsub('%26', '&').gsub('%3B', ';').gsub('&quot', '%22')
     return searchquery
   end
-    
+
   # main search function.  accepts string to be tacked on to API endpoint URL
   def search(apiquery)
     results = @connection.search(apiquery, @session_key, @auth_token, :json).to_hash
@@ -142,7 +146,7 @@ module Blacklight::API_Interaction
 
     #session[:apiquery] = apiquery
   end
-  
+
   def retrieve(dbid, an, highlight = "")
     #debugNotes << "HIGHLIGHTBEFORE:" << highlight.to_s
     highlight.downcase!
@@ -157,7 +161,7 @@ module Blacklight::API_Interaction
 
     return record
   end
-  
+
   def termsToHighlight(terms = "")
     if terms.present?
       words = terms.split(/\W+/)
@@ -166,7 +170,7 @@ module Blacklight::API_Interaction
       return ""
     end
   end
-  
+
   # helper function for iterating through results from 
   def switch_link(params,qurl)
 

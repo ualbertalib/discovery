@@ -17,7 +17,8 @@
 
 <% @current_url = request.original_url %>
 
-<% eds_connect %>
+<% catch :eds_connection_error do %>
+  <% eds_connect %>
 
 <% if has_search_parameters? %>
        <% options = generate_api_query(params) %>
@@ -29,7 +30,8 @@
 	    <% search(options) %>
       <%# end %>
     <%# end %>
-<% end %>
+  <% end %>
+      <% end %>
 
 <script type="text/javascript">
   function htmlDecode(input){
