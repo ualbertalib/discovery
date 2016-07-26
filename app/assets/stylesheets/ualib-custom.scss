@@ -82,7 +82,7 @@ h2{
 }
 
 
-	
+
 
 /* Custom styles -- Navigation
 -------------------------------------------------- */
@@ -188,7 +188,7 @@ h2{
 }
 .lib-nav li#home-nav
  a{
-	background-image: asset_url("home-icon.png");	
+	background-image: asset_url("home-icon.png");
 }
 .lib-nav li#services-nav a{
 	background-image: asset_url("services-icon.png");
@@ -200,7 +200,7 @@ h2{
 	background-image: asset_url("research-icon.png");
 }
 .lib-nav li#news-nav a{
-	background-image: asset_url("news-icon.png");	
+	background-image: asset_url("news-icon.png");
 }
 .lib-nav li#account-nav a{
 	background-image: asset_url("account-icon.png");
@@ -242,7 +242,7 @@ h2{
 	margin:20px;
 }
 .footer p a{
-	color: #ecf4e5;	
+	color: #ecf4e5;
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.2);
 	padding: 0px 3px;
@@ -543,18 +543,18 @@ ul.ask{
 }
 #main-nav a:hover{
 	text-decoration: none;
-} 
-#main-nav a span{ 
-  position:absolute; 
+}
+#main-nav a span{
+  position:absolute;
   width:100%;
   height:100%;
   top:0;
   left: 0;
   z-index: 1;
-}  
+}
 .pane{
 		padding: 15px 0 20px 0;
-} 
+}
 #home-nav{
 	display: none;
 }
@@ -562,7 +562,7 @@ ul.ask{
 	background-color: #eceff4;
 	margin-bottom: 20px;
 	padding: 0px 0px 0px 0px;
-}	
+}
 #searchclear {
     position: absolute;
     right: 5px;
@@ -609,7 +609,7 @@ ul.ask{
 .quick-links{
 	margin-top: 20px;
 }
-.quick-links a{ 
+.quick-links a{
 	background-size: 40px 38px;
 	display: block;
 	background-repeat: no-repeat;
@@ -623,7 +623,7 @@ ul.ask{
 		background-image: asset_url("room.png");
 		background-position: 8px 8px;
 }
-.quick-links a:hover{ 
+.quick-links a:hover{
 	color: #e7eff5;
 	background-color: #38566c;
 }
@@ -663,7 +663,7 @@ label.mod{
 #services{
 	background:#404545;
 	color: #fff;
-}	
+}
 .hours ul{
 	list-style: none;
 	padding-left: 0;
@@ -678,7 +678,7 @@ label.mod{
 }
 .tooltip.bottom .tooltip-arrow {
     border-bottom-color: #4C6F84;
-}  
+}
 .hours-header{
 	padding-bottom: 0;
 	margin-bottom: 0;
@@ -810,7 +810,7 @@ label.mod{
 	}
 #subjects h2{
 	color: #fff;
-	} 
+	}
 #subjects ul{
 	margin:0;
 	list-style: none;
@@ -835,7 +835,7 @@ label.mod{
 	letter-spacing:1px;
 	padding: 10px;
 	font-size: 22px;
-	color: #fff;	
+	color: #fff;
 }
 #subjects .subject-title div{
 	text-align: center;
@@ -865,7 +865,7 @@ label.mod{
 }
 #arts{
 	background-image: asset_url("subject-images/arts.png");
-	
+
 }
 #aug{
 	background-image: asset_url("subject-images/aug.png");
@@ -1134,7 +1134,7 @@ label.mod{
 	padding: 0;
 }
 .news-stories li{
-	
+
 	list-style: none;
 	background-color: #fff;
 	margin-bottom: 1px;
@@ -1205,7 +1205,7 @@ padding: 0px 15px 10px 15px;
   background: #D26;
   border: 2px solid #333;
   border-color: hsla(0, 0%, 0%, 0.5);
- 
+
   -webkit-transition: width 0.4s, height 0.4s;
      -moz-transition: width 0.4s, height 0.4s;
        -o-transition: width 0.4s, height 0.4s;
@@ -1434,7 +1434,7 @@ ul.foot-nav{
 	font-size: 80%;
 }
 #footer p a{
-	color: #ecf4e5;	
+	color: #ecf4e5;
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.2);
 	padding: 0px 3px;
@@ -1572,6 +1572,11 @@ ul.foot-nav{
 	padding-left: 10px;
 }
 
+@-moz-document url-prefix() {
+    .facet-values .facet-label {
+        word-break: normal;
+    }
+}
 
 /* Styles for Profile Application */
 .profile-padding{
@@ -1641,7 +1646,7 @@ ul.foot-nav{
 	background: asset_url("sort.png") no-repeat right center;
 	padding-right: 20px;
 	display: inline;
-} 
+}
 .staff th.email h3, .staff th.phone h3, .staff th.actions h3{
 	background-image:none;
 }
@@ -1738,10 +1743,10 @@ ul.foot-nav{
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
 @media (min-width: 492px){
-	
+
 	h2{
 		font-size: 30px;
-	}	
+	}
 	.up{
 		width: 25px;
 	}
@@ -1775,11 +1780,11 @@ ul.foot-nav{
 		margin-right: -15px;
 	}
 	.form-inline .form-control {
-		font-size: 15px;	
+		font-size: 15px;
 	}
 	#banner-back{
 		background: asset_url("banner-bg.jpg") repeat-x center 38px #fff;
-	}	
+	}
 	.col-sm-15 {
         width: 20%;
         float: left;
@@ -1825,7 +1830,7 @@ ul.foot-nav{
 	}
 	.pane{
 		padding: 30px 0;
-	} 
+	}
 	.extra-top-margin{
 		margin-top: 20px;
 	}
@@ -1874,7 +1879,7 @@ ul.foot-nav{
 		padding: 10px 15px;
 		margin-bottom: 0;
 	}
-	
+
 	.atoz-wrap{
 		background-color: #404545;
 		padding: 5px 10px;
@@ -1955,7 +1960,7 @@ ul.foot-nav{
 		line-height: 35px;
 		padding: 10px;
 		font-size: 23px;
-		color: #fff;	
+		color: #fff;
 	}
 	#subjects .subject-title div{
 		position: absolute;
@@ -2026,7 +2031,7 @@ ul.foot-nav{
 	.version span{
 		display: inline;
 	}
-	
+
 	#subjects .subject-title h3{
 		line-height: 35px;
 		padding: 10px 4px 10px 90px;
@@ -2053,11 +2058,11 @@ ul.foot-nav{
 	}
 	.browse{
 		padding-bottom:2px;
-		margin-top: 30px; 
+		margin-top: 30px;
 	}
 
 	.cta{
-		margin-top: 30px; 
+		margin-top: 30px;
 		padding: 2px;
 		font-weight: bold;
 		background-color: #000;
@@ -2156,7 +2161,7 @@ ul.foot-nav{
     }
     #main-nav p{
   		font-size: 16px;
-  	} 
+  	}
   	#main-nav.small h3{
 		font-size: 17px;
 		padding-left: 25px;
