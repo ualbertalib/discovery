@@ -2,15 +2,17 @@ module EdsHelper
 
   def populate_eds
     if params["q"] then # refactor this
-      eds = get_eds_results
-      if eds
-        @eds_count = eds["count"]
-        eds.delete("count")
-        @eds = eds
+      catch(:eds_connection_error) do
+        eds = get_eds_results
+        if eds
+          @eds_count = eds["count"]
+          eds.delete("count")
+          @eds = eds
+        end
       end
-    else
-      @eds_count = 0
-      @eds = "Empty Search"
+      else
+        @eds_count = 0
+        @eds = "Empty Search"
     end
   end
 
@@ -21,11 +23,11 @@ module EdsHelper
     params["q"] = params["q"].downcase.gsub("l'", "").gsub("d'", "")
     params["includefacets"] = "y"
     #params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
-      params["searchmode"]="all"
-      params["view"]="brief"
-      params["pagenumber"]=1
-      params["highlight"]="y"
-      params["resultsperpage"] = 100
+    params["searchmode"]="all"
+    params["view"]="brief"
+    params["pagenumber"]=1
+    params["highlight"]="y"
+    params["resultsperpage"] = 100
     if has_search_parameters? then
       clean_params = deep_clean(params)
       params = clean_params

@@ -4,13 +4,16 @@ var urls_html = "<br /> \
 <% unless @ua_urls.empty? %> \
     <% @ua_urls.each do |location,url| %> \
       <% if location.include? "Free Access" %> \
-             <% @proxy = "" %> \
-           <% else %> \
-             <% @proxy = Rails.application.config.proxy %> \
-                       <% end %> \
-      <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "") %> \
+          <% @proxy = "" %> \
+      <% else %> \
+          <% @proxy = Rails.application.config.proxy %> \
+      <% end %> \
+      <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "").strip %> \
+      <% if loc.start_with?('(') && loc.end_with?(')') && loc.count('(') == 1 && loc.count(')') == 1 %> \
+          <% loc=loc.delete('()').strip %> \
+      <% end %>
       <div class=\"row\"> \
-    <a href=\"<%= @proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc.strip+")" %></span><span></a><% end %><% end %><br />";
+    <a href=\"<%= @proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc+")" %></span><span></a><% end %><% end %><br />";
 var urls_node = document.createElement('div');
 urls_node.setAttribute('id', 'electronic_access');
 urls_node.innerHTML = urls_html;

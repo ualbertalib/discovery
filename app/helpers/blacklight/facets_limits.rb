@@ -4,12 +4,12 @@ module Blacklight::Facets_Limits
   #############
   # Facet / Limiter Constraints Box
   #############
-        
+
   # used when determining if the "constraints" partial should display
   def query_has_facetfilters?(localized_params = params)
     (generate_next_url.scan("facetfilter[]=").length > 0) or (generate_next_url.scan("limiter[]=").length > 0)
   end
-  
+
   # should probably return a hash and let the view handle the HTML
   def show_applied_facets
     appliedfacets = '';
@@ -18,13 +18,13 @@ module Blacklight::Facets_Limits
         appliedfacet.each do |key, val|
           if key == "FacetValuesWithAction"
             val.each do |facetValue|
-              appliedfacets << '<span class="appliedFilter constraint filter filter-format"><span class="filterName">' + facetValue['FacetValue']['Id'].to_s.gsub("EDS","").titleize + '</span><span class="filterValue">' + facetValue['FacetValue']['Value'].to_s.titleize + '</span><a class="btnRemove imgReplace" href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=" + CGI.escape(facetValue['RemoveAction'].to_s) + '">Remove filter</a></span>' 
+              appliedfacets << '<span class="appliedFilter constraint filter filter-format"><span class="filterName">' + facetValue['FacetValue']['Id'].to_s.gsub("EDS","").titleize + '</span><span class="filterValue">' + facetValue['FacetValue']['Value'].to_s.titleize + '</span><a class="btnRemove imgReplace" href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=" + CGI.escape(facetValue['RemoveAction'].to_s) + '">Remove filter</a></span>'
             end
           end
         end
       end
     end
-    return appliedfacets.html_safe        
+    return appliedfacets.html_safe
   end
 
   # should return hash and let the view handle the HTML
@@ -51,7 +51,7 @@ module Blacklight::Facets_Limits
         end
       end
     end
-    return appliedlimiters.html_safe        
+    return appliedlimiters.html_safe
   end
 
   #############
@@ -69,7 +69,7 @@ module Blacklight::Facets_Limits
     end
     return session[:numLimiters]
   end
-        
+
   # show limiters on the view
   def show_limiters
     limiterCount = 0;
@@ -120,21 +120,23 @@ module Blacklight::Facets_Limits
     dateString << '</ul></div>'
     return dateString.html_safe
   end
-	
+
   # show available facets
   def show_facets
     facets = '';
     if @results && @results['SearchResult'] && @results['SearchResult']['AvailableFacets'].present?
       @results['SearchResult']['AvailableFacets'].each do |facet|
-        facets = facets + '<div class="facet_limit blacklight-' + facet['Id'] + '"><h5 class="twiddle">' + facet['Label'] + '<i class="icon-chevron"></i></h5><ul style="display: block;">'
-        facet.each do |key, val|
-          if key == "AvailableFacetValues"
-            val.each do |facetValue|
-              facets = facets + '<li><a class="facet_select" href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=" + CGI.escape(facetValue['AddAction'].to_s) + '">' + facetValue['Value'].to_s.titleize + '</a> <span class="count">' + facetValue['Count'].to_s + '</li>'
+        if facet['Label'] != "Collection"
+          facets = facets + '<div class="facet_limit blacklight-' + facet['Id'] + '"><h5 class="twiddle">' + facet['Label'] + '<i class="icon-chevron"></i></h5><ul style="display: block;">'
+          facet.each do |key, val|
+            if key == "AvailableFacetValues"
+              val.each do |facetValue|
+                facets = facets + '<li><a class="facet_select" href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=" + CGI.escape(facetValue['AddAction'].to_s) + '">' + facetValue['Value'].to_s.titleize + '</a> <span class="count">' + facetValue['Count'].to_s + '</li>'
+              end
             end
           end
+          facets = facets + '</ul></div>'
         end
-        facets = facets + '</ul></div>'
       end
     end
     return facets.html_safe

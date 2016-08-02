@@ -68,7 +68,7 @@ module Blacklight::Results_Records
   end
 
   def show_total_hits
-    return @results['SearchResult']['Statistics']['TotalHits']
+    return @results.nil? ? 0 : @results['SearchResult']['Statistics']['TotalHits']
   end
 
   # see if title is available given a single result

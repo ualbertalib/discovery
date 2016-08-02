@@ -3,7 +3,7 @@
 	class Connection
 	
     API_URL = "http://eds-api.ebscohost.com/"
-	API_URL_S = "https://eds-api.ebscohost.com/"
+    API_URL_S = "https://eds-api.ebscohost.com/"
 
 	  attr_accessor :auth_token, :session_token, :debug_notes, :guest
 	  attr_writer :userid, :password

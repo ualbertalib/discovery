@@ -132,6 +132,7 @@ class CatalogController < ApplicationController
     config.add_facet_field 'author_display', :label => 'Author', :limit => 20
     config.add_facet_field 'subject_topic_facet', :label => 'Subject', :limit => 20
     config.add_facet_field 'language_facet', :label => 'Language', :limit => 10
+    config.add_facet_field 'languagenote_tesim', :label => 'Language', :limit => 10
     config.add_facet_field 'subject_geo_facet', :label => 'Geographic Region', :limit => 10
     config.add_facet_field 'subject_era_facet', :label => 'Historic Period', :limit => 10
     config.add_facet_field 'owning_library_tesim', :label => 'Owning Library'
