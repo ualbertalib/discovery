@@ -20,7 +20,7 @@ class RecordMailer < ActionMailer::Base
     @documents      = documents
     @url_gen_params = url_gen_params
     details[:call].empty? ? subject = "From University of Alberta Libraries: #{documents.first.to_semantic_values[:title].first}" : subject = details[:call]
-    mail(:to => details[:to], :subject => subject)
+    mail(:to => details[:to], :subject => subject, :from => "no-reply@ualberta.ca")
   end
 
 end
