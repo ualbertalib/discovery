@@ -270,7 +270,9 @@
        <str name="facet.mincount">1</str>
        <str name="facet.limit">100</str>
        <str name="facet.field">electronic_tesim</str>
+       <str name="facet.field">institution_tesim</str>
        <str name="facet.field">location_tesim</str>
+       <str name="facet.field">author_display</str>
        <str name="facet.field">format</str>
        <str name="facet.field">lc_1letter_facet</str>
        <str name="facet.field">language_facet</str>
