@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
+gem 'rails', '4.2.7.1'
 # User mysql as database adapter for dev, test, and prod
 gem 'sqlite3', group: :workstation
 gem 'mysql2', '~>0.3.20'
@@ -49,7 +49,7 @@ gem "devise-guests"
 gem "addressable", "2.3.7"
 gem "htmlentities"
 gem "activerecord-session_store"
-gem "nokogiri", "1.6.7.2"
+gem "nokogiri", "1.6.8"
 gem "factory_girl", "~> 4.0", group: [:test, :development]
 gem "rspec"
 gem "blacklight_advanced_search"
