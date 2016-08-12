@@ -778,6 +778,8 @@
    
    <!-- sort fields -->
    <copyField source="pub_date" dest="pub_date_sort"/>
+   <copyField source="aacr_pub_date" dest="pub_date_sort"/>
+   <copyField source="rda_pub_date" dest="pub_date_sort"/>
    
         
    <!-- spellcheck fields -->
