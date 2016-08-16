@@ -44,7 +44,7 @@
               Building
       - @profiles.each do |profile|
         %tr
-          - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
+          - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
           - @no_photo = "staff-photos/thumbs/none.jpg"
           %td
             = link_to image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", style: 'width:100%;'), profile_path(profile)
