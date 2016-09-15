@@ -1,38 +1,40 @@
 <%# default partial to display solr document fields in catalog show view -%>
 <dl class="dl-horizontal  dl-invert">
 
-  <% @linked_fields = ["title_series_t", "uniform_title_tesim"] %>
+  <% @linked_fields = ["uniform_title_tesim"] %>
 
   <% document_show_fields(document).each do |solr_fname, field| -%>
     <% if should_render_show_field? document, field %>
       <dt class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_label document, :field => solr_fname %></dt>
       <% if @linked_fields.include? solr_fname %>
         <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/catalog?q=&quot;<%= render_document_show_field_value(document, :field => solr_fname).gsub(' ', '+') %>&quot;">   <%= render_document_show_field_value document, :field => solr_fname %></a></dd>
+      <% elsif solr_fname == "title_series_t" %>
+        <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/<%= params[:controller] %>?title=&quot;<%= render_document_show_field_value(document, :field => solr_fname).split(";").first.strip.gsub(' ','+') %>&quot;&search_field=advanced"><%= render_document_show_field_value document, :field => solr_fname %></a></dd>
       <% elsif solr_fname == "author_display" %>
 
         <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/<%= params[:controller] %>?f%5Bauthor_display%5D%5B%5D=<%= render_document_show_field_value(document, :field => solr_fname).gsub(' ','+') %>"><%= render_document_show_field_value document, :field => solr_fname %></a></dd>
 
       <% elsif solr_fname == "author_addl_t" and @additional_authors %>
-           <dd class="blacklight-<%= solr_fname.parameterize %>">
-           
-           <% for author in @additional_authors %>
-             <a href="/catalog?q=&quot;<%= author.gsub(' ','+') %>&quot;"><%= author %></a><br />
-         <% end %>
-           </dd>
+        <dd class="blacklight-<%= solr_fname.parameterize %>">
 
-         <% elsif solr_fname == "contents_tesim" %>
+        <% for author in @additional_authors %>
+          <a href="/catalog?q=&quot;<%= author.gsub(' ','+') %>&quot;"><%= author %></a><br />
+        <% end %>
+        </dd>
 
-           <dd class="blacklight-<%= solr_fname.parameterize %>" style="width:115%;font-size:75%">
-           <ul>
-           <% render_document_show_field_value(document,:field=>solr_fname).split("--").each do |note| %> 
+      <% elsif solr_fname == "contents_tesim" %>
 
-             <li><%= note.gsub("&#39;", "'") %></li>
+        <dd class="blacklight-<%= solr_fname.parameterize %>" style="width:115%;font-size:75%">
+        <ul>
+          <% render_document_show_field_value(document,:field=>solr_fname).split("--").each do |note| %> 
 
-         <% end %>
-           </ul></dd>
-      <% else %>
-        <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
+            <li><%= note.gsub("&#39;", "'") %></li>
+
+          <% end %>
+        </ul></dd>
+    <% else %>
+      <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value document, :field => solr_fname %></dd>
     <% end %>
-    <% end -%>
   <% end -%>
+<% end -%>
 </dl>
