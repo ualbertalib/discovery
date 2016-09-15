@@ -91,9 +91,10 @@ class SymphonyService
       location = get(item, "libraryID")
       status = get(subitem, "currentLocationID")
       status == "CHECKEDOUT" ? due = get(subitem, "dueDate") : ""
+      reserve = get(subitem, "reserveCirculationRule") == "TX-2HR-100"
       type = get(subitem, "itemTypeID")
       public_note = get(subitem, "publicNote")
-      subitems << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
+      subitems << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve: reserve}
     end
     subitems
   end

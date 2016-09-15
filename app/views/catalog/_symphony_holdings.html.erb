@@ -12,12 +12,18 @@
 
           <% for item in @holdings %>
 
+            <%= item %>
+
             <% @unavailable = true if @statuses[item[:status].to_s.downcase] == "unavailable" %>
             <tr>
               <td><%= item[:call] %></td>
               <% if item[:status] == "CHECKEDOUT" %>
                 <% if item[:due] %>
-                  <td>Due: <%= Date.parse(item[:due]) %></td>
+                  <td>Due: <%= DateTime.parse(item[:due]).strftime("%m/%d/%Y %H:%M").gsub("00:00","") %>
+                  <% if item[:reserve] %>
+                    <p style="font-size:small">2 hour loan/$1.00 hourly fine</p>
+                  <% end %>
+                </td>
                 <% else %><td>Unknown/Never</td>
               <% end %>
               <% else %>
@@ -28,7 +34,9 @@
                 <% if item[:public_note] %>
                   <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
                 <% end %>
-
+                  <% if item[:reserve] or item[:status]=="RESERVES"%>
+                    <p style="font-size:small">2 hour loan/$1.00 hourly fine</p>
+                  <% end %>
               </td>
               <% end %>
               <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= @locations[item[:location].downcase.gsub("_","")] %></a></td>
