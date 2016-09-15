@@ -7,7 +7,13 @@ Here <%= @count == 1 ? "is the item" : "are the items" %> you emailed from the U
 <%= t('blacklight.email.text.url', :url =>polymorphic_url(document, @url_gen_params)) %>
 <%= "\n" %>
 <% end %>
-Call: <%= @call %>
-Location: <%= @location %>
-<%= t('blacklight.email.text.message', :message => @message) %>
+<% unless @call.empty? %>
+  Call #: <%= @call %>
+<% end %>
+<% unless @location.empty? %>
+  Location: <%= @location %>
+<% end %>
+<% unless @message.empty? %>
+  <%= t('blacklight.email.text.message', :message => @message) %>
+<% end %>
 
