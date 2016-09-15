@@ -12,8 +12,6 @@
 
           <% for item in @holdings %>
 
-            <%= item %>
-
             <% @unavailable = true if @statuses[item[:status].to_s.downcase] == "unavailable" %>
             <tr>
               <td><%= item[:call] %></td>
