@@ -17,7 +17,7 @@
               <td><%= item[:call] %></td>
               <% if item[:status] == "CHECKEDOUT" %>
                 <% if item[:due] %>
-                  <td>Due: <%= DateTime.parse(item[:due]).strftime("%m/%d/%Y %H:%M").gsub("00:00","") %>
+                  <td style="padding-right:2px;font-size:75%"><strong>Due: <%= DateTime.parse(item[:due]).strftime("%m/%d/%Y %H:%M %P").gsub("00:00 am","").gsub("00:00 pm","") %></strong>
                   <% if item[:reserve] %>
                     <p style="font-size:small">2 hour loan/$1.00 hourly fine</p>
                   <% end %>
