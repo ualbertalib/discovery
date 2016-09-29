@@ -79,7 +79,8 @@ class SymphonyService
       type = get(item, "itemTypeID")
       location = get(item, "libraryID")
       public_note = get(item, "publicNote")
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable}
+      reserve_rule = get(item, "reserveCirculationRule")
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule:reserve_rule}
   end
 
   def populate_subitems(item)
@@ -94,7 +95,8 @@ class SymphonyService
       reserve = get(subitem, "reserveCirculationRule") == "TX-2HR-100"
       type = get(subitem, "itemTypeID")
       public_note = get(subitem, "publicNote")
-      subitems << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve: reserve}
+      reserve_rule = get(subitem, "reserveCirculationRule")
+      subitems << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule: reserve_rule}
     end
     subitems
   end

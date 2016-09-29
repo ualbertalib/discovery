@@ -17,9 +17,9 @@
               <td><%= item[:call] %></td>
               <% if item[:status] == "CHECKEDOUT" %>
                 <% if item[:due] %>
-                  <td style="padding-right:2px;font-size:75%"><strong>Due: <%= DateTime.parse(item[:due]).strftime("%m/%d/%Y %H:%M %P").gsub("00:00 am","").gsub("00:00 pm","") %></strong>
+                  <td style="padding-right:2px;font-size:75%"><strong>Due: <%= DateTime.parse(item[:due]).strftime("%m/%d/%Y %l:%M %P").gsub("00:00 am","").gsub("12:00 am","") %></strong>
                   <% if item[:reserve] %>
-                    <p style="font-size:small">2 hour loan/$1.00 hourly fine</p>
+                    <p style="font-size:small"><%= @circ_rules[item[:reserve_rule]] %></p>
                   <% end %>
                 </td>
                 <% else %><td>Unknown/Never</td>
@@ -33,7 +33,7 @@
                   <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
                 <% end %>
                   <% if item[:reserve] or item[:status]=="RESERVES"%>
-                    <p style="font-size:small">2 hour loan/$1.00 hourly fine</p>
+                    <p style="font-size:small"><%= @circ_rules[item[:reserve_rule]] %></p>
                   <% end %>
               </td>
               <% end %>

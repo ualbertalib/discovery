@@ -1,0 +1,244 @@
+120D-NF-0R: 120 day loan/no fine/0 renewal
+120D-NF-1R: 120 day loan/no fine/1 renewals
+120D-NF-2R: 120 day loan/no fine/2 renewal
+1DY-100-0R: 1 day loan/1.00 fine/0 renewal
+1DY-100-1R: 1 day loan/1.00 fine/1 renewal
+1DY-100-2R: 1 day loan/1.00 fine/2 renewals
+1DY-100-3R: 1 day loan/1.00 fine/3 renewals
+1DY-100-4R: 1 day loan/1.00 fine/4 renewals
+1DY-NF-0R: 1 day loan/no fine/no renewals
+1DY-NF-4R: 1 day loan/no fine/4 renewals
+1WK-100-0R: 1 week loan/1.00 fine/no renewals
+1WK-100-1R: 1 week loan/1.00 fine/1 renewals
+1WK-100-2R: 1 week loan/1.00 fine/2 renewals
+1WK-100-3R: 1 week loan/1.00 fine/3 renewals
+1WK-100-4R: 1 week loan/1.00 fine/4 renewals
+1WK-25-0R: 1 week loan/.25 fine/no renewals
+1WK-25-2R: 1 week loan/.25 fine/2 renewals
+1WK-25M-2R: 1 week loan/.25 fine/5.00 max/2 renewals
+1WK-50-0R: 1 week loan/.50 fine/0 renewals
+1WK-50-4R: 1 week loan/.50 fine/4 renewals
+1WK-NF-0R: 1 week loan/no fine/no renewals
+1WK-NF-1R: 1 week loan/no fine/1 renewals
+1WK-NF-2R: 1 week loan/no fine/2 renewals
+1WK-NF-4R: 1 week loan/no fine/4 renewals
+1WK-NF-5R: 1 week loan/no fine/5 renewals
+1WK-NF-UL: 1 week loan/no fine/unlimited renewals
+1YR-NF-4R: 1 year loan/no fine/4 renewals
+24HR-50-0R: 24 hour loan/.50 fine/0 renewals
+24HR-NF-0R: 24 hour loan/No fine/0 renewals
+24HR-NF-4R: 24 hour loan/No fine/4 renewals
+2DY-100-0R: 2 day loan/1.00 fine/0 renewals
+2DY-100-2R: 2 day loan/1.00 fine/2 renewals
+2DY-NF-0R: 2 day loan/no fine/0 renewals
+2DY-NF-1R: 2 day loan/no fine/1 renewal
+2DY-NF-2R: 2 day loan/no fine/2 renewals
+2DY-NF-UL: 2 day loan/no fine/unlimited renewals
+2HR-100-2R: 2 hour loan/1.00 fine/2 renewals
+2HR-NF-0R: 2 hour loan/No fine/No renewals
+2WK-100-0R: 2 week loan/1.00 fine/no renewals
+2WK-100-1R: 2 week loan/1.00 fine/1 renewals
+2WK-100-2R: 2 week loan/1.00 fine/2 renewals
+2WK-100-3R: 2 week loan/1.00 fine/3 renewals
+2WK-100-4R: 2 week loan/1.00 fine/4 renewals
+2WK-10M-1R: 2 week loan/1.00 fine/5.00 max/1 renewal
+2WK-10M-2R: 2 week loan/1.00 fine/5.00 max/2 renewals
+2WK-200-0R: 2 week loan/2.00 fine/0 renewals/$5.00 overdue recall
+2WK-200-1R: 2 week loan/2.00 fine/1 renewals/$5.00 overdue recall
+2WK-200-2R: 2 week loan/2.00 fine/2 renewals/$5.00 overdue recall
+2WK-200-4R: 2 week loan/2.00 fine/4 renewals/$5.00 overdue recall
+2WK-25-2R: 2 week loan/.25 fine/2 renewals
+2WK-25-3R: 2 week loan/.25 fine/3 renewals
+2WK-50-0R: 2 week loan/.50 fine/0 renewals
+2WK-50-1R: 2 week loan/.50 fine/1 renewals
+2WK-50-2R: 2 week loan/.50 fine/2 renewals
+2WK-50-4R: 2 week loan/.50 fine/4 renewals
+2WK-NF-0R: 2 week loan/no fine/no renewals
+2WK-NF-1R: 2 week loan/no fine/1 renewals
+2WK-NF-2R: 2 week loan/no fine/2 renewals
+2WK-NF-3R: 2 week loan/no fine/3 renewals
+2WK-NF-4R: 2 week loan/no fine/4 renewals
+2WK-NF-5R: 2 week loan/no fine/5 renewals
+2WK-NF-UL: 2 week loan/no fine/unlimited renewals
+3DY-100-2R: 3 day loan/1.00 fine/2 renewals
+3DY-100-4R: 3 day loan/1.00 fine/4 renewals
+3DY-200-2R: 3 day loan/2.00 fine/2 renewals
+3DY-200-4R: 3 day loan/2.00 fine/4 renewals
+3DY-300-0R: 3 day loan/3.00 fine/0 renewals
+3DY-50-0R: 3 day loan/.50 fine/0 renewals
+3DY-50-4R: 3 day loan/.50 fine/4 renewals
+3DY-NF-0R: 3 day loan/no fine/no renewals
+3DY-NF-1R: 3 day loan/no fine/1 renewals
+3DY-NF-4R: 3 day loan/no fine/4 renewals
+3WK-100-0R: 3 week loan/1.00 fine/0 renewals
+3WK-100-1R: 3 week loan/1.00 fine/1 renewal
+3WK-100-2R: 3 week loan/1.00 fine/2 renewals
+3WK-100-3R: 3 week loan/1.00 fine/3 renewals
+3WK-100-4R: 3 week loan/1.00 fine/4 renewals
+3WK-10M-3R: 3 week loan/1.00 fine/5.00 max/3 renewals
+3WK-25-0R: 3 week loan/.25 fine/0 renewals
+3WK-25-2R: 3 week loan/.25 fine/2 renewals
+3WK-25M-2R: 3 week loan/.25 fine/5.00 max/2 renewals
+3WK-50-4R: 3 week loan/.50 fine/4 renewals
+3WK-NF-0R: 3 week loan/no fine/no renewals
+3WK-NF-1R: 3 week loan/no fine/1 renewals
+3WK-NF-2R: 3 week loan/no fine/2 renewals
+3WK-NF-3R: 3 week loan/no fine/3 renewals
+3WK-NF-4R: 3 week loan/no fine/4 renewals
+3WK-NF-4R5: 3 weeks/NF/4 renewals/$5.00 ov recall/UA only
+3WK-NF-5R: 3 week loan/no fine/4 renewals
+4DY-100-0R: 4 day loan/1.00 fine/0 renewals
+4DY-100-1R: 4 day loan/1.00 fine/1 renewal
+4DY-200-0R: 4 day loan/2.00 fine/0 renewal
+4DY-200-1R: 4 day loan/2.00 fine/1 renewal
+4DY-NF-0R: 4 day loan/no fine/0 renewals
+4DY-NF-1R: 4 day loan/no fine/1 renewals
+4DY-NF-2R: 4 day loan/no fine/2 renewals
+4HR-100-0R: 4 hour loan/1.00 fine/no renewals
+4HR-100-1R: 4 hour loan/1.00 fine/1 renewals
+4HR-50-0R: 4 hour loan/.50 fine/no renewals
+4HR-50-1R: 4 hour loan/.50 fine/1 renewal
+4HR-600-2R: 4 hour loan/6.00 fine/2 renewals
+4HR-600-4R: 4 hour loan/6.00 fine/4 renewals
+4HR-NF-0R: 4 hour loan/no fine/no renewals
+4WK-100-2R: 4 week loan/1.00fine/2 renewals
+4WK-100-4R: 4 week loan/1.00fine/4 renewals
+4WK-200-4R: 4 week loan/2.00fine/4 renewals/$5.00 overdue recall
+4WK-25-2R: 4 week loan/.25 fine/2 renewals
+4WK-50-0R: 4 week loan/.50 fine/0 renewals
+4WK-50-1R: 4 week loan/.50 fine/1 renewals
+4WK-50-2R: 4 week loan/.50 fine/2 renewals
+4WK-50-4R: 4 week loan/.50 fine/4 renewals
+4WK-NF-0R: 4 week loan/no fine/no renewals
+4WK-NF-1R: 4 week loan/no fine/1 renewals
+4WK-NF-2R: 4 week loan/no fine/2 renewals
+4WK-NF-4R: 4 week loan/no fine/4 renewals
+4WK-NF-UL: 4 week loan/no fine/unlimited renewals
+5WK-100-1R: 5 week loan/1.00fine/1 renewals
+5WK-100-3R: 5 week loan/1.00fine/3 renewals
+5WK-NF-0R: 5 week loan/no fine/no renewals
+6HR-100-0R: 6 hour loan/1.00 fine/no renewals
+6W-100-4R2: 6 week loan/1.00fine/4 renewals/$2.00 overdue recall
+6WK-100-0R: 6 week loan/1.00fine/no renewals
+6WK-100-1R: 6 week loan/1.00fine/1 renewals
+6WK-100-4R: 6 week loan/1.00fine/4 renewals
+6WK-200-4R: 6 week loan/2.00fine/4 renewals/$5.00 overdue recall
+6WK-50-2R: 6 week loan/.50 fine/2 renewals
+6WK-NF-0R: 6 week loan/no fine/no renewals
+6WK-NF-1R: 6 week loan/no fine/1 renewals
+6WK-NF-2R: 6 week loan/no fine/2 renewals
+6WK-NF-4R: 6 week loan/no fine/4 renewals
+6WK-NF-5R: 6 week loan/no fine/5 renewals
+8WK-NF-3R: 8 week loan/no fine/3 renewals
+90DY-NF-1R: 90 day loan/no fine/1 renewals
+IL-2WNF-05: ILL 2 week loan/no fine/no renewals/$5.00 ov recall/UA-ACADM
+ILL-2WK-05: ILL 2 week loan/2.00 fine/no renewals/$5.00 overdue recall
+ILL-2WK-0R: ILL 2 week loan/1.00 fine/no renewals
+ILL-2WK-NF: ILL 2 week loan/no fine/no renewals
+ILL-3WK-05: ILL 3 week loan/2.00 fine/no renewals/$5.00 overdue recall
+LA-24H-500: 24 hour loan/5.00 hourly fine(laptops only)
+NCY-100-0R: Overnight Loan/1.00 fine/no renewals
+NCY-200-0R: Overnight Loan/2.00 fine/no renewals
+NCY-25-0R: Overnight Loan/.25 fine/no renewals
+NCY-25M-0R: Overnight Loan/.25 fine/5.00 max/no renewals
+NCY-500-0R: Overnight Loan/5.00 fine/no renewals
+NCY-50-0R: Overnight Loan/.50 fine/no renewals
+NCY-NF-0R: Overnight Loan/no fine/no renewals
+NONCIRC-N: Does not circulate under any circumstance
+NONCIRC-Y: Normally does not circulate but can be overridden
+OV1000-100: overnight loan/due 10am/1.00 hourly fine
+OV1000-50: overnight loan/due 10am/.50 hourly fine
+OV1015-100: overnight loan/due 1015 am/1.00 hourly fine
+OV1015-50: overnight loan/due 1015 am/.50 hourly fine
+OV1200-100: overnight loan/due 1200 pm/1.00 hourly fine
+OV1200-50: overnight loan/due 1200 pm/.50 hourly fine
+OV1215-100: overnight loan/due 1215 pm/1.00 hourly fine
+OV1215-50: overnight loan/due 1215 pm/.50 hourly fine
+OV1230-100: overnight loan/due 1230 pm/1.00 hourly fine
+OV1230-50: overnight loan/due 1230 pm/.50 hourly fine
+OV1300-100: overnight loan/due 100 pm/1.00 hourly fine
+OV1300-50: overnight loan/due 100 pm/.50 hourly fine
+OV1330-100: overnight loan/due 130 pm/1.00 hourly fine
+OV1330-50: overnight loan/due 130 pm/.50 hourly fine
+OV1400-100: overnight loan/due 200 pm/1.00 hourly fine
+OV1400-50: overnight loan/due 200 pm/.50 hourly fine
+OV1430-100: overnight loan/due 230 pm/1.00 hourly fine
+OV1430-50: overnight loan/due 230 pm/.50 hourly fine
+OV800-100: overnight loan/due 800 am/1.00 hourly fine
+OV800-50: overnight loan/due 800 am/.50 hourly fine
+OV830-100: overnight loan/due 830 am/1.00 hourly fine
+OV900-100: overnight loan/due 900 am/1.00 hourly fine
+OV900-50: overnight loan/due 900 am/.50 hourly fine
+OV915-100: overnight loan/due 915 am/1.00 hourly fine
+OV915-50: overnight loan/due 915 am/.50 hourly fine
+OV930-100: overnight loan/due 930 am/1.00 hourly fine
+OV930-50: overnight loan/due 930 am/.50 hourly fine
+RR-1DY-100: 1 day loan/1.00 daily fine
+RR-1DY-50: 1 day loan/.50 daily fine
+RR-1DY-600: 1 day loan/6.00 daily fine
+RR-1HR-100: 1 hour loan/1.00 hourly fine
+RR-1HR-50: 1 hour loan/.50 hourly fine
+RR-1WK-100: 1 week loan/1.00 daily fine
+RR-1WK-50: 1 week loan/.50 daily fine
+RR-1WK-600: 1 week loan/6.00 daily fine
+RR-24H-100: 24 hour loan/1.00 hourly fine
+RR-24H-50: 24 hour loan/.50 hourly fine
+RR-24H-50M: 24 hour loan/.50 hourly fine/10.00 maximum
+RR-2DY-100: 2 day loan/1.00 daily fine
+RR-2DY-50: 2 day loan/.50 daily fine
+RR-2DY-600: 2 day loan/6.00 daily fine
+RR-2HR-100: 2 hour loan/1.00 hourly fine
+RR-2HR-50: 2 hour loan/.50 hourly fine
+RR-2HR-50M: 2 hour loan/.50 hourly fine/10.00 maximum
+RR-2HR-NF: 2 hour loan/no fine
+RR-3DY-100: 3 day loan/1.00 daily fine
+RR-3DY-50: 3 day loan/.50 daily fine
+RR-3DY-500: 3 day loan/5.00 daily fine
+RR-3DY-600: 3 day loan/6.00 daily fine
+RR-3HR-100: 3 hour loan/1.00 hourly fine
+RR-3HR-50: 3 hour loan/.50 hourly fine
+RR-48H-100: 48 hour loan/1.00 hourly fine
+RR-48H-50: 48 hour loan/.50 hourly fine
+RR-48H-50M: 48 hour loan/.50 hourly fine/10.00 maximum
+RR-4HR-100: 4 hour loan/1.00 hourly fine
+RR-4HR-50: 4 hour loan/.50 hourly fine
+RR-4HR-50M: 4 hour loan/.50 hourly fine/10.00 maximum
+RR-4HR-NF: 4 hour loan/no fine
+RR-5DY-100: 5 day loan/1.00 daily fine
+RR-5DY-50: 5 day loan/.50 daily fine
+RR-5DY-500: 5 day loan/5.00 daily fine
+RR-72H-100: 72 hour loan/1.00 hourly fine
+RR-7DY-100: 7 day loan/1.00 daily fine
+RR-ER-NC: E-Resource (non circulating)
+TM-100-4R2: Term loan/1.00 fine/4 renewals/$2.00 overdue recall
+TM-100-R25: Term loan/1.00 fine/recall/2 renewals/$5.00 ov recall/UA-ACADM
+TM-100-RC5: Term loan/1.00 fine/recall/4 renewals/$5.00 ov recall/UA-ACADM
+TRM-100-0R: Term loan/1.00 fine/0 renewals
+TRM-100-1R: Term loan/1.00 fine/1 renewal
+TRM-100-2R: Term loan/1.00 fine/2 renewals
+TRM-100-4R: Term loan/1.00 fine/4 renewals
+TRM-100-R2: Term loan/1.00 fine/recall/2 renewals/UA-ACADM only
+TRM-100-RC: Term loan/1.00 fine/recall/4 renewals/UA-ACADM only
+TRM-200-4R: Term loan/2.00 fine/4 renewals/$5.00 overdue recall
+TRM-NF-0R: Term loan/no fine/no renewals
+TRM-NF-1R: Term loan/no fine/1 renewals
+TRM-NF-2R: Term loan/no fine/2 renewals
+TRM-NF-3R: Term loan/no fine/3 renewals
+TRM-NF-4R: Term loan/no fine/4 renewals
+TRM-NF-4R5: Term loan/NF/4 renewals/$5.00 ov recall/UA only
+TRM-NF-5R: Term loan/no fine/5 renewals
+TRM-NF-UL: Term loan/no fine/unlimited renewals
+TX-1DY-100: 1 day loan/1.00 daily fine/textbook
+TX-1DY-600: 1 day loan/6.00 daily fine/textbook
+TX-1HR-100: 1 hour loan/1.00 hourly fine/textbook
+TX-1WK-100: 1 week loan/1.00 daily fine/textbook
+TX-24H-100: 24 hour loan/1.00 hourly fine/textbook
+TX-2DY-100: 2 day loan/1.00 daily fine/textbook
+TX-2DY-600: 2 day loan/6.00 daily fine/textbook
+TX-2HR-100: 2 hour loan/1.00 hourly fine/textbook
+TX-2HR-50: 2 hour loan/.50 hourly fine/textbook
+TX-3DY-100: 3 day loan/1.00 daily fine/textbook
+TX-3HR-100: 3 hour loan/1.00 hourly fine/textbook
+TX-4HR-100: 4 hour loan/1.00 hourly fine/textbook
+UNLIMITED: Circulates for an unlimited period of time
+UNLMTDNEOS: Circulates for an unlimited period of time for NEOS users.
