@@ -38,7 +38,7 @@ describe "bento/_database_pane.html.erb", type: :view do
 
     it "should display the UAL shield" do
       render
-      expect(rendered).to have_css("img[title='licensed for U of A only']")
+      expect(rendered).to have_css("img[title='licensed for U of A']")
     end
   end
 end
