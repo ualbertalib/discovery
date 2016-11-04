@@ -45,10 +45,10 @@ describe BentoController, type: :controller do
     expect(symphony_count).to eq 10000
     expect(symphony.size).to eq 100 # because a limit is set in the controller
     expect(symphony.first).to be_a Array
-    expect(symphony["1000091"].to_s).to eq  '{:title=>"Evelyn Waugh, the early years 1903-1939", :author=>"Stannard, Martin, 1947-", :isbn=>nil, :issn=>nil, :year=>["1986"], :call_number=>nil, :format=>["Book"], :electronic=>["At Library"], :source=>["Symphony"], :locations=>["uahss"], :ual=>true}'
-    expect(symphony["1000099"][:title]).to eq "The Seraphim guide to Renaissance music"
-    expect(symphony["1000099"][:electronic].first).to eq "At Library"
-    expect(symphony["1000101"][:title]).to eq "Grand duo concertant"
+    expect(symphony["100000"].to_s).to eq  '{:title=>"All about winter safety", :isbn=>nil, :issn=>nil, :year=>["1975"], :call_number=>nil, :format=>["Book"], :electronic=>["At Library"], :source=>["Symphony"], :locations=>["uabard"], :ual=>true}'
+    expect(symphony["1000000"][:title]).to eq "Wage and salary administration"
+    expect(symphony["1000001"][:electronic].first).to eq "At Library"
+    expect(symphony["1000002"][:title]).to eq "Industrial Remuneration Conference, 1885"
   end
 
   it "should not populate EDS results" do
