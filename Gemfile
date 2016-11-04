@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 
-gem "blacklight", "5.14.0"
+gem "blacklight", "5.15.0"
 gem "jettywrapper", "~> 2.0.3"
 gem "blacklight-marc", "~> 5.10.0"
 gem "om"
