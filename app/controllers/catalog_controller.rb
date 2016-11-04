@@ -9,7 +9,7 @@ class CatalogController < ApplicationController
   include HoldingsHelper
   #include BlacklightAdvancedSearch::ParseBasicQ
 
-  self.solr_search_params_logic << :show_only
+  self.search_params_logic << :show_only
 
   def show_only solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
