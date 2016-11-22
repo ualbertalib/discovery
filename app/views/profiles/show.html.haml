@@ -1,9 +1,8 @@
 .a-profile
 	= link_to profiles_path, class: "staff-back" do
 		<span class="glyphicon glyphicon-chevron-left"></span>  All Staff	
-	- @photo_link = "staff-photos/"+@profile.first_name.downcase+"-"+@profile.last_name.downcase+".jpg"
-	- if assets_manifest.assets[@photo_link]
-		= image_tag(@photo_link, :class => "a-photo")
+  - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
+  = image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", :class=>"a-photo"),
 	.vcard
 		%h2.fn
 			%span.given-name
