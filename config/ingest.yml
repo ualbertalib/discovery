@@ -9,7 +9,7 @@ solr: http://localhost:8983/solr
 
 proxy: http://login.ezproxy.library.ualberta.ca/login?url=
 
-collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set", "symphony_test_set", "symphony_test_deletes"]
+collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set", "symphony_test_set", "symphony_test_deletes", "kule"]
 
 era:
    schema: dublin_core
@@ -122,3 +122,7 @@ services:
   vocabulary: PromotedServicesVocabulary
   mode: file
   path: "config/promoted_services/service_records.xml"
+
+kule:
+  schema: marc
+  path: "data/kule.mrc"
