@@ -33,6 +33,7 @@ class CatalogController < ApplicationController
         end
       end
         @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
+        @holdings = "kule" if @document["source"].first == "KULE"
     end
 
     if @document["url_fulltext_display"]

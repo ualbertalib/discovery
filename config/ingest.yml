@@ -126,3 +126,4 @@ services:
 kule:
   schema: marc
   path: "data/kule.mrc"
+  config: "config/SolrMarc/kule_config.properties"

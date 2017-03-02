@@ -7,5 +7,9 @@
       <% if @document["source"].first == "SFX"  %>
         <%= render "sfx_holdings" %>
       <% end %>
+
+      <% if @document["source"].first == "KULE"  %>
+        <%= render "kule_holdings" %>
+      <% end %>
     </div>
 
