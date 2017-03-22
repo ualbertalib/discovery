@@ -356,6 +356,10 @@ font-size: 18px;
   padding-top: 2px;
   border-bottom: 1px solid #ddd;
 }
+.document h1{
+	font-size: 28px;
+	margin-top: 20px;
+}
 .document-counter{
 	font-size: 14px;
 }
@@ -363,6 +367,7 @@ font-size: 18px;
 h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 	text-decoration: none;
 	line-height: 28px;
+	font-size: 18px;
 }
 .results-img{
 	padding-left: 118px;
@@ -379,21 +384,38 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 }
 #holdings table{
 	width: 100%;
+	font-size: 14px;
 }
 #holdings table th{
 	font-weight: bold;
 	background-color: #B2C6D1;
-	padding: 5px 25px 5px 10px;
+	padding:5px 8px;
 	border-left: 3px solid #fff;
 }
 #holdings table td{
-	padding: 5px 25px 5px 15px;
+	padding:5px 8px;
 	border-left: 3px solid #fff;
 	border-bottom: 1px solid #fff;
 	background-color: #eceff4;
 }
 #holdings table td.call-number{
 	min-width: 250px;
+}
+#holdings table a.lightboxLink{
+	display: block;
+	background-color: #fff;
+	padding: 3px;
+	text-align: center;
+	border-radius: 5px;
+	margin-bottom: 3px;
+	text-decoration: none;
+	border:1px solid #bfc0c1;
+	font-size: 14px;
+	width: 70px;
+}
+#holdings table a.lightboxLink:hover{
+	background-color: #e3f1f1;
+
 }
 .holding-status, .holding-type{
 	text-transform: capitalize;
@@ -404,9 +426,7 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 #previousNextDocument{
 	padding-bottom: 10px;
 }
-.full-record-book-jacket{
-	padding-top: 80px;
-}
+
 .panel .nav>li>a{
 	border-right:none;
 }
@@ -529,6 +549,7 @@ padding: 15px 0;
 	  display: inline-block;
 	  padding: 5px 10px;
 }
+
 @media (min-width: 768px){
 	#main-container{
 		padding-top: 20px;
@@ -554,6 +575,24 @@ padding: 15px 0;
 	}
 	.results h3{
 		font-size: 16px;
+	}
+	#holdings table{
+		width: 100%;
+		margin-left: 0px;
+		font-size: 18px;
+	}
+	#holdings table th, #holdings table td{
+		padding: 5px 25px 5px 10px;
+	}
+	.document h1{
+		font-size: 36px;
+		margin-top: 0px;
+	}
+	.full-record-book-jacket{
+		padding-top: 80px;
+	}
+	h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
+		font-size: 24px;
 	}
 }
 
