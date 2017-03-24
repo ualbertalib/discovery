@@ -45,9 +45,12 @@ Results for <em>
       </div>
 
 </div>
+
+
+        
 <% if params[:search_field] or params[:f] or params[:q] and params[:q] != '' or Rails.env == "development" %> 
     <div class="row top-margin">
-<div id="sidebar" class="col-md-3 col-sm-4">
+<div id="sidebar" class="col-md-3 col-sm-4 ">
   <%= render 'search_sidebar' %>
 </div>
 <div id="content" class="col-md-9 col-sm-8">

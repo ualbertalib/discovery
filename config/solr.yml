@@ -12,8 +12,8 @@
 
 
 development:
-  url: <%= Rails.application.config.solr %>
+  url: <%= "https://tottenham.library.ualberta.ca:8080/solr/discovery" %>
 test: &test
   url: <%= Rails.application.config.solr %>
 production:
-  url: <%= Rails.application.config.solr || "http://localhost:8983/solr" %>
+  url: <%= Rails.application.config.solr %>

@@ -1,10 +1,10 @@
 
-        <table>
+        <table class="table table-responsive">
           <tr>
             <th class="call-number">Call Number</th>
-            <th>Location/Status</th>
+            <th>Location / Status</th>
             <th>Library</th>
-            <th>Item Type</th>
+            <th class="hidden-xs">Item Type</th>
             <th>Action</th>
           </tr>
 
@@ -41,14 +41,14 @@
               <% if @document["format"].include? "Journal" %>
             <% end %>
               <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
-                <td class="holding-type"><%= @item_types[item[:type].downcase] %></td>
+                <td class="holding-type hidden-xs"><%= @item_types[item[:type].downcase] %></td>
               <% else %>
                 <td></td>
               <% end %>
               <td>
                   <% if @document.respond_to?( :to_email_text ) %>
                     <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>@locations[item[:location].downcase.gsub("_","")]), {:id => 'emailLink', :class => 'lightboxLink'} %>
-                    &nbsp
+                   
                   <%- end -%>
                   <%- if @document.respond_to?( :to_sms_text ) -%>
                     <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>item[:call]), {:id => 'smsLink', :class => 'lightboxLink'} %>

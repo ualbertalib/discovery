@@ -12,18 +12,17 @@
         <%= @document.to_h["databasedescription_tesim"].first.html_safe %>
       <% end %>
      
-      <br /><br />
-     
+     <div class="hidden-xs">
       <% if @subjects  %>
         <%= render "subjects" %>
       <% end %>
-
+    </div>
     <%# if @authors %>
       <%# render "authors" %>
    <%# end %>
 
     </div>
-    <div class="col-sm-3 full-record-book-jacket">
+    <div class="col-sm-3 full-record-book-jacket hidden-xs">
       <% if @document[:isbn_t] %>
         <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].join %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
       <% end %>
@@ -38,10 +37,14 @@
       -->
       <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
     <% end %>
-  <div id="sidebar" class="col-sm-3 top-margin">
+  <div id="sidebar" class="col-sm-3 top-margin hidden-xs">
   <%= render_document_sidebar_partial %>
 </div>
- 
+ <div class="visible-xs">
+   <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
+      <%= render "place_hold" %>
+    <% end %>
+  </div>
 <div class="col-sm-12">
    <% if @document["format"].include? "Database" %>
      <%= render "databases" %>
@@ -65,5 +68,5 @@
       <% else %>
   <%= render "holdings" %>
 <% end %>
-  </div>
+
 </div>

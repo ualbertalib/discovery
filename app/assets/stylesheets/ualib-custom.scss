@@ -256,6 +256,7 @@ ul.foot-nav{
 	list-style: none;
 }
 .foot-nav li a{
+
 	display: block;
 	padding: 0px 5px;
 	color: #ecf4e5;
@@ -1422,7 +1423,7 @@ ul.foot-nav{
 	display: block;
 	padding: 0px 15px;
 	color: #ecf4e5;
-	font-size: 19px;
+	font-size: 14px;
 }
 #footer{
 	  background: asset_url("footer-bg.jpg") #1b4724 repeat-x;
@@ -2161,6 +2162,9 @@ ul.foot-nav{
     }
     #main-nav p{
   		font-size: 16px;
+  	}
+  	.french-home #main-nav p{
+  		font-size: 14px;
   	}
   	#main-nav.small h3{
 		font-size: 17px;
