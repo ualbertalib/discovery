@@ -26,3 +26,4 @@ token.txt
 # /config/solr.yml
 # /solr/blacklight-core/conf/solrconfig.xml
 /coverage
+.DS_Store
