@@ -444,35 +444,38 @@ ul.ask{
 #main-nav h3{
 	margin: 0;
 	margin-bottom: 5px;
-}
-#main-nav p{
-	padding-left:50px;
+		padding-left:60px;
 	padding-right: 10px;
-	font-size: 16px;
-	margin-bottom: 0;
-	color: #333;
+	min-height:70px;
 }
+#main-nav h3.top-padded{
+	padding-top:15px;
+	}
+
 #main-nav #home-nav{
 	padding-left: 0;
 }
 #main-nav #account-nav{
 	padding-right: 0;
 }
-#main-nav #services-nav p{
-	background: asset_url("services-icon.png") no-repeat left 10px;
+#main-nav #services-nav h3{
+	background: asset_url("services-icon.png") no-repeat 10px 10px;
 }
 
-#main-nav #subjects-nav p{
-	background: asset_url("subjects-icon.png") no-repeat left 10px;
+#main-nav #subjects-nav h3{
+	background: asset_url("subjects-icon.png") no-repeat 10px 10px;
 }
-#main-nav #research-nav p{
-	background: asset_url("research-icon.png") no-repeat left 10px;
+#main-nav #research-nav h3{
+	background: asset_url("research-icon.png") no-repeat  10px 10px;
 }
-#main-nav #news-nav p{
-	background: asset_url("news-icon.png") no-repeat left 10px;
+#main-nav #news-nav h3{
+	background: asset_url("news-icon.png") no-repeat  10px 10px;
 }
-#main-nav #account-nav p{
-	background: asset_url("account-icon.png") no-repeat left 10px;
+#main-nav #news-nav h3 em{
+	font-style:normal;
+}
+#main-nav #account-nav h3{
+	background: asset_url("account-icon.png") no-repeat  10px 10px;
 }
 #main-nav.small h3{
 	background:none;
@@ -2114,6 +2117,9 @@ ul.foot-nav{
 		-webkit-background-size: 20px;
 		background-size: 20px;
 	}
+	#main-nav.small #news-nav h3 em{
+		display:none;
+	}
 	#main-nav.small #account-nav h3{
 		background: asset_url("account-icon.png") no-repeat left 0px;
 		-webkit-background-size: 20px;
@@ -2129,7 +2135,7 @@ ul.foot-nav{
 		font-size: 15px;
 	}
 	#main-nav>div>div{
-		height: 120px;
+		height: 75px;
 	}
 	#main-nav.small>div>div{
 		margin-top: 0px;
