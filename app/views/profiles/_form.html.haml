@@ -11,7 +11,7 @@
 			= f.text_field :job_title
 		%li
 			= f.label :unit
-			= f.text_field :unit
+			= f.select "unit", [["Access Services", "access"], ["Augustana Library", "augustana"], ["Bibliographic Services", "bib"], ["Bibliothèque Saint-Jean", "saint"], ["Business Library", "business"], ["Collection Strategies", "collections"], ["Digital Initiatives", "digital"], ["Education & Physical Education Library", "education"], ["External Relations", "external"], ["Facilities", "facilities"], ["Health Sciences Library", "health"], ["Humanities & Social Sciences / Law Libraries", "humanities"], ["Information Technology Services", "its"], ["Learning Services / Library Human Resources", "hr"], ["Science & Technology Library", "science"], ["Special Collections & Archives", "special"], ["University of Alberta Archives", "archives"]]
 		%li
 			= f.label :email
 			= f.text_field :email
@@ -20,7 +20,7 @@
 			= f.text_field :phone
 		%li
 			= f.label :campus_address
-			= f.text_field :campus_address
+			= f.select "campus_address", [["Augustana Campus Library", "augustana"], ["Book & Record Dep (BARD)", "bard"], ["Cameron Library", "cameron"], ["Campus Saint-Jean", "saintjean"], ["Coutts Library", "coutts"], ["JW Scott Library", "scott"], ["Rutherford North", "rutherford"], ["Rutherford South", "rutherfordsouth"], ["Winspear Library", "winspear"]]
 		%li
 			= f.label :expertise
 			= f.text_field  :expertise

@@ -1,16 +1,33 @@
 class ProfilesController < ApplicationController
-	
+	$units = {:access => "Access Services", :augustana => "Augustana Library", :bib => "Bibliographic Services", :saint => "Bibliothèque Saint-Jean",  
+              	:business => "Business Library", :collections => "Collection Strategies", :digital => "Digital Initiatives", 
+              	:education => "Education & Physical Education Library", :external => "External Relations", :facilities => "Facilities", 
+              	:health => "Health Sciences Library", :humanities => "Humanities & Social Sciences / Law Libraries", 
+              	:its => "Information Technology Services", :hr => "Learning Services / Library Human Resources", 
+              	:science => "Science & Technology Library", :special => "Special Collections & Archives", 
+              	:archives => "University of Alberta Archives"}
+    $buildings = {:augustana => "Augustana Campus Library", :bard => "Book & Record Dep (BARD)", :cameron => "Cameron Library", :saintjean => "Campus Saint-Jean", 
+    				:coutts => "Coutts Library", :scott => "JW Scott Library", :rutherford => "Rutherford North", :rutherfordsouth => "Rutherford South", 
+    				:winspear => "Winspear Library"}
 	def index
-    	@profiles = Profile.all.order(:first_name)
-    	 respond_to do |format|
+		path = request.url
+    	if path.include? "unit"
+    		@unit = params[:unit]
+			@unitname = $units[params[:unit].to_sym]
+			@profiles = Profile.where("unit=?", params[:unit])
+		else
+    		@profiles = Profile.all.order(:first_name)
+    	end
+    	respond_to do |format|
     		format.html
     		format.csv { send_data @profiles.to_csv }
-  end
+  		end
   	end
 	
-	def show
-    	@profile = Profile.friendly.find(params[:id])
+	def show	
+			@profile = Profile.friendly.find(params[:id])
 	end
+
 
 	def new
 		@profile = Profile.new
@@ -42,6 +59,12 @@ class ProfilesController < ApplicationController
   		@profile.destroy
  
   		redirect_to profiles_path
+	end
+
+	def units
+		@unit = params[:id]
+		@unitname = $units[params[:id].to_sym]
+		@profiles = Profile.where("unit=?", params[:id])
 	end
 
 	private

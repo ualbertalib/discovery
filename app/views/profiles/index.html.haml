@@ -1,55 +1,94 @@
 .container.profile-padding
   .row
-    %h1
-      Library Staff
+    - if !@unitname.nil?
+      .col-sm-5
+        %h1
+          = @unitname
+          Staff
+          = link_to("see all staff", profiles_path)
+      .col-sm-7
+        %p.unit-description
+          - if @unit == "access"
+            Access Services lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          - if @unit == "augustana"
+            Augustana Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            = link_to("More about Augustana Library", "/about-us") 
+          - if @unit == "bib"
+            Bibliographic Services lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            = link_to("Bibliographic Services", "/about-us") 
+          - if @unit == "saint"
+            Bibliothèque Saint-Jean lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "business"
+            Business Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          - if @unit == "collections"
+            Collection Strategies lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "digital"
+            Digital Initiatives lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "education"
+            Education & Physical Education Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          - if @unit == "external"
+            External Relations lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "facilities"
+            Facilities lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "health"
+            Health Sciences Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "humanities"
+            Humanities & Social Sciences / Law Libraries lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "its"
+            Information Technology Services lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          - if @unit == "hr"
+            Learning Services / Library Human Resources lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "science"
+            Science & Technology Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "special"
+            Bruce Peel Special Collections lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          - if @unit == "archives"
+            University of Alberta Archives lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    - else
+      .col-sm-5
+        %h1
+          Library Staff
+      .col-sm-7
+        Filter by Unit 
   .row
     .profile-nav.col-md-11
     %table.staff
       %thead
-        %tr
-          %th.blank
+        %tr.hidden-xs
+          %th.staff-images-h
           %th.first-name{"data-sort" => "string"}
-            %h3
-              First Name
-          %th.last-name{"data-sort" => "string"}
-            %h3
-              Last Name
-          %th.job-title.hidden-xs{"data-sort" => "string"}
-            %h3
-              Job Title
+            first name
+          %th.last-name.tinycolumn{"data-sort" => "string"}
+            %span.moveover
+              last name
           %th.unit.hidden-xs{"data-sort" => "string"}
-            %h3
-              Unit
-          %th.email.hidden-xs
-            %h3
-              Email
-          %th.phone.hidden-xs   
-            %h3
-              Phone
+            unit
+          %th
           %th.building.hidden-xs{"data-sort" => "string"}      
-            %h3
-              Building
+            building
       - @profiles.each do |profile|
         %tr
           - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
           - @no_photo = "staff-photos/thumbs/none.jpg"
-          %td
+          %td.staff-images
             = link_to image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", style: 'width:100%;'), profile_path(profile)
           %td
-            %h3
-              = link_to(profile.first_name.capitalize, profile_path(profile)) 
-          %td
-            %h3
-              = link_to(profile.last_name.capitalize, profile_path(profile)) 
+            %h2
+              = link_to((profile.first_name.capitalize+" "+profile.last_name.capitalize), profile_path(profile))
+            %em
+              = profile.job_title
+            %p.visible-xs
+              %a{ :href => "tel:#{profile.phone}"}
+                = profile.phone  
+          %td.tinycolumn
+            %span.hidden
+              = profile.last_name
           %td.hidden-xs
-            = profile.job_title
-          %td.hidden-xs     
-            = profile.unit
+            = link_to($units[profile.unit.to_sym], "/staff/?unit="+profile.unit)    
           %td.hidden-xs   
-            = mail_to profile.email, profile.email
-          %td.hidden-xs    
-            = profile.phone
+            %a{ :href => "tel:#{profile.phone}"}
+              = profile.phone
+            %p
+              = mail_to profile.email, profile.email
           %td.hidden-xs      
-            = profile.campus_address
-   
-
+            = link_to($buildings[profile.campus_address.to_sym], "http://www.library.ualberta.ca/sandbox/locations/"+profile.campus_address)    
