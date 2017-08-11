@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
               	:archives => "University of Alberta Archives"}
     $buildings = {:augustana => "Augustana Campus Library", :bard => "Book & Record Dep (BARD)", :cameron => "Cameron Library", :saintjean => "Campus Saint-Jean", 
     				:coutts => "Coutts Library", :scott => "JW Scott Library", :rutherford => "Rutherford North", :bpsc=> "Bruce Peel Special Collections Library", 
-    				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library"}
+    				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
 	def index
 		path = request.url
     	if path.include? "unit"
