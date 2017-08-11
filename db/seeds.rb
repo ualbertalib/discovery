@@ -1,11 +1,3 @@
-ActiveRecord::SessionStore::Session.create!([
-  {session_id: "b9b206cbfc6a0e68d92252b87d1df38c", data: "BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjFqQ0h6cEpodzkrM2RWK2lsQ1lt\nTGw2ZS9BbmV2dnNQZWRYdjIzSVc0cUVvPQY7AEZJIgxzaXRlX2lkBjsARmkG\nSSIKZmxhc2gGOwBUewdJIgxkaXNjYXJkBjsAVFsGSSIMc3VjY2VzcwY7AEZJ\nIgxmbGFzaGVzBjsAVHsGSSIMc3VjY2VzcwY7AEZJIhFQYWdlIGNyZWF0ZWQG\nOwBU\n"},
-  {session_id: "38f03ca6a702e6f604246ac12ba23f91", data: "BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjF6WE9CNmd0ZUlSaTFGcTZDU1ZD\nTEoremhMeWdoMklXLy9JeTdJUlpCMjNvPQY7AEY=\n"},
-  {session_id: "1b32ab5e86b91ca64b4f424d9a1e0bd6", data: "BAh7B0kiEF9jc3JmX3Rva2VuBjoGRUZJIjFsczNDTmZJUlBkdFJwNWxhSmZB\ndEFwN25UK1AydG8zSE1VMXZzTzJFY0RNPQY7AEZJIgxzaXRlX2lkBjsARmkG\n"},
-  {session_id: "c0055fcbee7fb4b5c8b0a221b4236766", data: "BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFGWCtnelZjVnkxTC8rSlhOTkph\nenp6aEVhWUdKVHRDTUpJdGZYTWRscCtBPQY7AEY=\n"},
-  {session_id: "b50ca2018f49b215bebf1809acea4670", data: "BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjEvSUxTK0FhcWxUbU5NQlZ3dEkx\ndFEzaU1DZVVwM1dnZDVDTmVEWG45ZUVvPQY7AEY=\n"},
-  {session_id: "4dbf4a7bc3037b8bf832604bc810b42b", data: "BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFDYWtoM0pCb1hIYWt4WnZXbTk0\nRm9Ia2FIVktic3ZaZHQvZTQ5b0UyRExZPQY7AEY=\n"}
-])
 Profile.create!([
   {first_name: "Alexander", last_name: "Strilets", job_title: "Web Application Developer", unit: "its", email: "strilets@ualberta.ca", phone: "780-492-2052", campus_address: "cameron", expertise: "", introduction: "", publications: "", staff_since: nil, links: "", orcid: "", committees: "", personal_interests: "", opt_in: nil, slug: "alexander-strilets", liason: ""},
   {first_name: "Alfred", last_name: "Rinas", job_title: "BARD Assistant", unit: "access", email: "fred.rinas@ualberta.ca", phone: "780-248-1405", campus_address: "rutherford", expertise: "", introduction: "", publications: "", staff_since: nil, links: "", orcid: "", committees: "", personal_interests: "", opt_in: nil, slug: "alfred-rinas", liason: ""},

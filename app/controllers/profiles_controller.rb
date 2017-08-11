@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
               	:science => "Science & Technology Library", :special => "Special Collections & Archives", 
               	:archives => "University of Alberta Archives"}
     $buildings = {:augustana => "Augustana Campus Library", :bard => "Book & Record Dep (BARD)", :cameron => "Cameron Library", :saintjean => "Campus Saint-Jean", 
-    				:coutts => "Coutts Library", :scott => "JW Scott Library", :rutherford => "Rutherford North", :rutherfordsouth => "Rutherford South", 
+    				:coutts => "Coutts Library", :scott => "JW Scott Library", :rutherford => "Rutherford North", :bpsc=> "Bruce Peel Special Collections Library", 
     				:winspear => "Winspear Library"}
 	def index
 		path = request.url
@@ -15,6 +15,10 @@ class ProfilesController < ApplicationController
     		@unit = params[:unit]
 			@unitname = $units[params[:unit].to_sym]
 			@profiles = Profile.where("unit=?", params[:unit])
+		elsif path.include? "building"
+    		@building = params[:building]
+			@buildingname = $buildings[params[:building].to_sym]
+			@profiles = Profile.where("campus_address=?", params[:building])
 		else
     		@profiles = Profile.all.order(:first_name)
     	end

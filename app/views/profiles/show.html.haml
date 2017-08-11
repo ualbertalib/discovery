@@ -15,7 +15,7 @@
       = @profile.phone
     %span.adr
       %span.street-address
-        = link_to($buildings[@profile.campus_address.to_sym], "http://library.ualberta.ca/sandbox/locations/"+@profile.campus_address)
+        = link_to($buildings[@profile.campus_address.to_sym], "http://library.ualberta.ca/locations/"+@profile.campus_address)
   %ul
     -if @profile.unit.presence
       %li.unit
