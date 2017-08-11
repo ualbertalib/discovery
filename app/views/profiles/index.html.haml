@@ -1,46 +1,13 @@
 .row
   .col-sm-10
     - if !@unitname.nil?
-      %h3
+      %h1
         = @unitname
         Staff
-      %p.unit-description
-        - if @unit == "access"
-          Access Services lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        - if @unit == "augustana"
-          Augustana Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          = link_to("More about Augustana Library", "/about-us") 
-        - if @unit == "bib"
-          Bibliographic Services lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          = link_to("Bibliographic Services", "/about-us") 
-        - if @unit == "saint"
-          Bibliothèque Saint-Jean lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "business"
-          Business Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        - if @unit == "collections"
-          Collection Strategies lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "digital"
-          Digital Initiatives lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "education"
-          Education & Physical Education Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        - if @unit == "external"
-          External Relations lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "facilities"
-          Facilities lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "health"
-          Health Sciences Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "humanities"
-          Humanities & Social Sciences / Law Libraries lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "its"
-          Information Technology Services lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        - if @unit == "hr"
-          Learning Services / Library Human Resources lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "science"
-          Science & Technology Library lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "special"
-          Bruce Peel Special Collections lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        - if @unit == "archives"
-          University of Alberta Archives lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.        
+    -elsif !@buildingname.nil?
+      %h1
+        = @buildingname
+        Staff
     - else
       %h1
         Library Staff
@@ -58,45 +25,46 @@
             %a.dropdown-item{"href" => "/staff/?unit="+"#{key}"}
               = "#{value}"         
 .row
-  %table.staff
-    %thead
-      %tr.hidden-xs
-        %th.staff-images-h
-          %strong
-            Sort by:
-        %th.first-name{"data-sort" => "string"}
-          first name
-        %th.last-name.tinycolumn{"data-sort" => "string"}
-          %span.moveover
-            last name
-        %th.unit.hidden-xs{"data-sort" => "string"}
-          unit
-        %th
-        %th.building.hidden-xs{"data-sort" => "string"}      
-          building
-    - @profiles.each do |profile|
-      %tr
-        - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
-        - @no_photo = "staff-photos/thumbs/none.jpg"
-        %td.staff-images
-          = link_to image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", style: 'width:100%;'), profile_path(profile)
-        %td
-          %h2
-            = link_to((profile.first_name.capitalize+" "+profile.last_name.capitalize), profile_path(profile))
-          %em
-            = profile.job_title
-          %p.visible-xs
+  .col-sm-12
+    %table.staff
+      %thead
+        %tr.hidden-xs
+          %th.staff-images-h
+            %strong
+              Sort by:
+          %th.first-name{"data-sort" => "string"}
+            first name
+          %th.last-name.tinycolumn{"data-sort" => "string"}
+            %span.moveover
+              last name
+          %th.unit.hidden-xs{"data-sort" => "string"}
+            unit
+          %th
+          %th.building.hidden-xs{"data-sort" => "string"}      
+            building
+      - @profiles.each do |profile|
+        %tr
+          - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
+          - @no_photo = "staff-photos/thumbs/none.jpg"
+          %td.staff-images
+            = link_to image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", style: 'width:100%;'), profile_path(profile)
+          %td
+            %h2
+              = link_to((profile.first_name.capitalize+" "+profile.last_name.capitalize), profile_path(profile))
+            %em
+              = profile.job_title
+            %p.visible-xs
+              %a{ :href => "tel:#{profile.phone}"}
+                = profile.phone  
+          %td.tinycolumn
+            %span.hidden
+              = profile.last_name
+          %td.hidden-xs
+            = link_to($units[profile.unit.to_sym], "/staff/?unit="+profile.unit)    
+          %td.hidden-xs   
             %a{ :href => "tel:#{profile.phone}"}
-              = profile.phone  
-        %td.tinycolumn
-          %span.hidden
-            = profile.last_name
-        %td.hidden-xs
-          = link_to($units[profile.unit.to_sym], "/staff/?unit="+profile.unit)    
-        %td.hidden-xs   
-          %a{ :href => "tel:#{profile.phone}"}
-            = profile.phone
-          %p
-            = mail_to profile.email, profile.email
-        %td.hidden-xs      
-          = link_to($buildings[profile.campus_address.to_sym], "http://www.library.ualberta.ca/sandbox/locations/"+profile.campus_address)    
+              = profile.phone
+            %p
+              = mail_to profile.email, profile.email
+          %td.hidden-xs      
+            = link_to($buildings[profile.campus_address.to_sym], "http://www.library.ualberta.ca/locations/"+profile.campus_address)    
