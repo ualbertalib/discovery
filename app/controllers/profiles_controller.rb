@@ -36,10 +36,14 @@ class ProfilesController < ApplicationController
 
 	def new
 		@profile = Profile.new
+		@buildings = $buildings
+		@units = $units
 	end
 
 	def edit
 		@profile = Profile.friendly.find(params[:id])
+		@buildings = $buildings
+		@units = $units
 	end
 
 	def create
@@ -71,6 +75,7 @@ class ProfilesController < ApplicationController
 		@unitname = $units[params[:id].to_sym]
 		@profiles = Profile.where("unit=?", params[:id])
 	end
+
 
 	private
 	

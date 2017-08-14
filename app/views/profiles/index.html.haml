@@ -47,7 +47,11 @@
           - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
           - @no_photo = "staff-photos/thumbs/none.jpg"
           %td.staff-images
-            = link_to image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", style: 'width:100%;'), profile_path(profile)
+            - res = Net::HTTP.get_response(URI.parse(@photo_link))
+            - if res.code.to_i >= 200 && res.code.to_i < 400
+              = link_to image_tag(@photo_link), profile_path(profile)  
+            - else
+              = link_to image_tag(@no_photo), profile_path(profile)    
           %td
             %h2
               = link_to((profile.first_name.capitalize+" "+profile.last_name.capitalize), profile_path(profile))

@@ -2,7 +2,9 @@
   = link_to profiles_path, class: "staff-back" do
     <span class="glyphicon glyphicon-chevron-left"></span>  All Staff	
   - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/"+@profile.first_name.downcase+"-"+@profile.last_name.downcase+".jpg"
-  = image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", :class=>"a-photo")
+  - res = Net::HTTP.get_response(URI.parse(@photo_link))
+  - if res.code.to_i >= 200 && res.code.to_i < 400
+    = image_tag(@photo_link, :class=>"a-photo")
   %h2.fn
     %span.given-name
       = @profile.first_name
