@@ -71,4 +71,4 @@
             %p
               = mail_to profile.email, profile.email
           %td.hidden-xs      
-            = link_to($buildings[profile.campus_address.to_sym], "http://www.library.ualberta.ca/locations/"+profile.campus_address)    
+            = link_to($buildings[profile.campus_address.to_sym], "/locations/"+profile.campus_address)    
