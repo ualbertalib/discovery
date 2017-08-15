@@ -14,11 +14,15 @@
         = @profile.last_name
     %h3.title
       = @profile.job_title
-    = mail_to @profile.email, @profile.email, class: "email"
+    %span.email
+      %span.glyphicon.glyphicon-envelope
+      = mail_to @profile.email, @profile.email, class: "email"
     %span.tel
-      = @profile.phone
+      %span.glyphicon.glyphicon-earphone
+      = link_to @profile.phone, "tel:"+@profile.phone
     %span.adr
       %span.street-address
+        Building: 
         = link_to($buildings[@profile.campus_address.to_sym], "/locations/"+@profile.campus_address)
   %ul
     -if @profile.unit.presence

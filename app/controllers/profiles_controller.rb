@@ -4,11 +4,10 @@ class ProfilesController < ApplicationController
               	:education => "Education & Physical Education Library", :external => "External Relations", :facilities => "Facilities", 
               	:health => "Health Sciences Library", :humanities => "Humanities & Social Sciences / Law Libraries", 
               	:its => "Information Technology Services", :hr => "Learning Services / Library Human Resources", 
-              	:science => "Science & Technology Library", :special => "Special Collections & Archives", 
-              	:archives => "University of Alberta Archives"}
+              	:science => "Science & Technology Library", :special => "Special Collections & Archives"}
     $buildings = {:augustana => "Augustana Campus Library", :bard => "Book & Record Dep (BARD)", :cameron => "Cameron Library", 
     				:bsj => "Bibliothèque Saint-Jean", :coutts => "Coutts Library", :scott => "JW Scott Library", 
-    				:rutherford => "Rutherford North", :rutherfords => "Rutherford South", :bpsc=> "Bruce Peel Special Collections Library", 
+    				:rutherford => "Rutherford North", :rutherfords => "Rutherford South", :bpsc=> "Bruce Peel Special Collections", 
     				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
 	def index
 		path = request.url
