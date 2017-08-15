@@ -17,13 +17,13 @@
         Filter by Unit
         %span.caret
       %ul.dropdown-menu{"role" => "menu"}
-        %li 
+        %li
           %a.dropdown-item{"href" => "/staff"}
             ALL STAFF
         - $units.each_with_index do |(key, value), index|
           %li
             %a.dropdown-item{"href" => "/staff/?unit="+"#{key}"}
-              = "#{value}"         
+              = "#{value}"
 .row
   .col-sm-12
     %table.staff
@@ -40,18 +40,20 @@
           %th.unit.hidden-xs{"data-sort" => "string"}
             unit
           %th
-          %th.building.hidden-xs{"data-sort" => "string"}      
+          %th.building.hidden-xs{"data-sort" => "string"}
             building
       - @profiles.each do |profile|
         %tr
-          - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
+          - require 'uri'
+          - @photo_link_dirty = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
+          - @photo_link = URI.encode(@photo_link_dirty)
           - @no_photo = "staff-photos/thumbs/none.jpg"
           %td.staff-images
             - res = Net::HTTP.get_response(URI.parse(@photo_link))
-            - if res.code.to_i >= 200 && res.code.to_i < 400
-              = link_to image_tag(@photo_link), profile_path(profile)  
+            - if res.code.to_i == 200
+              = link_to image_tag(@photo_link), profile_path(profile)
             - else
-              = link_to image_tag(@no_photo), profile_path(profile)    
+              = link_to image_tag(@no_photo), profile_path(profile)
           %td
             %h2
               = link_to((profile.first_name.capitalize+" "+profile.last_name.capitalize), profile_path(profile))
@@ -59,16 +61,16 @@
               = profile.job_title
             %p.visible-xs
               %a{ :href => "tel:#{profile.phone}"}
-                = profile.phone  
+                = profile.phone
           %td.tinycolumn
             %span.hidden
               = profile.last_name
           %td.hidden-xs
-            = link_to($units[profile.unit.to_sym], "/staff/?unit="+profile.unit)    
-          %td.hidden-xs   
+            = link_to($units[profile.unit.to_sym], "/staff/?unit="+profile.unit)
+          %td.hidden-xs
             %a{ :href => "tel:#{profile.phone}"}
               = profile.phone
             %p
               = mail_to profile.email, profile.email
           %td.hidden-xs      
-            = link_to($buildings[profile.campus_address.to_sym], "/locations/"+profile.campus_address)    
+            = link_to($buildings[profile.campus_address.to_sym], "/locations/"+profile.campus_address) 
