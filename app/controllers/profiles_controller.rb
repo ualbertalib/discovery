@@ -9,6 +9,8 @@ class ProfilesController < ApplicationController
     				:bsj => "Bibliothèque Saint-Jean", :coutts => "Coutts Library", :scott => "JW Scott Library", 
     				:rutherford => "Rutherford North", :rutherfords => "Rutherford South", :bpsc=> "Bruce Peel Special Collections", 
     				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
+	#! too clever is dumb 
+
 	def index
 		path = request.url
     	if path.include? "unit"
