@@ -17,11 +17,11 @@ class ProfilesController < ApplicationController
     	if path.include? "unit"
     		@unit = params[:unit]
 			@unitname = $units[params[:unit].to_sym]
-			@profiles = Profile.where("unit=?", params[:unit])
+			@profiles = Profile.where("unit=?", params[:unit]).order(:first_name)
 		elsif path.include? "building"
     		@building = params[:building]
 			@buildingname = $buildings[params[:building].to_sym]
-			@profiles = Profile.where("campus_address=?", params[:building])
+			@profiles = Profile.where("campus_address=?", params[:building]).order(:first_name)
 		else
     		@profiles = Profile.all.order(:first_name)
     	end
