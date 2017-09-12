@@ -547,23 +547,6 @@ $(function() {
   $("#searchclear").click(function(){
     $("#q").val('');
 });
-
-  if ($(".hours-select").length){
-  var default_location = $( ".hours-select" ).val();
-  $( ".library-picker" ).html( getHoursLocationStatus(default_location) );
-  $( ".hours-select" ).change(function () {
-    var library = "";
-    var location = "";
-    $( "select option:selected" ).each(function() {
-      library += $( this ).text() + " ";
-      location = $(this).val();
-    });
-    imagestring ="https://www2.library.ualberta.ca/2015assets/lib-icons/"+location+".png";
-    $( ".library-picker" ).text(library);
-    $( ".lib-pick img" ).attr( "src", imagestring);
-    $( ".library-picker" ).html( getHoursLocationStatus(location) );
-  })
-}
  $(".news-square").hoverIntent(
     function() {
       $(this).find(".details").fadeIn(250);
@@ -642,6 +625,46 @@ chart.render();
     ShowDesc : false
   });
   }
+   if ($("#collection-headlines").length){
+    $('#headlines').FeedEk({
+    FeedUrl:'https://featuredcollectionsuofa.blogspot.ca/feeds/posts/default',
+    MaxCount : 4,
+    DateFormat: 'LLL',
+    ShowDesc : false
+  });
+  }
+if ($("#hours").length){
+
+ 	var url = 'https://api3-ca.libcal.com/api_hours_today.php?iid=3750&lid=0&format=json&systemTime=0&callback=?';
+	$.getJSON(url,function(json){
+		$.each(json.locations, function(index, element) {
+    		$( "#hours" ).append("<option value="+json.locations[index].lid+">"+json.locations[index].name+"</option>");
+    		$( ".picker-title" ).text(json.locations[0].name);
+    		$( ".picker-hours" ).html(json.locations[0].rendered).text();
+		});	
+		 $( ".hours-select" ).change(function () {
+    	 	var library = "";
+    	 	var location = "";
+    		$( "select option:selected" ).each(function() {
+    			 library += $(this).text() + " ";
+    			 location = $(this).val();
+      			
+    		});
+    		$( ".picker-title" ).text(library);
+    		$.each(json.locations, function(index, element) {
+    			if (json.locations[index].lid == location) {
+    				$( ".picker-hours" ).html(json.locations[index].rendered).text();
+    			}
+    		
+			});	
+    		
+    		imagestring ="https://www2.library.ualberta.ca/2015assets/lib-icons/"+location+".png";
+    		$( ".lib-pick img" ).attr( "src", imagestring);
+  
+  })
+  		
+	});
+}
 });
 
 

@@ -672,6 +672,10 @@ label.mod{
 	list-style: none;
 	padding-left: 0;
 }
+.today{
+	font-size:13px;
+	text-transform:capitalize;
+}
 .search-header{
 	color:  #38566c;
 	padding-top: 10px;
@@ -1289,7 +1293,7 @@ padding: 0px 15px 10px 15px;
 	margin: 5px 0;
 }
 .library-picker{
-	font-size: 20px;
+	font-size: 18px;
 	text-transform: uppercase;
 	display: block;
 	background-color: #fff;
@@ -1297,11 +1301,14 @@ padding: 0px 15px 10px 15px;
 }
 .library-picker h3{
 	margin: 0px 0px 7px 0px;
-	font-size: 21px;
+	font-size: 24px;
 	 text-transform: capitalize;
 	background-color: #eceff4;
 	padding-bottom: 5px;
 
+}
+.padded-bottom{
+	padding-bottom:30px;
 }
 .international{
 	color: #fff;
