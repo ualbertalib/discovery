@@ -11,7 +11,7 @@
 			= f.text_field :job_title
 		%li
 			= f.label :unit
-			= f.text_field :unit
+			= f.collection_select "unit", @units, :first, :last
 		%li
 			= f.label :email
 			= f.text_field :email
@@ -20,7 +20,7 @@
 			= f.text_field :phone
 		%li
 			= f.label :campus_address
-			= f.text_field :campus_address
+			= f.collection_select "campus_address", @buildings, :first, :last
 		%li
 			= f.label :expertise
 			= f.text_field  :expertise

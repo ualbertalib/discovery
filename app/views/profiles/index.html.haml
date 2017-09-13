@@ -1,55 +1,76 @@
-.container.profile-padding
-  .row
-    %h1
-      Library Staff
-  .row
-    .profile-nav.col-md-11
+.row
+  .col-sm-10
+    - if !@unitname.nil?
+      %h1
+        = @unitname
+        Staff
+    -elsif !@buildingname.nil?
+      %h1
+        = @buildingname
+        Staff
+    - else
+      %h1
+        Library Staff
+  .col-sm-2
+    .btn-group
+      %a.btn.btn-default.btn-lg.dropdown-toggle{"type" => "button", "data-toggle" => "dropdown", "aria-expanded" => "false"}
+        Filter by Unit
+        %span.caret
+      %ul.dropdown-menu{"role" => "menu"}
+        %li
+          %a.dropdown-item{"href" => "/staff"}
+            ALL STAFF
+        - $units.each_with_index do |(key, value), index|
+          %li
+            %a.dropdown-item{"href" => "/staff/?unit="+"#{key}"}
+              = "#{value}"
+.row
+  .col-sm-12
     %table.staff
       %thead
-        %tr
-          %th.blank
+        %tr.hidden-xs
+          %th.staff-images-h
+            %strong
+              Sort by:
           %th.first-name{"data-sort" => "string"}
-            %h3
-              First Name
-          %th.last-name{"data-sort" => "string"}
-            %h3
-              Last Name
-          %th.job-title.hidden-xs{"data-sort" => "string"}
-            %h3
-              Job Title
+            first name
+          %th.last-name.tinycolumn{"data-sort" => "string"}
+            %span.moveover
+              last name
           %th.unit.hidden-xs{"data-sort" => "string"}
-            %h3
-              Unit
-          %th.email.hidden-xs
-            %h3
-              Email
-          %th.phone.hidden-xs   
-            %h3
-              Phone
-          %th.building.hidden-xs{"data-sort" => "string"}      
-            %h3
-              Building
+            unit
+          %th
+          %th.building.hidden-xs{"data-sort" => "string"}
+            building
       - @profiles.each do |profile|
         %tr
-          - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
+          - require 'uri'
+          - @photo_link_dirty = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/"+profile.first_name.downcase+"-"+profile.last_name.downcase+".jpg"
+          - @photo_link = URI.encode(@photo_link_dirty)
           - @no_photo = "staff-photos/thumbs/none.jpg"
+          %td.staff-images
+            - res = Net::HTTP.get_response(URI.parse(@photo_link))
+            - if res.code.to_i == 200
+              = link_to image_tag(@photo_link), profile_path(profile)
+            - else
+              = link_to image_tag(@no_photo), profile_path(profile)
           %td
-            = link_to image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", style: 'width:100%;'), profile_path(profile)
-          %td
-            %h3
-              = link_to(profile.first_name.capitalize, profile_path(profile)) 
-          %td
-            %h3
-              = link_to(profile.last_name.capitalize, profile_path(profile)) 
+            %h2
+              = link_to((profile.first_name.capitalize+" "+profile.last_name.capitalize), profile_path(profile))
+            %em
+              = profile.job_title
+            %p.visible-xs
+              %a{ :href => "tel:#{profile.phone}"}
+                = profile.phone
+          %td.tinycolumn
+            %span.hidden
+              = profile.last_name
           %td.hidden-xs
-            = profile.job_title
-          %td.hidden-xs     
-            = profile.unit
-          %td.hidden-xs   
-            = mail_to profile.email, profile.email
-          %td.hidden-xs    
-            = profile.phone
+            = link_to($units[profile.unit.to_sym], "/staff/?unit="+profile.unit)
+          %td.hidden-xs
+            %a{ :href => "tel:#{profile.phone}"}
+              = profile.phone
+            %p
+              = mail_to profile.email, profile.email
           %td.hidden-xs      
-            = profile.campus_address
-   
-
+            = link_to($buildings[profile.campus_address.to_sym], "/locations/"+profile.campus_address) 

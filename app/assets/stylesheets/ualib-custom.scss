@@ -672,6 +672,10 @@ label.mod{
 	list-style: none;
 	padding-left: 0;
 }
+.today{
+	font-size:13px;
+	text-transform:capitalize;
+}
 .search-header{
 	color:  #38566c;
 	padding-top: 10px;
@@ -1289,7 +1293,7 @@ padding: 0px 15px 10px 15px;
 	margin: 5px 0;
 }
 .library-picker{
-	font-size: 20px;
+	font-size: 18px;
 	text-transform: uppercase;
 	display: block;
 	background-color: #fff;
@@ -1297,11 +1301,14 @@ padding: 0px 15px 10px 15px;
 }
 .library-picker h3{
 	margin: 0px 0px 7px 0px;
-	font-size: 21px;
+	font-size: 24px;
 	 text-transform: capitalize;
 	background-color: #eceff4;
 	padding-bottom: 5px;
 
+}
+.padded-bottom{
+	padding-bottom:30px;
 }
 .international{
 	color: #fff;
@@ -1640,18 +1647,22 @@ ul.foot-nav{
 	table-layout: fixed;
 	border-collapse:collapse;
 }
+.staff tbody tr:nth-child(odd) td,
+.staff tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
 .staff th{
 	padding: 10px 40px 10px 10px;
 	border: 1px solid #fff;
 	border-width: 1px 1px 0px 1px;
-	background-color: #efefef;
 	cursor: pointer;
 }
 .staff th h3{
-	font-size: 18px;
+	font-size: 19px;
 	background: asset_url("sort.png") no-repeat right center;
-	padding-right: 20px;
+	padding-right: 31px;
 	display: inline;
+	font-weight:bold;
 }
 .staff th.email h3, .staff th.phone h3, .staff th.actions h3{
 	background-image:none;
@@ -1669,12 +1680,14 @@ ul.foot-nav{
 }
 .staff td{
 	padding: 10px;
-	border: 1px solid #efefef;
+	border:0px;
 	font-size: 15px;
 }
-.staff td h3{
-	font-size: 20px;
+.staff td h2{
+	font-size: 25px;
 	text-transform: capitalize;
+	margin-bottom:0px;
+	padding-bottom:0px;
 }
 .staff td.photo{
 	width: 60px;
@@ -1682,8 +1695,31 @@ ul.foot-nav{
 .staff td.email{
 	width: 200px;
 }
+.staff-images{
+	width:110px;
+	height:110px;
+}
+.staff-images-h{
+	width:110px;
+}
+.staff-images img{
+	width:100%;
+}
+.moveover{
+	margin-left:-100px;
+}
+.tinycolumn{
+	width:10px;
+}
 .a-profile{
 	margin-top: 20px;
+}
+.a-profile .glyphicon{
+	font-size:13px;
+}
+.a-profile .tel{
+	display:block;
+	margin:10px 0;
 }
 .a-profile ul{
 	list-style: none;
@@ -1749,11 +1785,158 @@ ul.foot-nav{
 .unit-description{
 	margin-bottom:60px;
 }
-
-
-
-
-
+/* location styles */
+.location-banner{
+  background-size:cover;
+  margin-top:-140px;
+  height:300px;
+  padding-top:90px;
+}
+.location-banner h1{
+	color:#fff;
+   	font-size:80px;
+   	background-color: rgba(0, 0, 0, 0.4);
+   	text-align:center;
+}
+#coutts-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/coutts.jpg");
+}
+#augustana-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/augustana.jpg");
+}
+#winspear-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/winspear.jpg");
+}
+#rutherford-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/rutherford.jpg");
+}
+#scott-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/scott.jpg");
+}
+#law-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/law.jpg");
+}
+#bsj-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/bsj.jpg");
+}
+#bpsc-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/bpsc.jpg");
+}
+#cameron-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/cameron.jpg");
+}
+#stjosephs-banner{
+	background-image:url("https://www2.library.ualberta.ca/2015assets/locations/stjosephs.jpg");
+}
+.address p{
+  font-size:18px;
+}
+.address h3{
+  margin-top:0;
+  font-size:28px;
+  line-height:32px;
+}
+.cms .address a{
+  font-weight:normal;
+}
+.location-btn-green{
+  margin:-10px 0 10px 0;
+}
+.access h2{
+  padding-bottom:0;
+}
+.access h4{
+  background-color:#efefef;
+  padding:5px;
+}
+.hours-link{
+  font-size:20px;
+  margin-left:10px;
+}
+.round-right{
+  float:right;
+  border-radius:10px;
+  margin:0 10px 10px;
+}
+.location-breadcrumbs{
+	margin-top:-15px;
+}
+.location-breadcrumbs span{
+ font-weight:bold;
+  font-size:12px;
+  font-family:"arial", sans-serif;
+}
+/*location list page style*/  
+.location-libraries{
+  padding:0;
+}
+.location-lib{
+  margin:10px;
+  height:200px;
+  display:block;
+  padding-top:50px;
+  background-size:cover;
+}
+.location-lib h2{
+  display:block;
+  background-color:rgba(0,0,0,0.75);
+  color:#fff;
+  font-size:30px;
+  letter-spacing:1px;
+  font-family: 'Abel', sans-serif;
+  padding:20px;
+  text-align:center;
+  }
+.location-lib:hover h2{
+  background-color:#000;
+  }
+.location-lib:hover{
+  opacity:0.95;
+  }
+.location-lib-hours-link{
+  float:right;
+  margin-top:10px;
+  }
+.location-other a{
+    background-color:rgba(0,0,0,0.75);
+  display:block;
+  padding:15px;
+  color:#fff;
+  height:150px;
+ }
+  .location-other a:hover{
+    background-color:#000;
+  color:#efefef;
+ }
+  .location-other h3{
+    margin:10px;
+    font-size:30px;
+  }
+/*foudational tutorial styles*/  
+.tutorial-breadcrumbs{
+  margin:-15px 0 10px -15px;
+  }
+.tutorial-breadcrumbs a{
+  font-size:20px;
+ }
+.bot{
+	width:150px;
+	height:80px;
+}
+.bot-back{
+  background-color:#0b466b;
+  border-radius:20px;
+  padding:5px;
+  text-align:center;
+}
+.bot-back h3{
+   color:#fff;
+   font-size:25;
+  margin:5px auto;
+ }
+.tutorial-title{
+    margin-top:40px;
+}
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
 @media (min-width: 492px){

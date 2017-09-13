@@ -1,8 +1,12 @@
 .a-profile
   = link_to profiles_path, class: "staff-back" do
     <span class="glyphicon glyphicon-chevron-left"></span>  All Staff	
-  - @photo_link = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/"+@profile.first_name.downcase+"-"+@profile.last_name.downcase+".jpg"
-  = image_tag(@photo_link, onerror:"this.src='https://www2.library.ualberta.ca/2015assets/all-staff-photos/thumbs/none.jpg'", :class=>"a-photo")
+  - require 'uri'
+  - @photo_link_dirty = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/"+@profile.first_name.downcase+"-"+@profile.last_name.downcase+".jpg"
+  - @photo_link = URI.encode(@photo_link_dirty)
+  - res = Net::HTTP.get_response(URI.parse(@photo_link))
+  - if res.code.to_i >= 200 && res.code.to_i < 400
+    = image_tag(@photo_link, :class=>"a-photo")
   %h2.fn
     %span.given-name
       = @profile.first_name
@@ -10,18 +14,22 @@
         = @profile.last_name
     %h3.title
       = @profile.job_title
-    = mail_to @profile.email, @profile.email, class: "email"
+    %span.email
+      %span.glyphicon.glyphicon-envelope
+      = mail_to @profile.email, @profile.email, class: "email"
     %span.tel
-      = @profile.phone
+      %span.glyphicon.glyphicon-earphone
+      = link_to @profile.phone, "tel:"+@profile.phone
     %span.adr
       %span.street-address
-        = @profile.campus_address
+        Building: 
+        = link_to($buildings[@profile.campus_address.to_sym], "/locations/"+@profile.campus_address)
   %ul
     -if @profile.unit.presence
       %li.unit
         %h4.inline
           Unit:
-        = @profile.unit
+        = link_to($units[@profile.unit.to_sym], "/staff/?unit="+@profile.unit)   
     -if @profile.expertise.presence
       %li.expertise
         %h4.inline

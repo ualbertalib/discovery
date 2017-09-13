@@ -1,23 +1,51 @@
 class ProfilesController < ApplicationController
-	
+	$units = {:access => "Access Services", :augustana => "Augustana Library", :bib => "Bibliographic Services", :saint => "Bibliothèque Saint-Jean",  
+              	:business => "Business Library", :collections => "Collection Strategies", :digital => "Digital Initiatives", 
+              	:education => "Education & Physical Education Library", :external => "External Relations", :facilities => "Facilities", 
+              	:health => "Health Sciences Library", :humanities => "Humanities & Social Sciences / Law Libraries", 
+              	:its => "Information Technology Services", :hr => "Learning Services / Library Human Resources", 
+              	:science => "Science & Technology Library", :special => "Special Collections & Archives"}
+    $buildings = {:augustana => "Augustana Campus Library", :bard => "Book & Record Dep (BARD)", :cameron => "Cameron Library", 
+    				:bsj => "Bibliothèque Saint-Jean", :coutts => "Coutts Library", :scott => "JW Scott Library", 
+    				:rutherford => "Rutherford North", :rutherfords => "Rutherford South", :bpsc=> "Bruce Peel Special Collections", 
+    				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
+	#! THIS FILE WILL BE EDITED VIA ANSIBLE LINEINFILE, TO CONFIGURE AUTHENTICATION FOR EDITING STAFF PAGES. DO NOT EDIT THE FOLLOWING LINE, ON PAIN OF FAILED UPDATES
+	#! too clever is dumb 
+
 	def index
-    	@profiles = Profile.all.order(:first_name)
-    	 respond_to do |format|
+		path = request.url
+    	if path.include? "unit"
+    		@unit = params[:unit]
+			@unitname = $units[params[:unit].to_sym]
+			@profiles = Profile.where("unit=?", params[:unit]).order(:first_name)
+		elsif path.include? "building"
+    		@building = params[:building]
+			@buildingname = $buildings[params[:building].to_sym]
+			@profiles = Profile.where("campus_address=?", params[:building]).order(:first_name)
+		else
+    		@profiles = Profile.all.order(:first_name)
+    	end
+    	respond_to do |format|
     		format.html
     		format.csv { send_data @profiles.to_csv }
-  end
+  		end
   	end
 	
-	def show
-    	@profile = Profile.friendly.find(params[:id])
+	def show	
+			@profile = Profile.friendly.find(params[:id])
 	end
+
 
 	def new
 		@profile = Profile.new
+		@buildings = $buildings
+		@units = $units
 	end
 
 	def edit
 		@profile = Profile.friendly.find(params[:id])
+		@buildings = $buildings
+		@units = $units
 	end
 
 	def create
@@ -43,6 +71,13 @@ class ProfilesController < ApplicationController
  
   		redirect_to profiles_path
 	end
+
+	def units
+		@unit = params[:id]
+		@unitname = $units[params[:id].to_sym]
+		@profiles = Profile.where("unit=?", params[:id])
+	end
+
 
 	private
 	
