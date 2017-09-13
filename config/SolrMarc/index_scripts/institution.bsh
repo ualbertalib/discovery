@@ -6,6 +6,8 @@ public Set getInstitutions(Record record){
 
   Set institutions = new LinkedHashSet();
   String code_string = indexer.getFirstFieldVal(record, "596a");
+
+  if (code_string != null){
   String[] codes = code_string.split(" ");
   Hashtable institution_codes = new Hashtable();
 
@@ -74,6 +76,7 @@ public Set getInstitutions(Record record){
  for (String code : codes){
     institutions.add(institution_codes.get(code));
   }
+}
  return institutions;
 }
 
