@@ -19,9 +19,9 @@ public Set getInstitutions(Record record){
   institution_codes.put("6", "Alberta Health Services");
   institution_codes.put("7", "Alberta Health Services");
   institution_codes.put("8", "Keyano College");
-  institution_codes.put("9", "Alberta Health Services");
+  institution_codes.put("9", "Northern Lakes College");
   institution_codes.put("10", "Alberta Health Services");
-  institution_codes.put("11", "Alberta Innovates");
+  institution_codes.put("11", "Northern Lakes College");
   institution_codes.put("12", "Alberta Innovates");
   institution_codes.put("13", "NEOS Free Internet Resources");
   institution_codes.put("14", "Alberta Innovates");
@@ -32,7 +32,7 @@ public Set getInstitutions(Record record){
   institution_codes.put("19", "Alberta Health Services");
   institution_codes.put("20", "Alberta Health Services");
   institution_codes.put("21", "Concordia University of Edmonton");
-  institution_codes.put("22", "Alberta Health Services");
+  institution_codes.put("22", "Northern Lakes College");
   institution_codes.put("23", "Burman University");
   institution_codes.put("24", "MacEwan University");
   institution_codes.put("25", "Alberta Health Services");
