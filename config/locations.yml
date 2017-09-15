@@ -1,47 +1,58 @@
 aegeo:  Alberta Geological Survey
 aginternet: Alberta Government Library - Internet
-agl_cap:  Alberta Government Library - Capital Boulevard
-agl_com:  Alberta Government Library - Commerce Place
-agl_gwl:  Alberta Government Library - Great West Life
-agl_lb: Alberta Government Library - Labour Building
-agl_mnc:  Alberta Government Library - Monenco Bldg Calgary
-agl_ncc:  Alberta Government Library - Neil Crawford Centre
-agl_ssp:  Alberta Government Library - 107 Street
-agl_tpn:  Alberta Government Library - Telus Plaza North
-ahs_ahe: Alberta Health Services - Alberta Hospital Edmonton
-ahs_centen: Alberta Health Services - Centennial Centre
-ahs_rah:  Alberta Health Services - Royal Alexandra Hospital
-ahs_reddr: Alberta Health Services - Red Deer Regional Hospital
-ahs_sturg: Alberta Health Services - Sturgeon Community Hospital
+aglcap:  Alberta Government Library - Capital Boulevard
+aglcom:  Alberta Government Library - Commerce Place
+aglgwl:  Alberta Government Library - Great West Life
+agllb: Alberta Government Library - Labour Building
+aglmnc:  Alberta Government Library - Monenco Bldg Calgary
+aglncc:  Alberta Government Library - Neil Crawford Centre
+aglssp:  Alberta Government Library - 107 Street
+agltpn:  Alberta Government Library - Telus Plaza North
+ahsach: Alberta Health Services - Alberta Children's Hospital
+ahsahe: Alberta Health Services - Alberta Hospital Edmonton
+ahscenten: Alberta Health Services - Centennial Centre
+ahsctr15: Alberta Health Services - Centre 15
+ahskec: Alberta Health Services - Kaye Edmonton Clinic
+ahsrah:  Alberta Health Services - Royal Alexandra Hospital
+ahsreddr: Alberta Health Services - Red Deer Regional Hospital
+ahsrvgh: Alberta Health Services - Rockyview General Hospital
+ahssturg: Alberta Health Services - Sturgeon Community Hospital
+ahstbcc: Alberta Health Services - Tom Baker Cancer Centre
 ahsglenrse: Alberta Health Services - Glenrose Rehabilitation Hospital
-aitf_calg:  Alberta Innovates - Technology Futures - Calgary
-aitf_c-fer: Alberta Innovates - Technology Futures - C-FER Technologies
-aitf_devon: Alberta Innovates - Technology Futures - Devon
-aitf_mw: Alberta Innovates - Technology Futures - Mill Woods
-aitf_veg: Alberta Innovates - Technology Futures - Vegreville
-concordia:  Concordia University College
+aitfcalg:  Alberta Innovates - Technology Futures - Calgary
+aitfc-fer: Alberta Innovates - Technology Futures - C-FER Technologies
+aitfdevon: Alberta Innovates - Technology Futures - Devon
+aitfmw: Alberta Innovates - Technology Futures - Mill Woods
+aitfveg: Alberta Innovates - Technology Futures - Vegreville
+burman: Burman University
+concordia:  Concordia University of Edmonton
 concordsem: Concordia Lutheran Seminary
 covenantgn: Covenant Health - Grey Nuns Community Hospital
 covenantmh: Covenant Health - Misericordia Community Hospital
 cross:  Cross Cancer Institute
 cuc:  Canadian University College
 gprc: Grande Prairie Regional College
-gprc_frvw: Grande Prairie Regional College - Fairview
-gprc_int: Grande Prairie Regional College - Internet
-gr_mac_acc: Grant MacEwan University - Alberta College Campus
-gr_mac_cac: Grant MacEwan University - Centre for Arts & Communications
-gr_mac_int: Grant MacEwan University - Internet
-gr_mac_soc: Grant MacEwan University - South Campus
-gr_macewan: Grant MacEwan University - City Centre Campus
-justice_ca: Justice Canada
+gprcfrvw: Grande Prairie Regional College - Fairview
+gprcint: Grande Prairie Regional College - Internet
+grmacacc: Grant MacEwan University - Alberta College Campus
+grmaccac: Grant MacEwan University - Centre for Arts & Communications
+grmacint: Grant MacEwan University - Internet
+grmacsoc: Grant MacEwan University - South Campus
+grmacewan: Grant MacEwan University - City Centre Campus
+justiceca: Justice Canada
 keyano: Keyano College
 kings:  The King's University College
-lakelnd_ll: Lakeland College Lloydminster
-lakelnd_vr: Lakeland College Vermilion
+lakelndin: Lakeland College Internet
+lakelndll: Lakeland College Lloydminster
+lakelndvr: Lakeland College Vermilion
 newman: Newman Theological College
+nlcgr: Northern Lakes College - Grouard
+nlcint: Northern Lakes College - Internet
+nlcsl: Northern Lakes College - Slave Lake
 olds: Olds College
-red_deer_c: Red Deer College
+reddeerc: Red Deer College
 taylor: Taylor College and Seminary
+vanguard: Vanguard College
 uaarchives: University of Alberta Archives
 uaaug: University of Alberta Augustana
 uabard: University of Alberta Book and Record Depository
