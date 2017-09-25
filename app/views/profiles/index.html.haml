@@ -4,6 +4,264 @@
       %h1
         = @unitname
         Staff
+      
+      - if @unit == "access"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/cj-de-jong" data-no-turbolink="true">CJ de Jong</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/rutherford" data-no-turbolink="true">Rutherford Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-3795">780-492-3795</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:cj.dejong@ualberta.ca">cj.dejong@ualberta.ca</a>
+      - if @unit == "archives"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/robert-desmarais" data-no-turbolink="true">Robert Desmarais</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/archive" data-no-turbolink="true">BARD</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-248-1300">780-248-1300</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:archives@ualberta.ca">archives@ualberta.ca</a>
+      - if @unit == "augustana"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/nancy-goebel" data-no-turbolink="true">Nancy Goebel</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/augustana" data-no-turbolink="true">Augustana Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-679-1156">780-679-1156</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:nancy.goebel@ualberta.ca">nancy.goebel@ualberta.ca</a>
+      - if @unit == "bib"
+        %ul.unit-top
+          %li
+            Unit Heads:<br/>
+            <a href="/staff/ian-bigelow" data-no-turbolink="true">Ian Bigelow (cataloguing)</a> &amp;<br/>
+            <a href="/staff/sharon-farnel" data-no-turbolink="true">Sharon Farnel (metadata)</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/cameron" data-no-turbolink="true">Cameron Library</a> <br/><br/>
+          %li.last
+            Email:<br/>
+            <a href="mailto:ian.bigelow@ualberta.ca">ian.bigelow@ualberta.ca</a><br/>
+            <a href="mailto:sharon.farnel@ualberta.ca">sharon.farnel@ualberta.ca</a>
+      - if @unit == "saint"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/tatiana-usova" data-no-turbolink="true">Tatiana Usova</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/staint" data-no-turbolink="true">Campus Saint Jean</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-465-8711">780-465-8711</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:usova@ualberta.ca">usova@ualberta.ca</a>
+      - if @unit == "business"
+        %ul.unit-top
+          %li.col-md-2
+            Unit Head:<br/>
+            <a href="/staff/tim-klassen" data-no-turbolink="true">Tim Klassen</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/winspear" data-no-turbolink="true">Business Building</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-5652">780-492-5652</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:twklasse@ualberta.ca">twklasse@ualberta.ca</a>
+      - if @unit == "collections"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            Pending
+          %li.last
+            Location:<br/>
+            <a href="/locations/cameron">Cameron Library</a> 
+      - if @unit == "digital"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/geoff-harder">Geoff Harder</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/cameron">Cameron Library</a> 
+          %li.last
+            Email:<br/>
+            <a href="mailto:geoffrey.harder@ualberta.ca">geoffrey.harder@ualberta.ca</a>
+      - if @unit == "education"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/debbie-feisst" data-no-turbolink="true">Debbie Feisst</a></br>
+            <span>(Katherine Koch as of Jan 1, 2018)</span>
+          %li
+            Location:<br/>
+            Education Centre South
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-3770">780-492-3770</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:educref@ualberta.ca">educref@ualberta.ca</a>
+      - if @unit == "facilities"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/sandra-shores" data-no-turbolink="true">Sandra Shores</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/cameron">Cameron Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-3781">780-492-3781</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:sandra.shores@ualberta.ca">sandra.shores@ualberta.ca</a>
+      - if @unit == "finance"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/kemi-kufuor-boakye" data-no-turbolink="true">Kemi Kufuor-Boakye</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/cameron">Cameron Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-8001">780-492-8001</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:olukemi@ualberta.ca">olukemi@ualberta.ca</a>
+      - if @unit == "health"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/marlene-dorgan" data-no-turbolink="true">Marlene Dorgan</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/scott" data-no-turbolink="true">Health Sciences Centre</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-7947">780-492-7947</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:marlene.dorgan@ualberta.ca">marlene.dorgan@ualberta.ca</a>
+      - if @unit == "hr"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/kathleen-delong" data-no-turbolink="true">Kathleen DeLong</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/cameron">Cameron Library</a> 
+          %li.last
+            Email:<br/>
+            <a href="mailto:kathleen.delong@ualberta.ca">kathleen.delong@ualberta.ca</a>
+      - if @unit == "humanities"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/christine-brown" data-no-turbolink="true">Christine Brown</a> <br/><br/>
+          %li
+            Locations:<br/>
+            <a href="/locations/rutherford" data-no-turbolink="true">Rutherford Library</a> &amp; <br/>
+            <a href="/locations/law" data-no-turbolink="true">Weir Law Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-5791">780-492-5791</a><br/><br/>
+          %li.last
+            Email:<br/>
+            <a href="mailto:christine.brown@ualberta.ca">christine.brown@ualberta.ca</a><br/><br/>
+      - if @unit == "its"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/sandra-shores" data-no-turbolink="true">Sandra Shores</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/cameron">Cameron Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-6456">780-492-6456</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:sandra.shores@ualberta.ca">sandra.shores@ualberta.ca</a>
+      - if @unit == "admin"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/kathleen-delong" data-no-turbolink="true">Kathleen DeLong</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/cameron">Cameron Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-2659">780-492-2659</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:kathleen.delong@ualberta.ca">kathleen.delong@ualberta.ca</a>
+      - if @unit == "science"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/tim-klassen" data-no-turbolink="true">Tim Klassen</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/cameron">Cameron Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-8440">780-492-8440</a>
+          %li.last
+            Email:<br/>
+            <a href="mailto:twklasse@ualberta.ca">twklasse@ualberta.ca</a>
+      - if @unit == "special"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            <a href="/staff/robert-desmarais" data-no-turbolink="true">Robert Desmarais</a> 
+          %li
+            Location:<br/>
+            <a href="/locations/rutherford">Rutherford Library</a> 
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-5998">780-492-5998</a>
+          %li.last
+            Website: 
+            <a href="https://bpsc.library.ualberta.ca/">bpsc.library.ualberta.ca</a></br>
+            Email: 
+            <a href="mailto:robert.desmarais@ualberta.ca">robert.desmarais@ualberta.ca</a>
+      - if @unit == "press"
+        %ul.unit-top
+          %li
+            Unit Head:<br/>
+            Douglas Hildebrand
+          %li
+            Location:<br/>
+            Ring House 2
+          %li
+            Phone:<br/>
+            <a href="tel:780-492-3662">780-492-3662</a>
+          %li.last
+            Website:<br/>
+            <a href="http://www.uap.ualberta.ca">www.uap.ualberta.ca</a>
     -elsif !@buildingname.nil?
       %h1
         = @buildingname

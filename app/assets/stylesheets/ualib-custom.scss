@@ -748,57 +748,49 @@ label.mod{
 	font-size: 23px;
 	margin-left: -5px;
 }
-.services-bx{
-	background: #C97829 no-repeat center 10px;
-	padding: 5px;
-	color: #fff;
-	text-align: center;
-	display: block;
-	border: 5px solid #C97829;
-	margin-bottom:10px;
-}
-.services-bx:hover{
-	background-color: #C1651A;
-	color: #fafbeb;
-	border: 5px solid #fafbeb;
-}
 
-.aud .services-bx{
-	background: #4f5555 no-repeat center 10px;
-	border: 5px solid #4f5555;
-	}
-.aud .services-bx:hover{
-	background-color: #333;
-	color: #efefef;
-	border: 5px solid #757678;
-}
-.services-bx h3{
-	font-size: 21px;
-}
-#services-pane .service-box li>a{
-	font-size: 20px;
-	border:none;
-	padding: 5px 10px;
-}
-#services-pane .service-box li>ul{
-	margin-top: -7px;
-}
-#services-pane .service-box li>ul>li{
-	margin: 0;
-}
-#services-pane .service-box li>ul>li>a{
-	font-size: 15px;
-	padding:2px 0 2px 20px;
-	margin: 0;
-	border:none;
-}
 #research{
 	background-color: #C7D28A;
 }
 #research .research{
 	background: asset_url("research-image.jpg") no-repeat center center #fff;
-
 }
+
+.services-box{
+  background-color:#333;
+  padding:10px;
+  height: 320px;
+}
+.services-box>h3{
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 28px;
+	text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.55);
+	text-align: center;
+	background-color: #CA7700;
+	padding:10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.services-box ul{
+	list-style: none;
+	padding: 0;
+}
+.services-box ul>li>a{
+	padding:4px 8px;
+	display: block;
+	background-color: #efefef;
+	color:#333;
+	margin-bottom: 2px;
+	font-size:18px;
+}
+.services-box ul>li>a:hover{
+	background-color: #fff;
+	color: #000;
+	}
+
+
+
 #subjects{
 	font-size: 110%;
 	background-color: #452325;
@@ -1646,6 +1638,7 @@ ul.foot-nav{
 	width: 94%;
 	table-layout: fixed;
 	border-collapse:collapse;
+	margin-top: 20px;
 }
 .staff tbody tr:nth-child(odd) td,
 .staff tbody tr:nth-child(odd) th {
@@ -1937,6 +1930,66 @@ ul.foot-nav{
 .tutorial-title{
     margin-top:40px;
 }
+
+/* Workshop tile */
+.news-square>.workshops{
+	background-color: rgba(255, 255, 255, 0.2);
+    padding: 2px 15px;
+}
+.s-lc-ea-h3{
+	display: none;
+}
+.news-square>.workshops h3{
+	color:#fff;
+	margin-top: 10px;
+	font-size: 18px;
+}
+.news-square>.workshops h3 a{
+	display: inline-block;
+	font-size: 13px;
+	padding: 3px 10px;
+	background-color: rgba(255, 255, 255, 0.7);
+	float: right;
+}
+.news-square>.workshops h3 span{
+	font-size: 10px;
+}
+.news-square>.workshops ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.news-square>.workshops ul>li{
+ 	background-color: rgba(255, 255, 255, 0.7);
+ 	padding: 2px 15px;
+ 	margin-bottom: 5px;
+}
+.news-square>.workshops ul>li:hover, .news-square>.workshops h3 a:hover{
+	background-color: rgba(255, 255, 255, 1);
+}
+.news-square>.workshops ul>li>a{
+	font-size: 15px;
+}
+.unit-top{
+	margin: 0;
+	padding: 0;
+}
+.unit-top li{
+ 	list-style: none;
+ 	float: left;
+ 	font-size: 20px;
+ 	border-right: 5px solid #fff;
+ 	padding:10px 20px;
+ 	background-color: #d9eddf;
+}
+.unit-top li.last{
+	border-right: 0;
+}
+.unit-top li span{
+	font-size: 14px;
+}
+
+
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
 @media (min-width: 492px){

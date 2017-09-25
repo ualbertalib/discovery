@@ -1,13 +1,14 @@
 class ProfilesController < ApplicationController
-	$units = {:access => "Access Services", :augustana => "Augustana Library", :bib => "Bibliographic Services", :saint => "Bibliothèque Saint-Jean",  
+	$units = {:access => "Access Services", :archives => "Archives", :augustana => "Augustana Library", :bib => "Bibliographic Services", 
+				:saint => "Bibliothèque Saint-Jean",  :admin => "Learning Services/Libraries Administration",
               	:business => "Business Library", :collections => "Collection Strategies", :digital => "Digital Initiatives", 
-              	:education => "Education & Physical Education Library", :external => "External Relations", :facilities => "Facilities", 
-              	:health => "Health Sciences Library", :humanities => "Humanities & Social Sciences / Law Libraries", 
-              	:its => "Information Technology Services", :hr => "Learning Services / Library Human Resources", 
-              	:science => "Science & Technology Library", :special => "Special Collections & Archives"}
+              	:education => "Education & Physical Education Library", :facilities => "Facilities", :finance => "Financial Systems & Analysis", 
+              	:health => "Health Sciences Library", :hr => "Human Resources", :humanities => "Humanities & Social Sciences / Law Libraries", 
+              	:its => "Information Technology Services", :science => "Science & Technology Library", :special => "Special Collections", 
+              	:press => "University of Alberta Press"}
     $buildings = {:augustana => "Augustana Campus Library", :bard => "Book & Record Dep (BARD)", :cameron => "Cameron Library", 
     				:bsj => "Bibliothèque Saint-Jean", :coutts => "Coutts Library", :scott => "JW Scott Library", 
-    				:rutherford => "Rutherford North", :rutherfords => "Rutherford South", :bpsc=> "Bruce Peel Special Collections", 
+    				:rutherford => "Rutherford", :bpsc=> "Bruce Peel Special Collections", :press => "Ring House 2",
     				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
 	#! THIS FILE WILL BE EDITED VIA ANSIBLE LINEINFILE, TO CONFIGURE AUTHENTICATION FOR EDITING STAFF PAGES. DO NOT EDIT THE FOLLOWING LINE, ON PAIN OF FAILED UPDATES
 	#! too clever is dumb 
