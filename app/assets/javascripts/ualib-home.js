@@ -641,6 +641,8 @@ if ($("#hours").length){
     		$( "#hours" ).append("<option value="+json.locations[index].lid+">"+json.locations[index].name+"</option>");
     		$( ".picker-title" ).text(json.locations[0].name);
     		$( ".picker-hours" ).html(json.locations[0].rendered).text();
+    		$( ".picker-title-fr" ).text(json.locations[12].name);
+    		$( ".picker-hours-fr" ).html(json.locations[12].rendered).text();
 		});	
 		 $( ".hours-select" ).change(function () {
     	 	var library = "";
@@ -651,9 +653,11 @@ if ($("#hours").length){
       			
     		});
     		$( ".picker-title" ).text(library);
+    		$( ".picker-title-fr" ).text(library);
     		$.each(json.locations, function(index, element) {
     			if (json.locations[index].lid == location) {
     				$( ".picker-hours" ).html(json.locations[index].rendered).text();
+    				$( ".picker-hours-fr" ).html(json.locations[index].rendered).text();
     			}
     		
 			});	
