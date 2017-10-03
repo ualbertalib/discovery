@@ -10,8 +10,9 @@ class ProfilesController < ApplicationController
     				:bsj => "Bibliothèque Saint-Jean", :coutts => "Coutts Library", :scott => "JW Scott Library", 
     				:rutherford => "Rutherford", :bpsc=> "Bruce Peel Special Collections", :press => "Ring House 2",
     				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
-	#! THIS FILE WILL BE EDITED VIA ANSIBLE LINEINFILE, TO CONFIGURE AUTHENTICATION FOR EDITING STAFF PAGES. DO NOT EDIT THE FOLLOWING LINE, ON PAIN OF FAILED UPDATES
-	#! too clever is dumb 
+
+        # You'll have to define "profilesEditPassword" in secrets.yml, or this will fail. Thanks, ansible. 
+	http_basic_authenticate_with name: Rails.application.secrets.profilesEditUserid, password: Rails.application.secrets.profilesEditPassword, except: [:index, :show]
 
 	def index
 		path = request.url
