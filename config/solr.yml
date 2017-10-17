@@ -12,7 +12,7 @@
 
 
 development:
-  url: <%= "http://tottenham.library.ualberta.ca:8080/solr/discovery" %>
+  url: "http://localhost:8983/solr"
 test: &test
   url: <%= Rails.application.config.solr %>
 production:
