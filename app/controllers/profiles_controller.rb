@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
     				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
 
         # You'll have to define "profilesEditPassword" in secrets.yml, or this will fail. Thanks, ansible. 
-	http_basic_authenticate_with name: Rails.application.secrets.profilesEditUserid, password: Rails.application.secrets.profilesEditPassword, except: [:index, :show]
+	http_basic_authenticate_with name: Rails.application.secrets.profiles_edit_user, password: Rails.application.secrets.profiles_edit_password, except: [:index, :show]
 
 	def index
 		path = request.url
