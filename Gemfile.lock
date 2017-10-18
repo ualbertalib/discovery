@@ -100,7 +100,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    comfortable_mexican_sofa (1.12.10)
+    comfortable_mexican_sofa (1.12.9)
       active_link_to (>= 1.0.0)
       bootstrap-sass (>= 3.2.0)
       bootstrap_form (>= 2.2.0)
@@ -112,7 +112,7 @@ GEM
       kramdown (>= 1.0.0)
       paperclip (>= 4.0.0)
       plupload-rails (>= 1.2.1)
-      rails (>= 4.0.0, < 5.1)
+      rails (>= 4.0.0, < 5)
       rails-i18n (>= 4.0.0)
       sass-rails (>= 4.0.3)
     concurrent-ruby (1.0.5)
@@ -368,7 +368,7 @@ DEPENDENCIES
   capybara
   ci_reporter_rspec
   coffee-rails (~> 4.1.0)
-  comfortable_mexican_sofa (~> 1.12.0)
+  comfortable_mexican_sofa (= 1.12.9)
   devise
   devise-guests
   factory_girl (~> 4.0)
@@ -396,4 +396,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.15.4
+   1.16.0.pre.3

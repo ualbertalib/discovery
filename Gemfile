@@ -63,6 +63,6 @@ group :test, :development do
 end
 gem 'paperclip', '4.3.6'
 gem 'blacklight_google_analytics'
-gem 'comfortable_mexican_sofa', '~> 1.12.0'
+gem 'comfortable_mexican_sofa', '1.12.9'
 gem "blacklight_range_limit"
 gem 'friendly_id'
