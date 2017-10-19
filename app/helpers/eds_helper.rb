@@ -2,32 +2,30 @@ module EdsHelper
 
   def populate_eds
     if params["q"] then # refactor this
-      catch(:eds_connection_error) do
-        eds = get_eds_results
-        if eds
-          @eds_count = eds["count"]
-          eds.delete("count")
-          @eds = eds
-        end
+      eds = get_eds_results
+      if eds
+        @eds_count = eds["count"]
+        eds.delete("count")
+        @eds = eds
       end
-      else
-        @eds_count = 0
-        @eds = "Empty Search"
+    else
+      @eds_count = 0
+      @eds = "Empty Search"
     end
   end
 
   def get_eds_results
     documents = {}
-    @current_url = request.original_url
+    session[:current_url] = request.original_url
     eds_connect
     params["q"] = params["q"].downcase.gsub("l'", "").gsub("d'", "")
     params["includefacets"] = "y"
     #params["eds_action"] = "addfacetfilter(SourceType:Academic Journals)"
-    params["searchmode"]="all"
-    params["view"]="brief"
-    params["pagenumber"]=1
-    params["highlight"]="y"
-    params["resultsperpage"] = 100
+      params["searchmode"]="all"
+      params["view"]="brief"
+      params["pagenumber"]=1
+      params["highlight"]="y"
+      params["resultsperpage"] = 100
     if has_search_parameters? then
       clean_params = deep_clean(params)
       params = clean_params
@@ -37,13 +35,13 @@ module EdsHelper
     search(options)
 
     # refactor
-    if @results and @results['SearchResult'] and @results['SearchResult']['Statistics'] and @results['SearchResult']['Statistics']['TotalHits']
-      documents["count"] = @results['SearchResult']['Statistics']['TotalHits']
+    if session[:results] and session[:results]['SearchResult'] and session[:results]['SearchResult']['Statistics'] and session[:results]['SearchResult']['Statistics']['TotalHits']
+      documents["count"] = session[:results]['SearchResult']['Statistics']['TotalHits']
       @complete_count += documents["count"]
     end
 
-    if @results and @results['SearchResult'] and @results['SearchResult'] and @results['SearchResult']['Data'] and @results['SearchResult']['Data']['Records'] then
-      results = @results['SearchResult']['Data']['Records']
+    if session[:results] and session[:results]['SearchResult'] and session[:results]['SearchResult'] and session[:results]['SearchResult']['Data'] and session[:results]['SearchResult']['Data']['Records'] then
+      results = session[:results]['SearchResult']['Data']['Records']
       results.each do |result|
         metadata = {}
         if has_restricted_access?(result) then

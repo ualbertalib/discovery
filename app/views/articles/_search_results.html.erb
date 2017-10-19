@@ -1,9 +1,9 @@
 <% unless has_search_parameters? %>
   <p>Empty Search.</p>
 <% else %>
-  <% if @results && @results['SearchResult'] && @results['SearchResult']['Data'] && @results['SearchResult']['Data']['Records'].present? %>
+  <% if session[:results] && session[:results]['SearchResult'] && session[:results]['SearchResult']['Data'] && session[:results]['SearchResult']['Data']['Records'].present? %>
     <div id="documents">
-      <% @results['SearchResult']['Data']['Records'].each do |result| %>
+      <% session[:results]['SearchResult']['Data']['Records'].each do |result| %>
         <div class="document blacklight-<%= show_pubtypeid(result) %>">
           <div class="record-image">
             <% if has_coverimage?(result) %>
@@ -93,11 +93,4 @@
     <% end %>
 
   <% end %>
-  <%# end %>
-
-<%= render 'results_pagination' %>
-
-
-
-
-
+  <%# end %>    

@@ -1,5 +1,5 @@
 
-<% @current_url = request.original_url %>
+<% session[:current_url] = request.original_url %>
 
 <% eds_connect %>
 <%
@@ -7,7 +7,7 @@
   clean_params = deep_clean(params)
   params = clean_params
 %>
-<% unless @results.present? %>
+<% unless session[:results].present? %>
  <% if session[:apiquery].present? %>
   <% search(session[:apiquery]) %>
  <% end %>
@@ -39,45 +39,45 @@
       <div class="document">
         <dl class="dl-horizontal dl-invert">
 
-	  <% if has_authors?(record) %>
-	    <dt class="blacklight-author_display">Author:</dt>
-	    <dd class="blacklight-author_display"><%= show_authors(record) %></dd>
-	  <% end %>
-	  
-	  <% if has_titlesource?(record) %>
-	    <dt class="blacklight-author_display">Source:</dt>
-	    <dd class="blacklight-author_display"><%= show_titlesource(record) %></dd>
-	  <% elsif has_pubdate?(record) %>
-	    <dt class="blacklight-format">Published:</dt>
-	    <dd class="blacklight-format"><%= show_pubdate(record) %></dd>
-	  <% end %>
-	  
-	    <% if has_pubtype?(record) %>
-	    <dt class="blacklight-format">Format:</dt>
-	    <dd class="blacklight-format"><%= show_pubtype(record) %></dd>
-	    <% end %>
-	  
-	    <% if has_abstract?(record) %>
-	    <dt class="blacklight-abstract">Abstract:</dt>
-	    <dd class="blacklight-abstract"><%= show_abstract(record) %></dd>
-	    <% end %>  
-	    
-	    <% if has_subjects?(record) %>
-	    <dt class="blacklight-subject">Subjects:</dt>
-	    <dd class="blacklight-abstract"><%= show_subjects(record) %></dd>  
-	    <% end %>
-	    
-	    <% if has_full_text_on_screen?(record) %>
-	    <a name="fulltext"></a>
-	    <dt class="blacklight-subject">Full Text:</dt>
-	    <% if authenticated_user? %>
- 	    <dd class="blacklight-abstract"><%= show_full_text_on_screen(record).html_safe %></dd>
-	    <% else %>
- 	    <dd class="blacklight-abstract"><%= link_to "Please log in to display full-text.", new_user_session_path %></dd>	     
-	    <% end %>
-	    <% end %>
+    <% if has_authors?(record) %>
+      <dt class="blacklight-author_display">Author:</dt>
+      <dd class="blacklight-author_display"><%= show_authors(record) %></dd>
+    <% end %>
+    
+    <% if has_titlesource?(record) %>
+      <dt class="blacklight-author_display">Source:</dt>
+      <dd class="blacklight-author_display"><%= show_titlesource(record) %></dd>
+    <% elsif has_pubdate?(record) %>
+      <dt class="blacklight-format">Published:</dt>
+      <dd class="blacklight-format"><%= show_pubdate(record) %></dd>
+    <% end %>
+    
+      <% if has_pubtype?(record) %>
+      <dt class="blacklight-format">Format:</dt>
+      <dd class="blacklight-format"><%= show_pubtype(record) %></dd>
+      <% end %>
+    
+      <% if has_abstract?(record) %>
+      <dt class="blacklight-abstract">Abstract:</dt>
+      <dd class="blacklight-abstract"><%= show_abstract(record) %></dd>
+      <% end %>  
+      
+      <% if has_subjects?(record) %>
+      <dt class="blacklight-subject">Subjects:</dt>
+      <dd class="blacklight-abstract"><%= show_subjects(record) %></dd>  
+      <% end %>
+      
+      <% if has_full_text_on_screen?(record) %>
+      <a name="fulltext"></a>
+      <dt class="blacklight-subject">Full Text:</dt>
+      <% if authenticated_user? %>
+      <dd class="blacklight-abstract"><%= show_full_text_on_screen(record).html_safe %></dd>
+      <% else %>
+      <dd class="blacklight-abstract"><%= link_to "Please log in to display full-text.", new_user_session_path %></dd>       
+      <% end %>
+      <% end %>
 
-	</dl>
+  </dl>
       </div>
 
      
@@ -96,41 +96,41 @@
     <br />
     <%= show_pubtype(record) %>
     </div>
-	    <% if authenticated_user? %>
-	    <% if has_any_fulltext?(record) %>
-	    <dt class="blacklight-fulltext">Full-Text Options:</dt>
-	    <% fulltextlinks = [] %>
-	    <dd class="blacklight-fulltext">
-	    <% if has_pdf?(record) %>
-	      <% fulltextlinks.push(link_to("PDF Full Text", show_pdf_link(record))) %>
-	    <% end %>
-	    <% if has_html?(record) %>
-	      <% fulltextlinks.push(link_to("HTML Full Text", "#fulltext")) %>
-	    <% end %>
-	    <% if has_smartlink?(record) %>
-	      <% fulltextlinks.push(link_to("Linked Full Text", show_smartlink(record))) %>
-	    <% end %>
-	    <% if has_ebook?(record) %>
-	      <% fulltextlinks.push(link_to("eBook Full Text", show_ebook_link(record))) %>
-	    <% end %>
-	    
-	    <% if has_fulltext?(record) %>
-	      <% fulltextlinks.push(show_best_fulltext_link_detail(record)) %>
-	    <% end %>
-	    <%= fulltextlinks.join("<br />").html_safe %>
-	    </dd>
-	    <% elsif has_ill?(record) %>
-	    <dt class="blacklight-ill">Interlibrary Loan:</dt>
-	    <dd class="blacklight-ill"><%= show_ill(record) %></dd>  
-	  <% end %>
-	  <% else %>
-	    <dt class="blacklight-fulltext"><%= link_to "Please log in to see full-text options", new_user_session_path %></dt>
-	  <% end %>
-	  
-	  <br />
-	  <dt class="blacklight-fulltext">Other Options:</dt>
-	    <dd class="blacklight-fulltext"><%= link_to("View Record in EDS",show_plink(record),:target => "_blank") %></dd>
-	    
+      <% if authenticated_user? %>
+      <% if has_any_fulltext?(record) %>
+      <dt class="blacklight-fulltext">Full-Text Options:</dt>
+      <% fulltextlinks = [] %>
+      <dd class="blacklight-fulltext">
+      <% if has_pdf?(record) %>
+        <% fulltextlinks.push(link_to("PDF Full Text", show_pdf_link(record))) %>
+      <% end %>
+      <% if has_html?(record) %>
+        <% fulltextlinks.push(link_to("HTML Full Text", "#fulltext")) %>
+      <% end %>
+      <% if has_smartlink?(record) %>
+        <% fulltextlinks.push(link_to("Linked Full Text", show_smartlink(record))) %>
+      <% end %>
+      <% if has_ebook?(record) %>
+        <% fulltextlinks.push(link_to("eBook Full Text", show_ebook_link(record))) %>
+      <% end %>
+      
+      <% if has_fulltext?(record) %>
+        <% fulltextlinks.push(show_best_fulltext_link_detail(record)) %>
+      <% end %>
+      <%= fulltextlinks.join("<br />").html_safe %>
+      </dd>
+      <% elsif has_ill?(record) %>
+      <dt class="blacklight-ill">Interlibrary Loan:</dt>
+      <dd class="blacklight-ill"><%= show_ill(record) %></dd>  
+    <% end %>
+    <% else %>
+      <dt class="blacklight-fulltext"><%= link_to "Please log in to see full-text options", new_user_session_path %></dt>
+    <% end %>
+    
+    <br />
+    <dt class="blacklight-fulltext">Other Options:</dt>
+      <dd class="blacklight-fulltext"><%= link_to("View Record in EDS",show_plink(record),:target => "_blank") %></dd>
+      
   </div><!--/span -->
 </div>
 <% end %>
