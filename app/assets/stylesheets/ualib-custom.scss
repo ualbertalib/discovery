@@ -441,6 +441,25 @@ ul.ask{
 #main-nav>div>div:hover{
 	background-color: #fffef2;
 }
+#main-nav>div>div:before {
+  content: "";
+  position: absolute;
+  width:91%;
+  height: 3px;
+  bottom: 15px;
+  left: 10px;
+  background-color: #05522D;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+#main-nav>div>div:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
 #main-nav h3{
 	margin: 0;
 	margin-bottom: 5px;
