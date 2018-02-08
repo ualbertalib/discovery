@@ -1,12 +1,12 @@
 class ProfilesController < ApplicationController
 	$units = {:access => "Access Services", :archives => "Archives", :augustana => "Augustana Library", :bib => "Bibliographic Services", 
 				:saint => "Bibliothèque Saint-Jean", :business => "Business Library", :collections => "Collection Strategies", :digital => "Digital Initiatives", 
-              	:education => "Education & Physical Education Library", :facilities => "Facilities", :finance => "Financial Systems & Analysis", 
+              	:education => "Education / Kinesiology, Sport & Recreation Library", :facilities => "Facilities", :finance => "Financial Systems & Analysis", 
               	:health => "Health Sciences Library", :hr => "Human Resources", :humanities => "Humanities & Social Sciences / Law Libraries", 
               	:its => "Information Technology Services", :admin => "Learning Services/Libraries Administration", :science => "Science & Technology Library", :special => "Special Collections", 
               	:press => "University of Alberta Press"}
     $buildings = {:augustana => "Augustana Campus Library", :bard => "Book & Record Dep (BARD)", :cameron => "Cameron Library", 
-    				:bsj => "Bibliothèque Saint-Jean", :coutts => "Coutts Library", :scott => "JW Scott Library", 
+    				:bsj => "Bibliothèque Saint-Jean", :coutts => "Herbert T. Coutts Library ", :scott => "JW Scott Library", 
     				:rutherford => "Rutherford", :bpsc=> "Bruce Peel Special Collections", :press => "Ring House 2",
     				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
 
