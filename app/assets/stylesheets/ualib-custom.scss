@@ -60,11 +60,16 @@ a.anchor {
 .minus{
 	margin-top: -13px;
 }
-h1{
+.ualogo{
 	margin: 10px 0px 15px 0px;
 }
-.home h1, .french-home h1{
+.home .ualogo{
 	margin: 23px 0px 10px 0px;
+}
+.home h1{
+	margin:0px;
+	font-size:1px;
+	font-color:#2c733b;
 }
 h2{
   padding-bottom: 10px;
@@ -2045,7 +2050,7 @@ ul.foot-nav{
 		margin-bottom: 5px;
 	}
 	.ualogo{
-		margin-top:0px;
+		margin-top:10px;
 	}
 	ul.ask{
 		margin-left: 190px;
