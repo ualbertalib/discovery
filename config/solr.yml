@@ -12,7 +12,7 @@
 
 
 development:
-  url: "http://amble.library.ualberta.ca:8080/solr/discovery"
+  url: "http://solrcloud-test.library.ualberta.ca:8080/solr/discovery-test"
 test: &test
   url: <%= Rails.application.config.solr %>
 production:

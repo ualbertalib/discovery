@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '4.2.10'
 # User mysql as database adapter for dev, test, and prod
 gem 'sqlite3', group: :workstation
 gem 'mysql2', '~>0.3.20'
