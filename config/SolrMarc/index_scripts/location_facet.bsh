@@ -72,6 +72,8 @@ public Set getLocationFacet(Record record){
   location_codes.put("uaarchives", "University of Alberta Archives");
   location_codes.put("uaaug", "University of Alberta Augustana");
   location_codes.put("uabard", "University of Alberta Book and Record Depository");
+  location_codes.put("uarcrf", "University of Alberta Research
+Collection Resource Facility");
   location_codes.put("uabsj", "University of Alberta Bibliotheque SaintJean");
   location_codes.put("uabusi", "University of Alberta Winspear Business");
   location_codes.put("uabusiness", "University of Alberta Winspear Business");
