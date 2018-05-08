@@ -2,9 +2,8 @@ source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.10'
+gem 'rails'
 # User mysql as database adapter for dev, test, and prod
-gem 'sqlite3', group: :workstation
 gem 'mysql2', '~>0.3.20'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.1'

@@ -1,0 +1,42 @@
+version: '3'
+
+volumes:
+  mysql:
+    driver: local
+  solr:
+    driver: local
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+    volumes:
+      - mysql:/var/lib/mysql
+
+  solr:
+    image: solr:6.0
+    # Uncomment this if you want to access SOLR's web interface
+    ports:
+       - "8983:8983"
+    volumes:
+      - solr:/opt/solr/server/solr/mycores
+      - ./solr/config:/config
+
+  web: 
+    build: .
+    image: ualbertalib/jupiter
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: 'mysql2://root:mysecretpassword@mysql:3306'
+      SOLR_URL: http://solr:8983/solr/development
+      SOLR_TEST_URL: http://solr:8983/solr/test
+    volumes:
+      - .:/app
+    depends_on:
+      - mysql
+      - solr
+    command: bash -c 'rm -f tmp/pids/server.pid && bundle exec rails s -p 4000 -b "0.0.0.0"'
+    ports:
+      - "4000:4000"
