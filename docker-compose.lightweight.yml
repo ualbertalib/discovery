@@ -26,5 +26,5 @@ services:
        - "8983:8983"
     volumes:
       - solr:/opt/solr/server/solr/mycores
-      - ./solr/blacklight-core/conf:/config
+      - ./solr/config:/config
       - ./solr/scripts/solr-precreate-discovery.sh:/docker-entrypoint-initdb.d/solr-precreate-discovery.sh
