@@ -26,3 +26,52 @@ To get the application up and running for development:
 To run the tests for the application:
 
 `bundle exec rake spec`
+
+# Discovery Docker Image
+
+
+## What is this?
+
+This is the image used for User Acceptance Testing (UAT) by the University of Alberta. 
+Our hope is that if anyone wants to get a demo of our repo up and running they will
+be able to use this as a starting point.
+
+
+## Requirements
+
+Ensure you have [Docker (1.13.0+)](https://docs.docker.com/engine/installation/) and 
+[Docker Compose (1.10.0+)](https://docs.docker.com/compose/install/) installed
+
+
+## In this Docker Container
+
+In the Docker Container is minimal dependencies (database client and javascript libraries) 
+to run the Discovery rails application on port 3000. It is based on the ruby:2.4 image maintained 
+by the Docker Community.
+
+
+## Usage
+
+Expected usage is with Docker Compose `docker-compose up -d` which will provision 
+containers for the datastores and setup nginx to serve the application on port 3002.
+
+See [Developer Handbook Docker Usage Section](https://github.com/ualbertalib/Developer-Handbook/tree/master/Docker#docker-usage)
+
+### Updating Docker Hub
+
+* Image will be updated automagically using hooks upon merge to the master branch of [this project on github](https://github.com/ualbertalib/discovery)
+* Find us on [Docker Hub](https://hub.docker.com/r/ualbertalib/discovery)
+
+### Upgrading local container
+
+Expected usage is with Docker Compose `docker-compose pull` which will seek out the latest
+image of Discovery from Docker Hub.
+
+See [Developer Handbook Updating the local container](https://github.com/ualbertalib/Developer-Handbook/tree/master/Docker#updating-local-container)
+
+
+## Frequently used commands
+
+See [Developer Handbook](https://github.com/ualbertalib/Developer-Handbook/tree/master/Docker#frequently-used-commands)
+
+## Special notes / warnings / gotchas
