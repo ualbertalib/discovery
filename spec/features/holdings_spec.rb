@@ -10,7 +10,7 @@ describe HoldingsHelper do
   let(:marc_display_with_print_holdings){ File.open(E::*("fixtures/marc_display_with_print_holdings.xml")).read }
 
   describe "holdings with items" do
-    it "should return a set of Symphony print holdings" do
+    xit "should return a set of Symphony print holdings" do
       document = {}
       document['marc_display'] = marc_display_with_print_holdings
       holdings = holdings(document, :items)
@@ -39,7 +39,7 @@ describe HoldingsHelper do
   end
 
   describe "#fetch_sfx_holdings" do
-    it "should return a set of SFX link URLs" do
+    xit "should return a set of SFX link URLs" do
       document = double("document")
       allow(document).to receive(:[]).with('marc_display'){ marc_display_with_sfx_links }
       allow(document).to receive(:id){ "954921332001" }

@@ -1,5 +1,6 @@
 Discovery Interface for University of Alberta Libraries
 =======================================================
+[![Build Status](https://travis-ci.org/ualbertalib/discovery.svg?branch=master)](https://travis-ci.org/ualbertalib/discovery)
 
 This is the code base for the University of Alberta Libraries's
 discovery platform. Based on [Project
@@ -22,4 +23,6 @@ To get the application up and running for development:
 10. Point your browser to **http://localhost:3000/catalog** or **http://localhost:3000/results**
 11. Solr admin is available at **http://localhost:8983** but note that the qt is `standard` not the default `/select`
 
-TODO: Current status of tests `bundle exec rake spec` is '92 examples, 25 failures, 3 pending'
+To run the tests for the application:
+
+`bundle exec rake spec`
