@@ -5,10 +5,10 @@ class ProfilesController < ApplicationController
               	:health => "Health Sciences Library", :hr => "Human Resources", :humanities => "Humanities & Social Sciences / Law Libraries", 
               	:its => "Information Technology Services", :admin => "Learning Services/Libraries Administration", :science => "Science & Technology Library", :special => "Special Collections", 
               	:press => "University of Alberta Press"}
-    $buildings = {:augustana => "Augustana Campus Library", :bard => "Book & Record Dep (BARD)", :cameron => "Cameron Library", 
-    				:bsj => "Bibliothèque Saint-Jean", :coutts => "Herbert T. Coutts Library ", :scott => "JW Scott Library", 
-    				:rutherford => "Rutherford", :bpsc=> "Bruce Peel Special Collections", :press => "Ring House 2",
-    				:winspear => "Winspear Library", :stjosephs => "St. Joseph's Library", :law => "J.A. Weir Law Library"}
+    $buildings = {:augustana => "Augustana Campus Library", :bsj => "Bibliothèque Saint-Jean", :bpsc=> "Bruce Peel Special Collections",
+    				:cameron => "Cameron Library", :coutts => "Herbert T. Coutts Library ", :law => "J.A. Weir Law Library", :scott => "J.W. Scott Library",
+    				:rcrf => "Research & Collections Resource Facility", :press => "Ring House 2", :rutherford => "Rutherford", 
+    				:stjosephs => "St. Joseph's Library", :winspear => "Winspear Library" }
 
         # You'll have to define "profilesEditPassword" in secrets.yml, or this will fail. Thanks, ansible. 
 	http_basic_authenticate_with name: Rails.application.secrets.profiles_edit_user, password: Rails.application.secrets.profiles_edit_password, except: [:index, :show]
