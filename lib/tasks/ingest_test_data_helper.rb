@@ -1,4 +1,6 @@
-require "rake"
+# frozen_string_literal: true
+
+require 'rake'
 
 module RakeTasks
   def initialize_rake_tasks
@@ -17,7 +19,7 @@ module RakeTasks
   end
 
   def ingest_database_test_set
-    args = {:collection => "database_test_set"}
+    args = { collection: 'database_test_set' }
     Rake.application['ingest'].execute(Rake::TaskArguments.new(args.keys, args.values))
   end
 
@@ -31,4 +33,3 @@ module RakeTasks
     ingest_database_test_set
   end
 end
-

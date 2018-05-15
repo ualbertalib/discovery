@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# frozen_string_literal: true
 
 ##
 # Copyright 2013 EBSCO Information Services
@@ -19,42 +19,40 @@ module Blacklight::ArticlesHelperBehavior
   ############
   # Utility functions and libraries
   ############
-  
+
   require 'fileutils' # for interacting with files
-  require "addressable/uri" # for manipulating URLs in the interface
-  require "htmlentities" # for deconding/encoding URLs
-  require "cgi"
+  require 'addressable/uri' # for manipulating URLs in the interface
+  require 'htmlentities' # for deconding/encoding URLs
+  require 'cgi'
   require 'open-uri'
 
   def html_unescape(text)
-    return CGI.unescape(text)
+    CGI.unescape(text)
   end
-  
+
   def deep_clean(parameters)
-    tempArray = Array.new;
-    parameters.each do |k,v|    
-      unless v.nil?
+    tempArray = []
+    parameters.each do |k, v|
+      if v.nil?
+        clean_key = h(k)
+        tempArray.push(clean_key)
+      else
         if v.is_a?(Array)
           deeperClean = deep_clean(v)
           parameters[k] = deeperClean
         else
           parameters[k] = h(v)
         end
-      else
-          clean_key = h(k)
-          tempArray.push(clean_key)
       end
     end
-    unless tempArray.empty?
-      parameters = tempArray
-    end
-    return parameters
+    parameters = tempArray unless tempArray.empty?
+    parameters
   end
 
   # cleans response from EBSCO API
   def processAPItags(apiString)
     processed = HTMLEntities.new.decode apiString
-    return processed.html_safe
+    processed.html_safe
   end
 
   ###########
@@ -63,18 +61,17 @@ module Blacklight::ArticlesHelperBehavior
 
   # called at the beginning of every page load
   def eds_connect
-
     # use session[:debugNotes] to store any debug text
     # this will display if you render the _debug partial
-    session[:debugNotes] = ""
+    session[:debugNotes] = ''
 
     # creates EDS API connection object, initializing it with application login credentials
     @connection = ConnectionHandler.new(2)
-    File.open(auth_file_location,"r") {|f|
-        @api_userid = f.readline.strip
-        @api_password = f.readline.strip
-        @api_profile = f.readline.strip
-    }
+    File.open(auth_file_location, 'r') do |f|
+      @api_userid = f.readline.strip
+      @api_password = f.readline.strip
+      @api_profile = f.readline.strip
+    end
 
     @connection.ip_init(@api_profile, 'n')
     @connection.ip_authenticate(:json)
@@ -86,7 +83,7 @@ module Blacklight::ArticlesHelperBehavior
     #   @connection.uid_init(@api_userid, @api_password, @api_profile, 'n')
     # else
     #   session[:debugNotes] << "<p>Sending YES as guest.</p>"
-    #   @connection.uid_init(@api_userid, @api_password, @api_profile, 'y')      
+    #   @connection.uid_init(@api_userid, @api_password, @api_profile, 'y')
     # end
     #
     # # generate a new authentication token if their isn't one or the one stored on server is invalid or expired
@@ -104,7 +101,7 @@ module Blacklight::ArticlesHelperBehavior
     #     @session_key = @connection.create_session(@auth_token)
     #     session[:session_key] = @session_key
     #     get_info
-    #   else 
+    #   else
     #     @session_key = session[:session_key]
     #   end
     # else
@@ -114,7 +111,6 @@ module Blacklight::ArticlesHelperBehavior
     # end
     #
     # # at this point, we should have a valid authentication and session token
-
   end
 
   # after basic functions like SEARCH, INFO, and RETRIEVE, check to make sure a new session token wasn't generated
@@ -132,138 +128,131 @@ module Blacklight::ArticlesHelperBehavior
   # options is usually the params hash
   # this function strips out unneeded parameters and reformats them to form a string that the API accepts as input
   def generate_api_query(options)
+    # removing Rails and Blacklight parameters
+    options.delete('action')
+    options.delete('controller')
+    options.delete('utf8')
 
-    #removing Rails and Blacklight parameters
-    options.delete("action")
-    options.delete("controller")
-    options.delete("utf8")
+    # translate Blacklight search_field into query index
+    fieldcode = if options['search_field'].present?
+                  if options['search_field'] == 'author'
+                    'AU:'
+                  elsif options['search_field'] == 'subject'
+                    'SU:'
+                  elsif options['search_field'] == 'title'
+                    'TI:'
+                  else
+                    ''
+                  end
+                else
+                  ''
+                end
 
-    #translate Blacklight search_field into query index
-    if options["search_field"].present?
-      if options["search_field"] == "author"
-        fieldcode = "AU:"
-      elsif options["search_field"] == "subject"
-        fieldcode = "SU:"
-      elsif options["search_field"] == "title"
-        fieldcode = "TI:"
-      else
-        fieldcode = ""
-      end
-    else
-      fieldcode = ""
+    # should write something to allow this to be overridden
+    searchmode = 'AND'
+
+    # build 'query-1' API URL parameter
+    searchquery_extras = searchmode + ',' + fieldcode
+
+    # filter to make sure the only parameters put into the API query are those that are expected by the API
+    edsKeys = ['eds_action', 'q', 'query-1', 'facetfilter[]', 'facetfilter', 'sort', 'includefacets', 'searchmode', 'view', 'resultsperpage', 'sort', 'pagenumber', 'highlight', 'limiter', 'limiter[]']
+    edsSubset = {}
+    options.each do |key, value|
+      edsSubset[key] = value if edsKeys.include?(key)
     end
-    
-    #should write something to allow this to be overridden
-    searchmode = "AND"
-    
-    #build 'query-1' API URL parameter
-    searchquery_extras = searchmode + "," + fieldcode
-    
-    #filter to make sure the only parameters put into the API query are those that are expected by the API
-    edsKeys = ["eds_action","q","query-1","facetfilter[]","facetfilter","sort","includefacets","searchmode","view","resultsperpage","sort","pagenumber","highlight", "limiter", "limiter[]"]
-    edsSubset  = {}
-    options.each do |key,value|
-      if edsKeys.include?(key)
-        edsSubset[key] = value
-      end
-    end
-    
-    #rename parameters to expected names
-    #action and query-1 were renamed due to Rails and Blacklight conventions respectively
-    mappings = {"eds_action" => "action", "q" => "query-1"}
-    newoptions = Hash[edsSubset.map {|k, v| [mappings[k] || k, v] }]
-    
-    #repace the raw query, adding searchmode and fieldcode
-    changeQuery = newoptions["query-1"]
+
+    # rename parameters to expected names
+    # action and query-1 were renamed due to Rails and Blacklight conventions respectively
+    mappings = { 'eds_action' => 'action', 'q' => 'query-1' }
+    newoptions = Hash[edsSubset.map { |k, v| [mappings[k] || k, v] }]
+
+    # repace the raw query, adding searchmode and fieldcode
+    changeQuery = newoptions['query-1']
     uri = Addressable::URI.new
-    newoptions["query-1"] = newoptions["query-1"].gsub(",","")
+    newoptions['query-1'] = newoptions['query-1'].delete(',')
     uri.query_values = newoptions
     searchquery = uri.query
     searchtermindex = searchquery.index('query-1=') + 8
     searchquery.insert searchtermindex, searchquery_extras
-    
+
     # , : ( ) - unencoding expected punctuation
-    searchquery = searchquery.gsub('%28','(').gsub('%3A',':').gsub('%29',')').gsub('%23',',').gsub('%26', '&').gsub('%3B', ';').gsub('&quot', '%22')
-    return searchquery
+    searchquery = searchquery.gsub('%28', '(').gsub('%3A', ':').gsub('%29', ')').gsub('%23', ',').gsub('%26', '&').gsub('%3B', ';').gsub('&quot', '%22')
+    searchquery
   end
-    
+
   # main search function.  accepts string to be tacked on to API endpoint URL
   def search(apiquery)
     results = @connection.search(apiquery, @session_key, @auth_token, :json).to_hash
-    
-    #update session_key if new one was generated in the call
+
+    # update session_key if new one was generated in the call
     checkSessionCurrency
 
-    #results are stored in the session to facilitate faster navigation between detailed records and results list without needed a new API call
+    # results are stored in the session to facilitate faster navigation between detailed records and results list without needed a new API call
     session[:results] = results
     session[:apiquery] = apiquery
   end
-  
-  def retrieve(dbid, an, highlight = "")
-    #debugNotes << "HIGHLIGHTBEFORE:" << highlight.to_s
+
+  def retrieve(dbid, an, highlight = '')
+    # debugNotes << "HIGHLIGHTBEFORE:" << highlight.to_s
     highlight.downcase!
-    highlight.gsub! ',and,',','
-    highlight.gsub! ',or,',','
-    highlight.gsub! ',not,',','
-    #debugNotes << "HIGHLIGHTAFTER: " << highlight.to_s
+    highlight.gsub! ',and,', ','
+    highlight.gsub! ',or,', ','
+    highlight.gsub! ',not,', ','
+    # debugNotes << "HIGHLIGHTAFTER: " << highlight.to_s
     record = @connection.retrieve(dbid, an, highlight, @session_key, @auth_token, :json).to_hash
-    #debugNotes << "RECORD: " << record.to_s
-    #update session_key if new one was generated in the call
+    # debugNotes << "RECORD: " << record.to_s
+    # update session_key if new one was generated in the call
     checkSessionCurrency
 
-    return record
+    record
   end
-  
-  def termsToHighlight(terms = "")
+
+  def termsToHighlight(terms = '')
     if terms.present?
       words = terms.split(/\W+/)
-      return words.join(",").to_s
+      words.join(',').to_s
     else
-      return ""
+      ''
     end
   end
-  
-  # helper function for iterating through results from 
-  def switch_link(params,qurl)
 
+  # helper function for iterating through results from
+  def switch_link(params, _qurl)
     # check to see if the user is navigating to a record that was not included in the current page of results
     # if so, run a new search API call, getting the appropriate page of results
     if params[:resultId].to_i > (params[:pagenumber].to_i * params[:resultsperpage].to_i)
       nextPage = params[:pagenumber].to_i + 1
       newParams = params
-      newParams[:eds_action] = "GoToPage(" + nextPage.to_s + ")"
+      newParams[:eds_action] = 'GoToPage(' + nextPage.to_s + ')'
       options = generate_api_query(newParams)
       search(options)
     elsif params[:resultId].to_i < (((params[:pagenumber].to_i - 1) * params[:resultsperpage].to_i) + 1)
       nextPage = params[:pagenumber].to_i - 1
       newParams = params
-      newParams[:eds_action] = "GoToPage(" + nextPage.to_s + ")"
+      newParams[:eds_action] = 'GoToPage(' + nextPage.to_s + ')'
       options = generate_api_query(newParams)
       search(options)
-    end  
+    end
 
-    link = ""
+    link = ''
     # generate the link for the target record
     if session[:results] && session[:results]['SearchResult'] && session[:results]['SearchResults']['Data'] && session[:results]['SearchResult']['Data']['Records'].present?
       session[:results]['SearchResult']['Data']['Records'].each do |result|
         nextId = show_resultid(result).to_s
-        if nextId == params[:resultId].to_s
-          nextAn = show_an(result).to_s
-          nextDbId = show_dbid(result).to_s
-          nextrId = params[:resultId].to_s
-          nextHighlight = params[:q].to_s
-          link = request.fullpath.split("/switch")[0].to_s + "/" + nextDbId.to_s + "/" + nextAn.to_s + "/?resultId=" + nextrId.to_s + "&highlight=" + nextHighlight.to_s
-        end        
+        next unless nextId == params[:resultId].to_s
+        nextAn = show_an(result).to_s
+        nextDbId = show_dbid(result).to_s
+        nextrId = params[:resultId].to_s
+        nextHighlight = params[:q].to_s
+        link = request.fullpath.split('/switch')[0].to_s + '/' + nextDbId.to_s + '/' + nextAn.to_s + '/?resultId=' + nextrId.to_s + '&highlight=' + nextHighlight.to_s
       end
     end
-    return link.to_s
-
+    link.to_s
   end
 
   # calls the INFO API method
   # counts how many limiters are available
   def get_info
-
     numLimiters = 0
     session[:info] = @connection.info(@session_key, @auth_token, :json).to_hash
     checkSessionCurrency
@@ -272,9 +261,7 @@ module Blacklight::ArticlesHelperBehavior
       if session[:info]['AvailableSearchCriteria'].present?
         if session[:info]['AvailableSearchCriteria']['AvailableLimiters'].present?
           session[:info]['AvailableSearchCriteria']['AvailableLimiters'].each do |limiter|
-            if limiter["Type"] == "select"
-              numLimiters += 1
-            end
+            numLimiters += 1 if limiter['Type'] == 'select'
           end
         end
       end
@@ -282,57 +269,47 @@ module Blacklight::ArticlesHelperBehavior
 
     session[:numLimiters] = numLimiters
   end
-  
+
   ############
   # File / Token Handling / End User Auth
   ############
 
   def authenticated_user?
-    if user_signed_in?
-      return true
-    end
+    return true if user_signed_in?
     # need to define function for detecting on-campus IP ranges
-    return false
+    false
   end
 
   def clear_session_key
     session.delete(:session_key)
   end
-  
+
   def get_session_key
     if session[:session_key].present?
-      return session[:session_key].to_s
+      session[:session_key].to_s
     else
-      return "no session key"
+      'no session key'
     end
   end
 
   def token_file_exists?
-    if File.exists?(token_file_location)
-      return true
-    end
-    return Rails.root.to_s + "/token.txt"
+    return true if File.exist?(token_file_location)
+    Rails.root.to_s + '/token.txt'
   end
-  
+
   def auth_file_exists?
-    if File.exists?(auth_file_location)
-      return true
-    end
-    return Rails.root.to_s + "/APIauthentication.txt"
+    return true if File.exist?(auth_file_location)
+    Rails.root.to_s + '/APIauthentication.txt'
   end
-  
+
   def token_file_location
-    if request.domain.to_s.include?("localhost")
-      return "token.txt"
-    end
-    return Rails.root.to_s + "/token.txt"
+    return 'token.txt' if request.domain.to_s.include?('localhost')
+    Rails.root.to_s + '/token.txt'
   end
-  
+
   def auth_file_location
-    if request.domain.to_s.include?("localhost")
-      return "APIauthentication.txt"
-    end
-    return Rails.root.to_s + "/APIauthentication.txt"
+    return 'APIauthentication.txt' if request.domain.to_s.include?('localhost')
+    Rails.root.to_s + '/APIauthentication.txt'
   end
 
   # returns true if the authtoken stored in token.txt is valid
@@ -340,79 +317,76 @@ module Blacklight::ArticlesHelperBehavior
   def has_valid_auth_token?
     token = timeout = timestamp = ''
     if token_file_exists?
-      File.open(token_file_location,"r") {|f|
-        if f.readlines.size <= 2
-          return false
-        end
-      }
-      File.open(token_file_location,"r") {|f|
-          token = f.readline.strip
-          timeout = f.readline.strip
-          timestamp = f.readline.strip
-      }
+      File.open(token_file_location, 'r') do |f|
+        return false if f.readlines.size <= 2
+      end
+      File.open(token_file_location, 'r') do |f|
+        token = f.readline.strip
+        timeout = f.readline.strip
+        timestamp = f.readline.strip
+      end
     else
-      return false 
+      return false
     end
     if Time.now.getutc.to_i < timestamp.to_i
       return true
     else
-      #session[:debugNotes] << "<p>Looks like the auth token is out of date.. It expired at " << Time.at(timestamp.to_i).to_s << "</p>"
+      # session[:debugNotes] << "<p>Looks like the auth token is out of date.. It expired at " << Time.at(timestamp.to_i).to_s << "</p>"
       return false
     end
   end
-  
+
   def get_token_timeout
-    timestamp = '';
-    File.open(token_file_location,"r") {|f|
-        token = f.readline.strip
-        timeout = f.readline.strip
-        timestamp = f.readline.strip
-    }
-    return Time.at(timestamp.to_i)
+    timestamp = ''
+    File.open(token_file_location, 'r') do |f|
+      token = f.readline.strip
+      timeout = f.readline.strip
+      timestamp = f.readline.strip
+    end
+    Time.at(timestamp.to_i)
   end
-  
+
   # writes an authentication token to token.txt.
   # will create token.txt if it does not exist
   def writeAuthToken(auth_token)
-    timeout = "1800"
+    timeout = '1800'
     timestamp = Time.now.getutc.to_i + timeout.to_i
     timestamp = timestamp.to_s
     auth_token = auth_token.to_s
-    
-    if File.exists?(token_file_location)
-      File.open(token_file_location,"w") {|f|
+
+    if File.exist?(token_file_location)
+      File.open(token_file_location, 'w') do |f|
         f.write(auth_token)
         f.write("\n" + timeout)
         f.write("\n" + timestamp)
-      }
+      end
     else
-      File.new(token_file_location,"w") {|f|
+      File.new(token_file_location, 'w') do |f|
         f.write(auth_token)
         f.write("\n" + timeout)
         f.write("\n" + timestamp)
-      }
-      File.chmod(664,token_file_location)
-      File.open(token_file_location,"w") {|f|
+      end
+      File.chmod(664, token_file_location)
+      File.open(token_file_location, 'w') do |f|
         f.write(auth_token)
         f.write("\n" + timeout)
         f.write("\n" + timestamp)
-      }
+      end
     end
   end
-  
+
   def getAuthToken
     token = ''
     timeout = ''
     timestamp = ''
     if has_valid_auth_token?
-      File.open(token_file_location,"r") {|f|
+      File.open(token_file_location, 'r') do |f|
         token = f.readline.strip
-      }
+      end
       return token
     end
-    return token
+    token
   end
-
 
   ############
   # Linking Utilities
@@ -422,94 +396,88 @@ module Blacklight::ArticlesHelperBehavior
   def generate_next_url
     if session[:results].present?
       url = HTMLEntities.new.decode(session[:results]['SearchRequestGet']['QueryString'])
-      
-      #blacklight expects the search term to be in the parameter 'q'.
-      #q is moved back to 'query-1' in 'generate_api_query'
-      #should probably pull from Info method to determine replacement strings
-      #i could turn the query into a Hash, but available functions to do so delete duplicated params (Addressable)
-      url.gsub!("query-1=AND,TI:","q=")
-      url.gsub!("query-1=AND,AU:","q=")
-      url.gsub!("query-1=AND,SU:","q=")
-      url.gsub!("query-1=AND,","q=")
-      
-      #Rails framework doesn't allow repeated params.  turning these into arrays fixes it.
-      url.gsub!("facetfilter=","facetfilter[]=")
-      url.gsub!("limiter=","limiter[]=")
-      
-      #i should probably pull this from the query, not the URL
-      if (params[:search_field]).present?
-        url << "&search_field=" << params[:search_field].to_s
-      end
-      return url.gsub("&sort=relevance","") # hack to get rid of buggy sort behaviour. Sam Popowich
+
+      # blacklight expects the search term to be in the parameter 'q'.
+      # q is moved back to 'query-1' in 'generate_api_query'
+      # should probably pull from Info method to determine replacement strings
+      # i could turn the query into a Hash, but available functions to do so delete duplicated params (Addressable)
+      url.gsub!('query-1=AND,TI:', 'q=')
+      url.gsub!('query-1=AND,AU:', 'q=')
+      url.gsub!('query-1=AND,SU:', 'q=')
+      url.gsub!('query-1=AND,', 'q=')
+
+      # Rails framework doesn't allow repeated params.  turning these into arrays fixes it.
+      url.gsub!('facetfilter=', 'facetfilter[]=')
+      url.gsub!('limiter=', 'limiter[]=')
+
+      # i should probably pull this from the query, not the URL
+      url << '&search_field=' << params[:search_field].to_s if params[:search_field].present?
+      url.gsub('&sort=relevance', '') # HACK: to get rid of buggy sort behaviour. Sam Popowich
     else
-      return ''
+      ''
     end
   end
 
   # should replace this functionality with AddQuery/RemoveQuery actions
   def generate_next_url_newvar_from_hash(variablehash)
-    uri = Addressable::URI.parse(request.fullpath.split("?")[0] + "?" + generate_next_url)
+    uri = Addressable::URI.parse(request.fullpath.split('?')[0] + '?' + generate_next_url)
     newUri = uri.query_values.merge variablehash
     uri.query_values = newUri
-    return uri.query.to_s
+    uri.query.to_s
   end
 
-  #for the search form at the top of results
-  #retains some of current search's fields (limiters)
-  #discards pagenumber, facets and filters, actions, etc.
+  # for the search form at the top of results
+  # retains some of current search's fields (limiters)
+  # discards pagenumber, facets and filters, actions, etc.
   def show_hidden_field_tags
-    hidden_fields = "";
+    hidden_fields = ''
     params.each do |key, value|
-      unless ((key == "search_field") or (key == "fromDetail") or (key == "facetfilter") or (key == "pagenumber") or (key == "q") or (key == "dbid") or (key == "an"))
-        if (key == "eds_action")
-          if ((value.scan(/addlimiter/).length > 0) or (value.scan(/removelimiter/).length > 0) or (value.scan(/setsort/).length > 0) or (value.scan(/SetResultsPerPage/).length > 0))
-            hidden_fields << '<input type="hidden" name="' << key.to_s << '" value="' << value.to_s << '" />'
-          end
-        elsif value.kind_of?(Array)
+      unless (key == 'search_field') || (key == 'fromDetail') || (key == 'facetfilter') || (key == 'pagenumber') || (key == 'q') || (key == 'dbid') || (key == 'an')
+        if key == 'eds_action'
+          hidden_fields << '<input type="hidden" name="' << key.to_s << '" value="' << value.to_s << '" />' if !value.scan(/addlimiter/).empty? || !value.scan(/removelimiter/).empty? || !value.scan(/setsort/).empty? || !value.scan(/SetResultsPerPage/).empty?
+        elsif value.is_a?(Array)
           value.each do |arrayVal|
-            hidden_fields << '<input type="hidden" name="' << key.to_s << '[]" value="' << arrayVal.to_s << '" />'                
+            hidden_fields << '<input type="hidden" name="' << key.to_s << '[]" value="' << arrayVal.to_s << '" />'
           end
         else
           hidden_fields << '<input type="hidden" name="' << key.to_s << '" value="' << value.to_s << '" />'
         end
       end
     end
-    return hidden_fields.html_safe
+    hidden_fields.html_safe
   end
 
   ###########
   # Pagination
   ###########
-  
-  #display how many results are being shown      
+
+  # display how many results are being shown
   def show_results_per_page
     if params[:eds_action].present?
-      if params[:eds_action].to_s.scan(/SetResultsPerPage/).length > 0
-        rpp = params[:eds_action].to_s.gsub("SetResultsPerPage(","").gsub(")","").to_i
+      unless params[:eds_action].to_s.scan(/SetResultsPerPage/).empty?
+        rpp = params[:eds_action].to_s.gsub('SetResultsPerPage(', '').delete(')').to_i
         return rpp
       end
     end
-    if params[:resultsperpage].present?
-      return params[:resultsperpage].to_i
-    end
-    return 20
+    return params[:resultsperpage].to_i if params[:resultsperpage].present?
+    20
   end
-  
-  #calculates total number of pages in results set
+
+  # calculates total number of pages in results set
   def show_total_pages
     pages = show_total_hits / show_results_per_page
-    return pages + 1
+    pages + 1
   end
-  
-  #get current page, which serves as a base for most pagination functions      
+
+  # get current page, which serves as a base for most pagination functions
   def show_current_page
     if params[:eds_action].present?
-      if params[:eds_action].scan(/GoToPage/).length > 0
+      if !params[:eds_action].scan(/GoToPage/).empty?
         pagenum = params[:eds_action].to_s
-        newpagenum = pagenum.gsub("GoToPage(","")
-        newpagenum = newpagenum.gsub(")","")
+        newpagenum = pagenum.gsub('GoToPage(', '')
+        newpagenum = newpagenum.delete(')')
         return newpagenum.to_i
-      elsif params[:eds_action].scan(/SetResultsPerPage/).length > 0
+      elsif !params[:eds_action].scan(/SetResultsPerPage/).empty?
         if params[:pagenumber].present?
           return params[:pagenumber].to_i
         else
@@ -519,137 +487,120 @@ module Blacklight::ArticlesHelperBehavior
         return 1
       end
     end
-    if params[:pagenumber].present?
-      return params[:pagenumber].to_i
-    end
-    return 1
+    return params[:pagenumber].to_i if params[:pagenumber].present?
+    1
   end
-        
-  #display pagination at the top of the results list
+
+  # display pagination at the top of the results list
   def show_compact_pagination
     previous_link = ''
     next_link = ''
     first_result_on_page_num = ((show_current_page - 1) * show_results_per_page) + 1
     last_result_on_page_num = first_result_on_page_num + show_results_per_page - 1
-    if last_result_on_page_num > show_total_hits
-      last_result_on_page_num = show_total_hits
-    end
-    page_info = "<strong>" + first_result_on_page_num.to_s + "</strong> - <strong>" + last_result_on_page_num.to_s + "</strong> of <strong>" + show_total_hits.to_s + "</strong>"
+    last_result_on_page_num = show_total_hits if last_result_on_page_num > show_total_hits
+    page_info = '<strong>' + first_result_on_page_num.to_s + '</strong> - <strong>' + last_result_on_page_num.to_s + '</strong> of <strong>' + show_total_hits.to_s + '</strong>'
     if show_current_page > 1
       previous_page = show_current_page - 1
-      previous_link = '<a href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=GoToPage(" + previous_page.to_s + ')">&laquo; Previous</a> | '
+      previous_link = '<a href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=GoToPage(' + previous_page.to_s + ')">&laquo; Previous</a> | '
     end
     if (show_current_page * show_results_per_page) < show_total_hits
       next_page = show_current_page + 1
-      next_link = ' | <a href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=GoToPage(" + next_page.to_s + ')">Next &raquo;</a>'
+      next_link = ' | <a href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=GoToPage(' + next_page.to_s + ')">Next &raquo;</a>'
     end
     compact_pagination = previous_link + page_info + next_link
-    return compact_pagination.html_safe
+    compact_pagination.html_safe
   end
-        
-  #bottom pagination.  commented out lines remove 'last page' link, as this is not currently supported by the API
+
+  # bottom pagination.  commented out lines remove 'last page' link, as this is not currently supported by the API
   def show_pagination
     previous_link = ''
     next_link = ''
     page_num_links = ''
-    
+
     if show_current_page > 1
       previous_page = show_current_page - 1
-      previous_link = '<li class=""><a href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=GoToPage(" + previous_page.to_s + ')">&laquo; Previous</a></li>'
+      previous_link = '<li class=""><a href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=GoToPage(' + previous_page.to_s + ')">&laquo; Previous</a></li>'
     else
       previous_link = '<li class="disabled"><a href="">&laquo; Previous</a></li>'
     end
-    
+
     if (show_current_page * show_results_per_page) < show_total_hits
       next_page = show_current_page + 1
-      next_link = '<li class=""><a href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=GoToPage(" + next_page.to_s + ')">Next &raquo;</a></li>'
+      next_link = '<li class=""><a href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=GoToPage(' + next_page.to_s + ')">Next &raquo;</a></li>'
     else
       next_link = '<li class="disabled"><a href="">Next &raquo;</a></li>'
     end
-    
-    if show_current_page >= 4
-      page_num_links << '<li class=""><a href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=GoToPage(" + 1.to_s + ')">1</a></li>'
-    end
-    if show_current_page >= 5
-      page_num_links << '<li class="disabled"><a href="">...</a></li>'
-    end
-    
+
+    page_num_links << '<li class=""><a href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=GoToPage(' + 1.to_s + ')">1</a></li>' if show_current_page >= 4
+    page_num_links << '<li class="disabled"><a href="">...</a></li>' if show_current_page >= 5
+
     # show links to the two pages the the left and right (where applicable)
     bottom_page = show_current_page - 2
-    if bottom_page <= 0
-      bottom_page = 1
-    end
+    bottom_page = 1 if bottom_page <= 0
     top_page = show_current_page + 2
-    if top_page >= show_total_pages
-      top_page = show_total_pages
-    end
+    top_page = show_total_pages if top_page >= show_total_pages
     (bottom_page..top_page).each do |i|
-      unless i == show_current_page
-        page_num_links << '<li class=""><a href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=GoToPage(" + i.to_s + ')">' + i.to_s + '</a></li>'          
-      else
-        page_num_links << '<li class="disabled"><a href="">' + i.to_s + '</a></li>'          
-      end
+      page_num_links << if i == show_current_page
+                          '<li class="disabled"><a href="">' + i.to_s + '</a></li>'
+                        else
+                          '<li class=""><a href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=GoToPage(' + i.to_s + ')">' + i.to_s + '</a></li>'
+                        end
     end
 
-    if show_total_pages >= (show_current_page + 3)
-      page_num_links << '<li class="disabled"><a href="">...</a></li>'
-    end
+    page_num_links << '<li class="disabled"><a href="">...</a></li>' if show_total_pages >= (show_current_page + 3)
 
     pagination_links = previous_link + next_link + page_num_links
-    return pagination_links.html_safe
+    pagination_links.html_safe
   end
-        
+
   #############
   # Facet / Limiter Constraints Box
   #############
-        
+
   # used when determining if the "constraints" partial should display
-  def query_has_facetfilters?(localized_params = params)
-    (generate_next_url.scan("facetfilter[]=").length > 0) or (generate_next_url.scan("limiter[]=").length > 0)
+  def query_has_facetfilters?(_localized_params = params)
+    !generate_next_url.scan('facetfilter[]=').empty? || !generate_next_url.scan('limiter[]=').empty?
   end
-  
+
   # should probably return a hash and let the view handle the HTML
   def show_applied_facets
-    appliedfacets = '';
+    appliedfacets = ''
     if session[:results]['SearchRequestGet']['SearchCriteriaWithActions']['FacetFiltersWithAction'].present?
       session[:results]['SearchRequestGet']['SearchCriteriaWithActions']['FacetFiltersWithAction'].each do |appliedfacet|
         appliedfacet.each do |key, val|
-          if key == "FacetValuesWithAction"
-            val.each do |facetValue|
-              appliedfacets << '<span class="appliedFilter constraint filter filter-format"><span class="filterName">' + facetValue['FacetValue']['Id'].to_s.gsub("EDS","").titleize + '</span><span class="filterValue">' + facetValue['FacetValue']['Value'].to_s.titleize + '</span><a class="btnRemove imgReplace" href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=" + CGI.escape(facetValue['RemoveAction'].to_s) + '">Remove filter</a></span>' 
-            end
+          next unless key == 'FacetValuesWithAction'
+          val.each do |facetValue|
+            appliedfacets << '<span class="appliedFilter constraint filter filter-format"><span class="filterName">' + facetValue['FacetValue']['Id'].to_s.gsub('EDS', '').titleize + '</span><span class="filterValue">' + facetValue['FacetValue']['Value'].to_s.titleize + '</span><a class="btnRemove imgReplace" href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=' + CGI.escape(facetValue['RemoveAction'].to_s) + '">Remove filter</a></span>'
           end
         end
       end
     end
-    return appliedfacets.html_safe        
+    appliedfacets.html_safe
   end
 
   # should return hash and let the view handle the HTML
   def show_applied_limiters
-    appliedlimiters = '';
+    appliedlimiters = ''
     if session[:results].present?
       if session[:results]['SearchRequestGet']['SearchCriteriaWithActions'].present?
         if session[:results]['SearchRequestGet']['SearchCriteriaWithActions']['LimitersWithAction'].present?
           session[:results]['SearchRequestGet']['SearchCriteriaWithActions']['LimitersWithAction'].each do |appliedLimiter|
-            limiterLabel = "No Label"
+            limiterLabel = 'No Label'
             session[:info]['AvailableSearchCriteria']['AvailableLimiters'].each do |limiter|
-              if limiter["Id"] == appliedLimiter["Id"]
-                limiterLabel = limiter["Label"]
-              end
+              limiterLabel = limiter['Label'] if limiter['Id'] == appliedLimiter['Id']
             end
-            if appliedLimiter["Id"] == "DT1"
-              appliedLimiter["LimiterValuesWithAction"].each do |limiterValues|
-                appliedlimiters << '<span class="appliedFilter constraint filter filter-format"><span class="filterName">' + limiterLabel.to_s.titleize + '</span><span class="filterValue">' + limiterValues["Value"].gsub("-01/"," to ").gsub("-12","") + '</span><a class="btnRemove imgReplace" href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=" + appliedLimiter["RemoveAction"].to_s + '">Remove limiter</a></span>'
+            if appliedLimiter['Id'] == 'DT1'
+              appliedLimiter['LimiterValuesWithAction'].each do |limiterValues|
+                appliedlimiters << '<span class="appliedFilter constraint filter filter-format"><span class="filterName">' + limiterLabel.to_s.titleize + '</span><span class="filterValue">' + limiterValues['Value'].gsub('-01/', ' to ').gsub('-12', '') + '</span><a class="btnRemove imgReplace" href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=' + appliedLimiter['RemoveAction'].to_s + '">Remove limiter</a></span>'
               end
             else
-              appliedlimiters << '<span class="appliedFilter constraint filter filter-format"><span class="filterValue">' + limiterLabel.to_s.titleize + '</span><a class="btnRemove imgReplace" href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=" + appliedLimiter["RemoveAction"].to_s + '">Remove limiter</a></span>'
+              appliedlimiters << '<span class="appliedFilter constraint filter filter-format"><span class="filterValue">' + limiterLabel.to_s.titleize + '</span><a class="btnRemove imgReplace" href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=' + appliedLimiter['RemoveAction'].to_s + '">Remove limiter</a></span>'
             end
           end
         end
       end
     end
-    return appliedlimiters.html_safe        
+    appliedlimiters.html_safe
   end
 
   #############
@@ -662,42 +613,37 @@ module Blacklight::ArticlesHelperBehavior
   end
 
   def show_numlimiters
-    unless session[:numLimiters].present?
-      get_info
-    end
-    return session[:numLimiters]
+    get_info unless session[:numLimiters].present?
+    session[:numLimiters]
   end
-        
+
   # show limiters on the view
   def show_limiters
-    limiterCount = 0;
-    limitershtml = '';
-    unless session[:info].present?
-      get_info
-    end
+    limiterCount = 0
+    limitershtml = ''
+    get_info unless session[:info].present?
     if session[:info]['AvailableSearchCriteria']['AvailableLimiters'].present?
       limitershtml << '<form class="form"><ul style="margin-bottom:0px">'
       session[:info]['AvailableSearchCriteria']['AvailableLimiters'].each do |limiter|
-        if limiter["Type"] == "select"
-          limiterChecked = false
-          limiterAction = limiter["AddAction"].to_s.gsub('value','y')
-          if session[:results].present?
-            if session[:results]['SearchRequestGet']['SearchCriteriaWithActions'].present?
-              if session[:results]['SearchRequestGet']['SearchCriteriaWithActions']['LimitersWithAction'].present?
-                session[:results]['SearchRequestGet']['SearchCriteriaWithActions']['LimitersWithAction'].each do |appliedLimiter|
-                  if appliedLimiter["Id"] == limiter["Id"]
-                    limiterChecked = true
-                    limiterAction = appliedLimiter["RemoveAction"].to_s
-                  end
+        next unless limiter['Type'] == 'select'
+        limiterChecked = false
+        limiterAction = limiter['AddAction'].to_s.gsub('value', 'y')
+        if session[:results].present?
+          if session[:results]['SearchRequestGet']['SearchCriteriaWithActions'].present?
+            if session[:results]['SearchRequestGet']['SearchCriteriaWithActions']['LimitersWithAction'].present?
+              session[:results]['SearchRequestGet']['SearchCriteriaWithActions']['LimitersWithAction'].each do |appliedLimiter|
+                if appliedLimiter['Id'] == limiter['Id']
+                  limiterChecked = true
+                  limiterAction = appliedLimiter['RemoveAction'].to_s
                 end
               end
             end
           end
-          limitershtml << "<li style='font-size:small;'>"
-          limitershtml << check_box_tag("limiters", limiterAction, limiterChecked, :id => ("limiter-" + limiterCount.to_s), :style => "margin-top:-5px;")
-          limitershtml << " " << limiter["Label"] << "</li>"
-          limiterCount += 1
         end
+        limitershtml << "<li style='font-size:small;'>"
+        limitershtml << check_box_tag('limiters', limiterAction, limiterChecked, id: ('limiter-' + limiterCount.to_s), style: 'margin-top:-5px;')
+        limitershtml << ' ' << limiter['Label'] << '</li>'
+        limiterCount += 1
       end
       limitershtml << '</ul></form>'
       return limitershtml.html_safe
@@ -707,119 +653,109 @@ module Blacklight::ArticlesHelperBehavior
   end
 
   def show_date_options
-    dateString = ""
+    dateString = ''
     timeObj = Time.new
     currentYear = timeObj.year
     fiveYearsPrior = currentYear - 5
     tenYearsPrior = currentYear - 10
     dateString << '<div class="facet_limit blacklight-date"><h5 class="twiddle">Publication Year<i class="icon-chevron"></i></h5><ul style="display: block;">'
-    dateString << '<li><a href="' << request.fullpath.split("?")[0] << "?" << generate_next_url << '&eds_action=addlimiter(DT1:' << fiveYearsPrior.to_s << '-01/' << currentYear.to_s << '-12)">Last 5 Years</a></li>'
-    dateString << '<li><a href="' << request.fullpath.split("?")[0] << "?" << generate_next_url << '&eds_action=addlimiter(DT1:' << tenYearsPrior.to_s << '-01/' << currentYear.to_s << '-12)">Last 10 Years</a></li>'
+    dateString << '<li><a href="' << request.fullpath.split('?')[0] << '?' << generate_next_url << '&eds_action=addlimiter(DT1:' << fiveYearsPrior.to_s << '-01/' << currentYear.to_s << '-12)">Last 5 Years</a></li>'
+    dateString << '<li><a href="' << request.fullpath.split('?')[0] << '?' << generate_next_url << '&eds_action=addlimiter(DT1:' << tenYearsPrior.to_s << '-01/' << currentYear.to_s << '-12)">Last 10 Years</a></li>'
     dateString << '</ul></div>'
-    return dateString.html_safe
+    dateString.html_safe
   end
-  
+
   # show available facets
   def show_facets
-    facets = '';
+    facets = ''
     if session[:results] && session[:results]['SearchResult'] && session[:results]['SearchResult']['AvailableFacets'].present?
       session[:results]['SearchResult']['AvailableFacets'].each do |facet|
         facets = facets + '<div class="facet_limit blacklight-' + facet['Id'] + '"><h5 class="twiddle">' + facet['Label'] + '<i class="icon-chevron"></i></h5><ul style="display: block;">'
         facet.each do |key, val|
-          if key == "AvailableFacetValues"
-            val.each do |facetValue|
-              facets = facets + '<li><a class="facet_select" href="' + request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=" + CGI.escape(facetValue['AddAction'].to_s) + '">' + facetValue['Value'].to_s.titleize + '</a> <span class="count">' + facetValue['Count'].to_s + '</li>'
-            end
+          next unless key == 'AvailableFacetValues'
+          val.each do |facetValue|
+            facets = facets + '<li><a class="facet_select" href="' + request.fullpath.split('?')[0] + '?' + generate_next_url + '&eds_action=' + CGI.escape(facetValue['AddAction'].to_s) + '">' + facetValue['Value'].to_s.titleize + '</a> <span class="count">' + facetValue['Count'].to_s + '</li>'
           end
         end
-        facets = facets + '</ul></div>'
+        facets += '</ul></div>'
       end
     end
-    return facets.html_safe
+    facets.html_safe
   end
-
 
   #############
   # Sort / Display / Record Count
   #############
-  
+
   # pull sort options from INFO method
   def show_sort_options
-    sortDropdown = "";
+    sortDropdown = ''
     if session[:info]['AvailableSearchCriteria']['AvailableSorts'].present?
       session[:info]['AvailableSearchCriteria']['AvailableSorts'].each do |sortOption|
-        sortDropdown << '<li><a href="' << request.fullpath.split("?")[0] + "?" + generate_next_url << '&eds_action=' << sortOption["AddAction"].to_s << '">' << sortOption["Label"].to_s << '</a></li>'
+        sortDropdown << '<li><a href="' << request.fullpath.split('?')[0] + '?' + generate_next_url << '&eds_action=' << sortOption['AddAction'].to_s << '">' << sortOption['Label'].to_s << '</a></li>'
       end
     end
-    return sortDropdown.html_safe
+    sortDropdown.html_safe
   end
 
   # shows currently selected view
   def show_view_option
-    uri = Addressable::URI.parse(request.fullpath.split("?")[0] + "?" + generate_next_url)
+    uri = Addressable::URI.parse(request.fullpath.split('?')[0] + '?' + generate_next_url)
     newUri = uri.query_values
-    if newUri['view'].present?
-      view_option = newUri['view'].to_s
-    else
-      view_option = "detailed"
-    end
-    return view_option
+    view_option = if newUri['view'].present?
+                    newUri['view'].to_s
+                  else
+                    'detailed'
+                  end
+    view_option
   end
 
   # shows currently selected sort
   def show_current_sort
-    allsorts = '';
+    allsorts = ''
     if params[:eds_action].present?
-      if params[:eds_action].to_s.scan(/setsort/).length > 0
-        currentSort = params[:eds_action].to_s.gsub("setsort(","").gsub(")","")
+      unless params[:eds_action].to_s.scan(/setsort/).empty?
+        currentSort = params[:eds_action].to_s.gsub('setsort(', '').delete(')')
         if session[:info]['AvailableSearchCriteria']['AvailableSorts'].present?
           session[:info]['AvailableSearchCriteria']['AvailableSorts'].each do |sortOption|
-            if sortOption['Id'] == currentSort
-              return "Sort by " << sortOption["Label"]
-            end
+            return 'Sort by ' << sortOption['Label'] if sortOption['Id'] == currentSort
           end
-        end              
+        end
       end
     end
     if params[:sort].present?
       if session[:info]['AvailableSearchCriteria']['AvailableSorts'].present?
         session[:info]['AvailableSearchCriteria']['AvailableSorts'].each do |sortOption|
-          if sortOption['Id'].to_s == params[:sort].to_s
-            return "Sort by " << sortOption["Label"]
-          end
+          return 'Sort by ' << sortOption['Label'] if sortOption['Id'].to_s == params[:sort].to_s
         end
-      end            
+      end
     end
-    return 'Sort by Relevance'
+    'Sort by Relevance'
   end
-    
+
   ###############
   # Results List
   ###############
 
   def has_restricted_access?(result)
     if result['Header']['AccessLevel'].present?
-      if result['Header']['AccessLevel'] == '1'
-        return true
-      end
+      return true if result['Header']['AccessLevel'] == '1'
     end
-    return false
+    false
   end
 
   def show_total_hits
-    return session[:results]['SearchResult']['Statistics']['TotalHits']
+    session[:results]['SearchResult']['Statistics']['TotalHits']
   end
 
   # see if title is available given a single result
   def has_titlesource?(result)
     if result['Items'].present?
       result['Items'].each do |item|
-        if item['Group'].downcase == "src"
-          return true
-        end
+        return true if item['Group'].casecmp('src').zero?
       end
     end
-    return false
+    false
   end
 
   # display title given a single result
@@ -828,29 +764,26 @@ module Blacklight::ArticlesHelperBehavior
     flag = 0
     if result['Items'].present?
       result['Items'].each do |item|
-        if item['Group'].downcase == "src" and flag == 0
+        if item['Group'].casecmp('src').zero? && (flag == 0)
           source = processAPItags(item['Data'].to_s)
           flag = 1
         end
       end
     end
-    return source.html_safe
+    source.html_safe
   end
 
   def has_subjects?(result)
-
     if result['RecordInfo'].present?
       if result['RecordInfo']['BibRecord'].present?
         if result['RecordInfo']['BibRecord']['BibEntity'].present?
           if result['RecordInfo']['BibRecord']['BibEntity']['Subjects'].present?
-            if result['RecordInfo']['BibRecord']['BibEntity']['Subjects'].count > 0
-              return true
-            end
+            return true if result['RecordInfo']['BibRecord']['BibEntity']['Subjects'].count > 0
           end
         end
       end
     end
-    return false  
+    false
   end
 
   def show_subjects(result)
@@ -862,24 +795,23 @@ module Blacklight::ArticlesHelperBehavior
         if result['RecordInfo']['BibRecord']['BibEntity'].present?
           if result['RecordInfo']['BibRecord']['BibEntity']['Subjects'].present?
             result['RecordInfo']['BibRecord']['BibEntity']['Subjects'].each do |subject|
-              if subject['SubjectFull']
-                url_vars = {"q" => '"' + subject['SubjectFull'].to_s + '"', "search_field" => "subject"}
-                link2 = generate_next_url_newvar_from_hash(url_vars) << "&eds_action=GoToPage(1)"
-                if params[:dbid].present?
-                  subject_link = '<a href="' + request.fullpath.split("/" + params[:dbid])[0] + "?" + link2 + '">' + subject['SubjectFull'].to_s + '</a>'
-                else
-                  subject_link = '<a href="' + request.fullpath.split("?")[0] + "?" + link2 + '">' + subject['SubjectFull'].to_s + '</a>'
-                end
-                subject_array.push(subject_link)
-              end
+              next unless subject['SubjectFull']
+              url_vars = { 'q' => '"' + subject['SubjectFull'].to_s + '"', 'search_field' => 'subject' }
+              link2 = generate_next_url_newvar_from_hash(url_vars) << '&eds_action=GoToPage(1)'
+              subject_link = if params[:dbid].present?
+                               '<a href="' + request.fullpath.split('/' + params[:dbid])[0] + '?' + link2 + '">' + subject['SubjectFull'].to_s + '</a>'
+                             else
+                               '<a href="' + request.fullpath.split('?')[0] + '?' + link2 + '">' + subject['SubjectFull'].to_s + '</a>'
+                             end
+              subject_array.push(subject_link)
             end
           end
         end
       end
     end
     subject_string = ''
-    subject_string = subject_array.join(", ")
-    return subject_string.html_safe
+    subject_string = subject_array.join(', ')
+    subject_string.html_safe
   end
 
   def has_pubdate?(result)
@@ -888,21 +820,17 @@ module Blacklight::ArticlesHelperBehavior
         if result['RecordInfo']['BibRecord']['BibRelationships'].present?
           if result['RecordInfo']['BibRecord']['BibRelationships']['IsPartOfRelationships'].present?
             result['RecordInfo']['BibRecord']['BibRelationships']['IsPartOfRelationships'].each do |isPartOfRelationship|
-              if isPartOfRelationship['BibEntity'].present?
-                if isPartOfRelationship['BibEntity']['Dates'].present?
-                  isPartOfRelationship['BibEntity']['Dates'].each do |date|
-                    if date['Type'] == "published"
-                      return true
-                    end
-                  end
-                end
+              next unless isPartOfRelationship['BibEntity'].present?
+              next unless isPartOfRelationship['BibEntity']['Dates'].present?
+              isPartOfRelationship['BibEntity']['Dates'].each do |date|
+                return true if date['Type'] == 'published'
               end
             end
           end
         end
       end
     end
-    return false
+    false
   end
 
   def show_pubdate(result)
@@ -915,22 +843,19 @@ module Blacklight::ArticlesHelperBehavior
         if result['RecordInfo']['BibRecord']['BibRelationships'].present?
           if result['RecordInfo']['BibRecord']['BibRelationships']['IsPartOfRelationships'].present?
             result['RecordInfo']['BibRecord']['BibRelationships']['IsPartOfRelationships'].each do |isPartOfRelationship|
-              if isPartOfRelationship['BibEntity'].present?
-                if isPartOfRelationship['BibEntity']['Dates'].present?
-                  isPartOfRelationship['BibEntity']['Dates'].each do |date|
-                    if date['Type'] == "published" and flag == 0
-                      flag = 1
-                      if date['M'].present? and date['D'].present? and date['Y'].present?
-                        pubdate << date['M'] << "/" << date['D'] << "/" << date['Y']
-                      elsif date['M'].present? and date['Y'].present?
-                        pubdate << date['M'] << "/" << date['Y']
-                      elsif date['Y'].present?
-                        pubdate << date['Y']
-                      else
-                        pubdate << "Not available."
-                      end
-                    end
-                  end
+              next unless isPartOfRelationship['BibEntity'].present?
+              next unless isPartOfRelationship['BibEntity']['Dates'].present?
+              isPartOfRelationship['BibEntity']['Dates'].each do |date|
+                next unless (date['Type'] == 'published') && (flag == 0)
+                flag = 1
+                if date['M'].present? && date['D'].present? && date['Y'].present?
+                  pubdate << date['M'] << '/' << date['D'] << '/' << date['Y']
+                elsif date['M'].present? && date['Y'].present?
+                  pubdate << date['M'] << '/' << date['Y']
+                elsif date['Y'].present?
+                  pubdate << date['Y']
+                else
+                  pubdate << 'Not available.'
                 end
               end
             end
@@ -938,40 +863,34 @@ module Blacklight::ArticlesHelperBehavior
         end
       end
     end
-    return pubdate
+    pubdate
   end
 
   def has_pubtype?(result)
-    return result['Header']['PubType'].present?
+    result['Header']['PubType'].present?
   end
 
   def show_pubtype(result)
-    if has_pubtype?(result)
-      return result['Header']['PubType']
-    end
-    return ''
+    return result['Header']['PubType'] if has_pubtype?(result)
+    ''
   end
-  
+
   def has_pubtypeid?(result)
-    return result['Header']['PubTypeId'].present?
+    result['Header']['PubTypeId'].present?
   end
 
   def show_pubtypeid(result)
-    if has_pubtypeid?(result)
-      return result['Header']['PubTypeId']
-    end
-    return ''
+    return result['Header']['PubTypeId'] if has_pubtypeid?(result)
+    ''
   end
-  
+
   def has_coverimage?(result)
     if result['ImageInfo'].present?
       result['ImageInfo'].each do |coverArt|
-        if coverArt['Size'] == 'thumb'
-          return true
-        end
+        return true if coverArt['Size'] == 'thumb'
       end
     end
-    return false
+    false
   end
 
   def show_coverimage_link(result)
@@ -979,51 +898,42 @@ module Blacklight::ArticlesHelperBehavior
     flag = 0
     if result['ImageInfo'].present?
       result['ImageInfo'].each do |coverArt|
-        if coverArt['Size'] == 'thumb' and flag == 0
+        if (coverArt['Size'] == 'thumb') && (flag == 0)
           artUrl << coverArt['Target']
           flag = 1
         end
       end
     end
-    return artUrl    
+    artUrl
   end
-    
+
   def has_abstract?(result)
     if result['Items'].present?
       result['Items'].each do |item|
-        if item['Group'].present?
-          if item['Group'] == "Ab"
-            return true
-          end          
-        end
+        next unless item['Group'].present?
+        return true if item['Group'] == 'Ab'
       end
     end
-    return false
+    false
   end
 
   def show_abstract(result)
     abstractString = ''
     if result['Items'].present?
       result['Items'].each do |item|
-        if item['Group'].present?
-          if item['Group'] == "Ab"
-            abstractString << item['Data']
-          end          
-        end
+        next unless item['Group'].present?
+        abstractString << item['Data'] if item['Group'] == 'Ab'
       end
     end
     abstract = HTMLEntities.new.decode abstractString
-    return abstract.html_safe
+    abstract.html_safe
   end
 
   def has_authors?(result)
     if result['Items'].present?
       result['Items'].each do |item|
-        if item['Group'].present?
-          if item['Group'] == "Au"
-            return true
-          end
-        end
+        next unless item['Group'].present?
+        return true if item['Group'] == 'Au'
       end
     end
     if result['RecordInfo'].present?
@@ -1031,38 +941,32 @@ module Blacklight::ArticlesHelperBehavior
         if result['RecordInfo']['BibRecord']['BibRelationships'].present?
           if result['RecordInfo']['BibRecord']['BibRelationships']['HasContributorRelationships'].present?
             result['RecordInfo']['BibRecord']['BibRelationships']['HasContributorRelationships'].each do |contributor|
-              if contributor['PersonEntity'].present?
-                return true
-              end
+              return true if contributor['PersonEntity'].present?
             end
           end
         end
       end
     end
-    return false
+    false
   end
 
-  # this should make use of AddQuery / RemoveQuery - but there might be a conflict with the "q" variable  
+  # this should make use of AddQuery / RemoveQuery - but there might be a conflict with the "q" variable
   def show_authors(result)
     author_array = []
     if result['Items'].present?
       flag = 0
       authorString = []
       result['Items'].each do |item|
-        if item['Group'].present?
-          if item['Group'] == "Au"
-            # let Don and Michelle know what this cleaner function does
-            newAuthor = processAPItags(item['Data'].to_s)
-            # i'm duplicating the semicolor - fix
-            newAuthor.gsub!("<br />","; ")
-            authorString.push(newAuthor)
-            flag = 1
-          end
-        end
+        next unless item['Group'].present?
+        next unless item['Group'] == 'Au'
+        # let Don and Michelle know what this cleaner function does
+        newAuthor = processAPItags(item['Data'].to_s)
+        # i'm duplicating the semicolor - fix
+        newAuthor.gsub!('<br />', '; ')
+        authorString.push(newAuthor)
+        flag = 1
       end
-      if flag == 1
-        return authorString.join("; ").html_safe
-      end
+      return authorString.join('; ').html_safe if flag == 1
     end
 
     if result['RecordInfo'].present?
@@ -1070,34 +974,29 @@ module Blacklight::ArticlesHelperBehavior
         if result['RecordInfo']['BibRecord']['BibRelationships'].present?
           if result['RecordInfo']['BibRecord']['BibRelationships']['HasContributorRelationships'].present?
             result['RecordInfo']['BibRecord']['BibRelationships']['HasContributorRelationships'].each do |contributor|
-              if contributor['PersonEntity'].present?
-                if contributor['PersonEntity']['Name'].present?
-                  if contributor['PersonEntity']['Name']['NameFull'].present?
-                    url_vars = {"q" => '"' + contributor['PersonEntity']['Name']['NameFull'].gsub(",","").gsub("%2C","").to_s + '"', "search_field" => "author"}
-                    link2 = generate_next_url_newvar_from_hash(url_vars)
-                    author_link = '<a href="' + request.fullpath.split("?")[0] + "?" + link2 + '">' + contributor['PersonEntity']['Name']['NameFull'].to_s + '</a>'
-                    author_array.push(author_link)
-                  end
-                end
-              end
+              next unless contributor['PersonEntity'].present?
+              next unless contributor['PersonEntity']['Name'].present?
+              next unless contributor['PersonEntity']['Name']['NameFull'].present?
+              url_vars = { 'q' => '"' + contributor['PersonEntity']['Name']['NameFull'].delete(',').gsub('%2C', '').to_s + '"', 'search_field' => 'author' }
+              link2 = generate_next_url_newvar_from_hash(url_vars)
+              author_link = '<a href="' + request.fullpath.split('?')[0] + '?' + link2 + '">' + contributor['PersonEntity']['Name']['NameFull'].to_s + '</a>'
+              author_array.push(author_link)
             end
-            return author_array.join("; ").html_safe
+            return author_array.join('; ').html_safe
           end
         end
       end
     end
-    return ''
+    ''
   end
 
   def show_resultid(result)
-    return result['ResultId'].to_s
+    result['ResultId'].to_s
   end
-  
+
   def show_title(result)
     result['Items'].each do |item|
-      if item['Group'] == 'Ti'
-        return HTMLEntities.new.decode(item['Data']).html_safe
-      end
+      return HTMLEntities.new.decode(item['Data']).html_safe if item['Group'] == 'Ti'
     end
     titles = []
     if result['RecordInfo'].present?
@@ -1110,11 +1009,11 @@ module Blacklight::ArticlesHelperBehavior
           end
         end
       end
-      return titles.join(" / ").html_safe
+      return titles.join(' / ').html_safe
     end
-    return "Title not available."
+    'Title not available.'
   end
-  
+
   def show_results_array
     @results.inspect
   end
@@ -1123,21 +1022,17 @@ module Blacklight::ArticlesHelperBehavior
     if result['FullText'].present?
       if result['FullText']['Text'].present?
         if result['FullText']['Text']['Availability'].present?
-          if result['FullText']['Text']['Availability'] == "1"
-            return true
-          end
+          return true if result['FullText']['Text']['Availability'] == '1'
         end
       end
     end
   end
-  
+
   def show_full_text_on_screen(result)
     if result['FullText'].present?
       if result['FullText']['Text'].present?
         if result['FullText']['Text']['Availability'].present?
-          if result['FullText']['Text']['Availability'] == "1"
-            return HTMLEntities.new.decode(result['FullText']['Text']['Value'])
-          end
+          HTMLEntities.new.decode(result['FullText']['Text']['Value']) if result['FullText']['Text']['Availability'] == '1'
         end
       end
     end
@@ -1159,45 +1054,41 @@ module Blacklight::ArticlesHelperBehavior
     elsif has_ebook?(result)
       return true
     end
-    return false
+    false
   end
 
   def show_an(result)
     if result['Header'].present?
-        if result['Header']['An'].present?
-          an = result['Header']['An'].to_s
-        end
+      an = result['Header']['An'].to_s if result['Header']['An'].present?
     end
-    return an    
+    an
   end
 
   def show_dbid(result)
     if result['Header'].present?
-        if result['Header']['DbId'].present?
-          dbid = result['Header']['DbId'].to_s
-        end
+      dbid = result['Header']['DbId'].to_s if result['Header']['DbId'].present?
     end
-    return dbid    
+    dbid
   end
 
-  def show_detail_link(result, resultId = "0", highlight = "")
-    link = ""
+  def show_detail_link(result, resultId = '0', highlight = '')
+    link = ''
     highlight.gsub! '&quot;', '%22'
     if result['Header'].present?
       if result['Header']['DbId'].present?
         if result['Header']['An'].present?
           link << 'articles/' << result['Header']['DbId'].to_s << '/' << url_encode(result['Header']['An']) << '/'
-          if resultId.to_i > "0".to_i and highlight != "" 
+          if (resultId.to_i > '0'.to_i) && (highlight != '')
             link << '?resultId=' << resultId.to_s << '&highlight=' << highlight.to_s
-          elsif resultId.to_i > "0".to_i
+          elsif resultId.to_i > '0'.to_i
             link << '?resultId=' << resultId.to_s
-          elsif highlight != ""
+          elsif highlight != ''
             link << '?highlight' << highlight.to_s
           end
         end
       end
     end
-    return link
+    link
   end
 
   def show_best_fulltext_link(result)
@@ -1210,125 +1101,109 @@ module Blacklight::ArticlesHelperBehavior
     elsif has_fulltext?(result)
       return best_customlink(result)
     end
-    return ''
+    ''
   end
-  
+
   # generate full text link for the detailed record area (not the title link)
   def show_best_fulltext_link_detail(result)
-    if has_pdf?(result)
-      link = '<a href="' + show_pdf_title_link(result) + '">PDF Full Text</a>'
-    elsif has_html?(result)
-      link = '<a href="' + show_best_fulltext_link(result) + '" target="_blank">HTML Full Text</a>'
-    elsif has_smartlink?(result)
-      link = '<a href="' + show_smartlink_title_link(result) + '">Linked Full Text</a>'
-    elsif has_fulltext?(result)
-      link = best_customlink_detail(result)
-    else
-      link = ''
-    end
-    return link.html_safe
+    link = if has_pdf?(result)
+             '<a href="' + show_pdf_title_link(result) + '">PDF Full Text</a>'
+           elsif has_html?(result)
+             '<a href="' + show_best_fulltext_link(result) + '" target="_blank">HTML Full Text</a>'
+           elsif has_smartlink?(result)
+             '<a href="' + show_smartlink_title_link(result) + '">Linked Full Text</a>'
+           elsif has_fulltext?(result)
+             best_customlink_detail(result)
+           else
+             ''
+           end
+    link.html_safe
   end
 
   def has_pdf?(result)
     if result['FullText'].present?
       if result['FullText']['Links'].present?
         result['FullText']['Links'].each do |link|
-          if link['Type'] == "pdflink"
-            return true
-          end
+          return true if link['Type'] == 'pdflink'
         end
       end
     end
-    return false
+    false
   end
 
   def has_html?(result)
     if result['FullText'].present?
       if result['FullText']['Text'].present?
         if result['FullText']['Text']['Availability'].present?
-          if result['FullText']['Text']['Availability'].to_s == "1"
-            return true
-          end
+          return true if result['FullText']['Text']['Availability'].to_s == '1'
         end
       end
     end
-    return false
+    false
   end
 
   def has_fulltext?(result)
     if result['FullText'].present?
       if result['FullText']['CustomLinks'].present?
         result['FullText']['CustomLinks'].each do |customLink|
-          if customLink['Category'] == "fullText"
-            return true
-          end
+          return true if customLink['Category'] == 'fullText'
         end
       end
     end
-    return false
+    false
   end
-  
+
   def has_smartlink?(result)
     if result['FullText'].present?
       if result['FullText']['Links'].present?
         result['FullText']['Links'].each do |smartLink|
-          if smartLink['Type'] == "other"
-            return true
-          end
+          return true if smartLink['Type'] == 'other'
         end
       end
     end
-    return false  
+    false
   end
-  
+
   def has_ebook?(result)
     if result['FullText'].present?
       if result['FullText']['Links'].present?
         result['FullText']['Links'].each do |smartLink|
-          if smartLink['Type'] == "ebook-pdf"
+          if smartLink['Type'] == 'ebook-pdf'
             return true
-          elsif smartLink['Type'] == "ebook-epub"
+          elsif smartLink['Type'] == 'ebook-epub'
             return true
           end
         end
       end
     end
-    return false      
+    false
   end
-  
+
   def show_plink(result)
     plink = ''
-    if result['PLink'].present?
-      plink << result['PLink']
-    end
-    return plink
+    plink << result['PLink'] if result['PLink'].present?
+    plink
   end
 
   def show_pdf_title_link(result)
     title_pdf_link = ''
-    if result['Header']['DbId'].present? and result['Header']['An'].present?
-      title_pdf_link << request.fullpath.split("?")[0] << "/" << result['Header']['DbId'].to_s << "/" << result['Header']['An'].to_s << "/fulltext"
-    end
+    title_pdf_link << request.fullpath.split('?')[0] << '/' << result['Header']['DbId'].to_s << '/' << result['Header']['An'].to_s << '/fulltext' if result['Header']['DbId'].present? && result['Header']['An'].present?
     new_link = Addressable::URI.unencode(title_pdf_link.to_s)
-    return new_link
+    new_link
   end
 
   def show_smartlink_title_link(result)
     title_pdf_link = ''
-    if result['Header']['DbId'].present? and result['Header']['An'].present?
-      title_pdf_link << request.fullpath.split("?")[0] << "/" << result['Header']['DbId'].to_s << "/" << result['Header']['An'].to_s << "/fulltext"
-    end
+    title_pdf_link << request.fullpath.split('?')[0] << '/' << result['Header']['DbId'].to_s << '/' << result['Header']['An'].to_s << '/fulltext' if result['Header']['DbId'].present? && result['Header']['An'].present?
     new_link = Addressable::URI.unencode(title_pdf_link.to_s)
-    return new_link    
+    new_link
   end
 
   def show_ebook_title_link(result)
     title_pdf_link = ''
-    if result['Header']['DbId'].present? and result['Header']['An'].present?
-      title_pdf_link << request.fullpath.split("?")[0] << "/" << result['Header']['DbId'].to_s << "/" << result['Header']['An'].to_s << "/fulltext"
-    end
+    title_pdf_link << request.fullpath.split('?')[0] << '/' << result['Header']['DbId'].to_s << '/' << result['Header']['An'].to_s << '/fulltext' if result['Header']['DbId'].present? && result['Header']['An'].present?
     new_link = Addressable::URI.unencode(title_pdf_link.to_s)
-    return new_link    
+    new_link
   end
 
   def show_pdf_link(record)
@@ -1336,13 +1211,11 @@ module Blacklight::ArticlesHelperBehavior
     if record['FullText'].present?
       if record['FullText']['Links'].present?
         record['FullText']['Links'].each do |link|
-          if link['Type'] == "pdflink"
-            pdf_link << link['Url']
-          end
+          pdf_link << link['Url'] if link['Type'] == 'pdflink'
         end
       end
     end
-    return pdf_link
+    pdf_link
   end
 
   def show_smartlink(record)
@@ -1350,13 +1223,11 @@ module Blacklight::ArticlesHelperBehavior
     if record['FullText'].present?
       if record['FullText']['Links'].present?
         record['FullText']['Links'].each do |link|
-          if link['Type'] == "other"
-            pdf_link << link['Url']
-          end
+          pdf_link << link['Url'] if link['Type'] == 'other'
         end
       end
     end
-    return pdf_link
+    pdf_link
   end
 
   def show_ebook_link(record)
@@ -1364,31 +1235,31 @@ module Blacklight::ArticlesHelperBehavior
     if record['FullText'].present?
       if record['FullText']['Links'].present?
         record['FullText']['Links'].each do |link|
-          if link['Type'] == "ebook-pdf"
+          if link['Type'] == 'ebook-pdf'
             pdf_link << link['Url']
-          elsif link['Type'] == "ebook-epub"
+          elsif link['Type'] == 'ebook-epub'
             pdf_link << link['Url']
           end
         end
       end
     end
-    return pdf_link
+    pdf_link
   end
-    
+
   def show_fulltext(result)
     fulltext_links = []
     if result['FullText'].present?
       if result['FullText']['CustomLinks'].present?
         result['FullText']['CustomLinks'].each do |customLink|
-          if customLink['Category'] == "fullText" and customLink['Text'].present?
-            fulltext_links << '<a href="' + customLink['Url'] + '">' + customLink['Text'] + '</a>'              
-          elsif customLink['Category'] == "fullText"
+          if (customLink['Category'] == 'fullText') && customLink['Text'].present?
+            fulltext_links << '<a href="' + customLink['Url'] + '">' + customLink['Text'] + '</a>'
+          elsif customLink['Category'] == 'fullText'
             fulltext_links << '<a href="' + customLink['Url'] + '">Full Text via CustomLink' + customLink.to_s + '</a> '
           end
         end
       end
     end
-    return fulltext_links.join(", ").html_safe  
+    fulltext_links.join(', ').html_safe
   end
 
   # show prioritized custom links
@@ -1398,14 +1269,14 @@ module Blacklight::ArticlesHelperBehavior
     if result['FullText'].present?
       if result['FullText']['CustomLinks'].present?
         result['FullText']['CustomLinks'].each do |customLink|
-          if customLink['Category'] == "fullText" and flag == 0
+          if (customLink['Category'] == 'fullText') && (flag == 0)
             fulltext_links << customLink['Url']
             flag = 1
           end
         end
       end
     end
-    return fulltext_links
+    fulltext_links
   end
 
   def best_customlink_detail(result)
@@ -1414,209 +1285,209 @@ module Blacklight::ArticlesHelperBehavior
     if result['FullText'].present?
       if result['FullText']['CustomLinks'].present?
         result['FullText']['CustomLinks'].each do |customLink|
-          if customLink['Category'] == "fullText" and flag == 0 and customLink['Text'].present? and customLink['Icon'].present?
+          if (customLink['Category'] == 'fullText') && (flag == 0) && customLink['Text'].present? && customLink['Icon'].present?
             fulltext_links << '<a href="' + customLink['Url'] + '" target="_blank"><img src="' + customLink['Icon'] + '" border="0">' + customLink['Text'] + '</a>'
             flag = 1
-          elsif customLink['Category'] == "fullText" and flag == 0 and customLink['Text'].present?
+          elsif (customLink['Category'] == 'fullText') && (flag == 0) && customLink['Text'].present?
             flag = 1
             fulltext_links << '<a href="' + customLink['Url'] + '" target="_blank">' + customLink['Text'] + '</a>'
-          elsif customLink['Category'] == "fullText" and flag == 0 and customLink['Icon'].present?
+          elsif (customLink['Category'] == 'fullText') && (flag == 0) && customLink['Icon'].present?
             fulltext_links << '<a href="' + customLink['Url'] + '" target="_blank"><img src="' + customLink['Icon'] + '" border="0"></a>'
-            flag = 1            
-          elsif customLink['Category'] == "fullText" and flag == 0
+            flag = 1
+          elsif (customLink['Category'] == 'fullText') && (flag == 0)
             fulltext_links << '<a href="' + customLink['Url'] + '" target="_blank">Full Text via Custom Link</a>'
-            flag = 1            
+            flag = 1
           end
         end
       end
     end
-    return fulltext_links
+    fulltext_links
   end
-  
+
   def has_ill?(result)
-      if result['CustomLinks'].present?
-        result['CustomLinks'].each do |customLink|
-          if customLink['Category'] == "ill"
-            return true
-          end
-        end
+    if result['CustomLinks'].present?
+      result['CustomLinks'].each do |customLink|
+        return true if customLink['Category'] == 'ill'
       end
-    return false
+    end
+    false
   end
-  
+
   def show_ill(result)
     fulltext_links = ''
     if result['CustomLinks'].present?
       result['CustomLinks'].each do |customLink|
-        if customLink['Category'] == "ill"
-          fulltext_links << '<a href="' << customLink['Url'] << '">Request via Interlibrary Loan</a> '
-        end
+        fulltext_links << '<a href="' << customLink['Url'] << '">Request via Interlibrary Loan</a> ' if customLink['Category'] == 'ill'
       end
     end
-    return fulltext_links.html_safe  
+    fulltext_links.html_safe
   end
-  
+
   ################
   # Debug Functions
   ################
-  
+
   def show_query_string
-    return session[:results]['queryString']
-  end
-  
-  def debugNotes
-    #return session[:debugNotes] << "<h4>API Calls</h4>" << @connection.debug_notes
+    session[:results]['queryString']
   end
 
-  API_URL = "http://eds-api.ebscohost.com/"
-  API_URL_S = "https://eds-api.ebscohost.com/"
-  
+  def debugNotes
+    # return session[:debugNotes] << "<h4>API Calls</h4>" << @connection.debug_notes
+  end
+
+  API_URL = 'http://eds-api.ebscohost.com/'
+  API_URL_S = 'https://eds-api.ebscohost.com/'
+
   # Connection object. Does what it says. ConnectionHandler is what is usually desired and wraps auto-reonnect features, etc.
   class Connection
-
     attr_accessor :auth_token, :session_token, :debug_notes, :guest
     attr_writer :userid, :password
-    
+
     # Init the object with userid and pass.
     def uid_init(userid, password, profile, guest = 'y')
-      #@debug_notes = "<p>Setting guest as " << guest.to_s << "</p>"
+      # @debug_notes = "<p>Setting guest as " << guest.to_s << "</p>"
       @userid = userid
       @password = password
       @profile = profile
       @guest = guest
-      return self
+      self
     end
+
     def ip_init(profile, guest = 'y')
       @profile = profile
       @guest = guest
-      return self
+      self
     end
     # Auth with the server. Currently only uid auth is supported.
-    
+
     ###
-    def uid_authenticate(format = :xml)
+    def uid_authenticate(_format = :xml)
       # DO NOT SEND CALL IF YOU HAVE A VALID AUTH TOKEN
       xml = "<UIDAuthRequestMessage xmlns='http://www.ebscohost.com/services/public/AuthService/Response/2012/06/01'><UserId>#{@userid}</UserId><Password>#{@password}</Password></UIDAuthRequestMessage>"
       uri = URI "#{API_URL_S}authservice/rest/uidauth"
       req = Net::HTTP::Post.new(uri.request_uri)
-      req["Content-Type"] = "application/xml"
-      req["Accept"] = "application/json" #if format == :json
+      req['Content-Type'] = 'application/xml'
+      req['Accept'] = 'application/json' # if format == :json
       req.body = xml
-      #@debug_notes << "<p>UID Authentication Call to " << uri.to_s << ": " << xml << "</p>";
+      # @debug_notes << "<p>UID Authentication Call to " << uri.to_s << ": " << xml << "</p>";
       https = Net::HTTP.new(uri.hostname, uri.port)
       https.use_ssl = true
       https.verify_mode = OpenSSL::SSL::VERIFY_NONE
       begin
         doc = JSON.parse(https.request(req).body)
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
-        about "No response from server"
+        about 'No response from server'
       end
-      if doc.has_key?('ErrorNumber')
-         abort "Bad response from server - error code #{result['ErrorNumber']}"
+      if doc.key?('ErrorNumber')
+        abort "Bad response from server - error code #{result['ErrorNumber']}"
       else
-         @auth_token = doc['AuthToken']
-      end     
+        @auth_token = doc['AuthToken']
+      end
     end
-    def ip_authenticate(format = :xml)
+
+    def ip_authenticate(_format = :xml)
       uri = URI "#{API_URL_S}authservice/rest/ipauth"
       req = Net::HTTP::Post.new(uri.request_uri)
-      req["Accept"] = "application/json" #if format == :json
+      req['Accept'] = 'application/json' # if format == :json
       https = Net::HTTP.new(uri.hostname, uri.port)
       https.use_ssl = true
       https.verify_mode = OpenSSL::SSL::VERIFY_NONE
       begin
         doc = JSON.parse(https.request(req).body)
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
-        abort "No response from server"
+        abort 'No response from server'
       end
       @auth_token = doc['AuthToken']
     end
+
     # Create the session
     def create_session
       uri = URI "#{API_URL}edsapi/rest/createsession?profile=#{@profile}&guest=#{@guest}"
       req = Net::HTTP::Get.new(uri.request_uri)
-      #req['x-authenticationToken'] = @auth_token
-      req['Accept'] = "application/json"
-      #@debug_notes << "<p>CREATE SESSION Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << "</p>";
-#     Net::HTTP.start(uri.hostname, uri.port) { |http|
-#       doc = JSON.parse(http.request(req).body)
-#       return doc['SessionToken']
-#     }
-      Net::HTTP.start(uri.hostname, uri.port) { |http|
+      # req['x-authenticationToken'] = @auth_token
+      req['Accept'] = 'application/json'
+      # @debug_notes << "<p>CREATE SESSION Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << "</p>";
+      #     Net::HTTP.start(uri.hostname, uri.port) { |http|
+      #       doc = JSON.parse(http.request(req).body)
+      #       return doc['SessionToken']
+      #     }
+      Net::HTTP.start(uri.hostname, uri.port) do |http|
         begin
         return http.request(req).body
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
-        abort "No response from server"
+        abort 'No response from server'
       end
-      }
+      end
     end
+
     # End the session
     def end_session(session_token)
-      uri = URI "#{API_URL}edsapi/rest/endsession?sessiontoken=#{CGI::escape(session_token)}"
+      uri = URI "#{API_URL}edsapi/rest/endsession?sessiontoken=#{CGI.escape(session_token)}"
       req = Net::HTTP::Get.new(uri.request_uri)
       req['x-authenticationToken'] = @auth_token
-      Net::HTTP.start(uri.hostname, uri.port) { |http|
+      Net::HTTP.start(uri.hostname, uri.port) do |http|
         begin
         http.request(req)
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
-        abort "No response from server"
+        abort 'No response from server'
       end
-      }
-      return true
+      end
+      true
     end
+
     # Run a search query, XML results are returned
-        def search(options, format = :xml)
+    def search(options, _format = :xml)
       uri = URI "#{API_URL}edsapi/rest/Search?#{options}"
-      #return uri.request_uri
+      # return uri.request_uri
       req = Net::HTTP::Get.new(uri.request_uri)
       req['x-authenticationToken'] = @auth_token
       req['x-sessionToken'] = @session_token
-      req['Accept'] = 'application/json' #if format == :json
-      #@debug_notes << "<p>SEARCH Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << " and session token: " << req['x-sessionToken'].to_s << "</p>";
+      req['Accept'] = 'application/json' # if format == :json
+      # @debug_notes << "<p>SEARCH Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << " and session token: " << req['x-sessionToken'].to_s << "</p>";
 
-      Net::HTTP.start(uri.hostname, uri.port) { |http|
+      Net::HTTP.start(uri.hostname, uri.port) do |http|
         begin
         return http.request(req).body
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
-        abort "No response from server"
+        abort 'No response from server'
       end
-      }
-        end
-    # Retrieve specific information
-    def retrieve(dbid, an, highlightterms = "", format = :xml)
-      uri = URI "#{API_URL}edsapi/rest/retrieve?dbid=#{dbid}&an=#{an}"
-      if highlightterms != ""
-        uri = URI "#{API_URL}edsapi/rest/retrieve?dbid=#{dbid}&an=#{an}&highlightterms=#{highlightterms}"
       end
-      req = Net::HTTP::Get.new(uri.request_uri)
-      req['x-authenticationToken'] = @auth_token
-      req['x-sessionToken'] = @session_token
-      req['Accept'] = 'application/json' #if format == :json
-      #@debug_notes << "<p>RETRIEVE Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << " and session token: " << req['x-sessionToken'].to_s << "</p>";
-
-      Net::HTTP.start(uri.hostname, uri.port) { |http|
-        begin
-        return http.request(req).body
-      rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
-        abort "No response from server"
-      end
-      }
     end
+
+    # Retrieve specific information
+    def retrieve(dbid, an, highlightterms = '', _format = :xml)
+      uri = URI "#{API_URL}edsapi/rest/retrieve?dbid=#{dbid}&an=#{an}"
+      uri = URI "#{API_URL}edsapi/rest/retrieve?dbid=#{dbid}&an=#{an}&highlightterms=#{highlightterms}" if highlightterms != ''
+      req = Net::HTTP::Get.new(uri.request_uri)
+      req['x-authenticationToken'] = @auth_token
+      req['x-sessionToken'] = @session_token
+      req['Accept'] = 'application/json' # if format == :json
+      # @debug_notes << "<p>RETRIEVE Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << " and session token: " << req['x-sessionToken'].to_s << "</p>";
+
+      Net::HTTP.start(uri.hostname, uri.port) do |http|
+        begin
+        return http.request(req).body
+      rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
+        abort 'No response from server'
+      end
+      end
+    end
+
     # Info method
-    def info(format = :xml)
+    def info(_format = :xml)
       uri = URI "#{API_URL}edsapi/rest/Info"
       req = Net::HTTP::Get.new(uri.request_uri)
       req['x-authenticationToken'] = @auth_token
       req['x-sessionToken'] = @session_token
-      req['Accept'] = 'application/json' #if format == :json
-      #@debug_notes << "<p>INFO Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << " and session token: " << req['x-sessionToken'].to_s << "</p>";
-      Net::HTTP.start(uri.hostname, uri.port) { |http|
+      req['Accept'] = 'application/json' # if format == :json
+      # @debug_notes << "<p>INFO Call to " << uri.to_s << " with auth token: " << req['x-authenticationToken'].to_s << " and session token: " << req['x-sessionToken'].to_s << "</p>";
+      Net::HTTP.start(uri.hostname, uri.port) do |http|
         begin
         return http.request(req).body
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
-        abort "No response from server"
+        abort 'No response from server'
       end
-      }
+      end
     end
   end
   # Handles connections - retries failed connections, passes commands along
@@ -1626,12 +1497,15 @@ module Blacklight::ArticlesHelperBehavior
     def initialize(max_retries = 2)
       @max_retries = max_retries
     end
+
     def show_session_token
-      return @session_token
+      @session_token
     end
+
     def show_auth_token
-      return @auth_token
+      @auth_token
     end
+
     # def create_session(auth_token = @auth_token, format = :xml)
     #   @auth_token = auth_token
     #     result = JSON.parse(super())
@@ -1642,94 +1516,89 @@ module Blacklight::ArticlesHelperBehavior
     #       return result['SessionToken']
     #     end
     # end
-    def create_session(format = :xml)
-      #@auth_token = auth_token
+    def create_session(_format = :xml)
+      # @auth_token = auth_token
       result = JSON.parse(super())
       @session_token = result['SessionToken']
     end
+
     def search(options, session_token, auth_token, format = :xml)
       attempts = 0
       @session_token = session_token
       @auth_token = auth_token
       loop do
         result = JSON.parse(super(options, format))
-        if result.has_key?('ErrorNumber')
-          #@debug_notes << "<p>Found ERROR " << result['ErrorNumber'].to_s
+        if result.key?('ErrorNumber')
+          # @debug_notes << "<p>Found ERROR " << result['ErrorNumber'].to_s
           case result['ErrorNumber']
-                when "108"
-                  @session_token = self.create_session
-                  result = JSON.parse(super(options, format))
-                when "109"
-                  @session_token = self.create_session
-                  result = JSON.parse(super(options, format))
-                when "104"
-                  self.uid_authenticate(:json)
-                  result = JSON.parse(super(options, format))
-                when "107"
-                  self.uid_authenticate(:json)
-                  result = JSON.parse(super(options, format))
-                else
-                  return result 
-          end
-          unless result.has_key?('ErrorNumber')
+          when '108'
+            @session_token = create_session
+            result = JSON.parse(super(options, format))
+          when '109'
+            @session_token = create_session
+            result = JSON.parse(super(options, format))
+          when '104'
+            uid_authenticate(:json)
+            result = JSON.parse(super(options, format))
+          when '107'
+            uid_authenticate(:json)
+            result = JSON.parse(super(options, format))
+          else
             return result
           end
+          return result unless result.key?('ErrorNumber')
           attempts += 1
-          if attempts >= @max_retries
-                return result
-          end
-        else
-              return result
-        end
-      end
-    end
-          def info (session_token, auth_token, format= :xml)
-       attempts = 0
-       @auth_token = auth_token
-       @session_token = session_token
-      loop do
-        result = JSON.parse(super(format)) # JSON Parse
-        if result.has_key?('ErrorNumber')
-          case result['ErrorNumber']
-            when "108"
-              @session_token = self.create_session
-            when "109"
-              @session_token = self.create_session
-            when "104"
-              self.uid_authenticate(:json)
-          when "107"
-            self.uid_authenticate(:json)
-          end
-          attempts += 1
-          if attempts >= @max_retries
-            return result
-          end
+          return result if attempts >= @max_retries
         else
           return result
         end
-                  end
+      end
+    end
+
+    def info(session_token, auth_token, format = :xml)
+      attempts = 0
+      @auth_token = auth_token
+      @session_token = session_token
+      loop do
+        result = JSON.parse(super(format)) # JSON Parse
+        if result.key?('ErrorNumber')
+          case result['ErrorNumber']
+          when '108'
+            @session_token = create_session
+          when '109'
+            @session_token = create_session
+          when '104'
+            uid_authenticate(:json)
+          when '107'
+            uid_authenticate(:json)
           end
-          def retrieve(dbid, an, highlightterms, session_token, auth_token, format = :xml)
+          attempts += 1
+          return result if attempts >= @max_retries
+        else
+          return result
+        end
+      end
+    end
+
+    def retrieve(dbid, an, highlightterms, session_token, auth_token, format = :xml)
       attempts = 0
       @session_token = session_token
       @auth_token = auth_token
       loop do
         result = JSON.parse(super(dbid, an, highlightterms, format))
-        if result.has_key?('ErrorNumber')
+        if result.key?('ErrorNumber')
           case result['ErrorNumber']
-            when "108"
-              @session_token = self.create_session
-            when "109"
-              @session_token = self.create_session
-            when "104"
-              self.uid_authenticate(:json)
-          when "107"
-            self.uid_authenticate(:json)
+          when '108'
+            @session_token = create_session
+          when '109'
+            @session_token = create_session
+          when '104'
+            uid_authenticate(:json)
+          when '107'
+            uid_authenticate(:json)
           end
           attempts += 1
-          if attempts >= @max_retries
-          return result
-          end
+          return result if attempts >= @max_retries
         else
           return result
         end
@@ -1737,24 +1606,24 @@ module Blacklight::ArticlesHelperBehavior
     end
   end
 
-# Benchmark response times
-def benchmark(q = false)
-  start = Time.now
-  connection = ConnectionHandler.new(2)
-  connection.uid_init('USERID', 'PASSWORD', 'PROFILEID')
-  connection.uid_authenticate(:json)
-  puts((start - Time.now).abs) unless q
-  connection.create_session
-  puts((start - Time.now).abs) unless q
-  connection.search('query-1=AND,galapagos+hawk', :json)
-  puts((start - Time.now).abs) unless q
-  connection.end_session
-  puts((start - Time.now).abs) unless q
-end
+  # Benchmark response times
+  def benchmark(q = false)
+    start = Time.now
+    connection = ConnectionHandler.new(2)
+    connection.uid_init('USERID', 'PASSWORD', 'PROFILEID')
+    connection.uid_authenticate(:json)
+    puts((start - Time.now).abs) unless q
+    connection.create_session
+    puts((start - Time.now).abs) unless q
+    connection.search('query-1=AND,galapagos+hawk', :json)
+    puts((start - Time.now).abs) unless q
+    connection.end_session
+    puts((start - Time.now).abs) unless q
+  end
 
-# Run benchmark with warm up run; only if file was called directly and not required
-# if __FILE__ == $0
-#   benchmark(true)
-#   benchmark
-# end
+  # Run benchmark with warm up run; only if file was called directly and not required
+  # if __FILE__ == $0
+  #   benchmark(true)
+  #   benchmark
+  # end
 end

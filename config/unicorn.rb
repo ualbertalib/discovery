@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Sample verbose configuration file for Unicorn (not Rack)
 #
 # This configuration file documents many features of Unicorn
@@ -21,38 +23,38 @@ worker_processes 4
 
 # Help ensure your application will always spawn in the symlinked
 # "current" directory that Capistrano sets up.
-#Neil#working_directory "/path/to/app/current" # available in 0.94.0+
-#working_directory "/var/www/sites/houston.library.ualberta.ca" # available in 0.94.0+
-#root = "/var/www/sites/houston.library.ualberta.ca"
-working_directory "/var/www/sites/blacklight"
-root = "/var/www/sites/blacklight"
+# Neil#working_directory "/path/to/app/current" # available in 0.94.0+
+# working_directory "/var/www/sites/houston.library.ualberta.ca" # available in 0.94.0+
+# root = "/var/www/sites/houston.library.ualberta.ca"
+working_directory '/var/www/sites/blacklight'
+root = '/var/www/sites/blacklight'
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-#Neil#listen "/path/to/.unicorn.sock", :backlog => 64
-listen "/tmp/unicorn.blacklight.sock", :backlog => 64
-listen 8080, :tcp_nopush => true
+# Neil#listen "/path/to/.unicorn.sock", :backlog => 64
+listen '/tmp/unicorn.blacklight.sock', backlog: 64
+listen 8080, tcp_nopush: true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
 
 # feel free to point this anywhere accessible on the filesystem
-#Neil*pid "/path/to/app/shared/pids/unicorn.pid"
+# Neil*pid "/path/to/app/shared/pids/unicorn.pid"
 pid "#{root}/tmp/pids/unicorn.pid"
 
 # By default, the Unicorn logger will write to stderr.
 # Additionally, ome applications/frameworks log to stderr or stdout,
 # so prevent them from going to /dev/null when daemonized here:
-#Neil#stderr_path "/path/to/app/shared/log/unicorn.stderr.log"
-#Neil#stdout_path "/path/to/app/shared/log/unicorn.stdout.log"
+# Neil#stderr_path "/path/to/app/shared/log/unicorn.stderr.log"
+# Neil#stdout_path "/path/to/app/shared/log/unicorn.stdout.log"
 stderr_path "#{root}/log/unicorn.stderr.log"
 stdout_path "#{root}/log/unicorn.stdout.log"
 
 # combine Ruby 2.0.0dev or REE with "preload_app true" for memory savings
 # http://rubyenterpriseedition.com/faq.html#adapt_apps_for_cow
 preload_app true
-GC.respond_to?(:copy_on_write_friendly=) and
-  GC.copy_on_write_friendly = true
+GC.respond_to?(:copy_on_write_friendly=) &&
+  (GC.copy_on_write_friendly = true)
 
 # Enable this flag to have unicorn test client connections by writing the
 # beginning of the HTTP headers before calling the application.  This
@@ -62,10 +64,10 @@ GC.respond_to?(:copy_on_write_friendly=) and
 # fast LAN.
 check_client_connection false
 
-before_fork do |server, worker|
+before_fork do |_server, _worker|
   # the following is highly recomended for Rails + "preload_app true"
   # as there's no need for the master process to hold a connection
-  defined?(ActiveRecord::Base) and
+  defined?(ActiveRecord::Base) &&
     ActiveRecord::Base.connection.disconnect!
 
   # The following is only recommended for memory/DB-constrained
@@ -93,13 +95,13 @@ before_fork do |server, worker|
   # sleep 1
 end
 
-after_fork do |server, worker|
+after_fork do |_server, _worker|
   # per-process listener ports for debugging/admin/migrations
   # addr = "127.0.0.1:#{9293 + worker.nr}"
   # server.listen(addr, :tries => -1, :delay => 5, :tcp_nopush => true)
 
   # the following is *required* for Rails + "preload_app true",
-  defined?(ActiveRecord::Base) and
+  defined?(ActiveRecord::Base) &&
     ActiveRecord::Base.establish_connection
 
   # if preload_app is true, then you may also want to check and

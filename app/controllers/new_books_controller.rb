@@ -1,12 +1,13 @@
-# -*- encoding : utf-8 -*-
-#
+
+# frozen_string_literal: true
+
 class NewBooksController < CatalogController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
-  
-  self.search_params_logic << :show_only
 
-  def show_only solr_parameters, user_parameters
+  search_params_logic << :show_only
+
+  def show_only(solr_parameters, _user_parameters)
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << "id:(#{list_of_ids})"
     puts solr_parameters
@@ -14,14 +15,14 @@ class NewBooksController < CatalogController
 
   def index
     super
-    @collection_name = "New Books"
-    render "new_books"
+    @collection_name = 'New Books'
+    render 'new_books'
   end
 
   private
 
   def list_of_ids
-    ids.join(" OR ")
+    ids.join(' OR ')
   end
 
   def ids
@@ -31,4 +32,4 @@ class NewBooksController < CatalogController
   def read_id_file
     File.open("#{Rails.root}/config/new_books.txt").read.split("|\r\n").take 300
   end
-end 
+end
