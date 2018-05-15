@@ -32,3 +32,4 @@ token.txt
 .ruby-version
 .ruby-gemset
 .env_deployment
+/docker-compose.*custom*.yml

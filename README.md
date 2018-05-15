@@ -75,3 +75,11 @@ See [Developer Handbook Updating the local container](https://github.com/ualbert
 See [Developer Handbook](https://github.com/ualbertalib/Developer-Handbook/tree/master/Docker#frequently-used-commands)
 
 ## Special notes / warnings / gotchas
+There are several environment variables that should be set in order for the application to work.
+`cp .env_deployment_sample .env_deployment` and edit as necessary
+
+The first time you may need to setup the database.  This can be done using
+`docker-compose run --rm web rake db:setup`
+
+Some sample data is available if you'd like to see the application in action.
+`docker-compose run --rm web rake solr:marc:index_test_data`

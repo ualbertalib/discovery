@@ -33,29 +33,21 @@ services:
       - discovery-uat
       - /config
 
+  setup: &rails
+    image: ualbertalib/discovery:test
+    command: ./bin/setup
+    env_file: .env_deployment
+    depends_on:
+      - mysql
+      - solr
 
   # Rails
   web:
-    restart: always
-    image: discovery
-    env_file: .env_deployment
+    <<: *rails
     volumes:
       - assets:/app/public/assets/
       - file-storage:/app/storage/
     command: bundle exec puma -e uat
-    depends_on:
-      - mysql
-      - solr
-      - migration
-      
-  migration:
-    build: .
-    image: discovery
-    command: bin/setup
-    links:
-      - mysql
-    depends_on:
-      - mysql
 
   nginx:
     restart: always
