@@ -6,7 +6,7 @@ development:
 test:
   url: <%= ENV['SOLR_TEST_URL'] || 'http://localhost:8983/solr/test' %>
 uat:
-  <<: *default
+  url: <%= ENV['SOLR_URL'] %>
 staging:
   <<: *default
 production:

@@ -27,3 +27,9 @@ token.txt
 # /solr/blacklight-core/conf/solrconfig.xml
 /coverage
 .DS_Store
+
+
+.ruby-version
+.ruby-gemset
+.env_deployment
+/docker-compose.*custom*.yml

@@ -3,6 +3,9 @@ development:
 
 test:
   log_path: "log/ingest.log"
+  
+uat:
+  log_path: "log/uat.log"
 
 production:
   log_path: "/var/log/blacklight_ingest.log"

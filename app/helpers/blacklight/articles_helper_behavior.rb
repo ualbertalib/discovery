@@ -70,11 +70,15 @@ module Blacklight::ArticlesHelperBehavior
 
     # creates EDS API connection object, initializing it with application login credentials
     @connection = ConnectionHandler.new(2)
-    File.open(auth_file_location,"r") {|f|
-        @api_userid = f.readline.strip
-        @api_password = f.readline.strip
-        @api_profile = f.readline.strip
-    }
+    if ENV['EDS_API_PROFILE']
+      @api_profile = ENV['EDS_API_PROFILE']
+    else
+      File.open(auth_file_location,"r") {|f|
+          @api_userid = f.readline.strip
+          @api_password = f.readline.strip
+          @api_profile = f.readline.strip
+      }
+    end
 
     @connection.ip_init(@api_profile, 'n')
     @connection.ip_authenticate(:json)
