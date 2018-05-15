@@ -379,7 +379,7 @@ DEPENDENCIES
   nokogiri (= 1.8.1)
   om
   paperclip (= 4.3.6)
-  rails
+  rails (~> 4.2)
   rspec
   rspec-rails
   rspec-solr
