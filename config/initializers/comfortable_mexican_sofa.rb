@@ -1,4 +1,4 @@
-# encoding: utf-8
+# frozen_string_literal: true
 
 ComfortableMexicanSofa.configure do |config|
   # Title of the admin area
@@ -91,7 +91,6 @@ ComfortableMexicanSofa.configure do |config|
   # Reveal partials that can be overwritten in the admin area.
   # Default is false.
   #   config.reveal_cms_partials = false
-
 end
 
 # Default credentials for ComfortableMexicanSofa::AccessControl::AdminAuthentication

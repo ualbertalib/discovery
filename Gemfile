@@ -1,5 +1,6 @@
-source 'http://rubygems.org'
+# frozen_string_literal: true
 
+source 'http://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2'
@@ -12,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -21,10 +22,10 @@ gem 'turbolinks', '2.5.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'spring', group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -38,30 +39,30 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
-gem "blacklight", "5.15.0"
-gem "jettywrapper", "~> 2.0.3"
-gem "blacklight-marc", "~> 5.10.0"
-gem "om"
-gem "devise"
-gem "devise-guests"
-gem "addressable", "2.3.7"
-gem "htmlentities"
-gem "activerecord-session_store"
-gem "nokogiri", "1.8.1"
-gem "factory_girl", "~> 4.0", group: [:test, :development]
-gem "rspec"
-gem "blacklight_advanced_search"
+gem 'activerecord-session_store'
+gem 'addressable', '2.3.7'
+gem 'blacklight', '5.15.0'
+gem 'blacklight-marc', '~> 5.10.0'
+gem 'blacklight_advanced_search'
+gem 'devise'
+gem 'devise-guests'
+gem 'factory_girl', '~> 4.0', group: %i[test development]
+gem 'htmlentities'
+gem 'jettywrapper', '~> 2.0.3'
+gem 'nokogiri', '1.8.1'
+gem 'om'
+gem 'rspec'
 group :test, :development do
-  gem 'ci_reporter_rspec'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'ci_reporter_rspec'
   gem 'rspec-rails'
   gem 'rspec-solr'
-  gem 'simplecov', :require => false
+  gem 'rubocop', '~> 0.51.0', require: false
+  gem 'selenium-webdriver'
+  gem 'simplecov', require: false
 end
-gem 'paperclip', '4.3.6'
 gem 'blacklight_google_analytics'
+gem 'blacklight_range_limit'
 gem 'comfortable_mexican_sofa', '1.12.9'
-gem "blacklight_range_limit"
 gem 'friendly_id'
+gem 'paperclip', '4.3.6'
