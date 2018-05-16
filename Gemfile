@@ -52,14 +52,14 @@ gem "nokogiri", "1.8.1"
 gem "factory_girl", "~> 4.0", group: [:test, :development]
 gem "rspec"
 gem "blacklight_advanced_search"
-group :test, :development do
-  gem 'ci_reporter_rspec'
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'rspec-rails'
-  gem 'rspec-solr'
-  gem 'simplecov', :require => false
-end
+# group :test, :development do
+#   gem 'ci_reporter_rspec'
+#   gem 'capybara'
+#   gem 'selenium-webdriver'
+#   gem 'rspec-rails'
+#   gem 'rspec-solr'
+#   gem 'simplecov', :require => false
+# end
 gem 'paperclip', '4.3.6'
 gem 'blacklight_google_analytics'
 gem 'comfortable_mexican_sofa', '1.12.9'
