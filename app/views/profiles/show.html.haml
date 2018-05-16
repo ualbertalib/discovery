@@ -6,7 +6,7 @@
   - @photo_link = URI.encode(@photo_link_dirty)
   - res = Net::HTTP.get_response(URI.parse(@photo_link))
   - if res.code.to_i >= 200 && res.code.to_i < 400
-    = image_tag(@photo_link, :class=>"a-photo")
+    = image_tag(@photo_link, :class=>"a-photo img-responsive")
   %h2.fn
     %span.given-name
       = @profile.first_name
