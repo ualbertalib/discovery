@@ -34,4 +34,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: discovery_test
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
