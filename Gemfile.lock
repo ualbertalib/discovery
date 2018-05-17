@@ -46,9 +46,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.7)
     arel (6.0.4)
-    autoprefixer-rails (8.4.1)
+    autoprefixer-rails (8.5.0)
       execjs
-    bcrypt (3.1.11)
+    bcrypt (3.1.12)
     blacklight (5.15.0)
       bootstrap-sass (~> 3.2)
       deprecation
@@ -342,7 +342,7 @@ DEPENDENCIES
   nokogiri (= 1.8.1)
   om
   paperclip (= 4.3.6)
-  rails
+  rails (= 4.2.10)
   rspec
   sass-rails (~> 5.0.1)
   sdoc (~> 0.4.0)
