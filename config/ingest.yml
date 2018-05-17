@@ -5,7 +5,7 @@
 # If you're making substantive changes that need to reach Test & Prod, please also 
 # make those changes to ansible's copies of this file!
 
-solr: http://localhost:8983/solr/development
+solr: http://localhost:8983/solr
 
 proxy: http://login.ezproxy.library.ualberta.ca/login?url=
 
