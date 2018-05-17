@@ -5,21 +5,20 @@
 version: '3'
 
 volumes:
-#  mysql:
-#    driver: local
+  mysql:
+    driver: local
   solr:
     driver: local
 
 services:
-# Need mysql? Uncomment mysql settings below and respective volume above
-#  mysql:
-#    image: mysql:5.7
-#    environment:
-#      MYSQL_ROOT_PASSWORD: mysecretpassword
-#    volumes:
-#      - mysql:/var/lib/mysql
-#    ports:
-#      - "3306:3306"
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
 
   solr:
     image: solr:6.6
