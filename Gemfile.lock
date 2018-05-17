@@ -341,7 +341,7 @@ DEPENDENCIES
   nokogiri (= 1.8.1)
   om
   paperclip (= 4.3.6)
-  rails (~> 4.2)
+  rails
   rspec
   sass-rails (~> 5.0.1)
   sdoc (~> 0.4.0)
