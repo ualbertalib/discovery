@@ -1,6 +1,8 @@
-require_relative "../services/sfx_service.rb"
-require_relative "../services/symphony_service.rb"
-require_relative "../services/marc_module.rb"
+# frozen_string_literal: true
+
+require_relative '../services/sfx_service.rb'
+require_relative '../services/symphony_service.rb'
+require_relative '../services/marc_module.rb'
 
 module HoldingsHelper
   include MarcModule
@@ -17,12 +19,9 @@ module HoldingsHelper
   end
 
   def fetch_sfx_holdings(document)
-    begin
-      SFXService.new(document).targets
-    rescue SFXService::Error::HTTPError => e
-      logger.error e.message
-      nil
-    end
+    SFXService.new(document).targets
+  rescue SFXService::Error::HTTPError => e
+    logger.error e.message
+    nil
   end
-
 end

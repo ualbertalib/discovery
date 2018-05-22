@@ -1,5 +1,7 @@
-require "om"
-require "solrizer"
+# frozen_string_literal: true
+
+require 'om'
+require 'solrizer'
 
 class Vocabulary
   include OM::XML::Document

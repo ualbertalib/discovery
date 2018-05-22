@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -21,13 +23,16 @@ module VanillaBlacklight
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    @c = YAML.load_file('config/ingest.yml') rescue {}
+    @c = begin
+           YAML.load_file('config/ingest.yml')
+         rescue
+           {}
+         end
     config.proxy = @c['proxy']
     config.solr = @c['solr']
-    config.eager_load_paths += %W( #{Rails.root}/app/helpers/blacklight/articles_helper_behaviour )
-    config.exceptions_app = self.routes
+    config.eager_load_paths += %W[#{Rails.root}/app/helpers/blacklight/articles_helper_behaviour]
+    config.exceptions_app = routes
     config.symphony_timeout = 4
     config.sfx_timeout = 4
-
   end
 end
