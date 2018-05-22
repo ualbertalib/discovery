@@ -1,10 +1,9 @@
+# frozen_string_literal: true
+
 class ErrorsController < ApplicationController
-  def file_not_found
-  end
+  def file_not_found; end
 
-  def unprocessable
-  end
+  def unprocessable; end
 
-  def internal_server_error
-  end
+  def internal_server_error; end
 end
