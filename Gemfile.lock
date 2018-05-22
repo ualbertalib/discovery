@@ -73,6 +73,13 @@ GEM
       sass (>= 3.3.4)
     bootstrap_form (2.7.0)
     builder (3.2.3)
+    capybara (2.18.0)
+      addressable
+      mini_mime (>= 0.1.3)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (>= 2.0, < 4.0)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     climate_control (0.2.0)
@@ -116,9 +123,10 @@ GEM
     devise-guests (0.6.0)
       devise
     diff-lcs (1.3)
+    docile (1.3.0)
     erubis (2.7.0)
     execjs (2.7.0)
-    factory_girl (4.9.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
     ffi (1.9.23)
     friendly_id (5.2.4)
@@ -207,6 +215,7 @@ GEM
     parslet (1.8.2)
     plupload-rails (1.2.1)
       rails (>= 3.1)
+    puma (3.11.4)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -252,6 +261,8 @@ GEM
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
       rspec-mocks (~> 3.7.0)
+    rspec-collection_matchers (1.1.3)
+      rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -260,6 +271,17 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
+    rspec-rails (3.7.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-solr (2.0.0)
+      rspec (~> 3.0)
+      rspec-collection_matchers
     rspec-support (3.7.1)
     ruby_parser (3.11.0)
       sexp_processor (~> 4.9)
@@ -279,7 +301,15 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    selenium-webdriver (3.12.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2)
     sexp_processor (4.11.0)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
     solrizer (3.4.1)
       activesupport
       daemons
@@ -295,7 +325,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.13)
     stomp (1.4.4)
     temple (0.8.0)
     therubyracer (0.12.3)
@@ -316,6 +345,8 @@ GEM
     warden (1.2.7)
       rack (>= 1.0)
     xml-simple (1.1.5)
+    xpath (2.1.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -328,11 +359,12 @@ DEPENDENCIES
   blacklight_advanced_search
   blacklight_google_analytics
   blacklight_range_limit
+  capybara
   coffee-rails (~> 4.1.0)
   comfortable_mexican_sofa (= 1.12.9)
   devise
   devise-guests
-  factory_girl (~> 4.0)
+  factory_bot
   friendly_id
   htmlentities
   jbuilder (~> 2.0)
@@ -342,12 +374,16 @@ DEPENDENCIES
   nokogiri (= 1.8.1)
   om
   paperclip (= 4.3.6)
-  rails (= 4.2.10)
+  puma (~> 3.11)
+  rails (~> 4.2)
   rspec
+  rspec-rails
+  rspec-solr
   sass-rails (~> 5.0.1)
   sdoc (~> 0.4.0)
+  selenium-webdriver
+  simplecov
   spring
-  sqlite3
   therubyracer
   turbolinks (= 2.5.3)
   uglifier (>= 1.3.0)
