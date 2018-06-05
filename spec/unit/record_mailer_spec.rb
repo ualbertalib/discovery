@@ -5,7 +5,7 @@ require_relative "../spec_helper.rb"
 describe RecordMailer do
   before(:each) do
     allow(RecordMailer).to receive(:default) { { :from => 'no-reply@projectblacklight.org' } }
-    SolrDocument.use_extension( Blacklight::Solr::Document::Email )
+    SolrDocument.use_extension( Blacklight::Document::Email )
     SolrDocument.use_extension( Blacklight::Solr::Document::Sms )
     document = SolrDocument.new({:id=>"123456", :format=>["book"], :title_display => "The horn", :language_facet => "English", :author_display => "Janetzky, Kurt"})
     @documents = [document]

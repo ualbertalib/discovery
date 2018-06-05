@@ -50,16 +50,15 @@ gem "addressable", "2.3.7"
 gem "htmlentities"
 gem "activerecord-session_store"
 gem "nokogiri", "1.8.1"
-gem "factory_girl", "~> 4.0", group: [:test, :development]
 gem "rspec"
 gem "blacklight_advanced_search"
 group :test, :development do
-  gem 'ci_reporter_rspec'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'rspec-solr'
   gem 'simplecov', :require => false
+  gem 'factory_bot'
 end
 gem 'paperclip', '4.3.6'
 gem 'blacklight_google_analytics'
