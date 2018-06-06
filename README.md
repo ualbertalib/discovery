@@ -1,20 +1,27 @@
 Discovery Interface for University of Alberta Libraries
 =======================================================
+[![Build Status](https://travis-ci.org/ualbertalib/discovery.svg?branch=master)](https://travis-ci.org/ualbertalib/discovery)
 
 This is the code base for the University of Alberta Libraries's
 discovery platform. Based on [Project
 Blacklight](projectblacklight.org).
 
-To get the application up and running:
+Depends on ruby 2.1.5
 
-1. clone this repository (via ssh: `git clone git@github.com:ualbertalib/discovery`)
+To get the application up and running for development:
+
+1. clone this repository (`git clone https://github.com/ualbertalib/discovery`)
 2. run `bundle install`
-3. run `rake db:migrate`
+3. run `bundle exec rake db:setup`
 4. Create the APIAuthentication.txt (containing your EBSCO credentials) and token.txt (empty) files
-5. `cd solr-jetty` & `java -jar start.jar &`
-6. `rake ingest[symphony_test_set]`
-7. `rake ingest[sfx_test_set]`
-8. `rake ingest[databases]`
-9. `rails s`
-10. Point your browser to **http://localhost:3000**
-11. Solr admin is available at **http://localhost:8983**
+5. `bundle exec rails s`
+6. Point your browser to **http://localhost:3000/catalog** or **http://localhost:3000/results**
+
+To run the tests:
+
+Unit and Acceptance Tests
+
+1. bundle install --without development production
+2. RAILS_ENV=test bundle exec rake db:create
+3. RAILS_ENV=test bundle exec rake db:migrate
+4. bundle exec rake spec
