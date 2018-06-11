@@ -28,7 +28,7 @@ my $mech = WWW::Mechanize->new();
 my $url="https://$host";
 
 $mech->get( $url );    		# Visit the sign_in page
-like( $mech->content(), qr/Search Library Resources/, "Contains the phrase 'Search Library Resources'" );
+like( $mech->content(), qr/Search the Library/, "Contains the phrase 'Search the Library'" );
 foreach my $searchString (@randomSearches) {
 	eval { $mech->submit_form( fields    => { q => "$searchString" } );  };     # the 'eval' is here to prevent this script from crashing, when Rails crashes & gives us poor results
 	ok( $mech->status == 200, "$host: Searching for random string: $searchString" );

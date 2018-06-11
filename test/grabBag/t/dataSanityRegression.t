@@ -44,11 +44,12 @@ unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "
 $count ++;
 
 # We are searching for this:
-#          <h3><span class="col-md-6">eBooks and more</span> 
-#              <a href="/ebooks?q=shakespeare" class="col-md-6 see-all-results">4464 results</a>
+#          <h3><span class="col-sm-6">Books, media &amp; more</span>
+#            <a href="/symphony?q=shakespeare" class="col-sm-6 see-all-results">19,081 results</a>
+#          </h3>
 my $content = $result->decoded_content; 
 my $match;
-($match) = $content =~ qr/(Books and more.*\n.*>)(\d+)( results)/m ;
+($match) = $content =~ qr/(symphony.*>)([\d,]+)( results)/m ; 
 #if ($content =~ qr/eBooks and more.*\n.*(\d+) results/m) {  # multi-line match
 if (defined $match) {  # multi-line match
 	$DEBUG && print "I found a match\n";
@@ -59,17 +60,12 @@ if (defined $match) {  # multi-line match
 	$DEBUG && print "No match found\n";
 }
 
-like ($result->decoded_content, qr/(Books and more.*\n.*>)(\d+)( results)/m, "Results contain a count of the number of books"); $count++;
+like ($result->decoded_content, qr/(symphony.*>)([\d,]+)( results)/m, "Results contain a count of the number of books"); $count++;
 ok (defined $2, "Extraction of count successful"); $count++;
 if (defined $2) {
-	ok ($2 > 14000, "Count of books should exceed 14,000, actual: $2"); $count++;	# 14157 on Aug 12, 2015, but this will change over time
-}
-
-# Now, repeat that for eBooks
-like ($result->decoded_content, qr/(eBooks and more.*\n.*>)(\d+)( results)/m, "Results contain a count of the number of ebooks"); $count++;
-ok (defined $2, "Extraction of count successful"); $count++;
-if (defined $2) {
-	ok ($2 > 4000, "Count of ebooks should exceed 4,000, actual: $2"); $count++;	# 4467 on Aug 12, 2015, but this will change if we get more
+	my $num_books = $2;
+	$num_books =~ tr/,//d;
+	ok ($num_books > 14000, "Count of books should exceed 14,000, actual: $num_books"); $count++;	# 14157 on Aug 12, 2015, but this will change over time
 }
 
 done_testing $count;
