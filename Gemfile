@@ -59,6 +59,7 @@ group :test, :development do
   gem 'rspec-solr'
   gem 'simplecov', :require => false
   gem 'factory_bot'
+  gem 'zoom'
 end
 gem 'paperclip', '4.3.6'
 gem 'blacklight_google_analytics'

@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   match '/500', to: 'errors#internal_server_error', via: :all
   
   resources :staff, :as => :profiles, :controller => :profiles
+
+  resources :cataloguing
   
   resources :forms 
   post "forms/send_email" => "forms#send_email"
