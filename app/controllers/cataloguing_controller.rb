@@ -19,11 +19,17 @@ class CataloguingController < ApplicationController
       }
     end
     process_record(@catkey)
-    #redirect_to "cataloguing/index"
+    index_record(@catkey)
+    if request.port
+      redirect_to "#{request.protocol}://#{request.domain}:#{request.port}/catalog/tmp#{@catkey}"
+    else
+      redirect_to "#{request.protocol}://#{request.domain}/catalog/tmp#{@catkey}"
+    end
+
   end
 
   private
-  
+
   def process_record(catkey)
     reader = MARC::Reader.new("#{Rails.root}/tmp/records/#{catkey}.mrc", :external_encoding => "MARC-8")
     record = reader.first
@@ -35,6 +41,10 @@ class CataloguingController < ApplicationController
     writer.close
     # delete old marc file
 
+  end
+
+  def index_record(catkey)
+    `rake solr:marc:index MARC_FILE=tmp/records/tmp#{catkey}.mrc`
   end
 
 end
