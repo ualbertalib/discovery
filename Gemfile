@@ -49,7 +49,7 @@ gem "devise-guests"
 gem "addressable", "2.3.7"
 gem "htmlentities"
 gem "activerecord-session_store"
-gem "nokogiri", "1.8.1"
+gem 'nokogiri', '~> 1.8.2 '
 gem "rspec"
 gem "blacklight_advanced_search"
 group :test, :development do
@@ -60,7 +60,7 @@ group :test, :development do
   gem 'simplecov', :require => false
   gem 'factory_bot'
 end
-gem 'paperclip', '4.3.6'
+gem 'paperclip', '~> 5.2.0'
 gem 'blacklight_google_analytics'
 gem 'comfortable_mexican_sofa', '1.12.9'
 gem "blacklight_range_limit"
