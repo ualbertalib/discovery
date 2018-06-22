@@ -13,7 +13,9 @@
 
 development:
   url: "http://solrcloud-test.library.ualberta.ca:8080/solr/discovery-test"
-test: &test
-  url: <%= Rails.application.config.solr %>
+test:
+  url: <%= ENV['DISCOVERY_SOLR_TEST_URL'] || 'http://localhost:8983/solr/discovery-test' %>
+staging:
+  url: <%= Rails.application.config.solr %> 
 production:
-  url: <%= Rails.application.config.solr %>
+  url: <%= Rails.application.config.solr %> # set in application.rb using value at ingest.yml
