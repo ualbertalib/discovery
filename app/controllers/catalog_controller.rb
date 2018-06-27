@@ -73,7 +73,7 @@ class CatalogController < ApplicationController
       config.default_solr_params = {
         :qt => 'search',
         :rows => 25
-     }
+      }
 
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select'
