@@ -28,3 +28,6 @@ token.txt
 /coverage
 .DS_Store
 .rvmrc
+.ruby-version
+.ruby-gemset
+doc
