@@ -1,0 +1,31 @@
+version: '3'
+
+volumes:
+  mysql:
+    driver: local
+  assets:
+    driver: local
+  file-storage:
+    driver: local
+
+services:
+
+  mysql:
+    restart: always
+    image: mysql:5.7
+    env_file: .env_deployment
+    volumes:
+      - mysql:/var/lib/mysql
+
+  # Rails
+  web:
+    image: ualbertalib/discovery:uat
+    depends_on:
+      - mysql
+    env_file: .env_deployment
+    volumes:
+      - assets:/app/public/assets/
+      - file-storage:/app/storage/
+    restart: always
+    ports:
+      - "3002:80"
