@@ -3,6 +3,8 @@ version: '3'
 volumes:
   mysql:
     driver: local
+  solr:
+    driver: local
   assets:
     driver: local
   file-storage:
@@ -16,6 +18,12 @@ services:
     env_file: .env_deployment
     volumes:
       - mysql:/var/lib/mysql
+
+  solr:
+    restart: always
+    image: ualbertalib/blacklight_solr_conf
+    volumes:
+      - solr:/opt/solr/server/solr/mycores
 
   # Rails
   web:
