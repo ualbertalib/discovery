@@ -38,7 +38,7 @@ Integration tests (run against <http://search-test.library.ualberta.ca/>)
 ## Additional Tasks for uat, staging and production
 
 1.  `bundle exec rake assets:precompile` this can take several minutes
-2.  `comfortable_mexican_sofa:cmssetup` to setup the CMS
+2.  `bundle exec rake comfortable_mexican_sofa:cmssetup` to setup the CMS
 3.  create cron jobs to ingest `bundle exec rake ingest[sfx]`, `bundle exec rake ingest[databases]` and clean session table `bundle exec rake sessions:cleanup`
 
 ## Ingest
