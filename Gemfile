@@ -59,10 +59,14 @@ group :test, :development do
   gem 'rspec-solr'
   gem 'simplecov', :require => false
   gem 'factory_bot'
-  gem 'zoom'
 end
 gem 'paperclip', '~> 5.2.0'
 gem 'blacklight_google_analytics'
 gem 'comfortable_mexican_sofa', '1.12.9'
 gem "blacklight_range_limit"
 gem 'friendly_id'
+
+group :development, :production, :staging do
+  # NOTE: requires the yaz library to be installed
+  gem 'zoom'
+end
