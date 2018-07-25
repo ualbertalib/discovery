@@ -23,7 +23,7 @@
           <% if document["held_by_tesim"] %>
             <% @held_by_locations = [] %>
             <% document["held_by_tesim"].first.split.each do |held_by| %>
-              <% @ual = true if (@library_codes[held_by.to_i].include?("University of Alberta") or (@library_codes[held_by.to_i].include?("NEOS Free"))) %>
+              <% @ual = true if (@library_codes[held_by.to_i].include?("University of Alberta") %>
               <% @held_by_locations << @library_codes[held_by.to_i] %>
             <% end %>
             <%= @held_by_locations.join(", ") %>
