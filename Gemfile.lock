@@ -192,13 +192,13 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.0)
+    mimemagic (0.3.2)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
     mysql2 (0.3.21)
-    nokogiri (1.8.1)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     om (3.1.1)
       activemodel
@@ -206,12 +206,12 @@ GEM
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
     orm_adapter (0.5.0)
-    paperclip (4.3.6)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
+    paperclip (5.2.1)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
       mime-types
-      mimemagic (= 0.3.0)
+      mimemagic (~> 0.3.0)
     parslet (1.8.2)
     plupload-rails (1.2.1)
       rails (>= 3.1)
@@ -372,9 +372,9 @@ DEPENDENCIES
   jettywrapper (~> 2.0.3)
   jquery-rails
   mysql2 (~> 0.3.20)
-  nokogiri (= 1.8.1)
+  nokogiri (~> 1.8.2)
   om
-  paperclip (= 4.3.6)
+  paperclip (~> 5.2.0)
   rails (= 4.2.10)
   rspec
   rspec-rails
