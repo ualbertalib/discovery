@@ -49,9 +49,7 @@ group :test, :development do
   gem 'capybara'
   gem 'selenium-webdriver'
   
-  gem 'factory_bot'
-  
-  gem "rspec"
+   gem "rspec"
   gem 'rspec-rails'
   gem 'rspec-solr'
   gem 'simplecov', :require => false
@@ -65,7 +63,7 @@ group :test, :development do
   
   gem 'scss_lint', '>= 0.56.0', require: false
   
-  gem 'simplecov', require: false
+ 
 end
 
 group :development do
