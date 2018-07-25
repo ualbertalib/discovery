@@ -10,7 +10,7 @@ class Ingester
     log_dir = "#{Rails.root}/#{log_dir}"
     FileUtils.mkdir_p(log_dir) unless File.directory?(log_dir)
     log_file = File.open(log_dir+"/"+log_file, File::WRONLY|File::APPEND|File::CREAT)
-    @@ingest_log = Logger.new(log_file)
+    @ingest_log = Logger.new(log_file)
   end
 
   def add_document(vocabulary)
@@ -21,14 +21,14 @@ class Ingester
     status = @solr_object.commit
     success = status["responseHeader"]["status"] == 0 ? "succeeded" : "failed"
     time = status["responseHeader"]["QTime"]
-    @@ingest_log.info("Solr commit response: Ingest #{success}. Elapsed time #{time} ms.")
+    @ingest_log.info("Solr commit response: Ingest #{success}. Elapsed time #{time} ms.")
   end
 
 private
 
   def add(vocabulary)
     status = @solr_object.add vocabulary
-    @@ingest_log.error("Record ingest failed: Record ID: #{vocabulary["id_tesim"].first}") if status["responseHeader"]["status"] != 0
+    @ingest_log.error("Record ingest failed: Record ID: #{vocabulary["id_tesim"].first}") if status["responseHeader"]["status"] != 0
   end
 
 end
