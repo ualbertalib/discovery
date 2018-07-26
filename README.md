@@ -49,4 +49,17 @@ In SolrMarc, the library currently being used to index Blacklight data, the mapp
 
 `bundle exec rake ingest[collection]` where collection is mainly 'symphony', 'sfx' or 'databases'.  See `config/ingest.yml` for other collections. Most collections are expected to be represented by a file in a `./data` directory.
 
+## Cataloguing Tool
 
+This is proof-of-concept functionality. The requirement from cataloguing
+staff was to have a way to see modified/updated records in the
+appropriate Blacklight view (either Discovery or NEOS Discovery),
+without having to wait overnight for the updated record to be reindexed.
+Basically, what the cataloguing tool does is: presents a form where a
+record ID can be entered; on form submission, the application downloads
+the record from Symphony using
+[z39.50](https://en.wikipedia.org/wiki/Z39.50); changes the id so that
+the existing record isn't overwritten; indexes the new record in Solr
+(using the index rake task);
+redirects the user to the record view. Most of the logic for this is
+held in a new controller (cataloguing_controller). 
