@@ -14,7 +14,7 @@ default: &default
   url: <%= Rails.application.secrets.solr_url %>
 development:
   url: <%= ENV['SOLR_URL'] || 'http://localhost:8983/solr/discovery' %>
-test: &test
+test:
   url: http://localhost:8983/solr/discovery-test
   writable: true
 staging:

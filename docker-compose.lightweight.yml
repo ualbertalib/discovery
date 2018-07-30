@@ -19,7 +19,7 @@ services:
   solr:
     image: ualbertalib/blacklight_solr_conf
     ports:
-       - "8983"
+       - "8983:8983"
     volumes:
       - solr:/opt/solr/server/solr/mycores
     entrypoint:
