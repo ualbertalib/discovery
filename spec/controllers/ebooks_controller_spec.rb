@@ -7,5 +7,4 @@ describe EbooksController, type: :controller do
     expect(assigns(:collection_name)).to eq "electronic books"
   end
 
-
 end

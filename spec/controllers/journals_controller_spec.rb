@@ -7,5 +7,4 @@ describe JournalsController, type: :controller do
     expect(assigns(:collection_name)).to eq "e-Journals"
   end
 
-
 end

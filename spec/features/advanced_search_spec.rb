@@ -12,11 +12,10 @@ RSpec.feature "Advanced Search", :type => :feature do
 
     # for some reason fields other than title don't seem to work
     # (Capybara::ElementNotFound)
-    #fill_in "all_fields", :with => "accountancy"
+    # fill_in "all_fields", :with => "accountancy"
     # click_button "Search"
     #
     # expect(page).to have_text("1 - 25 of 64")
 
   end
 end
-

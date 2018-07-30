@@ -24,16 +24,16 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
-if ENV['CAPYBARA_NO_HEADLESS']
-  Capybara.default_driver = :selenium_chrome
-else
-  Capybara.default_driver = :selenium_chrome_headless
-end
+Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
+  :selenium_chrome
+                          else
+  :selenium_chrome_headless
+                          end
 
 require 'rake'
 Rails.application.load_tasks
 Rake::Task['delete'].invoke
-['database_test_set', 'sfx_test_set', 'symphony_test_set'].each do |test_set|
+%w[database_test_set sfx_test_set symphony_test_set].each do |test_set|
   # work around tasks already_invoked flag being set
   Rake::Task['ingest'].reenable
   Rake::Task['solr:marc:index'].reenable

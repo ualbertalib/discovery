@@ -14,4 +14,3 @@ RSpec.feature "Ejournals page test", :type => :feature do
 
   end
 end
-

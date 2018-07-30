@@ -7,5 +7,4 @@ describe ArticlesController, type: :controller do
     expect(assigns(:collection_name)).to eq nil
   end
 
-
 end

@@ -7,5 +7,4 @@ describe SymphonyController, type: :controller do
     expect(assigns(:collection_name)).to eq "Books, media, & more"
   end
 
-
 end

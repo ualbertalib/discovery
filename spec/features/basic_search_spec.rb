@@ -18,4 +18,3 @@ RSpec.feature "Basic Search", :type => :feature do
 
   end
 end
-

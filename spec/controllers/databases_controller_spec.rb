@@ -7,5 +7,4 @@ describe DatabasesController, type: :controller do
     expect(assigns(:collection_name)).to eq "Databases"
   end
 
-
 end

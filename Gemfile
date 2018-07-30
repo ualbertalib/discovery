@@ -56,8 +56,8 @@ group :test, :development do
   gem 'rspec-solr'
   
   gem 'pry'
-  gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'pry-rails'
 
   gem 'rubocop', '~> 0.56.0', require: false
   
