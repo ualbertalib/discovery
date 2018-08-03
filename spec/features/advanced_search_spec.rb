@@ -3,6 +3,16 @@ require_relative "../spec_helper"
 RSpec.feature "Advanced Search", :type => :feature do
   scenario "User does an advanced search" do
     visit "/advanced"
+    
+    # issue:1178 Library locations should be sorted in alpha order
+    # previously these were stored as codes (ie uaeduc, uabusiness) in the index and then 
+    # mapped to their full title (ie University of Alberta HT Coutts Education, University of Alberta Winspear Business)
+    click_link 'Library'
+    expect(page.body.index('University of Alberta HT Coutts Education')).to be < page.body.index('University of Alberta Winspear Business')
+    within '#facet-location_tesim' do
+      libraries = all('li span.facet-label').map(&:text)
+      expect(libraries.sort).to eq(libraries)
+    end
 
     fill_in "title", :with => "accountancy"
     click_button "Search"

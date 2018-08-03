@@ -124,12 +124,7 @@ module Blacklight::FacetsHelperBehavior
   # @option options [Boolean] :suppress_link display the facet, but don't link to it
   # @return [String]
   def render_facet_value(facet_solr_field, item, options ={})
-    if facet_solr_field == "location_tesim"
-      path = search_action_path(add_facet_params_and_redirect(facet_solr_field, item))
-      content_tag(:span, :class => "facet-label") do
-        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, @locations[item.value] ), path, :class=>"facet_select")
-      end + render_facet_count(item.hits)
-    elsif facet_solr_field == "languagenote_tesim"
+    if facet_solr_field == "languagenote_tesim"
       path = search_action_path(add_facet_params_and_redirect(facet_solr_field, item))
       content_tag(:span, :class => "facet-label") do
         link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, @languages[item.value.to_s.downcase]), path, :class=>"facet_select")
