@@ -1,0 +1,28 @@
+version: '3'
+
+volumes:
+  mysql:
+    driver: local
+  solr:
+    driver: local
+
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+    volumes:
+      - mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  solr:
+    image: ualbertalib/blacklight_solr_conf
+    ports:
+       - "8983"
+    volumes:
+      - solr:/opt/solr/server/solr/mycores
+    entrypoint:
+      - solr-precreate
+      - discovery-test
+      - /myconfig

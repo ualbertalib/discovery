@@ -31,3 +31,4 @@ token.txt
 .ruby-version
 .ruby-gemset
 doc
+*.swp

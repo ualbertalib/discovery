@@ -10,10 +10,15 @@
 # jetty_path is only required for rake tasks that need to know
 # how to start up solr, generally for automated testing.
 
-
+default: &default
+  url: <%= Rails.application.secrets.solr_url %>
 development:
-  url: "http://solrcloud-test.library.ualberta.ca:8080/solr/discovery-test"
+  url: <%= ENV['SOLR_URL'] || 'http://localhost:8983/solr/discovery' %>
 test: &test
-  url: <%= Rails.application.config.solr %>
+  url: http://localhost:8983/solr/discovery-test
+  writable: true
+ingest: 
+  <<: *default
+  writable: true
 production:
-  url: <%= Rails.application.config.solr %>
+  <<: *default

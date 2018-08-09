@@ -7,7 +7,7 @@ class Databases
   attr_reader :xml_records
 
   def initialize
-    @@ingest_log = Logger.new('log/ingest.log')
+    @ingest_log = Logger.new('log/ingest.log')
     @xml_records = {}
     database_subjects = JSON.parse(open("http://lgapi-ca.libapps.com/1.1/subjects?site_id=165&key=0d26849c8a09f1da841bc84d4216b8d5").read)
       for subject in database_subjects do
@@ -38,7 +38,7 @@ class Databases
           end
         end
       end
-    @@ingest_log.info("-- Preparing to ingest #{@xml_records.size} records...")
+    @ingest_log.info("-- Preparing to ingest #{@xml_records.size} records...")
   end
 
   def xml_file
