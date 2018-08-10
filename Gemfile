@@ -36,7 +36,7 @@ gem "devise-guests"
 gem "addressable", "2.3.7"
 gem 'friendly_id'
 gem "htmlentities"
-gem 'nokogiri', '~> 1.8.2 '
+gem 'nokogiri', '~> 1.8.4'
 gem "om"
 gem 'paperclip', '~> 5.2.0'
 

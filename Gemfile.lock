@@ -213,7 +213,7 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     mysql2 (0.3.21)
-    nokogiri (1.8.2)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     om (3.1.1)
       activemodel
@@ -412,7 +412,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   mysql2 (~> 0.3.20)
-  nokogiri (~> 1.8.2)
+  nokogiri (~> 1.8.4)
   om
   paperclip (~> 5.2.0)
   pry
