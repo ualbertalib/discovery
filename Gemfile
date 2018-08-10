@@ -41,7 +41,7 @@ gem "om"
 gem 'paperclip', '~> 5.2.0'
 
 # Content Management System
-gem 'comfortable_mexican_sofa', '1.12.9'
+gem 'comfortable_mexican_sofa', '1.12.11'
 
 group :test, :development do
   gem 'sdoc', require: false
