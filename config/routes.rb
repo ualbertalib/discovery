@@ -23,8 +23,6 @@ Rails.application.routes.draw do
   get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }
   get "articles/switch", to: "articles#recordSwitch"
 
-  get "/results", to: "bento#index"
-
   get "/advanced", to: "advanced#index"
   
   get "/permalink/opac/:id/:user", to: redirect("http://neos.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/57/5?searchdata1=%{id}{001}&user_id=%{user}")
