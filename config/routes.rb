@@ -42,6 +42,8 @@ Rails.application.routes.draw do
   resources :forms 
   post "forms/send_email" => "forms#send_email"
 
+  root to: "comfy/cms/content#show"
+
   comfy_route :cms_admin, :path => '/admin'
 
   # Make sure this routeset is defined last
