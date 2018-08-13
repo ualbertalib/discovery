@@ -22,14 +22,14 @@ task :ingest, [:collection] do |t, args|
     log_file = File.open(log_config['log_path'], File::WRONLY|File::CREAT)
   end
 
-  @@ingest_log = Logger.new(log_file)
-  @@ingest_log.info("--- Starting ingest on #{Time.now} ---")
+  @ingest_log = Logger.new(log_file)
+  @ingest_log.info("--- Starting ingest on #{Time.now} ---")
   @collection = args.collection
   @c = IngestConfiguration.new(args.collection, @config_file)
 
   Rake::Task["fetch"].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
 
-  @@ingest_log.info("Starting #{@c.schema} ingest for #{args.collection}")
+  @ingest_log.info("Starting #{@c.schema} ingest for #{args.collection}")
 
   case @c.schema
 
@@ -45,7 +45,7 @@ task :ingest, [:collection] do |t, args|
     ingest_databases
   end
 
-  @@ingest_log.info("--- Finished ingest on #{Time.now} ---")
+  @ingest_log.info("--- Finished ingest on #{Time.now} ---")
 end
 
 def ingest_mods_or_dublin_core
