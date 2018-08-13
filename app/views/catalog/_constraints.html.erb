@@ -4,7 +4,7 @@
         <div class="pull-right">
           <%# link_to "Go to Bookmarks", "/bookmarks", :class => "btn btn-sm btn-text", :id=>"bookmarksLink" %>
           <%= link_to "View Search History", "/search_history", :class => "btn btn-sm btn-text", :id=>"searchHistoryLink" %>
-          <%=link_to t('blacklight.search.start_over'), root_path, :class => "catalog_startOverLink btn btn-sm btn-text", :id=>"startOverLink" %>
+          <%=link_to t('blacklight.search.start_over'), '/', :class => "catalog_startOverLink btn btn-sm btn-text", :id=>"startOverLink" %>
         </div>
         <span class="constraints-label"><%= t('blacklight.search.filters.title') %></span>
         <%= render_constraints(params) %>
