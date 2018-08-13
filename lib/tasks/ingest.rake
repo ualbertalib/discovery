@@ -74,6 +74,7 @@ end
 def ingest_marc
   ENV['MARC_FILE'] = @c.path
   ENV['CONFIG_PATH'] = @c.config
+  abort "Target (#{Blacklight.connection_config[:url]}) is read-only" unless Blacklight.connection_config[:writable]
   Rake::Task["solr:marc:index"].invoke
 end
 

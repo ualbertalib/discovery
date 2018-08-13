@@ -5,13 +5,10 @@ development:
   log_path: "log/ingest.log"
 test:
   log_path: "log/ingest.log"
-
 staging:
   <<: *default
-
 uat:
   <<: *default
-
 production:
   <<: *default
 
