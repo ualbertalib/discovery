@@ -3,8 +3,8 @@ require_relative "./ingester.rb"
 class BatchIngest
   attr_writer :ingester, :root, :namespace, :record_delimiter
 
-  def initialize(args ={})
-    @solr_url = args[:solr_url]
+  def initialize
+    @solr_url = Blacklight.connection_config[:url]
   end
 
   def from_file(file, vocabulary)

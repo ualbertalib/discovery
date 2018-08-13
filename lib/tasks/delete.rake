@@ -4,8 +4,7 @@ require 'rsolr'
 
 desc 'Delete all records from solr index'
 task :delete, [:records] do |t, args|
-  c = IngestConfiguration.new(args.records || "databases", @config_file)
-  solr = RSolr.connect :url=>c.solr
+  solr = RSolr.connect :url=> Blacklight.connection_config[:url]
   case args.records
 
   when "databases"
