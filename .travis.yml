@@ -1,9 +1,24 @@
 language: ruby
+sudo: required
+addons:
+  chrome: stable
 rvm:
   - 2.1.5
+  - 2.4
 cache: bundler
 bundler_args: --without development production --jobs=3 --retry=3
 before_script:
+  # Disable services enabled by default
+  # http://docs.travis-ci.com/user/database-setup/#MySQL
+  - sudo /etc/init.d/mysql stop
+  
+  - docker version
+  - docker-compose version
+  
+  - docker-compose -f docker-compose.lightweight.yml up -d
+  
+  - docker ps
+  
   - RAILS_ENV=test bundle exec rake db:create
   - RAILS_ENV=test bundle exec rake db:migrate
 script:
