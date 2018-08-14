@@ -1,0 +1,14 @@
+<div id="per_page-dropdown" class="dropdown pull-right  hidden-phone">
+  <span class="hide-text"><%= t('blacklight.search.per_page.title') %></span>
+  <ul class="css-dropdown">
+    <li class="btn">
+      <%= link_to(show_results_per_page.to_s + " per page", "#") %> <span class="caret"></span>
+      <ul>
+        <li><%= link_to("10 per page", request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=SetResultsPerPage(10)") %></li>
+        <li><%= link_to("20 per page", request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=SetResultsPerPage(20)") %></li>
+        <li><%= link_to("50 per page", request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=SetResultsPerPage(50)") %></li>
+        <li><%= link_to("100 per page", request.fullpath.split("?")[0] + "?" + generate_next_url + "&eds_action=SetResultsPerPage(100)") %></li>
+      </ul>
+    </li>
+  </ul>
+</div>

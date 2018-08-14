@@ -1,0 +1,15 @@
+<div id="debug" style="clear: both;">
+  <h4>Debug</h4>
+  <h5>Time of test: <%= Time.now.getutc.to_i.to_s %>, or <%= Time.at(Time.now.getutc.to_i) %></h5>
+  <h5>Token / Session Key Info</h5>
+  <p>Auth_Token: <%= getAuthToken %>
+  <% if has_valid_auth_token? %>
+    <%= "(Expires " + get_token_timeout.to_s + ")" %>
+  <% end %>
+  </p>
+  <p>Session_Token: <%= session[:session_key] %></p>
+  <h5>Debug Notes</h5>
+  <p>Notes: <%= debugNotes.html_safe %></p>
+  <h5>Session Dump</h5>
+  <p><%= session.to_s %></p>
+</div>

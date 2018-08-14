@@ -1,0 +1,96 @@
+<% unless has_search_parameters? %>
+  <p>Empty Search.</p>
+<% else %>
+  <% if session[:results] && session[:results]['SearchResult'] && session[:results]['SearchResult']['Data'] && session[:results]['SearchResult']['Data']['Records'].present? %>
+    <div id="documents">
+      <% session[:results]['SearchResult']['Data']['Records'].each do |result| %>
+        <div class="document blacklight-<%= show_pubtypeid(result) %>">
+          <div class="record-image">
+            <% if has_coverimage?(result) %>
+              <img src="<%= show_coverimage_link(result) %>" border="0" />
+            <% else %>
+              <span class="pt-icon pt-<%= show_pubtypeid(result) %>"></span>
+            <% end %>
+            <br /><%= show_pubtype(result) %>
+          </div>
+          <div class="documentHeader clearfix">
+            <% if has_restricted_access?(result) %>
+              <h5 class="index_title"><%= show_resultid(result) %>. This result cannot be shown to guests.  <%= link_to "Please log in to see this result.", show_detail_link(result, show_resultid(result), params[:q]) %></h5>    
+            <% else %>
+              <% Rails.application.config.proxy %>
+              <h5 class="index_title"><%= show_resultid(result) %>. <%= link_to show_title(result), Rails.application.config.proxy+show_plink(result), :target => "_blank" %></h5>    
+            <% end %>
+        <%# bookmark functions for items/docs %>
+        <%# render_index_doc_actions document, :wrapping_class => "documentFunctions span2" %>
+          </div>
+
+          <% unless has_restricted_access?(result) %>
+            <dl class="dl-horizontal dl-invert">
+
+            <% if (show_view_option == 'brief' or show_view_option == 'detailed') and has_authors?(result) %>
+              <dt class="blacklight-author_display">Author:</dt>
+              <dd class="blacklight-author_display"><%= show_authors(result) %></dd>
+            <% end %>
+
+            <% if has_titlesource?(result) %>
+              <dt class="blacklight-format">Source:</dt>
+              <dd class="blacklight-format"><%= show_titlesource(result) %></dd>    
+            <% elsif has_pubdate?(result) %>
+              <dt class="blacklight-format">Published:</dt>
+              <dd class="blacklight-format"><%= show_pubdate(result) %></dd>        
+            <% end %>
+            
+            <% if has_pubtype?(result) %>
+              <dt class="blacklight-format">Format:</dt>
+              <dd class="blacklight-format"><%= show_pubtype(result) %></dd>
+            <% end %>
+
+            <% if has_abstract?(result) %>
+              <dt class="blacklight-abstract">Abstract:</dt>
+              <dd class="blacklight-abstract"><%= show_abstract(result) %></dd>
+            <% end %>  
+            
+            <% if has_subjects?(result) and show_view_option == 'detailed' %>
+              <dt class="blacklight-subject">Subjects:</dt>
+              <dd class="blacklight-abstract"><%= show_subjects(result) %></dd>  
+            <% end %>
+  
+  <%# if has_any_fulltext?(result) %>
+  <!-- <dt class="blacklight&#45;fulltext">Availability:</dt> -->
+  <!-- <dd class="blacklight&#45;fulltext"> -->
+  <%# if has_pdf?(result) %>
+    <%# link_to "PDF Full Text", show_pdf_title_link(result) %>
+    <%# Full Text Available
+  <%# elsif has_html?(result) %>
+    <%# link_to "HTML Full Text", show_best_fulltext_link(result), :target => "_blank" %>
+    <%# Full Text Available
+  <%# elsif has_smartlink?(result) %>
+    <%# link_to "Linked Full Text", show_smartlink_title_link(result) %>
+    <%# Full Text Available
+  <%# elsif has_ebook?(result) %>
+    <%# link_to "eBook Full Text", show_ebook_title_link(result) %>
+    <%# Full Text Available
+  <%# else %>
+    <%#= show_best_fulltext_link_detail(result) %>
+        </dl>
+      </div>
+        <% end %>
+  <!-- </dd> -->
+  <%# elsif has_ill?(result) %>
+  <!-- <dt class="blacklight&#45;ill">Full&#45;Text:</dt> -->
+  <!-- <dd class="blacklight&#45;ill"><%= show_ill(result) %></dd>   -->
+  <%# end %>
+
+
+<%# else %>
+    <!-- dl class="dl-horizontal dl-invert">
+  <dt class="blacklight-author_display">Note:</dt>
+  <dd class="blacklight-author_display">This result cannot be displayed unless you are <%#= link_to "logged in", new_user_session_path %>.</dd>
+  </dl> -->
+<% end %>
+</div>
+    
+    <% end %>
+
+  <% end %>
+  <%# end %>    

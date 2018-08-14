@@ -1,0 +1,13 @@
+    <%= form_tag "/articles", :method => :get, :class => 'search-query-form form-inline clearfix' do %>
+      <div class="pull-left">
+        <label for="search_field" class="hide-text"><%= t('blacklight.search.form.search_field.label') %></label>
+        <%= select_tag(:search_field, options_for_select(search_fields, h(params[:search_field])), :title => t('blacklight.search.form.search_field.title'), :class=>"search_field input-small") %>
+        <span class="hide-text"><%= t('blacklight.search.form.search_field.post_label') %></span>
+      </div>
+        <%= show_hidden_field_tags %>
+         <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "search_q q", :id => "q"%>
+        <button type="submit" class="btn btn-primary search-btn" id="search">
+          <span class="submit-search-text"><%=t('blacklight.search.form.submit')%></span>
+          <i class="icon-search icon-white"></i>
+        </button>
+    <% end %>
