@@ -2033,8 +2033,6 @@ ul.foot-nav{
 	font-size: 14px;
 }
 
-
-
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
 @media (min-width: 492px){
 
@@ -2518,12 +2516,12 @@ ul.foot-nav{
 	.new-search{
 		background-color:#FBED32;
 		font-size:15px;
-		padding:3px;
+		padding:5px 8px;
 		color:#333;
 		border-radius:5px;
 		margin-top: 22px;
 		text-align: center;
-		margin-left: -50px;
+		margin-left: 205px;
 	}
 	.new-search:hover{
 		background-color: #F4FA58;

@@ -17,7 +17,7 @@ class CatalogController < ApplicationController
 
   def index
     super
-    @collection_name = "all library collections"
+    @collection_name = ""
     load_lookup_tables
   end
 

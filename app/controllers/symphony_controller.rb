@@ -13,7 +13,7 @@ class SymphonyController < CatalogController
 
   def index
     super
-    @collection_name = "Books, media, & more"
+    @collection_name = ""
   end
 
 end

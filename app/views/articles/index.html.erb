@@ -57,7 +57,7 @@
              <h2> Results for <em><%= params[:q] %></em> in Articles & more
             <% end %>
              </h2>
-      <form class="form-inline" role="form" action='/results'>
+      <form class="form-inline" role="form" action='<%= articles_path %>'>
         <div class="form-group">   
           <input type="text" class="form-control" placeholder="search again" name="q">
         </div>
@@ -106,7 +106,7 @@
                 </div>
                 <div class="col-sm-2">
                   <%= link_to 'Clear All Limits', articles_path(:q => params[:q]), :class => 'start-over' %>
-                  <%= link_to 'Start Over', results_path, :class => 'start-over' %>
+                  <%= link_to 'Start Over', root_path, :class => 'start-over' %>
                 </div>
               </div>
                </div>
