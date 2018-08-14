@@ -13,6 +13,21 @@ import "lib/tasks/delete.rake"
 
 @config_file = YAML.load_file("#{Rails.root}/config/ingest.yml")
 
+desc 'Shows more info about the ingest task'
+task :ingest_info do
+  if ENV['SOLR_INGEST_URL']
+    Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL']
+    Blacklight.connection_config[:writable] = true
+    puts "target is set from environment variable SOLR_INGEST_URL=#{ENV['SOLR_INGEST_URL']}"
+  else
+    puts "target is set from config/blacklight.yml #{Blacklight.connection_config[:url]}"
+  end
+  puts if Blacklight.connection_config[:writable] ? 'writeable' : 'not writeable'
+  solr = RSolr.connect :url=> Blacklight.connection_config[:url]
+  response = solr.get 'select', :params => {:q => '*:*', :qt => 'standard'}
+  puts "Solr collection contains #{response['response']['numFound']} results."
+end
+
 desc 'ingest records' # add config parameter for directory ingest?
 task :ingest, [:collection] do |t, args|
   log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
