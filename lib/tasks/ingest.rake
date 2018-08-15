@@ -22,7 +22,11 @@ task :ingest_info do
   else
     puts "target is set from config/blacklight.yml #{Blacklight.connection_config[:url]}"
   end
-  puts if Blacklight.connection_config[:writable] ? 'writeable' : 'not writeable'
+  if Blacklight.connection_config[:writable]
+    puts 'writable'
+  else
+    puts 'not writable'
+  end
   solr = RSolr.connect :url=> Blacklight.connection_config[:url]
   response = solr.get 'select', :params => {:q => '*:*', :qt => 'standard'}
   puts "Solr collection contains #{response['response']['numFound']} results."

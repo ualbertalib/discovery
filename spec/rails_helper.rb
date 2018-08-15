@@ -30,6 +30,7 @@ Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
   :selenium_chrome_headless
                           end
 
+# smoke test the ingest task and setup some seed data for testing
 require 'rake'
 Rails.application.load_tasks
 Rake::Task['delete'].invoke
