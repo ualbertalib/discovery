@@ -9,7 +9,7 @@ RSpec.feature "Ejournals page test", :type => :feature do
     fill_in "q", :with => "accountancy"
     click_button "search"
 
-    expect(page).to have_text("Results for accountancy in e-Journals")
+    expect(page).to have_text("Results for accountancy e-Journals")
     expect(page).to have_text("1 - 6 of 6")
 
   end

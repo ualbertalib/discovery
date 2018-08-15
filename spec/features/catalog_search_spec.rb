@@ -7,7 +7,7 @@ RSpec.describe "Catalog Search", :type => :feature do
     fill_in "q", :with => "shakespeare"
     click_button "search"
 
-    expect(page).to have_text("Results for shakespeare in all library collections")
+    expect(page).to have_text("Results for shakespeare")
   end
   
   scenario "User visits an item result" do
