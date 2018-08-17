@@ -18,6 +18,9 @@ ahsreddr: Alberta Health Services - Red Deer Regional Hospital
 ahsrvgh: Alberta Health Services - Rockyview General Hospital
 ahssturg: Alberta Health Services - Sturgeon Community Hospital
 ahstbcc: Alberta Health Services - Tom Baker Cancer Centre
+ahserc: Alberta Health Services
+ahscenten: Alberta Health Services 
+ahsint: Alberta Health Services/Covenant Health - Internet
 ahsglenrse: Alberta Health Services - Glenrose Rehabilitation Hospital
 aitfcalg:  Alberta Innovates - Technology Futures - Calgary
 aitfcfer: Alberta Innovates - Technology Futures - C-FER Technologies
@@ -31,13 +34,13 @@ covenantgn: Covenant Health - Grey Nuns Community Hospital
 covenantmh: Covenant Health - Misericordia Community Hospital
 cross:  Cross Cancer Institute
 cuc:  Canadian University College
-gprc: Grande Prairie Regional College
-gprcgp: Grande Prairie Regional College
+gprcgp: Grande Prairie Regional College - Grande Prairie
 gprcfrvw: Grande Prairie Regional College - Fairview
 gprcint: Grande Prairie Regional College - Internet
 grmacacc: Grant MacEwan University - Alberta College Campus
 grmaccac: Grant MacEwan University - Centre for Arts & Communications
 grmacint: Grant MacEwan University - Internet
+grmactsv: Grant MacEwan University - Technical Services
 grmacsoc: Grant MacEwan University - South Campus
 grmacewan: Grant MacEwan University - City Centre Campus
 justiceca: Justice Canada
@@ -73,3 +76,4 @@ uasjc:  University of Alberta St Joseph's College
 uaspcoll: University of Alberta Bruce Peel Special Collections
 uatechserv: University of Alberta Bibliographic Services
 uarcrf: University of Alberta Research and Collections Resource Facility
+usic tech lab: University of Alberta Cameron - Science & Technology - Lab
