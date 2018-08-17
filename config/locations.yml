@@ -20,7 +20,7 @@ ahssturg: Alberta Health Services - Sturgeon Community Hospital
 ahstbcc: Alberta Health Services - Tom Baker Cancer Centre
 ahsglenrse: Alberta Health Services - Glenrose Rehabilitation Hospital
 aitfcalg:  Alberta Innovates - Technology Futures - Calgary
-aitfc-fer: Alberta Innovates - Technology Futures - C-FER Technologies
+aitfcfer: Alberta Innovates - Technology Futures - C-FER Technologies
 aitfdevon: Alberta Innovates - Technology Futures - Devon
 aitfmw: Alberta Innovates - Technology Futures - Mill Woods
 aitfveg: Alberta Innovates - Technology Futures - Vegreville
@@ -32,6 +32,7 @@ covenantmh: Covenant Health - Misericordia Community Hospital
 cross:  Cross Cancer Institute
 cuc:  Canadian University College
 gprc: Grande Prairie Regional College
+gprcgp: Grande Prairie Regional College
 gprcfrvw: Grande Prairie Regional College - Fairview
 gprcint: Grande Prairie Regional College - Internet
 grmacacc: Grant MacEwan University - Alberta College Campus
@@ -45,10 +46,13 @@ kings:  The King's University College
 lakelndin: Lakeland College Internet
 lakelndll: Lakeland College Lloydminster
 lakelndvr: Lakeland College Vermilion
+neosfree: NEOS Free Internet Resources
 newman: Newman Theological College
 nlcgr: Northern Lakes College - Grouard
 nlcint: Northern Lakes College - Internet
 nlcsl: Northern Lakes College - Slave Lake
+norqmain: NorQuest College - Main Building
+norqwest: NorQuest College - Westmount
 olds: Olds College
 reddeerc: Red Deer College
 taylor: Taylor College and Seminary
