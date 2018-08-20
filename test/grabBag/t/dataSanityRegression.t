@@ -33,33 +33,40 @@ my $url="https://$host";
 
 my $searchString="shakespeare"; 	# inspired by Sam's favourite test
 my $count=0;
-my $result; 
-my $resultsCounter;
+my ($result, $resultsCounter, $content, $match );
 
-my @collections = qw/symphony journals databases/;
-foreach my $collectionString (@collections) {
-	$DEBUG && print "Trying $searchString in $collectionString...\n";
-	#eval {$result = $mech->submit_form( fields    => { q => $searchString, },);  };
+my @collections = ( 
+	{ 
+		name	=>  'symphony',  
+		minimum	=>  15000 
+	}, 
+	{ 
+		name	=>  'journals',  
+		minimum	=>  10 
+	}, 
+	{ 
+		name	=>  'databases', 
+		minimum	=>  10 
+	} 
+);
+for my $href (@collections) {
+	$DEBUG && print "Trying $searchString in " . $href->{name}. "...\n";
 	$result=undef;
-	$result = $mech->get( $url."/$collectionString?q=$searchString" );    			# limit the search to a collection
-	ok ($mech->status == 200, "$host: Search for $searchString, within $collectionString collection") ; $count ++;
+	$result = $mech->get( $url. "/" . $href->{name} . "?q=$searchString" );    			# limit the search to a collection
+	ok ($mech->status == 200, "$host: Search for $searchString, within " .  $href->{name} . " collection") ; $count ++;
 	ok (defined($result) , "Did we get content?") ; $count++;
-	unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ;   #  Ugh, in Prod, we try to return a pretty error, not a bare 500
-	$count ++;
+	unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ; $count ++;
 	unlike  ($result->decoded_content, qr/No results found for your search/, "Check for missing data") ; $count ++;
 
 	# We are searching for this snippet: <strong>1</strong> - <strong>25</strong> of <strong>19,046</strong>
-	my $content = $result->decoded_content; 
-	my $match;
+	$content = $result->decoded_content; 
 	($match) = $content =~ qr/(<strong>1<\/strong> - <strong>\d+<\/strong> of <strong>)([\d,]+)/ ;
 
-	#like ($result->decoded_content, qr/(Books, media &amp; more.*\n.*>)(\d+)( results)/m, "Results contain a count of the number of books"); $count++;
-	#like ($result->decoded_content, qr/(<strong>1<\/strong> - <strong>\d+<\/strong> of <strong>)([\d,]+)/m, "Results contain a count of the number of results within $collectionString") ; $count ++;
 	ok (defined $2, "Extraction of count"); $count++;
 	$resultsCounter = $2;
 	$resultsCounter =~ tr/,//d; # output might contain commas
 	if (defined $resultsCounter) {
-		ok ($resultsCounter > 10, "Count of results within $collectionString: $resultsCounter"); $count++;	# 14157 on Aug 12, 2015, but this will change over time
+		ok ($resultsCounter > $href->{minimum}, "Count of results within " . $href->{name} . ": $resultsCounter"); $count++;	# 14157 on Aug 12, 2015, but this will change over time
 	}
 }
 
