@@ -8,7 +8,7 @@
 #		These were inspired by early revisions of mobyTest.pl, which found these class of errors!
 # RevisionCntl: 
 # Context: 	
-# Ideas for improvement:  This should take a parameter that will allow us to run it against either Test or Prod!
+# Ideas for improvement:
 use strict;
 use WWW::Mechanize;
 use Test::More;
