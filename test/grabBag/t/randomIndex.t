@@ -28,7 +28,7 @@ my $mech = WWW::Mechanize->new();
 my $url="https://$host";
 
 $mech->get( $url );    		# Visit the sign_in page
-like( $mech->content(), qr/Search Library Resources/, "Contains the phrase 'Search Library Resources'" );
+like( $mech->content(), qr/University of Alberta Libraries/, "Contains the phrase 'University of Alberta Libraries'" );
 foreach my $searchString (@randomSearches) {
 	eval { $mech->submit_form( fields    => { q => "$searchString" } );  };     # the 'eval' is here to prevent this script from crashing, when Rails crashes & gives us poor results
 	ok( $mech->status == 200, "$host: Searching for random string: $searchString" );
@@ -49,7 +49,7 @@ $mech->get( $baseURL . "&rows=$rows"  );
 
 my $initialjsonHashref = JSON->new->utf8->decode($mech->content);
 my $page = int rand (int($initialjsonHashref->{ "response" }->{ "numFound" } / 10));
-print "Selecting page: $page\n";
+$DEBUG && print "Selecting page: $page\n";
 
 $rows=10; 
 $mech->get( $baseURL . "&rows=$rows&start=$page" );
@@ -65,7 +65,7 @@ $mech = WWW::Mechanize->new();
 my @search;
 foreach my $outerLoop ( $jsonHashref->{ "response" }->{ "docs" } ) {
 	foreach my $innerLoop (@$outerLoop) {
-		push @search, $innerLoop->{ "title_t" }[0];
+		push @search, $innerLoop->{ "title_display" }[0];
 	}
 }
 
