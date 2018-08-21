@@ -29,6 +29,7 @@ my $url="https://$host";
 
 $mech->get( $url );    		# Visit the sign_in page
 like( $mech->content(), qr/University of Alberta Libraries/, "Contains the phrase 'University of Alberta Libraries'" );
+
 foreach my $searchString (@randomSearches) {
 	eval { $mech->submit_form( fields    => { q => "$searchString" } );  };     # the 'eval' is here to prevent this script from crashing, when Rails crashes & gives us poor results
 	ok( $mech->status == 200, "$host: Searching for random string: $searchString" );

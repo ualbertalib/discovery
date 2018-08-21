@@ -15,23 +15,21 @@
 #   limitations under the License.
 %>
 
-<% @current_url = request.original_url %>
+<% session[:current_url] = request.original_url %>
 
-<% catch :eds_connection_error do %>
-  <% eds_connect %>
+<% eds_connect %>
 
 <% if has_search_parameters? %>
        <% options = generate_api_query(params) %>
        <%# <% clean_params = deep_clean(params) %>
        <%# <% params = clean_params %>
 
-  <%# if @results %>
-	<%# unless params[:fromDetail] == 'y'%>
-	    <% search(options) %>
+  <%# if session[:results] %>
+  <%# unless params[:fromDetail] == 'y'%>
+      <% search(options) %>
       <%# end %>
     <%# end %>
-  <% end %>
-      <% end %>
+<% end %>
 
 <script type="text/javascript">
   function htmlDecode(input){
@@ -41,7 +39,7 @@
   }
 </script>
 
-<% if @results && @results['SearchRequestGet'] %>
+<% if session[:results] && session[:results]['SearchRequestGet'] %>
 <% show_numlimiters.times do |i| %>
 <script type="text/javascript">
   $(document).ready(function() {
@@ -56,10 +54,10 @@
 <div class="row">
   <div class="col-md-12">
            <% if ((defined? params[:q]) && !params[:q].empty?) %>
-             <h2>	Results for <em><%= params[:q] %></em> in Articles & more
+             <h2> Results for <em><%= params[:q] %></em> in Articles & more
             <% end %>
              </h2>
-      <form class="form-inline" role="form" action='/results'>
+      <form class="form-inline" role="form" action='<%= articles_path %>'>
         <div class="form-group">   
           <input type="text" class="form-control" placeholder="search again" name="q">
         </div>
@@ -108,7 +106,7 @@
                 </div>
                 <div class="col-sm-2">
                   <%= link_to 'Clear All Limits', articles_path(:q => params[:q]), :class => 'start-over' %>
-                  <%= link_to 'Start Over', results_path, :class => 'start-over' %>
+                  <%= link_to 'Start Over', root_path, :class => 'start-over' %>
                 </div>
               </div>
                </div>
@@ -119,7 +117,7 @@
              
 
     <% unless has_search_parameters? %>
-	    <%= render 'home' %>
+      <%= render 'home' %>
     <% else %>
 
       

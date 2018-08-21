@@ -519,7 +519,7 @@ $(function() {
     $(this).addClass("btn-blue");
   });
   $( "#everything-limit" ).click(function() { 
-    $('#main-search').attr('action', '/results');
+    $('#main-search').attr('action', '/catalog');
     $('#q').attr('placeholder', 'search everything...');
     $('#fr-q').attr('placeholder', 'chercher partout...');
   });

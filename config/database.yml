@@ -21,6 +21,14 @@ default: &default
   pool: 5
   timeout: 5000
   encoding: utf8
+  
+mysql: &mysql
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: mysecretpassword
+  host: 127.0.0.1
 
 development:
   <<: *default
@@ -33,6 +41,12 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+staging:
+  #  from template database.yml.test.j2
+  <<: *mysql
+  database: discovery_staging
+
 production:
-  <<: *default
-  database: db/production.sqlite3
+  # from template database.yml.prod.j2
+  <<: *mysql
+  database: discovery_production

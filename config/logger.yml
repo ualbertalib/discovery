@@ -4,6 +4,9 @@ development:
 test:
   log_path: "log/ingest.log"
 
+staging:
+  log_path: "/var/log/blacklight_ingest.log"
+
 production:
   log_path: "/var/log/blacklight_ingest.log"
 
