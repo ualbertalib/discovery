@@ -639,10 +639,12 @@ padding: 15px 0;
   }
   #holdings table {
     font-size: 75%;
-    margin-top: -50px;
+  
     padding-top: 0;
     float: left;
     width: auto;
   }
-  img { display: none }
+    #subject-list, img, .navbar-nav, .lib-nav{
+      display:none;
+    }
 }
