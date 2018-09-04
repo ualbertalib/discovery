@@ -303,8 +303,8 @@ GEM
       rspec-expectations (~> 3.7.0)
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
-    rspec-solr (2.0.0)
-      rspec (~> 3.0)
+    rspec-solr (3.0.0)
+      rspec (~> 3.5)
       rspec-collection_matchers
     rspec-support (3.7.1)
     rubocop (0.56.0)
