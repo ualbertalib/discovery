@@ -29,43 +29,45 @@ $DEBUG && print "We're in $realm, so I'll be using $host\n";
 my $mech = WWW::Mechanize->new();  				
 my $url="https://$host";  
 
-$mech->get( $url );    		# Visit the sign_in page
-
-# Perhaps we should be searching for "everything" to see what that gives us, no?
+#$mech->get( $url );    			# Visit the default page
 
 my $searchString="shakespeare"; 	# inspired by Sam's favourite test
 my $count=0;
-my $result; 
-$DEBUG && print "Trying $searchString...\n";
-eval {$result = $mech->submit_form( fields    => { q => $searchString, },);  };
-ok ($mech->status == 200, "$host: Search for $searchString") ; $count ++;
-ok (defined($result) , "Did we get content?") ; $count++;
-unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ;   #  Ugh, in Prod, we try to return a pretty error, not a bare 500
-$count ++;
+my ($result, $resultsCounter, $content, $match );
 
-# We are searching for this:
-#          <h3><span class="col-sm-6">Books, media &amp; more</span>
-#            <a href="/symphony?q=shakespeare" class="col-sm-6 see-all-results">19,081 results</a>
-#          </h3>
-my $content = $result->decoded_content; 
-my $match;
-($match) = $content =~ qr/(symphony.*>)([\d,]+)( results)/m ; 
-#if ($content =~ qr/eBooks and more.*\n.*(\d+) results/m) {  # multi-line match
-if (defined $match) {  # multi-line match
-	$DEBUG && print "I found a match\n";
-	$DEBUG && print "The match was: $match\n\n";
-	$DEBUG && print "extracted number was: $2\n" if defined $2;
-	
-} else {
-	$DEBUG && print "No match found\n";
-}
+my @collections = ( 
+	{ 
+		name	=>  'symphony',  
+		minimum	=>  15000 
+	}, 
+	{ 
+		name	=>  'journals',  
+		minimum	=>  10 
+	}, 
+	{ 
+		name	=>  'databases', 
+		minimum	=>  10 
+	} 
+);
+for my $href (@collections) {
+	$DEBUG && print "Trying $searchString in " . $href->{name}. "...\n";
+	$result=undef;
+	$result = $mech->get( $url. "/" . $href->{name} . "?q=$searchString" );    			# limit the search to a collection
+	ok ($mech->status == 200, "$host: Search for $searchString, within " .  $href->{name} . " collection") ; $count ++;
+	ok (defined($result) , "Did we get content?") ; $count++;
+	unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ; $count ++;
+	unlike  ($result->decoded_content, qr/No results found for your search/, "Check for missing data") ; $count ++;
 
-like ($result->decoded_content, qr/(symphony.*>)([\d,]+)( results)/m, "Results contain a count of the number of books"); $count++;
-ok (defined $2, "Extraction of count successful"); $count++;
-if (defined $2) {
-	my $num_books = $2;
-	$num_books =~ tr/,//d;
-	ok ($num_books > 14000, "Count of books should exceed 14,000, actual: $num_books"); $count++;	# 14157 on Aug 12, 2015, but this will change over time
+	# We are searching for this snippet: <strong>1</strong> - <strong>25</strong> of <strong>19,046</strong>
+	$content = $result->decoded_content; 
+	($match) = $content =~ qr/(<strong>1<\/strong> - <strong>\d+<\/strong> of <strong>)([\d,]+)/ ;
+
+	ok (defined $2, "Extraction of count"); $count++;
+	$resultsCounter = $2;
+	$resultsCounter =~ tr/,//d; # output might contain commas
+	if (defined $resultsCounter) {
+		ok ($resultsCounter > $href->{minimum}, "Count of results within " . $href->{name} . ": $resultsCounter"); $count++;	# 14157 on Aug 12, 2015, but this will change over time
+	}
 }
 
 done_testing $count;

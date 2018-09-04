@@ -25,7 +25,8 @@ my $searchString;
 
 #  Retrieve the text of Moby Dick from gutenberg.org, but only once, eh?
 my $bigWhale = "/var/tmp/mobyDick.txt";
-`wget -O $bigWhale http://www.gutenberg.org/ebooks/2701.txt.utf-8` unless -e $bigWhale;
+`wget -O $bigWhale http://www.gutenberg.org/files/2701/2701-0.txt` unless -e $bigWhale;
+`shuf $bigWhale | sort -R | sed 's/,//g' | awk -F" " '{ print \$1, \$2, \$3;}' | sed 's/-//g' | egrep -v 'AND\$' | grep -v '^AND' | grep -v '^"AND' > /var/tmp/mobyRandom.csv`;
 
 my $a ; $searchString = undef;
 open (RANDWORDS, "-|", 'sort -R /var/tmp/mobyDick.txt  | awk -F" " \'{ print $1, $2, $3;}\'') || die "Can't get random words: $!";   # hardcoded filename, sorry
@@ -45,3 +46,9 @@ for ($a=1; $a< ($testCount+1); $a ++) {
 close RANDWORDS;	
 
 done_testing $testCount;
+
+
+
+#
+#
+#
