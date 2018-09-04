@@ -16,14 +16,13 @@ Results for <em>
                  @terms << params[:author] if !params[:author].blank?
                  @terms << params[:subject] if !params[:subject].blank?
                  @terms << params["author_display"].first if !params["author_display"].blank?
-               %>
-                    
+               %>   
                 <%= @terms.join(" #{params[:op]} ") %>
               <% else %>
                 <% if params[:q] %>
                   <%= params[:q] %>
-                <% elsif params[:f] %>
-                  <%= params[:f]["author_display"].first if params[:f]["author_display"] %>
+                <% elsif params[:author] %>
+                  <%= params[:author] %>
                 <% end %>
 			<% end %>
 </em> <%= @collection_name %>

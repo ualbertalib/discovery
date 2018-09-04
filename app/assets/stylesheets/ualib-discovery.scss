@@ -351,7 +351,7 @@ font-size: 18px;
   margin-right: 5px;
 }
 .dl-horizontal dd {
-  margin-left: 225px;
+  margin-left: 0px;
 }
 
 #documents .document {
@@ -596,6 +596,9 @@ padding: 15px 0;
 	}
 	h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 		font-size: 24px;
+	}
+	.dl-horizontal dd {
+  		margin-left: 225px;
 	}
 }
 
