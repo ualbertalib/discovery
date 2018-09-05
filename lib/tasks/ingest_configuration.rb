@@ -4,7 +4,6 @@ class IngestConfiguration
   def initialize(collection, config={})
     if ENV['SOLR_INGEST_URL']
       Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL']
-      Blacklight.connection_config[:writable] = true
     end  
     @proxy = config["proxy"]
     @collection = config["collections"]

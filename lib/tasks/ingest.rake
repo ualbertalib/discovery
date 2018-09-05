@@ -17,15 +17,9 @@ desc 'Shows more info about the ingest task'
 task :ingest_info do
   if ENV['SOLR_INGEST_URL']
     Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL']
-    Blacklight.connection_config[:writable] = true
     puts "target is set from environment variable SOLR_INGEST_URL=#{ENV['SOLR_INGEST_URL']}"
-  else
-    puts "target is set from config/blacklight.yml #{Blacklight.connection_config[:url]}"
-  end
-  if Blacklight.connection_config[:writable]
-    puts 'writable'
-  else
-    puts 'not writable'
+  else # TODO: consider adding some logic to protect this target
+    puts "WARNING: Using live target from '#{Rails.env}' stanza in config/blacklight.yml (#{Blacklight.connection_config[:url]})"
   end
   solr = RSolr.connect :url=> Blacklight.connection_config[:url]
   response = solr.get 'select', :params => {:q => '*:*', :qt => 'standard'}
@@ -93,7 +87,6 @@ end
 def ingest_marc
   ENV['MARC_FILE'] = @c.path
   ENV['CONFIG_PATH'] = @c.config
-  abort "Target (#{Blacklight.connection_config[:url]}) is read-only" unless Blacklight.connection_config[:writable]
   Rake::Task["solr:marc:index"].invoke
 end
 

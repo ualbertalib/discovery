@@ -6,9 +6,9 @@ desc 'Delete all records from solr index'
 task :delete, [:records] do |t, args|
   if ENV['SOLR_INGEST_URL']
     Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL']
-    Blacklight.connection_config[:writable] = true
-  end  
-  abort "Target (#{Blacklight.connection_config[:url]}) is read-only" unless Blacklight.connection_config[:writable]
+  else  # TODO: consider adding some logic to protect this target
+    puts "WARNING: Using live target from '#{Rails.env}' stanza in config/blacklight.yml (#{Blacklight.connection_config[:url]})"
+  end
   solr = RSolr.connect :url=> Blacklight.connection_config[:url]
   case args.records
 

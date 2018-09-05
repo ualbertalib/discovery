@@ -18,7 +18,7 @@ discovery platform. Based on [Project Blacklight](projectblacklight.org).
 3.  run `bundle install`
 4.  run `bundle exec rake db:setup`
 5.  Create the APIAuthentication.txt (containing your EBSCO credentials) and token.txt (empty) files
-6.  `RAILS_ENV=ingest bundle exec rake ingest[database_test_set] && RAILS_ENV=ingest bundle exec rake ingest[sfx_test_set] && RAILS_ENV=ingest bundle exec rake ingest[symphony_test_set]`
+6.  `bundle exec rake ingest[database_test_set] && bundle exec rake ingest[sfx_test_set] && bundle exec rake ingest[symphony_test_set]`
 6.  `bundle exec rails s`
 7.  Point your browser to **<http://localhost:3000/catalog>**
 
