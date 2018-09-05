@@ -7,8 +7,6 @@ volumes:
     driver: local
   assets:
     driver: local
-  file-storage:
-    driver: local
 
 services:
 
@@ -30,10 +28,10 @@ services:
     image: ualbertalib/discovery:uat
     depends_on:
       - mysql
+      - solr
     env_file: .env_deployment
     volumes:
       - assets:/app/public/assets/
-      - file-storage:/app/storage/
     restart: always
     ports:
       - "3002:80"
