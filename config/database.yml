@@ -40,6 +40,10 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
+  
+uat:
+  <<: *mysql
+  url: <%= Rails.application.secrets.database_url %>
 
 staging:
   #  from template database.yml.test.j2

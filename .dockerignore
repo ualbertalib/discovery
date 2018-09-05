@@ -1,0 +1,14 @@
+.git
+.gitignore
+*.md
+
+tmp
+log
+coverage/
+.bundle
+.ruby-version
+vendor/bundle
+
+.dockerignore
+docker-compose.yml
+docker-compose.lightweight.yml

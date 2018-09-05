@@ -30,3 +30,4 @@ token.txt
 .ruby-gemset
 doc
 *.swp
+.env_deployment
