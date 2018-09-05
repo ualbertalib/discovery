@@ -52,7 +52,7 @@ In SolrMarc, the library currently being used to index Blacklight data, the mapp
 
 `bundle exec rake ingest[collection]` where collection is mainly 'symphony', 'sfx' or 'databases'.  See `config/ingest.yml` for other collections. Most collections are expected to be represented by a file in a `./data` directory.
 
-Alternate to using the ingest RAILS_ENV you can set the SOLR_INGEST_URL directly.
+By default the solr target (:url) is set from '#{Rails.env}' stanza in config/blacklight.yml. Alternately you can set the SOLR_INGEST_URL directly.
 ```
 export SOLR_INGEST_URL=http://localhost:8983/solr/your-new-solr-collection
 bundle exec rake ingest[collection]
