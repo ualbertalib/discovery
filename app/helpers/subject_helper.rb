@@ -1,13 +1,8 @@
 module SubjectHelper
-     def subject_query(subject, index)
-       i = 0
-       sbstring = "" 
-       while i <= index
-          sbstring += subject[i].delete(".").delete("&").tr("+", " ")
-          sbstring = sbstring unless i == index
-          i+= 1
-       end
-       sbstring = "\"#{sbstring}\""
-       sbstring
+     def subject_query(subjects)
+       # clean up characters than can mess with queries
+       subjects = subjects.map { |subject| subject.delete('.&').tr('+', ' ') }
+       # deal with subject chaining and make a phrase
+       "\"#{subjects.join.strip}\""
      end  
 end
