@@ -31,3 +31,4 @@ token.txt
 doc
 *.swp
 .env_deployment
+/docker-compose.*custom*.yml

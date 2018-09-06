@@ -13,6 +13,19 @@ import "lib/tasks/delete.rake"
 
 @config_file = YAML.load_file("#{Rails.root}/config/ingest.yml")
 
+desc 'Shows more info about the ingest task'
+task :ingest_info do
+  if ENV['SOLR_INGEST_URL']
+    Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL']
+    puts "target is set from environment variable SOLR_INGEST_URL=#{ENV['SOLR_INGEST_URL']}"
+  else # TODO: consider adding some logic to protect this target
+    puts "WARNING: Using live target from '#{Rails.env}' stanza in config/blacklight.yml (#{Blacklight.connection_config[:url]})"
+  end
+  solr = RSolr.connect :url=> Blacklight.connection_config[:url]
+  response = solr.get 'select', :params => {:q => '*:*', :qt => 'standard'}
+  puts "Solr collection contains #{response['response']['numFound']} results."
+end
+
 desc 'ingest records' # add config parameter for directory ingest?
 task :ingest, [:collection] do |t, args|
   log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
@@ -22,14 +35,14 @@ task :ingest, [:collection] do |t, args|
     log_file = File.open(log_config['log_path'], File::WRONLY|File::CREAT)
   end
 
-  @@ingest_log = Logger.new(log_file)
-  @@ingest_log.info("--- Starting ingest on #{Time.now} ---")
+  @ingest_log = Logger.new(log_file)
+  @ingest_log.info("--- Starting ingest on #{Time.now} ---")
   @collection = args.collection
   @c = IngestConfiguration.new(args.collection, @config_file)
 
   Rake::Task["fetch"].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
 
-  @@ingest_log.info("Starting #{@c.schema} ingest for #{args.collection}")
+  @ingest_log.info("Starting #{@c.schema} ingest for #{args.collection}")
 
   case @c.schema
 
@@ -45,11 +58,11 @@ task :ingest, [:collection] do |t, args|
     ingest_databases
   end
 
-  @@ingest_log.info("--- Finished ingest on #{Time.now} ---")
+  @ingest_log.info("--- Finished ingest on #{Time.now} ---")
 end
 
 def ingest_mods_or_dublin_core
-  batch_ingester = BatchIngest.new(solr_url: @c.solr)
+  batch_ingester = BatchIngest.new
   configure batch_ingester
   run batch_ingester
 end
@@ -84,7 +97,7 @@ def ingest_databases
         f.write db.xml_file
       }
     end
-    batch_ingester = BatchIngest.new(solr_url: @c.solr)
+    batch_ingester = BatchIngest.new
     configure batch_ingester
     run batch_ingester
 end
