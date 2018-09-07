@@ -4,8 +4,12 @@ require 'rsolr'
 
 desc 'Delete all records from solr index'
 task :delete, [:records] do |t, args|
-  c = IngestConfiguration.new(args.records || "databases", @config_file)
-  solr = RSolr.connect :url=>c.solr
+  if ENV['SOLR_INGEST_URL']
+    Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL']
+  else # TODO: consider adding some logic to protect this target
+    puts "WARNING: Using live target from '#{Rails.env}' stanza in config/blacklight.yml (#{Blacklight.connection_config[:url]})"
+  end
+  solr = RSolr.connect :url=> Blacklight.connection_config[:url]
   case args.records
 
   when "databases"

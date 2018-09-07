@@ -1,17 +1,12 @@
 default: &default
   log_path: "/var/log/blacklight_ingest.log"
-
 development:
   log_path: "log/ingest.log"
 test:
   log_path: "log/ingest.log"
-
 staging:
   <<: *default
-
 uat:
   <<: *default
-
 production:
   <<: *default
-

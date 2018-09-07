@@ -56,6 +56,7 @@ group :test, :development do
   gem 'rspec-solr'
   
   gem 'pry'
+  gem 'pry-byebug'
   gem 'pry-rails'
 
   gem 'rubocop', '~> 0.56.0', require: false
@@ -71,4 +72,9 @@ group :development do
 
   gem 'brakeman'
   gem 'listen', '>= 3.0.5', '< 3.2'
+end
+
+group :test do
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'chromedriver-helper'
 end

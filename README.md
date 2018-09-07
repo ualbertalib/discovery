@@ -6,6 +6,7 @@ discovery platform. Based on [Project Blacklight](projectblacklight.org).
 
 *   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.1.5
 *   Depends on an instance of [Solr](https://lucene.apache.org/solr/) with [this configuration](https://github.com/ualbertalib/blacklight_solr_conf)
+*   If you wish to use docker for the datastores install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) first.
 
 ## Architecture
 ![Discovery Architecture Diagram](docs/discovery_architecture.png)
@@ -13,11 +14,13 @@ discovery platform. Based on [Project Blacklight](projectblacklight.org).
 ## To get the application up and running for development:
 
 1.  clone this repository (`git clone https://github.com/ualbertalib/discovery`)
-2.  run `bundle install`
-3.  run `bundle exec rake db:setup`
-4.  Create the APIAuthentication.txt (containing your EBSCO credentials) and token.txt (empty) files
-5.  `bundle exec rails s`
-6.  Point your browser to **<http://localhost:3000/catalog>**
+2.  run `docker-compose -f docker-compose.lightweight.yml up -d`
+3.  run `bundle install`
+4.  run `bundle exec rake db:setup`
+5.  Create the APIAuthentication.txt (containing your EBSCO credentials) and token.txt (empty) files
+6.  `bundle exec rake ingest[database_test_set] && bundle exec rake ingest[sfx_test_set] && bundle exec rake ingest[symphony_test_set]`
+6.  `bundle exec rails s`
+7.  Point your browser to **<http://localhost:3000/catalog>**
 
 ## To run the tests:
 
@@ -48,5 +51,12 @@ The standard library cataloguing data format is [MARC](https://www.loc.gov/marc/
 In SolrMarc, the library currently being used to index Blacklight data, the mapping of MARC fields occurs [here](https://github.com/ualbertalib/discovery/blob/master/config/SolrMarc/symphony_index.properties) with more sophisticated data manipulation using BeanShell happening in [these scripts](https://github.com/ualbertalib/discovery/tree/master/config/SolrMarc/index_scripts). Once the fields have been mapped, they can be designated for search and/or display in the appropriate Solr config file (either schema.xml or solrconfig.xml).
 
 `bundle exec rake ingest[collection]` where collection is mainly 'symphony', 'sfx' or 'databases'.  See `config/ingest.yml` for other collections. Most collections are expected to be represented by a file in a `./data` directory.
+
+By default the solr target (:url) is set from '#{Rails.env}' stanza in config/blacklight.yml. Alternately you can set the SOLR_INGEST_URL directly.
+```
+export SOLR_INGEST_URL=http://localhost:8983/solr/your-new-solr-collection
+bundle exec rake ingest[collection]
+unset SOLR_INGEST_URL # if desired
+```
 
 
