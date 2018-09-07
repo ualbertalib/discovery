@@ -44,7 +44,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.3.7)
+    addressable (2.5.2)
+      public_suffix (>= 2.0.2, < 4.0)
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (6.0.4)
@@ -249,6 +250,7 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.6)
       pry (>= 0.10.4)
+    public_suffix (3.0.3)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -400,7 +402,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-session_store
-  addressable (= 2.3.7)
+  addressable (= 2.5.2)
   better_errors (>= 2.3.0)
   binding_of_caller
   blacklight (= 5.15.0)

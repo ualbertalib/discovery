@@ -33,7 +33,7 @@ gem "devise"
 gem "devise-guests"
 
 # Misc Utilities
-gem "addressable", "2.3.7"
+gem "addressable", "2.5.2"
 gem 'friendly_id'
 gem "htmlentities"
 gem 'nokogiri', '~> 1.8.4'
