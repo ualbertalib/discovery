@@ -141,19 +141,11 @@ module Blacklight::FacetsHelperBehavior
   # Standard display of a SELECTED facet value (e.g. without a link and with a remove button)
   # @params (see #render_facet_value)
   def render_selected_facet_value(facet_solr_field, item)
-    if facet_solr_field == "location_tesim" then
-      content_tag(:span, :class => "facet-label") do
-        content_tag(:span, facet_display_value(facet_solr_field, @locations[item.value]), :class => "selected") +
-        # remove link
-        link_to(content_tag(:span, '', :class => "glyphicon glyphicon-remove") + content_tag(:span, '[remove]', :class => 'sr-only'), search_action_path(remove_facet_params(facet_solr_field, item, params)), :class=>"remove")
-      end + render_facet_count(item.hits, :classes => ["selected"])
-    else
-      content_tag(:span, :class => "facet-label") do
-        content_tag(:span, facet_display_value(facet_solr_field, item), :class => "selected") +
-        # remove link
-        link_to(content_tag(:span, '', :class => "glyphicon glyphicon-remove") + content_tag(:span, '[remove]', :class => 'sr-only'), search_action_path(remove_facet_params(facet_solr_field, item, params)), :class=>"remove")
-      end + render_facet_count(item.hits, :classes => ["selected"])
-    end
+    content_tag(:span, :class => "facet-label") do
+      content_tag(:span, facet_display_value(facet_solr_field, item), :class => "selected") +
+      # remove link
+      link_to(content_tag(:span, '', :class => "glyphicon glyphicon-remove") + content_tag(:span, '[remove]', :class => 'sr-only'), search_action_path(remove_facet_params(facet_solr_field, item, params)), :class=>"remove")
+    end + render_facet_count(item.hits, :classes => ["selected"])
   end
 
   ##
@@ -205,11 +197,7 @@ module Blacklight::FacetsHelperBehavior
     facet_config = facet_configuration_for_field(field)
     
     value = if item.respond_to? :label
-        # if @locations[item.label]
-        #   @locations[item.label]
-        # else
           item.label
-        #end
     else
       facet_value_for_facet_item(item)
     end

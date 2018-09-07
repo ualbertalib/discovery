@@ -13,11 +13,7 @@
       <span class="filterName"><%= label %></span>
     <% end %>
     <% unless value.blank? %>
-      <% if label == "Library" %>
-        <span class="filterValue"><%= @locations[value] %></span>
-      <% else %>
-        <span class="filterValue"><%= value %></span>
-      <% end %>
+      <span class="filterValue"><%= value %></span>
     <% end %>
   </span>
   <% unless options[:remove].blank? %>
