@@ -97,8 +97,6 @@ GEM
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
     climate_control (0.2.0)
-    cocaine (0.5.8)
-      climate_control (>= 0.0.3, < 1.0)
     codemirror-rails (5.16.0)
       railties (>= 3.0, < 6.0)
     coderay (1.1.2)
@@ -228,12 +226,12 @@ GEM
       nokogiri (>= 1.4.2)
       solrizer (~> 3.3)
     orm_adapter (0.5.0)
-    paperclip (5.2.1)
+    paperclip (6.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
-      cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+      terrapin (~> 0.6.0)
     parallel (1.12.1)
     parser (2.5.1.2)
       ast (~> 2.4.0)
@@ -372,6 +370,8 @@ GEM
     sqlite3 (1.3.13)
     stomp (1.4.4)
     temple (0.8.0)
+    terrapin (0.6.0)
+      climate_control (>= 0.0.3, < 1.0)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -425,7 +425,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.20)
   nokogiri (~> 1.8.4)
   om
-  paperclip (~> 5.2.0)
+  paperclip (~> 6.1.0)
   pry
   pry-byebug
   pry-rails

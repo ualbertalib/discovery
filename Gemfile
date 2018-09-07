@@ -38,7 +38,7 @@ gem 'friendly_id'
 gem "htmlentities"
 gem 'nokogiri', '~> 1.8.4'
 gem "om"
-gem 'paperclip', '~> 5.2.0'
+gem 'paperclip', '~> 6.1.0'
 
 # Content Management System
 gem 'comfortable_mexican_sofa', '1.12.9'
