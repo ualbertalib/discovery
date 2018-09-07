@@ -8,7 +8,6 @@ RSpec.feature "Advanced Search", :type => :feature do
     # previously these were stored as codes (ie uaeduc, uabusiness) in the index and then 
     # mapped to their full title (ie University of Alberta HT Coutts Education, University of Alberta Winspear Business)
     click_link 'Library'
-    expect(page.body.index('University of Alberta HT Coutts Education')).to be < page.body.index('University of Alberta Winspear Business')
     within '#facet-location_tesim' do
       libraries = all('li span.facet-label').map(&:text)
       expect(libraries.sort).to eq(libraries)
