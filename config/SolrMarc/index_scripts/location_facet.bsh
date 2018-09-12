@@ -34,7 +34,6 @@ public Set getLocationFacet(Record record){
   location_codes.put("ahsglenrse", "Alberta Health Services - Glenrose Rehabilitation Hospital");
   location_codes.put("aitfcalg",  "Alberta Innovates - Technology Futures - Calgary");
   location_codes.put("aitfcfer", "Alberta Innovates - Technology Futures - C-FER Technologies");
-  location_codes.put("aitfc","fer: Alberta Innovates - Technology Futures - C-FER Technologies");
   location_codes.put("aitfdevon", "Alberta Innovates - Technology Futures - Devon");
   location_codes.put("aitfmw", "Alberta Innovates - Technology Futures - Mill Woods");
   location_codes.put("aitfveg", "Alberta Innovates - Technology Futures - Vegreville");
