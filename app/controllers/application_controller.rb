@@ -13,24 +13,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(resource)
-    if session[:session_key].present?
-      connection = EDSApi::ConnectionHandler.new(2)
-      connection.end_session(session[:session_key])
-      session[:session_key] = nil
-    end
-
     @results = nil if @results
-
     @current_url if @current_url
   end
 
   def after_sign_out_path_for(resource)
-    if session[:session_key].present?
-      connection = EDSApi::ConnectionHandler.new(2)
-      connection.end_session(session[:session_key])
-      session[:session_key] = nil
-    end
-
     @results = nil if @results
     root_path
   end

@@ -14,14 +14,8 @@ Rails.application.routes.draw do
   get "symphony/range_limit" => "symphony#range_limit"
   get "journals/range_limit" => "journals#range_limit"
   get "databases/range_limit" => "databases#range_limit"
-  get "articles/range_limit" => "articles#range_limit"
   get "ebooks/range_limit" => "ebooks#range_limit"
   get "new_books/range_limit" => "new_books#range_limit"
-
-  get "articles", to: "articles#index"
-  get "articles/:dbid/:an", to: "articles#detail", constraints: {an: /[^V]+/ }
-  get "articles/:dbid/:an/fulltext", to: "articles#fulltext", constraints: {an: /[^V]+/ }
-  get "articles/switch", to: "articles#recordSwitch"
 
   get "/advanced", to: "advanced#index"
   
@@ -48,59 +42,4 @@ Rails.application.routes.draw do
 
   # Make sure this routeset is defined last
   comfy_route :cms, :path => '/', :sitemap => false
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
