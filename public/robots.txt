@@ -5,7 +5,6 @@ User-agent: *
 Disallow: /symphony
 Disallow: /journals
 Disallow: /databases
-Disallow: /articles
 Disallow: /ebooks
 Disallow: /results
 Disallow: /advanced
