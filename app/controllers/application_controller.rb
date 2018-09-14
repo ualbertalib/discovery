@@ -12,16 +12,6 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def after_sign_in_path_for(resource)
-    @results = nil if @results
-    @current_url if @current_url
-  end
-
-  def after_sign_out_path_for(resource)
-    @results = nil if @results
-    root_path
-  end
-
   def load_lookup_tables
     @locations ||= YAML.load_file("#{Rails.root}/config/locations.yml")
     @languages ||= YAML.load_file("#{Rails.root}/config/languages.yml")
