@@ -16,5 +16,6 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - EDS and Article model, view, controllers and tests [#1228](https://github.com/ualbertalib/discovery/issues/1228)
 
 ### Changed
+- incorrect capitalization of MLA/APA in View Citation link label [PR#1279](https://github.com/ualbertalib/discovery/pull/1279)
 - aitfc-fer location code [PR#1266](https://github.com/ualbertalib/discovery/pull/1266)
 - the filename for symphony ingest has to be 'big-sample.mrc" because it's hardcoded upstream  [#1261](https://github.com/ualbertalib/discovery/issues/1261)
