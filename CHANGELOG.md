@@ -10,6 +10,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Added
 - Github issue templates [PR#1271](https://github.com/ualbertalib/discovery/pull/1271)
 - Changelog [PR#1275](https://github.com/ualbertalib/discovery/pull/1275)
+- Link to Librarian View [PR#1277](https://github.com/ualbertalib/discovery/pull/1277)
 
 ### Removed
 - EDS and Article model, view, controllers and tests [#1228](https://github.com/ualbertalib/discovery/issues/1228)
