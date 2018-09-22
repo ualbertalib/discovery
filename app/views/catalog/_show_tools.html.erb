@@ -48,7 +48,7 @@
       <li><a href="/search_history">View Search History</a></li>
       <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>
         <li class="cite">
-          <%= link_to t('View Citation (MLA/APA/Chicago)'), citation_catalog_path(:id => @document), {:id => 'citeLink', :class => 'lightboxLink'} %>
+          <%= link_to 'View Citation (MLA/APA/Chicago)', citation_catalog_path(:id => @document), {:id => 'citeLink', :class => 'lightboxLink'} %>
         </li>
       <% end %>
     </ul>
