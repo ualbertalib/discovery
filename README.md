@@ -17,8 +17,8 @@ discovery platform. Based on [Project Blacklight](projectblacklight.org).
 2.  run `docker-compose -f docker-compose.lightweight.yml up -d`
 3.  run `bundle install`
 4.  run `bundle exec rake db:setup`
-5.  Create the APIAuthentication.txt (containing your EBSCO credentials) and token.txt (empty) files
-6.  `bundle exec rake ingest[database_test_set] && bundle exec rake ingest[sfx_test_set] && bundle exec rake ingest[symphony_test_set]`
+5.  `bundle exec rake ingest[database_test_set] && bundle exec rake ingest[sfx_test_set] && bundle exec rake ingest[symphony_test_set]`
+    If you're looking to use a production like dataset or avoid the hassle of running docker and performing these ingest tasks, `export SOLR_URL=http://solrcloud-test.library.ualberta.ca:8080/solr/discovery-test`
 6.  `bundle exec rails s`
 7.  Point your browser to **<http://localhost:3000/catalog>**
 
