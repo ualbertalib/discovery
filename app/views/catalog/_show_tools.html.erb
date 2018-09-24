@@ -43,13 +43,17 @@
       <li class="send_correction">
         <%= render "correction_form" %>
       </li>
-
+  <li class="librarian_view">
+          <%= link_to 'Librarian View', librarian_view_catalog_path(:id => @document), {:id => 'citeLink', :class => 'lightboxLink'} %>
+        </li>
+  
       <li><a href="/bookmarks">Go to Bookmarks</a></li>
       <li><a href="/search_history">View Search History</a></li>
       <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>
         <li class="cite">
           <%= link_to 'View Citation (MLA/APA/Chicago)', citation_catalog_path(:id => @document), {:id => 'citeLink', :class => 'lightboxLink'} %>
         </li>
+        
       <% end %>
     </ul>
     <% # bookmark functions for items/docs -%>
