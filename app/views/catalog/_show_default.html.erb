@@ -24,7 +24,7 @@
 
       <% elsif solr_fname == "contents_tesim" %>
 
-        <dd class="blacklight-<%= solr_fname.parameterize %>" style="width:115%;font-size:75%">
+        <dd class="blacklight-<%= solr_fname.parameterize %>" style="font-size:75%">
         <ul>
           <% render_document_show_field_value(document,:field=>solr_fname).split("--").each do |note| %> 
 
