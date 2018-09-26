@@ -27,6 +27,9 @@
         <%= render "endnote" %>
       <% end %>
 
+      <li>
+        <%= link_to 'Librarian View', librarian_view_catalog_path(id: @document), target: :_blank %>
+      </li>
 
         <%- if @document.respond_to?( :to_email_text ) -%>
           <%= render "email" %>
@@ -40,9 +43,6 @@
       <li class="send_correction">
         <%= render "correction_form" %>
       </li>
-  <li class="librarian_view">
-          <%= link_to 'Librarian View', librarian_view_catalog_path(:id => @document), {:id => 'citeLink', :class => 'lightboxLink'} %>
-        </li>
   
       <li><a href="/bookmarks">Go to Bookmarks</a></li>
       <li><a href="/search_history">View Search History</a></li>
