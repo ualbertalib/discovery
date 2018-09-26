@@ -528,11 +528,6 @@ $(function() {
     $('#q').attr('placeholder', 'search books, media & more...');
     $('#fr-q').attr('placeholder', 'recherche livre imprimé et revues...');
   });
-  $( "#articles-limit" ).click(function() { 
-    $('#main-search').attr('action', '/articles');
-    $('#q').attr('placeholder', 'search articles & more...');
-    $('#fr-q').attr('placeholder', 'recherche articles...');
-  });
   $( "#databases-limit" ).click(function() { 
     $('#main-search').attr('action', '/databases');
     $('#q').attr('placeholder', 'search databases...');
