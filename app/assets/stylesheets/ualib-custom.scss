@@ -1624,6 +1624,9 @@ ul.foot-nav{
 	font-family: "arial", sans-serif;
 	font-size: 90%;
 }
+.blacklight-advanced .blacklight-lc_1letter_facet{
+	display:none;
+}
 @-moz-document url-prefix() {
     .facet-values .facet-label {
         word-break: normal;
