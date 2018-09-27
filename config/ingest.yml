@@ -1,3 +1,12 @@
+# *** WARNING *** 
+# Ansible contains customized copies of this file, for Test & Prod environments.
+# Why? Specifically, to address the changing URL for solr, and Neil's inability to
+# use lineinfile to achieve the desired results.
+# If you're making substantive changes that need to reach Test & Prod, please also 
+# make those changes to ansible's copies of this file!
+
+solr: http://solr:8983/solr/discovery
+
 proxy: http://login.ezproxy.library.ualberta.ca/login?url=
 
 collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set", "symphony_test_set", "symphony_test_deletes", "kule"]
@@ -49,7 +58,7 @@ sfx_test_set:
 symphony:
   config: "config/SolrMarc/symphony_config.properties"
   schema: marc
-  path: "data/big-sample.mrc"
+  path: "data/sample.mrc"
 
 symphony_test_set:
   config: "config/SolrMarc/symphony_config.properties"
@@ -117,4 +126,9 @@ services:
 kule:
   schema: marc
   path: "data/kule.mrc"
+  config: "config/SolrMarc/kule_config.properties"
+
+kule_test:
+  schema: marc
+  path: "spec/fixtures/bmufa_rev_20180911.mrc"
   config: "config/SolrMarc/kule_config.properties"
