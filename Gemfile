@@ -21,7 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'spring', group: :development
 
 # blacklight stuff
-gem "blacklight", "5.15.0"
+gem "blacklight", "5.19.2"
 gem "blacklight-marc", "~> 5.10.0"
 gem "blacklight_advanced_search"
 gem 'blacklight_google_analytics'
@@ -74,7 +74,7 @@ group :development do
   gem 'binding_of_caller'
 
   gem 'brakeman'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '~> 3.0'
 end
 
 group :test do
