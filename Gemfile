@@ -43,6 +43,9 @@ gem 'paperclip', '~> 6.1.0'
 # Content Management System
 gem 'comfortable_mexican_sofa', '1.12.9'
 
+# Performance monitoring
+gem 'rollbar'
+
 group :test, :development do
   gem 'sdoc', require: false
   
