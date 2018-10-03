@@ -8,6 +8,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Added
 - Rollbar to resolve production errors in minutes (requires new secret) [Issue#1287](https://github.com/ualbertalib/discovery/issues/1287)
 
+### Changed
+- Fix incorrect libraries listed under 'copies owned' [NEOSDiscovery#152](https://github.com/ualbertalib/NEOSDiscovery/issues/152)
+
 ## [3.0.87] - 2018-09-26
 ### Changed
 - Fix diacritics font issues [Issue#1268](https://github.com/ualbertalib/discovery/issues/1268)
