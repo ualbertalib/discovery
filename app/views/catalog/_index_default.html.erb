@@ -21,14 +21,10 @@
         <dt class="blacklight-format">Copies owned by: </dt>
         <dd class="blacklight-format">
           <%= document["location_tesim"].join(', ') %>
-        </dd>
       <% end %>
 
-      <!-- Display UAL shield -->
-      <% if @ual or (document["source_tesim"] and document["source_tesim"].first == "SFX") %> 
-        <img alt="licensed for U of A" title="licensed for U of A" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/>.
-      <% elsif document["format"].first == "Database" and (document["icons_tesim"] and document["icons_tesim"].first.include? "ualib-logo.png") %>
-        <img alt="licensed for U of A" title="licensed for U of A" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/>.
+      <% if display_ual_shield document %> 
+          <img alt="licensed for U of A" title="licensed for U of A" src="//s3.amazonaws.com/libapps/sites/165/icons/6665/ualib-logo.png" style="height:8%;width:8%"/>.
       <% end %>
 
         </dd>
