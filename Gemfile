@@ -5,7 +5,7 @@ gem "activerecord-session_store"
 gem 'rails', '4.2.10'
 
 # Database stuff
-gem 'mysql2', '~> 0.4.0'
+gem 'mysql2', '~> 0.4.10'
 
 # Assets (CSS/JS) stuff
 gem 'coffee-rails', '~> 4.2.2'
