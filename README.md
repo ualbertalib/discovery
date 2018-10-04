@@ -33,7 +33,7 @@ Unit and Acceptance Tests
 
 Integration tests (run against <http://search-test.library.ualberta.ca/>)
 
-1.  `cpan WWW::Mechanize && cpan JSON` to install perl dependencies
+1.  `cpan WWW::Mechanize && cpan JSON && cpan HTML::TreeBuilder::XPath` to install perl dependencies
 2.  `wget -O /var/tmp/mobyDick.txt http://www.gutenberg.org/ebooks/2701.txt.utf-8` your first visit to gutenberg might give you non utf-8 characters when it says, "hello stranger."
 3.  `cd test/grabBag`
 4.  `./allTests.pl`
