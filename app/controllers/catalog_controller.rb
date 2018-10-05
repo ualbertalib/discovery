@@ -275,5 +275,13 @@ class CatalogController < ApplicationController
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
+<<<<<<< 03522aceb7cded2a402e4448b2238ed437214d5c
   end
+=======
+          
+    config.add_show_field 'id', :label => "Kule Collection ID"
+
+  end
+
+>>>>>>> Added kule collection id.
 end
