@@ -1,15 +1,9 @@
 #!/usr/bin/perl -w
-# Author: 	Neil MacGregor
-# Date: 	Aug 12, 2015
-# Purpose: 	A regression test, validating that we have an appropriate amount of data in the SolrCloud index.
-#		On this day, rapidly deployed a release & slammed it all the way into Production, only to discover
-#		that the "eBooks and more" bento-pane was permanently empty. ARGH!
-#		This was due to a bug, and rapidly fixed, but indicates a lack of testing - it could easily have been
-#		spotted in Test, if we had bothered to look.
+# Author: 	Tricia Jenkins
+# Date: 	Oct 2, 2018
+# Purpose: 	A regression test, validating that the correct number of libraries exist.  From 3.0.85 deployment issue.
 # RevisionCntl: github, ualbertalib/discovery
-# Context: 	the blacklight/discovery project
-# Ideas for improvement:  
-# 		needs to read *all* the bento-panes
+# Context: 	the blacklight/discovery project\
 use strict;
 use WWW::Mechanize;
 use HTML::TreeBuilder::XPath;
