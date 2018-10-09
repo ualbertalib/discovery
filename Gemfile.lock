@@ -425,7 +425,7 @@ DEPENDENCIES
   jettywrapper (~> 2.0.3)
   jquery-rails
   listen (~> 3.0)
-  mysql2 (~> 0.4.0)
+  mysql2 (~> 0.4.10)
   nokogiri (~> 1.8.5)
   om
   paperclip (~> 6.1.0)
