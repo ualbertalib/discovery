@@ -9,7 +9,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="searchHost" elementType="Argument">
             <stringProp name="Argument.name">searchHost</stringProp>
-            <stringProp name="Argument.value">${__P(BLHOST,solr-test.library.ualberta.ca)}</stringProp>
+            <stringProp name="Argument.value">${__P(BLHOST,solrcloud-test.library.ualberta.ca:8080)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="collectionName" elementType="Argument">
