@@ -315,7 +315,7 @@
           - @photo_link = URI.encode(@photo_link_dirty)
           - @no_photo = "staff-photos/thumbs/none.jpg"
           %td.staff-images
-              = link_to image_tag(@no_photo), profile_path(profile)
+            = link_to image_tag(@no_photo), profile_path(profile)
           %td
             %h2
               = link_to((profile.first_name.capitalize+" "+profile.last_name.capitalize), profile_path(profile))
