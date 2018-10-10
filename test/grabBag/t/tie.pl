@@ -11,7 +11,7 @@ my %realm = (
 				'solrCollection'	=> 'discovery' 
 			  },
 		'test' => {
-				'solr' 			=> 'solr-test.library.ualberta.ca:8080',
+				'solr' 			=> 'solrcloud-test.library.ualberta.ca:8080',
 				'appserver'		=> 'search-test.library.ualberta.ca' ,
 				'solrCollection'	=> 'discovery-test' 
 			 },

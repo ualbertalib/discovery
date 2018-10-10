@@ -15,7 +15,7 @@ my $host="search-test.library.ualberta.ca";             # use the Test environme
 # config.txt contains a serialized hash-of-hashes, configuration file for this set of tests, integrated with Jenkins parameters
 my $lookup = retrieve 'config.txt';                   # get a static data structure from a file
 $host = $lookup->{$realm}{'appserver'} if defined $lookup->{$realm}{'appserver'};
-my $solrHost="solr-test.library.ualberta.ca:8080";	# a default value -- the test realm
+my $solrHost="solrcloud-test.library.ualberta.ca:8080";	# a default value -- the test realm
 $solrHost = $lookup->{$realm}{'solr'} if defined $lookup->{$realm}{'solr'};
 my $solrCollection="discovery-test";			# a default value, eg test realm
 $solrCollection = $lookup->{$realm}{'solrCollection'} if defined $lookup->{$realm}{'solrCollection'};
