@@ -6,6 +6,27 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.88] - 2018-10-09
+### Added
+- Rollbar to resolve production errors in minutes (requires new secret) [Issue#1287](https://github.com/ualbertalib/discovery/issues/1287)
+
+### Removed
+- Slow code on staff profile page [PR#1319](https://github.com/ualbertalib/discovery/pull/1319)
+
+### Changed
+- Fix incorrect libraries listed under 'copies owned' [NEOSDiscovery#152](https://github.com/ualbertalib/NEOSDiscovery/issues/152)
+
+## [3.0.87] - 2018-09-26
+### Changed
+- Fix diacritics font issues [Issue#1268](https://github.com/ualbertalib/discovery/issues/1268)
+- Reword text on Advanced Search page [Issue#1254](https://github.com/ualbertalib/discovery/issues/1254)
+- MAP_OS location is not mapped/displays as blank [Issue#1135](https://github.com/ualbertalib/discovery/issues/1135)
+- seeing Alberta Health Services - Women's Health in list view as library name for NLC_INT [Issue#1127](https://github.com/ualbertalib/discovery/issues/1127)
+- TOC not wrapping around Tools box [Issue#1088](https://github.com/ualbertalib/discovery/issues/1088)
+- Remove call number attribute from advanced search [Issue#755] (https://github.com/ualbertalib/discovery/issues/755)
+- Make Librarian View a pop-up window [Issue#1242](https://github.com/ualbertalib/discovery/issues/1242)
+- changed advanced search text. Fixed CMS login credentials to use secrets.yml
+
 ## [3.0.86] - 2018-09-21
 ### Added
 - Github issue templates [PR#1271](https://github.com/ualbertalib/discovery/pull/1271)

@@ -20,4 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  ual_shield_UAL: 'University of Alberta Internet'
+  ual_shield_NEOS: 'NEOS Free Internet Resources'

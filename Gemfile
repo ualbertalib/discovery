@@ -5,8 +5,7 @@ gem "activerecord-session_store"
 gem 'rails', '4.2.10'
 
 # Database stuff
-gem 'mysql2', '~>0.3.20'
-gem 'sqlite3', group: :workstation
+gem 'mysql2', '~> 0.4.10'
 
 # Assets (CSS/JS) stuff
 gem 'coffee-rails', '~> 4.2.2'
@@ -21,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'spring', group: :development
 
 # blacklight stuff
-gem "blacklight", "5.15.0"
+gem "blacklight", "5.19.2"
 gem "blacklight-marc", "~> 5.10.0"
 gem "blacklight_advanced_search"
 gem 'blacklight_google_analytics'
@@ -36,12 +35,15 @@ gem "devise-guests"
 gem "addressable", "2.5.2"
 gem 'friendly_id'
 gem "htmlentities"
-gem 'nokogiri', '~> 1.8.4'
+gem 'nokogiri', '~> 1.8.5'
 gem "om"
 gem 'paperclip', '~> 6.1.0'
 
 # Content Management System
 gem 'comfortable_mexican_sofa', '1.12.9'
+
+# Performance monitoring
+gem 'rollbar'
 
 group :test, :development do
   gem 'sdoc', require: false
@@ -71,7 +73,7 @@ group :development do
   gem 'binding_of_caller'
 
   gem 'brakeman'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '~> 3.0'
 end
 
 group :test do
