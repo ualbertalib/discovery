@@ -19,4 +19,21 @@ describe HoldingsHelper do
       expect(helper.display_ual_shield(document)).to be false
     end
   end
+
+  describe "#read_on_site_path" do
+    it "should link to #{READ_ON_SITE_LOCATION_RCRF} form" do
+      item = { location: READ_ON_SITE_LOCATION_RCRF }
+      expect(helper.read_on_site_path(item)).to eq '/#TODO_RCRF'
+    end
+    
+    it "should link to #{READ_ON_SITE_LOCATION_BPSC} form" do
+      item = { location: READ_ON_SITE_LOCATION_BPSC }
+      expect(helper.read_on_site_path(item)).to eq '/#TODO_BPSC'
+    end
+    
+    it "should link somewhere else otherwise" do
+      item = { location: 'SOMEWHERE' }
+      expect(helper.read_on_site_path(item)).to eq errors_unprocessable_path
+    end
+  end
 end
