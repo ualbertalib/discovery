@@ -20,7 +20,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def load_lookup_tables
-    @locations ||= YAML.load_file("#{Rails.root}/config/locations.yml")
     @languages ||= YAML.load_file("#{Rails.root}/config/languages.yml")
     @statuses ||= YAML.load_file("#{Rails.root}/config/statuses.yml")
     @item_types ||= YAML.load_file("#{Rails.root}/config/item_types.yml")

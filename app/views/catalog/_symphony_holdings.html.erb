@@ -37,7 +37,7 @@
                   <% end %>
               </td>
               <% end %>
-              <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= @locations[item[:location].downcase.gsub("_","")] %></a></td>
+              <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= library_location(item[:location]) %></a></td>
               <% if @document["format"].include? "Journal" %>
             <% end %>
               <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
@@ -50,7 +50,7 @@
                     <%= link_to "Request Me", read_on_site_path(item), {:id => 'requestLink', :class => 'lightboxLink'} %>
                   <%- end -%>
                   <% if @document.respond_to?( :to_email_text ) %>
-                    <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>@locations[item[:location].downcase.gsub("_","")]), {:id => 'emailLink', :class => 'lightboxLink'} %>
+                    <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>library_location(item[:location])), {:id => 'emailLink', :class => 'lightboxLink'} %>
                   <%- end -%>
                   <%- if @document.respond_to?( :to_sms_text ) -%>
                     <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>item[:call]), {:id => 'smsLink', :class => 'lightboxLink'} %>
