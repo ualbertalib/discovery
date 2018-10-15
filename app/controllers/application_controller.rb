@@ -13,16 +13,7 @@ class ApplicationController < ActionController::Base
 
   layout 'blacklight'
 
-  helper_method :load_lookup_tables
-
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-
-  def load_lookup_tables
-    @languages ||= YAML.load_file("#{Rails.root}/config/languages.yml")
-    @statuses ||= YAML.load_file("#{Rails.root}/config/statuses.yml")
-    @item_types ||= YAML.load_file("#{Rails.root}/config/item_types.yml")
-    @circ_rules ||= YAML.load_file("#{Rails.root}/config/circ_rules.yml")
-  end
 end

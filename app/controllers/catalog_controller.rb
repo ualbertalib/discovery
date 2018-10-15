@@ -18,7 +18,6 @@ class CatalogController < ApplicationController
   def index
     super
     @collection_name = ""
-    load_lookup_tables
   end
 
   def show
@@ -54,8 +53,6 @@ class CatalogController < ApplicationController
     if @document["author_addl_t"]
       @additional_authors = @document["author_addl_t"]
     end
-
-    load_lookup_tables
 
     if @document['title_display']
       @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']

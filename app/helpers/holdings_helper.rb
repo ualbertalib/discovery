@@ -27,8 +27,8 @@ module HoldingsHelper
 
   # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme
   UAL_SHIELD_LIBRARIES = [
-    LIBRARY_LOCATIONS[:uainternet],
-    LIBRARY_LOCATIONS[:neosfree]
+    SYMPHONY_LIBRARY_LOCATIONS[:uainternet],
+    SYMPHONY_LIBRARY_LOCATIONS[:neosfree]
   ].freeze
 
   # determines whether or not ual shield should be displayed for the item
@@ -53,7 +53,7 @@ module HoldingsHelper
   # returns the library description that matches the code coming from symphony ws
   # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme
   def library_location(library_code)
-    LIBRARY_LOCATIONS[library_code.downcase.gsub("_","").to_sym]
+    SYMPHONY_LIBRARY_LOCATIONS[library_code.downcase.delete("_").to_sym]
   end
 
 end

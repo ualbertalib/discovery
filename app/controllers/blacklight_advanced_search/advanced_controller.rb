@@ -5,10 +5,7 @@ class BlacklightAdvancedSearch::AdvancedController < CatalogController
 
 
   def index
-    unless request.method==:post
-      @response = get_advanced_search_facets
-    end
-    load_lookup_tables
+    @response = get_advanced_search_facets unless request.method==:post
   end
 
   protected

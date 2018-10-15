@@ -11,21 +11,20 @@
           <br />
 
           <% for item in @holdings %>
-
-            <% @unavailable = true if @statuses[item[:status].to_s.downcase] == "unavailable" %>
+            <% @unavailable = true if SYMPHONY_STATUSES[item[:status].downcase.to_sym] == "unavailable" %>
             <tr>
               <td><%= item[:call] %></td>
               <% if item[:status] == "CHECKEDOUT" %>
                 <% if item[:due] %>
                   <td style="padding-right:2px;font-size:75%"><strong>Due: <%= DateTime.parse(item[:due]).strftime("%m/%d/%Y %l:%M %P").gsub("00:00 am","").gsub("12:00 am","") %></strong>
                   <% if item[:reserve] %>
-                    <p style="font-size:small"><%= @circ_rules[item[:reserve_rule]] %></p>
+                    <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
                   <% end %>
                 </td>
                 <% else %><td>Unknown/Never</td>
               <% end %>
               <% else %>
-                <td class="holding-status"><%= @statuses[item[:status].to_s.downcase] %>
+                <td class="holding-status"><%= SYMPHONY_STATUSES[item[:status].downcase.to_sym] %>
                 <% if @unavailable %>
                   <p style="font-size: small"><strong>Note: For access, please contact any University of Alberta Libraries service desk in person or at <a href="http://www.library.ualberta.ca/askus" target="_blank">www.library.ualberta.ca/askus.</a></strong></p>
                 <% end %>
@@ -33,7 +32,7 @@
                   <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
                 <% end %>
                   <% if item[:reserve] or item[:status]=="RESERVES"%>
-                    <p style="font-size:small"><%= @circ_rules[item[:reserve_rule]] %></p>
+                    <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
                   <% end %>
               </td>
               <% end %>
@@ -41,7 +40,7 @@
               <% if @document["format"].include? "Journal" %>
             <% end %>
               <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
-                <td class="holding-type hidden-xs"><%= @item_types[item[:type].downcase] %></td>
+                <td class="holding-type hidden-xs"><%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %></td>
               <% else %>
                 <td></td>
               <% end %>
