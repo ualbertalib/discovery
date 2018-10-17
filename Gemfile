@@ -20,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'spring', group: :development
 
 # blacklight stuff
-gem "blacklight", "5.19.2"
+gem "blacklight", "5.15.0"
 gem "blacklight-marc", "~> 5.10.0"
 gem "blacklight_advanced_search"
 gem 'blacklight_google_analytics'

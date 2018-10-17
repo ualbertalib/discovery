@@ -6,6 +6,14 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.90] - 2018-10-17
+### Fixed
+- SMS/Email errors [PR#1325](https://github.com/ualbertalib/discovery/pull/1325)
+
+## [3.0.89] - 2018-10-17
+### Fixed
+- Staff Profile Images [PR#1325](https://github.com/ualbertalib/discovery/pull/1325)
+
 ## [3.0.88] - 2018-10-09
 ### Added
 - Rollbar to resolve production errors in minutes (requires new secret) [Issue#1287](https://github.com/ualbertalib/discovery/issues/1287)
