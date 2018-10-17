@@ -8,7 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [3.0.90] - 2018-10-17
 ### Fixed
-- SMS/Email errors [PR#1325](https://github.com/ualbertalib/discovery/pull/1325)
+- SMS/Email errors [PR#1332](https://github.com/ualbertalib/discovery/pull/1332)
 
 ## [3.0.89] - 2018-10-17
 ### Fixed
