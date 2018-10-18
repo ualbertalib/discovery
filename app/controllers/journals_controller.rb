@@ -5,7 +5,7 @@ class JournalsController < CatalogController
   include Blacklight::Catalog
 
   self.search_params_logic << :show_only
-  
+
   def show_only solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
     #solr_parameters[:fq] << 'format: "Journal"'

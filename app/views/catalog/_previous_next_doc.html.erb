@@ -1,12 +1,12 @@
 <% #Using the Bootstrap Pagination class  -%>
 <% if @previous_document || @next_document %>
-	<div id="previousNextDocument">
+  <div id="previousNextDocument">
     <div class="page_links">
       <% if @previous_document  %>
         <%= link_to_previous_document @previous_document %> |
       <% end %>
-      <%= item_page_entry_info %> 
-      <% if @next_document  %> 
+      <%= item_page_entry_info %>
+      <% if @next_document  %>
         | <%= link_to_next_document @next_document %>
       <% end %>
     </div>
@@ -14,6 +14,6 @@
     <div class="pull-right search-widgets">
         <%= link_back_to_catalog(label: 'Back to Search Results', :class => 'btn btn-ltblue', :id => "no-dot") %>
         <%=link_to "Start Over", root_path, :class => 'btn btn-ltblue', :id => "no-dot" %>
-  	</div>
+    </div>
   </div>
 <% end %>

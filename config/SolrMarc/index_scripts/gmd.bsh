@@ -5,7 +5,7 @@ org.solrmarc.index.SolrIndexer indexer = null;
 public String getGMD(Record record){
 
   String val = indexer.getFirstFieldVal(record, "245h");
-  
+
   if (val != null){
     return val.replaceAll("\\[", "").replaceAll("\\]", "").replaceAll(":", "");
   }
@@ -13,4 +13,3 @@ public String getGMD(Record record){
     return val;
   }
 }
-

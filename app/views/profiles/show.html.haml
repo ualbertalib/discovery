@@ -1,6 +1,6 @@
 .a-profile
   = link_to profiles_path, class: "staff-back" do
-    <span class="glyphicon glyphicon-chevron-left"></span>  All Staff	
+    <span class="glyphicon glyphicon-chevron-left"></span>  All Staff
   - require 'uri'
   - @photo_link_dirty = "https://www2.library.ualberta.ca/2015assets/all-staff-photos/"+@profile.first_name.downcase+"-"+@profile.last_name.downcase+".jpg"
   - @photo_link = URI.encode(@photo_link_dirty)
@@ -22,14 +22,14 @@
       = link_to @profile.phone, "tel:"+@profile.phone
     %span.adr
       %span.street-address
-        Building: 
+        Building:
         = link_to($buildings[@profile.campus_address.to_sym], "/locations/"+@profile.campus_address)
   %ul
     -if @profile.unit.presence
       %li.unit
         %h4.inline
           Unit:
-        = link_to($units[@profile.unit.to_sym], "/staff/?unit="+@profile.unit)   
+        = link_to($units[@profile.unit.to_sym], "/staff/?unit="+@profile.unit)
     -if @profile.expertise.presence
       %li.expertise
         %h4.inline

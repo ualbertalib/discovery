@@ -5,7 +5,7 @@ org.solrmarc.index.SolrIndexer indexer = null;
 public String getKuleID(Record record){
 
   String val = indexer.getFirstFieldVal(record, "001");
-  
+
   if (val != null){
     return "kule"+val;
   }
@@ -13,4 +13,3 @@ public String getKuleID(Record record){
     return val;
   }
 }
-

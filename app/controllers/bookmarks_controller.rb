@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-class BookmarksController < CatalogController  
+class BookmarksController < CatalogController
 
   include Blacklight::Bookmarks
 
@@ -8,4 +8,4 @@ class BookmarksController < CatalogController
     load_lookup_tables
   end
 
-end 
+end

@@ -58,5 +58,3 @@ export SOLR_INGEST_URL=http://localhost:8983/solr/your-new-solr-collection
 bundle exec rake ingest[collection]
 unset SOLR_INGEST_URL # if desired
 ```
-
-

@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 # Author: 	Neil MacGregor
 # Date: 	Jun 9, 2015
-# Purpose: 	Prepare a big file full of random strings, which will be used to feed data into ?JMeter? or other { solr | Discovery } testing tools. 
+# Purpose: 	Prepare a big file full of random strings, which will be used to feed data into ?JMeter? or other { solr | Discovery } testing tools.
 # 		Ripped out of the original moby.t, which (originally) did this inline
 use strict;
 

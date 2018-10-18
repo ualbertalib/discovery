@@ -113,7 +113,7 @@ describe PeelModsVocabulary do
       expect(mods_document.typeOfResource).to eq ["cartographic"]
       expect(mods_document.url).to eq ["http://peel.library.ualberta.ca/maps/M/00/01/M000171/M000171.tif"]
     end
-   
+
     it "should have the fields tagged for Solr indexing" do
       expect(mods_document.to_solr["cartographics_tesim"]).to eq mods_document.cartographics
       expect(mods_document.to_solr["classification_tesim"]).to eq mods_document.classification
@@ -148,7 +148,7 @@ describe PeelModsVocabulary do
       expect(mods_document.to_solr["topic_tesim"]).to eq mods_document.topic
       expect(mods_document.to_solr["typeOfResource_tesim"]).to eq mods_document.typeOfResource
     end
-    
+
     describe "#to_solr" do
       it "should include Solr-tagged fields in a hash" do
         expect(mods_document.to_solr).to eq solr_hash

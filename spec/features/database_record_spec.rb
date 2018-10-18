@@ -12,6 +12,6 @@ RSpec.feature "Database record test", :type => :feature do
     expect(page).to have_text("Physics")
     # expect(page).to have_text("Click Here for Access") # now handled by javascript
     # expect(page).to have_text("http://springerlink.metapress.com/link.asp?id=104935") # now handled by javascript
-  
+
   end
 end

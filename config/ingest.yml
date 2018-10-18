@@ -3,23 +3,23 @@ proxy: http://login.ezproxy.library.ualberta.ca/login?url=
 collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set", "symphony_test_set", "symphony_test_deletes", "kule"]
 
 era:
-   schema: dublin_core
-   root: "//xmlns:OAI-PMH"
-   delimiter: "//xmlns:record"
-   namespace: '{"xmlns" => "http://www.openarchives.org/OAI/2.0/"}'
-   vocabulary: DublinCoreVocabulary
-   endpoint: "http://era.library.ualberta.ca/oaiprovider/?verb=ListRecords&metadataPrefix=oai_dc"
-   mode: file
-   path: "data/era.xml"
+  schema: dublin_core
+  root: "//xmlns:OAI-PMH"
+  delimiter: "//xmlns:record"
+  namespace: '{"xmlns" => "http://www.openarchives.org/OAI/2.0/"}'
+  vocabulary: DublinCoreVocabulary
+  endpoint: "http://era.library.ualberta.ca/oaiprovider/?verb=ListRecords&metadataPrefix=oai_dc"
+  mode: file
+  path: "data/era.xml"
 
 era_test:
-   schema: dublin_core
-   root: "//xmlns:OAI-PMH"
-   delimiter: "//xmlns:record"
-   namespace: '{"xmlns" => "http://www.openarchives.org/OAI/2.0/"}'
-   vocabulary: DublinCoreVocabulary
-   mode: file
-   path: "data/era.xml"
+  schema: dublin_core
+  root: "//xmlns:OAI-PMH"
+  delimiter: "//xmlns:record"
+  namespace: '{"xmlns" => "http://www.openarchives.org/OAI/2.0/"}'
+  vocabulary: DublinCoreVocabulary
+  mode: file
+  path: "data/era.xml"
 
 peel:
   schema: mods

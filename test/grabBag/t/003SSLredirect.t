@@ -6,8 +6,8 @@
 #		Some were due to the Zero Results bug
 #		Some were due to a bug in handling punctuation
 #		These were inspired by early revisions of mobyTest.pl, which found these class of errors!
-# RevisionCntl: 
-# Context: 	
+# RevisionCntl:
+# Context:
 # Ideas for improvement:
 use strict;
 use WWW::Mechanize;
@@ -24,11 +24,11 @@ my $lookup = retrieve 'config.txt';                   # get a static data struct
 $host = $lookup->{$realm}{'appserver'} if defined $lookup->{$realm}{'appserver'};
 $DEBUG && print "We're in $realm, so I'll be using $host\n";
 
-my $mech = WWW::Mechanize->new();  				
-my $url="http://$host";  
+my $mech = WWW::Mechanize->new();
+my $url="http://$host";
 
 my $response = $mech->get( $url );    		# Visit the default home page
-# did I get redirected to the https interface? 
+# did I get redirected to the https interface?
 #print "Was this a redirect:  " . $response->is_redirect . "\n";
 #print "The code was: " . $response->code . "\n";
 #print "The base was: " . $response->base . "\n";

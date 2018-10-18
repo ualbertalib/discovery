@@ -78,7 +78,7 @@ class CatalogController < ApplicationController
     # solr path which will be added to solr base url before the other solr params.
     #config.solr_path = 'select'
 
-     #items to show per page, each number in the array represent another option to choose from.
+    #items to show per page, each number in the array represent another option to choose from.
     config.per_page = [25,50,100]
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or

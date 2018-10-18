@@ -79,4 +79,3 @@ public Set getInstitutions(Record record){
 }
  return institutions;
 }
-
