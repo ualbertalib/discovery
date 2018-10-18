@@ -196,6 +196,10 @@ GEM
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
     kramdown (1.17.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    letter_opener (1.6.0)
+      launchy (~> 2.2)
     libv8 (3.16.14.19)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -424,6 +428,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jettywrapper (~> 2.0.3)
   jquery-rails
+  letter_opener
   listen (~> 3.0)
   mysql2 (~> 0.4.10)
   nokogiri (~> 1.8.5)

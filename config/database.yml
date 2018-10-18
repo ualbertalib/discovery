@@ -1,8 +1,8 @@
-# *** WARNING *** Don't change this file ! 
+# *** WARNING *** Don't change this file !
 #
 # This file is a placeholder.  In Dev/Test/Prod, this file will
 # be replaced by ansible, whence we have 3 separate templates, one
-# for each environment! 
+# for each environment!
 # See:
 # [nmacgreg@its004nm2 ansible-dev-master]$ ls -al roles/blacklight-application/templates/database*
 # -rwxrwxr-x. 1 nmacgreg nmacgreg 643 Apr 22 09:01 roles/blacklight-application/templates/database.yml
@@ -27,7 +27,7 @@ development:
 test:
   <<: *default
   database: discovery_test
-  
+
 uat:
   <<: *default
   url: <%= Rails.application.secrets.database_url %>
