@@ -47,7 +47,7 @@ module HoldingsHelper
   def read_on_site_path(item)
     return '/#TODO_RCRF' if item[:location] == READ_ON_SITE_LOCATION_RCRF
     return '/#TODO_BPSC' if item[:location] == READ_ON_SITE_LOCATION_BPSC
-    errors_unprocessable_path
+    nil
   end
 
   # returns the library description that matches the code coming from symphony ws

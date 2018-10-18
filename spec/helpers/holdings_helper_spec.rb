@@ -28,9 +28,9 @@ describe HoldingsHelper do
       expect(helper.read_on_site_path(item)).to eq '/#TODO_BPSC'
     end
 
-    it "should link somewhere else otherwise" do
+    it "should not link otherwise" do
       item = { location: 'SOMEWHERE' }
-      expect(helper.read_on_site_path(item)).to eq errors_unprocessable_path
+      expect(helper.read_on_site_path(item)).to be_nil
     end
   end
 end
