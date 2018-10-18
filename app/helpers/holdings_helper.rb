@@ -24,7 +24,7 @@ module HoldingsHelper
       nil
     end
   end
-  
+
   def display_ual_shield(document)
     return false unless document["location_tesim"]
     return true if document["location_tesim"].include?(I18n.t('ual_shield_UAL'))

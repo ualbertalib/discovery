@@ -24,7 +24,7 @@ module Blacklight::Catalog
   included do
     helper_method :sms_mappings, :has_search_parameters?
 
-    # When an action raises Blacklight::Exceptions::RecordNotFound, handle 
+    # When an action raises Blacklight::Exceptions::RecordNotFound, handle
     # the exception appropriately.
     rescue_from Blacklight::Exceptions::RecordNotFound, with: :invalid_document_id_error
 
@@ -118,7 +118,7 @@ module Blacklight::Catalog
 
     ##
     # Check if any search parameters have been set
-    # @return [Boolean] 
+    # @return [Boolean]
     def has_search_parameters?
       !params[:q].blank? or !params[:f].blank? or !params[:search_field].blank?
     end
@@ -193,14 +193,14 @@ module Blacklight::Catalog
     ##
     # Render the document export formats for a response
     # First, try to render an appropriate template (e.g. index.endnote.erb)
-    # If that fails, just concatenate the document export responses with a newline. 
+    # If that fails, just concatenate the document export responses with a newline.
     def render_document_export_format format_name
       render
     rescue ActionView::MissingTemplate
       render text: @response.documents.map { |x| x.export_as(format_name) if x.exports_as? format_name }.compact.join("\n"), layout: false
     end
 
-    # override this method to change the JSON response from #index 
+    # override this method to change the JSON response from #index
     def render_search_results_as_json
       {response: {docs: @document_list, facets: search_facets_as_json, pages: pagination_info(@response)}}
     end
@@ -212,10 +212,10 @@ module Blacklight::Catalog
         f["items"] = f["items"].as_json.each do |i|
           i['label'] ||= i['value']
         end
-      end 
+      end
     end
 
-    # override this method to change the JSON response from #facet 
+    # override this method to change the JSON response from #facet
     def render_facet_list_as_json
       {response: {facets: @pagination }}
     end
@@ -232,34 +232,34 @@ module Blacklight::Catalog
       h = {}
 
       [:current_page, :next_page, :prev_page, :total_pages,
-       :limit_value, :offset_value, :total_count,
-       :first_page?, :last_page?].each do |k|
+      :limit_value, :offset_value, :total_count,
+      :first_page?, :last_page?].each do |k|
         h[k] = response.send(k)
       end
 
       h
     end
 
-     # Email Action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
-     def email_action documents
-       mail = RecordMailer.email_record(documents, {:to => params[:to], :message => params[:message], :call=>params[:call], :location=>params[:location]}, url_options)
-       if mail.respond_to? :deliver_now
-         mail.deliver_now
-       else
-         mail.deliver
-       end
-     end
+    # Email Action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
+    def email_action documents
+      mail = RecordMailer.email_record(documents, {:to => params[:to], :message => params[:message], :call=>params[:call], :location=>params[:location]}, url_options)
+      if mail.respond_to? :deliver_now
+        mail.deliver_now
+      else
+        mail.deliver
+      end
+    end
 
-     # SMS action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
-     def sms_action documents
-       to = "#{params[:to].gsub(/[^\d]/, '')}@#{params[:carrier]}"
-       mail = RecordMailer.sms_record(documents, { :to => to, :call => params[:call] }, url_options)
-       if mail.respond_to? :deliver_now
-         mail.deliver_now
-       else
-         mail.deliver
-       end
-     end
+    # SMS action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
+    def sms_action documents
+      to = "#{params[:to].gsub(/[^\d]/, '')}@#{params[:carrier]}"
+      mail = RecordMailer.sms_record(documents, { :to => to, :call => params[:call] }, url_options)
+      if mail.respond_to? :deliver_now
+        mail.deliver_now
+      else
+        mail.deliver
+      end
+    end
 
     def validate_sms_params
       case
@@ -278,15 +278,15 @@ module Blacklight::Catalog
 
     def sms_mappings
       {'Bell' => 'txt.bell.ca',
-       'Rogers' => 'pcs.rogers.com',
-       'Fido' => 'sms.fido.ca',
-       'Telus' => 'msg.telus.com',
-       'Virgin Mobile' => 'vmobile.ca',
-       'PC Mobile' => 'mobiletxt.ca',
-       'Koodo' => 'msg.koodomobile.com',
-       'Sasktel' => 'sms.sasktel.com',
-       'MTS' => 'text.mts.net',
-       'Wind' => 'txt.windmobile.ca'}
+      'Rogers' => 'pcs.rogers.com',
+      'Fido' => 'sms.fido.ca',
+      'Telus' => 'msg.telus.com',
+      'Virgin Mobile' => 'vmobile.ca',
+      'PC Mobile' => 'mobiletxt.ca',
+      'Koodo' => 'msg.koodomobile.com',
+      'Sasktel' => 'sms.sasktel.com',
+      'MTS' => 'text.mts.net',
+      'Wind' => 'txt.windmobile.ca'}
     end
 
     def validate_email_params

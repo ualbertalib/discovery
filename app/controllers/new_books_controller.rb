@@ -3,7 +3,7 @@
 class NewBooksController < CatalogController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
-  
+
   self.search_params_logic << :show_only
 
   def show_only solr_parameters, user_parameters
@@ -31,4 +31,4 @@ class NewBooksController < CatalogController
   def read_id_file
     File.open("#{Rails.root}/config/new_books.txt").read.split("|\r\n").take 300
   end
-end 
+end

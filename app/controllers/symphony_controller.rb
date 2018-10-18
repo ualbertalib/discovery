@@ -8,7 +8,7 @@ class SymphonyController < CatalogController
 
   def show_only solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
-    
+
   end
 
   def index

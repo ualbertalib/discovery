@@ -1,4 +1,4 @@
-# until https://github.com/ualbertalib/discovery/issues/422 is addressed changes 
+# until https://github.com/ualbertalib/discovery/issues/422 is addressed changes
 # to this file should be mirrored in config/SolrMarc/index_scripts/location_facet.bsh
 aegeo:  Alberta Geological Survey
 aginternet: Alberta Government Library - Internet
@@ -21,7 +21,7 @@ ahsrvgh: Alberta Health Services - Rockyview General Hospital
 ahssturg: Alberta Health Services - Sturgeon Community Hospital
 ahstbcc: Alberta Health Services - Tom Baker Cancer Centre
 ahserc: Alberta Health Services
-ahscenten: Alberta Health Services 
+ahscenten: Alberta Health Services
 ahsint: Alberta Health Services/Covenant Health - Internet
 ahsglenrse: Alberta Health Services - Glenrose Rehabilitation Hospital
 aitfcalg:  Alberta Innovates - Technology Futures - Calgary

@@ -11,7 +11,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 
 
 /*
- CanvasJS HTML5 & JavaScript Charts - v1.6.2 GA- http://canvasjs.com/ 
+ CanvasJS HTML5 & JavaScript Charts - v1.6.2 GA- http://canvasjs.com/
  Copyright 2013 fenopix
 */
 (function(){function O(a,b){a.prototype=Aa(b.prototype);a.prototype.constructor=a;a.parent=b.prototype}function Aa(a){function b(){}b.prototype=a;return new b}function qa(a,b,c){"millisecond"===c?a.setMilliseconds(a.getMilliseconds()+1*b):"second"===c?a.setSeconds(a.getSeconds()+1*b):"minute"===c?a.setMinutes(a.getMinutes()+1*b):"hour"===c?a.setHours(a.getHours()+1*b):"day"===c?a.setDate(a.getDate()+1*b):"week"===c?a.setDate(a.getDate()+7*b):"month"===c?a.setMonth(a.getMonth()+1*b):"year"===c&&a.setFullYear(a.getFullYear()+
@@ -441,7 +441,7 @@ b,c,d){this.drawText_(a,b,c,d,!0)};d.measureText=function(a){this.textMeasureEl_
 d.arcTo=function(){};d.createPattern=function(a,b){return new I(a,b)};w.prototype.addColorStop=function(a,b){b=G(b);this.colors_.push({offset:a,color:b.color,alpha:b.alpha})};d=A.prototype=Error();d.INDEX_SIZE_ERR=1;d.DOMSTRING_SIZE_ERR=2;d.HIERARCHY_REQUEST_ERR=3;d.WRONG_DOCUMENT_ERR=4;d.INVALID_CHARACTER_ERR=5;d.NO_DATA_ALLOWED_ERR=6;d.NO_MODIFICATION_ALLOWED_ERR=7;d.NOT_FOUND_ERR=8;d.NOT_SUPPORTED_ERR=9;d.INUSE_ATTRIBUTE_ERR=10;d.INVALID_STATE_ERR=11;d.SYNTAX_ERR=12;d.INVALID_MODIFICATION_ERR=
 13;d.NAMESPACE_ERR=14;d.INVALID_ACCESS_ERR=15;d.VALIDATION_ERR=16;d.TYPE_MISMATCH_ERR=17;G_vmlCanvasManager=U;CanvasRenderingContext2D=C;CanvasGradient=w;CanvasPattern=I;DOMException=A}();
 /*
- CanvasJS jQuery Charting Plugin - http://canvasjs.com/ 
+ CanvasJS jQuery Charting Plugin - http://canvasjs.com/
  Copyright 2013 fenopix
 */
 (function(b,c,d,e){b.fn.CanvasJSChart=function(a){if(a){var b=this.first();a=new CanvasJS.Chart(this[0],a);b.children(".canvasjs-chart-container").data("canvasjsChartRef",a);a.render();return this}return this.first().children(".canvasjs-chart-container").data("canvasjsChartRef")}})(jQuery,window,document);
@@ -456,7 +456,7 @@ d.arcTo=function(){};d.createPattern=function(a,b){return new I(a,b)};w.prototyp
 Nd.millisecond=Nd.milliseconds=Md,Nd.utcOffset=Na,Nd.utc=Pa,Nd.local=Qa,Nd.parseZone=Ra,Nd.hasAlignedHourOffset=Sa,Nd.isDST=Ta,Nd.isDSTShifted=Ua,Nd.isLocal=Va,Nd.isUtcOffset=Wa,Nd.isUtc=Xa,Nd.isUTC=Xa,Nd.zoneAbbr=Xb,Nd.zoneName=Yb,Nd.dates=aa("dates accessor is deprecated. Use date instead.",Dd),Nd.months=aa("months accessor is deprecated. Use month instead",Y),Nd.years=aa("years accessor is deprecated. Use year instead",td),Nd.zone=aa("moment().zone is deprecated, use moment().utcOffset instead. https://github.com/moment/moment/issues/1779",Oa);var Od=Nd,Pd={sameDay:"[Today at] LT",nextDay:"[Tomorrow at] LT",nextWeek:"dddd [at] LT",lastDay:"[Yesterday at] LT",lastWeek:"[Last] dddd [at] LT",sameElse:"L"},Qd={LTS:"h:mm:ss A",LT:"h:mm A",L:"MM/DD/YYYY",LL:"MMMM D, YYYY",LLL:"MMMM D, YYYY h:mm A",LLLL:"dddd, MMMM D, YYYY h:mm A"},Rd="Invalid date",Sd="%d",Td=/\d{1,2}/,Ud={future:"in %s",past:"%s ago",s:"a few seconds",m:"a minute",mm:"%d minutes",h:"an hour",hh:"%d hours",d:"a day",dd:"%d days",M:"a month",MM:"%d months",y:"a year",yy:"%d years"},Vd=s.prototype;Vd._calendar=Pd,Vd.calendar=_b,Vd._longDateFormat=Qd,Vd.longDateFormat=ac,Vd._invalidDate=Rd,Vd.invalidDate=bc,Vd._ordinal=Sd,Vd.ordinal=cc,Vd._ordinalParse=Td,Vd.preparse=dc,Vd.postformat=dc,Vd._relativeTime=Ud,Vd.relativeTime=ec,Vd.pastFuture=fc,Vd.set=gc,Vd.months=U,Vd._months=md,Vd.monthsShort=V,Vd._monthsShort=nd,Vd.monthsParse=W,Vd.week=ka,Vd._week=ud,Vd.firstDayOfYear=ma,Vd.firstDayOfWeek=la,Vd.weekdays=Lb,Vd._weekdays=Ed,Vd.weekdaysMin=Nb,Vd._weekdaysMin=Gd,Vd.weekdaysShort=Mb,Vd._weekdaysShort=Fd,Vd.weekdaysParse=Ob,Vd.isPM=Ub,Vd._meridiemParse=Hd,Vd.meridiem=Vb,w("en",{ordinalParse:/\d{1,2}(th|st|nd|rd)/,ordinal:function(a){var b=a%10,c=1===q(a%100/10)?"th":1===b?"st":2===b?"nd":3===b?"rd":"th";return a+c}}),a.lang=aa("moment.locale is deprecated. Use moment.locale instead.",w),a.langData=aa("moment.localeData is deprecated. Use moment.localeData instead.",y);var Wd=Math.abs,Xd=yc("ms"),Yd=yc("s"),Zd=yc("m"),$d=yc("h"),_d=yc("d"),ae=yc("w"),be=yc("M"),ce=yc("y"),de=Ac("milliseconds"),ee=Ac("seconds"),fe=Ac("minutes"),ge=Ac("hours"),he=Ac("days"),ie=Ac("months"),je=Ac("years"),ke=Math.round,le={s:45,m:45,h:22,d:26,M:11},me=Math.abs,ne=Ha.prototype;ne.abs=oc,ne.add=qc,ne.subtract=rc,ne.as=wc,ne.asMilliseconds=Xd,ne.asSeconds=Yd,ne.asMinutes=Zd,ne.asHours=$d,ne.asDays=_d,ne.asWeeks=ae,ne.asMonths=be,ne.asYears=ce,ne.valueOf=xc,ne._bubble=tc,ne.get=zc,ne.milliseconds=de,ne.seconds=ee,ne.minutes=fe,ne.hours=ge,ne.days=he,ne.weeks=Bc,ne.months=ie,ne.years=je,ne.humanize=Fc,ne.toISOString=Gc,ne.toString=Gc,ne.toJSON=Gc,ne.locale=rb,ne.localeData=sb,ne.toIsoString=aa("toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)",Gc),ne.lang=Cd,H("X",0,0,"unix"),H("x",0,0,"valueOf"),N("x",_c),N("X",bd),Q("X",function(a,b,c){c._d=new Date(1e3*parseFloat(a,10))}),Q("x",function(a,b,c){c._d=new Date(q(a))}),a.version="2.10.6",b(Da),a.fn=Od,a.min=Fa,a.max=Ga,a.utc=h,a.unix=Zb,a.months=jc,a.isDate=d,a.locale=w,a.invalid=l,a.duration=Ya,a.isMoment=o,a.weekdays=lc,a.parseZone=$b,a.localeData=y,a.isDuration=Ia,a.monthsShort=kc,a.weekdaysMin=nc,a.defineLocale=x,a.weekdaysShort=mc,a.normalizeUnits=A,a.relativeTimeThreshold=Ec;var oe=a;return oe});
 
 /*FeedEk jQuery RSS/ATOM Feed Plugin v2.0
-* http://jquery-plugins.net/FeedEk/FeedEk.html  
+* http://jquery-plugins.net/FeedEk/FeedEk.html
 * https://github.com/enginkizil/FeedEk
 * Author : Engin KIZIL http://www.enginkizil.com */
 
@@ -464,7 +464,7 @@ Nd.millisecond=Nd.milliseconds=Md,Nd.utcOffset=Na,Nd.utc=Pa,Nd.local=Qa,Nd.parse
 jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,f,a,h,g){return jQuery.easing[jQuery.easing.def](e,f,a,h,g)},easeInQuad:function(e,f,a,h,g){return h*(f/=g)*f+a},easeOutQuad:function(e,f,a,h,g){return -h*(f/=g)*(f-2)+a},easeInOutQuad:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f+a}return -h/2*((--f)*(f-2)-1)+a},easeInCubic:function(e,f,a,h,g){return h*(f/=g)*f*f+a},easeOutCubic:function(e,f,a,h,g){return h*((f=f/g-1)*f*f+1)+a},easeInOutCubic:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f+a}return h/2*((f-=2)*f*f+2)+a},easeInQuart:function(e,f,a,h,g){return h*(f/=g)*f*f*f+a},easeOutQuart:function(e,f,a,h,g){return -h*((f=f/g-1)*f*f*f-1)+a},easeInOutQuart:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f*f+a}return -h/2*((f-=2)*f*f*f-2)+a},easeInQuint:function(e,f,a,h,g){return h*(f/=g)*f*f*f*f+a},easeOutQuint:function(e,f,a,h,g){return h*((f=f/g-1)*f*f*f*f+1)+a},easeInOutQuint:function(e,f,a,h,g){if((f/=g/2)<1){return h/2*f*f*f*f*f+a}return h/2*((f-=2)*f*f*f*f+2)+a},easeInSine:function(e,f,a,h,g){return -h*Math.cos(f/g*(Math.PI/2))+h+a},easeOutSine:function(e,f,a,h,g){return h*Math.sin(f/g*(Math.PI/2))+a},easeInOutSine:function(e,f,a,h,g){return -h/2*(Math.cos(Math.PI*f/g)-1)+a},easeInExpo:function(e,f,a,h,g){return(f==0)?a:h*Math.pow(2,10*(f/g-1))+a},easeOutExpo:function(e,f,a,h,g){return(f==g)?a+h:h*(-Math.pow(2,-10*f/g)+1)+a},easeInOutExpo:function(e,f,a,h,g){if(f==0){return a}if(f==g){return a+h}if((f/=g/2)<1){return h/2*Math.pow(2,10*(f-1))+a}return h/2*(-Math.pow(2,-10*--f)+2)+a},easeInCirc:function(e,f,a,h,g){return -h*(Math.sqrt(1-(f/=g)*f)-1)+a},easeOutCirc:function(e,f,a,h,g){return h*Math.sqrt(1-(f=f/g-1)*f)+a},easeInOutCirc:function(e,f,a,h,g){if((f/=g/2)<1){return -h/2*(Math.sqrt(1-f*f)-1)+a}return h/2*(Math.sqrt(1-(f-=2)*f)+1)+a},easeInElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k)==1){return e+l}if(!j){j=k*0.3}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}return -(g*Math.pow(2,10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j))+e},easeOutElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k)==1){return e+l}if(!j){j=k*0.3}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}return g*Math.pow(2,-10*h)*Math.sin((h*k-i)*(2*Math.PI)/j)+l+e},easeInOutElastic:function(f,h,e,l,k){var i=1.70158;var j=0;var g=l;if(h==0){return e}if((h/=k/2)==2){return e+l}if(!j){j=k*(0.3*1.5)}if(g<Math.abs(l)){g=l;var i=j/4}else{var i=j/(2*Math.PI)*Math.asin(l/g)}if(h<1){return -0.5*(g*Math.pow(2,10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j))+e}return g*Math.pow(2,-10*(h-=1))*Math.sin((h*k-i)*(2*Math.PI)/j)*0.5+l+e},easeInBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}return i*(f/=h)*f*((g+1)*f-g)+a},easeOutBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}return i*((f=f/h-1)*f*((g+1)*f+g)+1)+a},easeInOutBack:function(e,f,a,i,h,g){if(g==undefined){g=1.70158}if((f/=h/2)<1){return i/2*(f*f*(((g*=(1.525))+1)*f-g))+a}return i/2*((f-=2)*f*(((g*=(1.525))+1)*f+g)+2)+a},easeInBounce:function(e,f,a,h,g){return h-jQuery.easing.easeOutBounce(e,g-f,0,h,g)+a},easeOutBounce:function(e,f,a,h,g){if((f/=g)<(1/2.75)){return h*(7.5625*f*f)+a}else{if(f<(2/2.75)){return h*(7.5625*(f-=(1.5/2.75))*f+0.75)+a}else{if(f<(2.5/2.75)){return h*(7.5625*(f-=(2.25/2.75))*f+0.9375)+a}else{return h*(7.5625*(f-=(2.625/2.75))*f+0.984375)+a}}}},easeInOutBounce:function(e,f,a,h,g){if(f<g/2){return jQuery.easing.easeInBounce(e,f*2,0,h,g)*0.5+a}return jQuery.easing.easeOutBounce(e,f*2-g,0,h,g)*0.5+h*0.5+a}});
 
 $(document).ready(function () {
- 
+
  //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
     if ($("#main-nav").offset().top > 300) {
@@ -487,7 +487,7 @@ $(window).scroll(function() {
         }, {offset: 300});
     $('#subjects').waypoint(function(direction) {
         $("#subjects-nav>div").toggleClass('active', direction === 'down');
-        $("#services-nav>div").removeClass('active', direction === 'down'); 
+        $("#services-nav>div").removeClass('active', direction === 'down');
         $("#reserch-nav>div").removeClass('active', direction === 'down');
         }, {offset: 300});
     $('#research').waypoint(function(direction) {
@@ -510,30 +510,30 @@ $(function() {
         }, 500, 'easeInOutExpo');
         event.preventDefault();
     });
-}); 
- 
+});
+
   $( ".selector" ).click(function() {
     $(".selector").removeClass("btn-blue");
     $(".selector").addClass("btn-ltblue");
     $(this).removeClass("btn-ltblue");
     $(this).addClass("btn-blue");
   });
-  $( "#everything-limit" ).click(function() { 
+  $( "#everything-limit" ).click(function() {
     $('#main-search').attr('action', '/catalog');
     $('#q').attr('placeholder', 'search everything...');
     $('#fr-q').attr('placeholder', 'chercher partout...');
   });
-  $( "#shelves-limit" ).click(function() { 
+  $( "#shelves-limit" ).click(function() {
     $('#main-search').attr('action', '/symphony');
     $('#q').attr('placeholder', 'search books, media & more...');
     $('#fr-q').attr('placeholder', 'recherche livre imprimé et revues...');
   });
-  $( "#databases-limit" ).click(function() { 
+  $( "#databases-limit" ).click(function() {
     $('#main-search').attr('action', '/databases');
     $('#q').attr('placeholder', 'search databases...');
     $('#fr-q').attr('placeholder', 'recherche bases de données...');
   });
-  $( "#ejournals-limit" ).click(function() { 
+  $( "#ejournals-limit" ).click(function() {
     $('#main-search').attr('action', '/journals');
     $('#q').attr('placeholder', 'search journals...');
     $('#fr-q').attr('placeholder', 'recherche journaux...');
@@ -545,22 +545,22 @@ $(function() {
  $(".news-square").hoverIntent(
     function() {
       $(this).find(".details").fadeIn(250);
-    },    
+    },
     function() {
       $(this).find(".details").fadeOut(250);
   });
- 
+
  $('[data-toggle="tooltip"]').tooltip()
- 
-   if ($("#chartContainer").length){
+
+  if ($("#chartContainer").length){
         var chart = new CanvasJS.Chart("chartContainer",
     {
       title:{
-       text: "Comparison of Subjects"
+      text: "Comparison of Subjects"
       },
       axisX: {
         title:"Searches",
-       maximum: 10000
+      maximum: 10000
       },
       axisY: {
         title:"Subjects"
@@ -578,27 +578,27 @@ $(function() {
         showInLegend: true,
         legendMarkerType: "circle",
  toolTipContent: "<strong>{name}</strong> <br/> Subjects: {y}<br/> Searches: {x} yrs<br/> something: {z} mn",
-     dataPoints: [
+    dataPoints: [
     // { x: 64.8, y: 2.66, z:12074.4 , name: "India"},
-   //  { x: 73.1, y: 1.61, z:13313.8, name: "China"},
-     { x: 6000, y: 2.00, z:30006.77, name: "US" },
-     { x: 4000, y: 2.15, z: 23470.414, name: "Indonesia"},
-     { x: 3250, y: 1.86, z: 19303.24, name: "Brazil"},
-     { x: 6650, y: 2.36, z: 14002.24, name: "Mexico"},
-     { x: 5009, y: 5.56, z: 15204.48, name: "Nigeria"},
-     { x: 6806, y: 1.54, z:11401.91, name: "Russia" },
-     { x: 2209, y: 1.37, z:11027.55, name: "Japan" },
-     { x: 2908, y: 1.36, z:11810.90, name:"Australia" },
-     { x: 5207, y: 2.78, z: 11790.71, name: "Egypt"},
-     { x: 8001, y: 1.94, z:16190.81, name:"UK" },
-     { x: 1508, y: 4.76, z: 11309.24, name: "Kenya"},
-     { x: 8105, y: 1.93, z:11201.95, name:"Australia" },
-     { x: 6801, y: 4.77, z: 13001.09, name: "Iraq"},
-     { x: 4709, y: 6.42, z: 11330.42, name: "Afganistan"},
-     { x: 5003, y: 5.58, z: 11048.55, name: "Angola"}
-     ]
-   }
-   ]
+  //  { x: 73.1, y: 1.61, z:13313.8, name: "China"},
+    { x: 6000, y: 2.00, z:30006.77, name: "US" },
+    { x: 4000, y: 2.15, z: 23470.414, name: "Indonesia"},
+    { x: 3250, y: 1.86, z: 19303.24, name: "Brazil"},
+    { x: 6650, y: 2.36, z: 14002.24, name: "Mexico"},
+    { x: 5009, y: 5.56, z: 15204.48, name: "Nigeria"},
+    { x: 6806, y: 1.54, z:11401.91, name: "Russia" },
+    { x: 2209, y: 1.37, z:11027.55, name: "Japan" },
+    { x: 2908, y: 1.36, z:11810.90, name:"Australia" },
+    { x: 5207, y: 2.78, z: 11790.71, name: "Egypt"},
+    { x: 8001, y: 1.94, z:16190.81, name:"UK" },
+    { x: 1508, y: 4.76, z: 11309.24, name: "Kenya"},
+    { x: 8105, y: 1.93, z:11201.95, name:"Australia" },
+    { x: 6801, y: 4.77, z: 13001.09, name: "Iraq"},
+    { x: 4709, y: 6.42, z: 11330.42, name: "Afganistan"},
+    { x: 5003, y: 5.58, z: 11048.55, name: "Angola"}
+    ]
+  }
+  ]
  });
 
 chart.render();
@@ -612,7 +612,7 @@ chart.render();
   });
   }
 
-   if ($("#headlines-fr").length){
+  if ($("#headlines-fr").length){
     $('#headlines-fr').FeedEk({
     FeedUrl:'http://uabsj.blogspot.ca/feeds/posts/default',
     MaxCount : 4,
@@ -620,7 +620,7 @@ chart.render();
     ShowDesc : false
   });
   }
-   if ($("#collection-headlines").length){
+  if ($("#collection-headlines").length){
     $('#headlines').FeedEk({
     FeedUrl:'https://featuredcollectionsuofa.blogspot.ca/feeds/posts/default',
     MaxCount : 4,
@@ -630,40 +630,38 @@ chart.render();
   }
 if ($("#hours").length){
 
- 	var url = 'https://api3-ca.libcal.com/api_hours_today.php?iid=3750&lid=0&format=json&systemTime=0&callback=?';
-	$.getJSON(url,function(json){
-		$.each(json.locations, function(index, element) {
-    		$( "#hours" ).append("<option value="+json.locations[index].lid+">"+json.locations[index].name+"</option>");
-    		$( ".picker-title" ).text(json.locations[0].name);
-    		$( ".picker-hours" ).html(json.locations[0].rendered).text();
-    		$( ".picker-title-fr" ).text(json.locations[12].name);
-    		$( ".picker-hours-fr" ).html(json.locations[12].rendered).text();
-		});	
-		 $( ".hours-select" ).change(function () {
-    	 	var library = "";
-    	 	var location = "";
-    		$( "select option:selected" ).each(function() {
-    			 library += $(this).text() + " ";
-    			 location = $(this).val();
-      			
-    		});
-    		$( ".picker-title" ).text(library);
-    		$( ".picker-title-fr" ).text(library);
-    		$.each(json.locations, function(index, element) {
-    			if (json.locations[index].lid == location) {
-    				$( ".picker-hours" ).html(json.locations[index].rendered).text();
-    				$( ".picker-hours-fr" ).html(json.locations[index].rendered).text();
-    			}
-    		
-			});	
-    		
-    		imagestring ="https://www2.library.ualberta.ca/2015assets/lib-icons/"+location+".png";
-    		$( ".lib-pick img" ).attr( "src", imagestring);
-  
+  var url = 'https://api3-ca.libcal.com/api_hours_today.php?iid=3750&lid=0&format=json&systemTime=0&callback=?';
+  $.getJSON(url,function(json){
+    $.each(json.locations, function(index, element) {
+        $( "#hours" ).append("<option value="+json.locations[index].lid+">"+json.locations[index].name+"</option>");
+        $( ".picker-title" ).text(json.locations[0].name);
+        $( ".picker-hours" ).html(json.locations[0].rendered).text();
+        $( ".picker-title-fr" ).text(json.locations[12].name);
+        $( ".picker-hours-fr" ).html(json.locations[12].rendered).text();
+    });
+    $( ".hours-select" ).change(function () {
+        var library = "";
+        var location = "";
+        $( "select option:selected" ).each(function() {
+          library += $(this).text() + " ";
+          location = $(this).val();
+
+        });
+        $( ".picker-title" ).text(library);
+        $( ".picker-title-fr" ).text(library);
+        $.each(json.locations, function(index, element) {
+          if (json.locations[index].lid == location) {
+            $( ".picker-hours" ).html(json.locations[index].rendered).text();
+            $( ".picker-hours-fr" ).html(json.locations[index].rendered).text();
+          }
+
+      });
+
+        imagestring ="https://www2.library.ualberta.ca/2015assets/lib-icons/"+location+".png";
+        $( ".lib-pick img" ).attr( "src", imagestring);
+
   })
-  		
-	});
+
+  });
 }
 });
-
-

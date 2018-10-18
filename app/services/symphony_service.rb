@@ -1,5 +1,5 @@
 class SymphonyService
-  module Error 
+  module Error
     class HTTPError < StandardError; end
     class InvalidIdError < StandardError; end
   end
@@ -48,7 +48,7 @@ class SymphonyService
   private
 
   def summary_holdings
-     nodes.each do |node|
+    nodes.each do |node|
         current_node = node
         if label(current_node)
           if label(current_node).text == "Library has"

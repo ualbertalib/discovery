@@ -21,20 +21,20 @@ $host = $lookup->{$realm}{'appserver'} if defined $lookup->{$realm}{'appserver'}
 $DEBUG && print "We're in $realm, so I'll be using $host\n";
 
 
-my $mech = WWW::Mechanize->new();  				
-my $url="https://$host/advanced";  
+my $mech = WWW::Mechanize->new();
+my $url="https://$host/advanced";
 
 my $count=0;
 
 $DEBUG && print "Trying $url ...\n";
 my $result=undef;
-$result = $mech->get( $url ); 
+$result = $mech->get( $url );
 ok ($mech->status == 200, "$host: Visit advanced search page") ; $count ++;
 ok (defined($result) , "Did we get content?") ; $count++;
 unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ; $count ++;
 
 # We want to count Library locations to make sure that they are all there
-my $tree = HTML::TreeBuilder->new_from_content( $result->decoded_content ) ; 
+my $tree = HTML::TreeBuilder->new_from_content( $result->decoded_content ) ;
 my $libraries = $tree->findnodes( '/html/body/div[1]/div[6]/div[2]/div/div/div[1]/form/div/div[3]/div/div/div[3]/div[2]/div/ul/li' );
 ok ($libraries->size() eq 54, "Count of libraries"); $count++;	# 54 on Sept 13, 2018, but this may change over time
 $tree->delete;

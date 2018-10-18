@@ -18,4 +18,3 @@ public Set getLocations(Record record){
   }
   return locations;
 }
-

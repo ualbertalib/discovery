@@ -22,4 +22,4 @@ uat:
   <<: *default
 production:
   <<: *default
-  
+

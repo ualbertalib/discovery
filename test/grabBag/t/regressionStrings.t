@@ -6,8 +6,8 @@
 #		Some were due to the Zero Results bug
 #		Some were due to a bug in handling punctuation
 #		These were inspired by early revisions of mobyTest.pl, which found these class of errors!
-# RevisionCntl: 
-# Context: 	
+# RevisionCntl:
+# Context:
 # Ideas for improvement:  This should take a parameter that will allow us to run it against either Test or Prod!
 use strict;
 use WWW::Mechanize;
@@ -25,46 +25,46 @@ $host = $lookup->{$realm}{'appserver'} if defined $lookup->{$realm}{'appserver'}
 $DEBUG && print "We're in $realm, so I'll be using $host\n";
 
 
-my $mech = WWW::Mechanize->new();  				
-my $url="https://$host";  
+my $mech = WWW::Mechanize->new();
+my $url="https://$host";
 
 $mech->get( $url );    		# Visit the sign_in page
 my $searchString;
 my @knownBad = ( 	"All the yard-arms",
-			"Pusie Hall can",
-			"the Guernsey-man to",
-			"sports; his slouched",
-			"my sire. Leap!",
-			"\"Find who?\"",
-			"freshets of blood",
-			"vibrating his predestinating",
-			"domesticated them. Queequeg",
-			"sullen paws of",
-			"\"Sweet fields beyond",
-			"convulsively grasped stout",
-			"butts all inquiring",
-			"honourable whalemen allowances",
-			#"OR anything else fails", 		 # Aug 04, 2015 - Henry notices uppercase AND & OR operators crash the app if they appear first
-			#"AND anything else fails",		 # but, it seems these are not quite bugs - it's how the boolean-operator parser works :)
-			#"--WHALE song",				# Neat! Anything with "--<word> <word>" fails
-			"global",				# Kenton's intriging error releated to the MySQL max-packet-size vs session_id for this ONE query.  Weird.
-			"New",					# So, these all might be related -- searches that return a very large number of results? 
-			"York",					# 
-			"Canada",				# 
-			"United",				# 
-			"New York",				# 
-			"United States",			# 
-		);
+      "Pusie Hall can",
+      "the Guernsey-man to",
+      "sports; his slouched",
+      "my sire. Leap!",
+      "\"Find who?\"",
+      "freshets of blood",
+      "vibrating his predestinating",
+      "domesticated them. Queequeg",
+      "sullen paws of",
+      "\"Sweet fields beyond",
+      "convulsively grasped stout",
+      "butts all inquiring",
+      "honourable whalemen allowances",
+      #"OR anything else fails", 		 # Aug 04, 2015 - Henry notices uppercase AND & OR operators crash the app if they appear first
+      #"AND anything else fails",		 # but, it seems these are not quite bugs - it's how the boolean-operator parser works :)
+      #"--WHALE song",				# Neat! Anything with "--<word> <word>" fails
+      "global",				# Kenton's intriging error releated to the MySQL max-packet-size vs session_id for this ONE query.  Weird.
+      "New",					# So, these all might be related -- searches that return a very large number of results?
+      "York",					#
+      "Canada",				#
+      "United",				#
+      "New York",				#
+      "United States",			#
+    );
 my $count=0;
-my $result; 
+my $result;
 foreach $searchString (@knownBad) {
-	$DEBUG && print "Trying $searchString...\n";
-	eval {$result = $mech->submit_form( fields    => { q => $searchString, },);  };
-	ok ($mech->status == 200, "$host: Search for $searchString") ;
-	$count ++;
-	ok (defined($result) , "Did we get content?") ;
-	$count ++;
-	unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ;   #  Ugh, in Prod, we try to return a pretty error, not a bare 500
-	$count ++;
+  $DEBUG && print "Trying $searchString...\n";
+  eval {$result = $mech->submit_form( fields    => { q => $searchString, },);  };
+  ok ($mech->status == 200, "$host: Search for $searchString") ;
+  $count ++;
+  ok (defined($result) , "Did we get content?") ;
+  $count ++;
+  unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "Check for masked error") ;   #  Ugh, in Prod, we try to return a pretty error, not a bare 500
+  $count ++;
 }
 done_testing $count;

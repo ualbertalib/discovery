@@ -3,7 +3,7 @@ require_relative "../spec_helper.rb"
 include E
 
 describe PromotedServicesVocabulary do
-  let(:service_document){ 
+  let(:service_document){
     PromotedServicesVocabulary.from_xml(Nokogiri::XML(File.open(E::*("fixtures/browzine_record.xml"))).xpath("//record").to_s) }
 
   it "should be a Promoted Services Vocabulary with solrizer" do

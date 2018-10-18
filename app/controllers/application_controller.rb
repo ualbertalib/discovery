@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   # Adds a few additional behaviors into the application controller
-   include Blacklight::Controller
+  include Blacklight::Controller
   # Please be sure to impelement current_user and user_session. Blacklight depends on
   # these methods in order to perform user specific actions.
-  
+
   # In jupiter setting Rails.application.routes.default_url_options was sufficient
   # but the rails documentation and experience suggests to set them here
   # https://guides.rubyonrails.org/action_controller_overview.html#default-url-options

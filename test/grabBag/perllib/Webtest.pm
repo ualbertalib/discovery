@@ -22,7 +22,7 @@ die "You didn't supply a URL"  unless defined $url && $url =~ m/^http/;
 my $DEBUG = 0;  # Controls verbosity of output
 $DEBUG = $ENV{"DEBUG"} if defined $ENV{"DEBUG"}; # inherits from the environment
 # retrieve credentials
-my $userid   = $ENV{"USERID"} ; 
+my $userid   = $ENV{"USERID"} ;
 my $password = $ENV{"PASSWORD"} ;
 die 'You must define $USERID and $PASSWORD environment variables to run this script' unless  ( defined $userid && defined $password );
 
@@ -32,7 +32,7 @@ $mech-> credentials( $userid, $password );
 my $response = $mech->get($url);
 
 # Fiddly bits here test whether the content looks like somthing rational
-return $response; 
+return $response;
 }
 
-1; 
+1;

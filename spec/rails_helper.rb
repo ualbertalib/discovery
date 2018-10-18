@@ -39,7 +39,7 @@ Rake::Task['delete'].invoke
   Rake::Task['ingest'].reenable
   Rake::Task['solr:marc:index'].reenable
   Rake::Task['solr:marc:index:work'].reenable
-  
+
   Rake::Task['ingest'].invoke(test_set)
 end
 

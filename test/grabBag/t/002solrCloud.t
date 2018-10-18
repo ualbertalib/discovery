@@ -1,8 +1,8 @@
-#!/usr/bin/perl -w 
+#!/usr/bin/perl -w
 # Author: 	Neil MacGregor
 # Date: 	July 10, 2012
 # Version: 	Revision controlled, see: https://code.library.ualberta.ca/hg/era-test
-# Purpose: 	Ensure that tomcat is running 
+# Purpose: 	Ensure that tomcat is running
 # Reference:	file://///libroot/ITS_Share/Unix/Projects/2012/Tin/testFramework.html
 use Test::More tests => 1;  # bump this number every time you add a new website to be tested
 use Storable;
