@@ -47,30 +47,32 @@ gem 'rollbar'
 
 group :test, :development do
   gem 'sdoc', require: false
-  
+
   gem 'capybara'
   gem 'selenium-webdriver'
-  
+
   gem 'factory_bot'
-  
+
   gem "rspec"
   gem 'rspec-rails'
   gem 'rspec-solr'
-  
+
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
 
   gem 'rubocop', '~> 0.56.0', require: false
-  
+
   gem 'scss_lint', '>= 0.56.0', require: false
-  
+
   gem 'simplecov', require: false
 end
 
 group :development do
   gem 'better_errors', '>= 2.3.0'
   gem 'binding_of_caller'
+
+  gem 'letter_opener'
 
   gem 'brakeman'
   gem 'listen', '~> 3.0'
