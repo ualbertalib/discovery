@@ -13,7 +13,6 @@ class BlacklightAdvancedSearch::AdvancedController < CatalogController
 
   protected
   def get_advanced_search_facets
-
     search_context_params = {}
     if (advanced_search_context.length > 0 )
       # We have a search context, need to fetch facets from within

@@ -3,7 +3,7 @@ require 'base64'
 xml.instruct!(:xml, :encoding => "UTF-8")
 
 xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
-        "xmlns:opensearch"=>"http://a9.com/-/spec/opensearch/1.1/") do
+         "xmlns:opensearch"=>"http://a9.com/-/spec/opensearch/1.1/") do
 
   xml.title   t('blacklight.search.title', :application_name => application_name)
   # an author is required, so we'll just use the app name
@@ -41,7 +41,6 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
   xml.opensearch :itemsPerPage, @response.limit_value
   xml.opensearch :Query, :role => "request", :searchTerms => params[:q], :startPage => @response.current_page
 
-
   # updated is required, for now we'll just set it to now, sorry
   xml.updated Time.now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -58,7 +57,6 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
       xml << render_link_rel_alternates(doc, :unique => true)
 
       xml.id      polymorphic_url(doc)
-
 
       if doc.to_semantic_values[:author][0]
         xml.author { xml.name(doc.to_semantic_values[:author][0]) }
@@ -97,7 +95,6 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
           end
 
       end
-
 
     end
   end

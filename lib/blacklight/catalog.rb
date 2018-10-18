@@ -232,8 +232,8 @@ module Blacklight::Catalog
       h = {}
 
       [:current_page, :next_page, :prev_page, :total_pages,
-      :limit_value, :offset_value, :total_count,
-      :first_page?, :last_page?].each do |k|
+       :limit_value, :offset_value, :total_count,
+       :first_page?, :last_page?].each do |k|
         h[k] = response.send(k)
       end
 
@@ -278,15 +278,15 @@ module Blacklight::Catalog
 
     def sms_mappings
       {'Bell' => 'txt.bell.ca',
-      'Rogers' => 'pcs.rogers.com',
-      'Fido' => 'sms.fido.ca',
-      'Telus' => 'msg.telus.com',
-      'Virgin Mobile' => 'vmobile.ca',
-      'PC Mobile' => 'mobiletxt.ca',
-      'Koodo' => 'msg.koodomobile.com',
-      'Sasktel' => 'sms.sasktel.com',
-      'MTS' => 'text.mts.net',
-      'Wind' => 'txt.windmobile.ca'}
+       'Rogers' => 'pcs.rogers.com',
+       'Fido' => 'sms.fido.ca',
+       'Telus' => 'msg.telus.com',
+       'Virgin Mobile' => 'vmobile.ca',
+       'PC Mobile' => 'mobiletxt.ca',
+       'Koodo' => 'msg.koodomobile.com',
+       'Sasktel' => 'sms.sasktel.com',
+       'MTS' => 'text.mts.net',
+       'Wind' => 'txt.windmobile.ca'}
     end
 
     def validate_email_params
