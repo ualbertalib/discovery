@@ -14,3 +14,46 @@ AllCops:
     - 'vendor/**/*'
   ExtraDetails: true
   TargetRubyVersion: 2.1.5
+
+# TODO: Need to bring this inline with jupiter and other projects rubocop configs.
+# Also need to fix and remove rubocop_todo.yml
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+# Metrics/LineLength:
+#   Max: 120
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+# Rails:
+#   Enabled: true
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Style/MixinUsage:
+#   Exclude:
+#     - bin/setup
+#     - bin/update
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
