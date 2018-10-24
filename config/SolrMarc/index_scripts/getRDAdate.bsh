@@ -42,11 +42,11 @@ public String cleanDate(String date)
     matcher_ie_date = FOUR_DIGIT_PATTERN_OTHER_4.matcher(date);
     matcher = FOUR_DIGIT_PATTERN.matcher(date);
     matcher_bc_date = BC_DATE_PATTERN.matcher(date);
-    
+
     String cleanDate = null; // raises DD-anomaly
-    
+
     if(matcher_braces.find())
-    {   
+    {
         cleanDate = matcher_braces.group();
         cleanDate = Utils.removeOuterBrackets(cleanDate);
         if (matcher.find())
@@ -57,13 +57,13 @@ public String cleanDate(String date)
                 tmp = "" + tmp;
             }
         }
-    } 
+    }
     else if (matcher_ie_date.find())
     {
         cleanDate = matcher_ie_date.group().replaceAll("i.e. ", "");
     }
     else if(matcher_one_brace.find())
-    {   
+    {
         cleanDate = matcher_one_brace.group();
         cleanDate = Utils.removeOuterBrackets(cleanDate);
         if (matcher.find())
@@ -76,28 +76,28 @@ public String cleanDate(String date)
         }
     }
     else if(matcher_bc_date.find())
-    {   
+    {
         cleanDate = null;
-    } 
+    }
     else if(matcher_start_with_1_2.find())
-    {   
+    {
         cleanDate = matcher_start_with_1_2.group();
-    } 
+    }
     else if(matcher_l_plus_three_digits.find())
-    {   
+    {
         cleanDate = matcher_l_plus_three_digits.group().replaceAll("l", "1");
-    } 
+    }
     else if(matcher_bracket_19_plus_two_digits.find())
-    {   
+    {
         cleanDate = matcher_bracket_19_plus_two_digits.group().replaceAll("\\[", "").replaceAll("\\]", "");
-    } 
+    }
     else if(matcher_three_digits_plus_unk.find())
-    {   
+    {
         cleanDate = matcher_three_digits_plus_unk.group().replaceAll("[-?]", "0");
-    } 
+    }
     if (cleanDate != null)
     {
-        logger.debug("Date : "+ date + " mapped to : "+ cleanDate);            
+        logger.debug("Date : "+ date + " mapped to : "+ cleanDate);
     }
     else
     {
@@ -112,7 +112,7 @@ public String cleanDate(String date)
  * @return 260c, "cleaned" per org.solrmarc.tools.Utils.cleanDate()
  */
 
-/* 
+/*
 * This function has been modified to reflect the RDA change to using
 * the 264c as the date field.
 */

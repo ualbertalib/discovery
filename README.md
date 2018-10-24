@@ -17,8 +17,8 @@ discovery platform. Based on [Project Blacklight](projectblacklight.org).
 2.  run `docker-compose -f docker-compose.lightweight.yml up -d`
 3.  run `bundle install`
 4.  run `bundle exec rake db:setup`
-5.  Create the APIAuthentication.txt (containing your EBSCO credentials) and token.txt (empty) files
-6.  `bundle exec rake ingest[database_test_set] && bundle exec rake ingest[sfx_test_set] && bundle exec rake ingest[symphony_test_set]`
+5.  `bundle exec rake ingest[database_test_set] && bundle exec rake ingest[sfx_test_set] && bundle exec rake ingest[symphony_test_set]`
+    If you're looking to use a production like dataset or avoid the hassle of running docker and performing these ingest tasks, `export SOLR_URL=http://solrcloud-test.library.ualberta.ca:8080/solr/discovery-test`
 6.  `bundle exec rails s`
 7.  Point your browser to **<http://localhost:3000/catalog>**
 
@@ -33,7 +33,7 @@ Unit and Acceptance Tests
 
 Integration tests (run against <http://search-test.library.ualberta.ca/>)
 
-1.  `cpan WWW::Mechanize && cpan JSON` to install perl dependencies
+1.  `cpan WWW::Mechanize && cpan JSON && cpan HTML::TreeBuilder::XPath` to install perl dependencies
 2.  `wget -O /var/tmp/mobyDick.txt http://www.gutenberg.org/ebooks/2701.txt.utf-8` your first visit to gutenberg might give you non utf-8 characters when it says, "hello stranger."
 3.  `cd test/grabBag`
 4.  `./allTests.pl`
@@ -58,5 +58,3 @@ export SOLR_INGEST_URL=http://localhost:8983/solr/your-new-solr-collection
 bundle exec rake ingest[collection]
 unset SOLR_INGEST_URL # if desired
 ```
-
-

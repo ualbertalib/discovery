@@ -2,7 +2,7 @@
 # Author: 	Neil MacGregor
 # Date: 	May 25, 2015
 # Purpose: 	A regression test searching the primary home page for links to the Hours application, that use http://hours...
-# RevisionCntl: 
+# RevisionCntl:
 # Context: 	You can run this from your desktop machine (assuming it's Linux; untested on CYGWIN)
 # 		You can run this from the application servers (dundee or austin, falkirk or forest, and even dover & york)
 # 		You can run this from the Jenkins server (which doesn't generally have access to Dev)
@@ -22,19 +22,19 @@ my $lookup = retrieve 'config.txt'; 			# get a static data structure from a file
 $host = $lookup->{$realm}{'appserver'} if defined $lookup->{$realm}{'appserver'};
 $DEBUG && print "We're in $realm, so I'll be using $host\n";
 
-my $url="https://$host";  
+my $url="https://$host";
 
 my $count=0;
-my $mech = WWW::Mechanize->new();  				
+my $mech = WWW::Mechanize->new();
 eval { $mech->get( $url );  };  		# Visit the sign_in page
 ok ($mech->status == 200, "$url initial page load");   $count++;
 
-my @link  = $mech->links;		# retrieve a list of all the links 
-my $holder; 
+my @link  = $mech->links;		# retrieve a list of all the links
+my $holder;
 foreach $holder (@link) { 		# perform the test
-	$DEBUG && print $holder->url . "\n";
-	unlike ($holder->url, qr|http://hours|, "Links shouldn't match http://hours..., url: " . $holder->url ) or (defined $holder->text && diag ( "Text for that link was: " . $holder->text ));
-	$count ++;
+  $DEBUG && print $holder->url . "\n";
+  unlike ($holder->url, qr|http://hours|, "Links shouldn't match http://hours..., url: " . $holder->url ) or (defined $holder->text && diag ( "Text for that link was: " . $holder->text ));
+  $count ++;
 }
 
 done_testing $count;

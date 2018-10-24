@@ -6,7 +6,7 @@
 # Note: 	If you're using this, it like means you can multiplex & run the tests concurrently - if two
 # 		tests were watching one log file simultaneously, and one causes a new line to be written to
 # 		the log, BOTH tests would see the new entry.  That would be bad!
-# Note: 	This is desgned to be an abstract class! You never instantiate an LFA object. Write new 
+# Note: 	This is desgned to be an abstract class! You never instantiate an LFA object. Write new
 # 		code to make an LFA for a specific log file, see Catalina.pm
 
 package LFA;  # Log File Adapter
@@ -21,9 +21,9 @@ my $class = ref ($this) || $this;
 my $self = {};
 
 # The first parameter must be the name of a valid file
-my $fileName = shift; 
+my $fileName = shift;
 die "You forgot to supply new() with a parameter!" unless defined $fileName;
-my $fh; 
+my $fh;
 open ($self->{"filehandle"}, "<$fileName") || die "Failed to open $fileName: $!";
 
 # Use these as a template, when you inherit from LFA!
@@ -62,14 +62,14 @@ die "Unable to seek to the beginning of the file " unless $code;
 return $self;
 }
 
-# This reads anything new, since you *last* called 
+# This reads anything new, since you *last* called
 sub analyzeLog {
 my $self=shift;
 
 # attempt to read new lines from the file
-my $line; 
+my $line;
 while ($line = $self->next) {
-	print $line;   # printing as we go
+  print $line;   # printing as we go
 }
 return $self;
 }
@@ -80,8 +80,8 @@ sub next {
 my $self=shift;
 
 my $fh = $self->{"filehandle"};
-my $code = seek($fh,0,SEEK_CUR); # reset our position in the file, maybe somebody else wrote to it 
+my $code = seek($fh,0,SEEK_CUR); # reset our position in the file, maybe somebody else wrote to it
 die "Unable to seek back to the current position" unless $code;
 return  <$fh>;  # return one line read from the current position in the file!
 }
-1; 
+1;

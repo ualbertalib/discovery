@@ -24,8 +24,6 @@
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url('glyphicons-halflings-regular.eot');
-  src: url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
-       url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+      url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
-
-

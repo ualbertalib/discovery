@@ -26,7 +26,7 @@ class SFXService
     sfx_results_for(document.id).xpath("//target").each do |target|
       unless local_targets.include? name(target)
         if @targets[id(target)]
-          @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: our_link(target), note: note(target)}) 
+          @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: our_link(target), note: note(target)})
         else
           @targets[id(target)] = {name: display_name(target), url: url(target), our_target: our_link(target), note: note(target), coverage: "Coverage information temporarily unavailable."}
         end
@@ -59,14 +59,14 @@ class SFXService
   end
 
   def name(target)
-   target.xpath("target_name").text
+  target.xpath("target_name").text
   end
 
   def display_name(target)
-   target.xpath("target_public_name").text
+  target.xpath("target_public_name").text
   end
 
-  def url(target) 
+  def url(target)
     target.xpath("target_url").text
   end
 

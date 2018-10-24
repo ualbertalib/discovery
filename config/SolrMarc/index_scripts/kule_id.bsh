@@ -10,4 +10,3 @@ public String getKuleID(Record record) {
         return val;
     }
 }
-

@@ -16,7 +16,7 @@ RUN apt-get update -qq \
                           nodejs \
                           tzdata \
     && rm -rf /var/lib/apt/lists/*
-    
+
 ENV APP_ROOT /app
 RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
@@ -39,5 +39,3 @@ COPY --chown=app:app . $APP_ROOT
 RUN RAILS_ENV=uat SECRET_KEY_BASE=pickasecuretoken bundle exec rake assets:precompile
 
 EXPOSE 80
-
-    

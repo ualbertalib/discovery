@@ -5,7 +5,7 @@ var hourswidget = "";
 hourswidget = '<div class="hours-widget"><p><strong><span class="open">Open</span> until 9PM</strong></p></div>';
 
 
-if (typeof jQuery != 'undefined') {  
+if (typeof jQuery != 'undefined') {
 
 
 document.write(hourswidget);

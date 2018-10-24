@@ -1,7 +1,7 @@
 <div id="content" class="col-md-9 show-document top-margin">
   <%= render 'previous_next_doc' %>
   <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
- 
+
   <% content_for(:head) { render_link_rel_alternates } -%>
 
   <div id="document" class="document <%= render_document_class %>" itemscope itemtype="<%= @document.itemtype %>">
@@ -11,15 +11,15 @@
       <% if @document.to_h["databasedescription_tesim"] %>
         <%= @document.to_h["databasedescription_tesim"].first.html_safe %>
       <% end %>
-     
-     <div class="hidden-xs">
+
+    <div class="hidden-xs">
       <% if @subjects  %>
         <%= render "subjects" %>
       <% end %>
     </div>
     <%# if @authors %>
       <%# render "authors" %>
-   <%# end %>
+  <%# end %>
 
     </div>
     <div class="col-sm-3 full-record-book-jacket hidden-xs">
@@ -30,10 +30,10 @@
 </div>
 </div>
     <% if @document.respond_to?(:export_as_openurl_ctx_kev) %>
-      <!-- 
-           // COinS, for Zotero among others. 
-           // This document_partial_name(@document) business is not quite right,
-           // but has been there for a while. 
+      <!--
+          // COinS, for Zotero among others.
+          // This document_partial_name(@document) business is not quite right,
+          // but has been there for a while.
       -->
       <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
     <% end %>
@@ -41,13 +41,13 @@
   <%= render_document_sidebar_partial %>
 </div>
  <div class="visible-xs">
-   <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
+  <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
       <%= render "place_hold" %>
     <% end %>
   </div>
 <div class="col-sm-12">
-   <% if @document["format"].include? "Database" %>
-     <%= render "databases" %>
+  <% if @document["format"].include? "Database" %>
+    <%= render "databases" %>
       <% end %>
 
       <% if @ua_urls %>

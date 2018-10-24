@@ -15,4 +15,4 @@ class DatabasesController < CatalogController
     super
     @collection_name = "Databases"
   end
-end 
+end

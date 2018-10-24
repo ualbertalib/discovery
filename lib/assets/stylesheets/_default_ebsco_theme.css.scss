@@ -74,7 +74,7 @@ superscript {
     max-width: 70px;
     padding-bottom: 20px;
     padding-top: 20px;
-    text-align: center;    
+    text-align: center;
 }
 
 .record-image img {
@@ -82,7 +82,7 @@ superscript {
 }
 
 #per_page-dropdown {
-    padding-left: 1em; 
+    padding-left: 1em;
 }
 
 .pt-icon { width: 70px; float: left; display: inline-block; background-image: url('blacklight/PT_Sprite.png'); background-repeat: no-repeat; }
@@ -126,10 +126,10 @@ superscript {
 .pt-play{ background-position: -245px -620px; height: 50px; }
 
 /* Start by setting display:none to make this hidden.
-   Then we position it in relation to the viewport window
-   with position:fixed. Width, height, top and left speak
-   speak for themselves. Background we set to 80% white with
-   our animation centered, and no-repeating */
+  Then we position it in relation to the viewport window
+  with position:fixed. Width, height, top and left speak
+  speak for themselves. Background we set to 80% white with
+  our animation centered, and no-repeating */
 .modal {
     display:    none;
     position:   fixed;
@@ -138,20 +138,20 @@ superscript {
     left:       0;
     height:     100%;
     width:      200%;
-    background: rgba( 255, 255, 255, .8 ) 
-                url('blacklight/ajax-loader-sm.gif') 
-                30% 50% 
+    background: rgba( 255, 255, 255, .8 )
+                url('blacklight/ajax-loader-sm.gif')
+                30% 50%
                 no-repeat;
 }
 
 /* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
+  the scrollbar off with overflow:hidden */
 body.loading {
-    overflow: hidden;   
+    overflow: hidden;
 }
 
 /* Anytime the body has the loading class, our
-   modal element will be visible */
+  modal element will be visible */
 body.loading .modal {
     display: block;
 }

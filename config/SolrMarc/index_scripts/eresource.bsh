@@ -13,4 +13,3 @@ public String isElectronic(Record record){
     return "At Library";
   }
 }
-

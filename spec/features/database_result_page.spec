@@ -9,7 +9,7 @@ RSpec.feature "Database page test", :type => :feature do
 
     fill_in "q", :with => "CAB Abstracts"
     click_button "search"
-    
+
     expect(page).to have_text("Results for CAB Abstracts")
     expect(page).to have_text("1 entry found")
 
@@ -20,4 +20,3 @@ RSpec.feature "Database page test", :type => :feature do
     expect(page).to have_text("Format: Database")
   end
 end
-

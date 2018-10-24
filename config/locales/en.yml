@@ -20,4 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  mail:
+    intercepted:
+      explanation:
+        html: '<p>This email has been intercepted and instead sent to: %{to}.</p>'
+        plain: 'This email has been intercepted and instead sent to: %{to}.'
+      to_blank:
+        html: '<p>There were not any "To" recipients.</p>'
+        plain: 'There were not any "To" recipients.'
+      to_cleared:
+        html: '<p>The original "To" recipients were: %{recipients}.</p>'
+        plain: 'The original "To" recipients were: %{recipients}.'
+      cc_blank:
+        html: '<p>There were not any "CC" recipients.</p>'
+        plain: 'There were not any "CC" recipients.'
+      cc_cleared:
+        html: '<p>The original "CC" recipients were: %{recipients}.</p>'
+        plain: 'The original "CC" recipients were: %{recipients}.'
+      bcc_blank:
+        html: '<p>There were not any "BCC" recipients.</p>'
+        plain: 'There were not any "BCC" recipients.'
+      bcc_cleared:
+        html: '<p>The original "BCC" recipients were: %{recipients}.</p>'
+        plain: 'The original "BCC" recipients were: %{recipients}.'
+      original_message_below:
+        html: '<p>The email message in its original form starts below the following line:</p>'
+        plain: 'The email message in its original form starts below the following line:'
