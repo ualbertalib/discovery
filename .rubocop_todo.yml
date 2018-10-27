@@ -136,7 +136,6 @@ Layout/EmptyLines:
     - 'app/controllers/catalog_controller.rb'
     - 'app/controllers/profiles_controller.rb'
     - 'app/helpers/blacklight/facets_helper_behavior.rb'
-    - 'app/mailers/corrections_mailer.rb'
     - 'app/models/solr_document.rb'
     - 'lib/blacklight/catalog.rb'
     - 'spec/unit/peel_mods_spec.rb'

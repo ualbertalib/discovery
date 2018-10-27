@@ -1,10 +1,35 @@
-<h2>Report Error, Typo, or Make Suggestion</h2>
+<h1>Report Correction for Error, Typo, or Suggestion</h1>
 
-<%= form_tag(catalog_corrections_path, method: :post) do %>
-  <p><strong>Enter details on the typo or your suggestion in the space provided below:</strong></p>
-  <p><textarea name="message" rows=7 cols=45></textarea></p>
-  <input name="item_id" type="hidden" value="<%= @item_id %>">
-  <input type=submit value="Submit Typo or Broken Link" />
-  <p>&nbsp;</p>
-  <p>Note: You will not receive a response. If you are experiencing problems and would like a response please use the <a href="http://www.library.ualberta.ca/ask-us">Ask Us</a> service.</p>
+<%= form_for [:catalog, @correction] do |f| %>
+  <% if @correction.errors.any? %>
+    <div class="alert alert-danger">
+      <p>The following errors happened when sending your message:</p>
+      <ul>
+        <% @correction.errors.full_messages.each do |msg| %>
+          <li ><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_area :message,
+                    rows: 7,
+                    cols: 45,
+                    # required: true,
+                    placeholder: 'Enter any details on the error, typo or suggestion here...',
+                    class: 'form-control' %>
+  </div>
+
+  <%= f.hidden_field :item_id, value: @correction.item_id %>
+
+  <%= f.submit 'Submit Error, Typo or Suggestion', class: 'btn btn-lg btn-default' %>
 <% end %>
+
+<p class="top-margin">
+  Note: You will not receive a response.
+  If you are experiencing problems and would like a response please use the
+  <a href="http://www.library.ualberta.ca/ask-us">Ask Us</a>
+  service.
+</p>

@@ -1,17 +1,29 @@
 class Catalog::CorrectionsController < ApplicationController
-  before_action :set_item_id, only: [:new, :create]
 
-  def new; end
+  def new
+    @correction = Correction.new(item_id: params[:item_id])
+  end
 
   def create
-    CorrectionsMailer.corrections_email(@item_id, params[:message]).deliver_now
+    @correction = Correction.new(correction_params)
 
-    # Email successfully delivered.
+    if @correction.valid?
+      CorrectionMailer.notify(@correction).deliver_now
+      if @correction.item_id.present?
+        redirect_to catalog_path(@correction.item_id)
+      else
+        redirect_to root_path
+      end
+      flash[:success] = "Thank you! We have received your correction and will be reviewing it soon."
+    else
+      flash[:error] = "There was an error sending your message. Please try again."
+      render :new
+    end
   end
 
   private
 
-  def set_item_id
-    @item_id = params[:item_id]
+  def correction_params
+    params.require(:correction).permit(:message, :item_id)
   end
 end
