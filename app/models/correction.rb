@@ -1,5 +1,5 @@
 class Correction
   include ActiveModel::Model
-  attr_accessor :message, :item_id
+  attr_accessor :message, :catalog_id
   validates :message, presence: true
 end

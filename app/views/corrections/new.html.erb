@@ -17,12 +17,12 @@
     <%= f.text_area :message,
                     rows: 7,
                     cols: 45,
-                    # required: true,
+                    required: true,
                     placeholder: 'Enter any details on the error, typo or suggestion here...',
                     class: 'form-control' %>
   </div>
 
-  <%= f.hidden_field :item_id, value: @correction.item_id %>
+  <%= f.hidden_field :catalog_id, value: @correction.catalog_id %>
 
   <%= f.submit 'Submit Error, Typo or Suggestion', class: 'btn btn-lg btn-default' %>
 <% end %>

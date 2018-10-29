@@ -30,7 +30,10 @@ Rails.application.routes.draw do
 
   resources :staff, :as => :profiles, :controller => :profiles
 
-  namespace :catalog do
+  # We have the actual catalog routes defined from blacklight,
+  # this is just so we can get these routes nested nicely with the catalog item's ids in the url
+  # e.g: /catalog/1234567/corrections/new
+  resources :catalog, only: [] do
     resources :corrections, only: [:new, :create]
   end
 
