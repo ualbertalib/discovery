@@ -116,12 +116,6 @@ Layout/EmptyLinesAroundBlockBody:
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/EmptyLinesAroundMethodBody:
-  Exclude:
-    - 'app/controllers/forms_controller.rb'
-
 # Offense count: 7
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle.
@@ -158,14 +152,6 @@ Layout/ExtraSpacing:
     - 'config/environments/test.rb'
     - 'lib/tasks/cmssetup.rake'
     - 'spec/unit/peel_mods_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: consistent, consistent_relative_to_receiver, special_for_inner_method_call, special_for_inner_method_call_in_parentheses
-Layout/FirstParameterIndentation:
-  Exclude:
-    - 'app/models/solr_document.rb'
 
 # Offense count: 120
 # Cop supports --auto-correct.
@@ -227,14 +213,6 @@ Layout/MultilineMethodCallBraceLayout:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: aligned, indented
-Layout/MultilineOperationIndentation:
-  Exclude:
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 Layout/SpaceAfterColon:
   Exclude:
     - 'app/services/symphony_service.rb'
@@ -269,12 +247,6 @@ Layout/SpaceAroundEqualsInParameterDefault:
     - 'app/helpers/blacklight/facets_helper_behavior.rb'
     - 'app/services/symphony_service.rb'
     - 'lib/tasks/ingest_configuration.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/SpaceAroundKeyword:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
 
 # Offense count: 124
 # Cop supports --auto-correct.
@@ -395,12 +367,6 @@ Lint/BigDecimalNew:
     - 'app/services/sfx_service.rb'
 
 # Offense count: 1
-# Cop supports --auto-correct.
-Lint/DeprecatedClassMethods:
-  Exclude:
-    - 'lib/tasks/ingest.rake'
-
-# Offense count: 1
 Lint/DuplicateMethods:
   Exclude:
     - 'lib/tasks/ingest_configuration.rb'
@@ -438,12 +404,6 @@ Lint/UnusedMethodArgument:
     - 'app/controllers/new_books_controller.rb'
     - 'app/controllers/symphony_controller.rb'
     - 'app/helpers/blacklight/facets_helper_behavior.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Lint/UriRegexp:
-  Exclude:
-    - 'lib/blacklight/catalog.rb'
 
 # Offense count: 9
 Lint/UselessAssignment:
@@ -483,18 +443,6 @@ Naming/PredicateName:
     - 'app/helpers/blacklight/facets_helper_behavior.rb'
     - 'lib/blacklight/catalog.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Performance/InefficientHashSearch:
-  Exclude:
-    - 'lib/blacklight/catalog.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Performance/RedundantMatch:
-  Exclude:
-    - 'app/services/marc_module.rb'
-
 # Offense count: 4
 Security/Eval:
   Exclude:
@@ -507,14 +455,6 @@ Security/Eval:
 Security/Open:
   Exclude:
     - 'app/services/symphony_service.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: prefer_alias, prefer_alias_method
-Style/Alias:
-  Exclude:
-    - 'lib/blacklight/catalog.rb'
 
 # Offense count: 17
 # Cop supports --auto-correct.
@@ -534,12 +474,6 @@ Style/AndOr:
 Style/AsciiComments:
   Exclude:
     - 'config/initializers/comfortable_mexican_sofa.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/BlockComments:
-  Exclude:
-    - 'spec/spec_helper.rb'
 
 # Offense count: 6
 # Cop supports --auto-correct.
@@ -609,12 +543,6 @@ Style/EmptyCaseCondition:
   Exclude:
     - 'app/helpers/blacklight/facets_helper_behavior.rb'
     - 'lib/blacklight/catalog.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/EmptyLiteral:
-  Exclude:
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.
@@ -686,11 +614,6 @@ Style/GuardClause:
 Style/HashSyntax:
   Enabled: false
 
-# Offense count: 2
-Style/IdenticalConditionalBranches:
-  Exclude:
-    - 'app/services/marc_module.rb'
-
 # Offense count: 8
 # Cop supports --auto-correct.
 Style/IfUnlessModifier:
@@ -699,13 +622,6 @@ Style/IfUnlessModifier:
     - 'app/helpers/blacklight/facets_helper_behavior.rb'
     - 'app/services/symphony_service.rb'
     - 'app/views/catalog/index.atom.builder'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: IgnoredMethods.
-Style/MethodCallWithoutArgsParentheses:
-  Exclude:
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
 
 # Offense count: 27
 # Cop supports --auto-correct.
@@ -740,76 +656,17 @@ Style/MixinUsage:
     - 'spec/unit/sfx_service_spec.rb'
     - 'spec/unit/symphony_service_spec.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/MultilineIfModifier:
-  Exclude:
-    - 'app/views/catalog/index.atom.builder'
-
 # Offense count: 4
 # Cop supports --auto-correct.
 Style/MultilineIfThen:
   Exclude:
     - 'app/services/symphony_service.rb'
 
-# Offense count: 1
-Style/MultipleComparison:
-  Exclude:
-    - 'lib/ingest/batch_ingest.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/MutableConstant:
-  Exclude:
-    - 'app/services/sfx_service.rb'
-    - 'app/services/symphony_service.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: both, prefix, postfix
-Style/NegatedIf:
-  Exclude:
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: Whitelist.
-# Whitelist: be, be_a, be_an, be_between, be_falsey, be_kind_of, be_instance_of, be_truthy, be_within, eq, eql, end_with, include, match, raise_error, respond_to, start_with
-Style/NestedParenthesizedCalls:
-  Exclude:
-    - 'app/services/sfx_service.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, MinBodyLength.
-# SupportedStyles: skip_modifier_ifs, always
-Style/Next:
-  Exclude:
-    - 'app/services/symphony_service.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Style/Not:
-  Exclude:
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-    - 'app/helpers/profiles_helper.rb'
-
 # Offense count: 8
 # Cop supports --auto-correct.
 # Configuration parameters: Strict.
 Style/NumericLiterals:
   MinDigits: 17
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, EnforcedStyle.
-# SupportedStyles: predicate, comparison
-Style/NumericPredicate:
-  Exclude:
-    - 'spec/**/*'
-    - 'app/services/symphony_service.rb'
-    - 'lib/ingest/ingester.rb'
 
 # Offense count: 6
 # Cop supports --auto-correct.

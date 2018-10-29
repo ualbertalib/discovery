@@ -20,7 +20,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Hash] options
   # @return String
   def render_facet_partials fields = facet_field_names, options = {}
-    facets = Array.new()
+    facets = []
     facets = facets_from_request(fields)
     safe_join(facets.map do |display_facet|
       render_facet_limit(display_facet, options)
@@ -40,7 +40,7 @@ module Blacklight::FacetsHelperBehavior
   # @option options [Hash] :locals locals to pass to the partial
   # @return [String]
   def render_facet_limit(display_facet, options = {})
-    return if not should_render_facet?(display_facet)
+    return unless should_render_facet?(display_facet)
     options = options.dup
     options[:partial] ||= facet_partial_name(display_facet)
     options[:layout] ||= "facet_layout" unless options.key?(:layout)
@@ -144,8 +144,8 @@ module Blacklight::FacetsHelperBehavior
   def render_selected_facet_value(facet_solr_field, item)
     content_tag(:span, :class => "facet-label") do
       content_tag(:span, facet_display_value(facet_solr_field, item), :class => "selected") +
-      # remove link
-      link_to(content_tag(:span, '', :class => "glyphicon glyphicon-remove") + content_tag(:span, '[remove]', :class => 'sr-only'), search_action_path(remove_facet_params(facet_solr_field, item, params)), :class=>"remove")
+        # remove link
+        link_to(content_tag(:span, '', :class => "glyphicon glyphicon-remove") + content_tag(:span, '[remove]', :class => 'sr-only'), search_action_path(remove_facet_params(facet_solr_field, item, params)), :class=>"remove")
     end + render_facet_count(item.hits, :classes => ["selected"])
   end
 

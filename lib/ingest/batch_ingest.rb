@@ -20,7 +20,7 @@ class BatchIngest
 
   def from_directory(dir, vocabulary)
     Dir.foreach(dir) do |file|
-      next if file == "." or file == ".."
+      next if [".", ".."].include? file
       path = "#{dir}/#{file}"
       from_file(path, vocabulary)
     end

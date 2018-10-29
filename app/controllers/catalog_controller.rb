@@ -60,7 +60,7 @@ class CatalogController < ApplicationController
       @document['title_display'] = "Untitled document"
     end
 
-    @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if(@document['publisher_tesim'] and @document['published_display'])
+    @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] and @document['published_display']
     @document.delete('publisher_tesim') if @document['published_display']
   end
 

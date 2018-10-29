@@ -12,13 +12,13 @@ class SFXService
                 OpenURI::HTTPError,
                 Net::HTTPBadResponse,
                 Net::HTTPHeaderSyntaxError,
-                Net::ProtocolError]
+                Net::ProtocolError].freeze
 
   attr_reader :targets
 
   def initialize(document)
     @targets = {}
-    raw_targets(nokogiri document).each do |target|
+    raw_targets(nokogiri(document)).each do |target|
       coverage = get_marc_subfield(target, 'a')
       @targets[sfx_id(target)] = {id: sfx_id(target), coverage: coverage}
     end

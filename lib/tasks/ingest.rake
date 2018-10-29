@@ -29,7 +29,7 @@ end
 desc 'ingest records' # add config parameter for directory ingest?
 task :ingest, [:collection] do |t, args|
   log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
-  if File.exists? log_config['log_path']
+  if File.exist? log_config['log_path']
     log_file = File.open(log_config['log_path'], File::WRONLY|File::APPEND)
   else
     log_file = File.open(log_config['log_path'], File::WRONLY|File::CREAT)

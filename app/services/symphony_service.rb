@@ -9,7 +9,7 @@ class SymphonyService
                 OpenURI::HTTPError,
                 Net::HTTPBadResponse,
                 Net::HTTPHeaderSyntaxError,
-                Net::ProtocolError]
+                Net::ProtocolError].freeze
 
   def initialize(id, xml_response=nil)
     if valid? id
@@ -50,10 +50,9 @@ class SymphonyService
   def summary_holdings
     nodes.each do |node|
         current_node = node
-        if label(current_node)
-          if label(current_node).text == "Library has"
-            return node_text(current_node)
-          end
+        next unless label(current_node)
+        if label(current_node).text == "Library has"
+          return node_text(current_node)
         end
       end
   end
@@ -143,7 +142,7 @@ class SymphonyService
   end
 
   def valid? id
-    (id =~ /^[0-9]*$/) == 0
+    (id =~ /^[0-9]*$/).zero?
   end
 
   def id(item)

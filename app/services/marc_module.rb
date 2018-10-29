@@ -18,12 +18,9 @@ module MarcModule
 
   def get_marc_id(document)
     raw_id = document.xpath("//controlfield[@tag='001']").text
-    if raw_id.first.match(/^[[:alpha:]]$/)
-      raw_id.slice!(0)
-      return raw_id
-    else
-      return raw_id
-    end
+    raw_id.slice!(0) if raw_id.first =~ /^[[:alpha:]]$/
+
+    raw_id
   end
 
 end

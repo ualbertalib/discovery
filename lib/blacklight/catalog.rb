@@ -69,7 +69,7 @@ module Blacklight::Catalog
       search_session['counter'] = params[:counter]
       search_session['per_page'] = params[:per_page]
 
-      path = if params[:redirect] and (params[:redirect].starts_with?("/") or params[:redirect] =~ URI::regexp)
+      path = if params[:redirect] and (params[:redirect].starts_with?("/") or params[:redirect] =~ URI::DEFAULT_PARSER.make_regexp)
         URI.parse(params[:redirect]).path
       else
         { action: 'show' }
@@ -137,7 +137,7 @@ module Blacklight::Catalog
       session[:preferred_view] = params[:view] if params[:view]
     end
 
-    alias_method :preferred_view, :store_preferred_view
+    alias preferred_view store_preferred_view
     deprecation_deprecate :preferred_view
 
     ##
@@ -269,7 +269,7 @@ module Blacklight::Catalog
         flash[:error] = I18n.t('blacklight.sms.errors.carrier.blank')
       when params[:to].gsub(/[^\d]/, '').length != 10
         flash[:error] = I18n.t('blacklight.sms.errors.to.invalid', :to => params[:to])
-      when !sms_mappings.values.include?(params[:carrier])
+      when !sms_mappings.value?(params[:carrier])
         flash[:error] = I18n.t('blacklight.sms.errors.carrier.invalid')
       end
 

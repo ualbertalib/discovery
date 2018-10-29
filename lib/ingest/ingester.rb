@@ -19,7 +19,7 @@ class Ingester
 
   def commit
     status = @solr_object.commit
-    success = status["responseHeader"]["status"] == 0 ? "succeeded" : "failed"
+    success = (status["responseHeader"]["status"]).zero? ? "succeeded" : "failed"
     time = status["responseHeader"]["QTime"]
     @ingest_log.info("Solr commit response: Ingest #{success}. Elapsed time #{time} ms.")
   end
