@@ -5,6 +5,7 @@ This is the code base for the University of Alberta Libraries's
 discovery platform. Based on [Project Blacklight](projectblacklight.org).
 
 *   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.1.5
+*   Depends on Java (for SolrMarc and Ingestion scripts)
 *   Depends on an instance of [Solr](https://lucene.apache.org/solr/) with [this configuration](https://github.com/ualbertalib/blacklight_solr_conf)
 *   If you wish to use docker for the datastores install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) first.
 
@@ -17,7 +18,7 @@ discovery platform. Based on [Project Blacklight](projectblacklight.org).
 2.  run `docker-compose -f docker-compose.lightweight.yml up -d`
 3.  run `bundle install`
 4.  run `bundle exec rake db:setup`
-5.  `bundle exec rake ingest[database_test_set] && bundle exec rake ingest[sfx_test_set] && bundle exec rake ingest[symphony_test_set]`
+5.  `bundle exec rake ingest[database_test_set] && bundle exec rake ingest[sfx_test_set] && bundle exec rake ingest[symphony_test_set]` (need Java Installed to run this)
     If you're looking to use a production like dataset or avoid the hassle of running docker and performing these ingest tasks, `export SOLR_URL=http://solrcloud-test.library.ualberta.ca:8080/solr/discovery-test`
 6.  `bundle exec rails s`
 7.  Point your browser to **<http://localhost:3000/catalog>**
