@@ -60,7 +60,7 @@ module Blacklight::FacetsHelperBehavior
     safe_join(paginator.items.
       map { |item| render_facet_item(solr_field, item) }.compact.
       map { |item| content_tag(wrapping_element,item)}
-    )
+             )
   end
 
   ##

@@ -35,12 +35,6 @@ Layout/BlockAlignment:
     - 'app/services/symphony_service.rb'
     - 'spec/unit/solr_document_spec.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-Layout/BlockEndNewline:
-  Exclude:
-    - 'spec/unit/promoted_services_spec.rb'
-
 # Offense count: 5
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, IndentOneStep, IndentationWidth.
@@ -49,32 +43,6 @@ Layout/CaseIndentation:
   Exclude:
     - 'app/helpers/blacklight/facets_helper_behavior.rb'
     - 'config/initializers/blacklight_google_analytics.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-Layout/ClosingParenthesisIndentation:
-  Exclude:
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-    - 'app/models/solr_document.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-Layout/CommentIndentation:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/controllers/profiles_controller.rb'
-    - 'app/models/solr_document.rb'
-    - 'app/models/user.rb'
-    - 'lib/ingest/database_om.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleAlignWith, AutoCorrect, Severity.
-# SupportedStylesAlignWith: start_of_line, def
-Layout/DefEndAlignment:
-  Exclude:
-    - 'app/controllers/profiles_controller.rb'
-    - 'app/models/profile.rb'
 
 # Offense count: 2
 # Cop supports --auto-correct.

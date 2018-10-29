@@ -10,13 +10,14 @@ class ProfilesController < ApplicationController
             :rcrf => "Research & Collections Resource Facility", :press => "Ring House 2", :rutherford => "Rutherford",
             :stjosephs => "St. Joseph's Library", :winspear => "Winspear Library" }
 
-        # You'll have to define "profilesEditPassword" in secrets.yml, or this will fail. Thanks, ansible.
+  # You'll have to define "profilesEditPassword" in secrets.yml, or this will fail. Thanks, ansible.
   http_basic_authenticate_with name: Rails.application.secrets.profiles_edit_user, password: Rails.application.secrets.profiles_edit_password, except: [:index, :show]
 
   def index
     path = request.url
-      if path.include? "unit"
-        @unit = params[:unit]
+
+    if path.include? "unit"
+      @unit = params[:unit]
       @unitname = $units[params[:unit].to_sym]
       @profiles = Profile.where("unit=?", params[:unit]).order(:first_name)
     elsif path.include? "building"
@@ -24,13 +25,14 @@ class ProfilesController < ApplicationController
       @buildingname = $buildings[params[:building].to_sym]
       @profiles = Profile.where("campus_address=?", params[:building]).order(:first_name)
     else
-        @profiles = Profile.all.order(:first_name)
-      end
-      respond_to do |format|
-        format.html
-        format.csv { send_data @profiles.to_csv }
-      end
+      @profiles = Profile.all.order(:first_name)
     end
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @profiles.to_csv }
+    end
+  end
 
   def show
       @profile = Profile.friendly.find(params[:id])
