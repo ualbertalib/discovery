@@ -1,7 +1,6 @@
 class FormsController < ApplicationController
 
-  def index
-  end
+  def index; end
 
   def show
     @@item_id = params[:item_id]

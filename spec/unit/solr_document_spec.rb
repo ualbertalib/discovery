@@ -30,4 +30,4 @@ require_relative "../spec_helper.rb"
         expect(@solrdoc.id).to eq '00282214'
       end
     end
-end
+  end

@@ -5,7 +5,7 @@ include E
 describe DublinCoreVocabulary do
 
   let(:dublin_core_document){
-    DublinCoreVocabulary.from_xml(Nokogiri::XML(File.open(E::*("fixtures/dublin_core_record.xml"))).xpath("//xmlns:OAI-PMH", {"xmlns" => "http://www.openarchives.org/OAI/2.0/" }).xpath("//xmlns:record").to_s)
+    DublinCoreVocabulary.from_xml(Nokogiri::XML(File.open(E::*("fixtures/dublin_core_record.xml"))).xpath("//xmlns:OAI-PMH", "xmlns" => "http://www.openarchives.org/OAI/2.0/").xpath("//xmlns:record").to_s)
   }
   let(:solr_hash) { eval(File.open(E::*("fixtures/dc_solr_hash")).read) }
 

@@ -9,6 +9,7 @@ class BlacklightAdvancedSearch::AdvancedController < CatalogController
   end
 
   protected
+
   def get_advanced_search_facets
     search_context_params = {}
     unless advanced_search_context.empty?

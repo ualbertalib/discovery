@@ -24,7 +24,7 @@ class Ingester
     @ingest_log.info("Solr commit response: Ingest #{success}. Elapsed time #{time} ms.")
   end
 
-private
+  private
 
   def add(vocabulary)
     status = @solr_object.add vocabulary

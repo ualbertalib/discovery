@@ -26,13 +26,13 @@ class SFXService
     sfx_results_for(document.id).xpath("//target").each do |target|
       unless local_targets.include? name(target)
         if @targets[id(target)]
-          @targets[id(target)].merge!({name: display_name(target), url: url(target), our_target: our_link(target), note: note(target)})
+          @targets[id(target)].merge!(name: display_name(target), url: url(target), our_target: our_link(target), note: note(target))
         else
           @targets[id(target)] = {name: display_name(target), url: url(target), our_target: our_link(target), note: note(target), coverage: "Coverage information temporarily unavailable."}
         end
       end
     end
-    @targets.delete_if{|key, value| value[:name].nil? }
+    @targets.delete_if{ |key, value| value[:name].nil? }
   end
 
   private
@@ -49,7 +49,7 @@ class SFXService
   end
 
   def sfx_id(target)
-    BigDecimal.new(get_marc_subfield(target, 's')).to_i
+    BigDecimal(get_marc_subfield(target, 's')).to_i
   end
 
   def local_targets
@@ -73,7 +73,7 @@ class SFXService
   end
 
   def id(target)
-    BigDecimal.new(target.xpath("target_service_id").text).to_i
+    BigDecimal(target.xpath("target_service_id").text).to_i
   end
 
   def our_link(target)

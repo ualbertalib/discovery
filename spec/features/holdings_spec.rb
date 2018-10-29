@@ -34,7 +34,7 @@ describe HoldingsHelper do
       holdings = holdings(document, :links)
       expect(holdings).to be_an_instance_of Array
       expect(holdings.first).to be_an_instance_of Hash
-      expect(holdings.first).to eq({"University of Alberta Access (6 Concurrent Users)"=>"http://proquest.safaribooksonline.com/?uiCode=ualberta&xmlId=9781785283642"})
+      expect(holdings.first).to eq("University of Alberta Access (6 Concurrent Users)"=>"http://proquest.safaribooksonline.com/?uiCode=ualberta&xmlId=9781785283642")
     end
   end
 

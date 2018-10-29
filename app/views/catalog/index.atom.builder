@@ -5,7 +5,7 @@ xml.instruct!(:xml, :encoding => "UTF-8")
 xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
          "xmlns:opensearch"=>"http://a9.com/-/spec/opensearch/1.1/") do
 
-  xml.title   t('blacklight.search.title', :application_name => application_name)
+  xml.title t('blacklight.search.title', :application_name => application_name)
   # an author is required, so we'll just use the app name
   xml.author { xml.name application_name }
 
@@ -17,14 +17,12 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
 
   if @response.next_page
     xml.link( "rel" => "next",
-              "href" => url_for(params.merge(:only_path => false, :page => @response.next_page.to_s))
-            )
+              "href" => url_for(params.merge(:only_path => false, :page => @response.next_page.to_s)))
   end
 
   if @response.prev_page
     xml.link( "rel" => "previous",
-              "href" => url_for(params.merge(:only_path => false, :page => @response.prev_page.to_s))
-            )
+              "href" => url_for(params.merge(:only_path => false, :page => @response.prev_page.to_s)))
   end
 
   xml.link( "rel" => "first",
@@ -60,7 +58,7 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
       # content type, so the first one in the list wins.
       xml << render_link_rel_alternates(doc, :unique => true)
 
-      xml.id      polymorphic_url(doc)
+      xml.id polymorphic_url(doc)
 
       if doc.to_semantic_values[:author][0]
         xml.author { xml.name(doc.to_semantic_values[:author][0]) }

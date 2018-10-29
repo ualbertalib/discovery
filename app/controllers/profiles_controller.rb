@@ -38,7 +38,6 @@ class ProfilesController < ApplicationController
       @profile = Profile.friendly.find(params[:id])
   end
 
-
   def new
     @profile = Profile.new
     @buildings = $buildings

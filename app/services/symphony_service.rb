@@ -11,7 +11,7 @@ class SymphonyService
                 Net::HTTPHeaderSyntaxError,
                 Net::ProtocolError].freeze
 
-  def initialize(id, xml_response=nil)
+  def initialize(id, xml_response = nil)
     if valid? id
       begin
         xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id, :read_timeout => Rails.configuration.symphony_timeout).read
@@ -28,7 +28,7 @@ class SymphonyService
 
   def items
     items = []
-    if @document then
+    if @document
       for item in holdings_items do
         if item.xpath(".//xmlns:ItemInfo").size == 1
           items << populate(item)
@@ -54,7 +54,7 @@ class SymphonyService
         if label(current_node).text == "Library has"
           return node_text(current_node)
         end
-      end
+    end
   end
 
   def ws_endpoint
@@ -79,7 +79,7 @@ class SymphonyService
       location = get(item, "libraryID")
       public_note = get(item, "publicNote")
       reserve_rule = get(item, "reserveCirculationRule")
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule:reserve_rule}
+      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule: reserve_rule}
   end
 
   def populate_subitems(item)
@@ -103,12 +103,12 @@ class SymphonyService
   def populate_electronic_items
     ua_items = {}
     non_ua_items = {}
-      if @document then
+      if @document
         link_items.each do |item|
-          if label(item) and label(item).text == "Electronic access" then
-            if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") or (item.at_xpath(".//xmlns:text").text.include? "NEOS") then
+          if label(item) and label(item).text == "Electronic access"
+            if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") or (item.at_xpath(".//xmlns:text").text.include? "NEOS")
                 ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
-              else
+            else
                 non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
               end
           end
@@ -142,7 +142,7 @@ class SymphonyService
   end
 
   def valid? id
-    (id =~ /^[0-9]*$/).zero?
+    (id =~ /^[0-9]*$/) == 0
   end
 
   def id(item)

@@ -71,7 +71,7 @@ module Blacklight::Catalog
 
       path = if params[:redirect] and (params[:redirect].starts_with?("/") or params[:redirect] =~ URI::DEFAULT_PARSER.make_regexp)
         URI.parse(params[:redirect]).path
-      else
+             else
         { action: 'show' }
       end
       redirect_to path, :status => 303
@@ -123,7 +123,8 @@ module Blacklight::Catalog
       !params[:q].blank? or !params[:f].blank? or !params[:search_field].blank?
     end
 
-    protected
+  protected
+
     #
     # non-routable methods ->
     #
@@ -155,7 +156,7 @@ module Blacklight::Catalog
         format.send key do
           case config
           when false
-            raise ActionController::RoutingError.new('Not Found')
+            raise ActionController::RoutingError, 'Not Found'
           when Hash
             render config
           when Proc
@@ -171,7 +172,7 @@ module Blacklight::Catalog
     # Render additional export formats for the show action, as provided by
     # the document extension framework. See _Blacklight::Document::Export_
     def additional_export_formats(document, format)
-      document.export_formats.each_key do | format_name |
+      document.export_formats.each_key do |format_name|
         format.send(format_name.to_sym) { render text: document.export_as(format_name), layout: false }
       end
     end
@@ -185,7 +186,7 @@ module Blacklight::Catalog
         if @response.export_formats.include? format_name
           render_document_export_format format_name
         else
-          raise ActionController::UnknownFormat.new
+          raise ActionController::UnknownFormat
         end
       end
     end
@@ -262,14 +263,13 @@ module Blacklight::Catalog
     end
 
     def validate_sms_params
-      case
-      when params[:to].blank?
+      if params[:to].blank?
         flash[:error] = I18n.t('blacklight.sms.errors.to.blank')
-      when params[:carrier].blank?
+      elsif params[:carrier].blank?
         flash[:error] = I18n.t('blacklight.sms.errors.carrier.blank')
-      when params[:to].gsub(/[^\d]/, '').length != 10
+      elsif params[:to].gsub(/[^\d]/, '').length != 10
         flash[:error] = I18n.t('blacklight.sms.errors.to.invalid', :to => params[:to])
-      when !sms_mappings.value?(params[:carrier])
+      elsif !sms_mappings.value?(params[:carrier])
         flash[:error] = I18n.t('blacklight.sms.errors.carrier.invalid')
       end
 
@@ -290,10 +290,9 @@ module Blacklight::Catalog
     end
 
     def validate_email_params
-      case
-      when params[:to].blank?
+      if params[:to].blank?
         flash[:error] = I18n.t('blacklight.email.errors.to.blank')
-      when !params[:to].match(defined?(Devise) ? Devise.email_regexp : /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)
+      elsif !params[:to].match(defined?(Devise) ? Devise.email_regexp : /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)
         flash[:error] = I18n.t('blacklight.email.errors.to.invalid', :to => params[:to])
       end
 

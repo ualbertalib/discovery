@@ -27,7 +27,6 @@ module Blacklight::FacetsHelperBehavior
     end.compact, "\n")
   end
 
-
   ##
   # Renders a single section for facet limit with a specified
   # solr field used for faceting. Can be over-ridden for custom
@@ -56,11 +55,10 @@ module Blacklight::FacetsHelperBehavior
   # Renders the list of values
   # removes any elements where render_facet_item returns a nil value. This enables an application
   # to filter undesireable facet items so they don't appear in the UI
-  def render_facet_limit_list(paginator, solr_field, wrapping_element=:li)
-    safe_join(paginator.items.
-      map { |item| render_facet_item(solr_field, item) }.compact.
-      map { |item| content_tag(wrapping_element,item)}
-             )
+  def render_facet_limit_list(paginator, solr_field, wrapping_element = :li)
+    safe_join(paginator.items
+      .map { |item| render_facet_item(solr_field, item) }.compact
+      .map { |item| content_tag(wrapping_element,item) })
   end
 
   ##
@@ -123,7 +121,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Hash] options
   # @option options [Boolean] :suppress_link display the facet, but don't link to it
   # @return [String]
-  def render_facet_value(facet_solr_field, item, options ={})
+  def render_facet_value(facet_solr_field, item, options = {})
     if facet_solr_field == "languagenote_tesim"
       languages = {english: "English", french: "French", other: "Other"}
       path = search_action_path(add_facet_params_and_redirect(facet_solr_field, item))
@@ -199,20 +197,19 @@ module Blacklight::FacetsHelperBehavior
 
     value = if item.respond_to? :label
           item.label
-    else
+            else
       facet_value_for_facet_item(item)
     end
 
-    display_label = case
-      when facet_config.helper_method
+    display_label = if facet_config.helper_method
         display_label = send facet_config.helper_method, value
-      when (facet_config.query and facet_config.query[value])
+                    elsif facet_config.query and facet_config.query[value]
         display_label = facet_config.query[value][:label]
-      when facet_config.date
+                    elsif facet_config.date
         localization_options = {}
         localization_options = facet_config.date unless facet_config.date === true
         display_label = l(value.to_datetime, localization_options)
-      else
+                    else
         value
     end
   end
