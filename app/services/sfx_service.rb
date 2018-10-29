@@ -7,12 +7,12 @@ class SFXService
     class HTTPError < StandardError; end
   end
   EXCEPTIONS = [Timeout::Error,
-    Errno::EINVAL,
-    EOFError,
-    OpenURI::HTTPError,
-    Net::HTTPBadResponse,
-    Net::HTTPHeaderSyntaxError,
-    Net::ProtocolError]
+                Errno::EINVAL,
+                EOFError,
+                OpenURI::HTTPError,
+                Net::HTTPBadResponse,
+                Net::HTTPHeaderSyntaxError,
+                Net::ProtocolError]
 
   attr_reader :targets
 

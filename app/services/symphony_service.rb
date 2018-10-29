@@ -4,12 +4,12 @@ class SymphonyService
     class InvalidIdError < StandardError; end
   end
   EXCEPTIONS = [Timeout::Error,
-    Errno::EINVAL,
-    EOFError,
-    OpenURI::HTTPError,
-    Net::HTTPBadResponse,
-    Net::HTTPHeaderSyntaxError,
-    Net::ProtocolError]
+                Errno::EINVAL,
+                EOFError,
+                OpenURI::HTTPError,
+                Net::HTTPBadResponse,
+                Net::HTTPHeaderSyntaxError,
+                Net::ProtocolError]
 
   def initialize(id, xml_response=nil)
     if valid? id
