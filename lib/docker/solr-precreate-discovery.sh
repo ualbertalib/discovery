@@ -20,20 +20,20 @@ else
     coresdir=$SOLR_HOME
 fi
 
-coredir_dev="$coresdir/development"
+coredir_dev="$coresdir/discovery"
 if [[ ! -d $coredir_dev ]]; then
-    cp -r /config/ $coredir_dev
+    cp -r /myconfig/ $coredir_dev
     touch "$coredir_dev/core.properties"
-    echo "created development core"
+    echo "created discovery core"
 else
-    echo "core development already exists"
+    echo "core discovery already exists"
 fi
 
-coredir_test="$coresdir/test"
+coredir_test="$coresdir/discovery-test"
 if [[ ! -d $coredir_test ]]; then
-    cp -r /config/ $coredir_test
+    cp -r /myconfig/ $coredir_test
     touch "$coredir_test/core.properties"
-    echo "created test core"
+    echo "created discovery-test core"
 else
-    echo "core test already exists"
+    echo "core discovery-test already exists"
 fi
