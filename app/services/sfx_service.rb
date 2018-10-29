@@ -38,12 +38,10 @@ class SFXService
   private
 
   def sfx_results_for(id)
-    begin
       Nokogiri::XML(open("http://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&ctx_ver=Z39.88-2004&rfr_id=info%3Asid%2Fualberta.ca%3Aopac&rft.genre=journal&rft.object_id=#{id}&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&url_ver=Z39.88-2004&sfx.response_type=simplexml").read)
-    rescue *EXCEPTIONS => e
+  rescue *EXCEPTIONS => e
       raise Error::HTTPError, 'SFXService: ' + e.message
       nil
-    end
   end
 
   def raw_targets(doc)

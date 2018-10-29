@@ -27,12 +27,12 @@ class DatabaseVocabulary < Vocabulary
     t.electronic(index_as: :stored_searchable)
     t.location(index_as: :stored_searchable)
     t.icons(index_as: :stored_searchable)
-    t.languagenote(index_as: :stored_searchable);
+    t.languagenote(index_as: :stored_searchable)
   end
 end
     t.electronic(index_as: :stored_searchable)
     t.location(index_as: :stored_searchable)
     t.icons(index_as: :stored_searchable)
-    t.languagenote(index_as: :stored_searchable);
+    t.languagenote(index_as: :stored_searchable)
   end
 end

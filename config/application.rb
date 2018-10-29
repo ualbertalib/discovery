@@ -21,7 +21,11 @@ module VanillaBlacklight
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    @c = YAML.load_file('config/ingest.yml') rescue {}
+    @c = begin
+           YAML.load_file('config/ingest.yml')
+         rescue StandardError
+           {}
+         end
     config.proxy = @c['proxy']
     config.exceptions_app = self.routes
     config.symphony_timeout = 4

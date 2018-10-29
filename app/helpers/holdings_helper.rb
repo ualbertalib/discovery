@@ -17,12 +17,10 @@ module HoldingsHelper
   end
 
   def fetch_sfx_holdings(document)
-    begin
-      SFXService.new(document).targets
-    rescue SFXService::Error::HTTPError => e
-      logger.error e.message
-      nil
-    end
+    SFXService.new(document).targets
+  rescue SFXService::Error::HTTPError => e
+    logger.error e.message
+    nil
   end
 
   # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme

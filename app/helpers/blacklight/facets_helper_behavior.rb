@@ -20,8 +20,8 @@ module Blacklight::FacetsHelperBehavior
   # @param [Hash] options
   # @return String
   def render_facet_partials fields = facet_field_names, options = {}
-    facets = Array.new();
-    facets = facets_from_request(fields);
+    facets = Array.new()
+    facets = facets_from_request(fields)
     safe_join(facets.map do |display_facet|
       render_facet_limit(display_facet, options)
     end.compact, "\n")
@@ -43,7 +43,7 @@ module Blacklight::FacetsHelperBehavior
     return if not should_render_facet?(display_facet)
     options = options.dup
     options[:partial] ||= facet_partial_name(display_facet)
-    options[:layout] ||= "facet_layout" unless options.has_key?(:layout)
+    options[:layout] ||= "facet_layout" unless options.key?(:layout)
     options[:locals] ||= {}
     options[:locals][:solr_field] ||= display_facet.name
     options[:locals][:facet_field] ||= facet_configuration_for_field(display_facet.name)

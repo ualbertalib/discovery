@@ -11,11 +11,11 @@ class BlacklightAdvancedSearch::AdvancedController < CatalogController
   protected
   def get_advanced_search_facets
     search_context_params = {}
-    if (advanced_search_context.length > 0 )
+    unless advanced_search_context.empty?
       # We have a search context, need to fetch facets from within
       # that context -- but we dont' want to search within any
       # existing :q or ADVANCED facets, so we remove those params.
-      adv_keys = blacklight_config.search_fields.keys.map {|k| k.to_sym}
+      adv_keys = blacklight_config.search_fields.keys.map(&:to_sym)
       trimmed_params = params.except *adv_keys
       trimmed_params.delete(:f_inclusive) # adv facets
 
