@@ -68,7 +68,7 @@ module Blacklight::Catalog
     search_session['counter'] = params[:counter]
     search_session['per_page'] = params[:per_page]
 
-    path = if params[:redirect] and (params[:redirect].starts_with?("/") or params[:redirect] =~ URI::DEFAULT_PARSER.make_regexp)
+    path = if params[:redirect] && (params[:redirect].starts_with?("/") || params[:redirect] =~ URI::DEFAULT_PARSER.make_regexp)
              URI.parse(params[:redirect]).path
            else
              { action: 'show' }
@@ -118,7 +118,7 @@ module Blacklight::Catalog
   # Check if any search parameters have been set
   # @return [Boolean]
   def has_search_parameters?
-    !params[:q].blank? or !params[:f].blank? or !params[:search_field].blank?
+    !params[:q].blank? || !params[:f].blank? || !params[:search_field].blank?
   end
 
   protected
@@ -149,7 +149,7 @@ module Blacklight::Catalog
   #
   # Make sure your format has a well known mime-type or is registered in
   # config/initializers/mime_types.rb
-  def additional_response_formats format
+  def additional_response_formats(format)
     blacklight_config.index.respond_to.each do |key, config|
       format.send key do
         case config
@@ -177,7 +177,7 @@ module Blacklight::Catalog
 
   ##
   # Try to render a response from the document export formats available
-  def document_export_formats format
+  def document_export_formats(format)
     format.any do
       format_name = params.fetch(:format, '').to_sym
 
@@ -193,7 +193,7 @@ module Blacklight::Catalog
   # Render the document export formats for a response
   # First, try to render an appropriate template (e.g. index.endnote.erb)
   # If that fails, just concatenate the document export responses with a newline.
-  def render_document_export_format format_name
+  def render_document_export_format(format_name)
     render
   rescue ActionView::MissingTemplate
     render text: @response.documents.map { |x| x.export_as(format_name) if x.exports_as? format_name }.compact.join("\n"), layout: false
@@ -222,12 +222,12 @@ module Blacklight::Catalog
   # Overrides the Blacklight::Controller provided #search_action_url.
   # By default, any search action from a Blacklight::Catalog controller
   # should use the current controller when constructing the route.
-  def search_action_url options = {}
+  def search_action_url(options = {})
     url_for(options.merge(:action => 'index'))
   end
 
   # extract the pagination info from the response object
-  def pagination_info response
+  def pagination_info(response)
     h = {}
 
     [:current_page, :next_page, :prev_page, :total_pages,
@@ -240,7 +240,7 @@ module Blacklight::Catalog
   end
 
   # Email Action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
-  def email_action documents
+  def email_action(documents)
     mail = RecordMailer.email_record(documents, { :to => params[:to], :message => params[:message], :call => params[:call], :location => params[:location] }, url_options)
     if mail.respond_to? :deliver_now
       mail.deliver_now
@@ -250,7 +250,7 @@ module Blacklight::Catalog
   end
 
   # SMS action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
-  def sms_action documents
+  def sms_action(documents)
     to = "#{params[:to].gsub(/[^\d]/, '')}@#{params[:carrier]}"
     mail = RecordMailer.sms_record(documents, { :to => to, :call => params[:call] }, url_options)
     if mail.respond_to? :deliver_now
@@ -302,7 +302,7 @@ module Blacklight::Catalog
   # Just returns a 404 response, but you can override locally in your own
   # CatalogController to do something else -- older BL displayed a Catalog#inde
   # page with a flash message and a 404 status.
-  def invalid_document_id_error *args
+  def invalid_document_id_error(*args)
     Deprecation.silence(Blacklight::Catalog) do
       invalid_solr_id_error *args
     end

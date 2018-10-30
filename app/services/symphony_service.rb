@@ -51,9 +51,7 @@ class SymphonyService
     nodes.each do |node|
       current_node = node
       next unless label(current_node)
-      if label(current_node).text == "Library has"
-        return node_text(current_node)
-      end
+      return node_text(current_node) if label(current_node).text == "Library has"
     end
   end
 
@@ -105,8 +103,8 @@ class SymphonyService
     non_ua_items = {}
     if @document
       link_items.each do |item|
-        if label(item) and label(item).text == "Electronic access"
-          if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") or (item.at_xpath(".//xmlns:text").text.include? "NEOS")
+        if label(item) && (label(item).text == "Electronic access")
+          if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") || (item.at_xpath(".//xmlns:text").text.include? "Free") || (item.at_xpath(".//xmlns:text").text.include? "NEOS")
             ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
           else
             non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
@@ -141,19 +139,15 @@ class SymphonyService
     current_node.at_xpath(".//xmlns:text", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
   end
 
-  def valid? id
+  def valid?(id)
     (id =~ /^[0-9]*$/) == 0
   end
 
   def id(item)
-    if item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
-      item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
-    end
+    item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text if item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
   end
 
   def get(item, node)
-    if item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
-      item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
-    end
+    item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text if item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
   end
 end

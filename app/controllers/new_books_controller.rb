@@ -4,7 +4,7 @@ class NewBooksController < CatalogController
 
   search_params_logic << :show_only
 
-  def show_only solr_parameters, user_parameters
+  def show_only(solr_parameters, _user_parameters)
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << "id:(#{list_of_ids})"
     puts solr_parameters

@@ -2,7 +2,7 @@ namespace :ingest do
   desc 'ingest MODS records'
   # Syntax: rake ingest:peel["data/peel.xm|file"]
   # Replace root, record_delimiter, namespace, and vocabulary as necessary
-  task :mods_from_file, [:file] do |t, args|
+  task :mods_from_file, [:file] do |_t, args|
     path = args.file.split("|").first
     mode = args.file.split("|").last
     batch_ingester = BatchIngest.new

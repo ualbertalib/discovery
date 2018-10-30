@@ -22,13 +22,13 @@ class Databases
         db["description"] = ""
         db["enableproxy"] = db["meta"]["enable_proxy"]
         db["icons"] = db["icons"]
-        if db["az_vendor_id"] == "27150"
-          db["languagenote"] = "English"
-        elsif db["az_vendor_id"] == "27151"
-          db["languagenote"] = "French"
-        else
-          db["languagenote"] = "Other"
-        end
+        db["languagenote"] = if db["az_vendor_id"] == "27150"
+                               "English"
+                             elsif db["az_vendor_id"] == "27151"
+                               "French"
+                             else
+                               "Other"
+                             end
         if @xml_records[db['id']]
           @xml_records[db['id']]['subject'].concat db['subject']
           @xml_records[db['id']].merge db
@@ -42,7 +42,7 @@ class Databases
 
   def xml_file
     output = "<?xml version=\"1.0\"?><root><databases>"
-    @xml_records.each do |key, record|
+    @xml_records.each do |_key, record|
       db_vocabulary = DatabaseVocabulary.from_xml(record.to_xml)
       output += db_vocabulary.to_xml.gsub('<?xml version="1.0" encoding="UTF-8"?>', "")
     end

@@ -1,5 +1,5 @@
 ENV["RAILS_ENV"] ||= 'test'
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require "rspec"
 require "rspec-rails"
 require "yaml"
@@ -18,9 +18,3 @@ require_relative "../app/helpers/holdings_helper.rb"
 require_relative "../app/services/marc_module.rb"
 require_relative "../app/services/sfx_service.rb"
 require_relative "../app/services/symphony_service.rb"
-
-module E
-  def *(path)
-    File.expand_path(path, File.dirname(__FILE__))
-  end
-end

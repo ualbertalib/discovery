@@ -1,12 +1,16 @@
 require_relative "../spec_helper.rb"
 
-include E
-
 describe DublinCoreVocabulary do
-  let(:dublin_core_document) {
-    DublinCoreVocabulary.from_xml(Nokogiri::XML(File.open(E:: * "fixtures/dublin_core_record.xml")).xpath("//xmlns:OAI-PMH", "xmlns" => "http://www.openarchives.org/OAI/2.0/").xpath("//xmlns:record").to_s)
-  }
-  let(:solr_hash) { eval(File.open(E:: * "fixtures/dc_solr_hash").read) }
+  let(:dublin_core_document) do
+    DublinCoreVocabulary.from_xml(Nokogiri::XML(File.open(
+                                                  Rails.root.join('spec', 'fixtures', "dublin_core_record.xml")
+                                                )).xpath("//xmlns:OAI-PMH", "xmlns" => "http://www.openarchives.org/OAI/2.0/").xpath("//xmlns:record").to_s)
+  end
+  let(:solr_hash) do
+    eval(File.open(
+      Rails.root.join('spec', 'fixtures', "dc_solr_hash")
+    ).read)
+  end
 
   it "should be a Dublin Core OM vocabulary with a terminology-based solrizer" do
     expect(dublin_core_document).to be_an_instance_of DublinCoreVocabulary

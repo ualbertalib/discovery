@@ -29,34 +29,6 @@ Lint/UnreachableCode:
     - 'app/services/sfx_service.rb'
     - 'app/services/symphony_service.rb'
 
-# Offense count: 12
-# Cop supports --auto-correct.
-# Configuration parameters: IgnoreEmptyBlocks, AllowUnusedKeywordArguments.
-Lint/UnusedBlockArgument:
-  Exclude:
-    - 'app/controllers/blacklight_advanced_search/advanced_controller.rb'
-    - 'app/services/sfx_service.rb'
-    - 'config/unicorn.rb'
-    - 'lib/ingest/batch_ingest.rb'
-    - 'lib/ingest/databases.rb'
-    - 'lib/tasks/delete.rake'
-    - 'lib/tasks/fetch.rake'
-    - 'lib/tasks/ingest.rake'
-    - 'lib/tasks/mods.rake'
-
-# Offense count: 7
-# Cop supports --auto-correct.
-# Configuration parameters: AllowUnusedKeywordArguments, IgnoreEmptyMethods.
-Lint/UnusedMethodArgument:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/controllers/databases_controller.rb'
-    - 'app/controllers/ebooks_controller.rb'
-    - 'app/controllers/journals_controller.rb'
-    - 'app/controllers/new_books_controller.rb'
-    - 'app/controllers/symphony_controller.rb'
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-
 # Offense count: 9
 Lint/UselessAssignment:
   Exclude:
@@ -108,38 +80,11 @@ Security/Open:
   Exclude:
     - 'app/services/symphony_service.rb'
 
-# Offense count: 16
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: always, conditionals
-Style/AndOr:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-    - 'app/services/symphony_service.rb'
-    - 'config/unicorn.rb'
-    - 'lib/blacklight/catalog.rb'
-
 # Offense count: 1
 # Configuration parameters: AllowedChars.
 Style/AsciiComments:
   Exclude:
     - 'config/initializers/comfortable_mexican_sofa.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, ProceduralMethods, FunctionalMethods, IgnoredMethods.
-# SupportedStyles: line_count_based, semantic, braces_for_chaining
-# ProceduralMethods: benchmark, bm, bmbm, create, each_with_object, measure, new, realtime, tap, with_object
-# FunctionalMethods: let, let!, subject, watch
-# IgnoredMethods: lambda, proc, it
-Style/BlockDelimiters:
-  Exclude:
-    - 'app/views/catalog/index.rss.builder'
-    - 'app/views/catalog/opensearch.xml.builder'
-    - 'lib/tasks/ingest.rake'
-    - 'spec/unit/dc_spec.rb'
-    - 'spec/unit/promoted_services_spec.rb'
 
 # Offense count: 1
 Style/CaseEquality:
@@ -150,46 +95,6 @@ Style/CaseEquality:
 Style/ClassVars:
   Exclude:
     - 'app/controllers/forms_controller.rb'
-
-# Offense count: 17
-# Cop supports --auto-correct.
-Style/ColonMethodCall:
-  Exclude:
-    - 'spec/features/holdings_spec.rb'
-    - 'spec/unit/database_spec.rb'
-    - 'spec/unit/dc_batch_ingest_spec.rb'
-    - 'spec/unit/dc_spec.rb'
-    - 'spec/unit/ingest_configuration_spec.rb'
-    - 'spec/unit/ingest_spec.rb'
-    - 'spec/unit/marc_module_spec.rb'
-    - 'spec/unit/peel_mods_spec.rb'
-    - 'spec/unit/promoted_services_spec.rb'
-    - 'spec/unit/symphony_service_spec.rb'
-
-# Offense count: 4
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, SingleLineConditionsOnly, IncludeTernaryExpressions.
-# SupportedStyles: assign_to_condition, assign_inside_condition
-Style/ConditionalAssignment:
-  Exclude:
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-    - 'app/models/record_mailer.rb'
-    - 'lib/ingest/databases.rb'
-    - 'lib/tasks/ingest.rake'
-
-# Offense count: 9
-# Cop supports --auto-correct.
-Style/ExpandPathArguments:
-  Exclude:
-    - 'Rakefile'
-    - 'bin/bundle'
-    - 'bin/rails'
-    - 'bin/setup'
-    - 'config/application.rb'
-    - 'config/boot.rb'
-    - 'config/environment.rb'
-    - 'spec/blacklight_helper.rb'
-    - 'spec/rails_helper.rb'
 
 # Offense count: 3
 # Configuration parameters: EnforcedStyle.
@@ -218,33 +123,6 @@ Style/GuardClause:
 # SupportedStyles: ruby19, hash_rockets, no_mixed_keys, ruby19_no_mixed_keys
 Style/HashSyntax:
   Enabled: false
-
-# Offense count: 8
-# Cop supports --auto-correct.
-Style/IfUnlessModifier:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-    - 'app/services/symphony_service.rb'
-    - 'app/views/catalog/index.atom.builder'
-
-# Offense count: 27
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: require_parentheses, require_no_parentheses, require_no_parentheses_except_multiline
-Style/MethodDefParentheses:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/controllers/databases_controller.rb'
-    - 'app/controllers/ebooks_controller.rb'
-    - 'app/controllers/journals_controller.rb'
-    - 'app/controllers/new_books_controller.rb'
-    - 'app/controllers/symphony_controller.rb'
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-    - 'app/services/symphony_service.rb'
-    - 'lib/blacklight/catalog.rb'
-    - 'lib/ingest/batch_ingest.rb'
-    - 'lib/tasks/ingest.rake'
 
 # Offense count: 14
 Style/MixinUsage:

@@ -1,11 +1,13 @@
 require_relative "../spec_helper.rb"
 
-include E
-
 include MarcModule
 
 describe MarcModule do
-  let(:marc_record) { eval(File.open(E:: * "fixtures/solr_document.rb").read) }
+  let(:marc_record) do
+    eval(File.open(
+      Rails.root.join('spec', 'fixtures', "solr_document.rb")
+    ).read)
+  end
   let(:nokogiri_doc) { nokogiri(marc_record) }
 
   it "should return a nokogiri document of a marc record" do

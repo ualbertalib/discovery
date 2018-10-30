@@ -4,7 +4,7 @@ class EbooksController < CatalogController
 
   search_params_logic << :show_only
 
-  def show_only solr_parameters, user_parameters
+  def show_only(solr_parameters, _user_parameters)
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << 'source_tesim:"Symphony"'
     solr_parameters[:fq] << 'electronic_tesim:"Online"'

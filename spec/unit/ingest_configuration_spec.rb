@@ -1,9 +1,11 @@
 require_relative "../spec_helper.rb"
 
-include E
-
 context "given a configuration YAML file" do
-  let(:config_yaml) { YAML.load_file(E:: * "fixtures/ingest.yml") }
+  let(:config_yaml) do
+    YAML.load_file(
+      Rails.root.join('spec', 'fixtures', "ingest.yml")
+    )
+  end
   let(:config) { IngestConfiguration.new("era", config_yaml) }
 
   it "should parse the file into the object fields" do

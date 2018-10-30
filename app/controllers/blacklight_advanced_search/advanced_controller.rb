@@ -29,7 +29,7 @@ class BlacklightAdvancedSearch::AdvancedController < CatalogController
 
       # Also delete any facet-related params, or anything else
       # we want to set ourselves
-      search_context_params.delete_if do |k, v|
+      search_context_params.delete_if do |k, _v|
         k = k.to_s
         (["facet.limit", "facet.sort", "f", "facets", "facet.fields", "per_page"].include?(k) ||
           k =~ /f\..+\.facet\.limit/ ||

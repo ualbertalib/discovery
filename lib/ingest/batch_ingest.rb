@@ -9,7 +9,7 @@ class BatchIngest
 
   def from_file(file, vocabulary)
     read file
-    @records.each_with_index do |record, index|
+    @records.each_with_index do |record, _index|
       solr = vocabulary.from_xml(record.to_s).to_solr
       next unless solr["id_tesim"]
       solr[:id] = solr["id_tesim"].first
@@ -32,12 +32,12 @@ class BatchIngest
 
   private
 
-  def read file
+  def read(file)
     @records = []
     Nokogiri::XML(File.open(file)).xpath(@root, @namespace).xpath(@record_delimiter).each { |record| @records << record }
   end
 
-  def add record
+  def add(record)
     @ingester.add_document(record)
   end
 end

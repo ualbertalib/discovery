@@ -60,9 +60,7 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
 
       xml.id polymorphic_url(doc)
 
-      if doc.to_semantic_values[:author][0]
-        xml.author { xml.name(doc.to_semantic_values[:author][0]) }
-      end
+      xml.author { xml.name(doc.to_semantic_values[:author][0]) } if doc.to_semantic_values[:author][0]
 
       with_format("html") do
         xml.summary "type" => "html" do
@@ -84,10 +82,10 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
           # encode properly. See:
           # http://tools.ietf.org/html/rfc4287#section-4.1.3.3
           type = type.downcase
-          if type.downcase =~ /\+|\/xml$/
+          if type.downcase =~ %r{\+|/xml$}
             # xml, just put it right in
             content_element << data
-          elsif type.downcase =~ /text\//
+          elsif type.downcase =~ %r{text/}
             # text, escape
             content_element.text! data
           else

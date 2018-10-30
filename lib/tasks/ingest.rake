@@ -27,13 +27,13 @@ task :ingest_info do
 end
 
 desc 'ingest records' # add config parameter for directory ingest?
-task :ingest, [:collection] do |t, args|
+task :ingest, [:collection] do |_t, args|
   log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
-  if File.exist? log_config['log_path']
-    log_file = File.open(log_config['log_path'], File::WRONLY | File::APPEND)
-  else
-    log_file = File.open(log_config['log_path'], File::WRONLY | File::CREAT)
-  end
+  log_file = if File.exist? log_config['log_path']
+               File.open(log_config['log_path'], File::WRONLY | File::APPEND)
+             else
+               File.open(log_config['log_path'], File::WRONLY | File::CREAT)
+             end
 
   @ingest_log = Logger.new(log_file)
   @ingest_log.info("--- Starting ingest on #{Time.now} ---")
@@ -67,7 +67,7 @@ def ingest_mods_or_dublin_core
   run batch_ingester
 end
 
-def run batch_ingester
+def run(batch_ingester)
   method = "from_#{@c.mode}".to_sym
   if @c.expand_path
     batch_ingester.send method, @c.expand_path, @c.vocabulary
@@ -76,7 +76,7 @@ def run batch_ingester
   end
 end
 
-def configure batch_ingester
+def configure(batch_ingester)
   batch_ingester.ingester = Ingester.new
   batch_ingester.solr = @c.solr
   batch_ingester.root = @c.root
@@ -93,9 +93,9 @@ end
 def ingest_databases
   unless @c.test
     db = Databases.new
-    File.open(@c.expand_path, "w") { |f|
+    File.open(@c.expand_path, "w") do |f|
       f.write db.xml_file
-    }
+    end
   end
   batch_ingester = BatchIngest.new
   configure batch_ingester

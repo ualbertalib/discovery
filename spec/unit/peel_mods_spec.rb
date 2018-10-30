@@ -1,10 +1,16 @@
 require_relative "../spec_helper.rb"
 
-include E
-
 describe PeelModsVocabulary do
-  let(:mods_document) { PeelModsVocabulary.from_xml(File.open(E:: * "fixtures/peel_mods_record.xml")) }
-  let(:solr_hash) { eval(File.open(E * "fixtures/peel_solr_hash").read) }
+  let(:mods_document) do
+    PeelModsVocabulary.from_xml(File.open(
+                                  Rails.root.join('spec', 'fixtures', "peel_mods_record.xml")
+                                ))
+  end
+  let(:solr_hash) do
+    eval(File.open(
+      Rails.root.join('spec', 'fixtures', "peel_solr_hash")
+    ).read)
+  end
 
   it "should be a Dublin Core OM vocabulary with a terminology-based solrizer" do
     expect(mods_document).to be_an_instance_of PeelModsVocabulary

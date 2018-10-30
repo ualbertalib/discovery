@@ -2,12 +2,22 @@ require_relative "../spec_helper.rb"
 
 # This needs to use a mock, not hit SFX directly.
 
-include E
-
 describe SymphonyService do
-  let(:first_record) { File.open(E:: * "fixtures/first_symphony_record.xml").read }
-  let(:second_record) { File.open(E:: * "fixtures/second_symphony_record.xml").read }
-  let(:third_record) { File.open(E:: * "fixtures/third_symphony_record.xml").read }
+  let(:first_record) do
+    File.open(
+      Rails.root.join('spec', 'fixtures', "first_symphony_record.xml")
+    ).read
+  end
+  let(:second_record) do
+    File.open(
+      Rails.root.join('spec', 'fixtures', "second_symphony_record.xml")
+    ).read
+  end
+  let(:third_record) do
+    File.open(
+      Rails.root.join('spec', 'fixtures', "third_symphony_record.xml")
+    ).read
+  end
 
   it "returns an item status" do
     s = SymphonyService.new("2661760", first_record).items

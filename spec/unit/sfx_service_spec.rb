@@ -2,8 +2,6 @@ require_relative "../spec_helper.rb"
 
 # This needs to use a mock, not hit SFX directly.
 
-include E
-
 include MarcModule
 
 describe SFXService do

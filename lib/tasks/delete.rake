@@ -3,7 +3,7 @@ require 'rsolr'
 @config_file = YAML.load_file("#{Rails.root}/config/ingest.yml")
 
 desc 'Delete all records from solr index'
-task :delete, [:records] do |t, args|
+task :delete, [:records] do |_t, args|
   if ENV['SOLR_INGEST_URL']
     Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL']
   else # TODO: consider adding some logic to protect this target

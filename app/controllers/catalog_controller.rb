@@ -10,7 +10,7 @@ class CatalogController < ApplicationController
 
   search_params_logic << :show_only
 
-  def show_only solr_parameters, user_parameters
+  def show_only(solr_parameters, _user_parameters)
     solr_parameters[:fq] ||= []
   end
 
@@ -34,9 +34,7 @@ class CatalogController < ApplicationController
       @holdings = "kule" if @document["source"].first == "KULE"
     end
 
-    if @document["url_fulltext_display"]
-      @ua_urls, @non_ua_urls = holdings(@document, :links)
-    end
+    @ua_urls, @non_ua_urls = holdings(@document, :links) if @document["url_fulltext_display"]
 
     if @document["subject_t"]
       @subjects = []
@@ -45,13 +43,9 @@ class CatalogController < ApplicationController
       end
     end
 
-    if @document["author_display"]
-      @authors = @document["author_display"]
-    end
+    @authors = @document["author_display"] if @document["author_display"]
 
-    if @document["author_addl_t"]
-      @additional_authors = @document["author_addl_t"]
-    end
+    @additional_authors = @document["author_addl_t"] if @document["author_addl_t"]
 
     if @document['title_display']
       @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
@@ -59,7 +53,7 @@ class CatalogController < ApplicationController
       @document['title_display'] = "Untitled document"
     end
 
-    @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] and @document['published_display']
+    @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] && @document['published_display']
     @document.delete('publisher_tesim') if @document['published_display']
   end
 

@@ -4,7 +4,7 @@ class SymphonyController < CatalogController
 
   search_params_logic << :show_only
 
-  def show_only solr_parameters, user_parameters
+  def show_only(solr_parameters, _user_parameters)
     solr_parameters[:fq] ||= []
   end
 

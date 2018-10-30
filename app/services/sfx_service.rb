@@ -32,7 +32,7 @@ class SFXService
         end
       end
     end
-    @targets.delete_if { |key, value| value[:name].nil? }
+    @targets.delete_if { |_key, value| value[:name].nil? }
   end
 
   private

@@ -1,13 +1,28 @@
 require_relative "../spec_helper.rb"
 
-include E
 include HoldingsHelper
 
 describe HoldingsHelper do
-  let(:marc_display_with_ua_links) { File.open(E:: * "fixtures/marc_display_with_ua_links.xml").read }
-  let(:marc_display_with_bad_id) { File.open(E:: * "fixtures/marc_display_with_bad_id.xml").read }
-  let(:marc_display_with_sfx_links) { File.open(E:: * "fixtures/marc_display_with_sfx_links.xml").read }
-  let(:marc_display_with_print_holdings) { File.open(E:: * "fixtures/marc_display_with_print_holdings.xml").read }
+  let(:marc_display_with_ua_links) do
+    File.open(
+      Rails.root.join('spec', 'fixtures', "marc_display_with_ua_links.xml")
+    ).read
+  end
+  let(:marc_display_with_bad_id) do
+    File.open(
+      Rails.root.join('spec', 'fixtures', "marc_display_with_bad_id.xml")
+    ).read
+  end
+  let(:marc_display_with_sfx_links) do
+    File.open(
+      Rails.root.join('spec', 'fixtures', "marc_display_with_sfx_links.xml")
+    ).read
+  end
+  let(:marc_display_with_print_holdings) do
+    File.open(
+      Rails.root.join('spec', 'fixtures', "marc_display_with_print_holdings.xml")
+    ).read
+  end
 
   describe "holdings with items" do
     xit "should return a set of Symphony print holdings" do
