@@ -1,15 +1,15 @@
-require "logger"
+require 'logger'
 require "#{Rails.root}/lib/ingest/batch_ingest.rb"
 require "#{Rails.root}/lib/ingest/dublin_core_om.rb"
 require "#{Rails.root}/lib/ingest/peel_mods_om.rb"
 require "#{Rails.root}/lib/ingest/databases.rb"
 require "#{Rails.root}/lib/ingest/database_om.rb"
 require "#{Rails.root}/lib/ingest/promoted_services_om.rb"
-require_relative "./ingest_configuration.rb"
+require_relative './ingest_configuration.rb'
 
-require "yaml"
+require 'yaml'
 
-import "lib/tasks/delete.rake"
+import 'lib/tasks/delete.rake'
 
 @config_file = YAML.load_file("#{Rails.root}/config/ingest.yml")
 
@@ -21,8 +21,8 @@ task :ingest_info do
   else # TODO: consider adding some logic to protect this target
     puts "WARNING: Using live target from '#{Rails.env}' stanza in config/blacklight.yml (#{Blacklight.connection_config[:url]})"
   end
-  solr = RSolr.connect :url => Blacklight.connection_config[:url]
-  response = solr.get 'select', :params => { :q => '*:*', :qt => 'standard' }
+  solr = RSolr.connect url: Blacklight.connection_config[:url]
+  response = solr.get 'select', params: { q: '*:*', qt: 'standard' }
   puts "Solr collection contains #{response['response']['numFound']} results."
 end
 
@@ -40,21 +40,21 @@ task :ingest, [:collection] do |_t, args|
   @collection = args.collection
   @c = IngestConfiguration.new(args.collection, @config_file)
 
-  Rake::Task["fetch"].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
+  Rake::Task['fetch'].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
 
   @ingest_log.info("Starting #{@c.schema} ingest for #{args.collection}")
 
   case @c.schema
 
-  when "mods", "dublin_core", "services"
+  when 'mods', 'dublin_core', 'services'
     ingest_mods_or_dublin_core
 
-  when "marc"
-    Rake::Task["delete"].invoke("sfx") if @collection.include? "sfx"
+  when 'marc'
+    Rake::Task['delete'].invoke('sfx') if @collection.include? 'sfx'
     ingest_marc
 
-  when "database"
-    Rake::Task["delete"].invoke("databases")
+  when 'database'
+    Rake::Task['delete'].invoke('databases')
     ingest_databases
   end
 
@@ -87,13 +87,13 @@ end
 def ingest_marc
   ENV['MARC_FILE'] = @c.path
   ENV['CONFIG_PATH'] = @c.config
-  Rake::Task["solr:marc:index"].invoke
+  Rake::Task['solr:marc:index'].invoke
 end
 
 def ingest_databases
   unless @c.test
     db = Databases.new
-    File.open(@c.expand_path, "w") do |f|
+    File.open(@c.expand_path, 'w') do |f|
       f.write db.xml_file
     end
   end
@@ -105,9 +105,9 @@ end
 namespace :ingest do
   desc 'ingest all data sources'
   task :all do
-    @config_file["collections"].each do |collection|
-      Rake::Task["ingest"].invoke(collection)
-      Rake::Task["ingest"].reenable
+    @config_file['collections'].each do |collection|
+      Rake::Task['ingest'].invoke(collection)
+      Rake::Task['ingest'].reenable
     end
   end
 end

@@ -1,4 +1,4 @@
-require_relative "./marc_module.rb"
+require_relative './marc_module.rb'
 
 class SFXService
   include MarcModule
@@ -23,12 +23,12 @@ class SFXService
       @targets[sfx_id(target)] = { id: sfx_id(target), coverage: coverage }
     end
 
-    sfx_results_for(document.id).xpath("//target").each do |target|
+    sfx_results_for(document.id).xpath('//target').each do |target|
       unless local_targets.include? name(target)
         if @targets[id(target)]
           @targets[id(target)].merge!(name: display_name(target), url: url(target), our_target: our_link(target), note: note(target))
         else
-          @targets[id(target)] = { name: display_name(target), url: url(target), our_target: our_link(target), note: note(target), coverage: "Coverage information temporarily unavailable." }
+          @targets[id(target)] = { name: display_name(target), url: url(target), our_target: our_link(target), note: note(target), coverage: 'Coverage information temporarily unavailable.' }
         end
       end
     end
@@ -53,30 +53,30 @@ class SFXService
   end
 
   def local_targets
-    ["LOCAL_CATALOGUE_SIRSI_UNICORN", "MESSAGE_NO_DOCDEL_LCL", "MESSAGE_NO_HOLD_LCL"]
+    ['LOCAL_CATALOGUE_SIRSI_UNICORN', 'MESSAGE_NO_DOCDEL_LCL', 'MESSAGE_NO_HOLD_LCL']
   end
 
   def name(target)
-    target.xpath("target_name").text
+    target.xpath('target_name').text
   end
 
   def display_name(target)
-    target.xpath("target_public_name").text
+    target.xpath('target_public_name').text
   end
 
   def url(target)
-    target.xpath("target_url").text
+    target.xpath('target_url').text
   end
 
   def note(target)
-    target.xpath("note").text
+    target.xpath('note').text
   end
 
   def id(target)
-    BigDecimal(target.xpath("target_service_id").text).to_i
+    BigDecimal(target.xpath('target_service_id').text).to_i
   end
 
   def our_link(target)
-    target.xpath("authentication").text.gsub("http", "https") if target.xpath("authentication").text.include?("tal.scholarsportal.info") || target.xpath("authentication").text.include?("Licensing note")
+    target.xpath('authentication').text.gsub('http', 'https') if target.xpath('authentication').text.include?('tal.scholarsportal.info') || target.xpath('authentication').text.include?('Licensing note')
   end
 end

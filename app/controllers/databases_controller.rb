@@ -11,6 +11,6 @@ class DatabasesController < CatalogController
 
   def index
     super
-    @collection_name = "Databases"
+    @collection_name = 'Databases'
   end
 end

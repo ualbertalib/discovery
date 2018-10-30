@@ -1,6 +1,6 @@
-require_relative "../services/sfx_service.rb"
-require_relative "../services/symphony_service.rb"
-require_relative "../services/marc_module.rb"
+require_relative '../services/sfx_service.rb'
+require_relative '../services/symphony_service.rb'
+require_relative '../services/marc_module.rb'
 
 module HoldingsHelper
   include MarcModule
@@ -31,8 +31,8 @@ module HoldingsHelper
 
   # determines whether or not ual shield should be displayed for the item
   def display_ual_shield(document)
-    return false unless document["location_tesim"]
-    UAL_SHIELD_LIBRARIES.each { |library| return true if document["location_tesim"].include? library }
+    return false unless document['location_tesim']
+    UAL_SHIELD_LIBRARIES.each { |library| return true if document['location_tesim'].include? library }
     false
   end
 
@@ -51,6 +51,6 @@ module HoldingsHelper
   # returns the library description that matches the code coming from symphony ws
   # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme
   def library_location(library_code)
-    SYMPHONY_LIBRARY_LOCATIONS[library_code.downcase.delete("_").to_sym]
+    SYMPHONY_LIBRARY_LOCATIONS[library_code.downcase.delete('_').to_sym]
   end
 end

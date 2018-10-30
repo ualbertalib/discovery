@@ -13,6 +13,6 @@ class EbooksController < CatalogController
 
   def index
     super
-    @collection_name = "electronic books"
+    @collection_name = 'electronic books'
   end
 end

@@ -10,6 +10,6 @@ class SymphonyController < CatalogController
 
   def index
     super
-    @collection_name = ""
+    @collection_name = ''
   end
 end

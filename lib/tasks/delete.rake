@@ -9,16 +9,16 @@ task :delete, [:records] do |_t, args|
   else # TODO: consider adding some logic to protect this target
     puts "WARNING: Using live target from '#{Rails.env}' stanza in config/blacklight.yml (#{Blacklight.connection_config[:url]})"
   end
-  solr = RSolr.connect :url => Blacklight.connection_config[:url]
+  solr = RSolr.connect url: Blacklight.connection_config[:url]
   case args.records
 
-  when "databases"
+  when 'databases'
     solr.delete_by_query 'format:Database'
-  when "sfx"
-    puts "Deleting SFX"
+  when 'sfx'
+    puts 'Deleting SFX'
     solr.delete_by_query 'source:SFX'
-  when "symphony"
-    puts "Deleting Symphony"
+  when 'symphony'
+    puts 'Deleting Symphony'
     solr.delete_by_query 'source:Symphony'
   else
     solr.delete_by_query '*:*'

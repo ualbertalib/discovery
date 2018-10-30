@@ -1,9 +1,9 @@
-xml.instruct! :xml, :version => "1.0"
-xml.rss(:version => "2.0") do
+xml.instruct! :xml, version: '1.0'
+xml.rss(version: '2.0') do
   xml.channel do
-    xml.title(t('blacklight.search.title', :application_name => application_name))
+    xml.title(t('blacklight.search.title', application_name: application_name))
     xml.link(catalog_index_url(params))
-    xml.description(t('blacklight.search.title', :application_name => application_name))
+    xml.description(t('blacklight.search.title', application_name: application_name))
     xml.language('en-us')
     @document_list.each do |doc|
       xml.item do

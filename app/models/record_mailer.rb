@@ -12,13 +12,13 @@ class RecordMailer < ActionMailer::Base
     @location       = details[:location]
     @url_gen_params = url_gen_params
 
-    mail(:to => details[:to], :subject => subject, :from => "no-reply@ualberta.ca")
+    mail(to: details[:to], subject: subject, from: 'no-reply@ualberta.ca')
   end
 
   def sms_record(documents, details, url_gen_params)
     @documents      = documents
     @url_gen_params = url_gen_params
     subject = details[:call].empty? ? "From University of Alberta Libraries: #{documents.first.to_semantic_values[:title].first}" : details[:call]
-    mail(:to => details[:to], :subject => subject, :from => "no-reply@ualberta.ca")
+    mail(to: details[:to], subject: subject, from: 'no-reply@ualberta.ca')
   end
 end

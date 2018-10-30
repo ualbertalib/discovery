@@ -39,8 +39,8 @@ module Blacklight::Catalog
 
     respond_to do |format|
       format.html { store_preferred_view }
-      format.rss  { render :layout => false }
-      format.atom { render :layout => false }
+      format.rss  { render layout: false }
+      format.atom { render layout: false }
       format.json do
         render json: render_search_results_as_json
       end
@@ -68,12 +68,12 @@ module Blacklight::Catalog
     search_session['counter'] = params[:counter]
     search_session['per_page'] = params[:per_page]
 
-    path = if params[:redirect] && (params[:redirect].starts_with?("/") || params[:redirect] =~ URI::DEFAULT_PARSER.make_regexp)
+    path = if params[:redirect] && (params[:redirect].starts_with?('/') || params[:redirect] =~ URI::DEFAULT_PARSER.make_regexp)
              URI.parse(params[:redirect]).path
            else
              { action: 'show' }
            end
-    redirect_to path, :status => 303
+    redirect_to path, status: 303
   end
 
   # displays values and pagination links for a single facet field
@@ -90,7 +90,7 @@ module Blacklight::Catalog
       format.json { render json: render_facet_list_as_json }
 
       # Draw the partial for the "more" facet modal window:
-      format.js { render :layout => false }
+      format.js { render layout: false }
     end
   end
 
@@ -98,10 +98,10 @@ module Blacklight::Catalog
   def opensearch
     respond_to do |format|
       format.xml do
-        render :layout => false
+        render layout: false
       end
       format.json do
-        render :json => get_opensearch_response
+        render json: get_opensearch_response
       end
     end
   end
@@ -206,9 +206,9 @@ module Blacklight::Catalog
 
   def search_facets_as_json
     facets_from_request.as_json.each do |f|
-      f.delete "options"
-      f["label"] = facet_configuration_for_field(f["name"]).label
-      f["items"] = f["items"].as_json.each do |i|
+      f.delete 'options'
+      f['label'] = facet_configuration_for_field(f['name']).label
+      f['items'] = f['items'].as_json.each do |i|
         i['label'] ||= i['value']
       end
     end
@@ -223,7 +223,7 @@ module Blacklight::Catalog
   # By default, any search action from a Blacklight::Catalog controller
   # should use the current controller when constructing the route.
   def search_action_url(options = {})
-    url_for(options.merge(:action => 'index'))
+    url_for(options.merge(action: 'index'))
   end
 
   # extract the pagination info from the response object
@@ -241,7 +241,7 @@ module Blacklight::Catalog
 
   # Email Action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
   def email_action(documents)
-    mail = RecordMailer.email_record(documents, { :to => params[:to], :message => params[:message], :call => params[:call], :location => params[:location] }, url_options)
+    mail = RecordMailer.email_record(documents, { to: params[:to], message: params[:message], call: params[:call], location: params[:location] }, url_options)
     if mail.respond_to? :deliver_now
       mail.deliver_now
     else
@@ -252,7 +252,7 @@ module Blacklight::Catalog
   # SMS action (this will render the appropriate view on GET requests and process the form and send the email on POST requests)
   def sms_action(documents)
     to = "#{params[:to].gsub(/[^\d]/, '')}@#{params[:carrier]}"
-    mail = RecordMailer.sms_record(documents, { :to => to, :call => params[:call] }, url_options)
+    mail = RecordMailer.sms_record(documents, { to: to, call: params[:call] }, url_options)
     if mail.respond_to? :deliver_now
       mail.deliver_now
     else
@@ -266,7 +266,7 @@ module Blacklight::Catalog
     elsif params[:carrier].blank?
       flash[:error] = I18n.t('blacklight.sms.errors.carrier.blank')
     elsif params[:to].gsub(/[^\d]/, '').length != 10
-      flash[:error] = I18n.t('blacklight.sms.errors.to.invalid', :to => params[:to])
+      flash[:error] = I18n.t('blacklight.sms.errors.to.invalid', to: params[:to])
     elsif !sms_mappings.value?(params[:carrier])
       flash[:error] = I18n.t('blacklight.sms.errors.carrier.invalid')
     end
@@ -291,7 +291,7 @@ module Blacklight::Catalog
     if params[:to].blank?
       flash[:error] = I18n.t('blacklight.email.errors.to.blank')
     elsif !params[:to].match(defined?(Devise) ? Devise.email_regexp : /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/)
-      flash[:error] = I18n.t('blacklight.email.errors.to.invalid', :to => params[:to])
+      flash[:error] = I18n.t('blacklight.email.errors.to.invalid', to: params[:to])
     end
 
     flash[:error].blank?
@@ -313,13 +313,13 @@ module Blacklight::Catalog
   # moved to invalid_document_id_error
   def invalid_solr_id_error(exception)
     error_info = {
-      "status" => "404",
-      "error"  => "#{exception.class}: #{exception.message}"
+      'status' => '404',
+      'error'  => "#{exception.class}: #{exception.message}"
     }
 
     respond_to do |format|
-      format.xml  { render :xml  => error_info, :status => 404 }
-      format.json { render :json => error_info, :status => 404 }
+      format.xml  { render xml: error_info, status: 404 }
+      format.json { render json: error_info, status: 404 }
 
       # default to HTML response, even for other non-HTML formats we don't
       # neccesarily know about, seems to be consistent with what Rails4 does
@@ -329,13 +329,13 @@ module Blacklight::Catalog
         # possibly non-html formats, this is consistent with what Rails does
         # on raising an ActiveRecord::RecordNotFound. Rails.root IS needed
         # for it to work under testing, without worrying about CWD.
-        render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false, :content_type => 'text/html'
+        render file: "#{Rails.root}/public/404.html", status: 404, layout: false, content_type: 'text/html'
       end
     end
   end
   deprecation_deprecate invalid_solr_id_error: :invalid_document_id_error
 
   def start_new_search_session?
-    action_name == "index"
+    action_name == 'index'
   end
 end

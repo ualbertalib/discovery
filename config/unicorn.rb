@@ -24,14 +24,14 @@ worker_processes 4
 # Neil#working_directory "/path/to/app/current" # available in 0.94.0+
 # working_directory "/var/www/sites/houston.library.ualberta.ca" # available in 0.94.0+
 # root = "/var/www/sites/houston.library.ualberta.ca"
-working_directory "/var/www/sites/blacklight"
-root = "/var/www/sites/blacklight"
+working_directory '/var/www/sites/blacklight'
+root = '/var/www/sites/blacklight'
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
 # Neil#listen "/path/to/.unicorn.sock", :backlog => 64
-listen "/tmp/unicorn.blacklight.sock", :backlog => 64
-listen 8080, :tcp_nopush => true
+listen '/tmp/unicorn.blacklight.sock', backlog: 64
+listen 8080, tcp_nopush: true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30

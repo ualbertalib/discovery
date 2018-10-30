@@ -41,7 +41,7 @@ module Blacklight::FacetsHelperBehavior
     return unless should_render_facet?(display_facet)
     options = options.dup
     options[:partial] ||= facet_partial_name(display_facet)
-    options[:layout] ||= "facet_layout" unless options.key?(:layout)
+    options[:layout] ||= 'facet_layout' unless options.key?(:layout)
     options[:locals] ||= {}
     options[:locals][:solr_field] ||= display_facet.name
     options[:locals][:facet_field] ||= facet_configuration_for_field(display_facet.name)
@@ -106,8 +106,8 @@ module Blacklight::FacetsHelperBehavior
   def facet_partial_name(display_facet = nil)
     config = facet_configuration_for_field(display_facet.name)
     name = config.try(:partial)
-    name ||= "facet_pivot" if config.pivot
-    name ||= "facet_limit"
+    name ||= 'facet_pivot' if config.pivot
+    name ||= 'facet_limit'
   end
 
   ##
@@ -121,16 +121,16 @@ module Blacklight::FacetsHelperBehavior
   # @option options [Boolean] :suppress_link display the facet, but don't link to it
   # @return [String]
   def render_facet_value(facet_solr_field, item, options = {})
-    if facet_solr_field == "languagenote_tesim"
-      languages = { english: "English", french: "French", other: "Other" }
+    if facet_solr_field == 'languagenote_tesim'
+      languages = { english: 'English', french: 'French', other: 'Other' }
       path = search_action_path(add_facet_params_and_redirect(facet_solr_field, item))
-      content_tag(:span, :class => "facet-label") do
-        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, languages[item.value.downcase.to_sym]), path, :class => "facet_select")
+      content_tag(:span, class: 'facet-label') do
+        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, languages[item.value.downcase.to_sym]), path, class: 'facet_select')
       end + render_facet_count(item.hits)
     else
       path = search_action_path(add_facet_params_and_redirect(facet_solr_field, item))
-      content_tag(:span, :class => "facet-label") do
-        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, item), path, :class => "facet_select")
+      content_tag(:span, class: 'facet-label') do
+        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, item), path, class: 'facet_select')
       end + render_facet_count(item.hits)
     end
   end
@@ -139,11 +139,11 @@ module Blacklight::FacetsHelperBehavior
   # Standard display of a SELECTED facet value (e.g. without a link and with a remove button)
   # @params (see #render_facet_value)
   def render_selected_facet_value(facet_solr_field, item)
-    content_tag(:span, :class => "facet-label") do
-      content_tag(:span, facet_display_value(facet_solr_field, item), :class => "selected") +
+    content_tag(:span, class: 'facet-label') do
+      content_tag(:span, facet_display_value(facet_solr_field, item), class: 'selected') +
         # remove link
-        link_to(content_tag(:span, '', :class => "glyphicon glyphicon-remove") + content_tag(:span, '[remove]', :class => 'sr-only'), search_action_path(remove_facet_params(facet_solr_field, item, params)), :class => "remove")
-    end + render_facet_count(item.hits, :classes => ["selected"])
+        link_to(content_tag(:span, '', class: 'glyphicon glyphicon-remove') + content_tag(:span, '[remove]', class: 'sr-only'), search_action_path(remove_facet_params(facet_solr_field, item, params)), class: 'remove')
+    end + render_facet_count(item.hits, classes: ['selected'])
   end
 
   ##
@@ -155,8 +155,8 @@ module Blacklight::FacetsHelperBehavior
   # @option options [Array<String>]  an array of classes to add to count span.
   # @return [String]
   def render_facet_count(num, options = {})
-    classes = (options[:classes] || []) << "facet-count"
-    content_tag("span", t('blacklight.search.facets.count', :number => number_with_delimiter(num)), :class => classes)
+    classes = (options[:classes] || []) << 'facet-count'
+    content_tag('span', t('blacklight.search.facets.count', number: number_with_delimiter(num)), class: classes)
   end
 
   ##

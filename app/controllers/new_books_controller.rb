@@ -12,14 +12,14 @@ class NewBooksController < CatalogController
 
   def index
     super
-    @collection_name = "New Books"
-    render "new_books"
+    @collection_name = 'New Books'
+    render 'new_books'
   end
 
   private
 
   def list_of_ids
-    ids.join(" OR ")
+    ids.join(' OR ')
   end
 
   def ids

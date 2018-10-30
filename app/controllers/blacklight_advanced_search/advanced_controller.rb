@@ -25,13 +25,13 @@ class BlacklightAdvancedSearch::AdvancedController < CatalogController
       # context. Kind of hacky becuase solr_search_params insists on
       # using controller.params, not letting us over-ride.
       search_context_params.delete(:q)
-      search_context_params.delete("q")
+      search_context_params.delete('q')
 
       # Also delete any facet-related params, or anything else
       # we want to set ourselves
       search_context_params.delete_if do |k, _v|
         k = k.to_s
-        (["facet.limit", "facet.sort", "f", "facets", "facet.fields", "per_page"].include?(k) ||
+        (['facet.limit', 'facet.sort', 'f', 'facets', 'facet.fields', 'per_page'].include?(k) ||
           k =~ /f\..+\.facet\.limit/ ||
           k =~ /f\..+\.facet\.sort/
         )

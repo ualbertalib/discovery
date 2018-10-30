@@ -3,8 +3,8 @@ class IngestConfiguration
 
   def initialize(collection, config = {})
     Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL'] if ENV['SOLR_INGEST_URL']
-    @proxy = config["proxy"]
-    @collection = config["collections"]
+    @proxy = config['proxy']
+    @collection = config['collections']
     config[collection].each { |k, v| instance_variable_set("@#{k}", v) }
   end
 

@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # Core Rails stuff
-gem "activerecord-session_store"
+gem 'activerecord-session_store'
 gem 'rails', '4.2.10'
 
 # Database stuff
@@ -17,20 +17,20 @@ gem 'turbolinks', '5.2.0'
 gem 'uglifier', '>= 1.3.0'
 
 # blacklight stuff
-gem "blacklight", "5.15.0"
-gem "blacklight-marc", "~> 5.10.0"
-gem "blacklight_advanced_search"
+gem 'blacklight', '5.15.0'
+gem 'blacklight-marc', '~> 5.10.0'
+gem 'blacklight_advanced_search'
 gem 'blacklight_google_analytics'
-gem "blacklight_range_limit"
+gem 'blacklight_range_limit'
 
 # Authentication
-gem "devise"
-gem "devise-guests"
+gem 'devise'
+gem 'devise-guests'
 
 # Misc Utilities
 gem 'friendly_id'
 gem 'nokogiri', '~> 1.8.5'
-gem "om"
+gem 'om'
 gem 'paperclip', '~> 6.1.0'
 
 # Content Management System
@@ -43,7 +43,7 @@ group :test, :development do
   gem 'sdoc', require: false
 
   gem 'factory_bot'
-  gem "rspec"
+  gem 'rspec'
   gem 'rspec-rails'
   gem 'rspec-solr'
 

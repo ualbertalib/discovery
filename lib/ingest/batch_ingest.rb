@@ -1,4 +1,4 @@
-require_relative "./ingester.rb"
+require_relative './ingester.rb'
 
 class BatchIngest
   attr_writer :ingester, :root, :namespace, :record_delimiter
@@ -11,8 +11,8 @@ class BatchIngest
     read file
     @records.each_with_index do |record, _index|
       solr = vocabulary.from_xml(record.to_s).to_solr
-      next unless solr["id_tesim"]
-      solr[:id] = solr["id_tesim"].first
+      next unless solr['id_tesim']
+      solr[:id] = solr['id_tesim'].first
       add solr if solr[:id]
     end
     @ingester.commit
@@ -20,7 +20,7 @@ class BatchIngest
 
   def from_directory(dir, vocabulary)
     Dir.foreach(dir) do |file|
-      next if [".", ".."].include? file
+      next if ['.', '..'].include? file
       path = "#{dir}/#{file}"
       from_file(path, vocabulary)
     end

@@ -12,6 +12,6 @@ class JournalsController < CatalogController
 
   def index
     super
-    @collection_name = "e-Journals"
+    @collection_name = 'e-Journals'
   end
 end

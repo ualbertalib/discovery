@@ -1,4 +1,4 @@
-require "open-uri"
+require 'open-uri'
 
 class CatalogController < ApplicationController
   # include BlacklightGoogleAnalytics::ControllerExtraHead
@@ -16,41 +16,41 @@ class CatalogController < ApplicationController
 
   def index
     super
-    @collection_name = ""
+    @collection_name = ''
   end
 
   def show
     super
     @holdings = []
-    if @document["source"]
-      if @document["source"].first == "Symphony"
+    if @document['source']
+      if @document['source'].first == 'Symphony'
         @holdings = holdings(@document, :items)
         unless @holdings.nil? || @holdings.first.nil?
           @holdable = @holdings.first[:holdable]
           @holdings.sort! { |a, b| b[:location].downcase <=> a[:location].downcase }
         end
       end
-      @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
-      @holdings = "kule" if @document["source"].first == "KULE"
+      @holdings = fetch_sfx_holdings(@document) if @document['source'].first == 'SFX'
+      @holdings = 'kule' if @document['source'].first == 'KULE'
     end
 
-    @ua_urls, @non_ua_urls = holdings(@document, :links) if @document["url_fulltext_display"]
+    @ua_urls, @non_ua_urls = holdings(@document, :links) if @document['url_fulltext_display']
 
-    if @document["subject_t"]
+    if @document['subject_t']
       @subjects = []
-      @document["subject_t"].each do |subject|
-        @subjects << subject.split("--")
+      @document['subject_t'].each do |subject|
+        @subjects << subject.split('--')
       end
     end
 
-    @authors = @document["author_display"] if @document["author_display"]
+    @authors = @document['author_display'] if @document['author_display']
 
-    @additional_authors = @document["author_addl_t"] if @document["author_addl_t"]
+    @additional_authors = @document['author_addl_t'] if @document['author_addl_t']
 
     if @document['title_display']
       @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
     else
-      @document['title_display'] = "Untitled document"
+      @document['title_display'] = 'Untitled document'
     end
 
     @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] && @document['published_display']
@@ -61,8 +61,8 @@ class CatalogController < ApplicationController
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
 
     config.default_solr_params = {
-      :qt => 'search',
-      :rows => 25
+      qt: 'search',
+      rows: 25
     }
 
     # solr path which will be added to solr base url before the other solr params.
@@ -109,24 +109,24 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the
     # facet bar
-    config.add_facet_field 'electronic_tesim', :label => 'Access', collapse: false
-    config.add_facet_field 'institution_tesim', :label => 'Institution'
-    config.add_facet_field 'location_tesim', :label => 'Library', sort: 'index'
-    config.add_facet_field 'lc_1letter_facet', :label => 'Call Number', :limit => 10
-    config.add_facet_field 'format', :label => 'Format', :limit => 10
-    config.add_facet_field 'pub_date', :label => 'Publication Year', :range => true
+    config.add_facet_field 'electronic_tesim', label: 'Access', collapse: false
+    config.add_facet_field 'institution_tesim', label: 'Institution'
+    config.add_facet_field 'location_tesim', label: 'Library', sort: 'index'
+    config.add_facet_field 'lc_1letter_facet', label: 'Call Number', limit: 10
+    config.add_facet_field 'format', label: 'Format', limit: 10
+    config.add_facet_field 'pub_date', label: 'Publication Year', range: true
     # config.add_facet_field 'example_query_facet_field', :label => 'Published Since', :query => {
     #    :years_5 => { :label => 'within 5 Years', :fq => "pub_date:[#{Time.now.year - 5 } TO *]" },
     #    :years_10 => { :label => 'within 10 Years', :fq => "pub_date:[#{Time.now.year - 10 } TO *]" },
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
-    config.add_facet_field 'author_display', :label => 'Author', :limit => 20
-    config.add_facet_field 'subject_topic_facet', :label => 'Subject', :limit => 20
-    config.add_facet_field 'language_facet', :label => 'Language', :limit => 10
+    config.add_facet_field 'author_display', label: 'Author', limit: 20
+    config.add_facet_field 'subject_topic_facet', label: 'Subject', limit: 20
+    config.add_facet_field 'language_facet', label: 'Language', limit: 10
     # config.add_facet_field 'languagenote_tesim', :label => 'Language', :limit => 10
-    config.add_facet_field 'subject_geo_facet', :label => 'Geographic Region', :limit => 10
-    config.add_facet_field 'subject_era_facet', :label => 'Historic Period', :limit => 10
-    config.add_facet_field 'owning_library_tesim', :label => 'Owning Library'
+    config.add_facet_field 'subject_geo_facet', label: 'Geographic Region', limit: 10
+    config.add_facet_field 'subject_era_facet', label: 'Historic Period', limit: 10
+    config.add_facet_field 'owning_library_tesim', label: 'Owning Library'
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -137,15 +137,15 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     # config.add_index_field 'title_display', :label => 'Title'
     # config.add_index_field 'title_vern_display', :label => 'Title'
-    config.add_index_field 'author_display', :label => 'Author'
-    config.add_index_field 'edition_tesim', :label => 'Edition'
-    config.add_index_field 'author_vern_display', :label => 'Author'
-    config.add_index_field 'format', :label => 'Format'
-    config.add_index_field 'languagenote_tesim', :label => 'Language'
-    config.add_index_field 'language_note_tesim', :label => 'Language'
+    config.add_index_field 'author_display', label: 'Author'
+    config.add_index_field 'edition_tesim', label: 'Edition'
+    config.add_index_field 'author_vern_display', label: 'Author'
+    config.add_index_field 'format', label: 'Format'
+    config.add_index_field 'languagenote_tesim', label: 'Language'
+    config.add_index_field 'language_note_tesim', label: 'Language'
     # config.add_index_field 'published_display', :label => 'Published'
     # config.add_index_field 'published_vern_display', :label => 'Published'
-    config.add_index_field 'pub_date', :label => 'Publication Year'
+    config.add_index_field 'pub_date', label: 'Publication Year'
     # config.add_index_field 'isbn_tesim', :label => 'ISBN'
     # config.add_index_field 'issn_tesim', :label => 'ISSN'
 
@@ -153,52 +153,52 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     # config.add_show_field 'title_display', :label => 'Title'
     # config.add_show_field 'title_vern_display', :label => 'Title'
-    config.add_show_field 'title_addl_t', :label => 'Full/Alternate Title(s)'
+    config.add_show_field 'title_addl_t', label: 'Full/Alternate Title(s)'
     # config.add_show_field 'subtitle_display', :label => 'Subtitle'
     # config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
-    config.add_show_field 'section_number_tesim', :label => "Section Number"
-    config.add_show_field 'section_name_tesim', :label => "Section Name"
-    config.add_show_field 'alternate_display_tesim', :label => "Original"
+    config.add_show_field 'section_number_tesim', label: 'Section Number'
+    config.add_show_field 'section_name_tesim', label: 'Section Name'
+    config.add_show_field 'alternate_display_tesim', label: 'Original'
     # config.add_show_field 'edition_tesim', :label => "Edition"
-    config.add_show_field 'author_display', :label => 'Author'
-    config.add_show_field 'author_addl_t', :label => "Additional authors/performers"
-    config.add_show_field 'author_vern_display', :label => 'Author'
+    config.add_show_field 'author_display', label: 'Author'
+    config.add_show_field 'author_addl_t', label: 'Additional authors/performers'
+    config.add_show_field 'author_vern_display', label: 'Author'
     # config.add_show_field 'uniform_title_tesim', :label => 'Uniform Title'
-    config.add_show_field 'format', :label => 'Format'
+    config.add_show_field 'format', label: 'Format'
     # config.add_show_field 'language_facet', :label => 'Language'
-    config.add_show_field 'publisher_tesim', :label => 'Publisher'
-    config.add_show_field 'published_display', :label => 'Published'
-    config.add_show_field 'published_vern_display', :label => 'Published'
-    config.add_show_field 'pub_date', :label => 'Year'
+    config.add_show_field 'publisher_tesim', label: 'Publisher'
+    config.add_show_field 'published_display', label: 'Published'
+    config.add_show_field 'published_vern_display', label: 'Published'
+    config.add_show_field 'pub_date', label: 'Year'
     # config.add_show_field 'material_type_display', :label => 'Contains'
     # config.add_show_field 'size_tesim', :label => 'Size'
     # config.add_show_field 'description_tesim', :label => 'Other Details'
-    config.add_show_field 'contains_tesim', :label => "Other Physical Details"
-    config.add_show_field 'moreinfo_tesim', :label => 'Additional Information'
-    config.add_show_field 'isbn_tesim', :label => 'ISBN'
-    config.add_show_field 'issn_tesim', :label => 'ISSN'
-    config.add_show_field 'general_note_tesim', :label => 'General Note', separator: ' -- '
-    config.add_show_field 'local_note_tesim', :label => 'Note', separator: ' -- '
-    config.add_show_field 'contents_tesim', :label => 'Contents'
-    config.add_show_field 'summary_tesim', :label => 'Summary'
-    config.add_show_field 'target_audience_note_tesim', :label => 'Target Audience'
-    config.add_show_field 'awards_note_tesim', :label => 'Awards'
-    config.add_show_field 'bibliography_note_tesim', :label => 'Bibliography Note'
-    config.add_show_field 'earlier_title_tesim', :label => 'Earlier title'
-    config.add_show_field 'later_title_tesim', :label => 'Later title'
-    config.add_show_field 'gmd_tesim', :label => 'Object type'
-    config.add_show_field 'performers_tesim', :label => 'Performers'
-    config.add_show_field 'title_series_t', :label => 'Series'
-    config.add_show_field 'publisher_number_tesim', :label => 'Publisher/issue number'
-    config.add_show_field 'arrangement_tesim', :label => "Organization and Arrangement"
-    config.add_show_field 'time_of_event_tesim', :label => "Date and Time of Event"
-    config.add_show_field 'issuing_body_tesim', :label => "Issuing Body"
-    config.add_show_field 'supplementary_note_tesim', :label => "Supplement Note"
-    config.add_show_field 'title_history_tesim', :label => "Title History"
-    config.add_show_field 'numbering_tesim', :label => "Numbering System"
-    config.add_show_field 'use_repro_tesim', :label => "Use and Reproduction"
-    config.add_show_field 'languagenote_tesim', :label => "Language Note"
-    config.add_show_field 'language_note_tesim', :label => "Language Note"
+    config.add_show_field 'contains_tesim', label: 'Other Physical Details'
+    config.add_show_field 'moreinfo_tesim', label: 'Additional Information'
+    config.add_show_field 'isbn_tesim', label: 'ISBN'
+    config.add_show_field 'issn_tesim', label: 'ISSN'
+    config.add_show_field 'general_note_tesim', label: 'General Note', separator: ' -- '
+    config.add_show_field 'local_note_tesim', label: 'Note', separator: ' -- '
+    config.add_show_field 'contents_tesim', label: 'Contents'
+    config.add_show_field 'summary_tesim', label: 'Summary'
+    config.add_show_field 'target_audience_note_tesim', label: 'Target Audience'
+    config.add_show_field 'awards_note_tesim', label: 'Awards'
+    config.add_show_field 'bibliography_note_tesim', label: 'Bibliography Note'
+    config.add_show_field 'earlier_title_tesim', label: 'Earlier title'
+    config.add_show_field 'later_title_tesim', label: 'Later title'
+    config.add_show_field 'gmd_tesim', label: 'Object type'
+    config.add_show_field 'performers_tesim', label: 'Performers'
+    config.add_show_field 'title_series_t', label: 'Series'
+    config.add_show_field 'publisher_number_tesim', label: 'Publisher/issue number'
+    config.add_show_field 'arrangement_tesim', label: 'Organization and Arrangement'
+    config.add_show_field 'time_of_event_tesim', label: 'Date and Time of Event'
+    config.add_show_field 'issuing_body_tesim', label: 'Issuing Body'
+    config.add_show_field 'supplementary_note_tesim', label: 'Supplement Note'
+    config.add_show_field 'title_history_tesim', label: 'Title History'
+    config.add_show_field 'numbering_tesim', label: 'Numbering System'
+    config.add_show_field 'use_repro_tesim', label: 'Use and Reproduction'
+    config.add_show_field 'languagenote_tesim', label: 'Language Note'
+    config.add_show_field 'language_note_tesim', label: 'Language Note'
 
     # config.add_show_field 'subject_topic_facet', :label => 'Subject'
     # config.add_show_field 'subject_addl_t', :label => 'Additional subject'
@@ -223,7 +223,7 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
 
-    config.add_search_field 'all_fields', :label => 'All Fields'
+    config.add_search_field 'all_fields', label: 'All Fields'
 
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
@@ -238,16 +238,16 @@ class CatalogController < ApplicationController
       # Solr parameter de-referencing like $title_qf.
       # See: http://wiki.apache.org/solr/LocalParams
       field.solr_local_parameters = {
-        :qf => '$title_qf',
-        :pf => '$title_pf'
+        qf: '$title_qf',
+        pf: '$title_pf'
       }
     end
 
     config.add_search_field('author') do |field|
       field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
       field.solr_local_parameters = {
-        :qf => '$author_qf',
-        :pf => '$author_pf'
+        qf: '$author_qf',
+        pf: '$author_pf'
       }
     end
 
@@ -258,8 +258,8 @@ class CatalogController < ApplicationController
       field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
       field.qt = 'search'
       field.solr_local_parameters = {
-        :qf => '$subject_qf',
-        :pf => '$subject_pf'
+        qf: '$subject_qf',
+        pf: '$subject_pf'
       }
     end
 
@@ -267,10 +267,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_sort desc, title_sort asc', :label => 'relevance'
-    config.add_sort_field 'pub_date_sort desc, title_sort asc', :label => 'year'
-    config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
-    config.add_sort_field 'title_sort asc, pub_date_sort desc', :label => 'title'
+    config.add_sort_field 'score desc, pub_date_sort desc, title_sort asc', label: 'relevance'
+    config.add_sort_field 'pub_date_sort desc, title_sort asc', label: 'year'
+    config.add_sort_field 'author_sort asc, title_sort asc', label: 'author'
+    config.add_sort_field 'title_sort asc, pub_date_sort desc', label: 'title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
