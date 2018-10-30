@@ -177,24 +177,6 @@ Style/ConditionalAssignment:
     - 'lib/ingest/databases.rb'
     - 'lib/tasks/ingest.rake'
 
-# Offense count: 13
-# Cop supports --auto-correct.
-Style/Encoding:
-  Exclude:
-    - 'app/controllers/bookmarks_controller.rb'
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/controllers/databases_controller.rb'
-    - 'app/controllers/ebooks_controller.rb'
-    - 'app/controllers/journals_controller.rb'
-    - 'app/controllers/new_books_controller.rb'
-    - 'app/controllers/symphony_controller.rb'
-    - 'app/models/record_mailer.rb'
-    - 'app/models/solr_document.rb'
-    - 'config/initializers/comfortable_mexican_sofa.rb'
-    - 'lib/blacklight/catalog.rb'
-    - 'lib/blacklight/solr/document/sms.rb'
-    - 'spec/unit/solr_document_spec.rb'
-
 # Offense count: 9
 # Cop supports --auto-correct.
 Style/ExpandPathArguments:
@@ -278,58 +260,6 @@ Style/MixinUsage:
     - 'spec/unit/promoted_services_spec.rb'
     - 'spec/unit/sfx_service_spec.rb'
     - 'spec/unit/symphony_service_spec.rb'
-
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: Strict.
-Style/NumericLiterals:
-  MinDigits: 17
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, EnforcedStyle.
-# SupportedStyles: predicate, comparison
-Style/NumericPredicate:
-  Exclude:
-    - 'spec/**/*'
-    - 'app/services/symphony_service.rb'
-
-# Offense count: 6
-# Cop supports --auto-correct.
-# Configuration parameters: AllowSafeAssignment, AllowInMultilineConditions.
-Style/ParenthesesAroundCondition:
-  Exclude:
-    - 'app/services/sfx_service.rb'
-    - 'app/views/catalog/index.atom.builder'
-    - 'lib/ingest/databases.rb'
-
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: AllowMultipleReturnValues.
-Style/RedundantReturn:
-  Exclude:
-    - 'app/helpers/blacklight/facets_helper_behavior.rb'
-    - 'app/services/symphony_service.rb'
-
-# Offense count: 7
-# Cop supports --auto-correct.
-Style/RedundantSelf:
-  Exclude:
-    - 'app/controllers/catalog_controller.rb'
-    - 'app/controllers/databases_controller.rb'
-    - 'app/controllers/ebooks_controller.rb'
-    - 'app/controllers/journals_controller.rb'
-    - 'app/controllers/new_books_controller.rb'
-    - 'app/controllers/symphony_controller.rb'
-    - 'config/application.rb'
-
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, AllowInnerSlashes.
-# SupportedStyles: slashes, percent_r, mixed
-Style/RegexpLiteral:
-  Exclude:
-    - 'app/views/catalog/index.atom.builder'
 
 # Offense count: 1000
 # Cop supports --auto-correct.

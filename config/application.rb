@@ -27,7 +27,7 @@ module VanillaBlacklight
            {}
          end
     config.proxy = @c['proxy']
-    config.exceptions_app = self.routes
+    config.exceptions_app = routes
     config.symphony_timeout = 4
     config.sfx_timeout = 4
   end

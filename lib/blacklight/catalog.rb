@@ -1,5 +1,3 @@
-# -*- encoding : utf-8 -*-
-
 module Blacklight::Catalog
   extend ActiveSupport::Concern
   extend ActiveSupport::Autoload

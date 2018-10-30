@@ -81,7 +81,7 @@ module Blacklight::FacetsHelperBehavior
     # display when show is nil or true
     facet_config = facet_configuration_for_field(display_facet.name)
     display = should_render_field?(facet_config, display_facet)
-    return display && display_facet.items.present?
+    display && display_facet.items.present?
   end
 
   ##

@@ -14,9 +14,9 @@ describe SFXService do
   xit "should return a list of targets" do
     s = SFXService.new(@document).targets
 
-    expect(s).to eq Hash[1000000000002894 => { :id => 1000000000002894, :coverage => "Available in 2013. " }]
-    expect(s[1000000000002894][:id]).to eq 1000000000002894
-    expect(s[1000000000002894][:coverage]).to eq "Available in 2013. "
+    expect(s).to eq Hash[1_000_000_000_002_894 => { :id => 1_000_000_000_002_894, :coverage => "Available in 2013. " }]
+    expect(s[1_000_000_000_002_894][:id]).to eq 1_000_000_000_002_894
+    expect(s[1_000_000_000_002_894][:coverage]).to eq "Available in 2013. "
   end
 
   describe 'timeout handling' do

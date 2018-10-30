@@ -73,8 +73,8 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
       end
 
       # If they asked for a format, give it to them.
-      if (params["content_format"] &&
-          doc.export_formats[params["content_format"].to_sym])
+      if params["content_format"] &&
+         doc.export_formats[params["content_format"].to_sym]
 
         type = doc.export_formats[params["content_format"].to_sym][:content_type]
 
@@ -84,10 +84,10 @@ xml.feed("xmlns" => "http://www.w3.org/2005/Atom",
           # encode properly. See:
           # http://tools.ietf.org/html/rfc4287#section-4.1.3.3
           type = type.downcase
-          if (type.downcase =~ /\+|\/xml$/)
+          if type.downcase =~ /\+|\/xml$/
             # xml, just put it right in
             content_element << data
-          elsif (type.downcase =~ /text\//)
+          elsif type.downcase =~ /text\//
             # text, escape
             content_element.text! data
           else

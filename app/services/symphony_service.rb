@@ -42,7 +42,7 @@ class SymphonyService
 
   def links
     ua, nonua = populate_electronic_items
-    return ua, nonua
+    [ua, nonua]
   end
 
   private
@@ -114,7 +114,7 @@ class SymphonyService
         end
       end
     end
-    return ua_items, non_ua_items
+    [ua_items, non_ua_items]
   end
 
   def holdings_items
@@ -147,13 +147,13 @@ class SymphonyService
 
   def id(item)
     if item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
-      return item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
+      item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
     end
   end
 
   def get(item, node)
     if item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
-      return item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
+      item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
     end
   end
 end

@@ -1,5 +1,3 @@
-# -*- encoding : utf-8 -*-
-
 require "open-uri"
 
 class CatalogController < ApplicationController
@@ -10,7 +8,7 @@ class CatalogController < ApplicationController
   include HoldingsHelper
   # include BlacklightAdvancedSearch::ParseBasicQ
 
-  self.search_params_logic << :show_only
+  search_params_logic << :show_only
 
   def show_only solr_parameters, user_parameters
     solr_parameters[:fq] ||= []
