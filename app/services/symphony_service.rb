@@ -14,7 +14,7 @@ class SymphonyService
   def initialize(id, xml_response = nil)
     if valid? id
       begin
-        xml_response ||= open(ws_endpoint+ws_method+ws_parameters+id, :read_timeout => Rails.configuration.symphony_timeout).read
+        xml_response ||= open(ws_endpoint + ws_method + ws_parameters + id, :read_timeout => Rails.configuration.symphony_timeout).read
         @document = Nokogiri::XML(xml_response)
       rescue *EXCEPTIONS => e
         raise Error::HTTPError, "SymphonyService: " + e.message
@@ -49,11 +49,11 @@ class SymphonyService
 
   def summary_holdings
     nodes.each do |node|
-        current_node = node
-        next unless label(current_node)
-        if label(current_node).text == "Library has"
-          return node_text(current_node)
-        end
+      current_node = node
+      next unless label(current_node)
+      if label(current_node).text == "Library has"
+        return node_text(current_node)
+      end
     end
   end
 
@@ -70,16 +70,16 @@ class SymphonyService
   end
 
   def populate(item)
-      item_id = id(item)
-      call = get(item, "callNumber")
-      status = get(item, "currentLocationID")
-      status == "CHECKEDOUT" ? due = get(item, "dueDate") : ""
-      copies = get(item, "numberOfCopies")
-      type = get(item, "itemTypeID")
-      location = get(item, "libraryID")
-      public_note = get(item, "publicNote")
-      reserve_rule = get(item, "reserveCirculationRule")
-      {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule: reserve_rule}
+    item_id = id(item)
+    call = get(item, "callNumber")
+    status = get(item, "currentLocationID")
+    status == "CHECKEDOUT" ? due = get(item, "dueDate") : ""
+    copies = get(item, "numberOfCopies")
+    type = get(item, "itemTypeID")
+    location = get(item, "libraryID")
+    public_note = get(item, "publicNote")
+    reserve_rule = get(item, "reserveCirculationRule")
+    { item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule: reserve_rule }
   end
 
   def populate_subitems(item)
@@ -95,7 +95,7 @@ class SymphonyService
       type = get(subitem, "itemTypeID")
       public_note = get(subitem, "publicNote")
       reserve_rule = get(subitem, "reserveCirculationRule")
-      subitems << {item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule: reserve_rule}
+      subitems << { item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule: reserve_rule }
     end
     subitems
   end
@@ -103,17 +103,17 @@ class SymphonyService
   def populate_electronic_items
     ua_items = {}
     non_ua_items = {}
-      if @document
-        link_items.each do |item|
-          if label(item) and label(item).text == "Electronic access"
-            if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") or (item.at_xpath(".//xmlns:text").text.include? "NEOS")
-              ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
-            else
-              non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
-            end
+    if @document
+      link_items.each do |item|
+        if label(item) and label(item).text == "Electronic access"
+          if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") or (item.at_xpath(".//xmlns:text").text.include? "NEOS")
+            ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+          else
+            non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
           end
         end
       end
+    end
     return ua_items, non_ua_items
   end
 
@@ -130,15 +130,15 @@ class SymphonyService
   end
 
   def nodes
-    @document.xpath("//xmlns:MarcEntryInfo", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+    @document.xpath("//xmlns:MarcEntryInfo", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
   end
 
   def label(current_node)
-    current_node.at_xpath(".//xmlns:label", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
+    current_node.at_xpath(".//xmlns:label", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
   end
 
   def node_text(current_node)
-    current_node.at_xpath(".//xmlns:text", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    current_node.at_xpath(".//xmlns:text", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
   end
 
   def valid? id
@@ -146,14 +146,14 @@ class SymphonyService
   end
 
   def id(item)
-    if item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
-      return item.at_xpath(".//xmlns:itemID", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    if item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
+      return item.at_xpath(".//xmlns:itemID", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
     end
   end
 
   def get(item, node)
-    if item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard")
-      return item.at_xpath(".//xmlns:#{node}", :xmlns=>"http://schemas.sirsidynix.com/symws/standard").text
+    if item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard")
+      return item.at_xpath(".//xmlns:#{node}", :xmlns => "http://schemas.sirsidynix.com/symws/standard").text
     end
   end
 end

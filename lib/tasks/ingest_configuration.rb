@@ -5,7 +5,7 @@ class IngestConfiguration
     Blacklight.connection_config[:url] = ENV['SOLR_INGEST_URL'] if ENV['SOLR_INGEST_URL']
     @proxy = config["proxy"]
     @collection = config["collections"]
-    config[collection].each{ |k, v| instance_variable_set("@#{k}", v) }
+    config[collection].each { |k, v| instance_variable_set("@#{k}", v) }
   end
 
   def vocabulary

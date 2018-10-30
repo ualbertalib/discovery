@@ -3,12 +3,12 @@
 require "open-uri"
 
 class CatalogController < ApplicationController
-  #include BlacklightGoogleAnalytics::ControllerExtraHead
+  # include BlacklightGoogleAnalytics::ControllerExtraHead
 
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
   include HoldingsHelper
-  #include BlacklightAdvancedSearch::ParseBasicQ
+  # include BlacklightAdvancedSearch::ParseBasicQ
 
   self.search_params_logic << :show_only
 
@@ -29,11 +29,11 @@ class CatalogController < ApplicationController
         @holdings = holdings(@document, :items)
         unless @holdings.nil? || @holdings.first.nil?
           @holdable = @holdings.first[:holdable]
-          @holdings.sort! { |a,b| b[:location].downcase <=> a[:location].downcase }
+          @holdings.sort! { |a, b| b[:location].downcase <=> a[:location].downcase }
         end
       end
-        @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
-        @holdings = "kule" if @document["source"].first == "KULE"
+      @holdings = fetch_sfx_holdings(@document) if @document["source"].first == "SFX"
+      @holdings = "kule" if @document["source"].first == "KULE"
     end
 
     if @document["url_fulltext_display"]
@@ -41,10 +41,10 @@ class CatalogController < ApplicationController
     end
 
     if @document["subject_t"]
-    @subjects = []
-        @document["subject_t"].each do |subject|
-            @subjects << subject.split("--")
-        end
+      @subjects = []
+      @document["subject_t"].each do |subject|
+        @subjects << subject.split("--")
+      end
     end
 
     if @document["author_display"]
@@ -66,29 +66,29 @@ class CatalogController < ApplicationController
   end
 
   configure_blacklight do |config|
-      ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
+    ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
 
-      config.default_solr_params = {
-        :qt => 'search',
-        :rows => 25
-      }
+    config.default_solr_params = {
+      :qt => 'search',
+      :rows => 25
+    }
 
     # solr path which will be added to solr base url before the other solr params.
-    #config.solr_path = 'select'
+    # config.solr_path = 'select'
 
-    #items to show per page, each number in the array represent another option to choose from.
-    config.per_page = [25,50,100]
+    # items to show per page, each number in the array represent another option to choose from.
+    config.per_page = [25, 50, 100]
 
     ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
     ## parameters included in the Blacklight-jetty document requestHandler.
     #
-    #config.default_document_solr_params = {
+    # config.default_document_solr_params = {
     #  :qt => 'document',
     #  ## These are hard-coded in the blacklight 'document' requestHandler
     #  # :fl => '*',
     #  # :rows => 1
     #  # :q => '{!raw f=id v=$id}'
-    #}
+    # }
 
     # solr field configuration for search results/index views
     config.index.title_field = 'title_display'
@@ -143,19 +143,19 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    #config.add_index_field 'title_display', :label => 'Title'
-    #config.add_index_field 'title_vern_display', :label => 'Title'
+    # config.add_index_field 'title_display', :label => 'Title'
+    # config.add_index_field 'title_vern_display', :label => 'Title'
     config.add_index_field 'author_display', :label => 'Author'
     config.add_index_field 'edition_tesim', :label => 'Edition'
     config.add_index_field 'author_vern_display', :label => 'Author'
     config.add_index_field 'format', :label => 'Format'
     config.add_index_field 'languagenote_tesim', :label => 'Language'
     config.add_index_field 'language_note_tesim', :label => 'Language'
-    #config.add_index_field 'published_display', :label => 'Published'
-    #config.add_index_field 'published_vern_display', :label => 'Published'
+    # config.add_index_field 'published_display', :label => 'Published'
+    # config.add_index_field 'published_vern_display', :label => 'Published'
     config.add_index_field 'pub_date', :label => 'Publication Year'
-    #config.add_index_field 'isbn_tesim', :label => 'ISBN'
-    #config.add_index_field 'issn_tesim', :label => 'ISSN'
+    # config.add_index_field 'isbn_tesim', :label => 'ISBN'
+    # config.add_index_field 'issn_tesim', :label => 'ISSN'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -167,20 +167,20 @@ class CatalogController < ApplicationController
     config.add_show_field 'section_number_tesim', :label => "Section Number"
     config.add_show_field 'section_name_tesim', :label => "Section Name"
     config.add_show_field 'alternate_display_tesim', :label => "Original"
-    #config.add_show_field 'edition_tesim', :label => "Edition"
+    # config.add_show_field 'edition_tesim', :label => "Edition"
     config.add_show_field 'author_display', :label => 'Author'
     config.add_show_field 'author_addl_t', :label => "Additional authors/performers"
     config.add_show_field 'author_vern_display', :label => 'Author'
-    #config.add_show_field 'uniform_title_tesim', :label => 'Uniform Title'
+    # config.add_show_field 'uniform_title_tesim', :label => 'Uniform Title'
     config.add_show_field 'format', :label => 'Format'
-    #config.add_show_field 'language_facet', :label => 'Language'
+    # config.add_show_field 'language_facet', :label => 'Language'
     config.add_show_field 'publisher_tesim', :label => 'Publisher'
     config.add_show_field 'published_display', :label => 'Published'
     config.add_show_field 'published_vern_display', :label => 'Published'
     config.add_show_field 'pub_date', :label => 'Year'
-    #config.add_show_field 'material_type_display', :label => 'Contains'
-    #config.add_show_field 'size_tesim', :label => 'Size'
-    #config.add_show_field 'description_tesim', :label => 'Other Details'
+    # config.add_show_field 'material_type_display', :label => 'Contains'
+    # config.add_show_field 'size_tesim', :label => 'Size'
+    # config.add_show_field 'description_tesim', :label => 'Other Details'
     config.add_show_field 'contains_tesim', :label => "Other Physical Details"
     config.add_show_field 'moreinfo_tesim', :label => 'Additional Information'
     config.add_show_field 'isbn_tesim', :label => 'ISBN'

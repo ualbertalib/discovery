@@ -10,7 +10,7 @@ class EbooksController < CatalogController
     solr_parameters[:fq] ||= []
     solr_parameters[:fq] << 'source_tesim:"Symphony"'
     solr_parameters[:fq] << 'electronic_tesim:"Online"'
-    #solr_parameters[:fq] << 'format:"Book"'
+    # solr_parameters[:fq] << 'format:"Book"'
   end
 
   def index

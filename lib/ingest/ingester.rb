@@ -9,7 +9,7 @@ class Ingester
     log_dir, log_file = log_config['log_path'].split("/")
     log_dir = "#{Rails.root}/#{log_dir}"
     FileUtils.mkdir_p(log_dir) unless File.directory?(log_dir)
-    log_file = File.open(log_dir+"/"+log_file, File::WRONLY|File::APPEND|File::CREAT)
+    log_file = File.open(log_dir + "/" + log_file, File::WRONLY | File::APPEND | File::CREAT)
     @ingest_log = Logger.new(log_file)
   end
 

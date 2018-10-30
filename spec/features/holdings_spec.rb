@@ -4,10 +4,10 @@ include E
 include HoldingsHelper
 
 describe HoldingsHelper do
-  let(:marc_display_with_ua_links){ File.open(E::*("fixtures/marc_display_with_ua_links.xml")).read }
-  let(:marc_display_with_bad_id){ File.open(E::*("fixtures/marc_display_with_bad_id.xml")).read }
-  let(:marc_display_with_sfx_links){ File.open(E::*("fixtures/marc_display_with_sfx_links.xml")).read }
-  let(:marc_display_with_print_holdings){ File.open(E::*("fixtures/marc_display_with_print_holdings.xml")).read }
+  let(:marc_display_with_ua_links) { File.open(E:: * "fixtures/marc_display_with_ua_links.xml").read }
+  let(:marc_display_with_bad_id) { File.open(E:: * "fixtures/marc_display_with_bad_id.xml").read }
+  let(:marc_display_with_sfx_links) { File.open(E:: * "fixtures/marc_display_with_sfx_links.xml").read }
+  let(:marc_display_with_print_holdings) { File.open(E:: * "fixtures/marc_display_with_print_holdings.xml").read }
 
   describe "holdings with items" do
     xit "should return a set of Symphony print holdings" do
@@ -34,15 +34,15 @@ describe HoldingsHelper do
       holdings = holdings(document, :links)
       expect(holdings).to be_an_instance_of Array
       expect(holdings.first).to be_an_instance_of Hash
-      expect(holdings.first).to eq("University of Alberta Access (6 Concurrent Users)"=>"http://proquest.safaribooksonline.com/?uiCode=ualberta&xmlId=9781785283642")
+      expect(holdings.first).to eq("University of Alberta Access (6 Concurrent Users)" => "http://proquest.safaribooksonline.com/?uiCode=ualberta&xmlId=9781785283642")
     end
   end
 
   describe "#fetch_sfx_holdings" do
     xit "should return a set of SFX link URLs" do
       document = double("document")
-      allow(document).to receive(:[]).with('marc_display'){ marc_display_with_sfx_links }
-      allow(document).to receive(:id){ "954921332001" }
+      allow(document).to receive(:[]).with('marc_display') { marc_display_with_sfx_links }
+      allow(document).to receive(:id) { "954921332001" }
       holdings = fetch_sfx_holdings(document)
       expect(holdings).to be_an_instance_of Hash
       expect(holdings.size).to eq 15

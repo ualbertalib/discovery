@@ -4,7 +4,7 @@ describe HoldingsHelper do
   describe "#display_ual_shield" do
     UAL_SHIELD_LIBRARIES.each do |library|
       it "should display if #{library}" do
-        document = {"location_tesim" => library}
+        document = { "location_tesim" => library }
         expect(helper.display_ual_shield(document)).to be true
       end
     end
@@ -12,7 +12,7 @@ describe HoldingsHelper do
     it "should not display if item is not available on campus" do
       document = {}
       expect(helper.display_ual_shield(document)).to be false
-      document = {"location_tesim" => []}
+      document = { "location_tesim" => [] }
       expect(helper.display_ual_shield(document)).to be false
     end
   end

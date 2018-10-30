@@ -21,15 +21,15 @@ worker_processes 4
 
 # Help ensure your application will always spawn in the symlinked
 # "current" directory that Capistrano sets up.
-#Neil#working_directory "/path/to/app/current" # available in 0.94.0+
-#working_directory "/var/www/sites/houston.library.ualberta.ca" # available in 0.94.0+
-#root = "/var/www/sites/houston.library.ualberta.ca"
+# Neil#working_directory "/path/to/app/current" # available in 0.94.0+
+# working_directory "/var/www/sites/houston.library.ualberta.ca" # available in 0.94.0+
+# root = "/var/www/sites/houston.library.ualberta.ca"
 working_directory "/var/www/sites/blacklight"
 root = "/var/www/sites/blacklight"
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-#Neil#listen "/path/to/.unicorn.sock", :backlog => 64
+# Neil#listen "/path/to/.unicorn.sock", :backlog => 64
 listen "/tmp/unicorn.blacklight.sock", :backlog => 64
 listen 8080, :tcp_nopush => true
 
@@ -37,14 +37,14 @@ listen 8080, :tcp_nopush => true
 timeout 30
 
 # feel free to point this anywhere accessible on the filesystem
-#Neil*pid "/path/to/app/shared/pids/unicorn.pid"
+# Neil*pid "/path/to/app/shared/pids/unicorn.pid"
 pid "#{root}/tmp/pids/unicorn.pid"
 
 # By default, the Unicorn logger will write to stderr.
 # Additionally, ome applications/frameworks log to stderr or stdout,
 # so prevent them from going to /dev/null when daemonized here:
-#Neil#stderr_path "/path/to/app/shared/log/unicorn.stderr.log"
-#Neil#stdout_path "/path/to/app/shared/log/unicorn.stdout.log"
+# Neil#stderr_path "/path/to/app/shared/log/unicorn.stderr.log"
+# Neil#stdout_path "/path/to/app/shared/log/unicorn.stdout.log"
 stderr_path "#{root}/log/unicorn.stderr.log"
 stdout_path "#{root}/log/unicorn.stdout.log"
 

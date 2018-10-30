@@ -21,8 +21,8 @@ task :ingest_info do
   else # TODO: consider adding some logic to protect this target
     puts "WARNING: Using live target from '#{Rails.env}' stanza in config/blacklight.yml (#{Blacklight.connection_config[:url]})"
   end
-  solr = RSolr.connect :url=> Blacklight.connection_config[:url]
-  response = solr.get 'select', :params => {:q => '*:*', :qt => 'standard'}
+  solr = RSolr.connect :url => Blacklight.connection_config[:url]
+  response = solr.get 'select', :params => { :q => '*:*', :qt => 'standard' }
   puts "Solr collection contains #{response['response']['numFound']} results."
 end
 
@@ -30,9 +30,9 @@ desc 'ingest records' # add config parameter for directory ingest?
 task :ingest, [:collection] do |t, args|
   log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
   if File.exist? log_config['log_path']
-    log_file = File.open(log_config['log_path'], File::WRONLY|File::APPEND)
+    log_file = File.open(log_config['log_path'], File::WRONLY | File::APPEND)
   else
-    log_file = File.open(log_config['log_path'], File::WRONLY|File::CREAT)
+    log_file = File.open(log_config['log_path'], File::WRONLY | File::CREAT)
   end
 
   @ingest_log = Logger.new(log_file)
@@ -91,15 +91,15 @@ def ingest_marc
 end
 
 def ingest_databases
-    unless @c.test
-      db = Databases.new
-      File.open(@c.expand_path, "w"){ |f|
-        f.write db.xml_file
-      }
-    end
-    batch_ingester = BatchIngest.new
-    configure batch_ingester
-    run batch_ingester
+  unless @c.test
+    db = Databases.new
+    File.open(@c.expand_path, "w") { |f|
+      f.write db.xml_file
+    }
+  end
+  batch_ingester = BatchIngest.new
+  configure batch_ingester
+  run batch_ingester
 end
 
 namespace :ingest do

@@ -25,9 +25,9 @@ require 'rspec/rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
-  :selenium_chrome
+                            :selenium_chrome
                           else
-  :selenium_chrome_headless
+                            :selenium_chrome_headless
                           end
 
 # smoke test the ingest task and setup some seed data for testing

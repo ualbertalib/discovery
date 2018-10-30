@@ -1,5 +1,5 @@
 module ProfilesHelper
   def logged_in?
-      !request.authorization.nil?
+    !request.authorization.nil?
   end
 end

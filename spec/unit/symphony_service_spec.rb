@@ -5,9 +5,9 @@ require_relative "../spec_helper.rb"
 include E
 
 describe SymphonyService do
-  let(:first_record){ File.open(E::*("fixtures/first_symphony_record.xml")).read }
-  let(:second_record){ File.open(E::*("fixtures/second_symphony_record.xml")).read }
-  let(:third_record){ File.open(E::*("fixtures/third_symphony_record.xml")).read }
+  let(:first_record) { File.open(E:: * "fixtures/first_symphony_record.xml").read }
+  let(:second_record) { File.open(E:: * "fixtures/second_symphony_record.xml").read }
+  let(:third_record) { File.open(E:: * "fixtures/third_symphony_record.xml").read }
 
   it "returns an item status" do
     s = SymphonyService.new("2661760", first_record).items

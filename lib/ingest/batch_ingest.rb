@@ -34,7 +34,7 @@ class BatchIngest
 
   def read file
     @records = []
-    Nokogiri::XML(File.open(file)).xpath(@root, @namespace).xpath(@record_delimiter).each{ |record| @records << record }
+    Nokogiri::XML(File.open(file)).xpath(@root, @namespace).xpath(@record_delimiter).each { |record| @records << record }
   end
 
   def add record
