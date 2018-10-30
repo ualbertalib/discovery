@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-#
+
 class JournalsController < CatalogController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
@@ -16,5 +16,4 @@ class JournalsController < CatalogController
     super
     @collection_name = "e-Journals"
   end
-
 end

@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-#
+
 class EbooksController < CatalogController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
@@ -17,5 +17,4 @@ class EbooksController < CatalogController
     super
     @collection_name = "electronic books"
   end
-
 end

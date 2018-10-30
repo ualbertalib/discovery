@@ -41,5 +41,4 @@ describe BookmarksController do
       expect(response.code).to eq "500"
     end
   end
-
 end

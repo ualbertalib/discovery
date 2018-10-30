@@ -49,9 +49,7 @@ describe HoldingsHelper do
       expect(holdings[111088000914001]).to be_an_instance_of Hash
       expect(holdings[111088000914001][:name]).to eq "Gale Cengage CPI.Q"
       expect(holdings[111088000914001][:url]).to eq "http://login.ezproxy.library.ualberta.ca/login?url=http://find.galegroup.com/openurl/openurl?res_id=info%3Asid%2Fgale%3ACPI&rft.issn=0000-0019&req_dat=info%3Asid%2Fgale%3Augnid%3Aedmo69826&rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&ctx_enc=info%3Aofi%3Aenc%3AUTF-8&url_ver=Z39.88-2004&rft.jtitle=Publishers+Weekly"
-
     end
-
   end
 
   describe "when given a bad id" do

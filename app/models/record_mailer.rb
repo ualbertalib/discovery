@@ -1,4 +1,5 @@
 # -*- encoding : utf-8 -*-
+
 # Only works for documents with a #to_marc right now.
 class RecordMailer < ActionMailer::Base
   def email_record(documents, details, url_gen_params)
@@ -13,7 +14,7 @@ class RecordMailer < ActionMailer::Base
     @location       = details[:location]
     @url_gen_params = url_gen_params
 
-    mail(:to => details[:to],  :subject => subject, :from => "no-reply@ualberta.ca")
+    mail(:to => details[:to], :subject => subject, :from => "no-reply@ualberta.ca")
   end
 
   def sms_record(documents, details, url_gen_params)
@@ -22,5 +23,4 @@ class RecordMailer < ActionMailer::Base
     details[:call].empty? ? subject = "From University of Alberta Libraries: #{documents.first.to_semantic_values[:title].first}" : subject = details[:call]
     mail(:to => details[:to], :subject => subject, :from => "no-reply@ualberta.ca")
   end
-
 end

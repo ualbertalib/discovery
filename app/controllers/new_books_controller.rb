@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-#
+
 class NewBooksController < CatalogController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog

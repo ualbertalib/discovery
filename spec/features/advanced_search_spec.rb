@@ -25,6 +25,5 @@ RSpec.feature "Advanced Search", :type => :feature do
     # click_button "Search"
     #
     # expect(page).to have_text("1 - 25 of 64")
-
   end
 end

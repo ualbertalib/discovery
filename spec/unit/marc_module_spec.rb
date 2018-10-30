@@ -5,7 +5,6 @@ include E
 include MarcModule
 
 describe MarcModule do
-
   let(:marc_record){ eval(File.open(E::*("fixtures/solr_document.rb")).read) }
   let(:nokogiri_doc){ nokogiri(marc_record) }
 

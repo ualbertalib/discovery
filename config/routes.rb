@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'errors/file_not_found'
 
   get 'errors/unprocessable'

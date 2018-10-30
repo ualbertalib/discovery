@@ -1,7 +1,6 @@
 require_relative "./vocabulary"
 
 class PeelModsVocabulary < Vocabulary
-
   set_terminology do |t|
     t.root(path: "mods", xmlns: "http://www.loc.gov/mods/v3")
     t.abstract(:index_as => :stored_searchable)
@@ -103,5 +102,4 @@ class PeelModsVocabulary < Vocabulary
     t.url(:index_as => :stored_searchable)
     t.id(:path => "recordIdentifier", :index_as => :stored_searchable)
   end
-
 end

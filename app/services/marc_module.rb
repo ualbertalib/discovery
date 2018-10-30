@@ -1,7 +1,6 @@
 require "nokogiri"
 
 module MarcModule
-
   def nokogiri(document)
     Nokogiri::XML(document['marc_display']).remove_namespaces!
   end
@@ -22,5 +21,4 @@ module MarcModule
 
     raw_id
   end
-
 end

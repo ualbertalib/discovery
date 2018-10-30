@@ -3,7 +3,6 @@ require_relative "../spec_helper.rb"
 include E
 
 describe DublinCoreVocabulary do
-
   let(:dublin_core_document){
     DublinCoreVocabulary.from_xml(Nokogiri::XML(File.open(E::*("fixtures/dublin_core_record.xml"))).xpath("//xmlns:OAI-PMH", "xmlns" => "http://www.openarchives.org/OAI/2.0/").xpath("//xmlns:record").to_s)
   }

@@ -1,5 +1,4 @@
 module Blacklight::FacetsHelperBehavior
-
   include Blacklight::Facet
 
   ##
@@ -196,22 +195,22 @@ module Blacklight::FacetsHelperBehavior
     facet_config = facet_configuration_for_field(field)
 
     value = if item.respond_to? :label
-          item.label
+              item.label
             else
-      facet_value_for_facet_item(item)
-    end
+              facet_value_for_facet_item(item)
+            end
 
     display_label = if facet_config.helper_method
-        display_label = send facet_config.helper_method, value
+                      display_label = send facet_config.helper_method, value
                     elsif facet_config.query and facet_config.query[value]
-        display_label = facet_config.query[value][:label]
+                      display_label = facet_config.query[value][:label]
                     elsif facet_config.date
-        localization_options = {}
-        localization_options = facet_config.date unless facet_config.date === true
-        display_label = l(value.to_datetime, localization_options)
+                      localization_options = {}
+                      localization_options = facet_config.date unless facet_config.date === true
+                      display_label = l(value.to_datetime, localization_options)
                     else
-        value
-    end
+                      value
+                    end
   end
 
   def facet_field_id facet_field
@@ -227,5 +226,4 @@ module Blacklight::FacetsHelperBehavior
       value = item
     end
   end
-
 end

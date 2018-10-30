@@ -14,5 +14,4 @@ class Profile < ActiveRecord::Base
       end
     end
   end
-
 end

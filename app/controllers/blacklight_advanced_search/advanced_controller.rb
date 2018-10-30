@@ -3,7 +3,6 @@
 class BlacklightAdvancedSearch::AdvancedController < CatalogController
   include AdvancedHelper # so we get the #advanced_search_context method
 
-
   def index
     @response = get_advanced_search_facets unless request.method==:post
   end

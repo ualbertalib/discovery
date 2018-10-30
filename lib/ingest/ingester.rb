@@ -30,5 +30,4 @@ class Ingester
     status = @solr_object.add vocabulary
     @ingest_log.error("Record ingest failed: Record ID: #{vocabulary['id_tesim'].first}") if status["responseHeader"]["status"] != 0
   end
-
 end

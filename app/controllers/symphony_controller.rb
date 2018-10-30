@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-#
+
 class SymphonyController < CatalogController
   include Blacklight::Marc::Catalog
   include Blacklight::Catalog
@@ -14,5 +14,4 @@ class SymphonyController < CatalogController
     super
     @collection_name = ""
   end
-
 end

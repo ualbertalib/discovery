@@ -11,6 +11,5 @@ RSpec.feature "Ejournals page test", :type => :feature do
 
     expect(page).to have_text("Results for accountancy e-Journals")
     expect(page).to have_text("1 - 6 of 6")
-
   end
 end

@@ -107,10 +107,10 @@ class SymphonyService
         link_items.each do |item|
           if label(item) and label(item).text == "Electronic access"
             if (item.at_xpath(".//xmlns:text").text.include? "University of Alberta Access") or (item.at_xpath(".//xmlns:text").text.include? "Free") or (item.at_xpath(".//xmlns:text").text.include? "NEOS")
-                ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+              ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
             else
-                non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
-              end
+              non_ua_items[item.at_xpath(".//xmlns:text").text] = item.at_xpath(".//xmlns:url").text
+            end
           end
         end
       end

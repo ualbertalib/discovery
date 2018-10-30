@@ -3,7 +3,6 @@ require_relative "../spec_helper.rb"
 include E
 
 describe PeelModsVocabulary do
-
   let(:mods_document){ PeelModsVocabulary.from_xml(File.open(E::*("fixtures/peel_mods_record.xml"))) }
   let(:solr_hash){ eval(File.open(E*"fixtures/peel_solr_hash").read) }
 
@@ -12,7 +11,6 @@ describe PeelModsVocabulary do
       expect(mods_document).to be_a_kind_of OM::XML::Document
       expect(mods_document).to be_a_kind_of OM::XML::TerminologyBasedSolrizer
     end
-
 
     it "should hold all the MODS elements" do
       expect(mods_document.abstract).to eq []
@@ -73,7 +71,7 @@ describe PeelModsVocabulary do
       expect(mods_document.note).to eq ["Taken from Geological Survey Division Map no. 10.", "Shadings differentiate kinds of tertiary, mesozoic, palaeozoic, and precambrian formations.", "peelmaps", "1", "73.7 x 44.1 cm.", "73.7", "44.1"]
       expect(mods_document.number).to eq []
       expect(mods_document.occupation).to eq []
-      expect(mods_document.originInfo).to eq ["EdmontonScientific and Industrial Research Council of Alberta1926"]  # Finish breaking up nested fields
+      expect(mods_document.originInfo).to eq ["EdmontonScientific and Industrial Research Council of Alberta1926"] # Finish breaking up nested fields
       expect(mods_document.part).to eq []
       expect(mods_document.partName).to eq []
       expect(mods_document.partNumber).to eq []

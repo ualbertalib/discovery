@@ -3,11 +3,8 @@
 require_relative "../spec_helper.rb"
 
   describe SolrDocument do
-
     before(:each) do
-
       @solrdoc = SolrDocument.new :id => '00282214', :format => ['Book'], :title_display => 'some-title'
-
     end
 
     describe "new" do
@@ -17,7 +14,6 @@ require_relative "../spec_helper.rb"
     end
 
     describe "access methods" do
-
       it "should have the right value for title_display" do
         expect(@solrdoc[:title_display]).not_to be_nil
       end

@@ -5,7 +5,6 @@ require_relative "../spec_helper.rb"
 include E
 
 describe SymphonyService do
-
   let(:first_record){ File.open(E::*("fixtures/first_symphony_record.xml")).read }
   let(:second_record){ File.open(E::*("fixtures/second_symphony_record.xml")).read }
   let(:third_record){ File.open(E::*("fixtures/third_symphony_record.xml")).read }
@@ -86,5 +85,4 @@ describe SymphonyService do
   end
 
   it { expect { SymphonyService.new("invalid_id") }.to raise_error SymphonyService::Error::InvalidIdError }
-
 end

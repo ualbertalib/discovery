@@ -4,9 +4,7 @@ require_relative "../spec_helper.rb"
 include E
 
 describe "Metadata ingest pipeline" do
-
   context "when it is given a vocabulary object" do
-
     let(:ingester) { Ingester.new }
     let(:dc){ DublinCoreVocabulary.from_xml(File.open(E::*("fixtures/dublin_core_record.xml"))) }
 

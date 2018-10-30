@@ -11,5 +11,4 @@ class IngestConfiguration
   def vocabulary
     @vocabulary.constantize
   end
-
 end

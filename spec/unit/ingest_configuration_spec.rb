@@ -3,7 +3,6 @@ require_relative "../spec_helper.rb"
 include E
 
 context "given a configuration YAML file" do
-
   let(:config_yaml){ YAML.load_file(E::*("fixtures/ingest.yml")) }
   let(:config){ IngestConfiguration.new("era", config_yaml) }
 

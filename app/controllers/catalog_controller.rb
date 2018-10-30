@@ -1,4 +1,5 @@
 # -*- encoding : utf-8 -*-
+
 require "open-uri"
 
 class CatalogController < ApplicationController
@@ -135,7 +136,6 @@ class CatalogController < ApplicationController
     config.add_facet_field 'subject_era_facet', :label => 'Historic Period', :limit => 10
     config.add_facet_field 'owning_library_tesim', :label => 'Owning Library'
 
-
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
     # handler defaults, or have no facets.
@@ -233,7 +233,6 @@ class CatalogController < ApplicationController
 
     config.add_search_field 'all_fields', :label => 'All Fields'
 
-
     # Now we see how to over-ride Solr request handler defaults, in this
     # case for a BL "search field", which is really a dismax aggregate
     # of Solr search fields.
@@ -285,6 +284,4 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
   end
-
-
 end

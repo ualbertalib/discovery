@@ -54,7 +54,6 @@ group :test, :development do
   gem 'rubocop', '~> 0.56.0', require: false
 
   gem 'scss_lint', '>= 0.56.0', require: false
-
 end
 
 group :development do

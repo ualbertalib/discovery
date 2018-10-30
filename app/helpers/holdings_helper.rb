@@ -53,5 +53,4 @@ module HoldingsHelper
   def library_location(library_code)
     SYMPHONY_LIBRARY_LOCATIONS[library_code.downcase.delete("_").to_sym]
   end
-
 end

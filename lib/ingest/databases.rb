@@ -3,7 +3,6 @@ require "logger"
 require_relative "./database_om.rb"
 
 class Databases
-
   attr_reader :xml_records
 
   def initialize
@@ -49,5 +48,4 @@ class Databases
     end
     output += "</databases></root>"
   end
-
 end

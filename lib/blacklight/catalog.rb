@@ -1,4 +1,5 @@
 # -*- encoding : utf-8 -*-
+
 module Blacklight::Catalog
   extend ActiveSupport::Concern
   extend ActiveSupport::Autoload
@@ -70,10 +71,10 @@ module Blacklight::Catalog
       search_session['per_page'] = params[:per_page]
 
       path = if params[:redirect] and (params[:redirect].starts_with?("/") or params[:redirect] =~ URI::DEFAULT_PARSER.make_regexp)
-        URI.parse(params[:redirect]).path
+               URI.parse(params[:redirect]).path
              else
-        { action: 'show' }
-      end
+               { action: 'show' }
+             end
       redirect_to path, :status => 303
     end
 
@@ -84,7 +85,6 @@ module Blacklight::Catalog
       @display_facet = @response.aggregations[@facet.key]
 
       @pagination = facet_paginator(@facet, @display_facet)
-
 
       respond_to do |format|
         # Draw the facet selector for users who have javascript disabled:

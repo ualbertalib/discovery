@@ -3,7 +3,6 @@ require_relative "../spec_helper.rb"
 include E
 
 describe "Batch Ingest Process" do
-
   let(:batch_ingester){ BatchIngest.new }
   let(:ingester){ instance_double(Ingester, :commit=>"", :add_document=>"") }
   let(:root_element){ "//xmlns:OAI-PMH" }

@@ -3,7 +3,6 @@ require_relative "../spec_helper.rb"
 include E
 
 describe DatabaseVocabulary do
-
   let(:database){ DatabaseVocabulary.from_xml(File.open(E::*("fixtures/database_record.xml"))) }
 
   it "should be a database OM Vocabulary with a terminology-based solrizer" do
