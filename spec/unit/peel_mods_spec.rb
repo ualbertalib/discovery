@@ -74,7 +74,13 @@ describe PeelModsVocabulary do
     expect(mods_document.corporateName).to eq ['Geological Survey Division, Scientific and Industrial Research Council of Alberta']
     expect(mods_document.namePart).to eq ['Allan, John A.', 'Geological Survey Division, Scientific and Industrial Research Council of Alberta']
     expect(mods_document.nonSort).to eq []
-    expect(mods_document.note).to eq ['Taken from Geological Survey Division Map no. 10.', 'Shadings differentiate kinds of tertiary, mesozoic, palaeozoic, and precambrian formations.', 'peelmaps', '1', '73.7 x 44.1 cm.', '73.7', '44.1']
+    expect(mods_document.note).to eq ['Taken from Geological Survey Division Map no. 10.',
+                                      'Shadings differentiate kinds of tertiary, mesozoic, palaeozoic, and precambrian formations.',
+                                      'peelmaps',
+                                      '1',
+                                      '73.7 x 44.1 cm.',
+                                      '73.7',
+                                      '44.1']
     expect(mods_document.number).to eq []
     expect(mods_document.occupation).to eq []
     expect(mods_document.originInfo).to eq ['EdmontonScientific and Industrial Research Council of Alberta1926'] # Finish breaking up nested fields

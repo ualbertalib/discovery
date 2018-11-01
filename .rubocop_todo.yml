@@ -29,4 +29,6 @@ Style/AsciiComments:
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
 Metrics/LineLength:
-  Max: 5538
+  Max: 200
+  Exclude:
+    - 'spec/fixtures/*'

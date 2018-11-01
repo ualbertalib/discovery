@@ -73,7 +73,16 @@ class SymphonyService
     location = get(item, 'libraryID')
     public_note = get(item, 'publicNote')
     reserve_rule = get(item, 'reserveCirculationRule')
-    { item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule: reserve_rule }
+    { item_id: item_id,
+      status: status,
+      call: call,
+      location: location,
+      type: type,
+      copies: copies,
+      due: due,
+      summary_holdings: summary_holdings,
+      public_note: public_note,
+      holdable: holdable, reserve_rule: reserve_rule }
   end
 
   def populate_subitems(item)
@@ -88,7 +97,17 @@ class SymphonyService
       type = get(subitem, 'itemTypeID')
       public_note = get(subitem, 'publicNote')
       reserve_rule = get(subitem, 'reserveCirculationRule')
-      subitems << { item_id: item_id, status: status, call: call, location: location, type: type, copies: copies, due: due, summary_holdings: summary_holdings, public_note: public_note, holdable: holdable, reserve_rule: reserve_rule }
+      subitems << { item_id: item_id,
+                    status: status,
+                    call: call,
+                    location: location,
+                    type: type,
+                    copies: copies,
+                    due: due,
+                    summary_holdings: summary_holdings,
+                    public_note: public_note,
+                    holdable: holdable,
+                    reserve_rule: reserve_rule }
     end
     subitems
   end
@@ -99,7 +118,9 @@ class SymphonyService
     if @document
       link_items.each do |item|
         if label(item) && (label(item).text == 'Electronic access')
-          if (item.at_xpath('.//xmlns:text').text.include? 'University of Alberta Access') || (item.at_xpath('.//xmlns:text').text.include? 'Free') || (item.at_xpath('.//xmlns:text').text.include? 'NEOS')
+          if (item.at_xpath('.//xmlns:text').text.include? 'University of Alberta Access') ||
+             (item.at_xpath('.//xmlns:text').text.include? 'Free') ||
+             (item.at_xpath('.//xmlns:text').text.include? 'NEOS')
             ua_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
           else
             non_ua_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
