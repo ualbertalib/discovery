@@ -1,4 +1,4 @@
-<p>Catalog Item ID: <%= @correction.catalog_id %></p>
+<p>Catalog Item URL: <%= link_to(catalog_url(@correction.catalog_id), catalog_url(@correction.catalog_id)) %></p>
 <p>Message: <%= @correction.message %></p>
 
-<p>*** this email generated automatically from <%= link_to new_catalog_correction_url(catalog_id: @correction.catalog_id), new_catalog_correction_url(catalog_id: @correction.catalog_id) %> ***<p>
+<p>*** this email generated automatically from <%= link_to(new_catalog_correction_url(catalog_id: @correction.catalog_id), new_catalog_correction_url(catalog_id: @correction.catalog_id)) %> ***<p>
