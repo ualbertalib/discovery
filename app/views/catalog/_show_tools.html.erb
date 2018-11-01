@@ -41,7 +41,7 @@
 
 
       <li class="send_correction">
-        <%= render "correction_form" %>
+        <%= link_to "Send Correction", new_catalog_correction_path(catalog_id: @document['id']) %>
       </li>
 
       <li><a href="/bookmarks">Go to Bookmarks</a></li>
