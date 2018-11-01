@@ -1,14 +1,14 @@
 class ProfilesController < ApplicationController
-  $units = { access: 'Access Services', archives: 'Archives', augustana: 'Augustana Library', bib: 'Bibliographic Services',
-             saint: 'Bibliothèque Saint-Jean', business: 'Business Library', collections: 'Collection Strategies', digital: 'Digital Initiatives',
-             education: 'Education / Kinesiology, Sport & Recreation Library', facilities: 'Facilities', finance: 'Financial Systems & Analysis',
-             health: 'Health Sciences Library', hr: 'Human Resources', humanities: 'Humanities & Social Sciences / Law Libraries',
-             its: 'Information Technology Services', admin: 'Learning Services/Libraries Administration', science: 'Science & Technology Library', special: 'Special Collections',
-             press: 'University of Alberta Press' }
-  $buildings = { augustana: 'Augustana Campus Library', bsj: 'Bibliothèque Saint-Jean', bpsc: 'Bruce Peel Special Collections',
-                 cameron: 'Cameron Library', coutts: 'Herbert T. Coutts Library ', law: 'J.A. Weir Law Library', scott: 'J.W. Scott Library',
-                 rcrf: 'Research & Collections Resource Facility', press: 'Ring House 2', rutherford: 'Rutherford',
-                 stjosephs: "St. Joseph's Library", winspear: 'Winspear Library' }
+  UNITS = { access: 'Access Services', archives: 'Archives', augustana: 'Augustana Library', bib: 'Bibliographic Services',
+            saint: 'Bibliothèque Saint-Jean', business: 'Business Library', collections: 'Collection Strategies', digital: 'Digital Initiatives',
+            education: 'Education / Kinesiology, Sport & Recreation Library', facilities: 'Facilities', finance: 'Financial Systems & Analysis',
+            health: 'Health Sciences Library', hr: 'Human Resources', humanities: 'Humanities & Social Sciences / Law Libraries',
+            its: 'Information Technology Services', admin: 'Learning Services/Libraries Administration', science: 'Science & Technology Library', special: 'Special Collections',
+            press: 'University of Alberta Press' }.freeze
+  BUILDINGS = { augustana: 'Augustana Campus Library', bsj: 'Bibliothèque Saint-Jean', bpsc: 'Bruce Peel Special Collections',
+                cameron: 'Cameron Library', coutts: 'Herbert T. Coutts Library ', law: 'J.A. Weir Law Library', scott: 'J.W. Scott Library',
+                rcrf: 'Research & Collections Resource Facility', press: 'Ring House 2', rutherford: 'Rutherford',
+                stjosephs: "St. Joseph's Library", winspear: 'Winspear Library' }.freeze
 
   # You'll have to define "profilesEditPassword" in secrets.yml, or this will fail. Thanks, ansible.
   http_basic_authenticate_with name: Rails.application.secrets.profiles_edit_user, password: Rails.application.secrets.profiles_edit_password, except: [:index, :show]
@@ -18,11 +18,11 @@ class ProfilesController < ApplicationController
 
     if path.include? 'unit'
       @unit = params[:unit]
-      @unitname = $units[params[:unit].to_sym]
+      @unitname = UNITS[params[:unit].to_sym]
       @profiles = Profile.where('unit=?', params[:unit]).order(:first_name)
     elsif path.include? 'building'
       @building = params[:building]
-      @buildingname = $buildings[params[:building].to_sym]
+      @buildingname = BUILDINGS[params[:building].to_sym]
       @profiles = Profile.where('campus_address=?', params[:building]).order(:first_name)
     else
       @profiles = Profile.all.order(:first_name)
@@ -40,14 +40,14 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
-    @buildings = $buildings
-    @units = $units
+    @buildings = BUILDINGS
+    @units = UNITS
   end
 
   def edit
     @profile = Profile.friendly.find(params[:id])
-    @buildings = $buildings
-    @units = $units
+    @buildings = BUILDINGS
+    @units = UNITS
   end
 
   def create
@@ -76,7 +76,7 @@ class ProfilesController < ApplicationController
 
   def units
     @unit = params[:id]
-    @unitname = $units[params[:id].to_sym]
+    @unitname = UNITS[params[:id].to_sym]
     @profiles = Profile.where('unit=?', params[:id])
   end
 

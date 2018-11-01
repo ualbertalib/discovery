@@ -7,7 +7,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Array<String>]
   # @param [Hash] options
   # @return [Boolean]
-  def has_facet_values?(fields = facet_field_names, _options = {})
+  def facet_values?(fields = facet_field_names, _options = {})
     facets_from_request(fields).any? { |display_facet| !display_facet.items.empty? }
   end
 
@@ -19,9 +19,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Hash] options
   # @return String
   def render_facet_partials(fields = facet_field_names, options = {})
-    facets = []
-    facets = facets_from_request(fields)
-    safe_join(facets.map do |display_facet|
+    safe_join(facets_from_request(fields).map do |display_facet|
       render_facet_limit(display_facet, options)
     end.compact, "\n")
   end
@@ -105,9 +103,12 @@ module Blacklight::FacetsHelperBehavior
   # @return [String]
   def facet_partial_name(display_facet = nil)
     config = facet_configuration_for_field(display_facet.name)
-    name = config.try(:partial)
-    name ||= 'facet_pivot' if config.pivot
-    name ||= 'facet_limit'
+
+    if config.pivot
+      'facet_pivot'
+    else
+      config.try(:partial) || 'facet_limit'
+    end
   end
 
   ##
@@ -198,17 +199,17 @@ module Blacklight::FacetsHelperBehavior
               facet_value_for_facet_item(item)
             end
 
-    display_label = if facet_config.helper_method
-                      display_label = send facet_config.helper_method, value
-                    elsif facet_config.query && facet_config.query[value]
-                      display_label = facet_config.query[value][:label]
-                    elsif facet_config.date
-                      localization_options = {}
-                      localization_options = facet_config.date unless facet_config.date === true
-                      display_label = l(value.to_datetime, localization_options)
-                    else
-                      value
-                    end
+    if facet_config.helper_method
+      send facet_config.helper_method, value
+    elsif facet_config.query && facet_config.query[value]
+      facet_config.query[value][:label]
+    elsif facet_config.date
+      localization_options = {}
+      localization_options = facet_config.date unless facet_config.date == true
+      l(value.to_datetime, localization_options)
+    else
+      value
+    end
   end
 
   def facet_field_id(facet_field)
@@ -218,10 +219,10 @@ module Blacklight::FacetsHelperBehavior
   private
 
   def facet_value_for_facet_item(item)
-    value = if item.respond_to? :value
-              item.value
-            else
-              item
-            end
+    if item.respond_to? :value
+      item.value
+    else
+      item
+    end
   end
 end

@@ -21,7 +21,7 @@ module Blacklight::Catalog
   # The following code is executed when someone includes blacklight::catalog in their
   # own controller.
   included do
-    helper_method :sms_mappings, :has_search_parameters?
+    helper_method :sms_mappings, :search_parameters?
 
     # When an action raises Blacklight::Exceptions::RecordNotFound, handle
     # the exception appropriately.
@@ -117,7 +117,7 @@ module Blacklight::Catalog
   ##
   # Check if any search parameters have been set
   # @return [Boolean]
-  def has_search_parameters?
+  def search_parameters?
     !params[:q].blank? || !params[:f].blank? || !params[:search_field].blank?
   end
 
@@ -158,7 +158,7 @@ module Blacklight::Catalog
         when Hash
           render config
         when Proc
-          instance_exec &config
+          instance_exec(&config)
         when Symbol, String
           send config
         end
@@ -181,11 +181,9 @@ module Blacklight::Catalog
     format.any do
       format_name = params.fetch(:format, '').to_sym
 
-      if @response.export_formats.include? format_name
-        render_document_export_format format_name
-      else
-        raise ActionController::UnknownFormat
-      end
+      raise ActionController::UnknownFormat unless @response.export_formats.include?(format_name)
+
+      render_document_export_format format_name
     end
   end
 
@@ -304,7 +302,7 @@ module Blacklight::Catalog
   # page with a flash message and a 404 status.
   def invalid_document_id_error(*args)
     Deprecation.silence(Blacklight::Catalog) do
-      invalid_solr_id_error *args
+      invalid_solr_id_error(*args)
     end
   end
 

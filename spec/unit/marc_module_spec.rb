@@ -1,8 +1,8 @@
 require_relative '../spec_helper.rb'
 
-include MarcModule
-
 describe MarcModule do
+  include MarcModule
+
   let(:marc_record) do
     eval(File.open(
       Rails.root.join('spec', 'fixtures', 'solr_document.rb')

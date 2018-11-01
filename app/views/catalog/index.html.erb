@@ -48,19 +48,14 @@ Results for <em>
 
 
 <% if params[:search_field] or params[:f] or params[:q] and params[:q] != '' or Rails.env == "development" %>
-    <div class="row top-margin">
-<div id="sidebar" class="col-md-3 col-sm-4 ">
-  <%= render 'search_sidebar' %>
-</div>
-<div id="content" class="col-md-9 col-sm-8">
-  <% unless has_search_parameters? %>
-    <%# if there are no input/search related params, display the "home" partial -%>
-    <%= render 'search_results' %>
-  <% else %>
-    <%= render 'search_results' %>
-  <% end %>
-</div>
+  <div class="row top-margin">
+    <div id="sidebar" class="col-md-3 col-sm-4 ">
+      <%= render 'search_sidebar' %>
     </div>
-  <% end %>
+    <div id="content" class="col-md-9 col-sm-8">
+      <%= render 'search_results' %>
+    </div>
+  </div>
+<% end %>
 </div>
 <%= render "shared/chatref" %>

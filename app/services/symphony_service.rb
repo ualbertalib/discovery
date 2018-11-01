@@ -12,24 +12,20 @@ class SymphonyService
                 Net::ProtocolError].freeze
 
   def initialize(id, xml_response = nil)
-    if valid? id
-      begin
-        xml_response ||= open(ws_endpoint + ws_method + ws_parameters + id, read_timeout: Rails.configuration.symphony_timeout).read
-        @document = Nokogiri::XML(xml_response)
-      rescue *EXCEPTIONS => e
-        raise Error::HTTPError, 'SymphonyService: ' + e.message
-        @document = nil
-      end
-    else
-      raise Error::InvalidIdError
-      @document = nil
+    raise Error::InvalidIdError unless valid? id
+
+    begin
+      xml_response ||= open(ws_endpoint + ws_method + ws_parameters + id, read_timeout: Rails.configuration.symphony_timeout).read
+      @document = Nokogiri::XML(xml_response)
+    rescue *EXCEPTIONS => e
+      raise Error::HTTPError, 'SymphonyService: ' + e.message
     end
   end
 
   def items
     items = []
     if @document
-      for item in holdings_items do
+      holdings_items.each do |item|
         if item.xpath('.//xmlns:ItemInfo').size == 1
           items << populate(item)
         else
@@ -89,7 +85,6 @@ class SymphonyService
       location = get(item, 'libraryID')
       status = get(subitem, 'currentLocationID')
       status == 'CHECKEDOUT' ? due = get(subitem, 'dueDate') : ''
-      reserve = get(subitem, 'reserveCirculationRule') == 'TX-2HR-100'
       type = get(subitem, 'itemTypeID')
       public_note = get(subitem, 'publicNote')
       reserve_rule = get(subitem, 'reserveCirculationRule')
@@ -140,7 +135,7 @@ class SymphonyService
   end
 
   def valid?(id)
-    (id =~ /^[0-9]*$/) == 0
+    /^[0-9]*$/.match?(id)
   end
 
   def id(item)
