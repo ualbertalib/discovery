@@ -21,7 +21,7 @@
             </td>
             <td>
               <% if @document.respond_to?( :to_email_text ) %>
-                <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>@document["callnumber_tesi"], :location=>@document["location_tesi"]) , {:id => 'emailLink', :class => 'lightboxLink'} %>
+                <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>@document["callnumber_tesi"], :location=>@document["location_tesim"].first) , {:id => 'emailLink', :class => 'lightboxLink'} %>
               <%- end -%>
               <%- if @document.respond_to?( :to_sms_text ) -%>
                 <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>@document["callnumber_tesi"]), {:id => 'smsLink', :class => 'lightboxLink'} %>
