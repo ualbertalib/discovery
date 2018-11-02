@@ -156,7 +156,7 @@ class SymphonyService
   end
 
   def valid?(id)
-    /^[0-9]*$/.match?(id)
+    (id =~ /^[0-9]*$/) == 0
   end
 
   def id(item)

@@ -21,6 +21,9 @@ class ProfilesController < ApplicationController
                                except: [:index, :show]
 
   def index
+    @buildings = BUILDINGS
+    @units = UNITS
+
     path = request.url
 
     if path.include? 'unit'
@@ -43,6 +46,8 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.friendly.find(params[:id])
+    @buildings = BUILDINGS
+    @units = UNITS
   end
 
   def new

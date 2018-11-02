@@ -29,8 +29,11 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Enabled: false
 
-# Metrics/LineLength:
+Metrics/LineLength:
 #   Max: 120
+  Max: 200
+  Exclude:
+    - 'spec/fixtures/*'
 
 Metrics/MethodLength:
   Enabled: false
