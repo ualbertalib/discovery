@@ -1,0 +1,35 @@
+<h1>Report Correction for Error, Typo, or Suggestion</h1>
+
+<%= form_for [:catalog, @correction] do |f| %>
+  <% if @correction.errors.any? %>
+    <div class="alert alert-danger">
+      <p>The following errors happened when sending your message:</p>
+      <ul>
+        <% @correction.errors.full_messages.each do |msg| %>
+          <li ><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :message %>
+    <%= f.text_area :message,
+                    rows: 7,
+                    cols: 45,
+                    required: true,
+                    placeholder: 'Enter any details on the error, typo or suggestion here...',
+                    class: 'form-control' %>
+  </div>
+
+  <%= f.hidden_field :catalog_id, value: @correction.catalog_id %>
+
+  <%= f.submit 'Submit Error, Typo or Suggestion', class: 'btn btn-lg btn-default' %>
+<% end %>
+
+<p class="top-margin">
+  Note: You will not receive a response.
+  If you are experiencing problems and would like a response please use the
+  <a href="http://www.library.ualberta.ca/ask-us">Ask Us</a>
+  service.
+</p>
