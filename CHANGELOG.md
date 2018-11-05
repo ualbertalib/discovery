@@ -6,7 +6,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 ### Fixed
-- Rubocop fixes [PR#1359](https://github.com/ualbertalib/discovery/pull/1359)
+- Heavy cleanup of `.rubocop_todo.yml` and refactoring [PR#1359](https://github.com/ualbertalib/discovery/pull/1359)
 - Fix test/dev solr cores provisoning for docker [PR#1357](https://github.com/ualbertalib/discovery/pull/1357)
 - Refactoring of corrections code [PR#1353](https://github.com/ualbertalib/discovery/pull/1353)
 - Fix all files accordingly to new Editorconfig styles [PR#1339](https://github.com/ualbertalib/discovery/pull/1339)
