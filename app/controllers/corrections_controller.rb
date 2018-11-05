@@ -1,5 +1,4 @@
 class CorrectionsController < ApplicationController
-
   def new
     @correction = Correction.new(catalog_id: params[:catalog_id])
   end

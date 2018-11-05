@@ -1,5 +1,5 @@
-require "om"
-require "solrizer"
+require 'om'
+require 'solrizer'
 
 class Vocabulary
   include OM::XML::Document

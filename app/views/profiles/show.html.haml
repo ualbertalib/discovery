@@ -23,13 +23,13 @@
     %span.adr
       %span.street-address
         Building:
-        = link_to($buildings[@profile.campus_address.to_sym], "/locations/"+@profile.campus_address)
+        = link_to(@buildings[@profile.campus_address.to_sym], "/locations/"+@profile.campus_address)
   %ul
     -if @profile.unit.presence
       %li.unit
         %h4.inline
           Unit:
-        = link_to($units[@profile.unit.to_sym], "/staff/?unit="+@profile.unit)
+        = link_to(@units[@profile.unit.to_sym], "/staff/?unit="+@profile.unit)
     -if @profile.expertise.presence
       %li.expertise
         %h4.inline

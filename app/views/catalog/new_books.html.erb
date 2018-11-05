@@ -25,12 +25,7 @@
   <%= render 'search_sidebar' %>
 </div>
 <div id="content" class="col-md-9 col-sm-8">
-  <% unless has_search_parameters? %>
-    <%# if there are no input/search related params, display the "home" partial -%>
-    <%= render 'search_results' %>
-  <% else %>
-    <%= render 'search_results' %>
-  <% end %>
+  <%= render 'search_results' %>
 </div>
     </div>
 </div>

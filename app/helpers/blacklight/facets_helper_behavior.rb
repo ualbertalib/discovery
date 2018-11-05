@@ -1,5 +1,4 @@
 module Blacklight::FacetsHelperBehavior
-
   include Blacklight::Facet
 
   ##
@@ -8,7 +7,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Array<String>]
   # @param [Hash] options
   # @return [Boolean]
-  def has_facet_values? fields = facet_field_names, options = {}
+  def facet_values?(fields = facet_field_names, _options = {})
     facets_from_request(fields).any? { |display_facet| !display_facet.items.empty? }
   end
 
@@ -19,14 +18,11 @@ module Blacklight::FacetsHelperBehavior
   # @param [Array<String>]
   # @param [Hash] options
   # @return String
-  def render_facet_partials fields = facet_field_names, options = {}
-    facets = Array.new();
-    facets = facets_from_request(fields);
-    safe_join(facets.map do |display_facet|
+  def render_facet_partials(fields = facet_field_names, options = {})
+    safe_join(facets_from_request(fields).map do |display_facet|
       render_facet_limit(display_facet, options)
     end.compact, "\n")
   end
-
 
   ##
   # Renders a single section for facet limit with a specified
@@ -40,10 +36,10 @@ module Blacklight::FacetsHelperBehavior
   # @option options [Hash] :locals locals to pass to the partial
   # @return [String]
   def render_facet_limit(display_facet, options = {})
-    return if not should_render_facet?(display_facet)
+    return unless should_render_facet?(display_facet)
     options = options.dup
     options[:partial] ||= facet_partial_name(display_facet)
-    options[:layout] ||= "facet_layout" unless options.has_key?(:layout)
+    options[:layout] ||= 'facet_layout' unless options.key?(:layout)
     options[:locals] ||= {}
     options[:locals][:solr_field] ||= display_facet.name
     options[:locals][:facet_field] ||= facet_configuration_for_field(display_facet.name)
@@ -56,17 +52,16 @@ module Blacklight::FacetsHelperBehavior
   # Renders the list of values
   # removes any elements where render_facet_item returns a nil value. This enables an application
   # to filter undesireable facet items so they don't appear in the UI
-  def render_facet_limit_list(paginator, solr_field, wrapping_element=:li)
-    safe_join(paginator.items.
-      map { |item| render_facet_item(solr_field, item) }.compact.
-      map { |item| content_tag(wrapping_element,item)}
-    )
+  def render_facet_limit_list(paginator, solr_field, wrapping_element = :li)
+    safe_join(paginator.items
+      .map { |item| render_facet_item(solr_field, item) }.compact
+      .map { |item| content_tag(wrapping_element, item) })
   end
 
   ##
   # Renders a single facet item
   def render_facet_item(solr_field, item)
-    if facet_in_params?( solr_field, item.value )
+    if facet_in_params?(solr_field, item.value)
       render_selected_facet_value(solr_field, item)
     else
       render_facet_value(solr_field, item)
@@ -80,11 +75,11 @@ module Blacklight::FacetsHelperBehavior
   #
   # @param [Blacklight::SolrResponse::Facets::FacetField] display_facet
   # @return [Boolean]
-  def should_render_facet? display_facet
+  def should_render_facet?(display_facet)
     # display when show is nil or true
     facet_config = facet_configuration_for_field(display_facet.name)
     display = should_render_field?(facet_config, display_facet)
-    return display && display_facet.items.present?
+    display && display_facet.items.present?
   end
 
   ##
@@ -95,7 +90,7 @@ module Blacklight::FacetsHelperBehavior
   #
   # @param [Blacklight::Configuration::FacetField]
   # @return [Boolean]
-  def should_collapse_facet? facet_field
+  def should_collapse_facet?(facet_field)
     !facet_field_in_params?(facet_field.field) && facet_field.collapse
   end
 
@@ -108,9 +103,12 @@ module Blacklight::FacetsHelperBehavior
   # @return [String]
   def facet_partial_name(display_facet = nil)
     config = facet_configuration_for_field(display_facet.name)
-    name = config.try(:partial)
-    name ||= "facet_pivot" if config.pivot
-    name ||= "facet_limit"
+
+    if config.pivot
+      'facet_pivot'
+    else
+      config.try(:partial) || 'facet_limit'
+    end
   end
 
   ##
@@ -123,17 +121,17 @@ module Blacklight::FacetsHelperBehavior
   # @param [Hash] options
   # @option options [Boolean] :suppress_link display the facet, but don't link to it
   # @return [String]
-  def render_facet_value(facet_solr_field, item, options ={})
-    if facet_solr_field == "languagenote_tesim"
-      languages = {english: "English", french: "French", other: "Other"}
+  def render_facet_value(facet_solr_field, item, options = {})
+    if facet_solr_field == 'languagenote_tesim'
+      languages = { english: 'English', french: 'French', other: 'Other' }
       path = search_action_path(add_facet_params_and_redirect(facet_solr_field, item))
-      content_tag(:span, :class => "facet-label") do
-        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, languages[item.value.downcase.to_sym]), path, :class=>"facet_select")
+      content_tag(:span, class: 'facet-label') do
+        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, languages[item.value.downcase.to_sym]), path, class: 'facet_select')
       end + render_facet_count(item.hits)
     else
       path = search_action_path(add_facet_params_and_redirect(facet_solr_field, item))
-      content_tag(:span, :class => "facet-label") do
-        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, item), path, :class=>"facet_select")
+      content_tag(:span, class: 'facet-label') do
+        link_to_unless(options[:suppress_link], facet_display_value(facet_solr_field, item), path, class: 'facet_select')
       end + render_facet_count(item.hits)
     end
   end
@@ -142,11 +140,15 @@ module Blacklight::FacetsHelperBehavior
   # Standard display of a SELECTED facet value (e.g. without a link and with a remove button)
   # @params (see #render_facet_value)
   def render_selected_facet_value(facet_solr_field, item)
-    content_tag(:span, :class => "facet-label") do
-      content_tag(:span, facet_display_value(facet_solr_field, item), :class => "selected") +
-      # remove link
-      link_to(content_tag(:span, '', :class => "glyphicon glyphicon-remove") + content_tag(:span, '[remove]', :class => 'sr-only'), search_action_path(remove_facet_params(facet_solr_field, item, params)), :class=>"remove")
-    end + render_facet_count(item.hits, :classes => ["selected"])
+    content_tag(:span, class: 'facet-label') do
+      content_tag(:span, facet_display_value(facet_solr_field, item), class: 'selected') +
+        # remove link
+        link_to(
+          content_tag(:span, '', class: 'glyphicon glyphicon-remove') + content_tag(:span, '[remove]', class: 'sr-only'),
+          search_action_path(remove_facet_params(facet_solr_field, item, params)),
+          class: 'remove'
+        )
+    end + render_facet_count(item.hits, classes: ['selected'])
   end
 
   ##
@@ -158,8 +160,8 @@ module Blacklight::FacetsHelperBehavior
   # @option options [Array<String>]  an array of classes to add to count span.
   # @return [String]
   def render_facet_count(num, options = {})
-    classes = (options[:classes] || []) << "facet-count"
-    content_tag("span", t('blacklight.search.facets.count', :number => number_with_delimiter(num)), :class => classes)
+    classes = (options[:classes] || []) << 'facet-count'
+    content_tag('span', t('blacklight.search.facets.count', number: number_with_delimiter(num)), class: classes)
   end
 
   ##
@@ -167,8 +169,8 @@ module Blacklight::FacetsHelperBehavior
   #
   # @param [String] facet field
   # @return [Boolean]
-  def facet_field_in_params? field
-    params[:f] and params[:f][field]
+  def facet_field_in_params?(field)
+    params[:f] && params[:f][field]
   end
 
   ##
@@ -179,13 +181,11 @@ module Blacklight::FacetsHelperBehavior
   # @param [Object] facet value
   # @return [Boolean]
   def facet_in_params?(field, item)
-    if item and item.respond_to? :field
-      field = item.field
-    end
+    field = item.field if item && item.respond_to?(:field)
 
     value = facet_value_for_facet_item(item)
 
-    params[:f] and params[:f][field] and params[:f][field].include?(value)
+    params[:f] && params[:f][field] && params[:f][field].include?(value)
   end
 
   ##
@@ -194,41 +194,39 @@ module Blacklight::FacetsHelperBehavior
   # @param [Object] field
   # @param [String] item value
   # @return [String]
-  def facet_display_value field, item
+  def facet_display_value(field, item)
     facet_config = facet_configuration_for_field(field)
 
     value = if item.respond_to? :label
-          item.label
-    else
-      facet_value_for_facet_item(item)
-    end
+              item.label
+            else
+              facet_value_for_facet_item(item)
+            end
 
-    display_label = case
-      when facet_config.helper_method
-        display_label = send facet_config.helper_method, value
-      when (facet_config.query and facet_config.query[value])
-        display_label = facet_config.query[value][:label]
-      when facet_config.date
-        localization_options = {}
-        localization_options = facet_config.date unless facet_config.date === true
-        display_label = l(value.to_datetime, localization_options)
-      else
-        value
+    if facet_config.helper_method
+      send facet_config.helper_method, value
+    elsif facet_config.query && facet_config.query[value]
+      facet_config.query[value][:label]
+    elsif facet_config.date
+      localization_options = {}
+      localization_options = facet_config.date unless facet_config.date == true
+      l(value.to_datetime, localization_options)
+    else
+      value
     end
   end
 
-  def facet_field_id facet_field
+  def facet_field_id(facet_field)
     "facet-#{facet_field.field.parameterize}"
   end
 
   private
 
-  def facet_value_for_facet_item item
+  def facet_value_for_facet_item(item)
     if item.respond_to? :value
-      value = item.value
+      item.value
     else
-      value = item
+      item
     end
   end
-
 end

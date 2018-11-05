@@ -23,14 +23,23 @@ Metrics/AbcSize:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/ClassLength:
+  Max: 1000 # default 100
+
 Metrics/CyclomaticComplexity:
   Enabled: false
 
-# Metrics/LineLength:
+Metrics/LineLength:
 #   Max: 120
+  Max: 200
+  Exclude:
+    - 'spec/fixtures/*'
 
 Metrics/MethodLength:
   Enabled: false
+
+Metrics/ModuleLength:
+  Max: 500 # default 100
 
 Metrics/PerceivedComplexity:
   Enabled: false

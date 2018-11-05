@@ -1,7 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative './spec_helper'
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -25,9 +25,9 @@ require 'rspec/rails'
 ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
-  :selenium_chrome
+                            :selenium_chrome
                           else
-  :selenium_chrome_headless
+                            :selenium_chrome_headless
                           end
 
 # smoke test the ingest task and setup some seed data for testing
