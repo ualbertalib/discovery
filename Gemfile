@@ -8,11 +8,8 @@ gem 'rails', '4.2.10'
 gem 'mysql2', '~> 0.4.10'
 
 # Assets (CSS/JS) stuff
-gem 'coffee-rails', '~> 4.2.2'
-gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0.1'
-gem 'therubyracer', platforms: :ruby
 gem 'turbolinks', '5.2.0'
 gem 'uglifier', '>= 1.3.0'
 
