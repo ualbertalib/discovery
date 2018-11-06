@@ -48,12 +48,12 @@ public Set getLocationFacet(Record record){
   location_codes.put("gprcgp", "Grande Prairie Regional College - Grande Prairie");
   location_codes.put("gprcfrvw", "Grande Prairie Regional College - Fairview");
   location_codes.put("gprcint", "Grande Prairie Regional College - Internet");
-  location_codes.put("grmacacc", "Grant MacEwan University - Alberta College Campus");
-  location_codes.put("grmaccac", "Grant MacEwan University - Centre for Arts & Communications");
-  location_codes.put("grmacint", "Grant MacEwan University - Internet");
-  location_codes.put("grmactsv", "Grant MacEwan University - Technical Services");
-  location_codes.put("grmacsoc", "Grant MacEwan University - South Campus");
-  location_codes.put("grmacewan", "Grant MacEwan University - City Centre Campus");
+  location_codes.put("grmacacc", "MacEwan University - Alberta College Campus");
+  location_codes.put("grmaccac", "MacEwan University - Centre for Arts & Communications");
+  location_codes.put("grmacint", "MacEwan University - Internet");
+  location_codes.put("grmactsv", "MacEwan University - Technical Services");
+  location_codes.put("grmacsoc", "MacEwan University - South Campus");
+  location_codes.put("grmacewan", "MacEwan University - City Centre Campus");
   location_codes.put("justiceca", "Justice Canada");
   location_codes.put("keyano", "Keyano College");
   location_codes.put("kings",  "The King's University College");
