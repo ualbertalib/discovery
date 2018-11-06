@@ -9,7 +9,7 @@ gem 'mysql2', '~> 0.4.10'
 
 # Assets (CSS/JS) stuff
 gem 'coffee-rails', '~> 4.2.2'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.8'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0.1'
 gem 'therubyracer', platforms: :ruby
