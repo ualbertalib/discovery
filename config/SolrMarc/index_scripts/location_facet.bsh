@@ -44,7 +44,6 @@ public Set getLocationFacet(Record record){
   location_codes.put("covenantgn", "Covenant Health - Grey Nuns Community Hospital");
   location_codes.put("covenantmh", "Covenant Health - Misericordia Community Hospital");
   location_codes.put("cross",  "Cross Cancer Institute");
-  location_codes.put("cuc",  "Canadian University College");
   location_codes.put("gprcgp", "Grande Prairie Regional College - Grande Prairie");
   location_codes.put("gprcfrvw", "Grande Prairie Regional College - Fairview");
   location_codes.put("gprcint", "Grande Prairie Regional College - Internet");
@@ -56,7 +55,7 @@ public Set getLocationFacet(Record record){
   location_codes.put("grmacewan", "MacEwan University - City Centre Campus");
   location_codes.put("justiceca", "Justice Canada");
   location_codes.put("keyano", "Keyano College");
-  location_codes.put("kings",  "The King's University College");
+  location_codes.put("kings",  "The King's University");
   location_codes.put("lakelndin", "Lakeland College Internet");
   location_codes.put("lakelndll", "Lakeland College Lloydminster");
   location_codes.put("lakelndvr", "Lakeland College Vermilion");
