@@ -19,7 +19,6 @@ public Set getLocationFacet(Record record){
   location_codes.put("aglssp",  "Alberta Government Library - 107 Street");
   location_codes.put("agltpn",  "Alberta Government Library - Telus Plaza North");
   location_codes.put("ahsach", "Alberta Health Services - Alberta Children's Hospital");
-  location_codes.put("ahsahe", "Alberta Health Services - Alberta Hospital Edmonton");
   location_codes.put("ahskec", "Alberta Health Services - Kaye Edmonton Clinic");
   location_codes.put("ahsrah",  "Alberta Health Services - Royal Alexandra Hospital");
   location_codes.put("ahsreddr", "Alberta Health Services - Red Deer Regional Hospital");
