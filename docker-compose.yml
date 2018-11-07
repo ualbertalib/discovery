@@ -23,6 +23,12 @@ services:
     volumes:
       - solr:/opt/solr/server/solr/mycores
 
+  mailcatcher:
+    image: sj26/mailcatcher
+    ports:
+      - "1025:1025"
+      - "3082:1080"
+
   # Rails
   web:
     image: ualbertalib/discovery:uat
