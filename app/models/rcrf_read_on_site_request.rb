@@ -1,6 +1,13 @@
 class RCRFReadOnSiteRequest
   include ActiveModel::Model
 
+  VIEWING_LOCATIONS = [
+    'Bruce Peel Special Collection (Mon-Fri 12-4:30pm)',
+    'Archives Reading Room - RCRF (Tues-Thurs 9-4pm)'
+  ].freeze
+
+
+
   attr_accessor :name,
                 :email,
                 :viewing_location,

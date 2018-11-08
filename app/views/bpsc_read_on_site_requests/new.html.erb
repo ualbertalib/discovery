@@ -1,32 +1,19 @@
-<h1>BPSC Retrieval Request (Read on Site)</h1>
-
-<p>
-All researchers (including students, faculty, visiting scholars, and members of the general public)
-must submit a Retrieval Request Form before 8am on the day of their planned visit (at the very latest)
-in order to be sure that library materials have been retrieved from storage and are available for their use.
-If you have any questions, please contact library staff at
-<a href="mailto:bpsc@ualberta.ca">bpsc@ualberta.ca</a>
-or call
-<a href="tel:+780-492-5998">780-492-5998</a>
-during regular business hours (Mon-Fri 12:00-4:30pm).
-</p>
-<p>
-  Prior to your visit, please review our
-  <a href="https://bpsc.library.ualberta.ca/info/visit#policy">Reading Room Policies.</a>
-</p>
+<h1><%= t('.header') %></h1>
+<p><%= t('.lead_html') %></p>
+<p><%= t('.review_policy_html') %></p>
 
 <%= bootstrap_form_for(@bpsc_read_on_site_request) do |f| %>
   <%= f.text_field :name %>
   <%= f.text_field :email %>
-  <%= f.text_field :appointment_time %>
+  <%= f.text_field :appointment_time, label: t('.date_of_planned_visit') %>
   <%= f.text_field :title %>
-  <%= f.text_field :item_url %>
+  <%= f.text_field :item_url, label: t('item_url'), help: t('item_url_help') %>
 
   <%= f.text_area :notes,
-                  label: 'Additional Notes',
+                  label: t('additional_notes'),
                   rows: 7,
                   cols: 45,
                   placeholder: '' %>
 
-  <%= f.primary 'Request Viewing' %>
+  <%= f.primary t('request_viewing') %>
 <% end %>
