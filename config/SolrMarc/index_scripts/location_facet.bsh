@@ -19,17 +19,11 @@ public Set getLocationFacet(Record record){
   location_codes.put("aglssp",  "Alberta Government Library - 107 Street");
   location_codes.put("agltpn",  "Alberta Government Library - Telus Plaza North");
   location_codes.put("ahsach", "Alberta Health Services - Alberta Children's Hospital");
-  location_codes.put("ahsahe", "Alberta Health Services - Alberta Hospital Edmonton");
-  location_codes.put("ahscenten", "Alberta Health Services - Centennial Centre");
-  location_codes.put("ahsctr15", "Alberta Health Services - Centre 15");
   location_codes.put("ahskec", "Alberta Health Services - Kaye Edmonton Clinic");
   location_codes.put("ahsrah",  "Alberta Health Services - Royal Alexandra Hospital");
   location_codes.put("ahsreddr", "Alberta Health Services - Red Deer Regional Hospital");
   location_codes.put("ahsrvgh", "Alberta Health Services - Rockyview General Hospital");
-  location_codes.put("ahssturg", "Alberta Health Services - Sturgeon Community Hospital");
   location_codes.put("ahstbcc", "Alberta Health Services - Tom Baker Cancer Centre");
-  location_codes.put("ahserc", "Alberta Health Services");
-  location_codes.put("ahscenten", "Alberta Health Services ");
   location_codes.put("ahsint", "Alberta Health Services/Covenant Health - Internet");
   location_codes.put("ahsglenrse", "Alberta Health Services - Glenrose Rehabilitation Hospital");
   location_codes.put("aitfcalg",  "Alberta Innovates - Technology Futures - Calgary");
@@ -43,7 +37,6 @@ public Set getLocationFacet(Record record){
   location_codes.put("concordsem", "Concordia Lutheran Seminary");
   location_codes.put("covenantgn", "Covenant Health - Grey Nuns Community Hospital");
   location_codes.put("covenantmh", "Covenant Health - Misericordia Community Hospital");
-  location_codes.put("cross",  "Cross Cancer Institute");
   location_codes.put("gprcgp", "Grande Prairie Regional College - Grande Prairie");
   location_codes.put("gprcfrvw", "Grande Prairie Regional College - Fairview");
   location_codes.put("gprcint", "Grande Prairie Regional College - Internet");
