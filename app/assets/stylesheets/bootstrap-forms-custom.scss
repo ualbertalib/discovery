@@ -1,5 +1,5 @@
 label.required:after {
   content:" *";
-  // TODO: Need to refactor our css here, so we can access bootstrap variables
+  // TODO: Need to refactor our css/assets pipeline, so we can access bootstrap variables
   color: #d9534f;
 }

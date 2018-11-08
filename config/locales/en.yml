@@ -24,6 +24,8 @@ en:
   item_url: 'Item URL'
   item_url_help: 'e.g. https://library.ualberta.ca/catalog/8081552'
   request_viewing: 'Request Viewing'
+  request_form_success: 'Thank you! We have received your request and will be in contact shortly.'
+  request_form_error: 'There was an problem sending your request. Please fix any errors and try again.'
   bpsc_read_on_site_requests:
     new:
       header: 'BPSC Retrieval Request (Read on Site)'
