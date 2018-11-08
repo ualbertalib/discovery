@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [3.0.91] - 2018-11-03
 ### Fixed
 - Heavy cleanup of `.rubocop_todo.yml` and refactoring [PR#1359](https://github.com/ualbertalib/discovery/pull/1359)
 - Fix test/dev solr cores provisoning for docker [PR#1357](https://github.com/ualbertalib/discovery/pull/1357)
@@ -16,9 +18,14 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Add Email Interceptor for Staging/UAT environments [PR#1344](https://github.com/ualbertalib/discovery/pull/1344)
 - Add Editorconfig to repo for consistent code styling [PR#1338](https://github.com/ualbertalib/discovery/pull/1338)
 - Add letter opener gem for testing emails in dev environment [PR#1337](https://github.com/ualbertalib/discovery/pull/1337)
+- Logic for 'Request Me' link [#1247](https://github.com/ualbertalib/discovery/issues/1247)
 
 ### Removed
 - Removed a bunch of files/gems that weren't being used [PR#1345](https://github.com/ualbertalib/discovery/pull/1345)
+- Custom bookmark code [PR#1369](https://github.com/ualbertalib/discovery/pull/1369)
+
+### Security
+- Bump loofah from 2.2.2 to 2.2.3 [PR#1360](https://github.com/ualbertalib/discovery/pull/1360)
 
 ## [3.0.90] - 2018-10-17
 ### Fixed
