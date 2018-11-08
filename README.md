@@ -45,6 +45,9 @@ Integration tests (run against <http://search-test.library.ualberta.ca/>)
 2.  `bundle exec rake comfortable_mexican_sofa:cmssetup` to setup the CMS
 3.  create cron jobs to ingest `bundle exec rake ingest[sfx]`, `bundle exec rake ingest[databases]` and clean session table `bundle exec rake sessions:cleanup`
 
+## UAT
+Go [here](https://github.com/ualbertalib/di_internal/blob/master/System-Adminstration/UAT-Environment.md#access-discovery-uat-instance) for information about accessing Discovery UAT instance.
+
 ## Ingest
 
 The standard library cataloguing data format is [MARC](https://www.loc.gov/marc/marcdocz.html). MARC uses numeric fields to contain bibliographic information in the form of text strings that use a [content standard](https://en.wikipedia.org/wiki/International_Standard_Bibliographic_Description) to format the text and, perhaps more importantly, the punctuation. Each MARC field can be subdivided into alphabetical subfields which generally either a) containing repeated elements or b) subdivide the text string. MARC fields and subfields are often written out as e.g. **245$a** which means field number 245 (= title), subfield a.
