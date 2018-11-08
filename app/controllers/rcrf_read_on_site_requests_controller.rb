@@ -20,11 +20,11 @@ class RCRFReadOnSiteRequestsController < ApplicationController
 
   def rcrf_read_on_site_request_params
     params.require(:rcrf_read_on_site_request).permit(:name,
-                                              :email,
-                                              :viewing_location,
-                                              :appointment_time,
-                                              :title,
-                                              :item_url,
-                                              :notes)
+                                                      :email,
+                                                      :viewing_location,
+                                                      :appointment_time,
+                                                      :title,
+                                                      :item_url,
+                                                      :notes)
   end
 end

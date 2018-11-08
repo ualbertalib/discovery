@@ -20,10 +20,10 @@ class BPSCReadOnSiteRequestsController < ApplicationController
 
   def bpsc_read_on_site_request_params
     params.require(:bpsc_read_on_site_request).permit(:name,
-                                              :email,
-                                              :appointment_time,
-                                              :title,
-                                              :item_url,
-                                              :notes)
+                                                      :email,
+                                                      :appointment_time,
+                                                      :title,
+                                                      :item_url,
+                                                      :notes)
   end
 end
