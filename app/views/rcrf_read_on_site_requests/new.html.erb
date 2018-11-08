@@ -1,0 +1,26 @@
+<h1>Request to View RCRF No Loan Items</h1>
+
+<p>
+No Loan items do not circulate, but can be viewed at the Archives Reading Room - RCRF
+on South Campus or the Bruce Peel Special Collections Reading Room on North Campus.
+Use this form to request viewing of the item at one of these locations.
+A staff member will contact you within two to three business days to arrange
+for your visit to view the item.
+</p>
+
+<%= bootstrap_form_for(@rcrf_read_on_site_request) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email %>
+  <%= f.text_field :viewing_location %>
+  <%= f.text_field :appointment_time %>
+  <%= f.text_field :title %>
+  <%= f.text_field :item_url %>
+
+  <%= f.text_area :notes,
+                  label: 'Additional Notes',
+                  rows: 7,
+                  cols: 45,
+                  placeholder: '' %>
+
+  <%= f.primary 'Request Viewing' %>
+<% end %>

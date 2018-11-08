@@ -1,0 +1,24 @@
+<h1>RCRF Depository Library Request Form (Microform/Newspapers)</h1>
+
+<p>
+We need additional publication information (e.g., year, specific date,
+section, article title, etc.) for us to retrieve this item.
+Please provide as much detail as possible.
+</p>
+
+<%= bootstrap_form_for(@rcrf_special_request) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.email_field :email %>
+  <%= f.text_field :title %>
+  <%= f.text_field :item_url %>
+
+  <%= f.text_area :notes,
+                  label: 'Additional Notes',
+                  rows: 7,
+                  cols: 45,
+                  placeholder: '' %>
+
+  <%= f.text_field :library %>
+
+  <%= f.primary 'Request Viewing' %>
+<% end %>
