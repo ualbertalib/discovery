@@ -6,8 +6,6 @@ class RCRFReadOnSiteRequest
     'Archives Reading Room - RCRF (Tues-Thurs 9-4pm)'
   ].freeze
 
-
-
   attr_accessor :name,
                 :email,
                 :viewing_location,
