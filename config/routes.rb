@@ -36,6 +36,10 @@ Rails.application.routes.draw do
     resources :corrections, only: [:new, :create]
   end
 
+  resources :rcrf_special_requests, only: [:new, :create]
+  resources :bpsc_read_on_site_requests, only: [:new, :create]
+  resources :rcrf_read_on_site_requests, only: [:new, :create]
+
   root to: 'comfy/cms/content#show'
 
   comfy_route :cms_admin, path: '/admin'

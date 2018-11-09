@@ -1,0 +1,9 @@
+<p>Name: <%= @rcrf_read_on_site_request.name %></p>
+<p>Email: <%= @rcrf_read_on_site_request.email %></p>
+<p>Viewing Location: <%= @rcrf_read_on_site_request.viewing_location %></p>
+<p>Appointment Time: <%= @rcrf_read_on_site_request.appointment_time %></p>
+<p>Title: <%= @rcrf_read_on_site_request.title %></p>
+<p>Item URL: <%= link_to(@rcrf_read_on_site_request.item_url, @rcrf_read_on_site_request.item_url) %></p>
+<p>Notes: <%= @rcrf_read_on_site_request.notes %></p>
+
+<p>*** this email generated automatically from <%= link_to(new_rcrf_read_on_site_request_url, new_rcrf_read_on_site_request_url) %> ***</p>

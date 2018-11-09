@@ -41,11 +41,13 @@ module HoldingsHelper
   READ_ON_SITE_LOCATION_BPSC = 'UASPCOLL'.freeze # Bruce Peel Special Collections
 
   # returns path to read on site form
-  # TODO: replace placeholder with appropriate path_for
-  def read_on_site_path(item)
-    return '/#TODO_RCRF' if item[:location] == READ_ON_SITE_LOCATION_RCRF
-    return '/#TODO_BPSC' if item[:location] == READ_ON_SITE_LOCATION_BPSC
-    nil
+  # TODO: Should be passing in title as well, need to work out business logic for this though
+  def read_on_site_path(item, document_id)
+    if item[:location] == READ_ON_SITE_LOCATION_RCRF
+      new_rcrf_read_on_site_request_path(item_url: catalog_url(document_id))
+    elsif item[:location] == READ_ON_SITE_LOCATION_BPSC
+      new_bpsc_read_on_site_request_path(item_url: catalog_url(document_id))
+    end
   end
 
   # returns the library description that matches the code coming from symphony ws

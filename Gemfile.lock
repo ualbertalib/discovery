@@ -398,6 +398,7 @@ DEPENDENCIES
   blacklight_advanced_search
   blacklight_google_analytics
   blacklight_range_limit
+  bootstrap_form (~> 2.7.0)
   brakeman
   capybara
   chromedriver-helper
@@ -432,4 +433,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.16.5
+   1.17.1
