@@ -1,6 +1,7 @@
 class BPSCReadOnSiteRequestsController < ApplicationController
   def new
-    @bpsc_read_on_site_request = BPSCReadOnSiteRequest.new(item_url: params[:item_url])
+    @bpsc_read_on_site_request = BPSCReadOnSiteRequest.new(item_url: params[:item_url],
+                                                           title: params[:title])
   end
 
   def create

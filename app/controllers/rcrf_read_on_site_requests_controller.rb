@@ -1,6 +1,7 @@
 class RCRFReadOnSiteRequestsController < ApplicationController
   def new
-    @rcrf_read_on_site_request = RCRFReadOnSiteRequest.new(item_url: params[:item_url])
+    @rcrf_read_on_site_request = RCRFReadOnSiteRequest.new(item_url: params[:item_url],
+                                                           title: params[:title])
   end
 
   def create

@@ -1,6 +1,7 @@
 class RCRFSpecialRequestsController < ApplicationController
   def new
-    @rcrf_special_request = RCRFSpecialRequest.new(item_url: params[:item_url])
+    @rcrf_special_request = RCRFSpecialRequest.new(item_url: params[:item_url],
+                                                   title: params[:title])
   end
 
   def create

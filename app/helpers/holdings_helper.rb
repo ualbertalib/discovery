@@ -40,13 +40,11 @@ module HoldingsHelper
   READ_ON_SITE_LOCATION_RCRF = 'UARCRF'.freeze # Research and Collections Resource Facility
   READ_ON_SITE_LOCATION_BPSC = 'UASPCOLL'.freeze # Bruce Peel Special Collections
 
-  # returns path to read on site form
-  # TODO: Should be passing in title as well, need to work out business logic for this though
-  def read_on_site_path(item, document_id)
+  def read_on_site_path(item, document_id, document_title)
     if item[:location] == READ_ON_SITE_LOCATION_RCRF
-      new_rcrf_read_on_site_request_path(item_url: catalog_url(document_id))
+      new_rcrf_read_on_site_request_path(item_url: catalog_url(document_id), title: document_title)
     elsif item[:location] == READ_ON_SITE_LOCATION_BPSC
-      new_bpsc_read_on_site_request_path(item_url: catalog_url(document_id))
+      new_bpsc_read_on_site_request_path(item_url: catalog_url(document_id), title: document_title)
     end
   end
 
