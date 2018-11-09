@@ -26,6 +26,8 @@ en:
   request_viewing: 'Request Viewing'
   request_form_success: 'Thank you! We have received your request and will be in contact shortly.'
   request_form_error: 'There was an problem sending your request. Please fix any errors and try again.'
+  this_email_was_generated_by_html: '*** this email generated automatically from %{url} ***'
+
   bpsc_read_on_site_requests:
     new:
       header: 'BPSC Retrieval Request (Read on Site)'
@@ -41,7 +43,6 @@ en:
         'Prior to your visit, please review our
         <a href="https://bpsc.library.ualberta.ca/info/visit#policy">Reading Room Policies.</a>'
       date_of_planned_visit: 'First Date of Planned Visit (open Mon-Fri 12-4:30pm)'
-    create:
   rcrf_read_on_site_requests:
     new:
       header: 'Request to View RCRF No Loan Items'
@@ -51,7 +52,6 @@ en:
         A staff member will contact you within two to three business days to arrange
         for your visit to view the item.'
       please_select_a_location_for_viewing: 'Please select a location for viewing'
-    create:
   rcrf_special_requests:
     new:
       header: 'RCRF Depository Library Request Form (Microform/Newspapers)'
@@ -62,7 +62,16 @@ en:
       place_request: 'Place Request'
       pickup_library: 'Pickup Library'
       please_select_a_library: 'Please select a library'
-    create:
+  request_form_mailer:
+    name: 'Name: %{name}'
+    email: 'Email: %{email}'
+    title: 'Title: %{title}'
+    item_url_html: 'Item URL: %{item_url}'
+    notes: 'Additional Notes: %{notes}'
+    library: 'Pickup Library: %{library}'
+    viewing_location: 'Viewing Location: %{viewing_location}'
+    appointment_time: 'Appointment Time: %{appointment_time}'
+    date_of_planned_visit: 'Date of Planned Visit: %{appointment_time}'
   mail:
     intercepted:
       explanation:

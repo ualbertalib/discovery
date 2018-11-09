@@ -1,8 +1,11 @@
-<p>Name: <%= @rcrf_special_request.name %></p>
-<p>Email: <%= @rcrf_special_request.email %></p>
-<p>Title: <%= @rcrf_special_request.title %></p>
-<p>Item URL: <%= link_to(@rcrf_special_request.item_url, @rcrf_special_request.item_url) %></p>
-<p>Notes: <%= @rcrf_special_request.notes %></p>
-<p>Library: <%= @rcrf_special_request.library %></p>
+<p><%= t('request_form_mailer.name', name: @rcrf_special_request.name) %></p>
+<p><%= t('request_form_mailer.email', email: @rcrf_special_request.email) %></p>
+<p><%= t('request_form_mailer.title', title: @rcrf_special_request.title) %></p>
+<p><%= t('request_form_mailer.item_url_html', item_url: @rcrf_special_request.item_url) %></p>
+<p><%= t('request_form_mailer.notes', notes: @rcrf_special_request.notes) %></p>
+<p><%= t('request_form_mailer.library', library: @rcrf_special_request.library) %></p>
 
-<p>*** this email generated automatically from <%= link_to(new_rcrf_special_request_url, new_rcrf_special_request_url) %> ***</p>
+<p>
+  <%= t('this_email_was_generated_by_html',
+        url: link_to(new_rcrf_special_request_url, new_rcrf_special_request_url)) %>
+</p>

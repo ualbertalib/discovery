@@ -1,8 +1,9 @@
-Name: <%= @bpsc_read_on_site_request.name %>
-Email: <%= @bpsc_read_on_site_request.email %>
-Appointment Time: <%= @bpsc_read_on_site_request.appointment_time %>
-Title: <%= @bpsc_read_on_site_request.title %>
-Item URL: <%= @bpsc_read_on_site_request.item_url %>
-Notes: <%= @bpsc_read_on_site_request.notes %>
+<%= t('request_form_mailer.name', name: @bpsc_read_on_site_request.name) %>
+<%= t('request_form_mailer.email', email: @bpsc_read_on_site_request.email) %>
+<%= t('request_form_mailer.date_of_planned_visit',
+      appointment_time: @bpsc_read_on_site_request.appointment_time) %>
+<%= t('request_form_mailer.title', title: @bpsc_read_on_site_request.title) %>
+<%= t('request_form_mailer.item_url_html', item_url: @bpsc_read_on_site_request.item_url) %>
+<%= t('request_form_mailer.notes', notes: @bpsc_read_on_site_request.notes) %>
 
-*** this email generated automatically from <%= new_bpsc_read_on_site_request_url %> ***
+<%= t('this_email_was_generated_by_html', url: new_bpsc_read_on_site_request_url) %>
