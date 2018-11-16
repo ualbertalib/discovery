@@ -16,6 +16,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Removed
 - Email Interceptor for UAT environments [PR#1387](https://github.com/ualbertalib/discovery/pull/1387)
+- Dependency for rubyracer. [#1378](https://github.com/ualbertalib/discovery/issues/1378)
 
 ## [3.0.91] - 2018-11-03
 ### Fixed
