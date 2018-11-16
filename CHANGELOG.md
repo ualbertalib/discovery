@@ -5,11 +5,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [3.0.92] - 2018-11-16
+
+### Fixed
+- Corrected location codes for AHS, MacEwan, and King's University [NEOSDiscovery#173](https://github.com/ualbertalib/NEOSDiscovery/issues/173)
+- Typo in Usage Rights scholarsportal URL [#1362](https://github.com/ualbertalib/discovery/issues/1362)
+
 ### Added
 - Mail catcher docker container for checking mail on UAT [#1342](https://github.com/ualbertalib/discovery/pull/1342)
 
 ### Removed
 - Email Interceptor for UAT environments [PR#1387](https://github.com/ualbertalib/discovery/pull/1387)
+- Dependency for rubyracer. [#1378](https://github.com/ualbertalib/discovery/issues/1378)
 
 ## [3.0.91] - 2018-11-03
 ### Fixed
