@@ -7,6 +7,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [Unreleased]
 ### Added
 - Mail catcher docker container for checking mail on UAT [#1342](https://github.com/ualbertalib/discovery/pull/1342)
+- New request forms for RCRF/BPSC [#1386](https://github.com/ualbertalib/discovery/pull/1386)
 
 ### Removed
 - Email Interceptor for UAT environments [PR#1387](https://github.com/ualbertalib/discovery/pull/1387)
