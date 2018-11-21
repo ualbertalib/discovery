@@ -19,7 +19,7 @@ describe HoldingsHelper do
 
   describe '#read_on_site_path' do
     it "should link to #{HoldingsHelper::READ_ON_SITE_LOCATION_RCRF} form" do
-      item = { location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
+      item = { status: 'READONSITE', location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
       expect(helper.read_on_site_path(item, 'random_id_goes_here', 'Title of Item Goes Here!')).to eq(
         new_rcrf_read_on_site_request_path(item_url: catalog_url('random_id_goes_here'),
                                            title: 'Title of Item Goes Here!')
@@ -27,7 +27,7 @@ describe HoldingsHelper do
     end
 
     it "should link to #{HoldingsHelper::READ_ON_SITE_LOCATION_BPSC} form" do
-      item = { location: HoldingsHelper::READ_ON_SITE_LOCATION_BPSC }
+      item = { status: 'READONSITE', location: HoldingsHelper::READ_ON_SITE_LOCATION_BPSC }
       expect(helper.read_on_site_path(item, 'random_id_goes_here', 'Title of Item Goes Here!')).to eq(
         new_bpsc_read_on_site_request_path(item_url: catalog_url('random_id_goes_here'),
                                            title: 'Title of Item Goes Here!')

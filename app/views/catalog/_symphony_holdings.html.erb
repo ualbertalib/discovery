@@ -45,7 +45,9 @@
                 <td></td>
               <% end %>
               <td>
-                  <% if read_on_site_path(item, @document.id, @document.header_title).present? %>
+                  <%# TODO: Add a feature flag for this feature for time being (remove in future) %>
+                  <% if read_on_site_path(item, @document.id, @document.header_title).present? &&
+                        params[:feature_flag_request_forms].present? %>
                     <%= link_to('Request Me',
                                 read_on_site_path(item, @document.id, @document.header_title),
                                 class: 'normal-link',
