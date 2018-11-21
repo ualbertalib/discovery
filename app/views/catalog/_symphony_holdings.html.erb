@@ -45,12 +45,11 @@
                 <td></td>
               <% end %>
               <td>
-                  <% if item[:status] == 'READONSITE' %>
-                    <%= link_to_if(read_on_site_path(item, @document.id, @document.header_title).present?,
-                                   'Request Me',
-                                   read_on_site_path(item, @document.id, @document.header_title),
-                                   class: 'normal-link',
-                                   target: :_blank) %>
+                  <% if read_on_site_path(item, @document.id, @document.header_title).present? %>
+                    <%= link_to('Request Me',
+                                read_on_site_path(item, @document.id, @document.header_title),
+                                class: 'normal-link',
+                                target: :_blank) %>
                   <%- end -%>
                   <% if @document.respond_to?( :to_email_text ) %>
                     <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>library_location(item[:location])), {:id => 'emailLink', :class => 'lightboxLink'} %>
