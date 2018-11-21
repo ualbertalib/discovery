@@ -42,12 +42,12 @@ module HoldingsHelper
 
   def read_on_site_path(item, document_id, document_title)
     # TODO: Add a feature flag for this feature for time being (remove in future)
-    if item[:status] == 'READONSITE' && params[:feature_flag_request_forms].present?
-      if item[:location] == READ_ON_SITE_LOCATION_RCRF
-        new_rcrf_read_on_site_request_path(item_url: catalog_url(document_id), title: document_title)
-      elsif item[:location] == READ_ON_SITE_LOCATION_BPSC
-        new_bpsc_read_on_site_request_path(item_url: catalog_url(document_id), title: document_title)
-      end
+    return unless item[:status] == 'READONSITE' && params[:feature_flag_request_forms].present?
+
+    if item[:location] == READ_ON_SITE_LOCATION_RCRF
+      new_rcrf_read_on_site_request_path(item_url: catalog_url(document_id), title: document_title)
+    elsif item[:location] == READ_ON_SITE_LOCATION_BPSC
+      new_bpsc_read_on_site_request_path(item_url: catalog_url(document_id), title: document_title)
     end
   end
 
