@@ -25,6 +25,7 @@ gem 'devise'
 gem 'devise-guests'
 
 # Misc Utilities
+gem 'bootstrap_form', '~> 2.7.0'
 gem 'friendly_id'
 gem 'nokogiri', '~> 1.8.5'
 gem 'om'

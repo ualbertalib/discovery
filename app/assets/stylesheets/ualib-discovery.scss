@@ -420,6 +420,30 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
   background-color: #e3f1f1;
 
 }
+
+// FIXME:
+// lightboxLink is a special class which has javascript associated with it
+// (pops up the link in a modal via blacklight's ajax modal code)
+// Hack this to get similar styling but without the javascript functionality
+// Ideally should just be using bootstrap btn instead of custom code
+// And css should be dashed cased and not camel cased
+#holdings table a.normal-link{
+  display: block;
+  background-color: #fff;
+  padding: 3px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 3px;
+  text-decoration: none;
+  border:1px solid #bfc0c1;
+  font-size: 14px;
+  width: 70px;
+}
+#holdings table a.normal-link:hover{
+  background-color: #e3f1f1;
+
+}
+
 .holding-status, .holding-type{
   text-transform: capitalize;
 }

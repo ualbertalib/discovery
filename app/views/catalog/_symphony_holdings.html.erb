@@ -45,12 +45,14 @@
                 <td></td>
               <% end %>
               <td>
-<% if false %>
-<%# TODO: this feature has not been completed %>
-                  <% if item[:status] == 'READONSITE' %>
-                    <%= link_to_if(read_on_site_path(item).present?, "Request Me", read_on_site_path(item), {:id => 'requestLink', :class => 'lightboxLink'}) %>
+                  <%# TODO: Add a feature flag for this feature for time being (remove in future) %>
+                  <% if read_on_site_path(item, @document.id, @document.header_title).present? &&
+                        params[:feature_flag_request_forms].present? %>
+                    <%= link_to('Request Me',
+                                read_on_site_path(item, @document.id, @document.header_title),
+                                class: 'normal-link',
+                                target: :_blank) %>
                   <%- end -%>
-<%- end -%>
                   <% if @document.respond_to?( :to_email_text ) %>
                     <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>library_location(item[:location])), {:id => 'emailLink', :class => 'lightboxLink'} %>
                   <%- end -%>

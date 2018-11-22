@@ -1,0 +1,11 @@
+<%= t('request_form_mailer.name', name: @rcrf_read_on_site_request.name) %>
+<%= t('request_form_mailer.email', email: @rcrf_read_on_site_request.email) %>
+<%= t('request_form_mailer.viewing_location',
+      viewing_location: @rcrf_read_on_site_request.viewing_location) %>
+<%= t('request_form_mailer.appointment_time',
+      appointment_time: @rcrf_read_on_site_request.appointment_time) %>
+<%= t('request_form_mailer.title', title: @rcrf_read_on_site_request.title) %>
+<%= t('request_form_mailer.item_url_html', item_url: @rcrf_read_on_site_request.item_url) %>
+<%= t('request_form_mailer.notes', notes: @rcrf_read_on_site_request.notes) %>
+
+<%= t('this_email_was_generated_by_html', url: new_rcrf_read_on_site_request_url) %>

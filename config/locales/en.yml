@@ -20,6 +20,58 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  additional_notes: 'Additional Notes'
+  item_url: 'Item URL'
+  item_url_help: 'e.g. https://library.ualberta.ca/catalog/8081552'
+  request_viewing: 'Request Viewing'
+  request_form_success: 'Thank you! We have received your request and will be in contact shortly.'
+  request_form_error: 'There was an problem sending your request. Please fix any errors and try again.'
+  this_email_was_generated_by_html: '*** this email generated automatically from %{url} ***'
+
+  bpsc_read_on_site_requests:
+    new:
+      header: 'BPSC Retrieval Request (Read on Site)'
+      lead_html: 'All researchers (including students, faculty, visiting scholars, and members of the general public)
+        must submit a Retrieval Request Form before 8am on the day of their planned visit (at the very latest)
+        in order to be sure that library materials have been retrieved from storage and are available for their use.
+        If you have any questions, please contact library staff at
+        <a href="mailto:bpsc@ualberta.ca">bpsc@ualberta.ca</a>
+        or call
+        <a href="tel:+780-492-5998">780-492-5998</a>
+        during regular business hours (Mon-Fri 12:00-4:30pm).'
+      review_policy_html:
+        'Prior to your visit, please review our
+        <a href="https://bpsc.library.ualberta.ca/info/visit#policy">Reading Room Policies.</a>'
+      date_of_planned_visit: 'First Date of Planned Visit (open Mon-Fri 12-4:30pm)'
+  rcrf_read_on_site_requests:
+    new:
+      header: 'Request to View RCRF No Loan Items'
+      lead: 'No Loan items do not circulate, but can be viewed at the Archives Reading Room - RCRF
+        on South Campus or the Bruce Peel Special Collections Reading Room on North Campus.
+        Use this form to request viewing of the item at one of these locations.
+        A staff member will contact you within two to three business days to arrange
+        for your visit to view the item.'
+      please_select_a_location_for_viewing: 'Please select a location for viewing'
+  rcrf_special_requests:
+    new:
+      header: 'RCRF Depository Library Request Form (Microform/Newspapers)'
+      lead: 'We need additional publication information (e.g., year, specific date,
+        section, article title, etc.) for us to retrieve this item.
+        Please provide as much detail as possible.'
+      notes_placeholder: 'Please provide any additional information that can help us retrieve this item. e.g. Year, Volume, Specific Date, etc.'
+      place_request: 'Place Request'
+      pickup_library: 'Pickup Library'
+      please_select_a_library: 'Please select a library'
+  request_form_mailer:
+    name: 'Name: %{name}'
+    email: 'Email: %{email}'
+    title: 'Title: %{title}'
+    item_url_html: 'Item URL: %{item_url}'
+    notes: 'Additional Notes: %{notes}'
+    library: 'Pickup Library: %{library}'
+    viewing_location: 'Viewing Location: %{viewing_location}'
+    appointment_time: 'Appointment Time: %{appointment_time}'
+    date_of_planned_visit: 'Date of Planned Visit: %{appointment_time}'
   mail:
     intercepted:
       explanation:
