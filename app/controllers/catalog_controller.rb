@@ -279,5 +279,4 @@ class CatalogController < ApplicationController
 
   end
 
->>>>>>> Added kule collection id.
 end
