@@ -43,20 +43,7 @@
     <% end %>
   </div>
 <div class="col-sm-12">
-  <% if @document["format"].include? "Database" %>
-    <%= render "databases" %>
-      <% end %>
-
-      <% if @ua_urls %>
-        <%= render "main_url_display" %>
-      <% end %>
-      <% if @non_ua_urls %>
-        <% if @ua_urls.empty? %>
-          <%= render "urls" %>
-        <% end %>
-      <% end %>
-
-      <% if @holdings.nil? || @holdings.empty? %>
+        <% if @holdings.nil? || @holdings.empty? %>
         <% unless @document["format"].include? "Database" %>
         <br />
         <%= "No copies found. This item may be lost or missing, or the data may be temporarily unavailable. Please <a href='/ask-us' target='_blank'>ask us</a> for assistance.".html_safe %>

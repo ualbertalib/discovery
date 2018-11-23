@@ -2,4 +2,14 @@
     <%= document.header_title %><%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%>
 </h1>
 <div id="eaccess">
+  <div id="electronic_access">
+    <% if @document["format"].include? "Database" %>
+      <%= render 'databases' %>
+    <% end %>
+    <% if @ua_urls %>
+      <%= render 'main_url_display' %>
+    <% elsif @non_ua_urls %>
+      <%= render 'urls' %>
+    <% end %>
+  </div>
 </div>
