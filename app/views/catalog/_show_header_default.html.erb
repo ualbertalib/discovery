@@ -4,12 +4,58 @@
 <div id="eaccess">
   <div id="electronic_access">
     <% if @document["format"].include? "Database" %>
-      <%= render 'databases' %>
+      <table>
+        <tr></tr>
+        <% if @document["url_tesim"] %>
+          <tr>
+            <td>
+              <a href="<%= @document["enableproxy_tesim"].first == "1" ? Rails.application.config.proxy : "" %><%= @document["url_tesim"].first %>" target=\'_blank\'>Click Here for Access</a>
+            </td>
+          </tr>
+        <% end %>
+      </table>
     <% end %>
     <% if @ua_urls %>
-      <%= render 'main_url_display' %>
+      <% unless @ua_urls.empty? %>
+        <% @ua_urls.each do |location,url| %>
+          <% if location.include? "Free Access" %>
+              <% @proxy = "" %>
+          <% else %>
+              <% @proxy = Rails.application.config.proxy %>
+          <% end %>
+          <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "").strip %>
+          <% if loc.start_with?('(') && loc.end_with?(')') && loc.count('(') == 1 && loc.count(')') == 1 %>
+              <% loc=loc.delete('()').strip %>
+          <% end %>
+          <div class="row">
+            <a href=\"<%= @proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc+")" %></span><span></a>
+          </div>
+        <% end %>
+      <% end %>
     <% elsif @non_ua_urls %>
-      <%= render 'urls' %>
+      <% unless @ua_urls.empty? %>
+        <% @ua_urls.each do |location,url| %>
+          <div class="row">
+            <% if url.include? "databases" %>
+              <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
+            <% else %>
+              <a href="<%= Rails.application.config.proxy+url %>" target="_blank">
+              <%= render "eaccess_label", location: location %> <span><%= url %></span></a>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
+        <% @non_ua_urls.each do |location,url| %>
+          <div class="row">
+            <% if url.include? "databases" %>
+              <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
+            <% else %>
+              <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= render "eaccess_label", location: location %> <span><%= url %></span></a>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
