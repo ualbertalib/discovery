@@ -3,17 +3,8 @@
 </h1>
 <div id="eaccess">
   <div id="electronic_access">
-    <% if @document["format"].include? "Database" %>
-      <table>
-        <tr></tr>
-        <% if @document["url_tesim"] %>
-          <tr>
-            <td>
-              <a href="<%= @document["enableproxy_tesim"].first == "1" ? Rails.application.config.proxy : "" %><%= @document["url_tesim"].first %>" target=\'_blank\'>Click Here for Access</a>
-            </td>
-          </tr>
-        <% end %>
-      </table>
+    <% if @document["format"].include?('Database') && @document["url_tesim"].present? %>
+      <%= link_to 'Click Here for Access', database_electronic_access_url(@document), target: '_blank' %>
     <% end %>
     <% if @ua_urls %>
       <% unless @ua_urls.empty? %>
