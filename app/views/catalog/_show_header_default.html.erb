@@ -7,21 +7,10 @@
       <%= link_to 'Click Here for Access', database_electronic_access_url(@document), target: '_blank' %>
     <% end %>
     <% if @ua_urls %>
-      <% unless @ua_urls.empty? %>
-        <% @ua_urls.each do |location,url| %>
-          <% if location.include? "Free Access" %>
-              <% @proxy = "" %>
-          <% else %>
-              <% @proxy = Rails.application.config.proxy %>
-          <% end %>
-          <% loc = location.split(":").last.strip.gsub("University of Alberta Access", "").strip %>
-          <% if loc.start_with?('(') && loc.end_with?(')') && loc.count('(') == 1 && loc.count(')') == 1 %>
-              <% loc=loc.delete('()').strip %>
-          <% end %>
-          <div class="row">
-            <a href=\"<%= @proxy+url %>\" target=\"_blank\"><span>Click Here for University of Alberta Access <%= loc.blank? ? "" : "("+loc+")" %></span><span></a>
-          </div>
-        <% end %>
+      <% @ua_urls.each do |location,url| %>
+        <div class="row">
+          <%= link_to ual_electronic_access_label(location), ual_electronic_access_url(location,url), target: '_blank' %>
+        </div>
       <% end %>
     <% elsif @non_ua_urls %>
       <% unless @ua_urls.empty? %>
