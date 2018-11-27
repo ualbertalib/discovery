@@ -11,10 +11,7 @@ module CatalogHelper
   # (University of Alberta Access) catalog/2566934
   # (Finding Aid) catalog/4072071
   def electronic_access_top?
-    return true if database_electronic_access?
-    return true if @ua_urls.present?
-    return true if supplimentary_urls.present?
-    false
+    database_electronic_access? || @ua_urls.present? || supplimentary_urls.present?
   end
 
   # These are 'On-campus access' and appear at the bottom of the page
