@@ -1,41 +1,15 @@
 <h1>
     <%= document.header_title %><%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%>
 </h1>
-<div id="eaccess">
+<% if electronic_access_top? %>
   <div id="electronic_access">
-    <% if @document["format"].include?('Database') && @document["url_tesim"].present? %>
+    <% if database_electronic_access? %>
       <%= link_to 'Click Here for Access', database_electronic_access_url(@document), target: '_blank' %>
     <% end %>
-    <% if @ua_urls %>
-      <% @ua_urls.each do |location,url| %>
-        <div class="row">
-          <%= link_to ual_electronic_access_label(location), ual_electronic_access_url(location,url), target: '_blank' %>
-        </div>
-      <% end %>
-    <% elsif @non_ua_urls %>
-      <% unless @ua_urls.empty? %>
-        <% @ua_urls.each do |location,url| %>
-          <div class="row">
-            <% if url.include? "databases" %>
-              <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
-            <% else %>
-              <a href="<%= Rails.application.config.proxy+url %>" target="_blank">
-              <%= render "eaccess_label", location: location %> <span><%= url %></span></a>
-            <% end %>
-          </div>
-        <% end %>
-      <% else %>
-        <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
-        <% @non_ua_urls.each do |location,url| %>
-          <div class="row">
-            <% if url.include? "databases" %>
-              <a href="<%= url %>" target="_blank"><%= render "eaccess_label", location: location %><span><%= url %></span></a>
-            <% else %>
-              <a href="<%= Rails.application.config.proxy+url %>" target="_blank"><%= render "eaccess_label", location: location %> <span><%= url %></span></a>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
+    <% @ua_urls.each do |location,url| %>
+      <div class="row">
+        <%= link_to ual_electronic_access_label(location), ual_electronic_access_url(location,url), target: '_blank' %>
+      </div>
     <% end %>
   </div>
-</div>
+<% end %>

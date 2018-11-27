@@ -34,6 +34,8 @@ class CatalogController < ApplicationController
       @holdings = 'kule' if @document['source'].first == 'KULE'
     end
 
+    @ua_urls = []
+    @non_ua_urls = []
     @ua_urls, @non_ua_urls = holdings(@document, :links) if @document['url_fulltext_display']
 
     if @document['subject_t']

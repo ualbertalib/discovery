@@ -43,14 +43,23 @@
     <% end %>
   </div>
 <div class="col-sm-12">
-        <% if @holdings.nil? || @holdings.empty? %>
-        <% unless @document["format"].include? "Database" %>
-        <br />
-        <%= "No copies found. This item may be lost or missing, or the data may be temporarily unavailable. Please <a href='/ask-us' target='_blank'>ask us</a> for assistance.".html_safe %>
+  <% if electronic_access_bottom? %>
+    <div id="electronic_access">
+      <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
+      <% @non_ua_urls.each do |location,url| %>
+        <div class="row">
+          <%= link_to eaccess_label(location), electronic_access_url(url.include?('databases'), url), target: '_blank' %>
+        </div>
       <% end %>
-
-      <% else %>
-  <%= render "holdings" %>
-<% end %>
+    </div>
+  <% end %>
+  <% if @holdings.nil? || @holdings.empty? %>
+    <% unless @document["format"].include? "Database" %>
+      <br />
+      <%= "No copies found. This item may be lost or missing, or the data may be temporarily unavailable. Please <a href='/ask-us' target='_blank'>ask us</a> for assistance.".html_safe %>
+    <% end %>
+  <% else %>
+    <%= render "holdings" %>
+  <% end %>
 
 </div>
