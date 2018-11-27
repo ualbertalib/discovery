@@ -11,5 +11,10 @@
         <%= link_to ual_electronic_access_label(location), ual_electronic_access_url(location,url), target: '_blank' %>
       </div>
     <% end %>
+    <% supplimentary_urls.each do |label,url| %>
+      <div class="row">
+        <%= link_to label, url, target: '_blank' %>
+      </div>
+    <% end %>
   </div>
 <% end %>

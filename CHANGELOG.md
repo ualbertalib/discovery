@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- More electronic access URLs being displayed [#877](https://github.com/ualbertalib/discovery/issues/877)
 
 ## [3.0.92] - 2018-11-16
 

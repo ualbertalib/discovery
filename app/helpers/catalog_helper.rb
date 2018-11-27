@@ -1,18 +1,20 @@
 module CatalogHelper
   include Blacklight::CatalogHelperBehavior
 
+  def database_electronic_access?
+    @document['format'].include?('Database') && @document['url_tesim'].present?
+  end
+
   # These are typical electronic access links and appear at the top of the page
   # for example
   # (Database) catalog/11709037
   # (University of Alberta Access) catalog/2566934
+  # (Finding Aid) catalog/4072071
   def electronic_access_top?
     return true if database_electronic_access?
     return true if @ua_urls.present?
+    return true if supplimentary_urls.present?
     false
-  end
-
-  def database_electronic_access?
-    @document['format'].include?('Database') && @document['url_tesim'].present?
   end
 
   # These are 'On-campus access' and appear at the bottom of the page
@@ -44,5 +46,11 @@ module CatalogHelper
   def electronic_access_url(test, url)
     return url if test
     Rails.application.config.proxy + url
+  end
+
+  def supplimentary_urls
+    urls = []
+    urls = @document['summary_holdings_tesim'].zip(@document['url_suppl_display']) if @document['summary_holdings_tesim'] && @document['url_suppl_display']
+    urls
   end
 end
