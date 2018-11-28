@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 # Core Rails stuff
 gem 'activerecord-session_store'
-gem 'rails', '4.2.10'
+gem 'rails', '4.2.11'
 
 # Database stuff
 gem 'mysql2', '~> 0.4.10'
