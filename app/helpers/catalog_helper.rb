@@ -17,7 +17,7 @@ module CatalogHelper
   # These are 'On-campus access' and appear at the bottom of the page
   # for example catalog/6990969
   def electronic_access_bottom?
-    !electronic_access_top? && @non_ua_urls
+    !electronic_access_top? && @non_ua_urls.present?
   end
 
   def eaccess_label(location)

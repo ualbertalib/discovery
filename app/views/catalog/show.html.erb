@@ -53,7 +53,7 @@
       <% end %>
     </div>
   <% end %>
-  <% if @holdings.nil? || @holdings.empty? %>
+  <% if @holdings.blank? %>
     <% unless @document["format"].include? "Database" %>
       <br />
       <%= "No copies found. This item may be lost or missing, or the data may be temporarily unavailable. Please <a href='/ask-us' target='_blank'>ask us</a> for assistance.".html_safe %>
