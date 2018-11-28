@@ -50,6 +50,10 @@ module HoldingsHelper
     end
   end
 
+  def request_microform?(item)
+    item[:location] == READ_ON_SITE_LOCATION_RCRF && item[:type] == 'MICROFORM'
+  end
+
   # returns the library description that matches the code coming from symphony ws
   # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme
   def library_location(library_code)
