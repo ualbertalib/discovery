@@ -7,7 +7,7 @@ class RequestFormMailer < ApplicationMailer
 
   def rcrf_read_on_site_request(rcrf_read_on_site_request)
     @rcrf_read_on_site_request = rcrf_read_on_site_request
-    mail(to: ['depository@ualberta.ca', 'ill@ualberta.ca'],
+    mail(to: 'depository@ualberta.ca',
          subject: t('rcrf_read_on_site_requests.new.header'))
   end
 
