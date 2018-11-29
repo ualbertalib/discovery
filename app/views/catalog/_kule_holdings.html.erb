@@ -13,7 +13,7 @@
     			    <%= @document["callnumber_tesi"] %>
     			  </td>
             <td>
-              <%= @document["status_tesi"] %>
+              <%= "Read On Site" if @document["status_tesi"] == "NO_LOAN" %>
             </td>
             <td>
                 <a href="<%= @document["access_url_tesi"] %>" target="_blank">
@@ -22,10 +22,10 @@
             <td>
               <% if @document.respond_to?( :to_email_text ) %>
                 <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>@document["callnumber_tesi"], :location=>@document["location_tesim"].first) , {:id => 'emailLink', :class => 'lightboxLink'} %>
-              <%- end -%>
-              <%- if @document.respond_to?( :to_sms_text ) -%>
+              <% end %>
+              <% if @document.respond_to?( :to_sms_text ) %>
                 <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>@document["callnumber_tesi"]), {:id => 'smsLink', :class => 'lightboxLink'} %>
-              <%- end -%>
+              <% end %>
             </td>
           </tr>
         </table>
