@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Logic for Microform/Newspapers 'Request Me' link [#1217](https://github.com/ualbertalib/discovery/issues/1217)
+
 ### Changed
 - More electronic access URLs being displayed [#877](https://github.com/ualbertalib/discovery/issues/877)
 - Refactored to not use javascript to display electronic access links [PR#1398](https://github.com/ualbertalib/discovery/pull/1398)

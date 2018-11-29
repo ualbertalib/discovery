@@ -40,6 +40,18 @@ describe HoldingsHelper do
     end
   end
 
+  describe '#request_microform?' do
+    it 'should return true if you can request the item' do
+      item = { type: 'MICROFORM', location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
+      expect(helper.request_microform?(item)).to be true
+    end
+
+    it 'should return false if you cannot request the item' do
+      item = { location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
+      expect(helper.request_microform?(item)).to be false
+    end
+  end
+
   let(:marc_display_with_ua_links) do
     File.open(
       Rails.root.join('spec', 'fixtures', 'marc_display_with_ua_links.xml')
