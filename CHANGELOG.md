@@ -11,6 +11,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Changed
 - More electronic access URLs being displayed [#877](https://github.com/ualbertalib/discovery/issues/877)
 - Refactored to not use javascript to display electronic access links [PR#1398](https://github.com/ualbertalib/discovery/pull/1398)
+- Application Name to 'University of Alberta Libraries' [#1243](https://github.com/ualbertalib/discovery/issues/1243)
+- Changed who RCRF read on site request form emails [#1403](https://github.com/ualbertalib/discovery/issues/1403)
 
 ## [3.0.92] - 2018-11-16
 
