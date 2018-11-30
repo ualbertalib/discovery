@@ -12,6 +12,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - More electronic access URLs being displayed [#877](https://github.com/ualbertalib/discovery/issues/877)
 - Refactored to not use javascript to display electronic access links [PR#1398](https://github.com/ualbertalib/discovery/pull/1398)
 
+### Fixed
+- Fix NoMethodError in email_record mail template [#1408](https://github.com/ualbertalib/discovery/issues/1408)
+
 ## [3.0.92] - 2018-11-16
 
 ### Fixed
