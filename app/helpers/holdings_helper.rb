@@ -16,6 +16,10 @@ module HoldingsHelper
     end
   end
 
+  def symphony_status(item)
+    SYMPHONY_STATUSES[item[:status].downcase.underscore.to_sym]
+  end
+
   def fetch_sfx_holdings(document)
     SFXService.new(document).targets
   rescue SFXService::Error::HTTPError => e

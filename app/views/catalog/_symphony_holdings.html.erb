@@ -11,7 +11,7 @@
           <br />
 
           <% for item in @holdings %>
-            <% @unavailable = true if SYMPHONY_STATUSES[item[:status].downcase.to_sym] == "unavailable" %>
+            <% @unavailable = true if symphony_status(item) == "unavailable" %>
             <tr>
               <td><%= item[:call] %></td>
               <% if item[:status] == "CHECKEDOUT" %>
@@ -24,7 +24,7 @@
                 <% else %><td>Unknown/Never</td>
               <% end %>
               <% else %>
-                <td class="holding-status"><%= SYMPHONY_STATUSES[item[:status].downcase.to_sym] %>
+                <td class="holding-status"><%= symphony_status(item) %>
                 <% if @unavailable %>
                   <p style="font-size: small"><strong>Note: For access, please contact any University of Alberta Libraries service desk in person or at <a href="http://www.library.ualberta.ca/askus" target="_blank">www.library.ualberta.ca/askus.</a></strong></p>
                 <% end %>
