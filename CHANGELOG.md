@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [3.0.93] - 2018-12-03
 ### Added
 - Logic for Microform/Newspapers 'Request Me' link [#1217](https://github.com/ualbertalib/discovery/issues/1217)
 
@@ -14,6 +16,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Application Name to 'University of Alberta Libraries' [#1243](https://github.com/ualbertalib/discovery/issues/1243)
 - Changed who RCRF read on site request form emails [#1403](https://github.com/ualbertalib/discovery/issues/1403)
 - Change application name to Discovery [#1415](https://github.com/ualbertalib/discovery/issues/1415)
+
+### Security
+- Bump Rails from 4.2.10 to 4.2.11 [PR#1402](https://github.com/ualbertalib/discovery/pull/1402)
 
 ## [3.0.92] - 2018-11-16
 
