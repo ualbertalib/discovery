@@ -59,12 +59,8 @@
                                   target: :_blank) %>
                     <%- end -%>
                   <%- end -%>
-                  <% if @document.respond_to?( :to_email_text ) %>
-                    <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>library_location(item[:location])), {:id => 'emailLink', :class => 'lightboxLink'} %>
-                  <%- end -%>
-                  <%- if @document.respond_to?( :to_sms_text ) -%>
-                    <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>item[:call]), {:id => 'smsLink', :class => 'lightboxLink'} %>
-                  <%- end -%>
+                  <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>library_location(item[:location])), {:id => 'emailLink', :class => 'lightboxLink'} %>
+                  <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>item[:call]), {:id => 'smsLink', :class => 'lightboxLink'} %>
               </td>
             </tr>
             <% @unavailable = false %>

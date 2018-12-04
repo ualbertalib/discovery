@@ -31,16 +31,13 @@
         <%= link_to 'Librarian View', librarian_view_catalog_path(id: @document), {:id => 'citeLink', :class => 'lightboxLink'} %>
       </li>
 
-      <% if @document.respond_to?(:to_email_text) %>
-        <li class="email">
-          <%= link_to t('Email me this item'), email_catalog_path(id: @document), {id: 'emailLink', data: {ajax_modal: "trigger"}} %>
-        </li>
-      <% end %>
+      <li class="email">
+        <%= link_to t('Email me this item'), email_catalog_path(id: @document), {id: 'emailLink', data: {ajax_modal: "trigger"}} %>
+      </li>
 
-      <%- if @document.respond_to?( :to_sms_text ) -%>
-        <%= render "sms" %>
-      <%- end -%>
-
+      <li class="sms">
+        <%= link_to t('Text me a link to this item'), sms_catalog_path(:id => @document), {:id => 'smsLink', :data => {:ajax_modal => "trigger"}} %>
+      </li>
 
       <li class="send_correction">
         <%= link_to "Send Correction", new_catalog_correction_path(catalog_id: @document['id']) %>
