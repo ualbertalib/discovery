@@ -20,6 +20,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Security
 - Bump Rails from 4.2.10 to 4.2.11 [PR#1402](https://github.com/ualbertalib/discovery/pull/1402)
 
+### Fixed
+- Fix NoMethodError in email_record mail template [#1408](https://github.com/ualbertalib/discovery/issues/1408)
+
 ## [3.0.92] - 2018-11-16
 
 ### Fixed
