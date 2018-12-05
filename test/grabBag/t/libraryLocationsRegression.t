@@ -36,7 +36,8 @@ unlike  ($result->decoded_content, qr/We are sorry, something has gone wrong/, "
 # We want to count Library locations to make sure that they are all there
 my $tree = HTML::TreeBuilder->new_from_content( $result->decoded_content ) ;
 my $libraries = $tree->findnodes( '/html/body/div[1]/div[6]/div[2]/div/div/div[1]/form/div/div[3]/div/div/div[3]/div[2]/div/ul/li' );
-ok ($libraries->size() eq 54, "Count of libraries"); $count++;	# 54 on Sept 13, 2018, but this may change over time
+my $num_libraries = $libraries->size() ;
+ok ($libraries->size() > 50, "Count of libraries $num_libraries"); $count++;	# 54 on Sept 13, 2018, 53 on Dec 5, 2018 but this may change over time
 $tree->delete;
 
 done_testing $count;
