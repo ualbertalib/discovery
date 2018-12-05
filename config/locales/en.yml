@@ -67,6 +67,7 @@ en:
     name: 'Name: %{name}'
     email: 'Email: %{email}'
     title: 'Title: %{title}'
+    call_number: 'Call Number: %{call_number}'
     item_url_html: 'Item URL: %{item_url}'
     notes: 'Additional Notes: %{notes}'
     library: 'Pickup Library: %{library}'
