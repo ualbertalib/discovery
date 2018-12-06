@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Add call number to BPSC On Site Request Form [#1417](https://github.com/ualbertalib/discovery/issues/1417)
 
 ## [3.0.93] - 2018-12-03
 ### Added
