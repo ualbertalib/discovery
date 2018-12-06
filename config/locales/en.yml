@@ -43,6 +43,7 @@ en:
         'Prior to your visit, please review our
         <a href="https://bpsc.library.ualberta.ca/info/visit#policy">Reading Room Policies.</a>'
       date_of_planned_visit: 'First Date of Planned Visit (open Mon-Fri 12-4:30pm)'
+      call_number: 'Call Number'
   rcrf_read_on_site_requests:
     new:
       header: 'Request to View RCRF No Loan Items'
@@ -66,6 +67,7 @@ en:
     name: 'Name: %{name}'
     email: 'Email: %{email}'
     title: 'Title: %{title}'
+    call_number: 'Call Number: %{call_number}'
     item_url_html: 'Item URL: %{item_url}'
     notes: 'Additional Notes: %{notes}'
     library: 'Pickup Library: %{library}'

@@ -17,26 +17,27 @@ describe HoldingsHelper do
     end
   end
 
-  describe '#read_on_site_path' do
-    it "should link to #{HoldingsHelper::READ_ON_SITE_LOCATION_RCRF} form" do
+  describe '#request_rcrf_read_on_site_form?' do
+    it 'should return true if you can request the item' do
       item = { status: 'READONSITE', location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
-      expect(helper.read_on_site_path(item, 'random_id_goes_here', 'Title of Item Goes Here!')).to eq(
-        new_rcrf_read_on_site_request_path(item_url: catalog_url('random_id_goes_here'),
-                                           title: 'Title of Item Goes Here!')
-      )
+      expect(helper.request_rcrf_read_on_site_form?(item)).to be true
     end
 
-    it "should link to #{HoldingsHelper::READ_ON_SITE_LOCATION_BPSC} form" do
+    it 'should return false if you cannot request the item' do
+      item = { location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
+      expect(helper.request_rcrf_read_on_site_form?(item)).to be false
+    end
+  end
+
+  describe '#request_bpsc_read_on_site_form?' do
+    it 'should return true if you can request the item' do
       item = { status: 'READONSITE', location: HoldingsHelper::READ_ON_SITE_LOCATION_BPSC }
-      expect(helper.read_on_site_path(item, 'random_id_goes_here', 'Title of Item Goes Here!')).to eq(
-        new_bpsc_read_on_site_request_path(item_url: catalog_url('random_id_goes_here'),
-                                           title: 'Title of Item Goes Here!')
-      )
+      expect(helper.request_bpsc_read_on_site_form?(item)).to be true
     end
 
-    it 'should not link otherwise' do
-      item = { location: 'SOMEWHERE' }
-      expect(helper.read_on_site_path(item, 'random_id_goes_here', 'Title of Item Goes Here!')).to be_nil
+    it 'should return false if you cannot request the item' do
+      item = { location: HoldingsHelper::READ_ON_SITE_LOCATION_BPSC }
+      expect(helper.request_bpsc_read_on_site_form?(item)).to be false
     end
   end
 

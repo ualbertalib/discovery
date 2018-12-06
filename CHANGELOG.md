@@ -8,6 +8,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Fixed
 - Fix NoMethodError in `RecordMailer#sms_record` [#1418](https://github.com/ualbertalib/discovery/issues/1418)
 
+### Added
+- Add call number to BPSC On Site Request Form [#1417](https://github.com/ualbertalib/discovery/issues/1417)
+
 ## [3.0.93] - 2018-12-03
 ### Added
 - Logic for Microform/Newspapers 'Request Me' link [#1217](https://github.com/ualbertalib/discovery/issues/1217)

@@ -13,6 +13,7 @@ RSpec.describe BPSCReadOnSiteRequestsController, type: :controller do
         email: 'jane_doe@ualberta.ca',
         appointment_time: 'January 1st at 1 PM',
         title: 'The death of Archie',
+        call_number: 'AB 123.4 A123 1234',
         item_url: 'https://library.ualberta.ca/catalog/8081552'
       }
     end.to change { ActionMailer::Base.deliveries.count }.by(1)

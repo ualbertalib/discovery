@@ -7,6 +7,7 @@ RSpec.describe BPSCReadOnSiteRequest, type: :model do
       email: 'jane_doe@ualberta.ca',
       appointment_time: 'January 1st at 1 PM',
       title: 'The death of Archie',
+      call_number: 'AB 123.4 A123 1234',
       item_url: 'https://library.ualberta.ca/catalog/8081552'
     )
   end
@@ -33,6 +34,11 @@ RSpec.describe BPSCReadOnSiteRequest, type: :model do
 
     it 'is not valid without a title' do
       subject.title = nil
+      expect(subject).to_not be_valid
+    end
+
+    it 'is not valid without a call number' do
+      subject.call_number = nil
       expect(subject).to_not be_valid
     end
 
