@@ -8,6 +8,10 @@ RUN bash -lc 'rvm install ruby-2.1.5'
 RUN bash -lc 'rvm --default use ruby-2.1.5'
 RUN bash -lc 'gem install bundler'
 
+COPY lib/docker/install-yaz.sh /install-yaz.sh
+RUN ["chmod", "+x", "/install-yaz.sh"]
+RUN /install-yaz.sh
+
 RUN apt-get update -qq \
     && apt-get install -y build-essential \
                           mysql-client \

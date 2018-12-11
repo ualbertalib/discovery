@@ -10,6 +10,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - Add call number to BPSC On Site Request Form [#1417](https://github.com/ualbertalib/discovery/issues/1417)
+- Cataloguing tool for UAT (yaz dependecy) [NEOSDiscovery#205](https://github.com/ualbertalib/NEOSDiscovery/issues/205)
 
 ## [3.0.93] - 2018-12-03
 ### Added

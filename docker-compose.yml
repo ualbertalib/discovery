@@ -31,7 +31,7 @@ services:
 
   # Rails
   web:
-    image: ualbertalib/discovery:uat
+    image: ualbertalib/discovery:cataloguing
     depends_on:
       - mysql
       - solr

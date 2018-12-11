@@ -1,0 +1,8 @@
+<h3>NEOS Cataloguing Tool</h3>
+
+<p>Enter a Symphony catkey and hit "submit" and you will be redirected to a Blacklight view reflecting the current state of the MARC record.</p>
+
+<%= form_for :record do |f| %>
+  Catkey: <%= f.text_field :catkey %><br />
+  <%= f.submit "Submit" %>
+<% end %>

@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   resources :staff, as: :profiles, controller: :profiles
 
+  resources :cataloguing # this is a tool for cataloguers to preview symphony records
+
   # We have the actual catalog routes defined from blacklight,
   # this is just so we can get these routes nested nicely with the catalog item's ids in the url
   # e.g: /catalog/1234567/corrections/new

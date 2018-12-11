@@ -75,3 +75,8 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+
+group :uat do
+    #   NOTE: Requires the yaz library to be installed
+    gem 'zoom'
+end

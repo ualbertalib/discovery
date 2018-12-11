@@ -62,3 +62,16 @@ export SOLR_INGEST_URL=http://localhost:8983/solr/your-new-solr-collection
 bundle exec rake ingest[collection]
 unset SOLR_INGEST_URL # if desired
 ```
+
+
+## Cataloguing Tool
+
+This is proof-of-concept functionality. The requirement from cataloguing staff 
+was to have a way to see modified/updated records in the appropriate Blacklight view 
+(either Discovery or NEOS Discovery), without having to wait overnight for the 
+updated record to be reindexed. Basically, what the cataloguing tool does is: presents 
+a form where a record ID can be entered; on form submission, the application downloads
+the record from Symphony using [z39.50](https://en.wikipedia.org/wiki/Z39.50); changes 
+the id so that the existing record isn't overwritten; indexes the new record in Solr
+(using the index rake task); redirects the user to the record view. Most of the logic 
+for this is held in a new controller (cataloguing_controller).
