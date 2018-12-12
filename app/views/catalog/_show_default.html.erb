@@ -27,7 +27,7 @@
         <dd class="blacklight-<%= solr_fname.parameterize %>" style="font-size:75%">
         <ul>
           <% render_document_show_field_value(document,:field=>solr_fname).split("--").each do |note| %>
-            <li><%= sanitize note %></li>
+            <li><%= sanitize(note) %></li>
 
           <% end %>
         </ul></dd>
