@@ -30,5 +30,9 @@ module Discovery
     config.exceptions_app = routes
     config.symphony_timeout = 4
     config.sfx_timeout = 4
+
+    # create a tmp directory for temporary cataloguing records
+    # https://github.com/ualbertalib/NEOSDiscovery/issues/205
+    FileUtils.mkdir_p(File.join(Rails.root, 'tmp', 'records'))
   end
 end

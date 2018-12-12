@@ -20,12 +20,7 @@ class CataloguingController < ApplicationController
     end
     process_record(@catkey)
     index_record(@catkey)
-    if request.port
-      redirect_to "#{request.protocol}://#{request.domain}:#{request.port}/catalog/tmp#{@catkey}"
-    else
-      redirect_to "#{request.protocol}://#{request.domain}/catalog/tmp#{@catkey}"
-    end
-
+    redirect_to catalog_path "tmp#{@catkey}"
   end
 
   private
