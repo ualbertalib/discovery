@@ -41,5 +41,6 @@ COPY --chown=app:app . $APP_ROOT
 
 # Precompile Rails assets.
 RUN RAILS_ENV=uat SECRET_KEY_BASE=pickasecuretoken bundle exec rake assets:precompile
+RUN chown -R app:app .
 
 EXPOSE 80
