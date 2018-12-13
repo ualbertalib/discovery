@@ -10,6 +10,8 @@ RUN bash -lc 'gem install bundler'
 
 COPY lib/docker/install-yaz.sh /install-yaz.sh
 RUN ["chmod", "+x", "/install-yaz.sh"]
+# this script also installs several dependencies which are later needed to
+# bundle install zoom
 RUN /install-yaz.sh
 
 RUN apt-get update -qq \

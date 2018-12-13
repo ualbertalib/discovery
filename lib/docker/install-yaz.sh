@@ -10,4 +10,3 @@ apt-get -y install autoconf automake libtool gcc bison tclsh xsltproc docbook do
 make
 make check
 make install
-apt-get -y remove autoconf automake libtool gcc bison tclsh xsltproc docbook docbook-xml docbook-xsl libxslt1-dev libreadline-dev libwrap0-dev pkg-config libicu-dev make
