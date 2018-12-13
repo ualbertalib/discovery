@@ -1,7 +1,7 @@
 class RequestFormMailer < ApplicationMailer
   def bpsc_read_on_site_request(bpsc_read_on_site_request)
     @bpsc_read_on_site_request = bpsc_read_on_site_request
-    mail(to: ['jeff.papineau@ualberta.ca', 'kzak@ualberta.ca'],
+    mail(to: 'bpscrequest@ualberta.ca',
          subject: t('bpsc_read_on_site_requests.new.header'))
   end
 
