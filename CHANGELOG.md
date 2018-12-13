@@ -7,6 +7,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [Unreleased]
 ### Fixed
 - Fix NoMethodError in `RecordMailer#sms_record` [#1418](https://github.com/ualbertalib/discovery/issues/1418)
+- Quotes in contents field being rendered as &quot; [#1085](https://github.com/ualbertalib/discovery/issues/1085)
 
 ### Added
 - Add call number to BPSC On Site Request Form [#1417](https://github.com/ualbertalib/discovery/issues/1417)
