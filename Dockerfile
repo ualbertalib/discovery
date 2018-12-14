@@ -33,9 +33,10 @@ COPY Gemfile.lock $APP_ROOT
 RUN bundle install --without development test --jobs=3 --retry=3
 
 # *NOW* we copy the codebase in
-COPY --chown=app:app . $APP_ROOT
-
+COPY . $APP_ROOT
 # Precompile Rails assets.
 RUN RAILS_ENV=uat SECRET_KEY_BASE=pickasecuretoken bundle exec rake assets:precompile
+# change the owner so that the app passenger_user can read and write to the app dir
+RUN chown -R app:app .
 
 EXPOSE 80
