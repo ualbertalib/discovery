@@ -13,6 +13,9 @@ gem 'sass-rails', '~> 5.0.1'
 gem 'turbolinks', '5.2.0'
 gem 'uglifier', '>= 1.3.0'
 
+# FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
+gem 'bootstrap-sass', '3.3.7'
+
 # blacklight stuff
 gem 'blacklight', '5.15.0'
 gem 'blacklight-marc', '~> 5.10.0'
@@ -39,6 +42,8 @@ gem 'rollbar'
 
 group :test, :development do
   gem 'sdoc', require: false
+  # FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
+  gem 'rdoc', '5.1.0'
 
   gem 'factory_bot'
   gem 'rspec'
@@ -46,8 +51,9 @@ group :test, :development do
   gem 'rspec-solr'
 
   gem 'pry'
-  gem 'pry-byebug'
   gem 'pry-rails'
+  # FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
+  gem 'pry-byebug', '3.4.3'
 
   gem 'rubocop', '~> 0.56.0', require: false
 
@@ -69,7 +75,10 @@ end
 group :test do
   gem 'simplecov', require: false
 
-  gem 'capybara'
+  # FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
+  gem 'capybara', '2.18.0'
+  gem 'xpath', '2.1.0'
+
   gem 'selenium-webdriver'
 
   # Easy installation and use of chromedriver to run system tests with Chrome
