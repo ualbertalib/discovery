@@ -73,7 +73,9 @@ end
 group :test do
   gem 'simplecov', require: false
 
-  gem 'capybara'
+  # FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
+  gem 'capybara', '2.18.0'
+
   gem 'selenium-webdriver'
 
   # Easy installation and use of chromedriver to run system tests with Chrome
