@@ -49,8 +49,9 @@ group :test, :development do
   gem 'rspec-solr'
 
   gem 'pry'
-  gem 'pry-byebug'
   gem 'pry-rails'
+  # FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
+  gem 'pry-byebug', '3.4.3'
 
   gem 'rubocop', '~> 0.56.0', require: false
 
