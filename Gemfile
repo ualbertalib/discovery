@@ -43,7 +43,7 @@ gem 'rollbar'
 group :test, :development do
   gem 'sdoc', require: false
   # FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
-  gem 'rdoc', '5.1.0'
+  gem 'rdoc', '6.0.4'
 
   gem 'factory_bot'
   gem 'rspec'
