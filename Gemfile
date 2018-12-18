@@ -14,7 +14,7 @@ gem 'turbolinks', '5.2.0'
 gem 'uglifier', '>= 1.3.0'
 
 # FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.0'
 
 # blacklight stuff
 gem 'blacklight', '5.15.0'
