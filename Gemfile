@@ -77,7 +77,7 @@ group :test do
 
   # FIXME: Since we stuck using EOL Ruby 2.1.5, need to lock this down...
   gem 'capybara', '2.18.0'
-  gem 'xpath', '2.1.0'
+  gem 'xpath', '3.2.0'
 
   gem 'selenium-webdriver'
 
