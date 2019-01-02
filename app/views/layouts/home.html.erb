@@ -134,12 +134,11 @@
       </div>
     </div>
     <!-- End Header and Navigation -->
+    <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
 
-<%= yield %>
+    <%= yield %>
 
-        <!-- Start Footer -->
-  <%= render :partial => 'shared/footer' %>
-
-
+    <!-- Start Footer -->
+    <%= render :partial => 'shared/footer' %>
   </body>
 </html>

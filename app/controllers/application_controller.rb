@@ -11,8 +11,6 @@ class ApplicationController < ActionController::Base
     Rails.application.routes.default_url_options
   end
 
-  layout 'blacklight'
-
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
