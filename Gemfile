@@ -30,7 +30,7 @@ gem 'devise-guests'
 # Misc Utilities
 gem 'bootstrap_form', '~> 2.7.0'
 gem 'friendly_id'
-gem 'nokogiri', '~> 1.8.5'
+gem 'nokogiri', '~> 1.10.0'
 gem 'om'
 gem 'paperclip', '~> 6.1.0'
 
