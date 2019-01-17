@@ -99,7 +99,12 @@ describe HoldingsHelper do
       holdings = helper.holdings(document, :links)
       expect(holdings).to be_an_instance_of Array
       expect(holdings.first).to be_an_instance_of Hash
-      expect(holdings.first).to eq('University of Alberta Access (6 Concurrent Users)' => 'http://proquest.safaribooksonline.com/?uiCode=ualberta&xmlId=9781785283642')
+      expect(holdings.first).to eq(
+        {
+          "University of Alberta Access (Unlimited Concurrent Users) from Ebook Central Academic Complete" => "https://ebookcentral.proquest.com/lib/ualberta/detail.action?docID=1564351",
+          "University of Alberta Access (Unlimited Concurrent Users) from EBSCO Academic Collection" => "http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=e000xna&AN=666223"
+        }
+      )
     end
   end
 
