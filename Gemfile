@@ -81,6 +81,9 @@ group :test do
 
   gem 'selenium-webdriver'
 
+  gem 'vcr', require: false
+  gem 'webmock', require: false
+
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
