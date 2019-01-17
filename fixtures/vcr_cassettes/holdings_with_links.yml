@@ -1,0 +1,217 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=7296174
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Jan 2019 21:26:26 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>7296174</titleID><TitleAvailabilityInfo><totalCopiesAvailable>18</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Internet</libraryWithAvailableCopies><libraryWithAvailableCopies>Alberta
+        Government Library - Internet</libraryWithAvailableCopies><libraryWithAvailableCopies>NorQuest
+        College - Main Building</libraryWithAvailableCopies><libraryWithAvailableCopies>Keyano
+        College</libraryWithAvailableCopies><libraryWithAvailableCopies>Northern Lakes
+        College - Internet</libraryWithAvailableCopies><libraryWithAvailableCopies>Concordia
+        University of Edmonton</libraryWithAvailableCopies><libraryWithAvailableCopies>King''s
+        University</libraryWithAvailableCopies><libraryWithAvailableCopies>Olds College</libraryWithAvailableCopies><libraryWithAvailableCopies>Red
+        Deer College</libraryWithAvailableCopies><libraryWithAvailableCopies>MacEwan
+        University - Internet</libraryWithAvailableCopies><libraryWithAvailableCopies>Grande
+        Prairie Regional College - Internet</libraryWithAvailableCopies><libraryWithAvailableCopies>Lakeland
+        College Internet</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>INTERNET</locationOfFirstAvailableItem><holdable>false</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UAINTERNET</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>2</numberOfCopies><ItemInfo><itemID>7296174-7001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>7296174-7002</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>AGINTERNET</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>7296174-8001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>NORQ_MAIN</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>7296174-5001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>KEYANO</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>7296174-9001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>NLC_INT</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>2</numberOfCopies><ItemInfo><itemID>7296174-11001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>7296174-11002</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>CONCORDIA</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>2</numberOfCopies><ItemInfo><itemID>7296174-1002</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>7296174-1003</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>KINGS</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>7296174-10001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>OLDS</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>2</numberOfCopies><ItemInfo><itemID>7296174-6001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>7296174-6002</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>RED_DEER_C</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>7296174-4002</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>GR_MAC_INT</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>2</numberOfCopies><ItemInfo><itemID>7296174-3002</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>7296174-3003</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>GPRC_INT</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>2</numberOfCopies><ItemInfo><itemID>7296174-2002</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>7296174-2003</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>LAKELND_IN</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>7296174-12001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>amKi0c
+        a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>7296174</text></MarcEntryInfo><MarcEntryInfo><label>Data
+        source</label><entryID>003</entryID><indicators>  </indicators><text>OCoLC</text></MarcEntryInfo><MarcEntryInfo><label>Date/time
+        stamp</label><entryID>005</entryID><indicators>  </indicators><text>20170729031439.5</text></MarcEntryInfo><MarcEntryInfo><label>Added
+        material codes</label><entryID>006</entryID><indicators>  </indicators><text>m     o  d</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>007</entryID><indicators>  </indicators><text>cr
+        |n|||||||||</text></MarcEntryInfo><MarcEntryInfo><label>Fixed field data</label><entryID>008</entryID><indicators>  </indicators><text>131123s2013    enk     o     001
+        0 eng d</text></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>1680154176
+        (electronic bk.)</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>1782165614
+        (electronic bk.)</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>9781680154177
+        (electronic bk.)</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>9781782165613
+        (electronic bk.)</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>(ISBN
+        invalid)1782165606</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>(ISBN
+        invalid)9781782165606</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocn863824720</text></MarcEntryInfo><MarcEntryInfo><label>Stock
+        number</label><entryID>037</entryID><indicators>  </indicators><text>CL0500000370
+        Safari Books Online</text></MarcEntryInfo><MarcEntryInfo><label>Local system#</label><entryID>039</entryID><indicators>  </indicators><text>exclude</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>EBLCP
+        eng pn EBLCP IDEBK YDXCP E7B UMI OCLCQ COO OCLCO DEBBG DEBSZ OCLCQ OCLCF KNOVL
+        OCLCQ FEM COCUF CNNOR MOR PIFAG N$T AEU</text></MarcEntryInfo><MarcEntryInfo><label>LC
+        Call Number</label><entryID>050</entryID><indicators> 4</indicators><text>QA76.73.C565</text></MarcEntryInfo><MarcEntryInfo><label>LC
+        Call Number</label><entryID>050</entryID><indicators> 4</indicators><text>QA76.73.J38
+        .K384 2013</text></MarcEntryInfo><MarcEntryInfo><label>Dewey Decimal Classification
+        Number</label><entryID>082</entryID><indicators>04</indicators><text>005.13/3
+        23</text></MarcEntryInfo><MarcEntryInfo><label>Dewey Decimal Classification
+        Number</label><entryID>082</entryID><indicators>04</indicators><text>005.46</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AVC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEE</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEGMCT</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEKC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEVC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AFMK</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AGPC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AOAC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access ARDC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access ASAV</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        Author</label><entryID>100</entryID><indicators>1 </indicators><text>Kumar,
+        Shantanu.</text><entryTypeCodes>MAR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>10</indicators><text>Clojure
+        high performance programming [electronic resource] : understand performance
+        aspects and write high performance code with Clojure / Shantanu Kumar.</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>Birmingham
+        : Packt Publishing, 2013.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>1
+        online resource (152 pages).</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        type</label><entryID>336</entryID><indicators>  </indicators><text>text txt</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>computer
+        c</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>online
+        resource cr</text></MarcEntryInfo><MarcEntryInfo><label>Series Statement</label><entryID>490</entryID><indicators>1
+        </indicators><text>(Community experience distilled)</text><entryTypeCodes>RV</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>General
+        Note</label><entryID>500</entryID><indicators>  </indicators><text>Includes
+        index.</text></MarcEntryInfo><MarcEntryInfo><label>Access restriction</label><entryID>506</entryID><indicators>  </indicators><text>Access
+        restricted to authorized users and institutions.</text></MarcEntryInfo><MarcEntryInfo><label>Source
+        of descrip</label><entryID>588</entryID><indicators>  </indicators><text>Description
+        based on print version record.</text></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>AGINTERNET
+        NORQ_MAIN KEYANO NLC_INT CONCORDIA KINGS OLDS RED_DEER_C UAINTERNET GR_MAC_INT
+        GPRC_INT LAKELND_IN</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Application
+        software--Development.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Clojure
+        (Computer program language)</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Computer
+        programming.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Series
+        Added Entry-U</label><entryID>830</entryID><indicators> 0</indicators><text>Community
+        experience distilled.</text><entryTypeCodes>VR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Lakeland
+        College Access (Unlimited Concurrent Users) from EBSCO Academic Collection</text><unformattedText>|3Lakeland
+        College Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>University
+        of Alberta Access (Unlimited Concurrent Users) from Ebook Central Academic
+        Complete</text><unformattedText>|3University of Alberta Access|uhttps://ebookcentral.proquest.com/lib/ualberta/detail.action?docID=1564351|z(Unlimited
+        Concurrent Users)|zfrom Ebook Central Academic Complete</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>https://ebookcentral.proquest.com/lib/ualberta/detail.action?docID=1564351</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Northern
+        Lakes College Access from Ebook Central College Complete</text><unformattedText>|3Northern
+        Lakes College Access|uhttp://ebookcentral.proquest.com/lib/northernlakes-ebooks/detail.action?docID=1564351|zfrom
+        Ebook Central College Complete</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://ebookcentral.proquest.com/lib/northernlakes-ebooks/detail.action?docID=1564351</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Alberta
+        Government Library Access (Unlimited Concurrent Users) from EBSCO Academic
+        Collection</text><unformattedText>|3Alberta Government Library Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Concordia
+        University of Edmonton Access (Unlimited Concurrent Users) from EBSCO Academic
+        Collection</text><unformattedText>|3Concordia University of Edmonton Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Grande
+        Prairie Regional College Access (Unlimited Concurrent Users) from EBSCO Academic
+        Collection</text><unformattedText>|3Grande Prairie Regional College Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Keyano
+        College Access (Unlimited Concurrent Users) from EBSCO Academic Collection</text><unformattedText>|3Keyano
+        College Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>King''s
+        University Access (Unlimited Concurrent Users) from EBSCO Academic Collection</text><unformattedText>|3King''s
+        University Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>MacEwan
+        University Access (Unlimited Concurrent Users) from EBSCO Academic Collection</text><unformattedText>|3MacEwan
+        University Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Northern
+        Lakes College Access (Unlimited Concurrent Users) from EBSCO Academic Collection</text><unformattedText>|3Northern
+        Lakes College Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Olds
+        College Access (Unlimited Concurrent Users) from EBSCO Academic Collection</text><unformattedText>|3Olds
+        College Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>University
+        of Alberta Access (Unlimited Concurrent Users) from EBSCO Academic Collection</text><unformattedText>|3University
+        of Alberta Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223|z(Unlimited
+        Concurrent Users)|zfrom EBSCO Academic Collection</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;db=e000xna&amp;AN=666223</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Concordia
+        University of Edmonton Access (Unlimited Concurrent Users) from Ebook Central
+        Academic Complete</text><unformattedText>|3Concordia University of Edmonton
+        Access|uhttp://ebookcentral.proquest.com/lib/concordiaab-ebooks/detail.action?docID=1564351|z(Unlimited
+        Concurrent Users)|zfrom Ebook Central Academic Complete</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://ebookcentral.proquest.com/lib/concordiaab-ebooks/detail.action?docID=1564351</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Grande
+        Prairie Regional College Access (Unlimited Concurrent Users) from Ebook Central
+        Academic Complete</text><unformattedText>|3Grande Prairie Regional College
+        Access|uhttp://ebookcentral.proquest.com/lib/gprc-ebooks/detail.action?docID=1564351|z(Unlimited
+        Concurrent Users)|zfrom Ebook Central Academic Complete</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://ebookcentral.proquest.com/lib/gprc-ebooks/detail.action?docID=1564351</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>MacEwan
+        University Access (Unlimited Concurrent Users) from Ebook Central Academic
+        Complete</text><unformattedText>|3MacEwan University Access|uhttp://ebookcentral.proquest.com/lib/macewan-ebooks/detail.action?docID=1564351|z(Unlimited
+        Concurrent Users)|zfrom Ebook Central Academic Complete</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://ebookcentral.proquest.com/lib/macewan-ebooks/detail.action?docID=1564351</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>NorQuest
+        College Access from Ebook Central College Complete</text><unformattedText>|3NorQuest
+        College Access|uhttp://ebookcentral.proquest.com/lib/norquest-ebooks/detail.action?docID=1564351|zfrom
+        Ebook Central College Complete</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://ebookcentral.proquest.com/lib/norquest-ebooks/detail.action?docID=1564351</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Olds
+        College Access from Ebook Central College Complete</text><unformattedText>|3Olds
+        College Access|uhttp://ebookcentral.proquest.com/lib/oldscollege/detail.action?docID=1564351|zfrom
+        Ebook Central College Complete</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://ebookcentral.proquest.com/lib/oldscollege/detail.action?docID=1564351</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Red Deer
+        College Access (Unlimited Concurrent Users) from Ebook Central Academic Complete</text><unformattedText>|3Red
+        Deer College Access|uhttp://ebookcentral.proquest.com/lib/rdc/detail.action?docID=1564351|z(Unlimited
+        Concurrent Users)|zfrom Ebook Central Academic Complete</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://ebookcentral.proquest.com/lib/rdc/detail.action?docID=1564351</url></MarcEntryInfo><MarcEntryInfo><label>Merged
+        001</label><entryID>919</entryID><indicators>  </indicators><text>EBC1564351</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Merged
+        001</label><entryID>919</entryID><indicators>  </indicators><text>EBC1564351</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Merged
+        001</label><entryID>919</entryID><indicators>  </indicators><text>ebr10809465</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Thu, 17 Jan 2019 21:26:26 GMT
+recorded_with: VCR 4.0.0

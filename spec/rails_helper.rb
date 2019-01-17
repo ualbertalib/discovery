@@ -30,6 +30,14 @@ Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
                             :selenium_chrome_headless
                           end
 
+VCR.configure do |config|
+  config.cassette_library_dir = 'fixtures/vcr_cassettes'
+  config.hook_into :webmock # or :fakeweb
+
+  # Only want VCR to intercept requests to external URLs.
+  config.ignore_localhost = true
+end
+
 # smoke test the ingest task and setup some seed data for testing
 require 'rake'
 Rails.application.load_tasks
