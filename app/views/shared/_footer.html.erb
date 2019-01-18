@@ -6,20 +6,21 @@
   <div class="footer" id="footer">
       <div class="container">
         <ul class="foot-nav">
-          <li><a href="/site-search" data-no-turbolink="true">Search This Site</a></li>
-          <li><a href="https://web.library.ualberta.ca/feedback/" data-no-turbolink="true">Feedback</a></li>
-          <li><a href="/about-us/policies" data-no-turbolink="true">Policies</a></li>
-          <li><a href="/about-us/employment" data-no-turbolink="true">Employment</a></li>
-          <li><a href="/about-us/people" data-no-turbolink="true">Our People</a></li>
-          <li><a href="/about-us/collections" data-no-turbolink="true">Our Collection</a></li>
-          <li><a href="/support" data-no-turbolink="true">Support the Library</a></li>
-          <li><a href="http://www.copyright.ualberta.ca" data-no-turbolink="true">Copyright</a></li>
+          <li><%= link_to 'Search This Site', cms_root_url('site-search') %></li>
+          <li><%= link_to 'Feedback', 'https://web.library.ualberta.ca/feedback/' %></li>
+          <li><%= link_to 'Policies', cms_root_url('about-us/policies') %></li>
+          <li><%= link_to 'Employment', cms_root_url('about-us/employment') %></li>
+          <li><%= link_to 'Our People', cms_root_url('about-us/people') %></li>
+          <li><%= link_to 'Our Collection', cms_root_url('about-us/collections') %></li>
+          <li><%= link_to 'Support the Library', cms_root_url('support') %></li>
+          <li><%= link_to 'Copyright', 'http://www.copyright.ualberta.ca' %></li>
         </ul>
 
         <p class="copyright hidden-xs"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><%= image_tag "cc.png", :class => "cc", :alt => "Copyright Statement" %></a>
-        This work is subject to a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license</a> -- For exceptions, see the <a href="/about-us/policies/re-use" data-no-turbolink="true">Library Re-use and Attribution Statement.</a>  <a href="/about-us/policies/privacy-policy" data-no-turbolink="true">Web Site Privacy Policy</a></p>
+        This work is subject to a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license</a> -- For exceptions, see the  <%= link_to 'Library Re-use and Attribution Statement.', cms_root_url('about-us/policies/re-use') %><%= link_to 'Web Site Privacy Policy', cms_root_url('about-us/policies/privacy-policy') %>
+</p>
       <p>
-          <a href="/" data-no-turbolink="true">University of Alberta Libraries</a> - <a href="http://www.ualberta.ca">University of Alberta</a>, Edmonton, AB, Canada T6G 2R3 - We are located on Treaty 6 / Métis Territory.<br/></p>
+          <%= link_to 'University of Alberta Libraries', cms_root_url('') %> - <a href="http://www.ualberta.ca">University of Alberta</a>, Edmonton, AB, Canada T6G 2R3 - We are located on Treaty 6 / Métis Territory.<br/></p>
         </div>
       </div>
       </div>
