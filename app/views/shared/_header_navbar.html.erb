@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-sm-6 col-xs-7">
 
-            <%= link_to cms_root_url('') do %>
+            <%= link_to cms_root_url do %>
               <%= image_tag ("ualib-logo-sm.png"), :class => "ualogo", :alt => "University of Alberta Libraries"%>
             <% end %>
 
@@ -42,14 +42,14 @@
       </div>
       <div id="navbar" class="col-xs-10 collapse" style="height: 0px;"><!-- Mobile menu -->
         <ul>
-          <li class="active"> <%= link_to 'Search & Home', cms_root_url('') %></li>
+          <li class="active"> <%= link_to 'Search & Home', cms_root_url %></li>
           <li><%= link_to 'Hours and Locations', "https://hours.library.ualberta.ca" %></li>
           <li><%= link_to 'News / Workshops', cms_root_url('#main-news') %></li>
           <li><%= link_to 'Services', cms_root_url('#main-services') %></li>
           <li><%= link_to 'Subject Guides', cms_root_url('#main-subjects') %></li>
           <li><%= link_to 'My Account', cms_root_url('#main-account') %></li>
           <li><%= link_to 'Version Française', cms_root_url('francais') %></li>
-          <li><%= link_to 'University of Alberta Home', "http://www.ualberta.ca" %></li>
+          <li><%= link_to 'University of Alberta Home', 'http://www.ualberta.ca' %></li>
         </ul>
       </div><!-- End mobile menu -->
     </div>
@@ -59,7 +59,7 @@
           <div class="row">
             <ul class="lib-nav">
               <li id="home-nav" style="display:block" class="col-sm-2">
-                <%= link_to 'Search & Home', cms_root_url('') %>
+                <%= link_to 'Search & Home', cms_root_url %>
               </li>
               <li id="news-nav" class="col-sm-2">
                 <%= link_to 'News / Workshops', cms_root_url('#main-news') %>
