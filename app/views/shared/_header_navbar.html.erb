@@ -6,7 +6,6 @@
         <div class="row">
           <ul class="nav navbar-nav">
             <li><a href="https://ualberta.ca">UAlberta Home</a></li>
-            <li><a href="https://myualberta.ualberta.ca/home">My UAlberta</a></li>
             <li><a href="https://directory.ualberta.ca/">Find a Person</a></li>
             <li><a href="https://www.onecard.ualberta.ca/">ONEcard</a></li>
             <li><a href="https://www.beartracks.ualberta.ca">Bear Tracks</a></li>
@@ -22,11 +21,13 @@
         <div class="row">
           <div class="col-sm-6 col-xs-7">
 
-            <a href="/"  data-no-turbolink="true"><%= image_tag "ualib-logo-sm.png", :class => "ualogo", :alt => "University of Alberta Libraries" %></a>
+            <%= link_to cms_root_url do %>
+              <%= image_tag ("ualib-logo-sm.png"), :class => "ualogo", :alt => "University of Alberta Libraries"%>
+            <% end %>
 
           </div>
           <div class="col-sm-6 col-xs-3 ask-sm">
-            <a href="/ask-us" class="ask-main" data-no-turbolink="true" target="_blank">Ask Us</a>
+            <%= link_to 'Ask Us', cms_root_url('ask-us'), :class => "ask-main" %>
           </div>
           <div class="col-xs-2 visible-xs">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -41,14 +42,14 @@
       </div>
       <div id="navbar" class="col-xs-10 collapse" style="height: 0px;"><!-- Mobile menu -->
         <ul>
-          <li class="active"><a href="/" data-no-turbolink="true">Search &amp; Home</a></li>
-          <li><a href="https://hours.library.ualberta.ca">Hours and Locations</a></li>
-            <li><a href="/#main-news" data-no-turbolink="true">News / Workshops</a></li>
-          <li><a href="/#main-services" data-no-turbolink="true">Services</a></li>
-          <li><a href="/#main-subjects" data-no-turbolink="true">Subject Guides</a></li>
-          <li><a href="/#main-account" data-no-turbolink="true" >My Account</a></li>
-            <li><a href="/francais" >Version Française</a></li>
-          <li><a href="http://www.ualberta.ca">University of Alberta Home</a></li>
+          <li class="active"> <%= link_to 'Search & Home', cms_root_url %></li>
+          <li><%= link_to 'Hours and Locations', "https://hours.library.ualberta.ca" %></li>
+          <li><%= link_to 'News / Workshops', cms_root_url('#main-news') %></li>
+          <li><%= link_to 'Services', cms_root_url('#main-services') %></li>
+          <li><%= link_to 'Subject Guides', cms_root_url('#main-subjects') %></li>
+          <li><%= link_to 'My Account', cms_root_url('#main-account') %></li>
+          <li><%= link_to 'Version Française', cms_root_url('francais') %></li>
+          <li><%= link_to 'University of Alberta Home', 'http://www.ualberta.ca' %></li>
         </ul>
       </div><!-- End mobile menu -->
     </div>
@@ -58,22 +59,22 @@
           <div class="row">
             <ul class="lib-nav">
               <li id="home-nav" style="display:block" class="col-sm-2">
-                <a href="/" data-no-turbolink="true">Search &amp; Home</a>
+                <%= link_to 'Search & Home', cms_root_url %>
               </li>
               <li id="news-nav" class="col-sm-2">
-                <a href="/#main-news" data-no-turbolink="true"><span></span>News / Workshops</a>
+                <%= link_to 'News / Workshops', cms_root_url('#main-news') %>
               </li>
               <li id="services-nav" class="col-sm-2">
-                <a href="/#main-services" data-no-turbolink="true"><span></span>Services</a>
+                <%= link_to 'Services', cms_root_url('#main-services') %>
               </li>
               <li id="subjects-nav" class="col-sm-2">
-                <a href="/#main-subjects" data-no-turbolink="true"><span></span>Subject Guides</a>
+                <%= link_to 'Subject Guides', cms_root_url('#main-subjects') %>
               </li>
               <li id="research-nav" class="col-sm-2">
-                <a href="/#main-research" data-no-turbolink="true"><span></span>Research Support</a>
+                <%= link_to 'Research Support', cms_root_url('#main-research') %>
               </li>
               <li id="account-nav" class="col-sm-2">
-                <a href="/#main-account" data-no-turbolink="true" ><span></span>My Account</a>
+                <%= link_to 'My Account', cms_root_url('#main-account') %>
               </li>
             </ul>
           </div>

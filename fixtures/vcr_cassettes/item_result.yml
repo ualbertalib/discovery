@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=1001523
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 17 Jan 2019 21:29:29 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>1001523</titleID><TitleAvailabilityInfo><totalCopiesAvailable>2</totalCopiesAvailable><libraryWithAvailableCopies>Burman
+        University</libraryWithAvailableCopies><libraryWithAvailableCopies>University
+        of Alberta Rutherford-Humanities &amp; Social Science</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>ON_SHELF</locationOfFirstAvailableItem><holdable>true</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>BURMAN</libraryID><classificationID>LC</classificationID><callNumber>PR
+        2759 C7</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>32860000175264</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>UAHSS</libraryID><classificationID>LC</classificationID><callNumber>PR
+        2759 C88</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>000024099657</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>am1|0c
+        a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>1001523</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>008</entryID><indicators>  </indicators><text>880408s1931    ilu      b      1
+        0 eng e</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>31020171</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm06322694</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>eng</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        holdings</label><entryID>049</entryID><indicators>  </indicators><text>AEU
+        eng</text></MarcEntryInfo><MarcEntryInfo><label>LC Call Number</label><entryID>050</entryID><indicators>
+        4</indicators><text>PR2759 .C72 1932</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>PR
+        2759 C7 ACHCU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>0 </indicators><text>PR
+        2759 C88</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        Author</label><entryID>100</entryID><indicators>1 </indicators><text>Shakespeare,
+        William, 1564-1616.</text><entryTypeCodes>MAR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>10</indicators><text>Shakespeare
+        : a historical and critical study with annotated texts of twenty-one plays
+        / by Hardin Craig.</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>Chicago
+        : Scott, Foresman, 1931.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>vi,
+        1194 p. ; 24 cm.</text></MarcEntryInfo><MarcEntryInfo><label>Content type</label><entryID>336</entryID><indicators>  </indicators><text>text
+        txt</text></MarcEntryInfo><MarcEntryInfo><label>Media type</label><entryID>337</entryID><indicators>  </indicators><text>unmediated
+        n</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>volume
+        nc</text></MarcEntryInfo><MarcEntryInfo><label>Bibliography note</label><entryID>504</entryID><indicators>  </indicators><text>Includes
+        bibliographies and index.</text></MarcEntryInfo><MarcEntryInfo><label>Action
+        note</label><entryID>583</entryID><indicators>1 </indicators><text>committed
+        to retain 20170930 20421231 HathiTrust https://www.hathitrust.org/shared_print_program
+        AEU HathiTrust Shared Print commitment 2017</text></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>BURMAN UAHSS</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        subject</label><entryID>600</entryID><indicators>10</indicators><text>Shakespeare,
+        William, 1564-1616.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        subject</label><entryID>600</entryID><indicators>10</indicators><text>Shakespeare,
+        William, 1564-1616--Criticism and interpretation.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Added
+        Entry-Personal</label><entryID>700</entryID><indicators>1 </indicators><text>Craig,
+        Hardin, 1875-1968.</text><entryTypeCodes>AR</entryTypeCodes></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Thu, 17 Jan 2019 21:29:29 GMT
+recorded_with: VCR 4.0.0
