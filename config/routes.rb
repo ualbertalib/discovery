@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'errors/unprocessable'
   get 'errors/internal_server_error'
 
-  blacklight_for :catalog, :journals, :databases, :symphony, :ebooks, :new_books
+  blacklight_for :catalog, :journals, :databases, :symphony, :ebooks
   Blacklight::Marc.add_routes(self)
 
   devise_for :users
@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get 'journals/range_limit' => 'journals#range_limit'
   get 'databases/range_limit' => 'databases#range_limit'
   get 'ebooks/range_limit' => 'ebooks#range_limit'
-  get 'new_books/range_limit' => 'new_books#range_limit'
 
   # TODO: Should be able to remove this? It is defined twice in the routes, but this fails our tests
   get '/advanced', to: 'advanced#index'
