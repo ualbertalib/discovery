@@ -1,9 +1,51 @@
 <div id="sortAndPerPage" class="clearfix">
   <%= render :partial => "paginate_compact", :object => @response %>
   <div class="search-widgets pull-right">
-    <%= render :partial => 'bookmark_widget' %>
-    <%= render :partial => 'sort_widget' %>
-    <%= render :partial => 'per_page_widget' %>
-    <%= render :partial => 'view_type_group' %>
+    <% if show_sort_and_per_page? and !active_sort_fields.blank? %>
+      <div id="go-to-bookmarks" class="btn-group">
+        <a href="/bookmarks" class="btn btn-default">Go to bookmarks</a>
+      </div>
+    <% end %>
+    <% if show_sort_and_per_page? and !active_sort_fields.blank? %>
+      <div id="sort-dropdown" class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <%= link_to(t('blacklight.search.sort.label', :field =>current_sort_field.label), "#") %> <span class="caret"></span>
+        </button>
+
+        <ul class="dropdown-menu" role="menu">
+            <%- active_sort_fields.each do |sort_key, field_config| %>
+              <li><%= link_to(field_config.label, url_for(params_for_search(:sort => sort_key))) %></li>
+            <%- end -%>
+        </ul>
+      </div>
+    <% end %>
+
+    <% if show_sort_and_per_page? and !blacklight_config.per_page.blank? %>
+
+      <span class="sr-only"><%= t('blacklight.search.per_page.title') %></span>
+      <div id="per_page-dropdown" class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><%= link_to(t(:'blacklight.search.per_page.button_label', :count => current_per_page), "#") %> <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+          <%- per_page_options_for_select.each do |(label, count)| %>
+            <li><%= link_to(label, url_for(params_for_search(:per_page => count))) %></li>
+          <%- end -%>
+        </ul>
+      </div>
+    <% end %>
+
+    <% if has_alternative_views? -%>
+      <div class="view-type">
+        <span class="sr-only"><%= t('blacklight.search.view_title') %></span>
+        <div class="view-type-group btn-group">
+          <%  document_index_views.each do |view, config| %>
+          <%= link_to url_for(params.merge(:view => view)), :title => t("blacklight.search.view_title.#{view}", default: t("blacklight.search.view.#{view}", default: blacklight_config.view[view].title)), :class => "btn btn-default view-type-#{ view.to_s.parameterize } #{"active" if document_index_view_type == view}" do %>
+            <%= render_view_type_group_icon view %>
+              <span class="caption"><%= t("blacklight.search.view.#{view}") %></span>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end -%>
+
   </div>
 </div>
