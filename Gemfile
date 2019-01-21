@@ -29,13 +29,8 @@ gem 'devise-guests'
 
 # Misc Utilities
 gem 'bootstrap_form', '~> 2.7.0'
-gem 'friendly_id'
 gem 'nokogiri', '~> 1.8.5'
 gem 'om'
-gem 'paperclip', '~> 6.1.0'
-
-# Content Management System
-gem 'comfortable_mexican_sofa', '1.12.9'
 
 # Performance monitoring
 gem 'rollbar'
