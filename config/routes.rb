@@ -27,8 +27,6 @@ Rails.application.routes.draw do
   match '/422', to: 'errors#unprocessable', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
 
-  resources :staff, as: :profiles, controller: :profiles
-
   # We have the actual catalog routes defined from blacklight,
   # this is just so we can get these routes nested nicely with the catalog item's ids in the url
   # e.g: /catalog/1234567/corrections/new
@@ -40,10 +38,5 @@ Rails.application.routes.draw do
   resources :bpsc_read_on_site_requests, only: [:new, :create]
   resources :rcrf_read_on_site_requests, only: [:new, :create]
 
-  root to: 'comfy/cms/content#show'
-
-  comfy_route :cms_admin, path: '/admin'
-
-  # Make sure this routeset is defined last
-  comfy_route :cms, path: '/', sitemap: false
+  root to: 'catalog#index'
 end
