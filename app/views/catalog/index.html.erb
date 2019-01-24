@@ -50,7 +50,27 @@ Results for <em>
 <% if params[:search_field] or params[:f] or params[:q] and params[:q] != '' or Rails.env == "development" %>
   <div class="row top-margin">
     <div id="sidebar" class="col-md-3 col-sm-4 ">
-      <%= render 'facets' %>
+      <% if facet_values?  %>
+        <div id="facets" class="facets sidenav">
+
+          <div class="top-panel-heading panel-heading">
+            <button type="button" class="facets-toggle" data-toggle="collapse" data-target="#facet-panel-collapse">
+              <span class="sr-only">Toggle facets</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          <h4>
+            <%= t('blacklight.search.facets.title') %>
+          </h4>
+            </div>
+
+          <div id="facet-panel-collapse" class="collapse panel-group">
+          <%= render_facet_partials %>
+        </div>
+        </div>
+      <% end %>
     </div>
     <div id="content" class="col-md-9 col-sm-8">
       <h2 class="sr-only top-content-title"><%= t('blacklight.search.search_results_header') %></h2>
