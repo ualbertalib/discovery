@@ -33,15 +33,15 @@ module CatalogHelper
   end
 
   def ual_electronic_access_url(location, url)
-    electronic_access_url(location.include?('Free Access'), url)
+    electronic_access_url(location.exclude?('Free Access'), url)
   end
 
   def database_electronic_access_url(document)
     electronic_access_url(document['enableproxy_tesim'].first == '1', document['url_tesim'].first)
   end
 
-  def electronic_access_url(test, url)
-    return url if test
+  def electronic_access_url(enableproxy, url)
+    return url unless enableproxy
     Rails.application.config.proxy + url
   end
 
