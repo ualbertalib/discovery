@@ -50,4 +50,27 @@ module CatalogHelper
     urls = @document['summary_holdings_tesim'].zip(@document['url_suppl_display']) if @document['summary_holdings_tesim'] && @document['url_suppl_display']
     urls
   end
+
+  # The original content from lgapi-ca.libapps.com is mangled during ingest to Solr
+  # into a endline delimited single string with the keys removed and lots of whitespace.
+  # This undoes that.
+  # An array of icon hashes is returned.
+  def libguides_icons(document)
+    icons = []
+
+    raw_icons = []
+    raw_icons = document['icons_tesim'].first.split("\n").reject!(&:blank?) unless document['icons_tesim'].blank?
+
+    raw_icons.each_slice(7) do |raw|
+      raw = raw.map(&:strip)
+      icon = { id: raw[0], site_id: raw[1], file: raw[2], description: raw[3], url: raw[4] }
+      icons << icon
+    end
+
+    icons
+  end
+
+  def libguide_icon_image(icon)
+    "https://libapps-ca.s3.amazonaws.com/sites/#{icon[:site_id]}/icons/#{icon[:id]}/#{icon[:file]}"
+  end
 end

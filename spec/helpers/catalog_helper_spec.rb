@@ -34,4 +34,22 @@ describe CatalogHelper do
       expect(helper.database_electronic_access_url(document)).to eq document['url_tesim'].first
     end
   end
+
+  describe '#libguides_icons' do
+    it 'should get icon hashes for iterating on' do
+      document = {}
+      document['icons_tesim'] = ["\n    \n      6665\n      165\n      ualib-logo.png\n      licensed for  U of A\n      https://www.library.ualberta.ca/about-us/policies/restricted-resource-info\n \
+              11710698\n      6665\n      \n    \n    \n      15484\n      165\n      cou-user.png\n      User Registration Required\n \
+              https://www.library.ualberta.ca/about-us/policies/conditions-of-use/registration-required\n      11710698\n      15484\n \
+                 \n    \n    \n      15485\n      165\n      cou-sign-in.png\n      CCID Login Required\n      https://www.library.ualberta.ca/about-us/policies/conditions-of-use/restricted\n \
+              11710698\n      15485\n      \n    \n  "]
+      icons = [
+        { id: '6665', site_id: '165', file: 'ualib-logo.png', description: 'licensed for  U of A', url: 'https://www.library.ualberta.ca/about-us/policies/restricted-resource-info' },
+        { id: '15484', site_id: '165', file: 'cou-user.png', description: 'User Registration Required',
+          url: 'https://www.library.ualberta.ca/about-us/policies/conditions-of-use/registration-required' },
+        { id: '15485', site_id: '165', file: 'cou-sign-in.png', description: 'CCID Login Required', url: 'https://www.library.ualberta.ca/about-us/policies/conditions-of-use/restricted' }
+      ]
+      expect(helper.libguides_icons(document)).to eq icons
+    end
+  end
 end
