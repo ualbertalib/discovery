@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.95] - 2019-01-27
+
 ### Added
 
 -   Database license icons [#1333](https://github.com/ualbertalib/discovery/issues/1113)
