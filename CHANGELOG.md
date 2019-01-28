@@ -16,6 +16,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 -   Fix request forms success flash behaviour by adding flash to CMS layouts [#1443](https://github.com/ualbertalib/discovery/issues/1443)
 -   Logic for adding ezproxy to electronic access urls [#1454](https://github.com/ualbertalib/discovery/issues/1454)
 
+### Removed
+-   Remove CMS and profiles from the discovery application [#1465](https://github.com/ualbertalib/discovery/pull/1465)
+
 ## [3.0.94] - 2018-12-19
 
 ### Fixed
