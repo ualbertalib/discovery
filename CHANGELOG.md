@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Changed
 -  Added more subfields (t, r, and g) to contents notes [#1121](https://github.com/ualbertalib/discovery/issues/1121)
+-  Added more subfields (f, k) to title [#978](https://github.com/ualbertalib/discovery/issues/978)
 
 ## [3.0.95] - 2019-01-27
 
