@@ -13,7 +13,7 @@ RSpec.describe 'Catalog Search', type: :feature do
   scenario 'User visits an item result' do
     VCR.use_cassette('item_result') do
       visit 'catalog/1001523'
-      expect(page).to have_text('Shakespeare: a historical and critical study with annotated texts of twenty-one plays')
+      expect(page).to have_text('Shakespeare : a historical and critical study with annotated texts of twenty-one plays')
     end
   end
 end
