@@ -117,7 +117,8 @@ class SymphonyService
     non_ua_items = {}
     if @document
       link_items.each do |item|
-        if label(item) && (label(item).text == 'Electronic access')
+        if label(item) && (label(item).text == 'Electronic access') &&
+           item.at_xpath('.//xmlns:text').present? && item.at_xpath('.//xmlns:url').present?
           if (item.at_xpath('.//xmlns:text').text.include? 'University of Alberta Access') ||
              (item.at_xpath('.//xmlns:text').text.include? 'Free') ||
              (item.at_xpath('.//xmlns:text').text.include? 'NEOS')
