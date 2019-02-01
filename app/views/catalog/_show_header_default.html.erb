@@ -17,16 +17,18 @@
       </div>
     <% end %>
   </div>
-  <div class='row row-no-gutters'>
-    <h2 class='col-md-4 h3 align-middle'><%= t('conditions_of_use') %>:</h2>
-    <ul class='col-md-8 align-middle list-inline'>
-    <% libguides_icons(document).each do |icon| -%>
-      <li class='list-inline-item'>
-      <%= link_to icon[:url] do %>
-        <%= image_tag(libguide_icon_image(icon), alt: icon[:description], title: icon[:description], height: '30') %>
-      <% end %>
-      </li>
-    <% end -%>
-    </ul>
-  </div>
+  <% if libguides_icons(document).present? %>
+    <div class='row row-no-gutters'>
+      <h2 class='col-md-4 h3 align-middle'><%= t('conditions_of_use') %>:</h2>
+      <ul class='col-md-8 align-middle list-inline'>
+      <% libguides_icons(document).each do |icon| -%>
+        <li class='list-inline-item'>
+        <%= link_to icon[:url] do %>
+          <%= image_tag(libguide_icon_image(icon), alt: icon[:description], title: icon[:description], height: '30') %>
+        <% end %>
+        </li>
+      <% end -%>
+      </ul>
+    </div>
+  <% end %>
 <% end %>
