@@ -1,20 +1,107 @@
 <div id="content" class="col-md-9 show-document top-margin">
-  <%= render 'previous_next_doc' %>
+  <% if @previous_document || @next_document %>
+    <div id="previousNextDocument">
+      <div class="page_links">
+        <% if @previous_document  %>
+          <%= link_to_previous_document @previous_document %> |
+        <% end %>
+        <%= item_page_entry_info %>
+        <% if @next_document  %>
+          | <%= link_to_next_document @next_document %>
+        <% end %>
+      </div>
+
+      <div class="pull-right search-widgets">
+          <%= link_back_to_catalog(label: 'Back to Search Results', :class => 'btn btn-ltblue', :id => "no-dot") %>
+          <%=link_to "Start Over", root_path, :class => 'btn btn-ltblue', :id => "no-dot" %>
+      </div>
+    </div>
+  <% end %>
   <% @page_title = t('blacklight.search.show.title', :document_title => document_show_html_title, :application_name => application_name).html_safe -%>
 
   <% content_for(:head) { render_link_rel_alternates } -%>
 
   <div id="document" class="document <%= render_document_class %>" itemscope itemtype="<%= @document.itemtype %>">
     <div id="doc_<%= @document.id.to_s.parameterize %>" class="col-sm-9">
-      <% # bookmark/folder functions -%>
-      <%= render_document_partials @document, blacklight_config.view_config(:show).partials %>
+      <h1>
+          <%= @document.header_title %><%= ", #{@document.to_h["edition_tesim"].first}" if @document.to_h["edition_tesim"]%>
+      </h1>
+      <% if electronic_access_top? %>
+        <div id="electronic_access">
+          <% if database_electronic_access? %>
+            <%= link_to 'Click Here for Access', database_electronic_access_url(@document), target: '_blank' %>
+          <% end %>
+          <% @ua_urls.each do |location,url| %>
+            <div class="row">
+              <%= link_to ual_electronic_access_label(location), ual_electronic_access_url(location,url), target: '_blank' %>
+            </div>
+          <% end %>
+          <% supplimentary_urls.each do |label,url| %>
+            <div class="row">
+              <%= link_to label, url, target: '_blank' %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+      <%# default partial to display solr document fields in catalog show view -%>
+      <dl class="dl-horizontal dl-invert">
+
+        <% @linked_fields = ["uniform_title_tesim"] %>
+
+        <% document_show_fields(@document).each do |solr_fname, field| -%>
+          <% if should_render_show_field? @document, field %>
+            <dt class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_label @document, :field => solr_fname %></dt>
+            <% if @linked_fields.include? solr_fname %>
+              <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/catalog?q=&quot;<%= render_document_show_field_value(@document, :field => solr_fname).gsub(' ', '+') %>&quot;">   <%= render_document_show_field_value @document, :field => solr_fname %></a></dd>
+            <% elsif solr_fname == "title_series_t" %>
+              <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/<%= params[:controller] %>?title=&quot;<%= render_document_show_field_value(@document, :field => solr_fname).split(";").first.strip.gsub(' ','+') %>&quot;&search_field=advanced"><%= render_document_show_field_value @document, :field => solr_fname %></a></dd>
+            <% elsif solr_fname == "author_display" %>
+
+              <dd class="blacklight-<%= solr_fname.parameterize %>"><a href="/<%= params[:controller] %>?author=<%= render_document_show_field_value(@document, :field => solr_fname).gsub(' ','+') %>&search_field=advanced"><%= render_document_show_field_value @document, :field => solr_fname %></a></dd>
+
+            <% elsif solr_fname == "author_addl_t" and @additional_authors %>
+              <dd class="blacklight-<%= solr_fname.parameterize %>">
+
+              <% for author in @additional_authors %>
+                <a href="/catalog?q=&quot;<%= author.gsub(' ','+') %>&quot;"><%= author %></a><br />
+              <% end %>
+              </dd>
+
+            <% elsif solr_fname == "contents_tesim" %>
+
+              <dd class="blacklight-<%= solr_fname.parameterize %>" style="font-size:75%">
+              <ul>
+                <% render_document_show_field_value(@document,:field=>solr_fname).split("--").each do |note| %>
+                  <li><%= sanitize(note) %></li>
+                <% end %>
+              </ul></dd>
+          <% else %>
+            <dd class="blacklight-<%= solr_fname.parameterize %>"><%= render_document_show_field_value @document, :field => solr_fname %></dd>
+          <% end %>
+        <% end -%>
+      <% end -%>
+      </dl>
       <% if @document.to_h["databasedescription_tesim"] %>
         <%= @document.to_h["databasedescription_tesim"].first.html_safe %>
       <% end %>
 
     <div class="hidden-xs">
       <% if @subjects  %>
-        <%= render "subjects" %>
+        <div id="subject-list">
+          <p class="blacklight-subject_topic_facet">Subjects</p>
+          <ul class="subject-chain-links">
+            <% @subjects.each do |subject| %>
+              <li>
+                <% subject.each_with_index do |asubject, index| %>
+                  <%= link_to asubject, catalog_index_path(q: subject_query(subject.take(index+1)), view: 'brief', search_field: 'subject') %>
+                  <% unless index == subject.size - 1  %>
+                    <span class="glyphicon glyphicon-menu-right"></span>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
     </div>
 
@@ -35,13 +122,19 @@
       <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
     <% end %>
   <div id="sidebar" class="col-sm-3 top-margin hidden-xs">
-  <%= render_document_sidebar_partial %>
+  <%= render :partial => 'show_sidebar' %>
 </div>
- <div class="visible-xs">
+<div class="visible-xs">
   <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
-      <%= render "place_hold" %>
-    <% end %>
-  </div>
+      <%= link_to "Place Hold", "https://myaccount.library.ualberta.ca/ccid/login?hldCatKey=#{@document.id}", :class => "btn hold", :target=>'_blank' %>
+      <p style="font-size:90%">
+        <strong>
+          <a href="https://myaccount.library.ualberta.ca/barcode/login?hldCatKey=<%= @document["id"] %>" target="_blank">
+          Place hold with barcode and PIN.</a>
+        </strong>
+      </p>
+  <% end %>
+</div>
 <div class="col-sm-12">
   <% if electronic_access_bottom? %>
     <div id="electronic_access">
@@ -59,7 +152,129 @@
       <%= "No copies found. This item may be lost or missing, or the data may be temporarily unavailable. Please <a href='/ask-us' target='_blank'>ask us</a> for assistance.".html_safe %>
     <% end %>
   <% else %>
-    <%= render "holdings" %>
+    <% @unavailable = false %>
+    <div id = "holdings" class="col-md-12">
+      <% if @document["source"].first == "Symphony"  %>
+        <table class="table table-responsive">
+          <tr>
+            <th class="call-number">Call Number</th>
+            <th>Location / Status</th>
+            <th>Library</th>
+            <th class="hidden-xs">Item Type</th>
+            <th>Action</th>
+          </tr>
+
+          <br />
+
+          <% for item in @holdings %>
+            <% @unavailable = true if symphony_status(item) == "unavailable" %>
+            <tr>
+              <td><%= item[:call] %></td>
+              <% if item[:status] == "CHECKEDOUT" %>
+                <% if item[:due] %>
+                  <td style="padding-right:2px;font-size:75%"><strong>Due: <%= DateTime.parse(item[:due]).strftime("%m/%d/%Y %l:%M %P").gsub("00:00 am","").gsub("12:00 am","") %></strong>
+                  <% if item[:reserve] && item[:reserve_rule] %>
+                    <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
+                  <% end %>
+                </td>
+                <% else %><td>Unknown/Never</td>
+              <% end %>
+              <% else %>
+                <td class="holding-status"><%= symphony_status(item) %>
+                <% if @unavailable %>
+                  <p style="font-size: small"><strong>Note: For access, please contact any University of Alberta Libraries service desk in person or at <a href="http://www.library.ualberta.ca/askus" target="_blank">www.library.ualberta.ca/askus.</a></strong></p>
+                <% end %>
+                <% if item[:public_note] %>
+                  <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
+                <% end %>
+                  <% if item[:reserve_rule] && (item[:reserve] or item[:status]=="RESERVES") %>
+                    <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
+                  <% end %>
+              </td>
+              <% end %>
+              <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= library_location(item[:location]) %></a></td>
+              <% if @document["format"].include? "Journal" %>
+            <% end %>
+              <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
+                <td class="holding-type hidden-xs"><%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %></td>
+              <% else %>
+                <td></td>
+              <% end %>
+              <td>
+                  <%# TODO: Add a feature flag for this feature for time being (remove in future) %>
+                  <% if params[:feature_flag_request_forms].present? %>
+                    <% if request_microform?(item) %>
+                      <%= link_to('Request Me',
+                                  new_rcrf_special_request_path(item_url: catalog_url(@document.id),
+                                                                title: @document.header_title),
+                                  class: 'normal-link',
+                                  target: :_blank) %>
+                    <% end %>
+                    <% if request_rcrf_read_on_site_form?(item) %>
+                      <%= link_to('Request Me',
+                                  new_rcrf_read_on_site_request_path(item_url: catalog_url(@document.id),
+                                                                     title: @document.header_title),
+                                  class: 'normal-link',
+                                  target: :_blank) %>
+                    <% end %>
+                    <% if request_bpsc_read_on_site_form?(item) %>
+                      <%= link_to('Request Me',
+                                  new_bpsc_read_on_site_request_path(item_url: catalog_url(@document.id),
+                                                                     title: @document.header_title,
+                                                                     call_number: item[:call]),
+                                  class: 'normal-link',
+                                  target: :_blank) %>
+                    <% end %>
+                  <% end %>
+                  <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>library_location(item[:location])), {:id => 'emailLink', :class => 'lightboxLink'} %>
+                  <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>item[:call]), {:id => 'smsLink', :class => 'lightboxLink'} %>
+              </td>
+            </tr>
+            <% @unavailable = false %>
+          <% end %>
+        </table>
+      <% end %>
+
+      <% if @document["source"].first == "SFX"  %>
+        <table class="table table-responsive">
+          <tr>
+            <th>Subscription</th>
+            <th>Coverage</th>
+            <th>Note</th>
+            <th>Our Usage Rights</th>
+          </tr>
+          <% for item in @holdings %>
+            <tr>
+              <td style="width:25%"><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
+              <td style="width:25%"><%= item[1][:coverage] %> </td>
+                <td style="width:20%"><%= item[1][:note] ? item[1][:note].html_safe : "" %></td>
+              <% if item[1][:our_target] %>
+                <td><%= item[1][:our_target].html_safe %></td>
+              <% end %>
+            </tr>
+          <% end %>
+
+        </table>
+        <p>If you would like to read online articles on your mobile device, please check out the <a href="http://thirdiron.com/download-browzine/">Browzine</a> app.</p>
+        <% if @document[:issn_t] %>
+          <p style="font-size:70%"><a href="https://erms.library.ualberta.ca/coral/terms/?issn=<%= @document[:issn_t].first %>" target="_blank">ill</a></p>
+        <% end %>
+      <% end %>
+
+      <% if @document["source"].first == "KULE"  %>
+        <table class="table table-responsive">
+          <tr>
+            <th>Holdings</th>
+          </tr>
+          <tr>
+            <td>
+              <a href="http://www.mlcs.museums.ualberta.ca/BohdanMedwidskyUkrainianFolkloreArchives.aspx" target="_blank">
+                Bohdan Medwidsky Ukrainian Folklore Archives</a>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
   <% end %>
 
 </div>
