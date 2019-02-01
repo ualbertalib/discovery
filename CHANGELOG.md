@@ -6,8 +6,22 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+-  Added more subfields (t, r, and g) to contents notes [#1121](https://github.com/ualbertalib/discovery/issues/1121)
+-  Added more subfields (f, k) to title [#978](https://github.com/ualbertalib/discovery/issues/978)
+
 ### Fixed
-- Fix request forms success flash behaviour by adding flash to CMS layouts [#1443](https://github.com/ualbertalib/discovery/issues/1443)
+-   Don't show conditions of use unless there is something to show [PR#1479](https://github.com/ualbertalib/discovery/pull/1479)
+
+## [3.0.95] - 2019-01-27
+
+### Added
+
+-   Database license icons [#1333](https://github.com/ualbertalib/discovery/issues/1113)
+### Fixed
+
+-   Fix request forms success flash behaviour by adding flash to CMS layouts [#1443](https://github.com/ualbertalib/discovery/issues/1443)
+-   Logic for adding ezproxy to electronic access urls [#1454](https://github.com/ualbertalib/discovery/issues/1454)
 
 ## [3.0.94] - 2018-12-19
 
