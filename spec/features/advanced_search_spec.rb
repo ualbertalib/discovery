@@ -17,7 +17,7 @@ RSpec.feature 'Advanced Search', type: :feature do
     click_button 'Search'
 
     expect(page).to have_text('Results for accountancy')
-    expect(page).to have_text('1 - 25 of 54')
+    expect(page).to have_text('1 - 25 of 57')
 
     # for some reason fields other than title don't seem to work
     # (Capybara::ElementNotFound)

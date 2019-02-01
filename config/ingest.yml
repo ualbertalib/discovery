@@ -118,3 +118,8 @@ kule:
   schema: marc
   path: "data/kule.mrc"
   config: "config/SolrMarc/kule_config.properties"
+
+kule_test:
+  schema: marc
+  path: "spec/fixtures/bmufa_rev_20181010.mrc"
+  config: "config/SolrMarc/kule_config.properties"

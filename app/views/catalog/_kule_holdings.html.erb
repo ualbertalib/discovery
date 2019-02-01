@@ -1,12 +1,31 @@
 
         <table class="table table-responsive">
           <tr>
-            <th>Holdings</th>
+            <th class="call-number">Call Number</th>
+            <th>Status</th>
+            <th class="hidden-xs">Access</th>
+            <th>Action</th>
           </tr>
-          <tr>
+
+          <br />
+    			<tr>
+    			  <td>
+    			    <%= @document["callnumber_tesi"] %>
+    			  </td>
             <td>
-              <a href="http://www.mlcs.museums.ualberta.ca/BohdanMedwidskyUkrainianFolkloreArchives.aspx" target="_blank">
-                Bohdan Medwidsky Ukrainian Folklore Archives</a>
+              <%= "Read On Site" if @document["status_tesi"] == "NO_LOAN" %>
+            </td>
+            <td>
+                <a href="<%= @document["access_url_tesi"] %>" target="_blank">
+                  <%= @document["access_title_tesi"] %></a>
+            </td>
+            <td>
+              <% if @document.respond_to?( :to_email_text ) %>
+                <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>@document["callnumber_tesi"], :location=>@document["location_tesim"].first) , {:id => 'emailLink', :class => 'lightboxLink'} %>
+              <% end %>
+              <% if @document.respond_to?( :to_sms_text ) %>
+                <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>@document["callnumber_tesi"]), {:id => 'smsLink', :class => 'lightboxLink'} %>
+              <% end %>
             </td>
           </tr>
         </table>
