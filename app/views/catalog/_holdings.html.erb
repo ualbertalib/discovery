@@ -1,14 +1,16 @@
+<%# TODO: get rid of this....magic flag variable? %>
 <% @unavailable = false %>
-    <div id = "holdings" class="col-md-12">
-      <% if @document["source"].first == "Symphony"  %>
-        <%= render "symphony_holdings" %>
-      <% end %>
 
-      <% if @document["source"].first == "SFX"  %>
-        <%= render "sfx_holdings" %>
-      <% end %>
+<div id="holdings" class="col-md-12">
+  <% if @document["source"].first == "Symphony" %>
+    <%= render 'symphony_holdings' %>
+  <% end %>
 
-      <% if @document["source"].first == "KULE"  %>
-        <%= render "kule_holdings" %>
-      <% end %>
-    </div>
+  <% if @document["source"].first == "SFX" %>
+    <%= render 'sfx_holdings' %>
+  <% end %>
+
+  <% if @document["source"].first == "KULE" %>
+    <%= render 'kule_holdings' %>
+  <% end %>
+</div>

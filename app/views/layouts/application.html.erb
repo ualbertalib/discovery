@@ -14,11 +14,11 @@
     <![endif]-->
 
     <title>University of Alberta Libraries</title>
-    <%= opensearch_description_tag application_name, opensearch_catalog_url(:format => 'xml') %>
+    <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
     <%# favicon_link_tag asset_path('favicon.ico') %>
     <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    "application", "https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic|Abel", "sticky-footer", "ualib-discovery", media: "all" %>
-    <%= javascript_include_tag "application", "stupidtable", "ualib-discovery" %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic|Abel', 'sticky-footer', 'ualib-discovery', media: 'all' %>
+    <%= javascript_include_tag 'application', 'stupidtable', 'ualib-discovery' %>
       <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -40,7 +40,7 @@
   </head>
   <body class="<%= render_body_class %>" data-no-turbolink="true">
     <div class="wrapper">
-  <%= render :partial => 'shared/header_navbar' %>
+  <%= render partial: 'shared/header_navbar' %>
 
   <%= render partial: 'shared/ajax_modal' %>
 
@@ -51,7 +51,6 @@
       <%= yield %>
     </div>
 
-
-  <%= render :partial => 'shared/footer' %>
+  <%= render partial: 'shared/footer' %>
   </body>
 </html>
