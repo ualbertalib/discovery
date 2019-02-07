@@ -1,29 +1,26 @@
+<%# header bar for doc items in index view -%>
+<div class="documentHeader row">
 
-      <% # header bar for doc items in index view -%>
-      <div class="documentHeader row">
+  <%# main title container for doc partial view
+      How many bootstrap columns need to be reserved
+      for bookmarks control depends on size. -%>
 
+  <h5 class="index_title col-sm-9 col-lg-10">
+    <% counter = document_counter_with_offset(document_counter) %>
+    <span class="document-counter">
+      <%= t('blacklight.search.documents.counter', counter: counter) if counter %>
+    </span>
 
-        <%# main title container for doc partial view
-            How many bootstrap columns need to be reserved
-            for bookmarks control depends on size.
-        -%>
+    <% @subtitle = document.to_h['subtitle_display'] ? ": #{document.to_h['subtitle_display'].first}" : '' %>
+    <% @edition = document.to_h['edition_tesim'] ? ", #{document.to_h['edition_tesim'].first}" : '' %>
+    <% @combined_title = document.to_h['title_display'].nil? ? 'Untitled document' : document.to_h['title_display'].first + @subtitle + @edition %>
 
-        <h5 class="index_title col-sm-9 col-lg-10">
-        <% counter = document_counter_with_offset(document_counter) %>
-        <span class="document-counter">
-        <%= t('blacklight.search.documents.counter', :counter => counter) if counter %>
-      </span>
+    <%= link_to_document document, @combined_title, counter: counter %>
+    <% if document["ua_only_tesim"] %>
+      <% if document["ua_only_tesim"].first == "1" %> <%= image_tag 'icn_uofa.gif' %> <% end %>
+    <% end %>
+  </h5>
 
-      <% document.to_h['subtitle_display'] ? @subtitle = ": #{document.to_h['subtitle_display'].first}" : @subtitle = "" %>
-      <% document.to_h['edition_tesim'] ? @edition = ", #{document.to_h['edition_tesim'].first}" : @edition = "" %>
-      <% document.to_h['title_display'].nil? ? @combined_title = "Untitled document" : @combined_title = document.to_h['title_display'].first+@subtitle+@edition%>
-
-        <%= link_to_document document, @combined_title, :counter => counter %>
-        <% if document["ua_only_tesim"] %>
-          <% if document["ua_only_tesim"].first == "1" %> <%= image_tag "icn_uofa.gif" %> <% end %>
-        <% end %>
-        </h5>
-
-        <% # bookmark functions for items/docs -%>
-        <%= render_index_doc_actions document, :wrapping_class => "index-document-functions col-sm-3 col-lg-2 hidden-xs" %>
-      </div>
+  <%# bookmark functions for items/docs -%>
+  <%= render_index_doc_actions document, wrapping_class: 'index-document-functions col-sm-3 col-lg-2 hidden-xs' %>
+</div>

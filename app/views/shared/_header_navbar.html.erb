@@ -22,12 +22,12 @@
           <div class="col-sm-6 col-xs-7">
 
             <%= link_to cms_root_url do %>
-              <%= image_tag ("ualib-logo-sm.png"), :class => "ualogo", :alt => "University of Alberta Libraries"%>
+              <%= image_tag 'ualib-logo-sm.png', class: 'ualogo', alt: 'University of Alberta Libraries' %>
             <% end %>
 
           </div>
           <div class="col-sm-6 col-xs-3 ask-sm">
-            <%= link_to 'Ask Us', cms_root_url('ask-us'), :class => "ask-main" %>
+            <%= link_to 'Ask Us', cms_root_url('ask-us'), class: 'ask-main' %>
           </div>
           <div class="col-xs-2 visible-xs">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -43,7 +43,7 @@
       <div id="navbar" class="col-xs-10 collapse" style="height: 0px;"><!-- Mobile menu -->
         <ul>
           <li class="active"> <%= link_to 'Search & Home', cms_root_url %></li>
-          <li><%= link_to 'Hours and Locations', "https://hours.library.ualberta.ca" %></li>
+          <li><%= link_to 'Hours and Locations', 'https://hours.library.ualberta.ca' %></li>
           <li><%= link_to 'News / Workshops', cms_root_url('#main-news') %></li>
           <li><%= link_to 'Services', cms_root_url('#main-services') %></li>
           <li><%= link_to 'Subject Guides', cms_root_url('#main-subjects') %></li>

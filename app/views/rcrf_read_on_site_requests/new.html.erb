@@ -7,8 +7,7 @@
 
   <%= f.select :viewing_location,
                RCRFReadOnSiteRequest::VIEWING_LOCATIONS,
-               prompt: t('.please_select_a_location_for_viewing')
-  %>
+               prompt: t('.please_select_a_location_for_viewing') %>
 
   <%= f.text_field :appointment_time %>
   <%= f.text_field :title %>

@@ -1,5 +1,5 @@
 <h1>
-    <%= document.header_title %><%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%>
+    <%= document.header_title %><%= ", #{document.to_h['edition_tesim'].first}" if document.to_h['edition_tesim'] %>
 </h1>
 <% if electronic_access_top? %>
   <div id="electronic_access">
@@ -8,7 +8,7 @@
     <% end %>
     <% @ua_urls.each do |location,url| %>
       <div class="row">
-        <%= link_to ual_electronic_access_label(location), ual_electronic_access_url(location,url), target: '_blank' %>
+        <%= link_to ual_electronic_access_label(location), ual_electronic_access_url(location, url), target: '_blank' %>
       </div>
     <% end %>
     <% supplimentary_urls.each do |label,url| %>
@@ -21,13 +21,13 @@
     <div class='row row-no-gutters'>
       <h2 class='col-md-4 h3 align-middle'><%= t('conditions_of_use') %>:</h2>
       <ul class='col-md-8 align-middle list-inline'>
-      <% libguides_icons(document).each do |icon| -%>
-        <li class='list-inline-item'>
-        <%= link_to icon[:url] do %>
-          <%= image_tag(libguide_icon_image(icon), alt: icon[:description], title: icon[:description], height: '30') %>
-        <% end %>
-        </li>
-      <% end -%>
+        <% libguides_icons(document).each do |icon| -%>
+          <li class='list-inline-item'>
+            <%= link_to icon[:url] do %>
+              <%= image_tag(libguide_icon_image(icon), alt: icon[:description], title: icon[:description], height: '30') %>
+            <% end %>
+          </li>
+        <% end -%>
       </ul>
     </div>
   <% end %>

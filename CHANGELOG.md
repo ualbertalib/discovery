@@ -9,6 +9,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Removed
 - Removed unused partials [#1485](https://github.com/ualbertalib/discovery/pull/1485)
 
+### Added
+- Bring in ERB-lint, refactor view code, fix identations, etc [#1486](https://github.com/ualbertalib/discovery/pull/1486)
+
 ### Changed
 -  Move VCR Fixtures folder to proper place [#1487](https://github.com/ualbertalib/discovery/pull/1487)
 -  Added more subfields (t, r, and g) to contents notes [#1121](https://github.com/ualbertalib/discovery/issues/1121)
@@ -20,10 +23,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [3.0.95] - 2019-01-27
 
 ### Added
-
 -   Database license icons [#1333](https://github.com/ualbertalib/discovery/issues/1113)
-### Fixed
 
+### Fixed
 -   Fix request forms success flash behaviour by adding flash to CMS layouts [#1443](https://github.com/ualbertalib/discovery/issues/1443)
 -   Logic for adding ezproxy to electronic access urls [#1454](https://github.com/ualbertalib/discovery/issues/1454)
 
