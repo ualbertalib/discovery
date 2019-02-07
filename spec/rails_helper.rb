@@ -31,7 +31,7 @@ Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
                           end
 
 VCR.configure do |config|
-  config.cassette_library_dir = 'fixtures/vcr_cassettes'
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock # or :fakeweb
 
   # Only want VCR to intercept requests to external URLs.
