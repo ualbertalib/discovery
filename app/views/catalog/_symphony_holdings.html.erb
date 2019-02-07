@@ -1,79 +1,99 @@
+<table class="table table-responsive">
+  <tr>
+    <th class="call-number">Call Number</th>
+    <th>Location / Status</th>
+    <th>Library</th>
+    <th class="hidden-xs">Item Type</th>
+    <th>Action</th>
+  </tr>
 
-        <table class="table table-responsive">
-          <tr>
-            <th class="call-number">Call Number</th>
-            <th>Location / Status</th>
-            <th>Library</th>
-            <th class="hidden-xs">Item Type</th>
-            <th>Action</th>
-          </tr>
+  <br />
 
-          <br />
-
-          <% for item in @holdings %>
-            <% @unavailable = true if symphony_status(item) == "unavailable" %>
-            <tr>
-              <td><%= item[:call] %></td>
-              <% if item[:status] == "CHECKEDOUT" %>
-                <% if item[:due] %>
-                  <td style="padding-right:2px;font-size:75%"><strong>Due: <%= DateTime.parse(item[:due]).strftime("%m/%d/%Y %l:%M %P").gsub("00:00 am","").gsub("12:00 am","") %></strong>
-                  <% if item[:reserve] && item[:reserve_rule] %>
-                    <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
-                  <% end %>
-                </td>
-                <% else %><td>Unknown/Never</td>
-              <% end %>
-              <% else %>
-                <td class="holding-status"><%= symphony_status(item) %>
-                <% if @unavailable %>
-                  <p style="font-size: small"><strong>Note: For access, please contact any University of Alberta Libraries service desk in person or at <a href="http://www.library.ualberta.ca/askus" target="_blank">www.library.ualberta.ca/askus.</a></strong></p>
-                <% end %>
-                <% if item[:public_note] %>
-                  <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
-                <% end %>
-                  <% if item[:reserve_rule] && (item[:reserve] or item[:status]=="RESERVES") %>
-                    <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
-                  <% end %>
-              </td>
-              <% end %>
-              <td><a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank"><%= library_location(item[:location]) %></a></td>
-              <% if @document["format"].include? "Journal" %>
+  <% for item in @holdings %>
+    <% @unavailable = true if symphony_status(item) == 'unavailable' %>
+    <tr>
+      <td><%= item[:call] %></td>
+      <% if item[:status] == "CHECKEDOUT" %>
+        <% if item[:due] %>
+          <td style="padding-right:2px;font-size:75%">
+            <strong>
+              Due: <%= Time.parse(item[:due]).strftime('%m/%d/%Y %l:%M %P').gsub('00:00 am', '').gsub('12:00 am', '') %>
+            </strong>
+            <% if item[:reserve] && item[:reserve_rule] %>
+              <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
             <% end %>
-              <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
-                <td class="holding-type hidden-xs"><%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %></td>
-              <% else %>
-                <td></td>
-              <% end %>
-              <td>
-                  <%# TODO: Add a feature flag for this feature for time being (remove in future) %>
-                  <% if params[:feature_flag_request_forms].present? %>
-                    <% if request_microform?(item) %>
-                      <%= link_to('Request Me',
-                                  new_rcrf_special_request_path(item_url: catalog_url(@document.id),
-                                                                title: @document.header_title),
-                                  class: 'normal-link',
-                                  target: :_blank) %>
-                    <% end %>
-                    <% if request_rcrf_read_on_site_form?(item) %>
-                      <%= link_to('Request Me',
-                                  new_rcrf_read_on_site_request_path(item_url: catalog_url(@document.id),
-                                                                     title: @document.header_title),
-                                  class: 'normal-link',
-                                  target: :_blank) %>
-                    <% end %>
-                    <% if request_bpsc_read_on_site_form?(item) %>
-                      <%= link_to('Request Me',
-                                  new_bpsc_read_on_site_request_path(item_url: catalog_url(@document.id),
-                                                                     title: @document.header_title,
-                                                                     call_number: item[:call]),
-                                  class: 'normal-link',
-                                  target: :_blank) %>
-                    <% end %>
-                  <% end %>
-                  <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:call], :location=>library_location(item[:location])), {:id => 'emailLink', :class => 'lightboxLink'} %>
-                  <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>item[:call]), {:id => 'smsLink', :class => 'lightboxLink'} %>
-              </td>
-            </tr>
-            <% @unavailable = false %>
+          </td>
+        <% else %>
+          <td>Unknown/Never</td>
+        <% end %>
+      <% else %>
+        <td class="holding-status">
+          <%= symphony_status(item) %>
+          <% if @unavailable %>
+            <p style="font-size: small">
+              <strong>
+                Note: For access, please contact any University of Alberta Libraries service desk in person or at
+                <a href="http://www.library.ualberta.ca/askus" target="_blank">
+                  www.library.ualberta.ca/askus.
+                </a>
+              </strong>
+            </p>
           <% end %>
-        </table>
+          <% if item[:public_note] %>
+            <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
+          <% end %>
+          <% if item[:reserve_rule] && (item[:reserve] or item[:status]=="RESERVES") %>
+            <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
+          <% end %>
+        </td>
+      <% end %>
+      <td>
+        <a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank">
+          <%= library_location(item[:location]) %>
+        </a>
+      </td>
+      <% if @document["format"].include? "Journal" %>
+        <%# TODO: why do we check this? when we render nothing? %>
+      <% end %>
+
+      <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
+        <td class="holding-type hidden-xs">
+          <%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %>
+        </td>
+      <% else %>
+        <%# TODO: Again this is pointless? could move the if statement into the TD so either it renders or doesn't %>
+        <td></td>
+      <% end %>
+      <td>
+        <%# TODO: Add a feature flag for this feature for time being (remove in future) %>
+        <% if params[:feature_flag_request_forms].present? %>
+          <% if request_microform?(item) %>
+            <%= link_to('Request Me',
+                        new_rcrf_special_request_path(item_url: catalog_url(@document.id),
+                                                      title: @document.header_title),
+                        class: 'normal-link',
+                        target: :_blank) %>
+          <% end %>
+          <% if request_rcrf_read_on_site_form?(item) %>
+            <%= link_to('Request Me',
+                        new_rcrf_read_on_site_request_path(item_url: catalog_url(@document.id),
+                                                           title: @document.header_title),
+                        class: 'normal-link',
+                        target: :_blank) %>
+          <% end %>
+          <% if request_bpsc_read_on_site_form?(item) %>
+            <%= link_to('Request Me',
+                        new_bpsc_read_on_site_request_path(item_url: catalog_url(@document.id),
+                                                           title: @document.header_title,
+                                                           call_number: item[:call]),
+                        class: 'normal-link',
+                        target: :_blank) %>
+          <% end %>
+        <% end %>
+        <%= link_to 'Email Me', email_catalog_path(id: @document, call: item[:call], location: library_location(item[:location])), id: 'emailLink', class: 'lightboxLink' %>
+        <%= link_to 'Text Me', sms_catalog_path(id: @document, call: item[:call]), id: 'smsLink', class: 'lightboxLink' %>
+      </td>
+    </tr>
+    <% @unavailable = false %>
+  <% end %>
+</table>

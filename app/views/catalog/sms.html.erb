@@ -3,9 +3,12 @@
   <h1 class="modal-title"><%= t('blacklight.sms.form.title') %></h1>
 </div>
 
-<%= form_tag url_for(:controller => "catalog", :action => "sms"), :id => 'sms_form', :class => "form-horizontal ajax_form", :method => :post do %>
+<%= form_tag url_for(controller: 'catalog', action: 'sms'),
+             id: 'sms_form',
+             class: 'form-horizontal ajax_form',
+             method: :post do %>
   <div class="modal-body">
-    <%= render :partial=>'/flash_msg' %>
+    <%= render partial: '/flash_msg' %>
     <div class="form-group">
       <div style="display:none">
         <%= text_field_tag :call, params[:call], class: 'form-control' %>
@@ -24,12 +27,11 @@
         <%= t('blacklight.sms.form.carrier') %>
       </label>
       <div class="col-sm-10">
-          <%= select_tag(:carrier, options_for_select(sms_mappings.to_a.sort.unshift([t('blacklight.sms.form.carrier_prompt'),'']), params[:carrier]), class: 'form-control') %><br/>
+        <%= select_tag(:carrier, options_for_select(sms_mappings.to_a.sort.unshift([t('blacklight.sms.form.carrier_prompt'), '']), params[:carrier]), class: 'form-control') %><br />
       </div>
-
     </div>
     <% @documents.each do |doc| %>
-      <%=hidden_field_tag "id[]", doc.get(:id)%>
+      <%= hidden_field_tag 'id[]', doc.get(:id) %>
     <% end %>
   </div>
   <div class="modal-footer">

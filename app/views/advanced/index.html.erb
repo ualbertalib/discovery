@@ -4,7 +4,7 @@
 
     <h1 class="advanced page-header">
       Advanced Search
-        <%= link_to t('blacklight_advanced_search.form.start_over'), advanced_search_path, :class =>"btn btn-default pull-right advanced-search-start-over" %>
+        <%= link_to t('blacklight_advanced_search.form.start_over'), advanced_search_path, class: 'btn btn-default pull-right advanced-search-start-over' %>
     </h1>
 
     <div class="row">
@@ -13,7 +13,7 @@
             <%= render 'advanced_search_form' %>
         </div>
         <div class="col-md-4">
-            <%= render "advanced_search_help" %>
+            <%= render 'advanced_search_help' %>
         </div>
 
     </div>

@@ -1,0 +1,63 @@
+---
+linters:
+  AllowedScriptType:
+    enabled: true
+  ClosingErbTagIndent:
+    enabled: true
+  DeprecatedClasses:
+    enabled: true
+  ErbSafety:
+    enabled: true
+  ExtraNewline:
+    enabled: true
+  FinalNewline:
+    enabled: true
+  HardCodedString:
+    enabled: true
+  NoJavascriptTagHelper:
+    enabled: true
+  ParserErrors:
+    enabled: true
+  RightTrim:
+    enabled: true
+    enforced_style: '-'
+
+  Rubocop:
+    enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
+      Layout/InitialIndentation:
+        Enabled: false
+      Layout/TrailingBlankLines:
+        Enabled: false
+      Layout/TrailingWhitespace:
+        Enabled: false
+      Naming/FileName:
+        Enabled: false
+      Style/FrozenStringLiteralComment:
+        Enabled: false
+      Metrics/LineLength:
+        Enabled: false
+      Lint/UselessAssignment:
+        Enabled: false
+      Rails/OutputSafety:
+        Enabled: false
+      Layout/ExtraSpacing:
+        Enabled: false
+
+  SelfClosingTag:
+    enabled: false
+    # TODO: next version this is better and handles html5 style
+    # enforced_style: 'never'
+  SpaceAroundErbTag:
+    enabled: true
+  SpaceInHtmlTag:
+    enabled: true
+  SpaceIndentation:
+    enabled: true
+  TrailingWhitespace:
+    enabled: true
+  # TODO: Fix this, we shouldn't be using hard coded strings in ERB, use i18n instead
+  HardCodedString:
+    enabled: false

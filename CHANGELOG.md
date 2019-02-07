@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Bring in ERB-lint, refactor view code, fix identations, etc [#1486](https://github.com/ualbertalib/discovery/pull/1486)
+
 ### Changed
 -  Added more subfields (t, r, and g) to contents notes [#1121](https://github.com/ualbertalib/discovery/issues/1121)
 -  Added more subfields (f, k) to title [#978](https://github.com/ualbertalib/discovery/issues/978)
@@ -16,10 +19,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [3.0.95] - 2019-01-27
 
 ### Added
-
 -   Database license icons [#1333](https://github.com/ualbertalib/discovery/issues/1113)
-### Fixed
 
+### Fixed
 -   Fix request forms success flash behaviour by adding flash to CMS layouts [#1443](https://github.com/ualbertalib/discovery/issues/1443)
 -   Logic for adding ezproxy to electronic access urls [#1454](https://github.com/ualbertalib/discovery/issues/1454)
 
