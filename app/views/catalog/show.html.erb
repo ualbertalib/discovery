@@ -1,5 +1,23 @@
 <div id="content" class="col-md-9 show-document top-margin">
-  <%= render 'previous_next_doc' %>
+  <%# Using the Bootstrap Pagination class -%>
+  <% if @previous_document || @next_document %>
+    <div id="previousNextDocument">
+      <div class="page_links">
+        <% if @previous_document %>
+          <%= link_to_previous_document @previous_document %> |
+        <% end %>
+        <%= item_page_entry_info %>
+        <% if @next_document %>
+          | <%= link_to_next_document @next_document %>
+        <% end %>
+      </div>
+
+      <div class="pull-right search-widgets">
+        <%= link_back_to_catalog(label: 'Back to Search Results', class: 'btn btn-ltblue', id: 'no-dot') %>
+        <%= link_to 'Start Over', root_path, class: 'btn btn-ltblue', id: 'no-dot' %>
+      </div>
+    </div>
+  <% end %>
   <% @page_title = t('blacklight.search.show.title', document_title: document_show_html_title, application_name: application_name).html_safe -%>
 
   <% content_for(:head) { render_link_rel_alternates } -%>
@@ -13,7 +31,21 @@
       <% end %>
       <div class="hidden-xs">
         <% if @subjects %>
-          <%= render 'subjects' %>
+          <div id="subject-list">
+            <p class="blacklight-subject_topic_facet">Subjects</p>
+            <ul class="subject-chain-links">
+              <% @subjects.each do |subject| %>
+                <li>
+                  <% subject.each_with_index do |asubject, index| %>
+                    <%= link_to asubject, catalog_index_path(q: subject_query(subject.take(index + 1)), view: 'brief', search_field: 'subject') %>
+                    <% unless index == subject.size - 1 %>
+                      <span class="glyphicon glyphicon-menu-right"></span>
+                    <% end %>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
       </div>
     </div>
@@ -38,6 +70,7 @@
   <%= render_document_sidebar_partial %>
 </div>
 
+<%# TODO: should be able to do this smarter on mobile instead of rendering the html twice in the source %>
 <div class="visible-xs">
   <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
     <%= render 'place_hold' %>

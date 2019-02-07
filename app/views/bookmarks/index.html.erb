@@ -1,22 +1,20 @@
 <div id="content" class="col-md-12">
-<h1 class='page-heading'><%= t('blacklight.bookmarks.title') %></h1>
+  <h1 class='page-heading'><%= t('blacklight.bookmarks.title') %></h1>
 
-<%- if current_or_guest_user.blank? -%>
-
-  <h2 class='section-heading'><%= t('blacklight.bookmarks.need_login') %></h2>
-
-<%- elsif @document_list.blank? -%>
-
-  <h3 class='section-heading'><%= t('blacklight.bookmarks.no_bookmarks') %></h3>
-<% else %>
-  <%= render 'sort_and_per_page' %>
-  <%= render partial: 'tools', locals: { document_list: @document_list } %>
-
-  <%= render_document_index %>
-  <%= render 'results_pagination' %>
-<% end %>
+  <%- if current_or_guest_user.blank? -%>
+    <h2 class='section-heading'><%= t('blacklight.bookmarks.need_login') %></h2>
+  <%- elsif @document_list.blank? -%>
+    <h3 class='section-heading'><%= t('blacklight.bookmarks.no_bookmarks') %></h3>
+  <% else %>
+    <%= render 'sort_and_per_page' %>
+    <%= render partial: 'tools', locals: { document_list: @document_list } %>
+    <%= render_document_index %>
+    <%= render 'results_pagination' %>
+  <% end %>
 </div>
 
+<%# TODO: Why we putting display none on citationLink here via inline css?
+    Just remove this from source if you don't want to show this button to users... %>
 <script language="javascript">
-document.getElementById("citationLink").style.display="none";
+  document.getElementById("citationLink").style.display="none";
 </script>
