@@ -24,7 +24,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 -   Logic for adding ezproxy to electronic access urls [#1454](https://github.com/ualbertalib/discovery/issues/1454)
 
 ### Removed
--   Remove CMS and profiles from the discovery application [#1465](https://github.com/ualbertalib/discovery/pull/1465)
+-   Remove CMS and profiles from the discovery application [PR#1465](https://github.com/ualbertalib/discovery/pull/1465)
 
 ## [3.0.94] - 2018-12-19
 
