@@ -51,13 +51,61 @@
   <% if params[:search_field] or params[:f] or params[:q] and params[:q] != '' or Rails.env == "development" %>
     <div class="row top-margin">
       <div id="sidebar" class="col-md-3 col-sm-4">
-        <%= render 'search_sidebar' %>
+        <%= render 'facets' %>
       </div>
       <div id="content" class="col-md-9 col-sm-8">
-        <%= render 'search_results' %>
+        <h2 class="sr-only top-content-title">
+          <%= t('blacklight.search.search_results_header') %>
+        </h2>
+
+        <% @page_title = t('blacklight.search.title', application_name: application_name) %>
+
+        <% content_for(:head) do -%>
+          <%= render_opensearch_response_metadata %>
+          <%= auto_discovery_link_tag(:rss, url_for(params.merge(format: 'rss')), title: t('blacklight.search.rss_feed')) %>
+          <%= auto_discovery_link_tag(:atom, url_for(params.merge(format: 'atom')), title: t('blacklight.search.atom_feed')) %>
+        <% end -%>
+
+        <% if should_show_spellcheck_suggestions? @response %>
+          <div id="spell">
+            <h4 class="suggest"><em><%= t('blacklight.did_you_mean', options: safe_join(@response.spelling.words.map { |word| link_to_query(word) }, " #{t('blacklight.or')} ")).html_safe %></em></h4>
+          </div>
+        <% end %>
+
+        <% if query_has_constraints? %>
+          <div id="appliedParams" class="clearfix constraints-container">
+            <div class="pull-right">
+              <%= link_to 'View Search History', '/search_history', class: 'btn btn-sm btn-text', id: 'searchHistoryLink' %>
+              <%= link_to t('blacklight.search.start_over'), root_path, class: 'catalog_startOverLink btn btn-sm btn-text', id: 'startOverLink' %>
+            </div>
+            <span class="constraints-label"><%= t('blacklight.search.filters.title') %></span>
+            <%= render_constraints(params) %>
+          </div>
+        <% end %>
+
+        <%= render 'sort_and_per_page' %>
+
+        <h2 class="sr-only"><%= t('blacklight.search.search_results') %></h2>
+
+        <%- if @response.empty? %>
+          <%= render 'zero_results' %>
+        <%- elsif render_grouped_response? %>
+          <%= render_grouped_document_index %>
+        <%- else %>
+          <%= render_document_index %>
+        <%- end %>
+
+        <%= render 'results_pagination' %>
       </div>
     </div>
   <% end %>
 </div>
 
-<%= render 'shared/chatref' %>
+<!-- Place this script as near to the end of your BODY as possible. -->
+<script type="text/javascript">
+  (function() {
+    var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "libraryh3lp.com/js/libraryh3lp.js?8994";
+    var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+  })();
+</script>
