@@ -18,7 +18,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 -  Added more subfields (f, k) to title [#978](https://github.com/ualbertalib/discovery/issues/978)
 
 ### Fixed
-- More refactor and html cleanup for discovery [#1492](https://github.com/ualbertalib/discovery/pull/1492)
+-  More refactor and html cleanup for discovery [#1492](https://github.com/ualbertalib/discovery/pull/1492)
+-  Link to Ask Us page [#1496](https://github.com/ualbertalib/discovery/issues/1496)
 
 ## [3.0.96] - 2019-02-07
 
