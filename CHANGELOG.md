@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.97] - 2019-02-11
+
 ### Removed
 - Removed unused partials [#1485](https://github.com/ualbertalib/discovery/pull/1485)
 
@@ -30,6 +32,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 -   Database license icons [#1333](https://github.com/ualbertalib/discovery/issues/1113)
+
+### Removed 
+-   Remove CMS and profiles from the discovery application [PR#1465](https://github.com/ualbertalib/discovery/pull/1465)
 
 ### Fixed
 -   Fix request forms success flash behaviour by adding flash to CMS layouts [#1443](https://github.com/ualbertalib/discovery/issues/1443)
