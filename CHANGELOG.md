@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.98] - 2019-02-21
+
+### Removed
+- ERB-lint prevented the previous release from being deployed expediently because of Ruby 2.1.5 in production. [PR#1507](https://github.com/ualbertalib/discovery/pull/1507)
+
 ## [3.0.97] - 2019-02-11
 
 ### Removed
