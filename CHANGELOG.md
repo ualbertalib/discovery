@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+-  pinned the version of bundler used in the Dockerfile [PR#1511](https://github.com/ualbertalib/discovery/pull/1511)
+
 ## [3.0.98] - 2019-02-21
 
 ### Removed
