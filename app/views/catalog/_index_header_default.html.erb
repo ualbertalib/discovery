@@ -11,9 +11,8 @@
       <%= t('blacklight.search.documents.counter', counter: counter) if counter %>
     </span>
 
-    <% @subtitle = document.to_h['subtitle_display'] ? ": #{document.to_h['subtitle_display'].first}" : '' %>
     <% @edition = document.to_h['edition_tesim'] ? ", #{document.to_h['edition_tesim'].first}" : '' %>
-    <% @combined_title = document.to_h['title_display'].nil? ? 'Untitled document' : document.to_h['title_display'].first + @subtitle + @edition %>
+    <% @combined_title = document.to_h['title_display'].nil? ? 'Untitled document' : document.to_h['title_display'].first +  @edition %>
 
     <%= link_to_document document, @combined_title, counter: counter %>
     <% if document["ua_only_tesim"] %>

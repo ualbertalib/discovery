@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Removed
+-  Subtitles from display [PR#1510](https://github.com/ualbertalib/discovery/pull/1510)
+
 ## [3.0.98] - 2019-02-21
 
 ### Removed
