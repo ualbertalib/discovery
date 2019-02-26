@@ -5,6 +5,7 @@
 tmp
 log
 coverage/
+data/
 .bundle
 .ruby-version
 vendor/bundle

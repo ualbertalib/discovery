@@ -6,7 +6,7 @@ CMD ["/sbin/my_init"]
 
 RUN bash -lc 'rvm install ruby-2.1.5'
 RUN bash -lc 'rvm --default use ruby-2.1.5'
-RUN bash -lc 'gem install bundler'
+RUN bash -lc 'gem install bundler -v 1.17.3'
 
 RUN apt-get update -qq \
     && apt-get install -y build-essential \
