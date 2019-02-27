@@ -6,8 +6,14 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.99] - 2019-02-27
+
+### Removed
+-  Subtitles from display [PR#1510](https://github.com/ualbertalib/discovery/pull/1510)
+
 ### Fixed
 -  pinned the version of bundler used in the Dockerfile [PR#1511](https://github.com/ualbertalib/discovery/pull/1511)
+
 
 ## [3.0.98] - 2019-02-21
 

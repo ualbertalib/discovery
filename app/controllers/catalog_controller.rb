@@ -49,11 +49,7 @@ class CatalogController < ApplicationController
 
     @additional_authors = @document['author_addl_t'] if @document['author_addl_t']
 
-    if @document['title_display']
-      @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
-    else
-      @document['title_display'] = 'Untitled document'
-    end
+    @document['title_display'] = 'Untitled document' unless @document['title_display']
 
     @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] && @document['published_display']
     @document.delete('publisher_tesim') if @document['published_display']
@@ -156,8 +152,6 @@ class CatalogController < ApplicationController
     # config.add_show_field 'title_display', :label => 'Title'
     # config.add_show_field 'title_vern_display', :label => 'Title'
     config.add_show_field 'title_addl_t', label: 'Full/Alternate Title(s)'
-    # config.add_show_field 'subtitle_display', :label => 'Subtitle'
-    # config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
     config.add_show_field 'section_number_tesim', label: 'Section Number'
     config.add_show_field 'section_name_tesim', label: 'Section Name'
     config.add_show_field 'alternate_display_tesim', label: 'Original'
