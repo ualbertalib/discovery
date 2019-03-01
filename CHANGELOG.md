@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+-   Range Facet missing context after following show page link [#1290](https://github.com/ualbertalib/discovery/issues/1290)
+
 ## [3.0.99] - 2019-02-27
 
 ### Removed
