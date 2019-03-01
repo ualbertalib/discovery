@@ -30,7 +30,7 @@ GEM
       activemodel (= 4.2.11)
       activesupport (= 4.2.11)
       arel (~> 6.0)
-    activerecord-session_store (1.1.1)
+    activerecord-session_store (1.1.2)
       actionpack (>= 4.0)
       activerecord (>= 4.0)
       multi_json (~> 1.11, >= 1.11.2)
