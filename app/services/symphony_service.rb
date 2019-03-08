@@ -157,14 +157,14 @@ class SymphonyService
   end
 
   def valid?(id)
-    (id =~ /^[0-9]*$/) == 0
+    /^[0-9]*$/.match?(id)
   end
 
   def id(item)
-    item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard').text if item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+    item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard')&.text
   end
 
   def get(item, node)
-    item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard').text if item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+    item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard')&.text
   end
 end

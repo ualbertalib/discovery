@@ -181,7 +181,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Object] facet value
   # @return [Boolean]
   def facet_in_params?(field, item)
-    field = item.field if item && item.respond_to?(:field)
+    field = item.field if item&.respond_to?(:field)
 
     value = facet_value_for_facet_item(item)
 
