@@ -13,6 +13,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Changed
 - Ruby and Passenger dependencies in Dockerfile [PR#1531](https://github.com/ualbertalib/discovery/pull/1531)
 - minor change to the preamble text in the form from BPSC staff [#1500](https://github.com/ualbertalib/discovery/issues/1500)
+- remove BPSC request form feature flag [#1515](https://github.com/ualbertalib/discovery/issues/1515)
 
 ### Fixed
 - rubocop nags and some deprecation warnings [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
