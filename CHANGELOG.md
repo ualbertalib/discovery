@@ -6,8 +6,19 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Security
+- updated to Ruby 2.5.3 [#1432](https://github.com/ualbertalib/discovery/issues/1432)
+- updated bootstrap-sass [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+
+### Changed
+- Ruby and Passenger dependencies in Dockerfile [PR#1531](https://github.com/ualbertalib/discovery/pull/1531)
+
 ### Fixed
--   Range Facet missing context after following show page link [#1290](https://github.com/ualbertalib/discovery/issues/1290)
+- rubocop nags and some deprecation warnings [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+- Range Facet missing context after following show page link [#1290](https://github.com/ualbertalib/discovery/issues/1290)
+
+### Added
+- reintroduced erblint [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
 
 ## [3.0.99] - 2019-02-27
 
