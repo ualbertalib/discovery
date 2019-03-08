@@ -53,7 +53,7 @@ group :development do
   gem 'better_errors', '>= 2.3.0'
   gem 'binding_of_caller'
 
-  gem 'erb_lint', '0.0.28', require: false
+  gem 'erb_lint', '~> 0.0.28', require: false
 
   gem 'letter_opener'
 
