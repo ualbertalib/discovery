@@ -370,7 +370,7 @@ DEPENDENCIES
   chromedriver-helper
   devise
   devise-guests
-  erb_lint (= 0.0.28)
+  erb_lint (~> 0.0.28)
   factory_bot
   jquery-rails
   letter_opener
