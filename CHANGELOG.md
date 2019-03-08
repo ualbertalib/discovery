@@ -16,6 +16,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Fixed
 - rubocop nags and some deprecation warnings [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+- Range Facet missing context after following show page link [#1290](https://github.com/ualbertalib/discovery/issues/1290)
 
 ### Added
 - reintroduced erblint [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
