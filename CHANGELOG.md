@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.100] - 2019-03-08
+
 ### Security
 - updated to Ruby 2.5.3 [#1432](https://github.com/ualbertalib/discovery/issues/1432)
 - updated bootstrap-sass [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
