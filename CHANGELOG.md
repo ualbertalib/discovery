@@ -8,6 +8,10 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - SOLR_HEAP env var to lightweight docker to avoid Java out of heap error with larger indexes [PR#1536](https://github.com/ualbertalib/discovery/pull/1536)
+
+### Fixed
+- pin version of blacklight_range_limit to restore interactive behaviour [PR#1536](https://github.com/ualbertalib/discovery/pull/1536)
+
 ## [3.0.100] - 2019-03-08
 
 ### Security
