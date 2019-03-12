@@ -18,7 +18,7 @@ gem 'blacklight', '5.15.0'
 gem 'blacklight-marc', '~> 5.10.0'
 gem 'blacklight_advanced_search'
 gem 'blacklight_google_analytics'
-gem 'blacklight_range_limit'
+gem 'blacklight_range_limit', '~> 5.2.0'
 
 # Authentication
 gem 'devise'
