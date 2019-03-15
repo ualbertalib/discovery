@@ -63,11 +63,12 @@ describe SymphonyService do
   end
 
   it 'returns a summary holdings statement' do
-    # This doesn't mean anything, as neither of these is a journal
+    VCR.use_cassette('journal_with_holdings') do
+      s = SymphonyService.new('8257854').items
+      expect(s.first[:summary_holdings]).to eq '2018-'
+    end
     s = SymphonyService.new('2661760', first_record).items
-    expect(s.first[:summary_holdings]).to eq 0
-    s = SymphonyService.new('5843133', second_record).items
-    expect(s.first[:summary_holdings]).to eq 0
+    expect(s.first[:summary_holdings]).to be_nil
   end
 
   describe 'timeout handling' do

@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=8257854
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 15 Mar 2019 18:30:52 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>8257854</titleID><TitleAvailabilityInfo><totalCopiesAvailable>2</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Internet</libraryWithAvailableCopies><libraryWithAvailableCopies>MacEwan
+        University - Internet</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>INTERNET</locationOfFirstAvailableItem><holdable>false</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UAINTERNET</libraryID><classificationID>LCPER</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>8257854-2001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>GR_MAC_INT</libraryID><classificationID>LCPER</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>8257854-1001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>asz
+        0n a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>8257854</text></MarcEntryInfo><MarcEntryInfo><label>Date/time
+        stamp</label><entryID>005</entryID><indicators>  </indicators><text>00000000000000.0</text></MarcEntryInfo><MarcEntryInfo><label>Added
+        material codes</label><entryID>006</entryID><indicators>  </indicators><text>m        d</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>007</entryID><indicators>  </indicators><text>cr
+        mnu</text></MarcEntryInfo><MarcEntryInfo><label>Fixed field data</label><entryID>008</entryID><indicators>  </indicators><text>180704uuuuuuuuuxx
+        uu | o    u|    |eng d</text></MarcEntryInfo><MarcEntryInfo><label>Local system
+        #</label><entryID>035</entryID><indicators>  </indicators><text>on1043633253</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEGMCT</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Uniform
+        title</label><entryID>130</entryID><indicators>0 </indicators><text>Industry
+        Insights: Consumer Series (Online)</text><entryTypeCodes>MRuT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>10</indicators><text>Industry
+        Insights: Consumer Series [electronic resource]</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>International
+        Council of Shopping Centers 2018</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>computer
+        c</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>online
+        resource cr</text></MarcEntryInfo><MarcEntryInfo><label>Access restriction</label><entryID>506</entryID><indicators>  </indicators><text>Access
+        restricted to authorized users and institutions.</text></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>UAINTERNET
+        GR_MAC_INT</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Additional
+        Physical Form Entry</label><entryID>776</entryID><indicators>  </indicators><text>Industry
+        Insights: Consumer Series</text></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>MacEwan
+        University Access: 2018-</text><unformattedText>|3MacEwan University Access:
+        2018- |uhttp://resolver.lrc.macewan.ca/macewan?url%5Fver=Z39.88-2004&amp;ctx%5Fver=Z39.88-2004&amp;ctx%5Fenc=info:ofi/enc:UTF-8&amp;rfr%5Fid=info:sid/sfxit.com:opac%5F856&amp;url%5Fctx%5Ffmt=info:ofi/fmt:kev:mtx:ctx&amp;sfx.ignore%5Fdate%5Fthreshold=1&amp;rft.object%5Fid=4100000003273696&amp;svc%5Fval%5Ffmt=info:ofi/fmt:kev:mtx:sch%5Fsvc&amp;</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://resolver.lrc.macewan.ca/macewan?url%5Fver=Z39.88-2004&amp;ctx%5Fver=Z39.88-2004&amp;ctx%5Fenc=info:ofi/enc:UTF-8&amp;rfr%5Fid=info:sid/sfxit.com:opac%5F856&amp;url%5Fctx%5Ffmt=info:ofi/fmt:kev:mtx:ctx&amp;sfx.ignore%5Fdate%5Fthreshold=1&amp;rft.object%5Fid=4100000003273696&amp;svc%5Fval%5Ffmt=info:ofi/fmt:kev:mtx:sch%5Fsvc&amp;</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>University
+        of Alberta Access: 2018-</text><unformattedText>|3University of Alberta Access:
+        2018- |uhttp://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fualberta.ca%3Aopac&amp;rft.genre=journal&amp;rft.object_id=4100000003273696&amp;rft.issn=&amp;rft.eissn=&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&amp;url_ver=Z39.88-2004</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fualberta.ca%3Aopac&amp;rft.genre=journal&amp;rft.object_id=4100000003273696&amp;rft.issn=&amp;rft.eissn=&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&amp;url_ver=Z39.88-2004</url></MarcEntryInfo><MarcEntryInfo><label>SFX
+        ID</label><entryID>940</entryID><indicators>  </indicators><text>4100000003273696</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo></BibliographicInfo><MarcHoldingsInfo><holdingLibraryID>GR_MAC_INT</holdingLibraryID><MarcEntryInfo><label>Location</label><entryID>852</entryID><indicators>  </indicators><text>INTERNET--
+        Internet Access</text><entryTypeCodes>l</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        resource</label><entryID>856</entryID><indicators>41</indicators><text>MacEwan
+        University Access</text><unformattedText>|uhttp://resolver.lrc.macewan.ca/macewan?url%5Fver=Z39.88-2004&amp;ctx%5Fver=Z39.88-2004&amp;ctx%5Fenc=info:ofi/enc:UTF-8&amp;rfr%5Fid=info:sid/sfxit.com:opac%5F856&amp;url%5Fctx%5Ffmt=info:ofi/fmt:kev:mtx:ctx&amp;sfx.ignore%5Fdate%5Fthreshold=1&amp;rft.object%5Fid=4100000003273696&amp;svc%5Fval%5Ffmt=info:ofi/fmt:kev:mtx:sch%5Fsvc&amp;|zMacEwan
+        University Access</unformattedText><entryTypeCodes>iL</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Library
+        has</label><entryID>866</entryID><indicators> 1</indicators><text>2018-</text><entryTypeCodes>t</entryTypeCodes></MarcEntryInfo></MarcHoldingsInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Fri, 15 Mar 2019 18:30:52 GMT
+recorded_with: VCR 4.0.0
