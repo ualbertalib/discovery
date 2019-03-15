@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 15 Mar 2019 18:30:52 GMT
+      - Fri, 15 Mar 2019 19:19:54 GMT
       Server:
       - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
       Access-Control-Allow-Origin:
@@ -73,5 +73,5 @@ http_interactions:
         University Access</unformattedText><entryTypeCodes>iL</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Library
         has</label><entryID>866</entryID><indicators> 1</indicators><text>2018-</text><entryTypeCodes>t</entryTypeCodes></MarcEntryInfo></MarcHoldingsInfo></TitleInfo></LookupTitleInfoResponse>'
     http_version: 
-  recorded_at: Fri, 15 Mar 2019 18:30:52 GMT
+  recorded_at: Fri, 15 Mar 2019 19:19:54 GMT
 recorded_with: VCR 4.0.0
