@@ -32,7 +32,7 @@ class CatalogController < ApplicationController
       end
       @holdings = fetch_sfx_holdings(@document) if @document['source'].first == 'SFX'
       if @document['source'].first == 'KULE'
-        @holdings = 'kule'
+        @holdings = kule_holdings(@document, @holdings)
         @document['kule_id'] = @document['id']
       end
     end
