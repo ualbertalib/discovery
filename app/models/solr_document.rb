@@ -20,7 +20,7 @@ class SolrDocument
   SolrDocument.use_extension(Blacklight::Document::Email)
 
   # SMS uses the semantic field mappings below to generate the body of an SMS email.
-  SolrDocument.use_extension(Blacklight::Solr::Document::Sms)
+  SolrDocument.use_extension(Blacklight::Document::Sms)
 
   # DublinCore uses the semantic field mappings below to assemble an OAI-compliant Dublin Core document
   # Semantic mappings of solr stored fields. Fields may be multi or
@@ -31,7 +31,7 @@ class SolrDocument
 
   # Example of how to move this business logic into the model...
   # TODO: Naming this `header_title` incase something else is using `title` but should revisit this
-  # TODO: Can also add subtitle and edition logic here
+  # TODO: Can also add edition logic here
   # TODO: Should go back and clean up all the hackery for getting title's across this codebase now
   def header_title
     # TODO: Is there ever a case where this is not an array?

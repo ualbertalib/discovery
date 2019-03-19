@@ -6,20 +6,82 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.102] - 2019-03-14
+
+### Security
+- Bump rails from 4.2.11 to 4.2.11.1. This update addresses [Two Vulnerabilities in Action View](https://weblog.rubyonrails.org/2019/3/13/Rails-4-2-5-1-5-1-6-2-have-been-released/). [PR#1538](https://github.com/ualbertalib/discovery/pull/1538)
+
+## [3.0.101] - 2019-03-12
+
+### Added
+- SOLR_HEAP env var to lightweight docker to avoid Java out of heap error with larger indexes [PR#1536](https://github.com/ualbertalib/discovery/pull/1536)
+
+### Fixed
+- pin version of blacklight_range_limit to restore interactive behaviour [PR#1536](https://github.com/ualbertalib/discovery/pull/1536)
+
+## [3.0.100] - 2019-03-08
+
+### Security
+- updated to Ruby 2.5.3 [#1432](https://github.com/ualbertalib/discovery/issues/1432)
+- updated bootstrap-sass [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+
 ### Changed
+- Ruby and Passenger dependencies in Dockerfile [PR#1531](https://github.com/ualbertalib/discovery/pull/1531)
+- minor change to the preamble text in the form from BPSC staff [#1500](https://github.com/ualbertalib/discovery/issues/1500)
+- remove BPSC request form feature flag [#1515](https://github.com/ualbertalib/discovery/issues/1515)
+
+### Fixed
+- rubocop nags and some deprecation warnings [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+- Range Facet missing context after following show page link [#1290](https://github.com/ualbertalib/discovery/issues/1290)
+
+### Added
+- reintroduced erblint [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+
+## [3.0.99] - 2019-02-27
+
+### Removed
+-  Subtitles from display [PR#1510](https://github.com/ualbertalib/discovery/pull/1510)
+
+### Fixed
+-  pinned the version of bundler used in the Dockerfile [PR#1511](https://github.com/ualbertalib/discovery/pull/1511)
+
+
+## [3.0.98] - 2019-02-21
+
+### Removed
+- ERB-lint prevented the previous release from being deployed expediently because of Ruby 2.1.5 in production. [PR#1507](https://github.com/ualbertalib/discovery/pull/1507)
+
+## [3.0.97] - 2019-02-11
+
+### Removed
+- Removed unused partials [#1485](https://github.com/ualbertalib/discovery/pull/1485)
+
+### Added
+- Bring in ERB-lint, refactor view code, fix identations, etc [#1486](https://github.com/ualbertalib/discovery/pull/1486)
+
+### Changed
+-  Move VCR Fixtures folder to proper place [#1487](https://github.com/ualbertalib/discovery/pull/1487)
 -  Added more subfields (t, r, and g) to contents notes [#1121](https://github.com/ualbertalib/discovery/issues/1121)
 -  Added more subfields (f, k) to title [#978](https://github.com/ualbertalib/discovery/issues/978)
 
 ### Fixed
--   Don't show conditions of use unless there is something to show [PR#1479](https://github.com/ualbertalib/discovery/pull/1479)
+-  More refactor and html cleanup for discovery [#1492](https://github.com/ualbertalib/discovery/pull/1492)
+-  Link to Ask Us page [#1496](https://github.com/ualbertalib/discovery/issues/1496)
+
+## [3.0.96] - 2019-02-07
+
+### Fixed
+- Don't show conditions of use unless there is something to show [PR#1479](https://github.com/ualbertalib/discovery/pull/1479)
 
 ## [3.0.95] - 2019-01-27
 
 ### Added
-
 -   Database license icons [#1333](https://github.com/ualbertalib/discovery/issues/1113)
-### Fixed
 
+### Removed 
+-   Remove CMS and profiles from the discovery application [PR#1465](https://github.com/ualbertalib/discovery/pull/1465)
+
+### Fixed
 -   Fix request forms success flash behaviour by adding flash to CMS layouts [#1443](https://github.com/ualbertalib/discovery/issues/1443)
 -   Logic for adding ezproxy to electronic access urls [#1454](https://github.com/ualbertalib/discovery/issues/1454)
 

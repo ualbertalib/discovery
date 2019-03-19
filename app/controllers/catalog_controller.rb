@@ -52,11 +52,7 @@ class CatalogController < ApplicationController
 
     @additional_authors = @document['author_addl_t'] if @document['author_addl_t']
 
-    if @document['title_display']
-      @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
-    else
-      @document['title_display'] = 'Untitled document'
-    end
+    @document['title_display'] = 'Untitled document' unless @document['title_display']
 
     @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] && @document['published_display']
     @document.delete('publisher_tesim') if @document['published_display']
@@ -159,8 +155,6 @@ class CatalogController < ApplicationController
     # config.add_show_field 'title_display', :label => 'Title'
     # config.add_show_field 'title_vern_display', :label => 'Title'
     config.add_show_field 'title_addl_t', label: 'Full/Alternate Title(s)'
-    # config.add_show_field 'subtitle_display', :label => 'Subtitle'
-    # config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
     config.add_show_field 'section_number_tesim', label: 'Section Number'
     config.add_show_field 'section_name_tesim', label: 'Section Name'
     config.add_show_field 'alternate_display_tesim', label: 'Original'
@@ -236,7 +230,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('title') do |field|
       # solr_parameters hash are sent to Solr as ordinary url query params.
-      field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
+      field.solr_parameters = { 'spellcheck.dictionary': 'title' }
 
       # :solr_local_parameters will be sent using Solr LocalParams
       # syntax, as eg {! qf=$title_qf }. This is neccesary to use
@@ -249,7 +243,7 @@ class CatalogController < ApplicationController
     end
 
     config.add_search_field('author') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
+      field.solr_parameters = { 'spellcheck.dictionary': 'author' }
       field.solr_local_parameters = {
         qf: '$author_qf',
         pf: '$author_pf'
@@ -260,7 +254,7 @@ class CatalogController < ApplicationController
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
     config.add_search_field('subject') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
+      field.solr_parameters = { 'spellcheck.dictionary': 'subject' }
       field.qt = 'search'
       field.solr_local_parameters = {
         qf: '$subject_qf',

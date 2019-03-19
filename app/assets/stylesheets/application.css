@@ -21,6 +21,9 @@
  * Used by blacklight_range_limit
  *= require  'blacklight_range_limit'
  *
+ *= require 'sticky-footer'
+ *= require 'ualib-discovery'
+ *
 */
 
 @font-face {

@@ -117,7 +117,8 @@ class SymphonyService
     non_ua_items = {}
     if @document
       link_items.each do |item|
-        if label(item) && (label(item).text == 'Electronic access')
+        if label(item) && (label(item).text == 'Electronic access') &&
+           item.at_xpath('.//xmlns:text').present? && item.at_xpath('.//xmlns:url').present?
           if (item.at_xpath('.//xmlns:text').text.include? 'University of Alberta Access') ||
              (item.at_xpath('.//xmlns:text').text.include? 'Free') ||
              (item.at_xpath('.//xmlns:text').text.include? 'NEOS')
@@ -156,14 +157,14 @@ class SymphonyService
   end
 
   def valid?(id)
-    (id =~ /^[0-9]*$/) == 0
+    /^[0-9]*$/.match?(id)
   end
 
   def id(item)
-    item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard').text if item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+    item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard')&.text
   end
 
   def get(item, node)
-    item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard').text if item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+    item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard')&.text
   end
 end

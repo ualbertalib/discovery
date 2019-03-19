@@ -1,21 +1,119 @@
 <% @page_title = "Advanced Search - #{application_name}" %>
 
 <div class="advanced-search-form col-sm-12">
+  <h1 class="advanced page-header">
+    Advanced Search
+      <%= link_to t('blacklight_advanced_search.form.start_over'),
+                  advanced_search_path,
+                  class: 'btn btn-default pull-right advanced-search-start-over' %>
+  </h1>
+  <div class="row">
+    <div class="col-md-8">
+      <% unless (search_context_str = render_search_to_s( advanced_search_context)).blank? %>
+          <div class="constraints well search_history">
+            <h4><%= t 'blacklight_advanced_search.form.search_context' %></h4>
+            <%= search_context_str %>
+          </div>
+        <% end %>
 
-    <h1 class="advanced page-header">
-      Advanced Search
-        <%= link_to t('blacklight_advanced_search.form.start_over'), advanced_search_path, :class =>"btn btn-default pull-right advanced-search-start-over" %>
-    </h1>
+        <%= form_tag catalog_index_path, class: 'advanced form-horizontal', method: :get do %>
 
-    <div class="row">
+        <%= render_hash_as_hidden_fields(params_for_search(advanced_search_context, {})) %>
 
-        <div class="col-md-8">
-            <%= render 'advanced_search_form' %>
+        <div class="input-criteria">
+          <div class="query-criteria">
+            <h3 class="query-criteria-heading">
+              <%= t('blacklight_advanced_search.form.query_criteria_heading_html',
+                    select_menu: select_menu_for_field_operator) %>
+            </h3>
+
+            <div id="advanced_search">
+              <%- search_fields_for_advanced_search.each do |key, field_def| -%>
+                <div class="form-group advanced-search-field">
+                    <%= label_tag key, field_def.label.to_s, class: 'col-sm-3 control-label' %>
+                    <div class="col-sm-9">
+                      <%= text_field_tag key, label_tag_default_for(key), class: 'form-control' %>
+                    </div>
+                </div>
+              <%- end -%>
+            </div>
+          </div>
+          <div class="sort-submit-buttons clearfix">
+            <%= render 'advanced_search_submit_btns' %>
+          </div>
+
+          <div class="limit-criteria">
+            <h3 class="limit-criteria-heading">
+              <%= t('blacklight_advanced_search.form.limit_criteria_heading_html') %>
+            </h3>
+
+            <div id="advanced_search_facets" class="limit_input">
+              <% if blacklight_config.try(:advanced_search).try {|h| h[:form_facet_partial] } %>
+                <%= render blacklight_config.advanced_search[:form_facet_partial] %>
+              <% else %>
+                <%# used to render facets with checkboxes on advanced search form,
+                    we pretty much just use the built-in blacklight render_facet_partials
+                    helper.
+
+                    But we've provided a local override of the _facet_limit
+                    partial in our own `views/advanced/_facet_limit.html.erb`,
+                    that is written to include checkboxes for form selection.
+
+                    This is the default display of facets, but you can
+                    also choose to use _advanced_search_facets_as_select,
+                    for a chosen.js-compatible multi-select. %>
+
+                <div class="advanced-facet-limits panel-group">
+                    <%= render_facet_partials facet_field_names %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <hr>
+
+          <!-- this second search button seems to need to be here for search to work. -->
+          <div class="sort-submit-buttons clearfix" style="display:none">
+            <%= render 'advanced_search_submit_btns' %>
+          </div>
         </div>
-        <div class="col-md-4">
-            <%= render "advanced_search_help" %>
-        </div>
 
+      <% end %>
     </div>
-
+    <div class="col-md-4">
+      <div class='panel panel-default'>
+        <div class="panel-heading">Search tips</div>
+          <div class="panel-body">
+            <ul class="advanced-help">
+              <li>
+                Select <strong>match all</strong> to require all fields (e.g. Title AND Author).
+              </li>
+              <li>
+                Select <strong>match any</strong> to find at least one field (e.g. Title OR Subject).
+              </li>
+              <li>
+                Combine keywords and attributes to find specific items.
+              </li>
+              <li>
+                Use <strong>quotation</strong> marks to search as a <strong>phrase</strong>.
+              </li>
+              <li>
+                Use <strong>+</strong> before a term to make it <strong>required</strong>.
+              </li>
+              <li>
+                Use <strong>-</strong> before a word or phrase to <strong>exclude</strong>.
+              </li>
+              <li>
+                Use "OR", "AND", and "NOT" (uppercase) to create
+                <strong>Boolean</strong>
+                logic within a field. You can use parentheses in your complex expressions.
+              </li>
+              <li>
+                Truncation and wildcards are not supported - word-stemming is done automatically.
+              </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

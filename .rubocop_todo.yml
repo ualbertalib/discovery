@@ -18,17 +18,3 @@ Security/Eval:
 Security/Open:
   Exclude:
     - 'app/services/symphony_service.rb'
-
-# Offense count: 1
-# Configuration parameters: AllowedChars.
-Style/AsciiComments:
-  Exclude:
-    - 'config/initializers/comfortable_mexican_sofa.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect, EnforcedStyle.
-# SupportedStyles: predicate, comparison
-Style/NumericPredicate:
-  Exclude:
-    - 'app/services/symphony_service.rb'

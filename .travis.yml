@@ -3,7 +3,6 @@ sudo: required
 addons:
   chrome: stable
 rvm:
-  - 2.1.5
   - 2.5
 cache: bundler
 bundler_args: --without development production --jobs=3 --retry=3

@@ -4,7 +4,7 @@
 This is the code base for the University of Alberta Libraries's
 discovery platform. Based on [Project Blacklight](projectblacklight.org).
 
-*   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.1.5
+*   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.5.x
 *   Depends on Java (for SolrMarc and Ingestion scripts)
 *   Depends on an instance of [Solr](https://lucene.apache.org/solr/) with [this configuration](https://github.com/ualbertalib/blacklight_solr_conf)
 *   If you wish to use docker for the datastores install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) first.
@@ -42,8 +42,7 @@ Integration tests (run against <http://search-test.library.ualberta.ca/>)
 ## Additional Tasks for uat, staging and production
 
 1.  `bundle exec rake assets:precompile` this can take several minutes
-2.  `bundle exec rake comfortable_mexican_sofa:cmssetup` to setup the CMS
-3.  create cron jobs to ingest `bundle exec rake ingest[sfx]`, `bundle exec rake ingest[databases]` and clean session table `bundle exec rake sessions:cleanup`
+2.  create cron jobs to ingest `bundle exec rake ingest[sfx]`, `bundle exec rake ingest[databases]` and clean session table `bundle exec rake sessions:cleanup`
 
 ## UAT
 Go [here](https://github.com/ualbertalib/di_internal/blob/master/System-Adminstration/UAT-Environment.md#access-discovery-uat-instance) for information about accessing Discovery UAT instance.
