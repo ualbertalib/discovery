@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Fault xmlns="http://schemas.sirsidynix.com/rest"><code>com.sirsidynix.util.ws.rest.ParameterException.badInteger</code><string>The parameter titleID must be a well formed integer</string></Fault>

@@ -1,11 +1,11 @@
-FROM phusion/passenger-ruby21:0.9.34
+FROM phusion/passenger-ruby25
 LABEL maintainer="University of Alberta Libraries"
 
 ENV HOME /root
 CMD ["/sbin/my_init"]
 
-RUN bash -lc 'rvm install ruby-2.1.5'
-RUN bash -lc 'rvm --default use ruby-2.1.5'
+RUN bash -lc 'rvm install ruby-2.5.3'
+RUN bash -lc 'rvm --default use ruby-2.5.3'
 RUN bash -lc 'gem install bundler -v 1.17.3'
 
 RUN apt-get update -qq \

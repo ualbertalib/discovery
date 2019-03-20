@@ -4,7 +4,7 @@
 This is the code base for the University of Alberta Libraries's
 discovery platform. Based on [Project Blacklight](projectblacklight.org).
 
-*   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.1.5
+*   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.5.x
 *   Depends on Java (for SolrMarc and Ingestion scripts)
 *   Depends on an instance of [Solr](https://lucene.apache.org/solr/) with [this configuration](https://github.com/ualbertalib/blacklight_solr_conf)
 *   If you wish to use docker for the datastores install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) first.

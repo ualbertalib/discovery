@@ -6,6 +6,41 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+- refactor summary_holdings to reflect [change to NodeSet#each in nokogiri](https://github.com/sparklemotion/nokogiri/issues/1822) [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
+- record vcr cassettes for symphony service tests [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
+
+## [3.0.102] - 2019-03-14
+
+### Security
+- Bump rails from 4.2.11 to 4.2.11.1. This update addresses [Two Vulnerabilities in Action View](https://weblog.rubyonrails.org/2019/3/13/Rails-4-2-5-1-5-1-6-2-have-been-released/). [PR#1538](https://github.com/ualbertalib/discovery/pull/1538)
+
+## [3.0.101] - 2019-03-12
+
+### Added
+- SOLR_HEAP env var to lightweight docker to avoid Java out of heap error with larger indexes [PR#1536](https://github.com/ualbertalib/discovery/pull/1536)
+
+### Fixed
+- pin version of blacklight_range_limit to restore interactive behaviour [PR#1536](https://github.com/ualbertalib/discovery/pull/1536)
+
+## [3.0.100] - 2019-03-08
+
+### Security
+- updated to Ruby 2.5.3 [#1432](https://github.com/ualbertalib/discovery/issues/1432)
+- updated bootstrap-sass [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+
+### Changed
+- Ruby and Passenger dependencies in Dockerfile [PR#1531](https://github.com/ualbertalib/discovery/pull/1531)
+- minor change to the preamble text in the form from BPSC staff [#1500](https://github.com/ualbertalib/discovery/issues/1500)
+- remove BPSC request form feature flag [#1515](https://github.com/ualbertalib/discovery/issues/1515)
+
+### Fixed
+- rubocop nags and some deprecation warnings [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+- Range Facet missing context after following show page link [#1290](https://github.com/ualbertalib/discovery/issues/1290)
+
+### Added
+- reintroduced erblint [PR#1528](https://github.com/ualbertalib/discovery/pull/1528)
+
 ## [3.0.99] - 2019-02-27
 
 ### Removed
