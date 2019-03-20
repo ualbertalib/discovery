@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.103] - 2019-03-20
+
+### Fixed
+- A temporary fix to remove refworks export on bookmarks page and recover the bookmark feature [PR#1552](https://github.com/ualbertalib/discovery/pull/1552)
+
 ### Changed
 - refactor summary_holdings to reflect [change to NodeSet#each in nokogiri](https://github.com/sparklemotion/nokogiri/issues/1822) [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
 - record vcr cassettes for symphony service tests [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
