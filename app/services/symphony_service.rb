@@ -44,11 +44,8 @@ class SymphonyService
   private
 
   def summary_holdings
-    nodes.each do |node|
-      current_node = node
-      next unless label(current_node)
-      return node_text(current_node) if label(current_node).text == 'Library has'
-    end
+    holding = nodes.find { |node| label(node).text == 'Library has' }
+    node_text(holding)
   end
 
   def ws_endpoint
@@ -153,18 +150,20 @@ class SymphonyService
   end
 
   def node_text(current_node)
+    return nil if current_node.nil?
+
     current_node.at_xpath('.//xmlns:text', xmlns: 'http://schemas.sirsidynix.com/symws/standard').text
   end
 
   def valid?(id)
-    (id =~ /^[0-9]*$/) == 0
+    /^[0-9]*$/.match?(id)
   end
 
   def id(item)
-    item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard').text if item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+    item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard')&.text
   end
 
   def get(item, node)
-    item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard').text if item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+    item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard')&.text
   end
 end
