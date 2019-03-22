@@ -274,6 +274,7 @@ class CatalogController < ApplicationController
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
+    config.add_show_field 'accession_number_tesim', label: 'Accession Number'
     config.add_show_field 'kule_id', label: 'Kule Collection ID'
   end
 end
