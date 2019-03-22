@@ -1,6 +1,5 @@
-# -*- encoding : utf-8 -*-
-class BookmarksController < CatalogController
 
+class BookmarksController < CatalogController
   include Blacklight::Bookmarks
 
   def action_success_redirect_path
