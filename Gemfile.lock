@@ -241,7 +241,7 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
-    rollbar (2.19.2)
+    rollbar (2.19.3)
       multi_json
     rsolr (1.0.13)
       builder (>= 2.1.2)
