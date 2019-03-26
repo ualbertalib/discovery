@@ -1,44 +1,24 @@
-require_relative '../rails_helper'
+require 'rails_helper'
 
-describe BookmarksController do
-  # jquery 1.9 ajax does error callback if 200 returns empty body. so use 204 instead.
-  describe 'update' do
-    it 'has a 200 status code when creating a new one' do
-      xhr :put, :update, id: '2007020969', format: :js
-      expect(response).to have_http_status(:success)
-      expect(JSON.parse(response.body)['bookmarks']['count']).to eq 1
-    end
+describe BookmarksController, type: :controller do
 
-    it 'has a 500 status code when create is not success' do
-      allow(@controller).to receive_message_chain(:current_or_guest_user, :existing_bookmark_for).and_return(false)
-      allow(@controller).to receive_message_chain(:current_or_guest_user, :persisted?).and_return(true)
-      allow(@controller).to receive_message_chain(:current_or_guest_user, :bookmarks, :where, :exists?).and_return(false)
-      allow(@controller).to receive_message_chain(:current_or_guest_user, :bookmarks, :create).and_return(false)
-      xhr :put, :update, id: 'iamabooboo', format: :js
-      expect(response.code).to eq '500'
-    end
-  end
-
-  describe 'delete' do
+  describe 'email bookmarks' do
     before do
-      @controller.send(:current_or_guest_user).save
-      @controller.send(:current_or_guest_user).bookmarks.create! document_id: '2007020969', document_type: 'SolrDocument'
+      document = SolrDocument.new(id: "123456", format: ["book"], title_tsim: "The horn", language_ssim: "English", author_tsim: "Janetzky, Kurt")
+      @documents = [document]
+    end
+    it 'return an error message if the email address is not valid' do
+        post :email, params: { document_list: @document, to: 'test_bad_email' }
+        expect(request.flash[:error]).to eq "You must enter a recipient in order to send this message"
     end
 
-    it 'has a 200 status code when delete is success' do
-      xhr :delete, :destroy, id: '2007020969', format: :js
-      expect(response).to have_http_status(:success)
-      expect(JSON.parse(response.body)['bookmarks']['count']).to eq 0
-    end
-
-    it 'has a 500 status code when delete is not success' do
-      bm = double(Bookmark)
-      allow(@controller).to receive_message_chain(:current_or_guest_user, :existing_bookmark_for).and_return(bm)
-      allow(@controller).to receive_message_chain(:current_or_guest_user, :bookmarks, :find_by).and_return(double('bookmark', delete: nil, destroyed?: false))
-
-      xhr :delete, :destroy, id: 'pleasekillme', format: :js
-
-      expect(response.code).to eq '500'
-    end
+      it "redirects back to the record upon success" do
+                allow(RecordMailer).to receive(:email_record)
+          .with(anything, { to: 'test_email@projectblacklight.org', message: 'xyz' }, hash_including(host: 'test.host'))
+          .and_return double(deliver: nil)
+        post :email, params: { document_list: @document, to: 'test_email@projectblacklight.org', message: 'xyz' }
+        byebug
+        expect(request.flash[:error]).to be_nil
+      end
   end
 end
