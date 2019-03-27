@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.104] - 2019-03-27
+### Fixed
+- Email bookmarks won't return to an 500 error page [PR#1559](https://github.com/ualbertalib/discovery/pull/1559)
+
+
 ## [3.0.103] - 2019-03-20
 
 ### Fixed
