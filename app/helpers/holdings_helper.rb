@@ -63,18 +63,19 @@ module HoldingsHelper
   end
 
   def kule_holdings(document, holdings)
-    document[:callnumber_tesim].each do |callnumber|
+    document[:callnumber_tesim].each do |values|
+      callnumber = values.split('|')
       item = {}
-      item[:callnumber] = callnumber
-      item[:status] = case @document[:status_tesim][0]
+      item[:callnumber] = callnumber[0]
+      item[:status] = case callnumber[1]
                       when 'NO_LOAN' then 'Read On Site'
                       when 'NO-LOAN' then 'Read On Site'
                       else
-                        ''
+                        callnumber[1]
                       end
-      item[:access_title] = @document[:access_title_tesim][0]
-      item[:access_url] = @document[:access_url_tesim][0]
-      item[:location] = @document[:location_tesim][0]
+      item[:access_title] = @document[:access_title_tesi]
+      item[:access_url] = @document[:access_url_tesi]
+      item[:location] = @document[:location_tesi]
       holdings << item
     end
     holdings

@@ -63,8 +63,8 @@ group :development do
   gem 'spring'
 
   # Debug
-  gem 'ruby-debug-ide'
   gem 'debase', '0.2.2.beta10'
+  gem 'ruby-debug-ide'
 end
 
 group :test do
