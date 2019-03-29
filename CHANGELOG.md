@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Fixed
 - use safe navigation operator fixes nil error in Symphony Service summary holdings [#1571](https://github.com/ualbertalib/discovery/issues/1571)
+- refworks export with encrypted user behavior restored [#1549](https://github.com/ualbertalib/discovery/issues/1549)
 
 ## [3.0.104] - 2019-03-27
 ### Fixed
@@ -21,6 +22,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Changed
 - refactor summary_holdings to reflect [change to NodeSet#each in nokogiri](https://github.com/sparklemotion/nokogiri/issues/1822) [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
 - record vcr cassettes for symphony service tests [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
+- Relabelled "Other Physical Details" to "Physical Details" [#1545](https://github.com/ualbertalib/discovery/issues/1545)
 
 ### Added
 - Added two missing locations in statuses.yml (artists and pop_up) [#1550](https://github.com/ualbertalib/discovery/issues/1550)
