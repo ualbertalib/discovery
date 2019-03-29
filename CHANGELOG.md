@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Fixed
 - use safe navigation operator fixes nil error in Symphony Service summary holdings [#1571](https://github.com/ualbertalib/discovery/issues/1571)
+- refworks export with encrypted user behavior restored [#1549](https://github.com/ualbertalib/discovery/issues/1549)
 
 ## [3.0.104] - 2019-03-27
 ### Fixed
