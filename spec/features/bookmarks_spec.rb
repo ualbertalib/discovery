@@ -54,4 +54,23 @@ RSpec.describe 'Bookmarks', type: :feature do
     expect(page).to have_content 'Shakespeare at the Globe'
     expect(page).not_to have_content 'Shakespeare : a historical and critical study with annotated texts of twenty-one plays'
   end
+
+  it 'emails items in current bookmarks page' do
+    VCR.use_cassette('item_result') do
+      visit 'catalog/1001523' # Shakespeare : a historical and critical study with annotated texts of twenty-one plays
+      check 'Bookmark'
+    end
+
+    VCR.use_cassette('item to bookmark') do
+      visit 'catalog/1002481' # Shakespeare at the Globe : 1599-1609 / Bernard Beckerman
+      check 'Bookmark'
+    end
+
+    visit '/bookmarks'
+    click_on 'Email'
+    fill_in 'to', with: 'user@example.com'
+    fill_in 'message', with: 'testing bookmarks email'
+    click_button 'Send'
+    expect(page).to have_content 'Email Sent'
+  end
 end

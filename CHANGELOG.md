@@ -10,6 +10,12 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Created Responsibility field for record view appearing below title [#1544](https://github.com/ualbertalib/discovery/issues/1544)
 - made google analytics token configurable through an environment variable (requires new secret) [#1545](https://github.com/ualbertalib/discovery/issues/1545)
 
+### Added
+- feature and integration tests for emailing bookmarks [#1580](https://github.com/ualbertalib/discovery/issues/1580)
+
+### Removed
+- turbolinks to get consistent behaviour of blacklight modals for emailing bookmarks [#1589](https://github.com/ualbertalib/discovery/issues/1589)
+
 ## [3.0.105] - 2019-04-01
 
 ### Fixed
