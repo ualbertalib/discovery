@@ -32,7 +32,6 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - record vcr cassettes for symphony service tests [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
 - Created Responsibility field for record view appearing below title [#1544](https://github.com/ualbertalib/discovery/issues/1544)
 
-
 ## [3.0.102] - 2019-03-14
 
 ### Security
