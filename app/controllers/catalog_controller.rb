@@ -170,7 +170,7 @@ class CatalogController < ApplicationController
     # config.add_show_field 'material_type_display', :label => 'Contains'
     # config.add_show_field 'size_tesim', :label => 'Size'
     # config.add_show_field 'description_tesim', :label => 'Other Details'
-    config.add_show_field 'contains_tesim', label: 'Other Physical Details'
+    config.add_show_field 'contains_tesim', label: 'Physical Details'
     config.add_show_field 'moreinfo_tesim', label: 'Additional Information'
     config.add_show_field 'isbn_tesim', label: 'ISBN'
     config.add_show_field 'issn_tesim', label: 'ISSN'
