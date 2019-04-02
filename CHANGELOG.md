@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.104] - 2019-03-27
+### Fixed
+- Email bookmarks won't return to an 500 error page [PR#1559](https://github.com/ualbertalib/discovery/pull/1559)
+
+
 ## [3.0.103] - 2019-03-20
 
 ### Fixed
@@ -15,6 +20,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - refactor summary_holdings to reflect [change to NodeSet#each in nokogiri](https://github.com/sparklemotion/nokogiri/issues/1822) [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
 - record vcr cassettes for symphony service tests [PR#1533](https://github.com/ualbertalib/discovery/pull/1533)
 - made google analytics token configurable through an environment variable (requires new secret) [#1545](https://github.com/ualbertalib/discovery/issues/1545)
+
+### Added
+- Added two missing locations in statuses.yml (artists and pop_up) [#1550](https://github.com/ualbertalib/discovery/issues/1550)
 
 ## [3.0.102] - 2019-03-14
 
