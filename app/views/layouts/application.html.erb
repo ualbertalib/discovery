@@ -22,17 +22,18 @@
 
     <!-- Google Analytics -->
     <% if Rails.application.secrets.google_analytics_token.present? %>
-      <script>
-//<![CDATA[
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<%= Rails.application.secrets.google_analytics_token %>"></script>
+      <%= javascript_tag do %>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-        ga('create', '<%= Rails.application.secrets.google_analytics_token %>', 'auto');
-        ga('send', 'pageview');
-//]]>
-      </script>
+        document.addEventListener('turbolinks:load', function() {
+          return gtag('config', '<%= Rails.application.secrets.google_analytics_token %>', {
+            'page_path': window.location.pathname
+          });
+        });
+      <% end %>
     <% end %>
     <!-- End Google Analytics -->
 
