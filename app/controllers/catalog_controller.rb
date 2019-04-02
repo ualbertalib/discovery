@@ -159,6 +159,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'author_display', label: 'Author'
     config.add_show_field 'author_addl_t', label: 'Additional authors/performers'
     config.add_show_field 'author_vern_display', label: 'Author'
+    config.add_show_field 'responsibility_display', label: 'Responsibility'
     # config.add_show_field 'uniform_title_tesim', :label => 'Uniform Title'
     config.add_show_field 'format', label: 'Format'
     # config.add_show_field 'language_facet', :label => 'Language'
