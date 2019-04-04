@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Removed
+- Remove subtitle infavour of having this all in the title field [#1517](https://github.com/ualbertalib/discovery/issues/1517)
+
 ## [3.0.103] - 2019-03-20
 
 ### Fixed
