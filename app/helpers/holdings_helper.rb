@@ -63,7 +63,7 @@ module HoldingsHelper
   end
 
   def kule_holdings(document, holdings)
-    document[:callnumber_tesim].each do |values|
+    document[:call_number_status_tesim].each do |values|
       callnumber = values.split('|')
       item = {}
       item[:callnumber] = callnumber[0]

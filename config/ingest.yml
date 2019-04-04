@@ -1,6 +1,6 @@
 proxy: http://login.ezproxy.library.ualberta.ca/login?url=
 
-collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set", "symphony_test_set", "symphony_test_deletes", "kule"]
+collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set", "symphony_test_set", "symphony_test_deletes", "kule", "kule_test"]
 
 era:
   schema: dublin_core
