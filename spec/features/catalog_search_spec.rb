@@ -4,10 +4,17 @@ RSpec.describe 'Catalog Search', type: :feature do
   scenario 'User searches the catalog' do
     visit '/catalog'
 
-    fill_in 'q', with: 'shakespeare'
+    fill_in 'q', with: 'all'
     click_button 'search'
 
-    expect(page).to have_text('Results for shakespeare')
+    expect(page).to have_text('Results for all')
+
+    click_on 'Call Number'
+    within('.blacklight-lc_1letter_facet') do
+      click_on 'more'
+    end
+    expect(page).to have_text('T - Technology')
+    expect(page).to have_link('Next')
   end
 
   scenario 'User visits an item result' do

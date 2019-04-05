@@ -13,6 +13,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Added
 - feature and integration tests for emailing bookmarks [#1580](https://github.com/ualbertalib/discovery/issues/1580)
 
+### Fixed
+- clicking 'more' on the Call Number facet [PR#1593](https://github.com/ualbertalib/discovery/pull/1593)
+
 ### Removed
 - turbolinks to get consistent behaviour of blacklight modals for emailing bookmarks [#1589](https://github.com/ualbertalib/discovery/issues/1589)
 
