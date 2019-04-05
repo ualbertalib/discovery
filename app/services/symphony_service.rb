@@ -44,7 +44,7 @@ class SymphonyService
   private
 
   def summary_holdings
-    holding = nodes.find { |node| label(node).text == 'Library has' }
+    holding = nodes.find { |node| label(node)&.text == 'Library has' }
     node_text(holding)
   end
 
