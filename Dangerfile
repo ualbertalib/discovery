@@ -1,5 +1,5 @@
 # Make sure non-trivial amounts of code changes come with corresponding tests
-has_app_changes = !git.modified_files.grep(/lib/).empty?
+has_app_changes = !git.modified_files.grep(/lib\|app/).empty?
 has_spec_changes = !git.modified_files.grep(/spec/).empty?
 
 if  git.lines_of_code > 50 && has_app_changes && !has_spec_changes
@@ -25,5 +25,5 @@ warn('This PR is too big! Consider breaking it down into smaller PRs.') if git.l
 declared_trivial = (github.pr_title + github.pr_body).include?("#trivial") || !has_app_changes
 
 if !git.modified_files.include?("CHANGELOG.md") && !declared_trivial
-  fail("Please include a CHANGELOG entry. \nYou can find it at [CHANGELOG.md](https://github.com/danger/danger/blob/master/CHANGELOG.md).", sticky: false)
+  fail("Please include a CHANGELOG entry. \nYou can find it at [CHANGELOG.md](https://github.com/ualbertalib/discovery/blob/master/CHANGELOG.md).", sticky: false)
 end
