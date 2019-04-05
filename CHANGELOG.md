@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Add danger that enforces requirements for PR to Discovery [#1564](https://github.com/ualbertalib/discovery/issues/1564)
+
 ## [3.0.103] - 2019-03-20
 
 ### Fixed
