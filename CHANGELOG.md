@@ -10,7 +10,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Add danger that enforces requirements for PR to Discovery [#1564](https://github.com/ualbertalib/discovery/issues/1564)
 
 ### Removed
-- Remove subtitle infavour of having this all in the title field [#1517](https://github.com/ualbertalib/discovery/issues/1517)
+- Remove subtitle infavour of having this all in the title field. Ensure blacklight_solr_conf is deployed after this release is deployed [#1517](https://github.com/ualbertalib/discovery/issues/1517)
 
 ### Changed
 - Created Responsibility field for record view appearing below title [#1544](https://github.com/ualbertalib/discovery/issues/1544)
