@@ -69,7 +69,6 @@ module HoldingsHelper
       item[:callnumber] = callnumber[0]
       item[:status] = case callnumber[1]
                       when 'NO_LOAN' then 'Read On Site'
-                      when 'NO-LOAN' then 'Read On Site'
                       else
                         callnumber[1]
                       end
