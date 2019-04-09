@@ -6,8 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Add danger that enforces requirements for PR to Discovery [#1564](https://github.com/ualbertalib/discovery/issues/1564)
+
 ### Removed
-- Remove subtitle infavour of having this all in the title field [#1517](https://github.com/ualbertalib/discovery/issues/1517)
+- Remove subtitle infavour of having this all in the title field. Ensure blacklight_solr_conf is deployed after this release is deployed [#1517](https://github.com/ualbertalib/discovery/issues/1517)
 
 ### Changed
 - Created Responsibility field for record view appearing below title [#1544](https://github.com/ualbertalib/discovery/issues/1544)
@@ -28,7 +31,6 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [3.0.104] - 2019-03-27
 ### Fixed
 - Email bookmarks won't return to an 500 error page [PR#1559](https://github.com/ualbertalib/discovery/pull/1559)
-
 
 ## [3.0.103] - 2019-03-20
 
