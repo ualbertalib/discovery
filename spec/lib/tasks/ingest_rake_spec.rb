@@ -11,6 +11,7 @@ describe 'ingest rake tasks' do
       "\nSolr collection contains 10124 results.\n"
     ).to_stdout
     expect { Rake::Task['ingest'].invoke('symphony_test_set') }.to_not raise_error
+    expect { Rake::Task['ingest'].invoke('kuhl_test') }.to_not raise_error
     ENV['SOLR_INGEST_URL'] = old_env_var
   end
   it 'use url from blacklight config should print to screen and run ingest task successfully' do
