@@ -121,5 +121,5 @@ kule:
 
 kule_test:
   schema: marc
-  path: "spec/fixtures/bmufa-library-test-file-20190103.mrc"
+  path: "spec/fixtures/bmufa-library-test-file-20190411.mrc"
   config: "config/SolrMarc/kule_config.properties"
