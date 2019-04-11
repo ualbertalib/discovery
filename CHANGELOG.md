@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Removed
+-  Removed 490v record from series field [#1542](https://github.com/ualbertalib/discovery/issues/1542)
+
 ## [3.0.103] - 2019-03-20
 
 ### Fixed
