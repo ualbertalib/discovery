@@ -6,8 +6,32 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Add danger that enforces requirements for PR to Discovery [#1564](https://github.com/ualbertalib/discovery/issues/1564)
+
 ### Removed
--  Removed 490v record from series field [#1542](https://github.com/ualbertalib/discovery/issues/1542)
+- Remove subtitle infavour of having this all in the title field. Ensure blacklight_solr_conf is deployed after this release is deployed [#1517](https://github.com/ualbertalib/discovery/issues/1517)
+- Removed 490v record from series field [#1542](https://github.com/ualbertalib/discovery/issues/1542)
+
+### Changed
+- Created Responsibility field for record view appearing below title [#1544](https://github.com/ualbertalib/discovery/issues/1544)
+- made google analytics token configurable through an environment variable (requires new secret) [#1545](https://github.com/ualbertalib/discovery/issues/1545)
+
+## [3.0.105] - 2019-04-01
+
+### Fixed
+- use safe navigation operator fixes nil error in Symphony Service summary holdings [#1571](https://github.com/ualbertalib/discovery/issues/1571)
+- refworks export with encrypted user behavior restored [#1549](https://github.com/ualbertalib/discovery/issues/1549)
+
+### Changed
+- Relabelled "Other Physical Details" to "Physical Details" [#1545](https://github.com/ualbertalib/discovery/issues/1545)
+
+### Added
+- Added two missing locations in statuses.yml (artists and pop_up) [#1550](https://github.com/ualbertalib/discovery/issues/1550)
+
+## [3.0.104] - 2019-03-27
+### Fixed
+- Email bookmarks won't return to an 500 error page [PR#1559](https://github.com/ualbertalib/discovery/pull/1559)
 
 ## [3.0.103] - 2019-03-20
 
