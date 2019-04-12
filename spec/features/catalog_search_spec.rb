@@ -10,11 +10,11 @@ RSpec.describe 'Catalog Search', type: :feature do
     expect(page).to have_text('Results for all')
 
     click_on 'Call Number'
+    expect(page).to have_no_text('T - Technology')
     within('.blacklight-lc_1letter_facet') do
       click_on 'more'
     end
     expect(page).to have_text('T - Technology')
-    expect(page).to have_link('Next')
   end
 
   scenario 'User visits an item result' do
