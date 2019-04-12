@@ -9,22 +9,18 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Added
 - Added new languages location into statuses.yml [#1592](https://github.com/ualbertalib/discovery/issues/1592)
 - Add danger that enforces requirements for PR to Discovery [#1564](https://github.com/ualbertalib/discovery/issues/1564)
+- feature and integration tests for emailing bookmarks [#1580](https://github.com/ualbertalib/discovery/issues/1580)
 
 ### Removed
 - Remove subtitle infavour of having this all in the title field. Ensure blacklight_solr_conf is deployed after this release is deployed [#1517](https://github.com/ualbertalib/discovery/issues/1517)
+- turbolinks to get consistent behaviour of blacklight modals for emailing bookmarks [#1589](https://github.com/ualbertalib/discovery/issues/1589)
 
 ### Changed
 - Created Responsibility field for record view appearing below title [#1544](https://github.com/ualbertalib/discovery/issues/1544)
 - made google analytics token configurable through an environment variable (requires new secret) [#1545](https://github.com/ualbertalib/discovery/issues/1545)
 
-### Added
-- feature and integration tests for emailing bookmarks [#1580](https://github.com/ualbertalib/discovery/issues/1580)
-
 ### Fixed
 - clicking 'more' on the Call Number facet [PR#1593](https://github.com/ualbertalib/discovery/pull/1593)
-
-### Removed
-- turbolinks to get consistent behaviour of blacklight modals for emailing bookmarks [#1589](https://github.com/ualbertalib/discovery/issues/1589)
 
 ## [3.0.105] - 2019-04-01
 
