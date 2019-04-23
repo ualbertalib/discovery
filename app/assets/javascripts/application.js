@@ -14,7 +14,6 @@
 //= require 'blacklight_advanced_search'
 
 //= require jquery_ujs
-//= require turbolinks
 //
 // Required by Blacklight
 //= require blacklight/blacklight

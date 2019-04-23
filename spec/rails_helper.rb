@@ -30,6 +30,12 @@ Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
                             :selenium_chrome_headless
                           end
 
+# When running your tests Capybara lazily boots the Rails app on a random port
+# and, because this host/port are unknown to Rails, links generated in serializers (i.e. 'more' facets)
+# will point to the wrong URL and following them within your test app and Capybara will fail.
+Rails.application.routes.default_url_options[:host] = Capybara.current_session.server.host
+Rails.application.routes.default_url_options[:port] = Capybara.current_session.server.port
+
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock # or :fakeweb
