@@ -6,7 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Security
+- bump nokogiri from 1.10.2 to 1.10.3 [PR#1614](https://github.com/ualbertalib/discovery/pull/1614)
+
 ### Added
+- Added new languages location into statuses.yml [#1592](https://github.com/ualbertalib/discovery/issues/1592)
 - Add danger that enforces requirements for PR to Discovery [#1564](https://github.com/ualbertalib/discovery/issues/1564)
 
 ### Removed
