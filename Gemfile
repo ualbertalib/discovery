@@ -10,7 +10,6 @@ gem 'mysql2', '~> 0.4.10'
 # Assets (CSS/JS) stuff
 gem 'jquery-rails'
 gem 'sassc-rails', '~> 2.1'
-gem 'turbolinks', '5.2.0'
 gem 'uglifier', '>= 1.3.0'
 
 # blacklight stuff

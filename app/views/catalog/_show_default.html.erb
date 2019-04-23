@@ -9,20 +9,20 @@
       <% value = render_document_show_field_value document, field: solr_fname %>
       <% if @linked_fields.include? solr_fname %>
         <dd class="blacklight-<%= solr_fname.parameterize %>">
-          <%= link_to value, catalog_index_path(q: "\"#{value}\""), data: { turbolinks: false } %>
+          <%= link_to value, catalog_index_path(q: "\"#{value}\"") %>
         </dd>
       <% elsif solr_fname == "title_series_t" %>
         <dd class="blacklight-<%= solr_fname.parameterize %>">
-          <%= link_to value, catalog_index_path(title: "\"#{value}\"", search_field: 'advanced'), data: { turbolinks: false } %>
+          <%= link_to value, catalog_index_path(title: "\"#{value}\"", search_field: 'advanced') %>
         </dd>
       <% elsif solr_fname == "author_display" %>
         <dd class="blacklight-<%= solr_fname.parameterize %>">
-          <%= link_to value, catalog_index_path(author: value, search_field: 'advanced'), data: { turbolinks: false } %>
+          <%= link_to value, catalog_index_path(author: value, search_field: 'advanced') %>
         </dd>
       <% elsif solr_fname == "author_addl_t" and @additional_authors %>
         <dd class="blacklight-<%= solr_fname.parameterize %>">
           <% for author in @additional_authors %>
-            <%= link_to author, catalog_index_path(q: "\"#{author}\""), data: { turbolinks: false } %>
+            <%= link_to author, catalog_index_path(q: "\"#{author}\"") %>
           <% end %>
         </dd>
       <% elsif solr_fname == "contents_tesim" %>

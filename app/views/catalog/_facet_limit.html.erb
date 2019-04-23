@@ -5,7 +5,7 @@
   <% unless paginator.last_page? || params[:action] == "facet" %>
     <li class="more_facets_link">
       <%= link_to t('more', scope: 'blacklight.search.facets', default: :more_html, solr_field: facet_field.label),
-                  search_facet_url(id: solr_field, protocol: 'https'), class: 'more_facets_link' %>
+                  search_facet_url(id: solr_field), class: 'more_facets_link' %>
     </li>
   <% end %>
 </ul>
