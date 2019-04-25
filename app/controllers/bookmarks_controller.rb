@@ -1,10 +1,6 @@
 class BookmarksController < CatalogController
   include Blacklight::Bookmarks
 
-  def action_success_redirect_path
-    bookmarks_path
-  end
-
   # monkey patch this method which is throwing `key must be 32 bytes` error after upgrading to Ruby 2.5
   def export_secret_token(salt)
     secret_key_generator.generate_key(salt)[0..(ActiveSupport::MessageEncryptor.key_len - 1)]
