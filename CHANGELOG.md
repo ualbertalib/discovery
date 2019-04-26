@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.106] - 2019-04-23
+
 ### Security
 - bump nokogiri from 1.10.2 to 1.10.3 [PR#1614](https://github.com/ualbertalib/discovery/pull/1614)
 
