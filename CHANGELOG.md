@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Removed
+- feature flag for RCRF Read on Site and Micro/Newspaper forms [#1605](https://github.com/ualbertalib/discovery/issues/1605)
+
 ## [3.0.106] - 2019-04-23
 
 ### Security
