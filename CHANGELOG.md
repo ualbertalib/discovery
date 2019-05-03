@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Added feature tests for search sorting [#1627](https://github.com/ualbertalib/discovery/issues/1627)
+
 ## [3.0.106] - 2019-04-23
 
 ### Security
