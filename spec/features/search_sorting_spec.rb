@@ -10,7 +10,7 @@ RSpec.describe 'Search sorting', type: :feature do
     click_link 'year'
 
     expect(page).to have_text('Sort by year')
-    expect(first('#documents .document.blacklight-book')).to have_text("William Shakespeare, the complete works, Original-spelling ed.")
+    expect(first('#documents .document.blacklight-book')).to have_text('William Shakespeare, the complete works, Original-spelling ed.')
   end
 
   scenario 'User can sort by author' do
@@ -22,7 +22,7 @@ RSpec.describe 'Search sorting', type: :feature do
     click_link 'author'
 
     expect(page).to have_text('Sort by author')
-    expect(first('#documents .document.blacklight-book')).to have_text("Shakespeare at the Globe : 1599-1609")
+    expect(first('#documents .document.blacklight-book')).to have_text('Shakespeare at the Globe : 1599-1609')
   end
 
   scenario 'User can sort by title' do
@@ -34,7 +34,6 @@ RSpec.describe 'Search sorting', type: :feature do
     click_link 'title'
 
     expect(page).to have_text('Sort by title')
-    expect(first('#documents .document.blacklight-book')).to have_text("Amazing monument : a short history of the Shakespeare industry")
+    expect(first('#documents .document.blacklight-book')).to have_text('Amazing monument : a short history of the Shakespeare industry')
   end
-
 end
