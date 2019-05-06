@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Search search results per page', type: :feature do
+RSpec.describe 'Search results per page', type: :feature do
   scenario 'User can change the results per page' do
     visit '/catalog'
     fill_in 'q', with: ' '
