@@ -8,6 +8,10 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - Add feature tests for search results having logo if UofA holding [#1632](https://github.com/ualbertalib/discovery/issues/1632)
+- Added feature tests for search faceting [#1622](https://github.com/ualbertalib/discovery/issues/1622)
+
+### Fixed
+- fixed error in dangerfile [#1602](https://github.com/ualbertalib/discovery/issues/1602)
 
 ## [3.0.106] - 2019-04-23
 
