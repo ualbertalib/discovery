@@ -41,7 +41,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.5.2)
+    addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
@@ -319,7 +319,7 @@ GEM
     ruby_dep (1.5.0)
     rubyzip (1.2.2)
     safe_yaml (1.0.5)
-    sass (3.7.3)
+    sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -333,11 +333,11 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sawyer (0.8.1)
-      addressable (>= 2.3.5, < 2.6)
-      faraday (~> 0.8, < 1.0)
+    sawyer (0.8.2)
+      addressable (>= 2.3.5)
+      faraday (> 0.8, < 2.0)
     scrub_rb (1.0.1)
-    scss_lint (0.57.1)
+    scss_lint (0.58.0)
       rake (>= 0.9, < 13)
       sass (~> 3.5, >= 3.5.5)
     sdoc (1.0.0)
@@ -396,7 +396,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-session_store
-  addressable (~> 2.5.0)
+  addressable (~> 2.6.0)
   better_errors (>= 2.3.0)
   binding_of_caller
   blacklight (= 5.15.0)

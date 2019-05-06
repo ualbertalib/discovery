@@ -6,6 +6,12 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Added feature tests for search faceting [#1622](https://github.com/ualbertalib/discovery/issues/1622)
+
+### Fixed
+- fixed error in dangerfile [#1602](https://github.com/ualbertalib/discovery/issues/1602)
+
 ## [3.0.106] - 2019-04-23
 
 ### Security
@@ -19,6 +25,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Removed
 - Remove subtitle infavour of having this all in the title field. Ensure blacklight_solr_conf is deployed after this release is deployed [#1517](https://github.com/ualbertalib/discovery/issues/1517)
 - turbolinks to get consistent behaviour of blacklight modals for emailing bookmarks [#1589](https://github.com/ualbertalib/discovery/issues/1589)
+- feature flag for RCRF Read on Site and Micro/Newspaper forms [#1605](https://github.com/ualbertalib/discovery/issues/1605)
+
 
 ### Changed
 - Created Responsibility field for record view appearing below title [#1544](https://github.com/ualbertalib/discovery/issues/1544)
