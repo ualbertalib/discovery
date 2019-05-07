@@ -13,7 +13,7 @@ RSpec.describe 'Search results google book jackets', type: :feature do
   scenario 'Search results without an isbn do not have a google book jacket' do
     visit '/'
 
-    fill_in 'q', with: ' The college Shakespeare; 15 plays and the sonnets'
+    fill_in 'q', with: 'The college Shakespeare; 15 plays and the sonnets'
     click_button 'search'
 
     expect(page).not_to have_css("img[src*='https://books.google.com/books?vid=ISBN']")
