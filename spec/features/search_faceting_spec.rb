@@ -47,7 +47,7 @@ RSpec.describe 'Search faceting', type: :feature do
     click_on 'Next »'
     expect(page).to have_no_text('Acting')
     expect(page).to have_no_text('Environnement')
-    expect(page).to have_text('Monologues')
+    expect(page).to have_text('Halloween')
 
     click_button '×'
     expect(page).to have_no_text('Monologues')
