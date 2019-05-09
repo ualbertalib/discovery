@@ -8,12 +8,15 @@ gem 'rails', '4.2.11.1'
 gem 'mysql2', '~> 0.4.10'
 
 # Assets (CSS/JS) stuff
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'sassc-rails', '~> 2.1'
 gem 'uglifier', '>= 1.3.0'
 
 # blacklight stuff
-gem 'blacklight', '5.15.0'
+# gem 'blacklight', github: 'ualbertalib/blacklight'
+# MUST SET PATH TO WHERE YOU PULLED THE BLACKLIGHT GEM
+gem 'blacklight', path: '/path/to/local/blacklight'
 gem 'blacklight-marc', '~> 5.10.0'
 gem 'blacklight_advanced_search'
 gem 'blacklight_google_analytics'
