@@ -11,6 +11,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Fixed
 - fixed error in dangerfile [#1602](https://github.com/ualbertalib/discovery/issues/1602)
+- align label/url for related resources [#1584](https://github.com/ualbertalib/discovery/issues/1584)
 
 ## [3.0.106] - 2019-04-23
 

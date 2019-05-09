@@ -37,8 +37,8 @@ class SymphonyService
   end
 
   def links
-    ua, nonua = populate_electronic_items
-    [ua, nonua]
+    ua, related_resources = populate_electronic_items
+    [ua, related_resources]
   end
 
   private

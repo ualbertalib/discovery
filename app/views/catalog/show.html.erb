@@ -81,7 +81,7 @@
   <% if electronic_access_bottom? %>
     <div id="electronic_access">
       <p>Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>
-      <% @non_ua_urls.each do |location,url| %>
+      <% @related_resources.each do |location,url| %>
         <div class="row">
           <%= link_to eaccess_label(location), electronic_access_url(url.include?('databases'), url), target: '_blank' %>
         </div>
