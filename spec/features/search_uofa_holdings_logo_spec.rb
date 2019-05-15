@@ -44,7 +44,6 @@ RSpec.describe 'Search results UofA holdings logo', type: :feature do
       click_on SYMPHONY_LIBRARY_LOCATIONS[:uainternet]
     end
 
-    click_on 'Library'
     within('.blacklight-location_tesim') do
       click_on SYMPHONY_LIBRARY_LOCATIONS[:grmacint]
     end
