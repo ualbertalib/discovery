@@ -7,7 +7,7 @@ RSpec.describe 'Search sorting', type: :feature do
     click_button 'search'
 
     expect(page).to have_text('Sort by relevance')
-    documents = page.all("#documents .document")
+    documents = page.all('#documents .document')
     documents[0].should have_content('Outlines of the life of Shakespeare')
     documents[1].should have_content('Shakespeare at the Globe : 1599-1609')
     documents[2].should have_content('Amazing monument : a short history of the Shakespeare industry')
@@ -24,7 +24,7 @@ RSpec.describe 'Search sorting', type: :feature do
     click_link 'year'
 
     expect(page).to have_text('Sort by year')
-    documents = page.all("#documents .document")
+    documents = page.all('#documents .document')
     documents[0].should have_content('William Shakespeare, the complete works, Original-spelling ed.')
     documents[1].should have_content('English drama to 1660; excluding Shakespeare, a guide to information sources')
     documents[2].should have_content('Pitchman\'s melody: Shaw about "Shakespear."')
@@ -41,7 +41,7 @@ RSpec.describe 'Search sorting', type: :feature do
     click_link 'author'
 
     expect(page).to have_text('Sort by author')
-    documents = page.all("#documents .document")
+    documents = page.all('#documents .document')
     documents[0].should have_content('Shakespeare at the Globe : 1599-1609')
     documents[1].should have_content('Shakespeare Sonett, "When forty winters" ... und die deutschen Übersetzer; Untersuchungen zu den Problemen der Shakespeare-Übertragung')
     documents[2].should have_content('Amazing monument : a short history of the Shakespeare industry')
@@ -58,7 +58,7 @@ RSpec.describe 'Search sorting', type: :feature do
     click_link 'title'
 
     expect(page).to have_text('Sort by title')
-    documents = page.all("#documents .document")
+    documents = page.all('#documents .document')
     documents[0].should have_content('Amazing monument : a short history of the Shakespeare industry')
     documents[1].should have_content('Die Bedeutungen des abstrakten substantivierten Adjektivs und des entsprechenden abstrakten Substantivs bei Shakespeare')
     documents[2].should have_content('The college Shakespeare; 15 plays and the sonnets')
