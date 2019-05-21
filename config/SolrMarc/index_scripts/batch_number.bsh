@@ -1,0 +1,22 @@
+import org.marc4j.marc.Record;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+org.solrmarc.index.SolrIndexer indexer = null;
+private static String batchNumber;
+
+public String getBatchNumber(Record record, String collectionId){
+    if (batchNumber != null) {
+        return batchNumber;
+    }
+    String pattern = "yyyyMMdd.HHmmss";
+    SimpleDateFormat format = new SimpleDateFormat(pattern);
+    String date = format.format(new Date());  
+    if (collectionId != null){
+        batchNumber = collectionId + "_" + date;
+    } else {
+        batchNumber = date;
+    }
+    return batchNumber;
+}
+
