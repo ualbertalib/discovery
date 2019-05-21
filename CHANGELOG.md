@@ -9,6 +9,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Added
 - Added feature tests for search results per page [#1630](https://github.com/ualbertalib/discovery/issues/1630)
 - Added feature tests for search faceting [#1622](https://github.com/ualbertalib/discovery/issues/1622)
+- Added Kule collection ingest task [#957](https://github.com/ualbertalib/discovery/issues/957)
 
 ### Fixed
 - fixed error in dangerfile [#1602](https://github.com/ualbertalib/discovery/issues/1602)
