@@ -16,6 +16,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [3.0.106] - 2019-04-23
 
+### Added
+- Added feature tests for search results having google book jackets [#1635](https://github.com/ualbertalib/discovery/issues/1635)
+
 ### Security
 - bump nokogiri from 1.10.2 to 1.10.3 [PR#1614](https://github.com/ualbertalib/discovery/pull/1614)
 
