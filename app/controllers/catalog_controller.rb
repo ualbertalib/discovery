@@ -35,8 +35,9 @@ class CatalogController < ApplicationController
     end
 
     @ua_urls = []
+    @non_ua_urls = []
     @related_resources = []
-    @ua_urls, @related_resources = holdings(@document, :links) if @document['summary_holdings_tesim']
+    @ua_urls, @non_ua_urls, @related_resources = holdings(@document, :links) if @document['summary_holdings_tesim']
 
     if @document['subject_t']
       @subjects = []
