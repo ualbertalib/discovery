@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - Added feature tests for search sorting [#1627](https://github.com/ualbertalib/discovery/issues/1627)
+- Add feature tests for search results having logo if UofA holding [#1632](https://github.com/ualbertalib/discovery/issues/1632)
 - Added feature tests for search results per page [#1630](https://github.com/ualbertalib/discovery/issues/1630)
 - Added feature tests for search faceting [#1622](https://github.com/ualbertalib/discovery/issues/1622)
 
@@ -15,6 +16,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - fixed error in dangerfile [#1602](https://github.com/ualbertalib/discovery/issues/1602)
 
 ## [3.0.106] - 2019-04-23
+
+### Added
+- Added feature tests for search results having google book jackets [#1635](https://github.com/ualbertalib/discovery/issues/1635)
 
 ### Security
 - bump nokogiri from 1.10.2 to 1.10.3 [PR#1614](https://github.com/ualbertalib/discovery/pull/1614)
