@@ -25,11 +25,11 @@ RSpec.describe 'Search sorting', type: :feature do
 
     expect(page).to have_text('Sort by year')
     documents = page.all('#documents .document')
-    documents[0].should have_content('William Shakespeare, the complete works, Original-spelling ed.')
-    documents[1].should have_content('English drama to 1660; excluding Shakespeare, a guide to information sources')
-    documents[2].should have_content('Pitchman\'s melody: Shaw about "Shakespear."')
-    documents[3].should have_content('Some facets of King Lear; essays in prismatic criticism')
-    documents[4].should have_content('Die Bedeutungen des abstrakten substantivierten Adjektivs und des entsprechenden abstrakten Substantivs bei Shakespeare')
+    documents[0].should have_content('Publication Year: 1986')
+    documents[1].should have_content('Publication Year: 1976')
+    documents[2].should have_content('Publication Year: 1974')
+    documents[3].should have_content('Publication Year: 1974')
+    documents[4].should have_content('Publication Year: 1973')
   end
 
   scenario 'User can sort by author' do
@@ -42,11 +42,10 @@ RSpec.describe 'Search sorting', type: :feature do
 
     expect(page).to have_text('Sort by author')
     documents = page.all('#documents .document')
-    documents[0].should have_content('Shakespeare at the Globe : 1599-1609')
-    documents[1].should have_content('Shakespeare Sonett, "When forty winters" ... und die deutschen Übersetzer; Untersuchungen zu den Problemen der Shakespeare-Übertragung')
-    documents[2].should have_content('Amazing monument : a short history of the Shakespeare industry')
-    documents[3].should have_content('Some facets of King Lear; essays in prismatic criticism')
-    documents[4].should have_content('Essays in Shakespearean criticism')
+    documents[0].should have_content('Author: Beckerman, Bernard')
+    documents[1].should have_content('Author: Borgmeier, Raimund')
+    documents[2].should have_content('Author: Brown, Ivor John Carnegie, 1891-1974')
+    documents[3].should have_content('Author: Colie, Rosalie Littell')
   end
 
   scenario 'User can sort by title' do
