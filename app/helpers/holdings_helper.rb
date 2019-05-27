@@ -61,4 +61,22 @@ module HoldingsHelper
   def library_location(library_code)
     SYMPHONY_LIBRARY_LOCATIONS[library_code.downcase.delete('_').to_sym]
   end
+
+  def kule_holdings(document, holdings)
+    document[:call_number_status_tesim].each do |values|
+      callnumber = values.split('|')
+      item = {}
+      item[:callnumber] = callnumber[0]
+      item[:status] = case callnumber[1]
+                      when 'NO_LOAN' then 'Read On Site'
+                      else
+                        callnumber[1]
+                      end
+      item[:access_title] = @document[:access_title_tesi]
+      item[:access_url] = @document[:access_url_tesi]
+      item[:location] = @document[:location_tesi]
+      holdings << item
+    end
+    holdings
+  end
 end
