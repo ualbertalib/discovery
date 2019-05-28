@@ -26,7 +26,7 @@ gem 'devise'
 gem 'devise-guests'
 
 # Misc Utilities
-gem 'addressable', '~> 2.5.0'
+gem 'addressable', '~> 2.6.0'
 gem 'bootstrap_form', '~> 2.7.0'
 gem 'danger', '~> 6.0'
 gem 'nokogiri', '~> 1.10.3'
@@ -64,6 +64,10 @@ group :development do
   gem 'listen', '~> 3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Debug
+  gem 'debase', '0.2.2'
+  gem 'ruby-debug-ide'
 end
 
 group :test do
