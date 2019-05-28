@@ -5,15 +5,7 @@ RSpec.describe 'Electronic Resources Links', type: :feature do
     VCR.use_cassette('click_here_result') do
       visit 'catalog/11711195'
       expect(page).to have_text('Physical Education Index')
-      expect(page).to have_link('Click Here for Access')
-      new_window = window_opened_by do
-        click_link 'Click Here for Access'
-      end
-      within_window new_window do
-        sleep 3
-        expect(page).to have_text('Sports Medicine & Education Index')
-      end
-      new_window.close
+      expect(page).to have_link('Click Here for Access', href: 'http://login.ezproxy.library.ualberta.ca/login?url=http://search.proquest.com/physicaleducation/advanced?accountid=14474')
     end
   end
 
@@ -21,13 +13,7 @@ RSpec.describe 'Electronic Resources Links', type: :feature do
     VCR.use_cassette('free_access_result') do
       visit 'catalog/1006311'
       expect(page).to have_text("Règlements, usages et discipline du diocèse de Saint-Albert : promulgués, en l'année 1903 ")
-      expect(page).to have_link('Click Here for University of Alberta Access (Free Access)')
-      new_window = window_opened_by { click_link 'Click Here for University of Alberta Access (Free Access)' }
-      within_window new_window do
-        sleep 1
-        expect(page).to have_text('Peel 2692')
-      end
-      new_window.close
+      expect(page).to have_link('Click Here for University of Alberta Access (Free Access)', href: 'http://peel.library.ualberta.ca/cocoon/peel/2692.html')
     end
   end
 
@@ -35,14 +21,8 @@ RSpec.describe 'Electronic Resources Links', type: :feature do
     VCR.use_cassette('ual_access_result') do
       visit 'catalog/1008878'
       expect(page).to have_text('Psychology in business relations')
-      expect(page).to have_link('Click Here for University of Alberta Access')
+      expect(page).to have_link('Click Here for University of Alberta Access', href: 'http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.ovid.com/ovidweb.cgi?T=JS&NEWS=N&PAGE=toc&SEARCH=2005-09562.dd&LINKTYPE=asBody&D=psbk')
       expect(page).to_not have_link('Concordia University of Edmonton Access')
-      new_window = window_opened_by { click_link 'Click Here for University of Alberta Access' }
-      within_window new_window do
-        sleep 10
-        expect(page).to have_text('Psychology in business relations')
-      end
-      new_window.close
     end
   end
 
@@ -50,26 +30,14 @@ RSpec.describe 'Electronic Resources Links', type: :feature do
     VCR.use_cassette('finding_aid_result') do
       visit 'catalog/4072071'
       expect(page).to have_text('Church Missionary Society archive. Section III, Central records [microform]')
-      expect(page).to have_link('Finding aid, pt. 1-5')
-      expect(page).to have_link('Finding aid, pt. 6-12')
-      expect(page).to have_link('Finding aid, pt. 13-14')
-      expect(page).to have_link('Finding aid, pt. 15-18')
-      expect(page).to have_link('Finding aid, pt. 19')
-      expect(page).to have_link('Finding aid, pt. 20')
-      expect(page).to have_link('Finding aid, pt. 21')
-      expect(page).to have_link('Finding aid, pt. 22')
-      new_window = window_opened_by { click_link 'Finding aid, pt. 1-5' }
-      within_window new_window do
-        sleep 1
-        expect(page).to have_title('CHURCH MISSIONARY SOCIETY ARCHIVE, Section III, Parts 1 to 5')
-      end
-      new_window.close
-      new_window = window_opened_by { click_link 'Finding aid, pt. 22' }
-      within_window new_window do
-        sleep 1
-        expect(page).to have_title('CMS III 22')
-      end
-      new_window.close
+      expect(page).to have_link('Finding aid, pt. 1-5', href: 'http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_1_to_5/Contents.aspx')
+      expect(page).to have_link('Finding aid, pt. 6-12', href: 'http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_6_to_12/Contents.aspx')
+      expect(page).to have_link('Finding aid, pt. 13-14', href: 'http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_13_and_14/Contents.aspx')
+      expect(page).to have_link('Finding aid, pt. 15-18', href: 'http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_15_to_18/Contents.aspx')
+      expect(page).to have_link('Finding aid, pt. 19', href: 'http://www.ampltd.co.uk/digital_guides/cms_section_III_part_19/Contents.aspx')
+      expect(page).to have_link('Finding aid, pt. 20', href: 'http://www.ampltd.co.uk/digital_guides/cms_section_III_part_20/Contents.aspx')
+      expect(page).to have_link('Finding aid, pt. 21', href: 'http://www.ampltd.co.uk/digital_guides/cms_section_III_part_21/contents.aspx')
+      expect(page).to have_link('Finding aid, pt. 22', href: 'http://www.ampltd.co.uk/digital_guides/cms_section_III_part_22/Contents.aspx')
     end
   end
 
@@ -78,13 +46,7 @@ RSpec.describe 'Electronic Resources Links', type: :feature do
       visit 'catalog/2714245'
       expect(page).to have_text('Milk final estimates ... [electronic resource]')
       expect(page).to have_text('Note: No University of Alberta Access. On-campus access allowed at the following locations:')
-      expect(page).to have_link('Alberta Government Library Access')
-      new_window = window_opened_by { click_link 'Alberta Government Library Access' }
-      within_window new_window do
-        sleep 1
-        expect(page).to have_text('Milk - Final Estimates')
-      end
-      new_window.close
+      expect(page).to have_link('Alberta Government Library Access', href: 'http://purl.access.gpo.gov/GPO/LPS31752')
     end
   end
 end
