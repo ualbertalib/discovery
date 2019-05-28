@@ -113,21 +113,21 @@ class SymphonyService
     ua_items = {}
     non_ua_items = {}
     other_items = {}
-    if @document
-      link_items.each do |item|
-        if label(item)&.text == 'Electronic access' &&
-           item.at_xpath('.//xmlns:text').present? && item.at_xpath('.//xmlns:url').present?
-          if ['41', '40'].include? electronic_resource_indicator(item)&.text
-            if (item.at_xpath('.//xmlns:text').text.include? 'University of Alberta Access') ||
-               (item.at_xpath('.//xmlns:text').text.include? 'Free') ||
-               (item.at_xpath('.//xmlns:text').text.include? 'NEOS')
-              ua_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
-            else
-              non_ua_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
-            end
+    return [ua_items, non_ua_items, other_items] unless @document
+
+    link_items.each do |item|
+      if label(item)&.text == 'Electronic access' &&
+         item.at_xpath('.//xmlns:text').present? && item.at_xpath('.//xmlns:url').present?
+        if ['41', '40'].include? electronic_resource_indicator(item)&.text
+          if (item.at_xpath('.//xmlns:text').text.include? 'University of Alberta Access') ||
+             (item.at_xpath('.//xmlns:text').text.include? 'Free') ||
+             (item.at_xpath('.//xmlns:text').text.include? 'NEOS')
+            ua_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
           else
-            other_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
+            non_ua_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
           end
+        else
+          other_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
         end
       end
     end
