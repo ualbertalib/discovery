@@ -80,6 +80,7 @@ public Set getLocationFacet(Record record){
   location_codes.put("uatechserv", "University of Alberta Bibliographic Services");
   location_codes.put("uarcrf", "University of Alberta Research and Collections Resource Facility");
   location_codes.put("usic tech lab", "University of Alberta Cameron - Science & Technology - Lab");
+  location_codes.put("bmufa", "Kule Collection");
 
 
   for (String code : codes){
