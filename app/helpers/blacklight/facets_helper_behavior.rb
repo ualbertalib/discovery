@@ -144,7 +144,7 @@ module Blacklight::FacetsHelperBehavior
       content_tag(:span, facet_display_value(facet_solr_field, item), class: 'selected') +
         # remove link
         link_to(
-          content_tag(:span, '', class: 'glyphicon glyphicon-remove') + content_tag(:span, '[remove]', class: 'sr-only'),
+          content_tag(:span, '✖', class: 'remove-icon') + content_tag(:span, '[remove]', class: 'sr-only'),
           search_action_path(remove_facet_params(facet_solr_field, item, params)),
           class: 'remove'
         )
@@ -161,7 +161,7 @@ module Blacklight::FacetsHelperBehavior
   # @return [String]
   def render_facet_count(num, options = {})
     classes = (options[:classes] || []) << 'facet-count'
-    content_tag('span', t('blacklight.search.facets.count', number: number_with_delimiter(num)), class: classes)
+    content_tag('span', t('blacklight.search.facets.count', number: number_with_delimiter(num)), class: classes, style: 'width: ' + (number_with_delimiter(num).to_s.size + 1).to_s + 'ch;')
   end
 
   ##

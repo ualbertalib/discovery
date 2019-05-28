@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+- Upgrade bootstrap to version 4.3.1 [#1601](https://github.com/ualbertalib/discovery/issues/1601)
+
 ## [3.0.106] - 2019-04-23
 
 ### Security
