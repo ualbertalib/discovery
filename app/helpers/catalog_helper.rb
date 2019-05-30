@@ -11,7 +11,7 @@ module CatalogHelper
   # (University of Alberta Access) catalog/2566934
   # (Finding Aid) catalog/4072071
   def electronic_access_top?
-    database_electronic_access? || @ua_urls.present? || supplimentary_urls.present?
+    database_electronic_access? || @ua_urls.present? || @related_resources.present?
   end
 
   # These are 'On-campus access' and appear at the bottom of the page
@@ -22,6 +22,7 @@ module CatalogHelper
 
   def eaccess_label(location)
     return 'Link:' if location.include?('http')
+
     location
   end
 
@@ -29,6 +30,7 @@ module CatalogHelper
     loc = location.split(':').last.strip.gsub('University of Alberta Access', '').strip
     loc = loc.delete('()').strip if loc.start_with?('(') && loc.end_with?(')') && loc.count('(') == 1 && loc.count(')') == 1
     return 'Click Here for University of Alberta Access' if loc.blank?
+
     "Click Here for University of Alberta Access (#{loc})"
   end
 
@@ -42,13 +44,8 @@ module CatalogHelper
 
   def electronic_access_url(enableproxy, url)
     return url unless enableproxy
-    Rails.application.config.proxy + url
-  end
 
-  def supplimentary_urls
-    urls = []
-    urls = @document['summary_holdings_tesim'].zip(@document['url_suppl_display']) if @document['summary_holdings_tesim'] && @document['url_suppl_display']
-    urls
+    Rails.application.config.proxy + url
   end
 
   # The original content from lgapi-ca.libapps.com is mangled during ingest to Solr
