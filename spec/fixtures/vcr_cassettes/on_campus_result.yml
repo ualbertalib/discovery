@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=2714245
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 May 2019 21:39:35 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>2714245</titleID><TitleAvailabilityInfo><totalCopiesAvailable>1</totalCopiesAvailable><libraryWithAvailableCopies>Alberta
+        Government Library - Internet</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>INTERNET</locationOfFirstAvailableItem><holdable>false</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>AGINTERNET</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>2714245-3001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>as
+        a0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>2714245</text></MarcEntryInfo><MarcEntryInfo><label>Date/time
+        stamp</label><entryID>005</entryID><indicators>  </indicators><text>20030606092808.0</text></MarcEntryInfo><MarcEntryInfo><label>Added
+        material codes</label><entryID>006</entryID><indicators>  </indicators><text>m        d
+        f</text></MarcEntryInfo><MarcEntryInfo><label>Fixed field data</label><entryID>007</entryID><indicators>  </indicators><text>cr
+        anu</text></MarcEntryInfo><MarcEntryInfo><label>Fixed field data</label><entryID>008</entryID><indicators>  </indicators><text>030605d19921992dcuzr   ss   f0    0eng
+        c</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>2003230878</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm52376389</text></MarcEntryInfo><MarcEntryInfo><label>Stock
+        number</label><entryID>037</entryID><indicators>  </indicators><text>Paper
+        copies available from: ERA/NASS, 341 Victory Dr., Herndon, VA 22070</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>DGPO
+        eng DGPO</text></MarcEntryInfo><MarcEntryInfo><label>Authentication code</label><entryID>042</entryID><indicators>  </indicators><text>lcd</text></MarcEntryInfo><MarcEntryInfo><label>Geographic
+        Area Code</label><entryID>043</entryID><indicators>  </indicators><text>n-us---</text></MarcEntryInfo><MarcEntryInfo><label>GPO
+        item number</label><entryID>074</entryID><indicators>  </indicators><text>0015
+        (online)</text></MarcEntryInfo><MarcEntryInfo><label>SuDocs call number</label><entryID>086</entryID><indicators>0
+        </indicators><text>A 1.34:</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEE</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>00</indicators><text>Milk
+        final estimates ... [electronic resource].</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>[Washington,
+        D.C.] : United States Dept. of Agriculture, National Agricultural Statistics
+        Service, Agricultural Statistics Board, -[1992]</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Current
+        frequency</label><entryID>310</entryID><indicators>  </indicators><text>Quinquennial</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        type</label><entryID>336</entryID><indicators>  </indicators><text>text txt</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>computer
+        c</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>online
+        resource cr</text></MarcEntryInfo><MarcEntryInfo><label>Volume/date range</label><entryID>362</entryID><indicators>1
+        </indicators><text>Electronic coverage as of June 5, 2003: 1988/92.</text></MarcEntryInfo><MarcEntryInfo><label>Series
+        Statement</label><entryID>490</entryID><indicators>1 </indicators><text>(Statistical
+        bulletin)</text><entryTypeCodes>R</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>General
+        Note</label><entryID>500</entryID><indicators>  </indicators><text>Description
+        based on: 1988/92; title from title screen (viewed on June 5, 2003).</text></MarcEntryInfo><MarcEntryInfo><label>Type
+        of file/data</label><entryID>516</entryID><indicators>8 </indicators><text>Text
+        format</text></MarcEntryInfo><MarcEntryInfo><label>Other forms</label><entryID>530</entryID><indicators>  </indicators><text>Online
+        version of print publication.</text></MarcEntryInfo><MarcEntryInfo><label>Technical
+        details</label><entryID>538</entryID><indicators>  </indicators><text>Mode
+        of access: Internet at the USDA web site. Address as of 6/5/03: http://jan.mannlib.cornell.edu/data-sets/livestock/95909/sb909.t
+        xt; current access is available via PURL.</text></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>AGINTERNET</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Dairying--United
+        States--Statistics.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Milk yield--United
+        States--Statistics.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Added
+        Entry-Corporat</label><entryID>710</entryID><indicators>1 </indicators><text>United
+        States. Agricultural Statistics Board.</text><entryTypeCodes>AR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Additional
+        Physical Form Entry</label><entryID>776</entryID><indicators>1 </indicators><text>Milk,
+        final estimates for ... (DLC) 86642958 (OCoLC)13355290</text></MarcEntryInfo><MarcEntryInfo><label>Later
+        title part</label><entryID>785</entryID><indicators>06</indicators><text>Milk
+        cows and production final estimates ...</text><entryTypeCodes>TR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Later
+        title part</label><entryID>785</entryID><indicators>06</indicators><text>Milk
+        disposition and income final estimates ...</text><entryTypeCodes>TR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Series
+        Added Entry-U</label><entryID>830</entryID><indicators> 0</indicators><text>Statistical
+        bulletin (United States. Department of Agriculture)</text><entryTypeCodes>VR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Alberta
+        Government Library Access</text><unformattedText>|3Alberta Government Library
+        Access|uhttp://purl.access.gpo.gov/GPO/LPS31752</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://purl.access.gpo.gov/GPO/LPS31752</url></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Fri, 24 May 2019 21:39:35 GMT
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=2714245
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 May 2019 21:39:35 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>2714245</titleID><TitleAvailabilityInfo><totalCopiesAvailable>1</totalCopiesAvailable><libraryWithAvailableCopies>Alberta
+        Government Library - Internet</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>INTERNET</locationOfFirstAvailableItem><holdable>false</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>AGINTERNET</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>2714245-3001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>as
+        a0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>2714245</text></MarcEntryInfo><MarcEntryInfo><label>Date/time
+        stamp</label><entryID>005</entryID><indicators>  </indicators><text>20030606092808.0</text></MarcEntryInfo><MarcEntryInfo><label>Added
+        material codes</label><entryID>006</entryID><indicators>  </indicators><text>m        d
+        f</text></MarcEntryInfo><MarcEntryInfo><label>Fixed field data</label><entryID>007</entryID><indicators>  </indicators><text>cr
+        anu</text></MarcEntryInfo><MarcEntryInfo><label>Fixed field data</label><entryID>008</entryID><indicators>  </indicators><text>030605d19921992dcuzr   ss   f0    0eng
+        c</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>2003230878</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm52376389</text></MarcEntryInfo><MarcEntryInfo><label>Stock
+        number</label><entryID>037</entryID><indicators>  </indicators><text>Paper
+        copies available from: ERA/NASS, 341 Victory Dr., Herndon, VA 22070</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>DGPO
+        eng DGPO</text></MarcEntryInfo><MarcEntryInfo><label>Authentication code</label><entryID>042</entryID><indicators>  </indicators><text>lcd</text></MarcEntryInfo><MarcEntryInfo><label>Geographic
+        Area Code</label><entryID>043</entryID><indicators>  </indicators><text>n-us---</text></MarcEntryInfo><MarcEntryInfo><label>GPO
+        item number</label><entryID>074</entryID><indicators>  </indicators><text>0015
+        (online)</text></MarcEntryInfo><MarcEntryInfo><label>SuDocs call number</label><entryID>086</entryID><indicators>0
+        </indicators><text>A 1.34:</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEE</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>00</indicators><text>Milk
+        final estimates ... [electronic resource].</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>[Washington,
+        D.C.] : United States Dept. of Agriculture, National Agricultural Statistics
+        Service, Agricultural Statistics Board, -[1992]</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Current
+        frequency</label><entryID>310</entryID><indicators>  </indicators><text>Quinquennial</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        type</label><entryID>336</entryID><indicators>  </indicators><text>text txt</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>computer
+        c</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>online
+        resource cr</text></MarcEntryInfo><MarcEntryInfo><label>Volume/date range</label><entryID>362</entryID><indicators>1
+        </indicators><text>Electronic coverage as of June 5, 2003: 1988/92.</text></MarcEntryInfo><MarcEntryInfo><label>Series
+        Statement</label><entryID>490</entryID><indicators>1 </indicators><text>(Statistical
+        bulletin)</text><entryTypeCodes>R</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>General
+        Note</label><entryID>500</entryID><indicators>  </indicators><text>Description
+        based on: 1988/92; title from title screen (viewed on June 5, 2003).</text></MarcEntryInfo><MarcEntryInfo><label>Type
+        of file/data</label><entryID>516</entryID><indicators>8 </indicators><text>Text
+        format</text></MarcEntryInfo><MarcEntryInfo><label>Other forms</label><entryID>530</entryID><indicators>  </indicators><text>Online
+        version of print publication.</text></MarcEntryInfo><MarcEntryInfo><label>Technical
+        details</label><entryID>538</entryID><indicators>  </indicators><text>Mode
+        of access: Internet at the USDA web site. Address as of 6/5/03: http://jan.mannlib.cornell.edu/data-sets/livestock/95909/sb909.t
+        xt; current access is available via PURL.</text></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>AGINTERNET</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Dairying--United
+        States--Statistics.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Milk yield--United
+        States--Statistics.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Added
+        Entry-Corporat</label><entryID>710</entryID><indicators>1 </indicators><text>United
+        States. Agricultural Statistics Board.</text><entryTypeCodes>AR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Additional
+        Physical Form Entry</label><entryID>776</entryID><indicators>1 </indicators><text>Milk,
+        final estimates for ... (DLC) 86642958 (OCoLC)13355290</text></MarcEntryInfo><MarcEntryInfo><label>Later
+        title part</label><entryID>785</entryID><indicators>06</indicators><text>Milk
+        cows and production final estimates ...</text><entryTypeCodes>TR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Later
+        title part</label><entryID>785</entryID><indicators>06</indicators><text>Milk
+        disposition and income final estimates ...</text><entryTypeCodes>TR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Series
+        Added Entry-U</label><entryID>830</entryID><indicators> 0</indicators><text>Statistical
+        bulletin (United States. Department of Agriculture)</text><entryTypeCodes>VR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>40</indicators><text>Alberta
+        Government Library Access</text><unformattedText>|3Alberta Government Library
+        Access|uhttp://purl.access.gpo.gov/GPO/LPS31752</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://purl.access.gpo.gov/GPO/LPS31752</url></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Fri, 24 May 2019 21:39:35 GMT
+recorded_with: VCR 4.0.0

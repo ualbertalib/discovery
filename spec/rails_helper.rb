@@ -48,7 +48,7 @@ end
 require 'rake'
 Rails.application.load_tasks
 Rake::Task['delete'].invoke
-%w[database_test_set sfx_test_set symphony_test_set].each do |test_set|
+%w[database_test_set sfx_test_set kule_test symphony_test_set].each do |test_set|
   # work around tasks already_invoked flag being set
   Rake::Task['ingest'].reenable
   Rake::Task['solr:marc:index'].reenable
