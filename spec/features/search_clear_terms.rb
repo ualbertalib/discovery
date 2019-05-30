@@ -65,5 +65,4 @@ RSpec.describe 'Search clear terms', type: :feature do
     click_link 'Start Over'
     expect(page).to not_have_css('.appliedFilter', text: 'query')
   end
-
 end
