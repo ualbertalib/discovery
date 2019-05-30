@@ -2,14 +2,11 @@ import org.marc4j.marc.Record;
 
 org.solrmarc.index.SolrIndexer indexer = null;
 
-public String getKuleID(Record record){
-
-  String val = indexer.getFirstFieldVal(record, "001");
-
-  if (val != null){
-    return "kule"+val;
-  }
-  else {
-    return val;
-  }
+public String getKuleID(Record record) {
+    String val = indexer.getFirstFieldVal(record, "001");
+    if (val != null) {
+        return "kule" + val;
+    } else {
+        return val;
+    }
 }
