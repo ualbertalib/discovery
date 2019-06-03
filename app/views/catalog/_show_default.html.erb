@@ -11,10 +11,6 @@
         <dd class="blacklight-<%= solr_fname.parameterize %>">
           <%= link_to value, catalog_index_path(q: "\"#{value}\"") %>
         </dd>
-      <% elsif solr_fname == "title_series_t" %>
-        <dd class="blacklight-<%= solr_fname.parameterize %>">
-          <%= link_to value, catalog_index_path(title: "\"#{value}\"", search_field: 'advanced') %>
-        </dd>
       <% elsif solr_fname == "author_display" %>
         <dd class="blacklight-<%= solr_fname.parameterize %>">
           <%= link_to value, catalog_index_path(author: value, search_field: 'advanced') %>

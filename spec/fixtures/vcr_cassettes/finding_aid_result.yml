@@ -1,0 +1,241 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=4072071
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 May 2019 21:34:45 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>4072071</titleID><TitleAvailabilityInfo><totalCopiesAvailable>5</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Rutherford-Humanities &amp; Social Science</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>MICROFILM</locationOfFirstAvailableItem><holdable>true</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UAHSS</libraryID><classificationID>LC</classificationID><callNumber>BV
+        2500 C48 gd. pt.6-12</callNumber><numberOfCopies>3</numberOfCopies><ItemInfo><itemID>0162024726117</itemID><itemTypeID>NO_LOAN</itemTypeID><currentLocationID>MICRO_REF</currentLocationID><homeLocationID>MICRO_REF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>0162024726125</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>MICROFORM</currentLocationID><homeLocationID>MICROFORM</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>0162024726182</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>UAHSS</libraryID><classificationID>LC</classificationID><callNumber>BV
+        2500 C48 pt.7-9</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>0162024726059</itemID><itemTypeID>MICROFORM</itemTypeID><currentLocationID>MICROFILM</currentLocationID><homeLocationID>MICROFILM</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>UAHSS</libraryID><classificationID>LC</classificationID><callNumber>BV
+        2500 C48 pt.17-18</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>0162028682803</itemID><itemTypeID>MICROFORM</itemTypeID><currentLocationID>MICROFILM</currentLocationID><homeLocationID>MICROFILM</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>tm
+        a0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>4072071</text></MarcEntryInfo><MarcEntryInfo><label>Date/time
+        stamp</label><entryID>005</entryID><indicators>  </indicators><text>20060707090637.0</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>007</entryID><indicators>  </indicators><text>hd
+        afb|||baca</text></MarcEntryInfo><MarcEntryInfo><label>Fixed field data</label><entryID>008</entryID><indicators>  </indicators><text>991014m19962010enk     a     001
+        0 eng</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>99483682</text></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>1857111206</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm42786524</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>DLC eng
+        DLC DLC AEU AEU</text></MarcEntryInfo><MarcEntryInfo><label>Geographic Area
+        Code</label><entryID>043</entryID><indicators>  </indicators><text>e-uk---</text></MarcEntryInfo><MarcEntryInfo><label>LC
+        Call Number</label><entryID>050</entryID><indicators>10</indicators><text>BV2500</text></MarcEntryInfo><MarcEntryInfo><label>LC
+        Call Number</label><entryID>050</entryID><indicators>00</indicators><text>Microfilm
+        99/20</text></MarcEntryInfo><MarcEntryInfo><label>Dewey Decimal Classification
+        Number</label><entryID>082</entryID><indicators>00</indicators><text>266/.3
+        21</text></MarcEntryInfo><MarcEntryInfo><label>Local LC call number</label><entryID>090</entryID><indicators>  </indicators><text>BV
+        2500 C48 AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>00</indicators><text>Church
+        Missionary Society archive. Section III, Central records [microform].</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>Marlborough,
+        Wiltshire : Adam Matthew Publications, 1996-2010.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>345
+        microfilm reels ; 35 mm. + guides.</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        type</label><entryID>336</entryID><indicators>  </indicators><text>text txt</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>microform
+        h</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>microfilm
+        reel hd</text></MarcEntryInfo><MarcEntryInfo><label>Contents</label><entryID>505</entryID><indicators>0
+        </indicators><text>pt. 1. Annotated register of CMS missionaries, History
+        of the CMS by Eugene Stock and the Catalogues to the overseas archive CEZMS
+        and FES archives (10 reels) -- pt. 2. CMS gleaner, 1841-1921 (also CMS gleaner
+        pictorial album, 1888, and CMS missionary atlas, 1879) (12 reels) -- pt. 3.
+        CMS outlook, 1922-1972 (a continuation of CMS gleaner (10 reels) -- pt. 4.
+        Annual letters, 1886-1912 (13 reels) -- pt. 5. CMS medical journals : Mercy
+        and truth, 1897-1921; The Mission hospital, 1922-1939; The way of healing,
+        1940; The Medical mission quarterly, 1892-1896; Preaching and healing, 1900-1906
+        (17 reels) -- pt. 6. CMS circular books and letters, 1799-1921 (12 reels)
+        -- pt. 7. CMS minutes, 1799-1837 (10 reels) -- pt. 8. CMS minutes, 1837-1853
+        (10 reels) -- pt. 9. CMS minutes, 1854-1876 and indexes to minutes, 1799-1876
+        (12 reels) -- pt. 10. The Missionary papers, 1816-1884, CMS monthly paper,
+        1828-1829, A quarterly token for juvenile subscribers, 1856-1878 and 1888-1917,
+        The home gazette, 1905-1906, and The CMS gazette, 1907-1934 (10 reels) --
+        pt. 11. General review of missions, 1919, annual reports, 1922-1944 and CMS
+        historical record, 1944-1986 (21 reels) -- pt. 12. The CMS juvenile instructor,
+        1842-1890, Children''s world, 1891-1900, The round world, 1901-1958 (25 reels)
+        -- pt. 13. CMS collection of lives of missionaries held at the Church Mission
+        Society Library (15 reels) -- pt. 14. CMS collection of lives of missionaries
+        held at the Church Mission Society Library (14 reels) -- pt. 15. The Church
+        Missionary Society record, 1830-1875 held at the Church Mission Society Library
+        (23 reels) -- pt. 16. CMS awake!--a missionary magazine for general readers,
+        1891-1921, continued as Eastward Ho!, 1922-1940 (13 reels) -- pt. 17. CMS
+        minutes, 1876-1898, and indexes to minutes, 1875-1907 (24 reels) -- pt. 18.
+        CMS Minutes, 1898-1949 (27 reels) -- pt. 19. Papers of Henry Venn (secretary
+        of CMS, 1841-1873) and family (19 reels) -- pt. 20. Papers of Henry Venn (secretary
+        of CMS, 1846-1873) and family (20 reels) -- pt. 21. Diaries of Dr Max Warren
+        (General Secretary of CMS, 1942-1963) and Family (16 reels) -- pt. 22. Pamphlets
+        (14 reels).</text></MarcEntryInfo><MarcEntryInfo><label>Summary</label><entryID>520</entryID><indicators>  </indicators><text>Reproduces
+        papers held at the CMS Headquarters in London and the University of Birmingham
+        Library.</text></MarcEntryInfo><MarcEntryInfo><label>Other forms</label><entryID>530</entryID><indicators>  </indicators><text>Accompanying
+        finding aids issued also online.</text></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>UAHSS</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Corporate
+        subject</label><entryID>610</entryID><indicators>20</indicators><text>Church
+        Missionary Society--Archives.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Missionaries--Great
+        Britain.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Added
+        Entry-Corporat</label><entryID>710</entryID><indicators>2 </indicators><text>Church
+        Missionary Society.</text><entryTypeCodes>AR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Added
+        Entry-Corporat</label><entryID>710</entryID><indicators>2 </indicators><text>Adam
+        Matthew Publications.</text><entryTypeCodes>AR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 1-5</text><unformattedText>|3Finding aid, pt. 1-5|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_parts_1_to_5/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_1_to_5/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 6-12</text><unformattedText>|3Finding aid, pt. 6-12|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_parts_6_to_12/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_6_to_12/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 13-14</text><unformattedText>|3Finding aid, pt. 13-14|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_parts_13_and_14/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_13_and_14/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 15-18</text><unformattedText>|3Finding aid, pt. 15-18|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_parts_15_to_18/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_15_to_18/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 19</text><unformattedText>|3Finding aid, pt. 19|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_part_19/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_part_19/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 20</text><unformattedText>|3Finding aid, pt. 20|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_part_20/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_part_20/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 21</text><unformattedText>|3Finding aid, pt. 21|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_part_21/contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_part_21/contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 22</text><unformattedText>|3Finding aid, pt. 22|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_part_22/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_part_22/Contents.aspx</url></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Fri, 24 May 2019 21:34:45 GMT
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=4072071
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 May 2019 21:34:45 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>4072071</titleID><TitleAvailabilityInfo><totalCopiesAvailable>5</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Rutherford-Humanities &amp; Social Science</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>MICROFILM</locationOfFirstAvailableItem><holdable>true</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UAHSS</libraryID><classificationID>LC</classificationID><callNumber>BV
+        2500 C48 gd. pt.6-12</callNumber><numberOfCopies>3</numberOfCopies><ItemInfo><itemID>0162024726117</itemID><itemTypeID>NO_LOAN</itemTypeID><currentLocationID>MICRO_REF</currentLocationID><homeLocationID>MICRO_REF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>0162024726125</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>MICROFORM</currentLocationID><homeLocationID>MICROFORM</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>0162024726182</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>UAHSS</libraryID><classificationID>LC</classificationID><callNumber>BV
+        2500 C48 pt.7-9</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>0162024726059</itemID><itemTypeID>MICROFORM</itemTypeID><currentLocationID>MICROFILM</currentLocationID><homeLocationID>MICROFILM</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>UAHSS</libraryID><classificationID>LC</classificationID><callNumber>BV
+        2500 C48 pt.17-18</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>0162028682803</itemID><itemTypeID>MICROFORM</itemTypeID><currentLocationID>MICROFILM</currentLocationID><homeLocationID>MICROFILM</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>tm
+        a0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>4072071</text></MarcEntryInfo><MarcEntryInfo><label>Date/time
+        stamp</label><entryID>005</entryID><indicators>  </indicators><text>20060707090637.0</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>007</entryID><indicators>  </indicators><text>hd
+        afb|||baca</text></MarcEntryInfo><MarcEntryInfo><label>Fixed field data</label><entryID>008</entryID><indicators>  </indicators><text>991014m19962010enk     a     001
+        0 eng</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>99483682</text></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>1857111206</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm42786524</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>DLC eng
+        DLC DLC AEU AEU</text></MarcEntryInfo><MarcEntryInfo><label>Geographic Area
+        Code</label><entryID>043</entryID><indicators>  </indicators><text>e-uk---</text></MarcEntryInfo><MarcEntryInfo><label>LC
+        Call Number</label><entryID>050</entryID><indicators>10</indicators><text>BV2500</text></MarcEntryInfo><MarcEntryInfo><label>LC
+        Call Number</label><entryID>050</entryID><indicators>00</indicators><text>Microfilm
+        99/20</text></MarcEntryInfo><MarcEntryInfo><label>Dewey Decimal Classification
+        Number</label><entryID>082</entryID><indicators>00</indicators><text>266/.3
+        21</text></MarcEntryInfo><MarcEntryInfo><label>Local LC call number</label><entryID>090</entryID><indicators>  </indicators><text>BV
+        2500 C48 AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>00</indicators><text>Church
+        Missionary Society archive. Section III, Central records [microform].</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>Marlborough,
+        Wiltshire : Adam Matthew Publications, 1996-2010.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>345
+        microfilm reels ; 35 mm. + guides.</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        type</label><entryID>336</entryID><indicators>  </indicators><text>text txt</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>microform
+        h</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>microfilm
+        reel hd</text></MarcEntryInfo><MarcEntryInfo><label>Contents</label><entryID>505</entryID><indicators>0
+        </indicators><text>pt. 1. Annotated register of CMS missionaries, History
+        of the CMS by Eugene Stock and the Catalogues to the overseas archive CEZMS
+        and FES archives (10 reels) -- pt. 2. CMS gleaner, 1841-1921 (also CMS gleaner
+        pictorial album, 1888, and CMS missionary atlas, 1879) (12 reels) -- pt. 3.
+        CMS outlook, 1922-1972 (a continuation of CMS gleaner (10 reels) -- pt. 4.
+        Annual letters, 1886-1912 (13 reels) -- pt. 5. CMS medical journals : Mercy
+        and truth, 1897-1921; The Mission hospital, 1922-1939; The way of healing,
+        1940; The Medical mission quarterly, 1892-1896; Preaching and healing, 1900-1906
+        (17 reels) -- pt. 6. CMS circular books and letters, 1799-1921 (12 reels)
+        -- pt. 7. CMS minutes, 1799-1837 (10 reels) -- pt. 8. CMS minutes, 1837-1853
+        (10 reels) -- pt. 9. CMS minutes, 1854-1876 and indexes to minutes, 1799-1876
+        (12 reels) -- pt. 10. The Missionary papers, 1816-1884, CMS monthly paper,
+        1828-1829, A quarterly token for juvenile subscribers, 1856-1878 and 1888-1917,
+        The home gazette, 1905-1906, and The CMS gazette, 1907-1934 (10 reels) --
+        pt. 11. General review of missions, 1919, annual reports, 1922-1944 and CMS
+        historical record, 1944-1986 (21 reels) -- pt. 12. The CMS juvenile instructor,
+        1842-1890, Children''s world, 1891-1900, The round world, 1901-1958 (25 reels)
+        -- pt. 13. CMS collection of lives of missionaries held at the Church Mission
+        Society Library (15 reels) -- pt. 14. CMS collection of lives of missionaries
+        held at the Church Mission Society Library (14 reels) -- pt. 15. The Church
+        Missionary Society record, 1830-1875 held at the Church Mission Society Library
+        (23 reels) -- pt. 16. CMS awake!--a missionary magazine for general readers,
+        1891-1921, continued as Eastward Ho!, 1922-1940 (13 reels) -- pt. 17. CMS
+        minutes, 1876-1898, and indexes to minutes, 1875-1907 (24 reels) -- pt. 18.
+        CMS Minutes, 1898-1949 (27 reels) -- pt. 19. Papers of Henry Venn (secretary
+        of CMS, 1841-1873) and family (19 reels) -- pt. 20. Papers of Henry Venn (secretary
+        of CMS, 1846-1873) and family (20 reels) -- pt. 21. Diaries of Dr Max Warren
+        (General Secretary of CMS, 1942-1963) and Family (16 reels) -- pt. 22. Pamphlets
+        (14 reels).</text></MarcEntryInfo><MarcEntryInfo><label>Summary</label><entryID>520</entryID><indicators>  </indicators><text>Reproduces
+        papers held at the CMS Headquarters in London and the University of Birmingham
+        Library.</text></MarcEntryInfo><MarcEntryInfo><label>Other forms</label><entryID>530</entryID><indicators>  </indicators><text>Accompanying
+        finding aids issued also online.</text></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>UAHSS</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Corporate
+        subject</label><entryID>610</entryID><indicators>20</indicators><text>Church
+        Missionary Society--Archives.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Missionaries--Great
+        Britain.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Added
+        Entry-Corporat</label><entryID>710</entryID><indicators>2 </indicators><text>Church
+        Missionary Society.</text><entryTypeCodes>AR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Added
+        Entry-Corporat</label><entryID>710</entryID><indicators>2 </indicators><text>Adam
+        Matthew Publications.</text><entryTypeCodes>AR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 1-5</text><unformattedText>|3Finding aid, pt. 1-5|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_parts_1_to_5/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_1_to_5/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 6-12</text><unformattedText>|3Finding aid, pt. 6-12|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_parts_6_to_12/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_6_to_12/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 13-14</text><unformattedText>|3Finding aid, pt. 13-14|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_parts_13_and_14/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_13_and_14/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 15-18</text><unformattedText>|3Finding aid, pt. 15-18|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_parts_15_to_18/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_parts_15_to_18/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 19</text><unformattedText>|3Finding aid, pt. 19|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_part_19/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_part_19/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 20</text><unformattedText>|3Finding aid, pt. 20|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_part_20/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_part_20/Contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 21</text><unformattedText>|3Finding aid, pt. 21|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_part_21/contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_part_21/contents.aspx</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>42</indicators><text>Finding
+        aid, pt. 22</text><unformattedText>|3Finding aid, pt. 22|uhttp://www.ampltd.co.uk/digital_guides/cms_section_III_part_22/Contents.aspx</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://www.ampltd.co.uk/digital_guides/cms_section_III_part_22/Contents.aspx</url></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Fri, 24 May 2019 21:34:45 GMT
+recorded_with: VCR 4.0.0
