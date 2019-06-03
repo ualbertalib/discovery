@@ -15,10 +15,15 @@ RSpec.describe 'Search results have proper metadata', type: :feature do
 
   scenario 'User can view metadata of a database item' do
     visit '/catalog'
-    fill_in 'q', with: 'Advances in Polymer Science'
+    fill_in 'q', with: 'GamingDirectory.com'
     click_button 'search'
 
-    expect(first('#documents .document')).to have_text('Advances in Polymer Science')
+    expect(first('#documents .document')).to have_text('GamingDirectory.com')
     expect(first('#documents .document')).to have_text('Format: Database')
+
+    # Ensure conditions of use are displayed.
+    expect(first('#documents .document')).to have_link('https://www.library.ualberta.ca/about-us/policies/restricted-resource-info')
+    expect(first('#documents .document')).to have_link('https://www.library.ualberta.ca/about-us/policies/conditions-of-use/registration-required')
+    expect(first('#documents .document')).to have_link('https://www.library.ualberta.ca/about-us/policies/conditions-of-use/restricted')
   end
 end
