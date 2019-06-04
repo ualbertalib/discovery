@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// Following 3 are bootstrap dependencies.
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets

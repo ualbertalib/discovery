@@ -1,11 +1,11 @@
-<div class="modal-header">
+<div class="modal-header col-12">
   <h1 class="modal-title"><%= t('blacklight.email.form.title') %></h1>
   <button type="button" class="ajax-modal-close close" data-dismiss="modal" aria-hidden="true">×</button>
 </div>
 
 <%= form_tag url_for(controller: 'catalog', action: 'email'),
              id: 'email_form',
-             class: 'ajax_form',
+             class: 'ajax_form col-12',
              method: :post do %>
   <div class="modal-body">
     <%= render partial: '/flash_msg' %>

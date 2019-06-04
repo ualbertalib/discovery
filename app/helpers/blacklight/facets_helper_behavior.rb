@@ -161,7 +161,7 @@ module Blacklight::FacetsHelperBehavior
   # @return [String]
   def render_facet_count(num, options = {})
     classes = (options[:classes] || []) << 'facet-count'
-    content_tag('span', t('blacklight.search.facets.count', number: number_with_delimiter(num)), class: classes, style: 'width: ' + (number_with_delimiter(num).to_s.size + 1).to_s + 'ch;')
+    content_tag('span', t('blacklight.search.facets.count', number: number_with_delimiter(num)), class: classes)
   end
 
   ##

@@ -2044,12 +2044,6 @@ ul.foot-nav{
   margin-top: 0;
 }
 
-.modal-dialog, .range_limit {
-  .facet-count {
-    width: initial;
-  }
-}
-
 form.range_limit input.range_begin, form.range_limit input.range_end {
   width: 3.5em;
 }
@@ -2098,6 +2092,19 @@ form.range_limit input.range_begin, form.range_limit input.range_end {
 
 .ask-us {
   height: fit-content;
+}
+
+.navbar.limit-search {
+  border: 1px solid #ccc;
+  margin-bottom: 1em;
+
+  .facets-heading {
+    padding: 0;
+  }
+}
+
+.blacklight-catalog-citation .container h4 {
+  width: 100%;
 }
 
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
@@ -2377,6 +2384,11 @@ form.range_limit input.range_begin, form.range_limit input.range_end {
   }
   .form-inline.search-text-box {
     display: flex;
+  }
+
+  .navbar.limit-search {
+    border: none;
+    margin-bottom: 0;
   }
 }
 @media (min-width: 992px){

@@ -12,6 +12,9 @@
  *
  *
 */
+// Make font-size-base slightly smaller due to font size slightly increasing after bootstrap 4 upgrade.
+$font-size-base: 0.9rem;
+
 @import 'bootstrap';
 
 @import 'blacklight';
