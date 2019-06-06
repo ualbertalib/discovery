@@ -276,7 +276,7 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
-    rollbar (2.20.0)
+    rollbar (2.20.1)
       multi_json
     rsolr (1.0.13)
       builder (>= 2.1.2)
@@ -380,7 +380,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.6.0)
-    vcr (4.0.0)
+    vcr (5.0.0)
     warden (1.2.7)
       rack (>= 1.0)
     webmock (3.5.1)
