@@ -373,7 +373,6 @@ h2 span.small{
 .nav>li>a {
   font-size: 11px;
   padding: 5px 10px;
-  border-right: 1px solid #eee;
 }
 .nav>li.last>a {
   border-right:none;
@@ -2185,6 +2184,73 @@ form.range_limit input.range_begin, form.range_limit input.range_end {
   .news-square{
       padding-bottom: 39%;
     }
+}
+
+//Item show page styles.
+.full-record-book-jacket img {
+  width: 100%;
+}
+
+.show-tools {
+  border: none;
+  padding: 0;
+  .nav-stacked>li.nav-item{
+    width: 100%;
+    max-width: -webkit-fill-available;
+    a {
+      padding: 5px 0;
+    }
+  }
+
+  .index-document-functions {
+    padding: 0;
+  }
+}
+
+.document {
+  dt {
+    color: #777777;
+    font-weight: initial;
+    padding-right: 3px;
+    float: left;
+  }
+  dl {
+    flex-direction: column;
+  }
+
+  .blacklight-contents_tesim ul{
+    padding-top: 30px
+  }
+}
+
+.where-is-this {
+  .where-is-this-item {
+    float: left;
+    clear: left;
+    display: inline-block;
+
+    a {
+      font-weight: bold;
+    }
+  }
+
+  .where-is-this-item-title {
+    color:#666;
+  }
+
+  .where-is-this-buttons {
+    float: right;
+  }
+
+  .fa-info-circle {
+    color: #3278bd;
+  }
+
+  .usage-rights iframe {
+    margin-left: -8px;
+    margin-right: -8px;
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px){
