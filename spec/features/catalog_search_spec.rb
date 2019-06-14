@@ -21,8 +21,8 @@ RSpec.describe 'Catalog Search', type: :feature do
     VCR.use_cassette('sfx_result') do
       visit 'catalog/954921333008'
       expect(page).to have_text('Accountancy') # title
-      expect(page).to have_link('Business Source Complete') # Subscription
-      expect(page).to have_link('Factiva') # Subscription
+      expect(page).to have_text('Business Source Complete') # Subscription
+      expect(page).to have_text('Factiva') # Subscription
     end
   end
 end
