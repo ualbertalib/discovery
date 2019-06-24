@@ -56,6 +56,11 @@
                   <% end %>
                 <% end %>
               </span>
+
+              <!--item type-->
+              <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
+                <span class="where-is-this-item"><span class="where-is-this-item-title">item type: </span><%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %></span>
+              <% end %>
             </div>
 
             <!--buttons-->
@@ -112,6 +117,7 @@
               <% if item[1][:note] && !item[1][:note].empty? %>
                 <span class="where-is-this-item"><span class="where-is-this-item-title">note: </span><%= item[1][:note].html_safe %></span>
               <% end %>
+
               <!--Our usage rights-->
               <% if item[1][:our_target] %>
                 <span class="where-is-this-item usage-rights"><span class="where-is-this-item-title">our usage rights: </span><%= item[1][:our_target].html_safe %></span>
@@ -143,18 +149,18 @@
       <% for item in @holdings %>
         <tr>
           <td>
+            <!--Access-->
+            <span class="where-is-this-item">
+              <strong><%= item[:access_title] %></strong>
+              <a href="<%= item[:access_url] %>" target="_blank"><%= icon('fas', 'info-circle') %></a>
+            </span>
+
             <div class="d-inline-block">
               <!--Call number-->
               <span class="where-is-this-item"><span class="where-is-this-item-title">call number: </span><%= item[:callnumber] %></span>
 
               <!--Status-->
               <span class="where-is-this-item"><span class="where-is-this-item-title">status: </span><%= item[:status]  %></span>
-
-              <!--Access-->
-              <span class="where-is-this-item"><span class="where-is-this-item-title">access: </span>
-                <strong><%= item[:access_title] %></strong>
-                <a href="<%= item[:access_url] %>" target="_blank"><%= icon('fas', 'info-circle') %></a>
-              </span>
             </div>
 
             <!--buttons-->

@@ -2194,7 +2194,7 @@ form.range_limit input.range_begin, form.range_limit input.range_end {
 .show-tools {
   border: none;
   padding: 0;
-  .nav-stacked>li.nav-item{
+  .nav-stacked>li.nav-item {
     width: 100%;
     max-width: -webkit-fill-available;
     a {
@@ -2204,6 +2204,10 @@ form.range_limit input.range_begin, form.range_limit input.range_end {
 
   .index-document-functions {
     padding: 0;
+  }
+
+  label.toggle_bookmark {
+    margin-bottom: 0;
   }
 }
 
@@ -2228,6 +2232,7 @@ form.range_limit input.range_begin, form.range_limit input.range_end {
     float: left;
     clear: left;
     display: inline-block;
+    width: 100%;
 
     a {
       font-weight: bold;
