@@ -20,6 +20,7 @@ RSpec.describe 'Search results have proper metadata', type: :feature do
 
     expect(first('#documents .document')).to have_text('GamingDirectory.com')
     expect(first('#documents .document')).to have_text('Format: Database')
+    expect(first('#documents .document')).to have_text('Language: English')
 
     # Ensure conditions of use are displayed.
     expect(first('#documents .document')).to have_link('https://www.library.ualberta.ca/about-us/policies/restricted-resource-info')
