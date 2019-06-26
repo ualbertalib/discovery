@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - Added feature tests for search faceting [#1622](https://github.com/ualbertalib/discovery/issues/1622)
+- Added the ability to search by a cancelled isbn (020$z.) Ensure blacklight_solr_conf is deployed after this release is deployed [#1645](https://github.com/ualbertalib/discovery/issues/1645)
 
 ### Fixed
 - fixed error in dangerfile [#1602](https://github.com/ualbertalib/discovery/issues/1602)
