@@ -1,7 +1,6 @@
 GIT
-  remote: https://github.com/ConnorSheremeta/blacklight
-  revision: 2f51db7d08ec9f584dda6e61cb77c69142d34938
-  branch: upgrade_to_bootstrap_4
+  remote: https://github.com/ualbertalib/blacklight
+  revision: 0a10731226978a986698c623163dbd14d0c16a4c
   specs:
     blacklight (5.15.0)
       bootstrap (~> 4.3.1)
@@ -12,9 +11,8 @@ GIT
       rsolr (~> 1.0.11)
 
 GIT
-  remote: https://github.com/ConnorSheremeta/blacklight-marc
-  revision: bc45979324fa31fe3e6ceacce16268a09dab4c8e
-  branch: librarian-view-modal-title
+  remote: https://github.com/ualbertalib/blacklight-marc
+  revision: d2db7963bcae106a858e9ef227e216e25ab39a6f
   specs:
     blacklight-marc (5.10.0)
       blacklight (~> 5.10)
@@ -22,9 +20,8 @@ GIT
       rails
 
 GIT
-  remote: https://github.com/ConnorSheremeta/blacklight_range_limit
-  revision: b5585ed548c7e8cc467ce5be2bd52c68e8506093
-  branch: slider_and_graph_not_displayed_after_bootstrap_upgrade
+  remote: https://github.com/ualbertalib/blacklight_range_limit
+  revision: 3f6bc5c01e5cc6c3480abece120098dd4e5678c0
   specs:
     blacklight_range_limit (5.2.0)
       blacklight (~> 5.15)

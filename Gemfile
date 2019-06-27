@@ -15,12 +15,11 @@ gem 'sassc-rails', '~> 2.1'
 gem 'uglifier', '>= 1.3.0'
 
 # blacklight stuff
-# TODO: make following 3 git gems link to ualbertalib's fork once PR's are approved and regenerate Gemfile.lock.
-gem 'blacklight', git: 'https://github.com/ConnorSheremeta/blacklight', branch: 'upgrade_to_bootstrap_4'
-gem 'blacklight-marc', git: 'https://github.com/ConnorSheremeta/blacklight-marc', branch: 'librarian-view-modal-title'
+gem 'blacklight', git: 'https://github.com/ualbertalib/blacklight'
+gem 'blacklight-marc', git: 'https://github.com/ualbertalib/blacklight-marc'
 gem 'blacklight_advanced_search'
 gem 'blacklight_google_analytics'
-gem 'blacklight_range_limit', git: 'https://github.com/ConnorSheremeta/blacklight_range_limit', branch: 'slider_and_graph_not_displayed_after_bootstrap_upgrade'
+gem 'blacklight_range_limit', git: 'https://github.com/ualbertalib/blacklight_range_limit'
 
 # Authentication
 gem 'devise'
