@@ -11,6 +11,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Add feature tests for search results having logo if UofA holding [#1632](https://github.com/ualbertalib/discovery/issues/1632)
 - Added feature tests for search results per page [#1630](https://github.com/ualbertalib/discovery/issues/1630)
 - Added feature tests for search faceting [#1622](https://github.com/ualbertalib/discovery/issues/1622)
+- Added feature tests for search results containing proper metadata [#1670](https://github.com/ualbertalib/discovery/issues/1670)
 - Added feature tests for clearing search terms [#1668](https://github.com/ualbertalib/discovery/issues/1668)
 - Added Kule collection ingest task [#957](https://github.com/ualbertalib/discovery/issues/957)
 
