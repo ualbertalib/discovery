@@ -6,61 +6,65 @@
 # item view. While "document tools" contains external export type
 # functions by default only on detail.
 -%>
-<div class="panel panel-default show-tools">
-  <div class="panel-heading">
-    <%= t('blacklight.tools.title') %>
-  </div>
+<div class="show-tools">
+  <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
+    <%= render 'place_hold' %>
+  <% end %>
 
-  <div class="panel-body">
-    <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
-      <%= render 'place_hold' %>
+  <div class="full-record-book-jacket d-none d-md-block">
+    <% if @document[:isbn_t] %>
+      <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].first %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
     <% end %>
-    <ul class="nav">
-      <% if @document.export_formats.keys.include?( :refworks_marc_txt ) %>
-        <li class="refworks">
-          <%= link_to t('blacklight.tools.refworks'), refworks_export_url(id: @document), target: '_blank' %>
-        </li>
-      <% end %>
-
-      <% if @document.export_formats.keys.include?( :endnote ) %>
-        <li class="endnote">
-          <%= link_to t('blacklight.tools.endnote'), catalog_path(@document, format: 'endnote') %>
-        </li>
-      <% end %>
-
-      <li>
-        <%= link_to 'Librarian View', librarian_view_catalog_path(id: @document), id: 'citeLink', class: 'lightboxLink' %>
-      </li>
-
-      <li class="email">
-        <%= link_to t('Email me this item'), email_catalog_path(id: @document), id: 'emailLink', data: { ajax_modal: 'trigger' } %>
-      </li>
-
-      <li class="sms">
-        <%= link_to t('Text me a link to this item'), sms_catalog_path(id: @document), id: 'smsLink', data: { ajax_modal: 'trigger' } %>
-      </li>
-
-      <li class="send_correction">
-        <%= link_to 'Send Correction', new_catalog_correction_path(catalog_id: @document['id']) %>
-      </li>
-
-      <li><a href="/bookmarks">Go to Bookmarks</a></li>
-      <li><a href="/search_history">View Search History</a></li>
-      <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>
-        <li class="cite">
-          <%= link_to 'View Citation (MLA/APA/Chicago)', citation_catalog_path(id: @document), id: 'citeLink', class: 'lightboxLink' %>
-        </li>
-      <% end %>
-    </ul>
-    <%# bookmark functions for items/docs -%>
-    <%= render_index_doc_actions @document, wrapping_class: 'index-document-functions col-sm-3 col-lg-2' %>
   </div>
+
+  <%# bookmark functions for items/docs -%>
+  <%= render_index_doc_actions @document, wrapping_class: 'index-document-functions col-sm-3 col-lg-2' %>
+
+  <ul class="nav nav-stacked">
+    <li class= "nav-item"><a href="/bookmarks">Go to Bookmarks</a></li>
+
+    <li class="nav-item email">
+      <%= link_to t('Email me this item'), email_catalog_path(id: @document), id: 'emailLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
+    </li>
+
+    <li class="nav-item sms">
+      <%= link_to t('Text me a link to this item'), sms_catalog_path(id: @document), id: 'smsLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
+    </li>
+
+    <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>
+      <li class="nav-item cite">
+        <%= link_to 'View Citation (MLA/APA/Chicago)', citation_catalog_path(id: @document), id: 'citeLink', class: 'nav-link lightboxLink' %>
+      </li>
+    <% end %>
+
+    <li class= "nav-item">
+      <%= link_to 'Librarian View', librarian_view_catalog_path(id: @document), id: 'citeLink', class: 'nav-link lightboxLink' %>
+    </li>
+
+    <% if @document.export_formats.keys.include?( :refworks_marc_txt ) %>
+      <li class="nav-item refworks">
+        <%= link_to t('blacklight.tools.refworks'), refworks_export_url(id: @document), target: '_blank', class: 'nav-link' %>
+      </li>
+    <% end %>
+
+    <% if @document.export_formats.keys.include?( :endnote ) %>
+      <li class="nav-item endnote">
+        <%= link_to t('blacklight.tools.endnote'), catalog_path(@document, format: 'endnote', class: 'nav-link') %>
+      </li>
+    <% end %>
+
+    <li class="nav-item send_correction">
+      <%= link_to 'Send Correction', new_catalog_correction_path(catalog_id: @document['id']), class: 'nav-link' %>
+    </li>
+
+    <li class= "nav-item"><a href="/search_history">View Search History</a></li>
+  </ul>
 </div>
 
 <% unless @document.more_like_this.empty? %>
-  <div class="panel panel-default">
-    <div class="panel-heading">More Like This</div>
-    <div class="panel-body">
+  <div class="card">
+    <div class="card-header">More Like This</div>
+    <div class="card-block">
       <%= render collection: @document.more_like_this, partial: 'show_more_like_this', as: :document %>
     </div>
   </div>

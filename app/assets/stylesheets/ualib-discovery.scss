@@ -270,7 +270,7 @@ font-size: 18px;
 }
 #electronic_access{
   font-size: 16px;
-  padding: 25px;
+  padding: 15px;
 }
 #electronic_access span{
   font-size: 14px;
@@ -289,17 +289,12 @@ font-size: 18px;
   background-color:#eceff4;
   border: 1px solid #B2C6D1;
   color: #000;
-  margin-left: 10px;
   border-radius: 5px;
 }
 #electronic_access a:hover, #electronic_access a:focus, #electronic_access a:active{
   text-decoration: none;
   background-color:#d1dde4;
   color: #333;
-}
-#electronic_access .row{
-  margin-bottom: 5px;
-  padding-left: 20px;
 }
 .outlined{
   border: solid 1px #d9e4ea;
@@ -339,13 +334,6 @@ font-size: 18px;
 .document-metadata dd, .document-metadata dt{
   font-size: 15px;
 }
-.dl-horizontal dt {
-  width: 220px;
-  margin-right: 5px;
-}
-.dl-horizontal dd {
-  margin-left: 0px;
-}
 
 #documents .document {
   margin-top: 2px;
@@ -365,12 +353,9 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
   line-height: 28px;
   font-size: 18px;
 }
-.results-img{
-  padding-left: 118px;
-  margin-top: -10px;
-}
 .results-img img{
   height: 90px;
+  float: right;
 }
 .blacklight-isbn_t{
   display: none;
@@ -440,14 +425,14 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 .holding-status, .holding-type{
   text-transform: capitalize;
 }
-.panel-default > .panel-heading{
+.card-header{
   background-color: #eceff4;
 }
 #previousNextDocument{
   padding-bottom: 10px;
 }
 
-.panel .nav>li>a{
+.card .nav>li>a{
   border-right:none;
 }
 
@@ -608,14 +593,8 @@ padding: 15px 0;
     font-size: 36px;
     margin-top: 0px;
   }
-  .full-record-book-jacket{
-    padding-top: 80px;
-  }
   h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
     font-size: 24px;
-  }
-  .dl-horizontal dd {
-      margin-left: 225px;
   }
 }
 
@@ -637,16 +616,13 @@ padding: 15px 0;
   .banner { display: none; }
   .foot-nav {display: none; }
   .copyright {display: none; }
-  .dl-horizontal {
-    margin-bottom: 0;
-  }
-  .dl-horizontal dt {
+  dt {
     font-size: 75%;
     float: left;
     width: auto;
     margin-left: 0;
   }
-  .dl-horizontal dd {
+  dd {
     font-size: 75%;
     margin-left: 5px;
   }

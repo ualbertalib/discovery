@@ -10,25 +10,24 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
-
- *= require 'blacklight'
- *= require 'ualib-custom'
-
- *= require rails_bootstrap_forms
- *= require bootstrap-forms-custom
- *
- * Used by blacklight_range_limit
- *= require  'blacklight_range_limit'
- *
- *= require 'sticky-footer'
- *= require 'ualib-discovery'
  *
 */
+// Make font-size-base slightly smaller due to font size slightly increasing after bootstrap 4 upgrade.
+$font-size-base: 0.9rem;
 
-@font-face {
-  font-family: 'Glyphicons Halflings';
-  src: url('glyphicons-halflings-regular.eot');
-  src: url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-      url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+@import 'bootstrap';
+
+@import 'blacklight';
+@import 'ualib-custom';
+
+@import 'rails_bootstrap_forms';
+@import 'bootstrap-forms-custom';
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+//Used by blacklight_range_limit
+@import  'blacklight_range_limit';
+
+@import 'sticky-footer';
+@import 'ualib-discovery';

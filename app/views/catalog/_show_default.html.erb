@@ -1,5 +1,5 @@
 <%# default partial to display solr document fields in catalog show view -%>
-<dl class="dl-horizontal dl-invert">
+<dl>
   <% @linked_fields = ['uniform_title_tesim'] %>
   <% document_show_fields(document).each do |solr_fname, field| -%>
     <% if should_render_show_field? document, field %>
@@ -10,6 +10,10 @@
       <% if @linked_fields.include? solr_fname %>
         <dd class="blacklight-<%= solr_fname.parameterize %>">
           <%= link_to value, catalog_index_path(q: "\"#{value}\"") %>
+        </dd>
+      <% elsif solr_fname == "title_series_t" %>
+        <dd class="blacklight-<%= solr_fname.parameterize %>">
+          <%= link_to value, catalog_index_path(title: "\"#{value}\"", search_field: 'advanced') %>
         </dd>
       <% elsif solr_fname == "author_display" %>
         <dd class="blacklight-<%= solr_fname.parameterize %>">
@@ -29,11 +33,11 @@
             <% end %>
           </ul>
         </dd>
-    <% else %>
-      <dd class="blacklight-<%= solr_fname.parameterize %>">
-        <%= value %>
-      </dd>
-    <% end %>
+      <% else %>
+        <dd class="blacklight-<%= solr_fname.parameterize %>">
+          <%= value %>
+        </dd>
+      <% end %>
   <% end -%>
 <% end -%>
 </dl>
