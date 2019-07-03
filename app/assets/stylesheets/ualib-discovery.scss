@@ -339,13 +339,6 @@ font-size: 18px;
 .document-metadata dd, .document-metadata dt{
   font-size: 15px;
 }
-.dl-horizontal dt {
-  width: 220px;
-  margin-right: 5px;
-}
-.dl-horizontal dd {
-  margin-left: 0px;
-}
 
 #documents .document {
   margin-top: 2px;
@@ -365,12 +358,9 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
   line-height: 28px;
   font-size: 18px;
 }
-.results-img{
-  padding-left: 118px;
-  margin-top: -10px;
-}
 .results-img img{
   height: 90px;
+  float: right;
 }
 .blacklight-isbn_t{
   display: none;
@@ -440,14 +430,14 @@ h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
 .holding-status, .holding-type{
   text-transform: capitalize;
 }
-.panel-default > .panel-heading{
+.card-header{
   background-color: #eceff4;
 }
 #previousNextDocument{
   padding-bottom: 10px;
 }
 
-.panel .nav>li>a{
+.card .nav>li>a{
   border-right:none;
 }
 
@@ -614,9 +604,6 @@ padding: 15px 0;
   h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
     font-size: 24px;
   }
-  .dl-horizontal dd {
-      margin-left: 225px;
-  }
 }
 
 @media (min-width: 1200px){
@@ -637,16 +624,13 @@ padding: 15px 0;
   .banner { display: none; }
   .foot-nav {display: none; }
   .copyright {display: none; }
-  .dl-horizontal {
-    margin-bottom: 0;
-  }
-  .dl-horizontal dt {
+  dt {
     font-size: 75%;
     float: left;
     width: auto;
     margin-left: 0;
   }
-  .dl-horizontal dd {
+  dd {
     font-size: 75%;
     margin-left: 5px;
   }

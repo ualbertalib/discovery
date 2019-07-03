@@ -10,7 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+// Following 3 are bootstrap dependencies.
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
 //= require 'blacklight_advanced_search'
 
 //= require jquery_ujs

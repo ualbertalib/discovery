@@ -6,49 +6,49 @@
 # item view. While "document tools" contains external export type
 # functions by default only on detail.
 -%>
-<div class="panel panel-default show-tools">
-  <div class="panel-heading">
+<div class="card card-body show-tools">
+  <div class="card-header">
     <%= t('blacklight.tools.title') %>
   </div>
 
-  <div class="panel-body">
+  <div class="card-block">
     <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
       <%= render 'place_hold' %>
     <% end %>
-    <ul class="nav">
+    <ul class="nav nav-stacked">
       <% if @document.export_formats.keys.include?( :refworks_marc_txt ) %>
-        <li class="refworks">
-          <%= link_to t('blacklight.tools.refworks'), refworks_export_url(id: @document), target: '_blank' %>
+        <li class="nav-item refworks">
+          <%= link_to t('blacklight.tools.refworks'), refworks_export_url(id: @document), target: '_blank', class: 'nav-link' %>
         </li>
       <% end %>
 
       <% if @document.export_formats.keys.include?( :endnote ) %>
-        <li class="endnote">
-          <%= link_to t('blacklight.tools.endnote'), catalog_path(@document, format: 'endnote') %>
+        <li class="nav-item endnote">
+          <%= link_to t('blacklight.tools.endnote'), catalog_path(@document, format: 'endnote', class: 'nav-link') %>
         </li>
       <% end %>
 
-      <li>
-        <%= link_to 'Librarian View', librarian_view_catalog_path(id: @document), id: 'citeLink', class: 'lightboxLink' %>
+      <li class= "nav-item">
+        <%= link_to 'Librarian View', librarian_view_catalog_path(id: @document), id: 'citeLink', class: 'nav-link lightboxLink' %>
       </li>
 
-      <li class="email">
-        <%= link_to t('Email me this item'), email_catalog_path(id: @document), id: 'emailLink', data: { ajax_modal: 'trigger' } %>
+      <li class="nav-item email">
+        <%= link_to t('Email me this item'), email_catalog_path(id: @document), id: 'emailLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
       </li>
 
-      <li class="sms">
-        <%= link_to t('Text me a link to this item'), sms_catalog_path(id: @document), id: 'smsLink', data: { ajax_modal: 'trigger' } %>
+      <li class="nav-item sms">
+        <%= link_to t('Text me a link to this item'), sms_catalog_path(id: @document), id: 'smsLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
       </li>
 
-      <li class="send_correction">
-        <%= link_to 'Send Correction', new_catalog_correction_path(catalog_id: @document['id']) %>
+      <li class="nav-item send_correction">
+        <%= link_to 'Send Correction', new_catalog_correction_path(catalog_id: @document['id']), class: 'nav-link' %>
       </li>
 
-      <li><a href="/bookmarks">Go to Bookmarks</a></li>
-      <li><a href="/search_history">View Search History</a></li>
+      <li class= "nav-item"><a href="/bookmarks">Go to Bookmarks</a></li>
+      <li class= "nav-item"><a href="/search_history">View Search History</a></li>
       <% if (@document.respond_to?(:export_as_mla_citation_txt) || @document.respond_to?(:export_as_apa_citation_txt)) %>
-        <li class="cite">
-          <%= link_to 'View Citation (MLA/APA/Chicago)', citation_catalog_path(id: @document), id: 'citeLink', class: 'lightboxLink' %>
+        <li class="nav-item cite">
+          <%= link_to 'View Citation (MLA/APA/Chicago)', citation_catalog_path(id: @document), id: 'citeLink', class: 'nav-link lightboxLink' %>
         </li>
       <% end %>
     </ul>
@@ -58,9 +58,9 @@
 </div>
 
 <% unless @document.more_like_this.empty? %>
-  <div class="panel panel-default">
-    <div class="panel-heading">More Like This</div>
-    <div class="panel-body">
+  <div class="card">
+    <div class="card-header">More Like This</div>
+    <div class="card-block">
       <%= render collection: @document.more_like_this, partial: 'show_more_like_this', as: :document %>
     </div>
   </div>
