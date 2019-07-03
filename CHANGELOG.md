@@ -12,11 +12,13 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Added feature tests for search results per page [#1630](https://github.com/ualbertalib/discovery/issues/1630)
 - Added feature tests for search faceting [#1622](https://github.com/ualbertalib/discovery/issues/1622)
 - Added the ability to search by a cancelled isbn (020$z.) Ensure a new index is built after this release and blacklight_solr_conf is deployed [#1645](https://github.com/ualbertalib/discovery/issues/1645)
+- Added feature tests for search results containing proper metadata [#1670](https://github.com/ualbertalib/discovery/issues/1670)
 - Added feature tests for clearing search terms [#1668](https://github.com/ualbertalib/discovery/issues/1668)
 - Added Kule collection ingest task [#957](https://github.com/ualbertalib/discovery/issues/957)
 
 ## Changed
 - removed link from Series title on catalog show page [#1542](https://github.com/ualbertalib/discovery/issues/1542)
+- Upgrade bootstrap to version 4.3.1 [#1601](https://github.com/ualbertalib/discovery/issues/1601)
 
 ### Fixed
 - fixed error in dangerfile [#1602](https://github.com/ualbertalib/discovery/issues/1602)

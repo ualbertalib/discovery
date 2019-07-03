@@ -12,7 +12,7 @@
         <% end %>
       </div>
 
-      <div class="pull-right search-widgets">
+      <div class="float-md search-widgets">
         <%= link_back_to_catalog(label: 'Back to Search Results', class: 'btn btn-ltblue', id: 'no-dot') %>
         <%= link_to 'Start Over', root_path, class: 'btn btn-ltblue', id: 'no-dot' %>
       </div>
@@ -29,7 +29,7 @@
       <% if @document.to_h["databasedescription_tesim"] %>
         <%= @document.to_h['databasedescription_tesim'].first.html_safe %>
       <% end %>
-      <div class="hidden-xs">
+      <div class="d-none d-md-block">
         <% if @subjects %>
           <div id="subject-list">
             <p class="blacklight-subject_topic_facet">Subjects</p>
@@ -49,7 +49,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-sm-3 full-record-book-jacket hidden-xs">
+    <div class="col-sm-3 full-record-book-jacket d-none d-md-block">
       <% if @document[:isbn_t] %>
         <img src="https://books.google.com/books?vid=ISBN<%= @document[:isbn_t].first %>&amp;printsec=frontcover&amp;img=1&amp;zoom=1">
       <% end %>
@@ -66,12 +66,12 @@
   <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
 <% end %>
 
-<div id="sidebar" class="col-sm-3 top-margin hidden-xs">
+<div id="sidebar" class="col-sm-3 top-margin d-none d-md-block">
   <%= render_document_sidebar_partial %>
 </div>
 
 <%# TODO: should be able to do this smarter on mobile instead of rendering the html twice in the source %>
-<div class="visible-xs">
+<div class="d-md-none">
   <% if @urls.blank? && @document["source"] && @document["source"].first == "Symphony" && @holdable == "true" %>
     <%= render 'place_hold' %>
   <% end %>

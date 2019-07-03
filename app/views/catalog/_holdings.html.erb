@@ -7,7 +7,7 @@
           <th class="call-number">Call Number</th>
           <th>Location / Status</th>
           <th>Library</th>
-          <th class="hidden-xs">Item Type</th>
+          <th class="d-none d-md-block">Item Type</th>
           <th>Action</th>
         </tr>
 
@@ -59,7 +59,7 @@
             <% end %>
 
             <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
-              <td class="holding-type hidden-xs">
+              <td class="holding-type d-none d-md-block">
                 <%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %>
               </td>
             <% else %>
