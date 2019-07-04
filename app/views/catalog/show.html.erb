@@ -46,7 +46,7 @@
                     <% subject.each_with_index do |asubject, index| %>
                       <%= link_to asubject, catalog_index_path(q: subject_query(subject.take(index + 1)), view: 'brief', search_field: 'subject'), data: { turbolinks: false } %>
                       <% unless index == subject.size - 1 %>
-                        <span class="glyphicon glyphicon-menu-right"></span>
+                        <%= icon('fas', 'angle-right') %>
                       <% end %>
                     <% end %>
                   </li>
