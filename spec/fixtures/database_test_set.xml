@@ -435,3 +435,72 @@ Also includes full text from a number of journals, conference proceedings, and r
   <enableproxy type="integer">1</enableproxy>
 </hash>
 
+<hash>
+  <id>11710698</id>
+  <name>GamingDirectory.com</name>
+  <description/>
+  <url>https://web.library.ualberta.ca/databases/databaseinfo/index.cfm?ID=4637</url>
+  <site-id>165</site-id>
+  <type-id>10</type-id>
+  <owner-id>101511</owner-id>
+  <az-vendor-id>27150</az-vendor-id>
+  <meta>
+    <enable-proxy type="integer">0</enable-proxy>
+    <target>2</target>
+    <tn-url/>
+    <tn-height/>
+    <tn-width/>
+    <more-info/>
+    <desc-pos type="integer">0</desc-pos>
+    <tn-alt-text/>
+  </meta>
+  <created>2015-06-01 16:27:29</created>
+  <updated>2017-05-09 15:26:57</updated>
+  <slug-id>0</slug-id>
+  <enable-hidden>0</enable-hidden>
+  <az-vendor-name>English</az-vendor-name>
+  <icons type="array">
+    <icon>
+      <id>6665</id>
+      <site-id>165</site-id>
+      <file>ualib-logo.png</file>
+      <description>licensed for  U of A</description>
+      <url>https://www.library.ualberta.ca/about-us/policies/restricted-resource-info</url>
+      <content-id>11710698</content-id>
+      <icon-id>6665</icon-id>
+      <custom-url/>
+    </icon>
+    <icon>
+      <id>15484</id>
+      <site-id>165</site-id>
+      <file>cou-user.png</file>
+      <description>User Registration Required</description>
+      <url>https://www.library.ualberta.ca/about-us/policies/conditions-of-use/registration-required</url>
+      <content-id>11710698</content-id>
+      <icon-id>15484</icon-id>
+      <custom-url/>
+    </icon>
+    <icon>
+      <id>15485</id>
+      <site-id>165</site-id>
+      <file>cou-sign-in.png</file>
+      <description>CCID Login Required</description>
+      <url>https://www.library.ualberta.ca/about-us/policies/conditions-of-use/restricted</url>
+      <content-id>11710698</content-id>
+      <icon-id>15485</icon-id>
+      <custom-url/>
+    </icon>
+  </icons>
+  <subject type="array">
+    <subject>BUSINESS</subject>
+    <subject>Social Sciences</subject>
+    <subject>Sociology</subject>
+  </subject>
+  <type>Database</type>
+  <electronic>Online</electronic>
+  <location>University of Alberta Internet</location>
+  <title>GamingDirectory.com</title>
+  <databasedescription>&lt;strong&gt;Also known as: |Gaming Directory| &lt;/strong&gt; Lists casino properties worldwide with a complete property profile and executive contact data by department and position. Updated daily.&lt;br /&gt;</databasedescription>
+  <enableproxy type="integer">0</enableproxy>
+  <languagenote>English</languagenote>
+</hash>
