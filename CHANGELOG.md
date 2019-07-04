@@ -18,6 +18,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## Changed
 - removed link from Series title on catalog show page [#1542](https://github.com/ualbertalib/discovery/issues/1542)
 - Upgrade bootstrap to version 4.3.1 [#1601](https://github.com/ualbertalib/discovery/issues/1601)
+- Made export/request features language consistent [#1607](https://github.com/ualbertalib/discovery/issues/1607)
 
 ### Fixed
 - fixed error in dangerfile [#1602](https://github.com/ualbertalib/discovery/issues/1602)
