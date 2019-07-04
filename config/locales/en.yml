@@ -27,6 +27,7 @@ en:
   request_viewing: 'Request Viewing'
   request_form_success: 'Thank you! We have received your request and will be in contact shortly.'
   request_form_error: 'There was an problem sending your request. Please fix any errors and try again.'
+  text_this: 'Text this'
   this_email_was_generated_by_html: '*** this email generated automatically from %{url} ***'
 
   bpsc_read_on_site_requests:
