@@ -65,7 +65,7 @@ group :development do
   gem 'spring'
 
   # Debug
-  gem 'debase', '0.2.2'
+  gem 'debase', '0.2.3'
   gem 'ruby-debug-ide'
 end
 
