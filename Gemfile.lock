@@ -1,3 +1,32 @@
+GIT
+  remote: https://github.com/ualbertalib/blacklight
+  revision: 0a10731226978a986698c623163dbd14d0c16a4c
+  specs:
+    blacklight (5.15.0)
+      bootstrap (~> 4.3.1)
+      deprecation
+      kaminari (>= 0.15)
+      nokogiri (~> 1.6)
+      rails (>= 3.2.6, < 5)
+      rsolr (~> 1.0.11)
+
+GIT
+  remote: https://github.com/ualbertalib/blacklight-marc
+  revision: d2db7963bcae106a858e9ef227e216e25ab39a6f
+  specs:
+    blacklight-marc (5.10.0)
+      blacklight (~> 5.10)
+      marc (>= 0.4.3, < 1.1)
+      rails
+
+GIT
+  remote: https://github.com/ualbertalib/blacklight_range_limit
+  revision: 3f6bc5c01e5cc6c3480abece120098dd4e5678c0
+  specs:
+    blacklight_range_limit (5.2.0)
+      blacklight (~> 5.15)
+      rails (>= 3.0, < 5.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -47,7 +76,7 @@ GEM
       io-like (~> 0.3.0)
     arel (6.0.4)
     ast (2.4.0)
-    autoprefixer-rails (9.4.10.1)
+    autoprefixer-rails (9.5.1.1)
       execjs
     bcrypt (3.1.12)
     better_errors (2.5.1)
@@ -64,28 +93,14 @@ GEM
       smart_properties
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    blacklight (5.15.0)
-      bootstrap-sass (~> 3.2)
-      deprecation
-      kaminari (>= 0.15)
-      nokogiri (~> 1.6)
-      rails (>= 3.2.6, < 5)
-      rsolr (~> 1.0.11)
-    blacklight-marc (5.10.0)
-      blacklight (~> 5.10)
-      marc (>= 0.4.3, < 1.1)
-      rails
     blacklight_advanced_search (5.3.1)
       blacklight (~> 5.15)
       parslet
     blacklight_google_analytics (0.0.1.pre3)
-    blacklight_range_limit (5.2.0)
-      blacklight (~> 5.15)
-      jquery-rails
-      rails (>= 3.0, < 5.0)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     bootstrap_form (2.7.0)
     brakeman (4.5.1)
     builder (3.2.3)
@@ -203,7 +218,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    marc (1.0.2)
+    marc (1.0.3)
       scrub_rb (>= 1.0.1, < 2)
       unf
     method_source (0.9.2)
@@ -230,6 +245,7 @@ GEM
     parser (2.6.0.0)
       ast (~> 2.4.0)
     parslet (1.8.2)
+    popper_js (1.14.5)
     powerpack (0.1.2)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -377,7 +393,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.5)
+    unf_ext (0.0.7.6)
     unicode-display_width (1.6.0)
     vcr (5.0.0)
     warden (1.2.7)
@@ -398,11 +414,12 @@ DEPENDENCIES
   addressable (~> 2.6.0)
   better_errors (>= 2.3.0)
   binding_of_caller
-  blacklight (= 5.15.0)
-  blacklight-marc (~> 5.10.0)
+  blacklight!
+  blacklight-marc!
   blacklight_advanced_search
   blacklight_google_analytics
-  blacklight_range_limit (~> 5.2.0)
+  blacklight_range_limit!
+  bootstrap (~> 4.3.1)
   bootstrap_form (~> 2.7.0)
   brakeman
   capybara

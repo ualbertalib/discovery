@@ -4,17 +4,17 @@
   <a name="top"></a>
 </div>
 
-<div class="container-fluid hidden-xs"> <!-- UofA Blade -->
+<div class="container-fluid d-none d-md-block"> <!-- UofA Blade -->
   <div class="container">
     <div class="row">
       <ul class="nav navbar-nav">
-        <li><a href="https://ualberta.ca">UAlberta Home</a></li>
-        <li><a href="https://directory.ualberta.ca/">Find a Person</a></li>
-        <li><a href="https://www.onecard.ualberta.ca/">ONEcard</a></li>
-        <li><a href="https://www.beartracks.ualberta.ca">Bear Tracks</a></li>
-        <li><a href="https://www.ualberta.ca/maps">Maps</a></li>
-        <li><a href="https://apps.ualberta.ca">Email &amp; Apps</a></li>
-        <li class="last"><a href="https://eclass.srv.ualberta.ca/portal">eClass</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://ualberta.ca">UAlberta Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://directory.ualberta.ca/">Find a Person</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.onecard.ualberta.ca/">ONEcard</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.beartracks.ualberta.ca">Bear Tracks</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.ualberta.ca/maps">Maps</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://apps.ualberta.ca">Email &amp; Apps</a></li>
+        <li class="nav-item last"><a class="nav-link" href="https://eclass.srv.ualberta.ca/portal">eClass</a></li>
       </ul>
     </div>
   </div>
@@ -23,28 +23,28 @@
 <div class="container-fluid banner-container"><!-- Logo, banner, ask-us and mobile navigation -->
   <div class="container banner">
     <div class="row">
-      <div class="col-sm-6 col-xs-7">
+      <div class="col-sm-6 col-7">
 
         <%= link_to cms_root_url do %>
           <%= image_tag 'ualib-logo-sm.png', class: 'ualogo', alt: 'University of Alberta Libraries' %>
         <% end %>
 
       </div>
-      <div class="col-sm-6 col-xs-3 ask-sm">
+      <div class="col-sm-4 col-3 ask-sm">
         <%= link_to 'Ask Us', cms_root_url('ask-us'), class: 'ask-main' %>
       </div>
-      <div class="col-xs-2 visible-xs">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <div class="col-2 d-md-none">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <h2>menu</h2><!-- Mobile menu button -->
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="icon-bar last"></span>
         </button><!-- End mobile menu button -->
       </div>
     </div>
   </div>
-  <div id="navbar" class="col-xs-10 collapse" style="height: 0px;"><!-- Mobile menu -->
+  <div id="navbar" class="col-10 collapse" style="height: 0px;"><!-- Mobile menu -->
     <ul>
       <li class="active"> <%= link_to 'Search & Home', cms_root_url %></li>
       <li><%= link_to 'Hours and Locations', 'https://hours.library.ualberta.ca' %></li>
@@ -58,7 +58,7 @@
   </div><!-- End mobile menu -->
 </div>
 
-<div class="container-fluid nav-container hidden-xs"><!-- non-mobile navigation -->
+<div class="container-fluid nav-container d-none d-md-block"><!-- non-mobile navigation -->
     <div class="container">
       <div class="col-sm-12">
         <div class="row">

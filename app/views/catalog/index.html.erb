@@ -1,7 +1,7 @@
 <div class="needs-js"></div>
 <div class="col-md-12">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <% if !params[:search_field] and !params[:f] and !params[:q] or (params[:q] and params[:q]=='') and !Rails.env.development? %>
         <h2>Begin your <%= @collection_name.downcase.singularize %> search here</h2>
       <% else %>
@@ -29,7 +29,7 @@
           <%= @collection_name %>
         </h2>
       <% end %>
-      <form class="form-inline" role="form">
+      <form class="form-inline search-text-box" role="form">
         <div class="form-group">
           <input type="text" class="form-control" value="<%= params[:q] %>" name="q">
         </div>
@@ -40,7 +40,7 @@
       </form>
     </div>
 
-    <div class="col-sm-6 outlined hidden-xs">
+    <div class="ask-us col-sm-6 outlined d-none d-md-block">
       <p>
         Questions about your results or your research?
         <%= link_to 'Ask Us', cms_root_url('ask-us') %>
@@ -50,10 +50,10 @@
 
   <% if params[:search_field] or params[:f] or params[:q] and params[:q] != '' or Rails.env == "development" %>
     <div class="row top-margin">
-      <div id="sidebar" class="col-md-3 col-sm-4">
+      <div id="sidebar" class="col-lg-3 col-md-4">
         <%= render 'facets' %>
       </div>
-      <div id="content" class="col-md-9 col-sm-8">
+      <div id="content" class="col-lg-9 col-md-8">
         <h2 class="sr-only top-content-title">
           <%= t('blacklight.search.search_results_header') %>
         </h2>
@@ -74,12 +74,17 @@
 
         <% if query_has_constraints? %>
           <div id="appliedParams" class="clearfix constraints-container">
-            <div class="pull-right">
-              <%= link_to 'View Search History', '/search_history', class: 'btn btn-sm btn-text', id: 'searchHistoryLink' %>
-              <%= link_to t('blacklight.search.start_over'), root_path, class: 'catalog_startOverLink btn btn-sm btn-text', id: 'startOverLink' %>
+            <div class="row">
+              <div class="float-right">
+                <%= link_to 'View Search History', '/search_history', class: 'btn btn-sm btn-text', id: 'searchHistoryLink' %>
+                <%= link_to t('blacklight.search.start_over'), root_path, class: 'catalog_startOverLink btn btn-sm btn-text', id: 'startOverLink' %>
+              </div>
+
+              <div>
+                <span class="constraints-label"><%= t('blacklight.search.filters.title') %></span>
+                <%= render_constraints(params) %>
+              </div>
             </div>
-            <span class="constraints-label"><%= t('blacklight.search.filters.title') %></span>
-            <%= render_constraints(params) %>
           </div>
         <% end %>
 

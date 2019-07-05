@@ -1,11 +1,11 @@
 <% @page_title = "Advanced Search - #{application_name}" %>
 
 <div class="advanced-search-form col-sm-12">
-  <h1 class="advanced page-header">
+  <h1 class="advanced">
     Advanced Search
       <%= link_to t('blacklight_advanced_search.form.start_over'),
                   advanced_search_path,
-                  class: 'btn btn-default pull-right advanced-search-start-over' %>
+                  class: 'btn btn-secondary float-md-right advanced-search-start-over' %>
   </h1>
   <div class="row">
     <div class="col-md-8">
@@ -16,7 +16,7 @@
           </div>
         <% end %>
 
-        <%= form_tag catalog_index_path, class: 'advanced form-horizontal', method: :get do %>
+        <%= form_tag catalog_index_path, class: 'advanced', method: :get do %>
 
         <%= render_hash_as_hidden_fields(params_for_search(advanced_search_context, {})) %>
 
@@ -29,9 +29,9 @@
 
             <div id="advanced_search">
               <%- search_fields_for_advanced_search.each do |key, field_def| -%>
-                <div class="form-group advanced-search-field">
-                    <%= label_tag key, field_def.label.to_s, class: 'col-sm-3 control-label' %>
-                    <div class="col-sm-9">
+                <div class="row form-group advanced-search-field">
+                    <%= label_tag key, field_def.label.to_s, class: 'col-md-3 col-form-label' %>
+                    <div class="col-md-9">
                       <%= text_field_tag key, label_tag_default_for(key), class: 'form-control' %>
                     </div>
                 </div>
@@ -81,9 +81,9 @@
       <% end %>
     </div>
     <div class="col-md-4">
-      <div class='panel panel-default'>
-        <div class="panel-heading">Search tips</div>
-          <div class="panel-body">
+      <div class='card'>
+        <div class="card-header">Search tips</div>
+          <div class="card-body">
             <ul class="advanced-help">
               <li>
                 Select <strong>match all</strong> to require all fields (e.g. Title AND Author).
