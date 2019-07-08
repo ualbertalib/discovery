@@ -20,11 +20,11 @@
   </div>
 <% end %>
 <div class="row">
-  <div id="sidebar" class="col-md-2 top-margin">
+  <div id="sidebar" class="order-md-1 order-2 col-md-2 top-margin">
     <%= render_document_sidebar_partial %>
   </div>
 
-  <div id="content" class="col-md-5 show-document top-margin">
+  <div id="content" class="order-md-2 order-1 col-md-5 show-document top-margin">
     <% @page_title = t('blacklight.search.show.title', document_title: document_show_html_title, application_name: application_name).html_safe -%>
 
     <% content_for(:head) { render_link_rel_alternates } -%>
@@ -68,7 +68,7 @@
     <span class="Z3988" title="<%= @document.export_as_openurl_ctx_kev(document_partial_name(@document)) %>"></span>
   <% end %>
 
-  <div class="col-md-5">
+  <div class="order-3 col-md-5">
     <% if electronic_access_bottom? %>
       <div id="electronic_access">
         <p class="row">Note: No University of Alberta Access. On-campus access allowed at the following locations: </p>

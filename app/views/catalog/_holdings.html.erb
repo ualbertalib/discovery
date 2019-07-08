@@ -42,9 +42,7 @@
                     <p style="font-size: small">
                       <strong>
                         Note: For access, please contact any University of Alberta Libraries service desk in person or at
-                        <a href="http://www.library.ualberta.ca/askus" target="_blank">
-                          www.library.ualberta.ca/askus.
-                        </a>
+                        <%= link_to 'www.library.ualberta.ca/askus.', cms_root_url('ask-us'), target: '_blank' %>
                       </strong>
                     </p>
                   <% end %>
@@ -105,8 +103,7 @@
           <td>
             <!--Subscription-->
             <span class="where-is-this-item">
-              <strong><%= item[1][:name] %></strong>
-              <a href="<%= item[1][:url] %>" target='_blank'><%= icon('fas', 'info-circle') %></a>
+              <strong><%= link_to item[1][:name], item[1][:url], target: '_blank' %></strong>
             </span>
 
             <div class="d-inline-block">
@@ -152,7 +149,7 @@
             <!--Access-->
             <span class="where-is-this-item">
               <strong><%= item[:access_title] %></strong>
-              <a href="<%= item[:access_url] %>" target="_blank"><%= icon('fas', 'info-circle') %></a>
+              <%= link_to icon('fas', 'info-circle'), item[:access_url], target: '_blank' %>
             </span>
 
             <div class="d-inline-block">

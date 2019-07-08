@@ -21,7 +21,7 @@
   <%= render_index_doc_actions @document, wrapping_class: 'index-document-functions col-sm-3 col-lg-2' %>
 
   <ul class="nav nav-stacked">
-    <li class= "nav-item"><a href="/bookmarks">Go to Bookmarks</a></li>
+    <li class= "nav-item"><%= link_to 'Go to Bookmarks', bookmarks_path %></li>
 
     <li class="nav-item email">
       <%= link_to t('Email me this item'), email_catalog_path(id: @document), id: 'emailLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
@@ -57,7 +57,7 @@
       <%= link_to 'Send Correction', new_catalog_correction_path(catalog_id: @document['id']), class: 'nav-link' %>
     </li>
 
-    <li class= "nav-item"><a href="/search_history">View Search History</a></li>
+    <li class= "nav-item"><%= link_to 'View Search History', search_history_path %></li>
   </ul>
 </div>
 
