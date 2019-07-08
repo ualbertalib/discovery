@@ -68,29 +68,29 @@
             <% end %>
             <td>
               <% if request_microform?(item) %>
-                <%= link_to('Request Me',
+                <%= link_to(t('request_this'),
                             new_rcrf_special_request_path(item_url: catalog_url(@document.id),
                                                           title: @document.header_title),
                             class: 'normal-link',
                             target: :_blank) %>
               <% end %>
               <% if request_rcrf_read_on_site_form?(item) %>
-                <%= link_to('Request Me',
+                <%= link_to(t('request_this'),
                             new_rcrf_read_on_site_request_path(item_url: catalog_url(@document.id),
                                                                title: @document.header_title),
                             class: 'normal-link',
                             target: :_blank) %>
               <% end %>
               <% if request_bpsc_read_on_site_form?(item) %>
-                <%= link_to('Request Me',
+                <%= link_to(t('request_this'),
                             new_bpsc_read_on_site_request_path(item_url: catalog_url(@document.id),
                                                                title: @document.header_title,
                                                                call_number: item[:call]),
                             class: 'normal-link',
                             target: :_blank) %>
               <% end %>
-              <%= link_to 'Email Me', email_catalog_path(id: @document, call: item[:call], location: library_location(item[:location])), id: 'emailLink', class: 'lightboxLink' %>
-              <%= link_to 'Text Me', sms_catalog_path(id: @document, call: item[:call]), id: 'smsLink', class: 'lightboxLink' %>
+              <%= link_to t('email_this'), email_catalog_path(id: @document, call: item[:call], location: library_location(item[:location])), id: 'emailLink', class: 'lightboxLink' %>
+              <%= link_to t('text_this'), sms_catalog_path(id: @document, call: item[:call]), id: 'smsLink', class: 'lightboxLink' %>
             </td>
           </tr>
           <% @unavailable = false %>
@@ -149,10 +149,10 @@
           </td>
           <td>
             <% if @document.respond_to?( :to_email_text ) %>
-              <%= link_to "Email Me", email_catalog_path(:id => @document, :call=>item[:callnumber], :location=>item[:location]) , {:id => 'emailLink', :class => 'lightboxLink'} %>
+              <%= link_to t('email_this'), email_catalog_path(:id => @document, :call=>item[:callnumber], :location=>item[:location]) , {:id => 'emailLink', :class => 'lightboxLink'} %>
             <% end %>
             <% if @document.respond_to?( :to_sms_text ) %>
-              <%= link_to "Text Me", sms_catalog_path(:id => @document, :call=>item[:callnumber]), {:id => 'smsLink', :class => 'lightboxLink'} %>
+              <%= link_to t('text_this'), sms_catalog_path(:id => @document, :call=>item[:callnumber]), {:id => 'smsLink', :class => 'lightboxLink'} %>
             <% end %>
           </td>
         </tr>

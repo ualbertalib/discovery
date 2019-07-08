@@ -33,11 +33,11 @@
       </li>
 
       <li class="nav-item email">
-        <%= link_to t('Email me this item'), email_catalog_path(id: @document), id: 'emailLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
+        <%= link_to t('email_this'), email_catalog_path(id: @document), id: 'emailLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
       </li>
 
       <li class="nav-item sms">
-        <%= link_to t('Text me a link to this item'), sms_catalog_path(id: @document), id: 'smsLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
+        <%= link_to t('text_this'), sms_catalog_path(id: @document), id: 'smsLink', data: { ajax_modal: 'trigger' }, class: 'nav-link' %>
       </li>
 
       <li class="nav-item send_correction">
