@@ -270,7 +270,7 @@ font-size: 18px;
 }
 #electronic_access{
   font-size: 16px;
-  padding: 25px;
+  padding: 15px;
 }
 #electronic_access span{
   font-size: 14px;
@@ -289,17 +289,12 @@ font-size: 18px;
   background-color:#eceff4;
   border: 1px solid #B2C6D1;
   color: #000;
-  margin-left: 10px;
   border-radius: 5px;
 }
 #electronic_access a:hover, #electronic_access a:focus, #electronic_access a:active{
   text-decoration: none;
   background-color:#d1dde4;
   color: #333;
-}
-#electronic_access .row{
-  margin-bottom: 5px;
-  padding-left: 20px;
 }
 .outlined{
   border: solid 1px #d9e4ea;
@@ -597,9 +592,6 @@ padding: 15px 0;
   .document h1{
     font-size: 36px;
     margin-top: 0px;
-  }
-  .full-record-book-jacket{
-    padding-top: 80px;
   }
   h5 a, h5 a:visited, h5 a:hover,  h5 a:active{
     font-size: 24px;
