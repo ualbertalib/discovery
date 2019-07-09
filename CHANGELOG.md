@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.107] - 2019-07-09
+
 ### Added
 - Added feature tests for search sorting [#1627](https://github.com/ualbertalib/discovery/issues/1627)
 - Add feature tests for search results having logo if UofA holding [#1632](https://github.com/ualbertalib/discovery/issues/1632)
