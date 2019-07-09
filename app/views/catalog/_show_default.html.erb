@@ -1,5 +1,5 @@
 <%# default partial to display solr document fields in catalog show view -%>
-<dl class="dl-horizontal dl-invert">
+<dl>
   <% @linked_fields = ['uniform_title_tesim'] %>
   <% document_show_fields(document).each do |solr_fname, field| -%>
     <% if should_render_show_field? document, field %>
@@ -33,11 +33,11 @@
             <% end %>
           </ul>
         </dd>
-    <% else %>
-      <dd class="blacklight-<%= solr_fname.parameterize %>">
-        <%= value %>
-      </dd>
-    <% end %>
+      <% else %>
+        <dd class="blacklight-<%= solr_fname.parameterize %>">
+          <%= value %>
+        </dd>
+      <% end %>
   <% end -%>
 <% end -%>
 </dl>

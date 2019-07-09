@@ -1,124 +1,135 @@
-<div id="holdings" class="col-md-12">
-  <table class="table table-responsive">
+<div id="holdings">
+  <table class="where-is-this">
     <% if @document["source"].first == "Symphony" %>
-        <%# TODO: get rid of this....magic flag variable? %>
-        <% @unavailable = false %>
-        <tr>
-          <th class="call-number">Call Number</th>
-          <th>Location / Status</th>
-          <th>Library</th>
-          <th class="hidden-xs">Item Type</th>
-          <th>Action</th>
-        </tr>
+      <%# TODO: get rid of this....magic flag variable? %>
+      <% @unavailable = false %>
+      <tr>
+        <th>Where is this?</th>
+      </tr>
 
-        <% for item in @holdings %>
-          <% @unavailable = true if symphony_status(item) == 'unavailable' %>
-          <tr>
-            <td><%= item[:call] %></td>
-            <% if item[:status] == "CHECKEDOUT" %>
-              <% if item[:due] %>
-                <td style="padding-right:2px;font-size:75%">
-                  <strong>
-                    Due: <%= Time.parse(item[:due]).strftime('%m/%d/%Y %l:%M %P').gsub('00:00 am', '').gsub('12:00 am', '') %>
-                  </strong>
-                  <% if item[:reserve] && item[:reserve_rule] %>
+      <% for item in @holdings %>
+        <% @unavailable = true if symphony_status(item) == 'unavailable' %>
+        <tr>
+          <td>
+            <!--Location-->
+            <span class="where-is-this-item">
+              <strong><%= library_location(item[:location]) %></strong>
+              <a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank">
+                <%= icon('fas', 'info-circle') %>
+              </a>
+            </span>
+
+            <div class="d-inline-block">
+              <!--Call number-->
+              <span class="where-is-this-item"><span class="where-is-this-item-title">call number: </span><span class="call-number"><%= item[:call] %></span></span>
+
+              <!--Status-->
+              <span class="where-is-this-item"><span class="where-is-this-item-title">status: </span>
+                <% if item[:status] == "CHECKEDOUT" %>
+                  <% if item[:due] %>
+                    <strong>
+                      Due: <%= Time.parse(item[:due]).strftime('%m/%d/%Y %l:%M %P').gsub('00:00 am', '').gsub('12:00 am', '') %>
+                    </strong>
+                    <% if item[:reserve] && item[:reserve_rule] %>
+                      <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
+                    <% end %>
+                  <% else %>
+                    Unknown/Never
+                  <% end %>
+                <% else %>
+                  <%= symphony_status(item) %>
+                  <% if @unavailable %>
+                    <p style="font-size: small">
+                      <strong>
+                        Note: For access, please contact any University of Alberta Libraries service desk in person or at
+                        <%= link_to 'www.library.ualberta.ca/askus.', cms_root_url('ask-us'), target: '_blank' %>
+                      </strong>
+                    </p>
+                  <% end %>
+                  <% if item[:public_note] %>
+                    <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
+                  <% end %>
+                  <% if item[:reserve_rule] && (item[:reserve] or item[:status]=="RESERVES") %>
                     <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
                   <% end %>
-                </td>
-              <% else %>
-                <td>Unknown/Never</td>
-              <% end %>
-            <% else %>
-              <td class="holding-status">
-                <%= symphony_status(item) %>
-                <% if @unavailable %>
-                  <p style="font-size: small">
-                    <strong>
-                      Note: For access, please contact any University of Alberta Libraries service desk in person or at
-                      <a href="http://www.library.ualberta.ca/askus" target="_blank">
-                        www.library.ualberta.ca/askus.
-                      </a>
-                    </strong>
-                  </p>
                 <% end %>
-                <% if item[:public_note] %>
-                  <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
-                <% end %>
-                <% if item[:reserve_rule] && (item[:reserve] or item[:status]=="RESERVES") %>
-                  <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
-                <% end %>
-              </td>
-            <% end %>
-            <td>
-              <a href="http://catalogue.library.ualberta.ca/sirsi/index.cfm?location=<%= item[:location] %>" target="_blank">
-                <%= library_location(item[:location]) %>
-              </a>
-            </td>
-            <% if @document["format"].include? "Journal" %>
-              <%# TODO: why do we check this? when we render nothing? %>
-            <% end %>
+              </span>
 
-            <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
-              <td class="holding-type hidden-xs">
-                <%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %>
-              </td>
-            <% else %>
-              <%# TODO: Again this is pointless? could move the if statement into the TD so either it renders or doesn't %>
-              <td></td>
-            <% end %>
-            <td>
+              <!--item type-->
+              <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
+                <span class="where-is-this-item"><span class="where-is-this-item-title">item type: </span><%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %></span>
+              <% end %>
+            </div>
+
+            <!--buttons-->
+            <div class="where-is-this-buttons">
               <% if request_microform?(item) %>
-                <%= link_to('Request Me',
+                <%= link_to(t('request_this'),
                             new_rcrf_special_request_path(item_url: catalog_url(@document.id),
                                                           title: @document.header_title),
                             class: 'normal-link',
                             target: :_blank) %>
               <% end %>
               <% if request_rcrf_read_on_site_form?(item) %>
-                <%= link_to('Request Me',
+                <%= link_to(t('request_this'),
                             new_rcrf_read_on_site_request_path(item_url: catalog_url(@document.id),
                                                                title: @document.header_title),
                             class: 'normal-link',
                             target: :_blank) %>
               <% end %>
               <% if request_bpsc_read_on_site_form?(item) %>
-                <%= link_to('Request Me',
+                <%= link_to(t('request_this'),
                             new_bpsc_read_on_site_request_path(item_url: catalog_url(@document.id),
                                                                title: @document.header_title,
                                                                call_number: item[:call]),
                             class: 'normal-link',
                             target: :_blank) %>
               <% end %>
-              <%= link_to 'Email Me', email_catalog_path(id: @document, call: item[:call], location: library_location(item[:location])), id: 'emailLink', class: 'lightboxLink' %>
-              <%= link_to 'Text Me', sms_catalog_path(id: @document, call: item[:call]), id: 'smsLink', class: 'lightboxLink' %>
-            </td>
-          </tr>
-          <% @unavailable = false %>
-        <% end %>
+              <%= link_to t('email_this'), email_catalog_path(id: @document, call: item[:call], location: library_location(item[:location])), id: 'emailLink', class: 'lightboxLink' %>
+              <%= link_to t('text_this'), sms_catalog_path(id: @document, call: item[:call]), id: 'smsLink', class: 'lightboxLink' %>
+            </div>
+          </td>
+        </tr>
+        <% @unavailable = false %>
+      <% end %>
     <% end %>
 
     <% if @document["source"].first == "SFX" %>
+      <tr>
+        <th>Subscriptions</th>
+      </tr>
+      <% for item in @holdings %>
         <tr>
-          <th>Subscription</th>
-          <th>Coverage</th>
-          <th>Note</th>
-          <th>Our Usage Rights</th>
+          <td>
+            <!--Subscription-->
+            <span class="where-is-this-item">
+              <strong><%= link_to item[1][:name], item[1][:url], target: '_blank' %></strong>
+            </span>
+
+            <div class="d-inline-block">
+              <!--Coverage-->
+              <span class="where-is-this-item"><span class="where-is-this-item-title">coverage: </span><%= item[1][:coverage] %></span>
+
+              <!--Note-->
+              <% if item[1][:note] && !item[1][:note].empty? %>
+                <span class="where-is-this-item"><span class="where-is-this-item-title">note: </span><%= item[1][:note].html_safe %></span>
+              <% end %>
+
+              <!--Our usage rights-->
+              <% if item[1][:our_target] %>
+                <span class="where-is-this-item usage-rights"><span class="where-is-this-item-title">our usage rights: </span><%= item[1][:our_target].html_safe %></span>
+              <% end %>
+            </div>
+          </td>
         </tr>
-        <% for item in @holdings %>
-          <tr>
-            <td style="width:25%"><a href="<%= item[1][:url] %>" target='_blank'><%= item[1][:name] %></a></td>
-            <td style="width:25%"><%= item[1][:coverage] %></td>
-              <td style="width:20%"><%= item[1][:note] ? item[1][:note].html_safe : '' %></td>
-            <% if item[1][:our_target] %>
-              <td><%= item[1][:our_target].html_safe %></td>
-            <% end %>
-          </tr>
-        <% end %>
+      <% end %>
       </table>
+
       <p>
         If you would like to read online articles on your mobile device, please check out the
         <a href="http://thirdiron.com/download-browzine/">Browzine</a>
-        app.</p>
+        app.
+      </p>
       <% if @document[:issn_t] %>
         <p style="font-size:70%">
           <a href="https://erms.library.ualberta.ca/coral/terms/?issn=<%= @document[:issn_t].first %>" target="_blank">
@@ -129,15 +140,38 @@
     <% end %>
 
     <% if @document["source"].first == "KULE" %>
-        <tr>
-          <th>Holdings</th>
-        </tr>
+      <tr>
+        <th class="call-number">Where is this?</th>
+      </tr>
+      <% for item in @holdings %>
         <tr>
           <td>
-            <a href="http://www.mlcs.museums.ualberta.ca/BohdanMedwidskyUkrainianFolkloreArchives.aspx" target="_blank">
-              Bohdan Medwidsky Ukrainian Folklore Archives</a>
+            <!--Access-->
+            <span class="where-is-this-item">
+              <strong><%= item[:access_title] %></strong>
+              <%= link_to icon('fas', 'info-circle'), item[:access_url], target: '_blank' %>
+            </span>
+
+            <div class="d-inline-block">
+              <!--Call number-->
+              <span class="where-is-this-item"><span class="where-is-this-item-title">call number: </span><%= item[:callnumber] %></span>
+
+              <!--Status-->
+              <span class="where-is-this-item"><span class="where-is-this-item-title">status: </span><%= item[:status]  %></span>
+            </div>
+
+            <!--buttons-->
+            <div class="where-is-this-buttons">
+              <% if @document.respond_to?( :to_email_text ) %>
+                <%= link_to t('email_this'), email_catalog_path(:id => @document, :call=>item[:callnumber], :location=>item[:location]) , {:id => 'emailLink', :class => 'lightboxLink'} %>
+              <% end %>
+              <% if @document.respond_to?( :to_sms_text ) %>
+                <%= link_to t('text_this'), sms_catalog_path(:id => @document, :call=>item[:callnumber]), {:id => 'smsLink', :class => 'lightboxLink'} %>
+              <% end %>
+            </div>
           </td>
         </tr>
+      <% end %>
     <% end %>
   </table>
 </div>

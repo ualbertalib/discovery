@@ -8,16 +8,18 @@ gem 'rails', '4.2.11.1'
 gem 'mysql2', '~> 0.4.10'
 
 # Assets (CSS/JS) stuff
+gem 'bootstrap', '~> 4.3.1'
+gem 'font-awesome-sass', '~> 5.8.1'
 gem 'jquery-rails'
 gem 'sassc-rails', '~> 2.1'
 gem 'uglifier', '>= 1.3.0'
 
 # blacklight stuff
-gem 'blacklight', '5.15.0'
-gem 'blacklight-marc', '~> 5.10.0'
+gem 'blacklight', git: 'https://github.com/ualbertalib/blacklight'
+gem 'blacklight-marc', git: 'https://github.com/ualbertalib/blacklight-marc'
 gem 'blacklight_advanced_search'
 gem 'blacklight_google_analytics'
-gem 'blacklight_range_limit', '~> 5.2.0'
+gem 'blacklight_range_limit', git: 'https://github.com/ualbertalib/blacklight_range_limit'
 
 # Authentication
 gem 'devise'
@@ -54,7 +56,7 @@ group :development do
   gem 'better_errors', '>= 2.3.0'
   gem 'binding_of_caller'
 
-  gem 'erb_lint', '~> 0.0.28', require: false
+  gem 'erb_lint', '~> 0.0.29', require: false
 
   gem 'letter_opener'
 
@@ -62,6 +64,10 @@ group :development do
   gem 'listen', '~> 3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # Debug
+  gem 'debase', '0.2.2'
+  gem 'ruby-debug-ide'
 end
 
 group :test do
