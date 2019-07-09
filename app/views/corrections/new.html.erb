@@ -20,16 +20,16 @@
                     required: true,
                     placeholder: 'Enter any details on the error, typo or suggestion here...',
                     class: 'form-control' %>
+
+    <%= f.label :email, 'Email (optional)' %>
+    <%= f.text_area :email,
+                    rows: 1,
+                    required: false,
+                    placeholder: "Enter your email if you'd like to receive a follow up response as needed",
+                    class: 'form-control' %>
   </div>
 
   <%= f.hidden_field :catalog_id, value: @correction.catalog_id %>
 
   <%= f.submit 'Submit Error, Typo or Suggestion', class: 'btn btn-lg btn-default' %>
 <% end %>
-
-<p class="top-margin">
-  Note: You will not receive a response.
-  If you are experiencing problems and would like a response please use the
-  <%= link_to 'Ask Us', cms_root_url('ask-us') %>
-  service.
-</p>
