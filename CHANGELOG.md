@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## Changed
+- Made BPSC and RCRF forms redirect to the referring item page [#1443](https://github.com/ualbertalib/discovery/issues/1443)
+
 ## [3.0.107] - 2019-07-09
 
 ### Added

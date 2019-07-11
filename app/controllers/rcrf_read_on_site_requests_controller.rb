@@ -1,7 +1,8 @@
 class RCRFReadOnSiteRequestsController < ApplicationController
   def new
     @rcrf_read_on_site_request = RCRFReadOnSiteRequest.new(item_url: params[:item_url],
-                                                           title: params[:title])
+                                                           title: params[:title],
+                                                           referer: params[:item_url])
   end
 
   def create
@@ -10,7 +11,7 @@ class RCRFReadOnSiteRequestsController < ApplicationController
     if @rcrf_read_on_site_request.valid?
       RequestFormMailer.rcrf_read_on_site_request(@rcrf_read_on_site_request).deliver_now
       flash[:success] = t('request_form_success')
-      redirect_to root_path
+      redirect_to @rcrf_read_on_site_request.referer.present? ? @rcrf_read_on_site_request.referer : root_path
     else
       flash[:error] = t('request_form_error')
       render :new
@@ -26,6 +27,7 @@ class RCRFReadOnSiteRequestsController < ApplicationController
                                                       :appointment_time,
                                                       :title,
                                                       :item_url,
-                                                      :notes)
+                                                      :notes,
+                                                      :referer)
   end
 end

@@ -19,7 +19,8 @@ class RCRFSpecialRequest
                 :title,
                 :item_url,
                 :notes,
-                :library
+                :library,
+                :referer
 
   validates :name, presence: true
   validates :email, presence: true
