@@ -22,7 +22,10 @@
                     class: 'form-control' %>
 
     <%= f.label :email, 'Email (optional)' %>
-    <%= f.text_area :email,
+    <%= f.email_field :email,
+                    required: false,
+                    placeholder: "Enter your email if you'd like to receive a follow up response as needed",
+                    class: 'form-control' %>
                     rows: 1,
                     required: false,
                     placeholder: "Enter your email if you'd like to receive a follow up response as needed",
