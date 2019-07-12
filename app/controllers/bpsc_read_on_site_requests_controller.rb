@@ -12,7 +12,7 @@ class BPSCReadOnSiteRequestsController < ApplicationController
     if @bpsc_read_on_site_request.valid?
       RequestFormMailer.bpsc_read_on_site_request(@bpsc_read_on_site_request).deliver_now
       flash[:success] = t('request_form_success')
-      redirect_to :back
+      redirect_to @bpsc_read_on_site_request.referer.present? ? @bpsc_read_on_site_request.referer : root_path
     else
       flash[:error] = t('request_form_error')
       render :new
