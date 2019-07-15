@@ -9,6 +9,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Added
 - Added feature tests for chained subject linking [#1708](https://github.com/ualbertalib/discovery/issues/1708)
 
+### Fixed
+- failing grabBag test for number of libraries displayed on the advanced search page after bootstrap refactor [PR#1701](https://github.com/ualbertalib/discovery/pull/1701)
+
 ## [3.0.107] - 2019-07-09
 
 ### Added
