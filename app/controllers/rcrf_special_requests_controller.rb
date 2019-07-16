@@ -1,5 +1,6 @@
 class RCRFSpecialRequestsController < ApplicationController
   def new
+    # Referer used to store an immutable item url for redirection.
     @rcrf_special_request = RCRFSpecialRequest.new(item_url: params[:item_url],
                                                    title: params[:title],
                                                    referer: params[:item_url])

@@ -1,5 +1,6 @@
 class BPSCReadOnSiteRequestsController < ApplicationController
   def new
+    # Referer used to store an immutable item url for redirection.
     @bpsc_read_on_site_request = BPSCReadOnSiteRequest.new(item_url: params[:item_url],
                                                            title: params[:title],
                                                            call_number: params[:call_number],
