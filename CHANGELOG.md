@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - Added feature tests for item author links [#1710](https://github.com/ualbertalib/discovery/issues/1710)
+- Added optional email address field to send correction form [#1391](https://github.com/ualbertalib/discovery/issues/1391)
 
 ### Fixed
 - failing grabBag test for number of libraries displayed on the advanced search page after bootstrap refactor [PR#1701](https://github.com/ualbertalib/discovery/pull/1701)
