@@ -19,6 +19,6 @@ class CorrectionsController < ApplicationController
   private
 
   def correction_params
-    params.require(:correction).permit(:message, :catalog_id)
+    params.require(:correction).permit(:message, :email, :catalog_id)
   end
 end
