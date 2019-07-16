@@ -9,6 +9,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## Changed
 - Made BPSC and RCRF forms redirect to the referring item page [#1443](https://github.com/ualbertalib/discovery/issues/1443)
 
+### Added
+- Added optional email address field to send correction form [#1391](https://github.com/ualbertalib/discovery/issues/1391)
+
 ### Fixed
 - failing grabBag test for number of libraries displayed on the advanced search page after bootstrap refactor [PR#1701](https://github.com/ualbertalib/discovery/pull/1701)
 
