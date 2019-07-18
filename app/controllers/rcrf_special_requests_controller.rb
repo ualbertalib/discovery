@@ -1,7 +1,9 @@
 class RCRFSpecialRequestsController < ApplicationController
   def new
+    # Referer used to store an immutable item url for redirection.
     @rcrf_special_request = RCRFSpecialRequest.new(item_url: params[:item_url],
-                                                   title: params[:title])
+                                                   title: params[:title],
+                                                   referer: params[:item_url])
   end
 
   def create
@@ -10,7 +12,7 @@ class RCRFSpecialRequestsController < ApplicationController
     if @rcrf_special_request.valid?
       RequestFormMailer.rcrf_special_request(@rcrf_special_request).deliver_now
       flash[:success] = t('request_form_success')
-      redirect_to root_path
+      redirect_to @rcrf_special_request.referer.present? ? @rcrf_special_request.referer : root_path
     else
       flash[:error] = t('request_form_error')
       render :new
@@ -25,6 +27,7 @@ class RCRFSpecialRequestsController < ApplicationController
                                                  :title,
                                                  :item_url,
                                                  :notes,
-                                                 :library)
+                                                 :library,
+                                                 :referer)
   end
 end
