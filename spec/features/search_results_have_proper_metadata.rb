@@ -27,4 +27,14 @@ RSpec.describe 'Search results have proper metadata', type: :feature do
     expect(first('#documents .document')).to have_link('https://www.library.ualberta.ca/about-us/policies/conditions-of-use/registration-required')
     expect(first('#documents .document')).to have_link('https://www.library.ualberta.ca/about-us/policies/conditions-of-use/restricted')
   end
+
+  scenario 'User can view metadata of a journal item' do
+    visit '/catalog'
+    fill_in 'q', with: 'Abacus'
+    click_button 'search'
+
+    expect(first('#documents .document')).to have_text('Abacus')
+    expect(first('#documents .document')).to have_text('Format: Journal')
+    expect(first('#documents .document')).to have_text('Note: This is an Electronic Journal')
+  end
 end

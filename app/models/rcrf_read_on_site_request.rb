@@ -12,7 +12,8 @@ class RCRFReadOnSiteRequest
                 :appointment_time,
                 :title,
                 :item_url,
-                :notes
+                :notes,
+                :referer
 
   validates :name, presence: true
   validates :email, presence: true
