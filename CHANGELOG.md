@@ -11,6 +11,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - production config change! updated to set default url as search.library.ualberta.ca related to refworks export from bookmarks [#1484](https://github.com/ualbertalib/discovery/issues/1484)
 
 ### Added
+- Added feature tests for chained subject linking [#1708](https://github.com/ualbertalib/discovery/issues/1708)
 - Added feature tests for item author links [#1710](https://github.com/ualbertalib/discovery/issues/1710)
 - Added feature tests for item holding table being proper [#1712](https://github.com/ualbertalib/discovery/issues/1712)
 - Added feature tests for journal search results containing proper metadata [#1704](https://github.com/ualbertalib/discovery/issues/1704)
