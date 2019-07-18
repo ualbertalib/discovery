@@ -10,6 +10,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Made BPSC and RCRF forms redirect to the referring item page [#1443](https://github.com/ualbertalib/discovery/issues/1443)
 
 ### Added
+- Added feature tests for chained subject linking [#1708](https://github.com/ualbertalib/discovery/issues/1708)
 - Added feature tests for item author links [#1710](https://github.com/ualbertalib/discovery/issues/1710)
 - Added feature tests for item holding table being proper [#1712](https://github.com/ualbertalib/discovery/issues/1712)
 - Added feature tests for journal search results containing proper metadata [#1704](https://github.com/ualbertalib/discovery/issues/1704)
