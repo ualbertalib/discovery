@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## Changed
 - Made BPSC and RCRF forms redirect to the referring item page [#1443](https://github.com/ualbertalib/discovery/issues/1443)
+- production config change! updated to set default url as search.library.ualberta.ca related to refworks export from bookmarks [#1484](https://github.com/ualbertalib/discovery/issues/1484)
 
 ### Added
 - Added feature tests for chained subject linking [#1708](https://github.com/ualbertalib/discovery/issues/1708)
