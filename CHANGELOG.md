@@ -6,8 +6,20 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## Changed
+- Made BPSC and RCRF forms redirect to the referring item page [#1443](https://github.com/ualbertalib/discovery/issues/1443)
+- production config change! updated to set default url as search.library.ualberta.ca related to refworks export from bookmarks [#1484](https://github.com/ualbertalib/discovery/issues/1484)
+
 ### Added
 - Added missing picture books status [#1690](https://github.com/ualbertalib/discovery/issues/1690)
+- Added feature tests for chained subject linking [#1708](https://github.com/ualbertalib/discovery/issues/1708)
+- Added feature tests for item author links [#1710](https://github.com/ualbertalib/discovery/issues/1710)
+- Added feature tests for item holding table being proper [#1712](https://github.com/ualbertalib/discovery/issues/1712)
+- Added feature tests for journal search results containing proper metadata [#1704](https://github.com/ualbertalib/discovery/issues/1704)
+- Added optional email address field to send correction form [#1391](https://github.com/ualbertalib/discovery/issues/1391)
+
+### Fixed
+- failing grabBag test for number of libraries displayed on the advanced search page after bootstrap refactor [PR#1701](https://github.com/ualbertalib/discovery/pull/1701)
 
 ## [3.0.107] - 2019-07-09
 
