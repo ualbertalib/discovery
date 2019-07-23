@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Added missing picture books status [#1690](https://github.com/ualbertalib/discovery/issues/1690
+)
 ## [3.0.107] - 2019-07-09
 
 ### Added
