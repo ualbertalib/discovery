@@ -13,7 +13,9 @@ class BPSCReadOnSiteRequestsController < ApplicationController
     if @bpsc_read_on_site_request.valid?
       RequestFormMailer.bpsc_read_on_site_request(@bpsc_read_on_site_request).deliver_now
       flash[:success] = t('request_form_success')
-      redirect_to @bpsc_read_on_site_request.referer.present? ? @bpsc_read_on_site_request.referer : root_path
+
+      # ensure that this isn't being used maliciously to redirect away from our site
+      redirect_to URI.parse(@bpsc_read_on_site_request.referer.present? ? @bpsc_read_on_site_request.referer : root_path).path
     else
       flash[:error] = t('request_form_error')
       render :new
