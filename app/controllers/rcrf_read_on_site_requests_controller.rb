@@ -12,7 +12,9 @@ class RCRFReadOnSiteRequestsController < ApplicationController
     if @rcrf_read_on_site_request.valid?
       RequestFormMailer.rcrf_read_on_site_request(@rcrf_read_on_site_request).deliver_now
       flash[:success] = t('request_form_success')
-      redirect_to @rcrf_read_on_site_request.referer.present? ? @rcrf_read_on_site_request.referer : root_path
+
+      # ensure that this isn't being used maliciously to redirect away from our site
+      redirect_to URI.parse(@rcrf_read_on_site_request.referer.present? ? @rcrf_read_on_site_request.referer : root_path).path
     else
       flash[:error] = t('request_form_error')
       render :new
