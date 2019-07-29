@@ -25,7 +25,7 @@ RSpec.describe 'Item can be sent to a user', type: :feature do
       end
 
       fill_in 'to', with: '1234567890'
-      select "Bell", from: "carrier"
+      select 'Bell', from: 'carrier'
       click_button 'Send'
       expect(page).to have_content 'SMS Sent'
     end
