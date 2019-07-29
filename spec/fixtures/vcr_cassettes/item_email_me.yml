@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=1002481
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 29 Jul 2019 17:30:49 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>1002481</titleID><TitleAvailabilityInfo><totalCopiesAvailable>7</totalCopiesAvailable><libraryWithAvailableCopies>Burman
+        University</libraryWithAvailableCopies><libraryWithAvailableCopies>University
+        of Alberta Rutherford-Humanities &amp; Social Science</libraryWithAvailableCopies><libraryWithAvailableCopies>Vanguard
+        College</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>ON_SHELF</locationOfFirstAvailableItem><holdable>true</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>BURMAN</libraryID><classificationID>LC</classificationID><callNumber>PR
+        3095 .B4 1966</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>32860000453984</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>UAHSS</libraryID><classificationID>LC</classificationID><callNumber>PR
+        3095 B39 1966</callNumber><numberOfCopies>5</numberOfCopies><ItemInfo><itemID>0162001016151</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>000024114811</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>000024114829</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>000024114837</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo><ItemInfo><itemID>000024114845</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>VANGUARD</libraryID><classificationID>LC</classificationID><callNumber>PR
+        3095 B4 1966</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>0163900164134</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>am1
+        0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>1002481</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>008</entryID><indicators>  </indicators><text>880413t19661962nyu    g          0
+        eng d</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>62007159
+        /L</text></MarcEntryInfo><MarcEntryInfo><label>Local system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm05019600</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>LC eng</text></MarcEntryInfo><MarcEntryInfo><label>Geographic
+        Area Code</label><entryID>043</entryID><indicators>  </indicators><text>e-uk-en</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        time period</label><entryID>045</entryID><indicators>  </indicators><text>t9u0</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        holdings</label><entryID>049</entryID><indicators>  </indicators><text>AEU
+        eng</text></MarcEntryInfo><MarcEntryInfo><label>LC Call Number</label><entryID>050</entryID><indicators>
+        0</indicators><text>PR3095 .B4</text></MarcEntryInfo><MarcEntryInfo><label>Dewey
+        Decimal Classification Number</label><entryID>082</entryID><indicators>  </indicators><text>792.094216</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>PR
+        3095 B4 1966 ACHCU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>PR
+        3095 B4 1966 AENABC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>0 </indicators><text>PR
+        3095 B39 1966</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        Author</label><entryID>100</entryID><indicators>1 </indicators><text>Beckerman,
+        Bernard.</text><entryTypeCodes>MAR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>10</indicators><text>Shakespeare
+        at the Globe : 1599-1609 / Bernard Beckerman.</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>New York
+        : Collier Books, 1966, c1962.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>254
+        p. ; 22 cm.</text></MarcEntryInfo><MarcEntryInfo><label>Content type</label><entryID>336</entryID><indicators>  </indicators><text>text
+        txt</text></MarcEntryInfo><MarcEntryInfo><label>Media type</label><entryID>337</entryID><indicators>  </indicators><text>unmediated
+        n</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>volume
+        nc</text></MarcEntryInfo><MarcEntryInfo><label>Held by</label><entryID>596</entryID><indicators>  </indicators><text>BURMAN
+        UAHSS VANGUARD</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        subject</label><entryID>600</entryID><indicators>10</indicators><text>Shakespeare,
+        William, 1564-1616--Stage history--To 1625.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        subject</label><entryID>600</entryID><indicators>10</indicators><text>Shakespeare,
+        William, 1564-1616--Technique.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        subject</label><entryID>600</entryID><indicators>10</indicators><text>Shakespeare,
+        William, 1564-1616--Dramatic production.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Corporate
+        subject</label><entryID>610</entryID><indicators>20</indicators><text>Globe
+        Theatre (London, England : 1599-1644)</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Mon, 29 Jul 2019 17:30:49 GMT
+recorded_with: VCR 5.0.0
