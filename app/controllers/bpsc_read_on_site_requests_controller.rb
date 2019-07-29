@@ -1,8 +1,10 @@
 class BPSCReadOnSiteRequestsController < ApplicationController
   def new
+    # Referer used to store an immutable item url for redirection.
     @bpsc_read_on_site_request = BPSCReadOnSiteRequest.new(item_url: params[:item_url],
                                                            title: params[:title],
-                                                           call_number: params[:call_number])
+                                                           call_number: params[:call_number],
+                                                           referer: params[:item_url])
   end
 
   def create
@@ -11,7 +13,9 @@ class BPSCReadOnSiteRequestsController < ApplicationController
     if @bpsc_read_on_site_request.valid?
       RequestFormMailer.bpsc_read_on_site_request(@bpsc_read_on_site_request).deliver_now
       flash[:success] = t('request_form_success')
-      redirect_to root_path
+
+      # ensure that this isn't being used maliciously to redirect away from our site
+      redirect_to URI.parse(@bpsc_read_on_site_request.referer.present? ? @bpsc_read_on_site_request.referer : root_path).path
     else
       flash[:error] = t('request_form_error')
       render :new
@@ -27,6 +31,7 @@ class BPSCReadOnSiteRequestsController < ApplicationController
                                                       :title,
                                                       :call_number,
                                                       :item_url,
-                                                      :notes)
+                                                      :notes,
+                                                      :referer)
   end
 end
