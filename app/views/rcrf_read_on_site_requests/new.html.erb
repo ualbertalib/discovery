@@ -2,21 +2,24 @@
 <p><%= t('.lead') %></p>
 
 <%= bootstrap_form_for(@rcrf_read_on_site_request) do |f| %>
-  <%= f.text_field :name %>
-  <%= f.email_field :email %>
+  <%= f.text_field :name, required: true %>
+  <%= f.email_field :email, required: true %>
 
   <%= f.select :viewing_location,
                RCRFReadOnSiteRequest::VIEWING_LOCATIONS,
-               prompt: t('.please_select_a_location_for_viewing') %>
+               prompt: t('.please_select_a_location_for_viewing'),
+               required: true %>
 
-  <%= f.text_field :appointment_time %>
-  <%= f.text_field :title %>
-  <%= f.text_field :item_url, label: t('item_url'), help: t('item_url_help') %>
+  <%= f.text_field :appointment_time, required: true %>
+  <%= f.text_field :title, required: true %>
+  <%= f.text_field :item_url, label: t('item_url'), help: t('item_url_help'), required: true %>
 
   <%= f.text_area :notes,
                   label: t('additional_notes'),
                   rows: 7,
                   cols: 45 %>
+
+  <%= f.hidden_field :referer, value: @rcrf_read_on_site_request.referer %>
 
   <%= f.primary t('request_viewing') %>
 <% end %>

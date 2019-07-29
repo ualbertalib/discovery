@@ -7,7 +7,8 @@ class BPSCReadOnSiteRequest
                 :title,
                 :call_number,
                 :item_url,
-                :notes
+                :notes,
+                :referer
 
   validates :name, presence: true
   validates :email, presence: true

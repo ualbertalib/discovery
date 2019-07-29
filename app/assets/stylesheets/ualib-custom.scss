@@ -2106,6 +2106,12 @@ form.range_limit input.range_begin, form.range_limit input.range_end {
   width: 100%;
 }
 
+form {
+  &.new_bpsc_read_on_site_request, &.new_rcrf_read_on_site_request, &.new_rcrf_special_request, &.new_correction {
+    width: 100%;
+  }
+}
+
 /* This is a MOBILE first stylesheet - begin styles specific to larger devices */
 @media (min-width: 492px){
 
