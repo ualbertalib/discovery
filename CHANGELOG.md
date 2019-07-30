@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Added feature tests for sending a correction [#1727](https://github.com/ualbertalib/discovery/issues/1727)
+
 ## [3.0.107] - 2019-07-09
 
 ### Added
