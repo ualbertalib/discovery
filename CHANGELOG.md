@@ -14,6 +14,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - production config change! updated to set default url as search.library.ualberta.ca related to refworks export from bookmarks [#1484](https://github.com/ualbertalib/discovery/issues/1484)
 
 ### Added
+- Added feature tests for search history [#1725](https://github.com/ualbertalib/discovery/issues/1725)
 - Added missing picture books status [#1690](https://github.com/ualbertalib/discovery/issues/1690)
 - Added feature tests for chained subject linking [#1708](https://github.com/ualbertalib/discovery/issues/1708)
 - Added feature tests for item author links [#1710](https://github.com/ualbertalib/discovery/issues/1710)
