@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190207211157) do
+ActiveRecord::Schema.define(version: 20190730204049) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       limit: 4,   null: false
@@ -24,6 +24,50 @@ ActiveRecord::Schema.define(version: 20190207211157) do
   end
 
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
+
+  create_table "circulation_rules", force: :cascade do |t|
+    t.string   "short_code", limit: 255
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "institutions", force: :cascade do |t|
+    t.integer  "short_code", limit: 4
+    t.integer  "library_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "institutions", ["library_id"], name: "index_institutions_on_library_id", using: :btree
+
+  create_table "item_types", force: :cascade do |t|
+    t.string   "short_code", limit: 255
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "libraries", force: :cascade do |t|
+    t.string   "short_code", limit: 255
+    t.string   "name",       limit: 255
+    t.string   "url",        limit: 255
+    t.string   "neos_url",   limit: 255
+    t.string   "proxy",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "short_code", limit: 255
+    t.string   "name",       limit: 255
+    t.string   "url",        limit: 255
+    t.integer  "library_id", limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "locations", ["library_id"], name: "index_locations_on_library_id", using: :btree
 
   create_table "searches", force: :cascade do |t|
     t.text     "query_params", limit: 65535
@@ -45,6 +89,13 @@ ActiveRecord::Schema.define(version: 20190207211157) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
+  create_table "statuses", force: :cascade do |t|
+    t.string   "short_code", limit: 255
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -63,4 +114,6 @@ ActiveRecord::Schema.define(version: 20190207211157) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "institutions", "libraries"
+  add_foreign_key "locations", "libraries"
 end
