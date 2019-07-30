@@ -1,0 +1,215 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=10068
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Jul 2019 17:54:18 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>10068</titleID><TitleAvailabilityInfo><totalCopiesAvailable>1</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Research Collections Resource Facility</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>ON_SHELF</locationOfFirstAvailableItem><holdable>true</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UARCRF</libraryID><classificationID>LC</classificationID><callNumber>LB
+        01 459 (1 reel)</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>000000231118</itemID><itemTypeID>MICROFORM</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking><staffNote>{A0046622}</staffNote></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>am
+        |0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>10068</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>008</entryID><indicators>  </indicators><text>010974s1972    quc     a         0
+        eng</text></MarcEntryInfo><MarcEntryInfo><label>Local system #</label><entryID>035</entryID><indicators>  </indicators><text>ocn461369443</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>eng</text></MarcEntryInfo><MarcEntryInfo><label>Geographic
+        Area Code</label><entryID>043</entryID><indicators>  </indicators><text>n
+        ---</text></MarcEntryInfo><MarcEntryInfo><label>Local holdings</label><entryID>049</entryID><indicators>  </indicators><text>aeu
+        eng</text></MarcEntryInfo><MarcEntryInfo><label>LC Call Number</label><entryID>050</entryID><indicators>0
+        </indicators><text>LB 01 459</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>00</indicators><text>LB
+        01 459 AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        Author</label><entryID>100</entryID><indicators>1 </indicators><text>Potter,
+        Geoffrey D.</text><entryTypeCodes>MAR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>14</indicators><text>The
+        development of free schools [microform]</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>Montreal,
+        1972.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>192
+        l. cm.</text></MarcEntryInfo><MarcEntryInfo><label>Content type</label><entryID>336</entryID><indicators>  </indicators><text>text</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>microform</text></MarcEntryInfo><MarcEntryInfo><label>Carrier
+        type</label><entryID>338</entryID><indicators>  </indicators><text>volume</text></MarcEntryInfo><MarcEntryInfo><label>General
+        Note</label><entryID>500</entryID><indicators>  </indicators><text>Microfilm.
+        Ottawa, Central Microfilm Unit, Public Archives of Canada, 1972. 1 reel. 35
+        mm. (Canadian theses on microfilm, 11405)</text></MarcEntryInfo><MarcEntryInfo><label>Dissertation
+        note</label><entryID>502</entryID><indicators>  </indicators><text>Thesis
+        (M.A.)--Sir George Williams University.</text></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>UARCRF</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Free schools.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Wed, 17 Jul 2019 17:54:18 GMT
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=1000719
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Jul 2019 17:54:18 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>1000719</titleID><TitleAvailabilityInfo><totalCopiesAvailable>1</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Research Collections Resource Facility</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>READONSITE</locationOfFirstAvailableItem><holdable>false</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UARCRF</libraryID><classificationID>LC</classificationID><callNumber>F
+        1465.3 G6 M296 1988</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>0162030214801</itemID><itemTypeID>NO_LOAN</itemTypeID><currentLocationID>READONSITE</currentLocationID><homeLocationID>READONSITE</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking><staffNote>{A0069078}</staffNote></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>am
+        a0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>1000719</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>008</entryID><indicators>  </indicators><text>880406s1988    nyua     b   s  1
+        0 eng d</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>87010169</text></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>0887066755(ISBN
+        invalid)0887066763 (pbk.)</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm16091509</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>DLC eng
+        DLC</text></MarcEntryInfo><MarcEntryInfo><label>Geographic Area Code</label><entryID>043</entryID><indicators>  </indicators><text>ncgt---
+        n-mx---</text></MarcEntryInfo><MarcEntryInfo><label>Local holdings</label><entryID>049</entryID><indicators>  </indicators><text>AEU
+        eng</text></MarcEntryInfo><MarcEntryInfo><label>LC Call Number</label><entryID>050</entryID><indicators>00</indicators><text>F1465.3.G6
+        M36 1988</text></MarcEntryInfo><MarcEntryInfo><label>Dewey Decimal Classification
+        Number</label><entryID>082</entryID><indicators>0 </indicators><text>972.81/00497
+        19</text></MarcEntryInfo><MarcEntryInfo><label>Local LC call number</label><entryID>090</entryID><indicators>0
+        </indicators><text>F 1465.3 G6 M296 1988</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        Author</label><entryID>100</entryID><indicators>1 </indicators><text>Manz,
+        Beatriz, 1944-</text><entryTypeCodes>MAR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>10</indicators><text>Refugees
+        of a hidden war : the aftermath of counterinsurgency in Guatemala / Beatriz
+        Manz.</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>Albany
+        : State University of New York Press, c1988.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>vi,
+        283 p. : ill. ; 24 cm.</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        type</label><entryID>336</entryID><indicators>  </indicators><text>text txt</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>unmediated
+        n</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>volume
+        nc</text></MarcEntryInfo><MarcEntryInfo><label>Series Statement</label><entryID>490</entryID><indicators>1
+        </indicators><text>(SUNY series in anthropological studies of contemporary
+        issues.)</text><entryTypeCodes>RV</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>General
+        Note</label><entryID>500</entryID><indicators>  </indicators><text>Includes
+        index.</text></MarcEntryInfo><MarcEntryInfo><label>Bibliography note</label><entryID>504</entryID><indicators>  </indicators><text>Bibliography:
+        p. [265]-270.</text></MarcEntryInfo><MarcEntryInfo><label>Local note</label><entryID>590</entryID><indicators>  </indicators><text>University
+        of Alberta copy in the Schloss War, Revolution, &amp; Imperial Expansion Collection.</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>UARCRF</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Indians
+        of Central America--Guatemala--Government relations.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Political
+        refugees--Guatemala.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Political
+        refugees--Mexico.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Indians
+        of Central America--Guatemala--Social conditions.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Return
+        migration--Guatemala.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Mayas--Government
+        relations.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Added
+        title</label><entryID>740</entryID><indicators>4 </indicators><text>The aftermath
+        of counterinsurgency in Guatemala.</text><entryTypeCodes>TR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Series
+        Added Entry-U</label><entryID>830</entryID><indicators> 0</indicators><text>SUNY
+        series in anthropological studies of contemporary issues.</text><entryTypeCodes>VR</entryTypeCodes></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Wed, 17 Jul 2019 17:54:18 GMT
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=1001675
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 17 Jul 2019 17:54:19 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>1001675</titleID><TitleAvailabilityInfo><totalCopiesAvailable>2</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Research Collections Resource Facility</libraryWithAvailableCopies><libraryWithAvailableCopies>University
+        of Alberta Bruce Peel Special Collections</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>ON_SHELF</locationOfFirstAvailableItem><holdable>true</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UARCRF</libraryID><classificationID>LC</classificationID><callNumber>TL
+        789.3 S917 1987</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>0162029394143</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking><staffNote>{A0066443}</staffNote></ItemInfo></CallInfo><CallInfo><libraryID>UASPCOLL</libraryID><classificationID>LC</classificationID><callNumber>TL
+        789.3 S917 1987</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>000024075087</itemID><itemTypeID>NO_LOAN</itemTypeID><currentLocationID>READONSITE</currentLocationID><homeLocationID>READONSITE</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>am
+        a0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>1001675</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>008</entryID><indicators>  </indicators><text>880411s1987    nyu               0
+        eng d</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>86031096</text></MarcEntryInfo><MarcEntryInfo><label>ISBN</label><entryID>020</entryID><indicators>  </indicators><text>0688070868</text><entryTypeCodes>I</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm14931485</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>DLC eng
+        DLC</text></MarcEntryInfo><MarcEntryInfo><label>Local holdings</label><entryID>049</entryID><indicators>  </indicators><text>AEU
+        eng</text></MarcEntryInfo><MarcEntryInfo><label>LC Call Number</label><entryID>050</entryID><indicators>00</indicators><text>TL789.3
+        .S77 1987</text></MarcEntryInfo><MarcEntryInfo><label>Dewey Decimal Classification
+        Number</label><entryID>082</entryID><indicators>0 </indicators><text>001.9/42
+        19</text></MarcEntryInfo><MarcEntryInfo><label>Local LC call number</label><entryID>090</entryID><indicators>0
+        </indicators><text>TL 789.3 S917 1987 AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        Author</label><entryID>100</entryID><indicators>1 </indicators><text>Strieber,
+        Whitley.</text><entryTypeCodes>MAR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>10</indicators><text>Communion
+        : a true story / Whitley Strieber.</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Edition</label><entryID>250</entryID><indicators>  </indicators><text>1st
+        ed.</text></MarcEntryInfo><MarcEntryInfo><label>Publication info</label><entryID>260</entryID><indicators>  </indicators><text>New
+        York : Beech Tree Books, c1987.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>299
+        p. ; 25 cm.</text></MarcEntryInfo><MarcEntryInfo><label>Content type</label><entryID>336</entryID><indicators>  </indicators><text>text
+        txt</text></MarcEntryInfo><MarcEntryInfo><label>Media type</label><entryID>337</entryID><indicators>  </indicators><text>unmediated
+        n</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>volume
+        nc</text></MarcEntryInfo><MarcEntryInfo><label>Action note</label><entryID>583</entryID><indicators>1
+        </indicators><text>committed to retain 20170930 20421231 HathiTrust https://www.hathitrust.org/shared_print_program
+        AEU HathiTrust Shared Print commitment 2017</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        note</label><entryID>590</entryID><indicators>  </indicators><text>University
+        of Alberta copy a gift of William Doucette.</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>UARCRF UASPCOLL</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Unidentified
+        flying objects--Sightings and encounters.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Wed, 17 Jul 2019 17:54:19 GMT
+recorded_with: VCR 5.0.0
