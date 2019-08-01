@@ -32,15 +32,6 @@ ActiveRecord::Schema.define(version: 20190730204049) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "institutions", force: :cascade do |t|
-    t.integer  "short_code", limit: 4
-    t.integer  "library_id", limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
-  add_index "institutions", ["library_id"], name: "index_institutions_on_library_id", using: :btree
-
   create_table "item_types", force: :cascade do |t|
     t.string   "short_code", limit: 255
     t.string   "name",       limit: 255
@@ -114,6 +105,5 @@ ActiveRecord::Schema.define(version: 20190730204049) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "institutions", "libraries"
   add_foreign_key "locations", "libraries"
 end
