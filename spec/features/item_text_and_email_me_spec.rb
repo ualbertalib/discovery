@@ -11,8 +11,10 @@ RSpec.describe 'Item can be sent to a user', type: :feature do
 
       fill_in 'to', with: 'test@test.ca'
       fill_in 'message', with: 'test message'
-      expect { click_button 'Send'; expect(page).to have_content 'Email Sent' }
-        .to change { ActionMailer::Base.deliveries.count }.by(1)
+      expect do
+        click_button 'Send'
+        expect(page).to have_content 'Email Sent'
+      end.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
   end
 
@@ -26,8 +28,10 @@ RSpec.describe 'Item can be sent to a user', type: :feature do
 
       fill_in 'to', with: '1234567890'
       select 'Bell', from: 'carrier'
-      expect { click_button 'Send'; expect(page).to have_content 'SMS Sent' }
-        .to change { ActionMailer::Base.deliveries.count }.by(1)
+      expect do
+        click_button 'Send'
+        expect(page).to have_content 'SMS Sent'
+      end.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
   end
 end
