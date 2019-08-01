@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.108] - 2019-08-01
+
 ### Security
 - ensure that redirects on request forms cannot be used to redirect away from the site [#1720](https://github.com/ualbertalib/discovery/issues/1720)
 
