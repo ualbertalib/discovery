@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.108] - 2019-08-01
+
 ### Security
 - ensure that redirects on request forms cannot be used to redirect away from the site [#1720](https://github.com/ualbertalib/discovery/issues/1720)
 
@@ -21,6 +23,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Added feature tests for item holding table being proper [#1712](https://github.com/ualbertalib/discovery/issues/1712)
 - Added feature tests for journal search results containing proper metadata [#1704](https://github.com/ualbertalib/discovery/issues/1704)
 - Added optional email address field to send correction form [#1391](https://github.com/ualbertalib/discovery/issues/1391)
+- Added additional text for BPSC request form [#1728](https://github.com/ualbertalib/discovery/issues/1728)
 
 ### Fixed
 - failing grabBag test for number of libraries displayed on the advanced search page after bootstrap refactor [PR#1701](https://github.com/ualbertalib/discovery/pull/1701)
