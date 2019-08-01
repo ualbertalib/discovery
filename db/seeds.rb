@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+[Status, ItemType, CirculationRule, Library, Location].each do |klass|
+  seed_file = Rails.root.join('db', 'seeds', "#{klass.name.underscore}.yml")
+  config = YAML::load_file(seed_file)
+  config.each {|values| klass.first_or_create( { short_code: values.first, name: values.last }) }
+end
