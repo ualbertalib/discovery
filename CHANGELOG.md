@@ -10,6 +10,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - ensure that redirects on request forms cannot be used to redirect away from the site [#1720](https://github.com/ualbertalib/discovery/issues/1720)
 
 ### Changed
+- Modified display of multiple contents note fields [#1518](https://github.com/ualbertalib/discovery/issues/1518)
 - Made BPSC and RCRF forms redirect to the referring item page [#1443](https://github.com/ualbertalib/discovery/issues/1443)
 - production config change! updated to set default url as search.library.ualberta.ca related to refworks export from bookmarks [#1484](https://github.com/ualbertalib/discovery/issues/1484)
 
