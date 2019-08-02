@@ -6,6 +6,10 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Added feature tests for sending a correction [#1727](https://github.com/ualbertalib/discovery/issues/1727)
+- Added feature tests for text/email me features [#1722](https://github.com/ualbertalib/discovery/issues/1722)
+
 ## [3.0.108] - 2019-08-01
 
 ### Security
@@ -16,7 +20,6 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - production config change! updated to set default url as search.library.ualberta.ca related to refworks export from bookmarks [#1484](https://github.com/ualbertalib/discovery/issues/1484)
 
 ### Added
-- Added feature tests for sending a correction [#1727](https://github.com/ualbertalib/discovery/issues/1727)
 - Added feature tests for search history [#1725](https://github.com/ualbertalib/discovery/issues/1725)
 - Added missing picture books status [#1690](https://github.com/ualbertalib/discovery/issues/1690)
 - Added feature tests for chained subject linking [#1708](https://github.com/ualbertalib/discovery/issues/1708)
