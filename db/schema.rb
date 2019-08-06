@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190730204049) do
+ActiveRecord::Schema.define(version: 20190806201706) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       limit: 4,   null: false
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20190730204049) do
   end
 
   add_index "locations", ["library_id"], name: "index_locations_on_library_id", using: :btree
+  add_index "locations", ["short_code"], name: "index_locations_on_short_code", unique: true, using: :btree
 
   create_table "searches", force: :cascade do |t|
     t.text     "query_params", limit: 65535

@@ -8,5 +8,6 @@ class CreateLocations < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_index :locations, :short_code, unique: true
   end
 end
