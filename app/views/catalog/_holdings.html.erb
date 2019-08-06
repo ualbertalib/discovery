@@ -57,7 +57,7 @@
 
               <!--item type-->
               <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
-                <span class="where-is-this-item"><span class="where-is-this-item-title">item type: </span><%= SYMPHONY_ITEM_TYPES[item[:type].downcase.to_sym] %></span>
+                <span class="where-is-this-item"><span class="where-is-this-item-title">item type: </span><%= ItemType.find_by(short_code: item[:type].downcase.to_sym).name %></span>
               <% end %>
             </div>
 
