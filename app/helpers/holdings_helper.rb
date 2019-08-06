@@ -29,20 +29,20 @@ module HoldingsHelper
     nil
   end
 
-  # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme
   UAL_SHIELD_LIBRARIES = [
-    SYMPHONY_LIBRARY_LOCATIONS[:uainternet],
-    SYMPHONY_LIBRARY_LOCATIONS[:neosfree]
+    Location.find_by(short_code: :uainternet).name,
+    Location.find_by(short_code: :neosfree).name
   ].freeze
 
   # determines whether or not ual shield should be displayed for the item
   def display_ual_shield(document)
     return false unless document['location_tesim']
+
     UAL_SHIELD_LIBRARIES.each { |library| return true if document['location_tesim'].include? library }
     false
   end
 
-  # TODO: If the way that libraries are identified changes (replacing config/location.yml) this should follow that scheme
+  # TODO: If the way that libraries are identified changes this should follow that scheme
   READ_ON_SITE_LOCATION_RCRF = 'UARCRF'.freeze # Research and Collections Resource Facility
   READ_ON_SITE_LOCATION_BPSC = 'UASPCOLL'.freeze # Bruce Peel Special Collections
 
@@ -59,9 +59,10 @@ module HoldingsHelper
   end
 
   # returns the library description that matches the code coming from symphony ws
-  # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme
   def library_location(library_code)
-    SYMPHONY_LIBRARY_LOCATIONS[library_code.downcase.delete('_').to_sym]
+    Location.find_by!(short_code: library_code.downcase.delete('_').to_sym).name
+  rescue ActiveRecord::RecordNotFound
+    'Unknown'
   end
 
   def kule_holdings(document, holdings)
