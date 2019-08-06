@@ -31,7 +31,7 @@
                       Due: <%= Time.parse(item[:due]).strftime('%m/%d/%Y %l:%M %P').gsub('00:00 am', '').gsub('12:00 am', '') %>
                     </strong>
                     <% if item[:reserve] && item[:reserve_rule] %>
-                      <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
+                      <p style="font-size:small"><%= CirculationRule.find_by(short_code: item[:reserve_rule].to_sym).name %></p>
                     <% end %>
                   <% else %>
                     Unknown/Never
@@ -50,7 +50,7 @@
                     <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
                   <% end %>
                   <% if item[:reserve_rule] && (item[:reserve] or item[:status]=="RESERVES") %>
-                    <p style="font-size:small"><%= SYMPHONY_CIRC_RULES[item[:reserve_rule].to_sym] %></p>
+                    <p style="font-size:small"><%= CirculationRule.find_by(short_code: item[:reserve_rule].to_sym).name %></p>
                   <% end %>
                 <% end %>
               </span>
