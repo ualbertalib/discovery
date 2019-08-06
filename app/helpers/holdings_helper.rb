@@ -17,7 +17,9 @@ module HoldingsHelper
   end
 
   def symphony_status(item)
-    SYMPHONY_STATUSES[item[:status].downcase.underscore.to_sym]
+    Status.find_by!(short_code: item[:status].downcase.underscore).name
+  rescue ActiveRecord::RecordNotFound
+    'Unknown'
   end
 
   def fetch_sfx_holdings(document)

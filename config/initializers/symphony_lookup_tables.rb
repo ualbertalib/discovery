@@ -2,9 +2,6 @@
 library_locations = YAML.load_file("#{Rails.root}/db/seeds/location.yml")
 SYMPHONY_LIBRARY_LOCATIONS = library_locations.deep_symbolize_keys.freeze
 
-statuses = YAML.load_file("#{Rails.root}/db/seeds/status.yml")
-SYMPHONY_STATUSES = statuses.deep_symbolize_keys.freeze
-
 item_types = YAML.load_file("#{Rails.root}/db/seeds/item_type.yml")
 SYMPHONY_ITEM_TYPES = item_types.deep_symbolize_keys.freeze
 
