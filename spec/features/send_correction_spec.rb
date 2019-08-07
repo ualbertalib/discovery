@@ -9,10 +9,11 @@ RSpec.describe 'Send correction', type: :feature do
       end
 
       fill_in 'correction[message]', with: 'correction message'
-      expect { click_button 'Submit Error, Typo or Suggestion' }
-        .to change { ActionMailer::Base.deliveries.count }.by(1)
+      expect do
+        click_button 'Submit Error, Typo or Suggestion'
+      end.to change { ActionMailer::Base.deliveries.count }.by(1)
 
-      expect(page).to have_content I18n.t('request_form_success')
+      expect(page).to have_content 'Thank you! We have received your correction and will be reviewing it soon.'
     end
   end
 end
