@@ -53,6 +53,8 @@ class CatalogController < ApplicationController
 
     @additional_authors = @document['author_addl_t'] if @document['author_addl_t']
 
+    @contents = @document['contents_tesim'].join("\n") if @document['contents_tesim']
+
     @document['title_display'] = 'Untitled document' unless @document['title_display']
 
     @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] && @document['published_display']
