@@ -10,6 +10,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Added feature tests for sending a correction [#1727](https://github.com/ualbertalib/discovery/issues/1727)
 - Added feature tests for text/email me features [#1722](https://github.com/ualbertalib/discovery/issues/1722)
 
+### Changed
+- Modified display of multiple contents note fields [#1518](https://github.com/ualbertalib/discovery/issues/1518)
+
 ## [3.0.108] - 2019-08-01
 
 ### Security
