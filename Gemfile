@@ -29,7 +29,7 @@ gem 'devise-guests'
 gem 'addressable', '~> 2.6.0'
 gem 'bootstrap_form', '~> 2.7.0'
 gem 'danger', '~> 6.0'
-gem 'nokogiri', '~> 1.10.3'
+gem 'nokogiri', '~> 1.10.4'
 gem 'om'
 
 # Performance monitoring
