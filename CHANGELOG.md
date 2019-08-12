@@ -12,6 +12,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Changed
 - Modified display of multiple contents note fields [#1518](https://github.com/ualbertalib/discovery/issues/1518)
+- RCRF Request form wording change [#1723](https://github.com/ualbertalib/discovery/issues/1723)
 
 ## [3.0.108] - 2019-08-01
 
