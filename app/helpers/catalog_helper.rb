@@ -70,7 +70,7 @@ module CatalogHelper
   def libguide_icon_image(icon)
     # If icon is u of a shield, use our asset which has text next to it
     if icon[:id] == '6665'
-      asset_path("ualib-logo-green.png")
+      asset_path('ualib-logo-green.png')
     else
       "https://libapps-ca.s3.amazonaws.com/sites/#{icon[:site_id]}/icons/#{icon[:id]}/#{icon[:file]}"
     end
