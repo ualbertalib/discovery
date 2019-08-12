@@ -24,6 +24,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Fixed
 - failing grabBag test for number of libraries displayed on the advanced search page after bootstrap refactor [PR#1701](https://github.com/ualbertalib/discovery/pull/1701)
+- Fixed broken u of a license image [#1676](https://github.com/ualbertalib/discovery/issues/1676)
 
 ## [3.0.107] - 2019-07-09
 
