@@ -25,13 +25,9 @@
             <%= link_to author, catalog_index_path(q: "\"#{author}\"") %>
           <% end %>
         </dd>
-      <% elsif solr_fname == "contents_tesim" %>
-        <dd class="blacklight-<%= solr_fname.parameterize %>" style="font-size:75%">
-          <ul>
-            <% value.split('--').each do |note| %>
-              <li><%= sanitize(note) %></li>
-            <% end %>
-          </ul>
+      <% elsif solr_fname == "contents_tesim" and @contents %>
+        <dd class="blacklight-<%= solr_fname.parameterize %>">
+          <%= simple_format(@contents, {}, sanitize: true) %>
         </dd>
       <% else %>
         <dd class="blacklight-<%= solr_fname.parameterize %>">
