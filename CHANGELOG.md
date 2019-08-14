@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- Index invalid ISSN. Ensure a new index is built after this release and blacklight_solr_conf is deployed  [#1715](https://github.com/ualbertalib/discovery/issues/1715)
+
 ### Security
 - ensure that redirects on request forms cannot be used to redirect away from the site [#1720](https://github.com/ualbertalib/discovery/issues/1720)
 
