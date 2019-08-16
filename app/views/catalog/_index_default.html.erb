@@ -27,7 +27,7 @@
           <% end %>
         <% end.empty? -%>
           <% if display_ual_shield document and (document.to_h["source_tesim"] and document.to_h["source_tesim"].first == "Symphony")%>
-            <img alt="licensed for U of A" title="licensed for U of A" src=<%= asset_path("ualib-logo-green.png") %> style="height:18px" />
+            <img alt="licensed for U of A" title="licensed for U of A" class="ualib-shield" src=<%= asset_path("ualib-logo-green.png") %> />
           <% end %>
         <% end %>
 
@@ -45,7 +45,7 @@
             <dt class="blacklight-ebook col-md-3">Note:</dt>
             <dd class="blacklight-ebook col-md-9">This is an <strong>eBook</strong>.
               <% if display_ual_shield document and not (document.to_h["source_tesim"] and document.to_h["source_tesim"].first == "Symphony")%>
-                <img alt="licensed for U of A" title="licensed for U of A" src=<%= asset_path("ualib-logo-green.png") %> style="height:18px" />
+                <img alt="licensed for U of A" title="licensed for U of A" class="ualib-shield" src=<%= asset_path("ualib-logo-green.png") %> />
               <% end %>
             </dd>
           </div>
@@ -54,7 +54,7 @@
             <dt class="blacklight-ebook col-md-3">Note:</dt>
             <dd class="blacklight-ebook col-md-9">This is an <strong>Electronic Journal</strong>.
               <% if display_ual_shield document and not (document.to_h["source_tesim"] and document.to_h["source_tesim"].first == "Symphony")%>
-                <img alt="licensed for U of A" title="licensed for U of A" src=<%= asset_path("ualib-logo-green.png") %> style="height:18px" />
+                <img alt="licensed for U of A" title="licensed for U of A" class="ualib-shield" src=<%= asset_path("ualib-logo-green.png") %> />
               <% end %>
             </dd>
           </div>
@@ -63,7 +63,7 @@
             <dt class="blacklight-ebook col-md-3">Note:</dt>
             <dd class="blacklight-ebook col-md-9">This is a <strong>Print Journal</strong>.
               <% if display_ual_shield document and not (document.to_h["source_tesim"] and document.to_h["source_tesim"].first == "Symphony")%>
-                <img alt="licensed for U of A" title="licensed for U of A" src=<%= asset_path("ualib-logo-green.png") %> style="height:18px" />
+                <img alt="licensed for U of A" title="licensed for U of A" class="ualib-shield" src=<%= asset_path("ualib-logo-green.png") %> />
               <% end %>
             </dd>
           </div>
