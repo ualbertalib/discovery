@@ -16,6 +16,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - Modified display of multiple contents note fields [#1518](https://github.com/ualbertalib/discovery/issues/1518)
 - RCRF Request form wording change [#1723](https://github.com/ualbertalib/discovery/issues/1723)
 
+### Fixed
+- Fixed broken u of a license image [#1676](https://github.com/ualbertalib/discovery/issues/1676)
+
 ## [3.0.108] - 2019-08-01
 
 ### Security
