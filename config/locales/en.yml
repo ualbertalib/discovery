@@ -77,7 +77,7 @@ en:
     notes: 'Additional Notes: %{notes}'
     library: 'Pickup Library: %{library}'
     viewing_location: 'Viewing Location: %{viewing_location}'
-    appointment_time: 'Appointment Time: %{appointment_time}'
+    appointment_date_and_time: 'Appointment Date and Time: %{appointment_date_and_time}'
     date_of_planned_visit: 'Date of Planned Visit: %{appointment_time}'
   mail:
     intercepted:

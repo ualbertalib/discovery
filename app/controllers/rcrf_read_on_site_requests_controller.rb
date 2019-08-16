@@ -27,7 +27,7 @@ class RCRFReadOnSiteRequestsController < ApplicationController
     params.require(:rcrf_read_on_site_request).permit(:name,
                                                       :email,
                                                       :viewing_location,
-                                                      :appointment_time,
+                                                      :appointment_date_and_time,
                                                       :title,
                                                       :item_url,
                                                       :notes,

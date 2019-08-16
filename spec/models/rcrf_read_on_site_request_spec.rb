@@ -6,7 +6,7 @@ RSpec.describe RCRFReadOnSiteRequest, type: :model do
       name: 'Jane Doe',
       email: 'jane_doe@ualberta.ca',
       viewing_location: 'Bruce Peel Special Collection',
-      appointment_time: 'January 1st at 1 PM',
+      appointment_date_and_time: 'January 1st at 1 PM',
       title: 'The death of Archie',
       item_url: 'https://library.ualberta.ca/catalog/8081552'
     )
@@ -32,8 +32,8 @@ RSpec.describe RCRFReadOnSiteRequest, type: :model do
       expect(subject).to_not be_valid
     end
 
-    it 'is not valid without a appointment_time' do
-      subject.appointment_time = nil
+    it 'is not valid without a appointment_date_and_time' do
+      subject.appointment_date_and_time = nil
       expect(subject).to_not be_valid
     end
 
