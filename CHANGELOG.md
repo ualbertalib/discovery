@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.109] - 2019-08-20
+
+### Security
+- Bump nokogiri from 1.10.3 to 1.10.4 [PR#1743](https://github.com/ualbertalib/discovery/pull/1743)
+
 ### Added
 - Index invalid ISSN. Ensure a new index is built after this release and blacklight_solr_conf is deployed  [#1715](https://github.com/ualbertalib/discovery/issues/1715)
 - Added feature tests for sending a correction [#1727](https://github.com/ualbertalib/discovery/issues/1727)
