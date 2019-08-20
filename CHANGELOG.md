@@ -7,11 +7,17 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [Unreleased]
 
 ### Added
+- Index invalid ISSN. Ensure a new index is built after this release and blacklight_solr_conf is deployed  [#1715](https://github.com/ualbertalib/discovery/issues/1715)
 - Added feature tests for sending a correction [#1727](https://github.com/ualbertalib/discovery/issues/1727)
 - Added feature tests for text/email me features [#1722](https://github.com/ualbertalib/discovery/issues/1722)
+- Added feature tests for an item having and not having an ill link [#1740](https://github.com/ualbertalib/discovery/issues/1740)
 
 ### Changed
 - Modified display of multiple contents note fields [#1518](https://github.com/ualbertalib/discovery/issues/1518)
+- RCRF Request form wording change [#1723](https://github.com/ualbertalib/discovery/issues/1723)
+
+### Fixed
+- Fixed broken u of a license image [#1676](https://github.com/ualbertalib/discovery/issues/1676)
 
 ## [3.0.108] - 2019-08-01
 

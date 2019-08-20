@@ -13,7 +13,7 @@ RSpec.describe 'Search results UofA holdings logo', type: :feature do
     end
 
     page.all('#documents .document').each do |element|
-      expect(element).to have_css("img[src*='ualib-logo.png']")
+      expect(element).to have_css("img[src*='ualib-logo-green']")
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe 'Search results UofA holdings logo', type: :feature do
     end
 
     page.all('#documents .document').each do |element|
-      expect(element).not_to have_css("img[src*='ualib-logo.png']")
+      expect(element).not_to have_css("img[src*='ualib-logo-green']")
     end
   end
 
@@ -49,7 +49,7 @@ RSpec.describe 'Search results UofA holdings logo', type: :feature do
     end
 
     page.all('#documents .document').each do |element|
-      expect(element).to have_css("img[src*='ualib-logo.png']")
+      expect(element).to have_css("img[src*='ualib-logo-green']")
     end
   end
 end
