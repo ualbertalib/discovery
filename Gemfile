@@ -29,7 +29,7 @@ gem 'devise-guests'
 gem 'addressable', '~> 2.6.0'
 gem 'bootstrap_form', '~> 2.7.0'
 gem 'danger', '~> 6.0'
-gem 'nokogiri', '~> 1.10.3'
+gem 'nokogiri', '~> 1.10.4'
 gem 'om'
 
 # Performance monitoring
@@ -66,7 +66,7 @@ group :development do
   gem 'spring'
 
   # Debug
-  gem 'debase', '0.2.2'
+  gem 'debase', '0.2.4'
   gem 'ruby-debug-ide'
 end
 
