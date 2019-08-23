@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- Made google analytics work without turbolinks [#1516](https://github.com/ualbertalib/discovery/issues/1516)
+
 ## [3.0.109] - 2019-08-20
 
 ### Security
@@ -45,7 +48,6 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Fixed
 - failing grabBag test for number of libraries displayed on the advanced search page after bootstrap refactor [PR#1701](https://github.com/ualbertalib/discovery/pull/1701)
-- Made google analytics work without turbolinks [#1516](https://github.com/ualbertalib/discovery/issues/1516)
 
 ## [3.0.107] - 2019-07-09
 
