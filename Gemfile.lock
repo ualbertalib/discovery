@@ -78,7 +78,7 @@ GEM
     ast (2.4.0)
     autoprefixer-rails (9.5.1.1)
       execjs
-    bcrypt (3.1.12)
+    bcrypt (3.1.13)
     better_errors (2.5.1)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
@@ -112,7 +112,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (>= 2.0, < 4.0)
-    childprocess (1.0.1)
+    childprocess (2.0.0)
       rake (< 13.0)
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
@@ -144,16 +144,16 @@ GEM
       no_proxy_fix
       octokit (~> 4.7)
       terminal-table (~> 1)
-    debase (0.2.2)
+    debase (0.2.4)
       debase-ruby_core_source (>= 0.10.2)
-    debase-ruby_core_source (0.10.4)
+    debase-ruby_core_source (0.10.5)
     debug_inspector (0.0.3)
     deprecation (1.0.0)
       activesupport
-    devise (4.6.2)
+    devise (4.7.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 6.0)
+      railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
     devise-guests (0.7.0)
@@ -232,7 +232,7 @@ GEM
     mysql2 (0.4.10)
     nap (1.1.0)
     no_proxy_fix (0.1.2)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -278,7 +278,7 @@ GEM
       activesupport (>= 4.2.0, < 5.0)
       nokogiri (~> 1.6)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.4)
+    rails-html-sanitizer (1.2.0)
       loofah (~> 2.2, >= 2.2.2)
     railties (4.2.11.1)
       actionpack (= 4.2.11.1)
@@ -286,7 +286,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (3.0.0)
-    rake (12.3.2)
+    rake (12.3.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -294,7 +294,7 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
-    rollbar (2.21.0)
+    rollbar (2.22.1)
     rsolr (1.0.13)
       builder (>= 2.1.2)
     rspec (3.8.0)
@@ -334,7 +334,7 @@ GEM
       rake (>= 0.8.1)
     ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
-    rubyzip (1.2.2)
+    rubyzip (1.2.3)
     safe_yaml (1.0.5)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
@@ -359,8 +359,8 @@ GEM
       sass (~> 3.5, >= 3.5.5)
     sdoc (1.0.0)
       rdoc (>= 5.0)
-    selenium-webdriver (3.142.3)
-      childprocess (>= 0.5, < 2.0)
+    selenium-webdriver (3.142.4)
+      childprocess (>= 0.5, < 3.0)
       rubyzip (~> 1.2, >= 1.2.2)
     simplecov (0.17.0)
       docile (~> 1.1)
@@ -399,7 +399,7 @@ GEM
     vcr (5.0.0)
     warden (1.2.7)
       rack (>= 1.0)
-    webmock (3.6.2)
+    webmock (3.7.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -426,7 +426,7 @@ DEPENDENCIES
   capybara
   chromedriver-helper
   danger (~> 6.0)
-  debase (= 0.2.2)
+  debase (= 0.2.4)
   devise
   devise-guests
   erb_lint (~> 0.0.29)
@@ -436,7 +436,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0)
   mysql2 (~> 0.4.10)
-  nokogiri (~> 1.10.3)
+  nokogiri (~> 1.10.4)
   om
   pry
   pry-byebug

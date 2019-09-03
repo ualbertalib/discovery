@@ -9,7 +9,7 @@ class RCRFReadOnSiteRequest
   attr_accessor :name,
                 :email,
                 :viewing_location,
-                :appointment_time,
+                :appointment_date_and_time,
                 :title,
                 :item_url,
                 :notes,
@@ -18,7 +18,7 @@ class RCRFReadOnSiteRequest
   validates :name, presence: true
   validates :email, presence: true
   validates :viewing_location, presence: true
-  validates :appointment_time, presence: true
+  validates :appointment_date_and_time, presence: true
   validates :title, presence: true
   validates :item_url, presence: true
 end
