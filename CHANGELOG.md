@@ -9,6 +9,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Fixed
 - Made google analytics work without turbolinks [#1516](https://github.com/ualbertalib/discovery/issues/1516)
 
+### Changed
+- create migration and models to replace status, item type, circulation rules, library and locations data from static config files and refactor to replace related constants [#1273](https://github.com/ualbertalib/discovery/issues/1273)
+
 ## [3.0.109] - 2019-08-20
 
 ### Security
