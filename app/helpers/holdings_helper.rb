@@ -22,6 +22,18 @@ module HoldingsHelper
     'Unknown'
   end
 
+  def item_type(item)
+    ItemType.find_by!(short_code: item[:type].downcase.to_sym).name
+  rescue ActiveRecord::RecordNotFound
+    'Unknown'
+  end
+
+  def reserve_rule(item)
+    CirculationRules.find_by!(short_code: item[:reserve_rule].to_sym).name
+  rescue ActiveRecord::RecordNotFound
+    'Unknown'
+  end
+
   def fetch_sfx_holdings(document)
     SFXService.new(document).targets
   rescue SFXService::Error::HTTPError => e
@@ -30,8 +42,8 @@ module HoldingsHelper
   end
 
   UAL_SHIELD_LIBRARIES = [
-    Location.find_by(short_code: :uainternet).name,
-    Location.find_by(short_code: :neosfree).name
+    Location.find_by(short_code: :uainternet)&.name,
+    Location.find_by(short_code: :neosfree)&.name
   ].freeze
 
   # determines whether or not ual shield should be displayed for the item

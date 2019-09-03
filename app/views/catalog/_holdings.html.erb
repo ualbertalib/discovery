@@ -31,7 +31,7 @@
                       Due: <%= Time.parse(item[:due]).strftime('%m/%d/%Y %l:%M %P').gsub('00:00 am', '').gsub('12:00 am', '') %>
                     </strong>
                     <% if item[:reserve] && item[:reserve_rule] %>
-                      <p style="font-size:small"><%= CirculationRule.find_by(short_code: item[:reserve_rule].to_sym).name %></p>
+                      <p style="font-size:small"><%= reserve_rule(item) %></p>
                     <% end %>
                   <% else %>
                     Unknown/Never
@@ -50,14 +50,14 @@
                     <p style="font-size:small"><strong>Note: <%= item[:public_note] %></strong></p>
                   <% end %>
                   <% if item[:reserve_rule] && (item[:reserve] or item[:status]=="RESERVES") %>
-                    <p style="font-size:small"><%= CirculationRule.find_by(short_code: item[:reserve_rule].to_sym).name %></p>
+                    <p style="font-size:small"><%= reserve_rule(item) %></p>
                   <% end %>
                 <% end %>
               </span>
 
               <!--item type-->
               <% if item[:type] and !item[:type].blank? and item[:type].is_a? String %>
-                <span class="where-is-this-item"><span class="where-is-this-item-title">item type: </span><%= ItemType.find_by(short_code: item[:type].downcase.to_sym).name %></span>
+                <span class="where-is-this-item"><span class="where-is-this-item-title">item type: </span><%= item_type(item) %></span>
               <% end %>
             </div>
 
