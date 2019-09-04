@@ -27,12 +27,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        document.addEventListener('turbolinks:load', function() {
-          return gtag('config', '<%= Rails.application.secrets.google_analytics_token %>', {
-            'page_path': window.location.pathname
-          });
-        });
+        gtag('config', '<%= Rails.application.secrets.google_analytics_token %>');
       <% end %>
     <% end %>
     <!-- End Google Analytics -->

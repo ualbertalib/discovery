@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- Made google analytics work without turbolinks [#1516](https://github.com/ualbertalib/discovery/issues/1516)
+
 ## [3.0.109] - 2019-08-20
 
 ### Security
