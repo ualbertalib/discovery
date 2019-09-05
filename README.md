@@ -30,7 +30,8 @@ Unit and Acceptance Tests
 1.  `bundle install --without development production`
 2.  `RAILS_ENV=test bundle exec rake db:create`
 3.  `RAILS_ENV=test bundle exec rake db:migrate`
-4.  `bundle exec rake spec`
+4.  `RAILS_ENV=test bundle exec rake db:seed`
+5.  `bundle exec rake spec`
 
 Integration tests (run against <http://search-test.library.ualberta.ca/>)
 
