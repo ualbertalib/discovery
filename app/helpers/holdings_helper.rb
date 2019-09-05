@@ -41,16 +41,11 @@ module HoldingsHelper
     nil
   end
 
-  UAL_SHIELD_LIBRARIES = [
-    Location.find_by(short_code: :uainternet)&.name,
-    Location.find_by(short_code: :neosfree)&.name
-  ].freeze
-
   # determines whether or not ual shield should be displayed for the item
   def display_ual_shield(document)
     return false unless document['location_tesim']
 
-    UAL_SHIELD_LIBRARIES.each { |library| return true if document['location_tesim'].include? library }
+    Location::UAL_SHIELD_LIBRARIES.each { |library| return true if document['location_tesim'].include? library }
     false
   end
 

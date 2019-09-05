@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe HoldingsHelper do
   describe '#display_ual_shield' do
-    HoldingsHelper::UAL_SHIELD_LIBRARIES.each do |library|
+    Location::UAL_SHIELD_LIBRARIES.each do |library|
       it "should display if #{library}" do
         document = { 'location_tesim' => library }
         expect(helper.display_ual_shield(document)).to be true
