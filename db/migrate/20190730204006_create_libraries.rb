@@ -9,5 +9,18 @@ class CreateLibraries < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    # Library
+    seed_file = Rails.root.join('db', 'migrate/201907', 'library.yml')
+    config = YAML.load_file(seed_file)
+    config.each do |v|
+      Library.where(
+        short_code: v.first,
+        name: v.last['name'],
+        url: v.last['url'],
+        neos_url: v.last['neosurl'],
+        proxy: v.last['proxy']
+      ).first_or_create
+    end
   end
 end

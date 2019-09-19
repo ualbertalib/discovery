@@ -18,19 +18,22 @@ module HoldingsHelper
 
   def symphony_status(item)
     Status.find_by!(short_code: item[:status].downcase.underscore).name
-  rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound => e
+    Rollbar.error("Error retriving name for Status #{item[:status].downcase.underscore}", e)
     'Unknown'
   end
 
   def item_type(item)
     ItemType.find_by!(short_code: item[:type].downcase.to_sym).name
-  rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound => e
+    Rollbar.error("Error retriving name for ItemType #{item[:type].downcase.to_sym}", e)
     'Unknown'
   end
 
   def reserve_rule(item)
     CirculationRules.find_by!(short_code: item[:reserve_rule].to_sym).name
-  rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound => e
+    Rollbar.error("Error retriving name for CirculationRules #{item[:reserve_rule].to_sym}", e)
     'Unknown'
   end
 
@@ -45,8 +48,7 @@ module HoldingsHelper
   def display_ual_shield(document)
     return false unless document['location_tesim']
 
-    Location::UAL_SHIELD_LIBRARIES.each { |library| return true if document['location_tesim'].include? library }
-    false
+    Location::UAL_SHIELD_LIBRARIES.detect { |library| document['location_tesim'].include? library } != nil
   end
 
   # TODO: If the way that libraries are identified changes this should follow that scheme
@@ -69,6 +71,7 @@ module HoldingsHelper
   def library_location(library_code)
     Location.find_by!(short_code: library_code.downcase.delete('_').to_sym).name
   rescue ActiveRecord::RecordNotFound
+    Rollbar.error("Error retriving name for Location #{library_code.downcase.delete('_').to_sym}", e)
     'Unknown'
   end
 
