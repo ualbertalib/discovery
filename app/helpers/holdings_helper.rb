@@ -17,7 +17,24 @@ module HoldingsHelper
   end
 
   def symphony_status(item)
-    SYMPHONY_STATUSES[item[:status].downcase.underscore.to_sym]
+    Status.find_by!(short_code: item[:status].downcase.underscore).name
+  rescue ActiveRecord::RecordNotFound => e
+    Rollbar.error("Error retriving name for Status #{item[:status].downcase.underscore}", e)
+    'Unknown'
+  end
+
+  def item_type(item)
+    ItemType.find_by!(short_code: item[:type].downcase.to_sym).name
+  rescue ActiveRecord::RecordNotFound => e
+    Rollbar.error("Error retriving name for ItemType #{item[:type].downcase.to_sym}", e)
+    'Unknown'
+  end
+
+  def reserve_rule(item)
+    CirculationRules.find_by!(short_code: item[:reserve_rule].to_sym).name
+  rescue ActiveRecord::RecordNotFound => e
+    Rollbar.error("Error retriving name for CirculationRules #{item[:reserve_rule].to_sym}", e)
+    'Unknown'
   end
 
   def fetch_sfx_holdings(document)
@@ -27,20 +44,14 @@ module HoldingsHelper
     nil
   end
 
-  # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme
-  UAL_SHIELD_LIBRARIES = [
-    SYMPHONY_LIBRARY_LOCATIONS[:uainternet],
-    SYMPHONY_LIBRARY_LOCATIONS[:neosfree]
-  ].freeze
-
   # determines whether or not ual shield should be displayed for the item
   def display_ual_shield(document)
     return false unless document['location_tesim']
-    UAL_SHIELD_LIBRARIES.each { |library| return true if document['location_tesim'].include? library }
-    false
+
+    Location::UAL_SHIELD_LIBRARIES.detect { |library| document['location_tesim'].include? library }.present?
   end
 
-  # TODO: If the way that libraries are identified changes (replacing config/location.yml) this should follow that scheme
+  # TODO: If the way that libraries are identified changes this should follow that scheme
   READ_ON_SITE_LOCATION_RCRF = 'UARCRF'.freeze # Research and Collections Resource Facility
   READ_ON_SITE_LOCATION_BPSC = 'UASPCOLL'.freeze # Bruce Peel Special Collections
 
@@ -57,9 +68,11 @@ module HoldingsHelper
   end
 
   # returns the library description that matches the code coming from symphony ws
-  # TODO: If the way that libraries are mapped changes (replacing config/location.yml) this should follow that scheme
   def library_location(library_code)
-    SYMPHONY_LIBRARY_LOCATIONS[library_code.downcase.delete('_').to_sym]
+    Location.find_by!(short_code: library_code.downcase.delete('_').to_sym).name
+  rescue ActiveRecord::RecordNotFound
+    Rollbar.error("Error retriving name for Location #{library_code.downcase.delete('_').to_sym}", e)
+    'Unknown'
   end
 
   def kule_holdings(document, holdings)

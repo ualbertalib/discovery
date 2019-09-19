@@ -1,0 +1,101 @@
+# from https://www.neoslibraries.ca/member-libraries
+abhealth:
+  name: "Alberta Health Services"
+  url: "https://krs.libguides.com/home"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/alberta-health-services/"
+  proxy: "http://ahs.idm.oclc.org/login?url="
+gov:
+  name: "Alberta Government"
+  url: "https://www.servicealberta.ca/alberta-government-library.cfm"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/alberta-government-library/"
+  proxy: "https://ezproxy.aee.talonline.ca/login?url="
+innovates:
+  name: "Alberta Innovates"
+  url: "http://www.albertatechfutures.ca/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/alberta-innovates/"
+  proxy: ""
+burmanuniversity:
+  name: "Burman University"
+  url: "https://www.burmanu.ca/library"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/burman-university/"
+  proxy: "http://ezproxy.achcu.talonline.ca/login?url="
+concordia:
+  name: "Concordia University of Edmonton"
+  url: "http://library.concordia.ab.ca/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/concordia/"
+  proxy: "http://aec.talonline.ca/login?url="
+covenant:
+  name: "Covenant Health"
+  url: "https://www.covenanthealth.ca/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/covenant-health-library-services/"
+  proxy: "http://ahs.idm.oclc.org/login?url="
+gp:
+  name: "Grande Prairie Regional College"
+  url: "https://www.gprc.ab.ca/library/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/grande-prairie-regional-college/"
+  proxy: "http://agpc.talonline.ca/login?url="
+keyano:
+  name: "Keyano College"
+  url: "http://www.keyano.ca/Services/Library"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/keyano-college-library/"
+  proxy: "http://ezproxy.afmk.talonline.ca/login?url="
+kings:
+  name: "King's University"
+  url: "https://www.kingsu.ca/library"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/the-kings-university-library/"
+  proxy: "http://aekc.talonline.ca/login?url="
+lakeland:
+  name: "Lakeland College"
+  url: "http://www.lakelandcollege.ca/commons/library/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/lakeland/"
+  proxy: "http://ezproxy.avc.talonline.ca/login?url="
+macewanuniversity:
+  name: "MacEwan University"
+  url: "https://library.macewan.ca/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/macewan/"
+  proxy: "http://ezproxy.macewan.ca/login?url="
+newman:
+  name: "Newman Theological College"
+  url: "http://www.newman.edu/Library"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/newman-theological-college-library/"
+  proxy: "http://ezproxy.newman.edu:81/login"
+norquest:
+  name: "NorQuest College"
+  url: "https://library.norquest.ca/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/norquest-college-library/"
+  proxy: "http://auth01.norquest.ca/login?url="
+nlc:
+  name: "Northern Lakes College"
+  url: "https://www.nlclibrary.ca/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/northern-lakes-college/"
+  proxy: "http://ezproxy.asav.talonline.ca/login?url="
+olds:
+  name: "Olds College"
+  url: "https://www.oldscollege.ca/student-life/learning-commons/library/index.html"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/olds-college-library/"
+  proxy: "http://ezproxy.aoac.talonline.ca/login?url="
+reddeer:
+  name: "Red Deer College"
+  url: "http://rdc.ab.ca/current-students/library/library"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/red-deer-college-library/"
+  proxy: "http://ardc.talonline.ca/login?url="
+universityofalberta:
+  name: "University of Alberta"
+  url: "https://library.ualberta.ca"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/university-of-alberta/"
+  proxy: "https://login.ezproxy.library.ualberta.ca/login?url="
+vanguard:
+  name: "Vanguard College"
+  url: "https://www.vanguardcollege.com/library/"
+  neosurl: "https://www.neoslibraries.ca/member-libraries/vanguard-college-library/"
+  proxy: ""
+free:
+  name: "Free E-Resources"
+  url: ""
+  neosurl: ""
+  proxy: ""
+neos:
+  name: "NEOS Consortium"
+  url: "https://www.neoslibraries.ca/"
+  neosurl: "https://www.neoslibraries.ca/"
+  proxy: ""
