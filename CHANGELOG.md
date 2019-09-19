@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Security
+- Bump devise from 4.7.0 to 4.7.1 [PR#1762](https://github.com/ualbertalib/discovery/pull/1762)
+
 ### Fixed
 - Made google analytics work without turbolinks [#1516](https://github.com/ualbertalib/discovery/issues/1516)
 
