@@ -48,7 +48,7 @@ module HoldingsHelper
   def display_ual_shield(document)
     return false unless document['location_tesim']
 
-    Location::UAL_SHIELD_LIBRARIES.detect { |library| document['location_tesim'].include? library } != nil
+    Location::UAL_SHIELD_LIBRARIES.detect { |library| document['location_tesim'].include? library }.present?
   end
 
   # TODO: If the way that libraries are identified changes this should follow that scheme
