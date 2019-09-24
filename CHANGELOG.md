@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.110] - 2019-09-24
+
 ### Security
 - Bump devise from 4.7.0 to 4.7.1 [PR#1762](https://github.com/ualbertalib/discovery/pull/1762)
 
