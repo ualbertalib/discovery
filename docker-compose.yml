@@ -31,13 +31,24 @@ services:
 
   # Rails
   web:
-    image: ualbertalib/discovery:uat
+    restart: always
+    image: ualbertalib/discovery:deployment
+    volumes:
+      - assets:/app/public/assets/
+    command: bundle exec puma -e uat
+    env_file: .env_deployment
     depends_on:
       - mysql
       - solr
+
+  nginx:
+    restart: always
+    image: nginx
+    depends_on:
+      - web
     env_file: .env_deployment
     volumes:
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
       - assets:/app/public/assets/
-    restart: always
     ports:
       - "3002:80"
