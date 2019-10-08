@@ -1,12 +1,5 @@
-FROM phusion/passenger-ruby25
+FROM ruby:2.5.0-alpine
 LABEL maintainer="University of Alberta Libraries"
-
-ENV HOME /root
-CMD ["/sbin/my_init"]
-
-RUN bash -lc 'rvm install ruby-2.5.3'
-RUN bash -lc 'rvm --default use ruby-2.5.3'
-RUN bash -lc 'gem install bundler -v 1.17.3'
 
 RUN apt-get update -qq \
     && apt-get install -y build-essential \
@@ -34,9 +27,10 @@ RUN bundle install --without development test --jobs=3 --retry=3
 
 # *NOW* we copy the codebase in
 COPY . $APP_ROOT
-# Precompile Rails assets.
-RUN RAILS_ENV=uat SECRET_KEY_BASE=pickasecuretoken bundle exec rake assets:precompile
-# change the owner so that the app passenger_user can read and write to the app dir
-RUN chown -R app:app .
 
-EXPOSE 80
+# Precompile Rails assets.  We set a dummy database url/token key
+RUN RAILS_ENV=uat SECRET_KEY_BASE=pickasecuretoken bundle exec rake assets:precompile
+
+EXPOSE 3000
+
+CMD bundle exec puma -C config/puma.rb
