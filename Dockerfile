@@ -1,4 +1,4 @@
-FROM ruby:2.5.0-alpine
+FROM ruby:2.5.0
 LABEL maintainer="University of Alberta Libraries"
 
 RUN apt-get update -qq \
