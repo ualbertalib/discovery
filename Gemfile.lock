@@ -76,7 +76,7 @@ GEM
       io-like (~> 0.3.0)
     arel (6.0.4)
     ast (2.4.0)
-    autoprefixer-rails (9.5.1.1)
+    autoprefixer-rails (9.4.7)
       execjs
     bcrypt (3.1.13)
     better_errors (2.5.1)

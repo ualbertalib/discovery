@@ -1,26 +1,22 @@
-FROM ruby:2.5.0-alpine
+FROM ruby:2.5.0
 LABEL maintainer="University of Alberta Libraries"
 
-RUN apk add --update \
-  build-base \
-  netcat-openbsd \
-  nodejs \
-  git \
-  imagemagick \
-  mariadb-dev \
-  tzdata \
-  openjdk8 \
-  && rm -rf /var/cache/apk/*
+# Autoprefixer doesn’t support Node v4.8.2. Update it.
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+
+RUN apt-get update -qq \
+    && apt-get install -y build-essential \
+                          mysql-client \
+                          default-jre \
+                          imagemagick \
+                          nodejs \
+                          tzdata \
+    && rm -rf /var/lib/apt/lists/*
+
 
 ENV APP_ROOT /app
 RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
-
-# setup nginx/passenger
-RUN rm -f /etc/nginx/sites-enabled/default
-COPY config/nginx.conf /etc/nginx/sites-enabled/discovery.conf
-COPY config/rails-env.conf /etc/nginx/main.d/rails-env.conf
-RUN rm -f /etc/service/nginx/down
 
 # Preinstall gems in an earlier layer so we don't reinstall every time any file changes.
 COPY Gemfile  $APP_ROOT
