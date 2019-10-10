@@ -1,14 +1,16 @@
-FROM ruby:2.5.0
+FROM ruby:2.5.0-alpine
 LABEL maintainer="University of Alberta Libraries"
 
-RUN apt-get update -qq \
-    && apt-get install -y build-essential \
-                          mysql-client \
-                          default-jre \
-                          imagemagick \
-                          nodejs \
-                          tzdata \
-    && rm -rf /var/lib/apt/lists/*
+RUN apk add --update \
+  build-base \
+  netcat-openbsd \
+  nodejs \
+  git \
+  imagemagick \
+  mariadb-dev \
+  tzdata \
+  openjdk8 \
+  && rm -rf /var/cache/apk/*
 
 ENV APP_ROOT /app
 RUN mkdir -p $APP_ROOT
