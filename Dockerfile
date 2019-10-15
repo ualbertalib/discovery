@@ -4,12 +4,17 @@ LABEL maintainer="University of Alberta Libraries"
 # Autoprefixer doesn’t support Node v4.8.2. Update it.
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 
+## To install the Yarn package manager (rails assets:precompile complains if not installed), run:
+RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
 RUN apt-get update -qq \
     && apt-get install -y build-essential \
                           mysql-client \
                           default-jre \
                           imagemagick \
                           nodejs \
+                          yarn \
                           tzdata \
     && rm -rf /var/lib/apt/lists/*
 
