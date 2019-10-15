@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+- create migration which will change db/table/col to utf8mb encoding [PR#1801](https://github.com/ualbertalib/discovery/pull/1801)
+
 ## [3.0.110] - 2019-09-24
 
 ### Security
