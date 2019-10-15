@@ -20,8 +20,12 @@ services:
   solr:
     restart: always
     image: ualbertalib/blacklight_solr_conf
+    environment:
+      - SOLR_HEAP=1280M
     volumes:
       - solr:/opt/solr/server/solr/mycores
+    ports:
+      - "8983:8983"
 
   mailcatcher:
     image: sj26/mailcatcher
