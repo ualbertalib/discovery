@@ -36,7 +36,7 @@ services:
   # Rails
   web:
     restart: always
-    image: discovery:uat
+    image: ualbertalib/discovery:uat
     volumes:
       - assets:/app/public/assets/
     command: bundle exec puma -e uat
