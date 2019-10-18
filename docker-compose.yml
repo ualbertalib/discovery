@@ -21,7 +21,7 @@ services:
     restart: always
     image: ualbertalib/blacklight_solr_conf
     environment:
-      - SOLR_HEAP=1280M
+      - SOLR_HEAP=2g
     volumes:
       - solr:/opt/solr/server/solr/mycores
     ports:
