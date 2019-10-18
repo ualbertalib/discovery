@@ -1,4 +1,4 @@
-FROM ruby:2.5.0
+FROM ruby:2.5
 LABEL maintainer="University of Alberta Libraries"
 
 # Autoprefixer doesn’t support Node v4.8.2. Update it.
@@ -10,7 +10,7 @@ RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 
 RUN apt-get update -qq \
     && apt-get install -y build-essential \
-                          mysql-client \
+                          mariadb-client \
                           default-jre \
                           imagemagick \
                           nodejs \
