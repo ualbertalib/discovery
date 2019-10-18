@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20190806201706) do
   add_index "locations", ["short_code"], name: "index_locations_on_short_code", unique: true, using: :btree
 
   create_table "searches", force: :cascade do |t|
-    t.text     "query_params", limit: 65535
+    t.text     "query_params", limit: 16777215
     t.integer  "user_id",      limit: 4
     t.string   "user_type",    limit: 255
     t.datetime "created_at"
