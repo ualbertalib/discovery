@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+- re-dockerize to use modern ruby docker image and puma [PR#1805](https://github.com/ualbertalib/discovery/pull/1805)
+
 ## [3.0.110] - 2019-09-24
 
 ### Security
