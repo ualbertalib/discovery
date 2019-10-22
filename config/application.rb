@@ -8,7 +8,6 @@ require 'csv'
 Bundler.require(*Rails.groups)
 
 module Discovery
-
   VERSION = '3.0.11'.freeze # used in application layout meta generator tag
 
   class Application < Rails::Application
@@ -34,5 +33,4 @@ module Discovery
     config.symphony_timeout = 4
     config.sfx_timeout = 4
   end
-
 end
