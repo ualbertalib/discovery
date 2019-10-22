@@ -82,3 +82,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
+
+group :uat do
+  gem 'puma', '~> 4.2'
+end
