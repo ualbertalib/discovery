@@ -7,6 +7,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [Unreleased]
 
 ### Changed
+- create migration which will change db/table/col to utf8mb4 encoding [PR#1801](https://github.com/ualbertalib/discovery/pull/1801)
 - re-dockerize to use modern ruby docker image and puma [PR#1805](https://github.com/ualbertalib/discovery/pull/1805)
 
 ## [3.0.110] - 2019-09-24
@@ -19,6 +20,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Changed
 - create migration and models to replace status, item type, circulation rules, library and locations data from static config files and refactor to replace related constants [#1273](https://github.com/ualbertalib/discovery/issues/1273)
+- adding italics around "Place hold with barcode and PIN" to increase visability. [PR#1804](https://github.com/ualbertalib/discovery/pull/1804)
 
 ## [3.0.109] - 2019-08-20
 
