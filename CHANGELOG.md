@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.111] - 2019-10-23
+
 ### Changed
 - create migration which will change db/table/col to utf8mb4 encoding [PR#1801](https://github.com/ualbertalib/discovery/pull/1801)
 - re-dockerize to use modern ruby docker image and puma [PR#1805](https://github.com/ualbertalib/discovery/pull/1805)
