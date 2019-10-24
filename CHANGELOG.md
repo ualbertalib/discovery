@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.112] - 2019-10-25
+
+### Changed
+- changed migration which will change db/table/col to utf8 encoding [#1800](https://github.com/ualbertalib/discovery/issues/1800)
+
 ## [3.0.111] - 2019-10-23
 
 ### Changed
