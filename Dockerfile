@@ -26,6 +26,7 @@ WORKDIR $APP_ROOT
 # Preinstall gems in an earlier layer so we don't reinstall every time any file changes.
 COPY Gemfile  $APP_ROOT
 COPY Gemfile.lock $APP_ROOT
+RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install --without development test --jobs=3 --retry=3
 
 # *NOW* we copy the codebase in
