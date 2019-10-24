@@ -6,10 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
-## [3.0.111] - 2019-10-23
-
 ### Changed
-- for Docker add bundler build config to make sassc gem portable [PR]()
+- for Docker add bundler build config to make sassc gem portable [#1796](https://github.com/ualbertalib/discovery/issues/1796)
 
 ## [3.0.111] - 2019-10-23
 
