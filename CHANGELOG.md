@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - Add version file and meta generator tag [#1343](https://github.com/ualbertalib/discovery/issues/1343)
+- Template for Release PRs [PR#]()
 
 ### Changed
 - for Docker add bundler build config to make sassc gem portable [#1796](https://github.com/ualbertalib/discovery/issues/1796)
