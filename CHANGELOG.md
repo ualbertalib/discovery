@@ -8,7 +8,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [3.0.112] - 2019-10-25
 
+### Added
+- Add version file and meta generator tag [#1343](https://github.com/ualbertalib/discovery/issues/1343)
+
 ### Changed
+- for Docker add bundler build config to make sassc gem portable [#1796](https://github.com/ualbertalib/discovery/issues/1796)
 - changed migration which will change db/table/col to utf8 encoding [#1800](https://github.com/ualbertalib/discovery/issues/1800)
 
 ## [3.0.111] - 2019-10-23
