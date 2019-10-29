@@ -1,10 +1,13 @@
 # Changelog
-All notable changes to Discovery project will be documented in this file. Discovery is the University of Alberta Libraries' catalogue interface, built using Blacklight: http://projectblacklight.org/. https://library.ualberta.ca/.
+All notable changes to Discovery project will be documented in this file. Discovery is the University of Alberta Library's catalogue interface, built using Blacklight: http://projectblacklight.org/. https://search.ualberta.ca/.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+- updated occurences of University of Alberta Libraries to Library (new name) [#1813](https://github.com/ualbertalib/discovery/issues/1813)
 
 ## [3.0.112] - 2019-10-25
 
