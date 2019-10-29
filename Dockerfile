@@ -1,5 +1,5 @@
 FROM ruby:2.5
-LABEL maintainer="University of Alberta Libraries"
+LABEL maintainer="University of Alberta Library"
 
 # Autoprefixer doesn’t support Node v4.8.2. Update it.
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
