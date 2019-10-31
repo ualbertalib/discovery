@@ -102,7 +102,7 @@ GEM
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
     bootstrap_form (2.7.0)
-    brakeman (4.7.0)
+    brakeman (4.7.1)
     builder (3.2.3)
     byebug (11.0.0)
     capybara (2.18.0)
@@ -229,6 +229,7 @@ GEM
     multipart-post (2.1.1)
     mysql2 (0.4.10)
     nap (1.1.0)
+    nio4r (2.5.2)
     no_proxy_fix (0.1.2)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
@@ -256,6 +257,8 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.1)
+    puma (4.2.1)
+      nio4r (~> 2.0)
     rack (1.6.11)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -437,6 +440,7 @@ DEPENDENCIES
   pry
   pry-byebug
   pry-rails
+  puma (~> 4.2)
   rails (= 4.2.11.1)
   rollbar
   rspec
