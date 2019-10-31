@@ -20,6 +20,8 @@ before_script:
   - "mysql -e 'create database discovery_test character set utf8;'"
   - "cp ./config/.travis.database.yml ./config/database.yml"
 
+  - bundle --version
+
   - RAILS_ENV=test bundle exec rake db:create
   - RAILS_ENV=test bundle exec rake db:migrate
 script:
