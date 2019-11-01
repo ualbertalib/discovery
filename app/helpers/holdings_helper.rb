@@ -31,9 +31,9 @@ module HoldingsHelper
   end
 
   def reserve_rule(item)
-    CirculationRules.find_by!(short_code: item[:reserve_rule].to_sym).name
+    CirculationRule.find_by!(short_code: item[:reserve_rule].to_sym).name
   rescue ActiveRecord::RecordNotFound => e
-    Rollbar.error("Error retriving name for CirculationRules #{item[:reserve_rule].to_sym}", e)
+    Rollbar.error("Error retriving name for CirculationRule #{item[:reserve_rule].to_sym}", e)
     'Unknown'
   end
 
@@ -70,7 +70,7 @@ module HoldingsHelper
   # returns the library description that matches the code coming from symphony ws
   def library_location(library_code)
     Location.find_by!(short_code: library_code.downcase.delete('_').to_sym).name
-  rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound => e
     Rollbar.error("Error retriving name for Location #{library_code.downcase.delete('_').to_sym}", e)
     'Unknown'
   end
