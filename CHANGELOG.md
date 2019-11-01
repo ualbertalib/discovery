@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.113] - 2019-11-01
+
 ### Fixed
 - missing variable declaration in Location error handling [#1824](https://github.com/ualbertalib/discovery/issues/1824)
 - typo of CirculationRule in Holdings Helper [#1823](https://github.com/ualbertalib/discovery/issues/1823)
