@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- missing variable declaration in Location error handling [#1824](https://github.com/ualbertalib/discovery/issues/1824)
+
 ### Changed
 - updated occurences of University of Alberta Libraries to Library (new name) [#1813](https://github.com/ualbertalib/discovery/issues/1813)
 
