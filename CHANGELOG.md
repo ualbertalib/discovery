@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Fixed
 - missing variable declaration in Location error handling [#1824](https://github.com/ualbertalib/discovery/issues/1824)
+- typo of CirculationRule in Holdings Helper [#1823](https://github.com/ualbertalib/discovery/issues/1823)
 
 ### Changed
 - updated occurences of University of Alberta Libraries to Library (new name) [#1813](https://github.com/ualbertalib/discovery/issues/1813)

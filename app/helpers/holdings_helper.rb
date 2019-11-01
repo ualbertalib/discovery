@@ -31,9 +31,9 @@ module HoldingsHelper
   end
 
   def reserve_rule(item)
-    CirculationRules.find_by!(short_code: item[:reserve_rule].to_sym).name
+    CirculationRule.find_by!(short_code: item[:reserve_rule].to_sym).name
   rescue ActiveRecord::RecordNotFound => e
-    Rollbar.error("Error retriving name for CirculationRules #{item[:reserve_rule].to_sym}", e)
+    Rollbar.error("Error retriving name for CirculationRule #{item[:reserve_rule].to_sym}", e)
     'Unknown'
   end
 
