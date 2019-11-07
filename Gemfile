@@ -29,7 +29,7 @@ gem 'devise-guests'
 gem 'addressable', '~> 2.7.0'
 gem 'bootstrap_form', '~> 2.7.0'
 gem 'danger', '~> 6.1'
-gem 'nokogiri', '~> 1.10.4'
+gem 'nokogiri', '~> 1.10.5'
 gem 'om'
 
 # Performance monitoring
@@ -81,4 +81,8 @@ group :test do
 
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :uat do
+  gem 'puma', '~> 4.2'
 end

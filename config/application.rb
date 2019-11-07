@@ -8,6 +8,8 @@ require 'csv'
 Bundler.require(*Rails.groups)
 
 module Discovery
+  VERSION = '3.0.113'.freeze # used in application layout meta generator tag
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

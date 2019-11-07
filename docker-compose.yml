@@ -20,8 +20,12 @@ services:
   solr:
     restart: always
     image: ualbertalib/blacklight_solr_conf
+    environment:
+      - SOLR_HEAP=2g
     volumes:
       - solr:/opt/solr/server/solr/mycores
+    ports:
+      - "8983:8983"
 
   mailcatcher:
     image: sj26/mailcatcher
@@ -31,13 +35,24 @@ services:
 
   # Rails
   web:
+    restart: always
     image: ualbertalib/discovery:uat
+    volumes:
+      - assets:/app/public/assets/
+    command: bundle exec puma -e uat
+    env_file: .env_deployment
     depends_on:
       - mysql
       - solr
+
+  nginx:
+    restart: always
+    image: nginx
+    depends_on:
+      - web
     env_file: .env_deployment
     volumes:
+      - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
       - assets:/app/public/assets/
-    restart: always
     ports:
       - "3002:80"

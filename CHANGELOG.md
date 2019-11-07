@@ -1,13 +1,34 @@
 # Changelog
-All notable changes to Discovery project will be documented in this file. Discovery is the University of Alberta Libraries' catalogue interface, built using Blacklight: http://projectblacklight.org/. https://library.ualberta.ca/.
+All notable changes to Discovery project will be documented in this file. Discovery is the University of Alberta Library's catalogue interface, built using Blacklight: http://projectblacklight.org/. https://search.ualberta.ca/.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [3.0.113] - 2019-11-01
+
+### Fixed
+- missing variable declaration in Location error handling [#1824](https://github.com/ualbertalib/discovery/issues/1824)
+- typo of CirculationRule in Holdings Helper [#1823](https://github.com/ualbertalib/discovery/issues/1823)
+
+### Changed
+- updated occurences of University of Alberta Libraries to Library (new name) [#1813](https://github.com/ualbertalib/discovery/issues/1813)
+
+## [3.0.112] - 2019-10-25
+
+### Added
+- Add version file and meta generator tag [#1343](https://github.com/ualbertalib/discovery/issues/1343)
+
+### Changed
+- for Docker add bundler build config to make sassc gem portable [#1796](https://github.com/ualbertalib/discovery/issues/1796)
+- changed migration which will change db/table/col to utf8 encoding [#1800](https://github.com/ualbertalib/discovery/issues/1800)
+
+## [3.0.111] - 2019-10-23
+
 ### Changed
 - create migration which will change db/table/col to utf8mb4 encoding [PR#1801](https://github.com/ualbertalib/discovery/pull/1801)
+- re-dockerize to use modern ruby docker image and puma [PR#1805](https://github.com/ualbertalib/discovery/pull/1805)
 
 ## [3.0.110] - 2019-09-24
 

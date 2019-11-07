@@ -1,42 +1,40 @@
-FROM phusion/passenger-ruby25
-LABEL maintainer="University of Alberta Libraries"
+FROM ruby:2.5
+LABEL maintainer="University of Alberta Library"
 
-ENV HOME /root
-CMD ["/sbin/my_init"]
+# Autoprefixer doesn’t support Node v4.8.2. Update it.
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 
-RUN bash -lc 'rvm install ruby-2.5.3'
-RUN bash -lc 'rvm --default use ruby-2.5.3'
-RUN bash -lc 'gem install bundler -v 1.17.3'
+## To install the Yarn package manager (rails assets:precompile complains if not installed), run:
+RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 RUN apt-get update -qq \
     && apt-get install -y build-essential \
-                          mysql-client \
+                          mariadb-client \
                           default-jre \
                           imagemagick \
                           nodejs \
+                          yarn \
                           tzdata \
     && rm -rf /var/lib/apt/lists/*
+
 
 ENV APP_ROOT /app
 RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
 
-# setup nginx/passenger
-RUN rm -f /etc/nginx/sites-enabled/default
-COPY config/nginx.conf /etc/nginx/sites-enabled/discovery.conf
-COPY config/rails-env.conf /etc/nginx/main.d/rails-env.conf
-RUN rm -f /etc/service/nginx/down
-
 # Preinstall gems in an earlier layer so we don't reinstall every time any file changes.
 COPY Gemfile  $APP_ROOT
 COPY Gemfile.lock $APP_ROOT
+RUN bundle config --local build.sassc --disable-march-tune-native
 RUN bundle install --without development test --jobs=3 --retry=3
 
 # *NOW* we copy the codebase in
 COPY . $APP_ROOT
-# Precompile Rails assets.
-RUN RAILS_ENV=uat SECRET_KEY_BASE=pickasecuretoken bundle exec rake assets:precompile
-# change the owner so that the app passenger_user can read and write to the app dir
-RUN chown -R app:app .
 
-EXPOSE 80
+# Precompile Rails assets.  We set a dummy database url/token key
+RUN RAILS_ENV=uat SECRET_KEY_BASE=pickasecuretoken bundle exec rake assets:precompile
+
+EXPOSE 3000
+
+CMD bundle exec puma -C config/puma.rb
