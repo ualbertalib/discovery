@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- searches failing with no location_tesim [#1811](https://github.com/ualbertalib/discovery/issues/1811)
+
 ## [3.0.113] - 2019-11-01
 
 ### Fixed

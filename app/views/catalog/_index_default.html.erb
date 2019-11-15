@@ -19,7 +19,7 @@
           <div class="row">
             <dt class="blacklight-format col-md-3">Copies owned by: </dt>
             <dd class="blacklight-format col-md-9">
-              <%= document['location_tesim'].join(', ') %>
+              <%= document['location_tesim']&.join(', ') %>
         <% end %>
         <% if libguides_icons(document).each do |icon| -%>
           <%= link_to icon[:url] do %>
