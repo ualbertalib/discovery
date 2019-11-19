@@ -20,6 +20,7 @@ module HoldingsHelper
     Status.find_by!(short_code: item[:status].downcase.underscore).name
   rescue ActiveRecord::RecordNotFound => e
     Rollbar.error("Error retriving name for Status #{item[:status].downcase.underscore}", e)
+    Status.create(short_code: item[:status].downcase.underscore, name: 'Unknown')
     'Unknown'
   end
 
@@ -27,6 +28,7 @@ module HoldingsHelper
     ItemType.find_by!(short_code: item[:type].downcase.to_sym).name
   rescue ActiveRecord::RecordNotFound => e
     Rollbar.error("Error retriving name for ItemType #{item[:type].downcase.to_sym}", e)
+    ItemType.create(short_code: item[:type].downcase.to_sym, name: 'Unknown')
     'Unknown'
   end
 
@@ -34,6 +36,7 @@ module HoldingsHelper
     CirculationRule.find_by!(short_code: item[:reserve_rule].to_sym).name
   rescue ActiveRecord::RecordNotFound => e
     Rollbar.error("Error retriving name for CirculationRule #{item[:reserve_rule].to_sym}", e)
+    CirculationRule.create(short_code: item[:reserve_rule].to_sym, name: 'Unknown')
     'Unknown'
   end
 
@@ -72,6 +75,10 @@ module HoldingsHelper
     Location.find_by!(short_code: library_code.downcase.delete('_').to_sym).name
   rescue ActiveRecord::RecordNotFound => e
     Rollbar.error("Error retriving name for Location #{library_code.downcase.delete('_').to_sym}", e)
+    Location.create(
+        short_code: library_code.downcase.delete('_').to_sym,
+        name: 'Unknown'
+    )
     'Unknown'
   end
 
