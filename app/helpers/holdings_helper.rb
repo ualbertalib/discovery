@@ -76,8 +76,8 @@ module HoldingsHelper
   rescue ActiveRecord::RecordNotFound => e
     Rollbar.error("Error retriving name for Location #{library_code.downcase.delete('_').to_sym}", e)
     Location.create(
-        short_code: library_code.downcase.delete('_').to_sym,
-        name: 'Unknown'
+      short_code: library_code.downcase.delete('_').to_sym,
+      name: 'Unknown'
     )
     'Unknown'
   end
