@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.0.114] - 2019-11-26
+
 ### Changed
 - create an 'Unknown' entry for ActiveRecord::RecordNotFound events to limit Rollbar errors [#1853](https://github.com/ualbertalib/discovery/issues/1853)
 
