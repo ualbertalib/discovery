@@ -34,6 +34,7 @@ public Set getLocationFacet(Record record){
   location_codes.put("aitfveg", "Alberta Innovates - Technology Futures - Vegreville");
   location_codes.put("burman", "Burman University");
   location_codes.put("concordia",  "Concordia University of Edmonton");
+  location_codes.put("concordin", "Concordia Internet Library");
   location_codes.put("concordsem", "Concordia Lutheran Seminary");
   location_codes.put("covenantgn", "Covenant Health - Grey Nuns Community Hospital");
   location_codes.put("covenantmh", "Covenant Health - Misericordia Community Hospital");
