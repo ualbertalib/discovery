@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- concordin to location facet mapping for use at index time [#1811](https://github.com/ualbertalib/discovery/issues/1811)
+
 ## [3.0.114] - 2019-11-26
 
 ### Changed
