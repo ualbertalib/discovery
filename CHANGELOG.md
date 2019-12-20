@@ -8,8 +8,6 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Changed
 - Path to the SFX data file on the new SFX server (for e-journal ingest) [#1871](https://github.com/ualbertalib/discovery/issues/1871)
 
-## [Unreleased]
-
 ### Added
 - concordin to location facet mapping for use at index time [#1811](https://github.com/ualbertalib/discovery/issues/1811)
 
