@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and releases in Discovery project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [3.0.115] - 2019-12-20
+
 ### Changed
 - Path to the SFX data file on the new SFX server (for e-journal ingest) [#1871](https://github.com/ualbertalib/discovery/issues/1871)
 - Update path in spec/fixtures as well. [#1872](https://github.com/ualbertalib/discovery/issues/1872)
