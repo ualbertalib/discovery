@@ -13,6 +13,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - data sanity regression test values for databases [PR#1915](https://github.com/ualbertalib/discovery/pull/1915)
 - hours and wording of question for BPSC request form [#1889](https://github.com/ualbertalib/discovery/issues/1889)
 - prepare for incoming library short codes [#1843](https://github.com/ualbertalib/discovery/issues/1843)
+- denormalize library locations [#1843](https://github.com/ualbertalib/discovery/issues/1843)
 
 ### Added
 - create backup tables for library and location [#1843](https://github.com/ualbertalib/discovery/issues/1843)
