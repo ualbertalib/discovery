@@ -11,16 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200117204020) do
+ActiveRecord::Schema.define(version: 20200128205653) do
 
   create_table "backup_libraries", force: :cascade do |t|
-    t.string   "short_code", limit: 255
-    t.string   "name",       limit: 255
-    t.string   "url",        limit: 255
-    t.string   "neos_url",   limit: 255
-    t.string   "proxy",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "short_code",     limit: 255
+    t.string   "old_short_code", limit: 255
+    t.string   "name",           limit: 255
+    t.string   "url",            limit: 255
+    t.string   "neos_url",       limit: 255
+    t.string   "proxy",          limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "backup_locations", force: :cascade do |t|
@@ -61,13 +62,14 @@ ActiveRecord::Schema.define(version: 20200117204020) do
   end
 
   create_table "libraries", force: :cascade do |t|
-    t.string   "short_code", limit: 255
-    t.string   "name",       limit: 255
-    t.string   "url",        limit: 255
-    t.string   "neos_url",   limit: 255
-    t.string   "proxy",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "short_code",     limit: 255
+    t.string   "name",           limit: 255
+    t.string   "url",            limit: 255
+    t.string   "neos_url",       limit: 255
+    t.string   "proxy",          limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "old_short_code", limit: 255
   end
 
   create_table "locations", force: :cascade do |t|
@@ -83,7 +85,7 @@ ActiveRecord::Schema.define(version: 20200117204020) do
   add_index "locations", ["short_code"], name: "index_locations_on_short_code", unique: true, using: :btree
 
   create_table "searches", force: :cascade do |t|
-    t.text     "query_params", limit: 16777215
+    t.text     "query_params", limit: 65535
     t.integer  "user_id",      limit: 4
     t.string   "user_type",    limit: 255
     t.datetime "created_at"
