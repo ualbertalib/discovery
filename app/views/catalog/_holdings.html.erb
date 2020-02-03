@@ -128,8 +128,13 @@
         app.
       </p>
       <% if @document[:issn_t] %>
+  <p style="font-size:100%">
+          <a href="https://license-terms.library.ualberta.ca/terms/?issn=<%= @document[:issn_t].first %>" target="_blank">
+            <strong> <%= t('conditions_of_use') %></strong>
+          </a>
+        </p>
         <p style="font-size:70%">
-          <a href="https://erms.library.ualberta.ca/coral/terms/?issn=<%= @document[:issn_t].first %>" target="_blank">
+          <a href="https://license-terms.library.ualberta.ca/terms/?issn=<%= @document[:issn_t].first %>" target="_blank">
             ill
           </a>
         </p>
