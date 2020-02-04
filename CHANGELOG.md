@@ -17,6 +17,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - create backup tables for library and location [#1843](https://github.com/ualbertalib/discovery/issues/1843)
+- add symphony_nightly generator [#1843](https://github.com/ualbertalib/discovery/issues/1843)
 
 ## [3.0.116] - 2020-02-02
 
