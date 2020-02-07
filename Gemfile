@@ -73,14 +73,12 @@ group :test do
   gem 'danger', '~> 6.2', require: false
   gem 'simplecov', require: false
 
-  gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'capybara', '~> 3.31'
+  gem 'selenium-webdriver', require: false
+  gem 'webdrivers', '~> 4.2'
 
   gem 'vcr', require: false
   gem 'webmock', require: false
-
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
 end
 
 group :uat do

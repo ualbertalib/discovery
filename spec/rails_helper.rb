@@ -30,6 +30,10 @@ Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
                             :selenium_chrome_headless
                           end
 
+# Capbybara 3 does no longer match DOM Elements with text spanning over
+# multiple lines. This configuration re-enables this behavior.
+Capybara.default_normalize_ws = true
+
 # When running your tests Capybara lazily boots the Rails app on a random port
 # and, because this host/port are unknown to Rails, links generated in serializers (i.e. 'more' facets)
 # will point to the wrong URL and following them within your test app and Capybara will fail.

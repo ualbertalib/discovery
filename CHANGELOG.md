@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Removed
+- deprecated chromedrivers-helper [PR#]()
+
 ## [3.0.116] - 2020-02-02
 ### Added
 - Added "See License Terms" link to SFX e-journal record holdings. [#1893]
