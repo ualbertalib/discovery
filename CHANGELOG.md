@@ -7,7 +7,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [Unreleased]
 
 ### Removed
-- deprecated chromedrivers-helper [PR#]()
+- update tests to address deprecations [PR#1901](https://github.com/ualbertalib/discovery/pull/1901)
 
 ## [3.0.116] - 2020-02-02
 ### Added
