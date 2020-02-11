@@ -46,6 +46,10 @@ VCR.configure do |config|
 
   # Only want VCR to intercept requests to external URLs.
   config.ignore_localhost = true
+
+  # ignore travis trying to get webdrivers
+  driver_hosts = Webdrivers::Common.subclasses.map { |driver| URI(driver.base_url).host }
+  config.ignore_hosts(*driver_hosts)
 end
 
 # smoke test the ingest task and setup some seed data for testing
