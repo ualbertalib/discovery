@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190806201706) do
+ActiveRecord::Schema.define(version: 20200117204020) do
+
+  create_table "backup_libraries", force: :cascade do |t|
+    t.string   "short_code", limit: 255
+    t.string   "name",       limit: 255
+    t.string   "url",        limit: 255
+    t.string   "neos_url",   limit: 255
+    t.string   "proxy",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "backup_locations", force: :cascade do |t|
+    t.string   "short_code",        limit: 255
+    t.string   "name",              limit: 255
+    t.string   "url",               limit: 255
+    t.integer  "backup_library_id", limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "backup_locations", ["backup_library_id"], name: "index_backup_locations_on_backup_library_id", using: :btree
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer  "user_id",       limit: 4,   null: false
@@ -106,5 +127,6 @@ ActiveRecord::Schema.define(version: 20190806201706) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "backup_locations", "backup_libraries"
   add_foreign_key "locations", "libraries"
 end
