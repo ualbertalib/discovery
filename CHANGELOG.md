@@ -6,6 +6,36 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Removed
+- update tests to address deprecations [PR#1901](https://github.com/ualbertalib/discovery/pull/1901)
+
+## [3.0.116] - 2020-02-02
+### Added
+- Added "See License Terms" link to SFX e-journal record holdings. [#1893]
+
+## [3.0.115] - 2019-12-20
+
+### Changed
+- Path to the SFX data file on the new SFX server (for e-journal ingest) [#1871](https://github.com/ualbertalib/discovery/issues/1871)
+- Update path in spec/fixtures as well. [#1872](https://github.com/ualbertalib/discovery/issues/1872)
+
+### Added
+- concordin to location facet mapping for use at index time [#1811](https://github.com/ualbertalib/discovery/issues/1811)
+
+## [3.0.114] - 2019-11-26
+
+### Changed
+- create an 'Unknown' entry for ActiveRecord::RecordNotFound events to limit Rollbar errors [#1853](https://github.com/ualbertalib/discovery/issues/1853)
+
+### Fixed
+- searches failing with no location_tesim [#1811](https://github.com/ualbertalib/discovery/issues/1811)
+
+## [3.0.113] - 2019-11-01
+
+### Fixed
+- missing variable declaration in Location error handling [#1824](https://github.com/ualbertalib/discovery/issues/1824)
+- typo of CirculationRule in Holdings Helper [#1823](https://github.com/ualbertalib/discovery/issues/1823)
+
 ### Changed
 - updated occurences of University of Alberta Libraries to Library (new name) [#1813](https://github.com/ualbertalib/discovery/issues/1813)
 

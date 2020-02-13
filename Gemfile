@@ -9,7 +9,7 @@ gem 'mysql2', '~> 0.4.10'
 
 # Assets (CSS/JS) stuff
 gem 'bootstrap', '~> 4.3.1'
-gem 'font-awesome-sass', '~> 5.11.2'
+gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jquery-rails'
 gem 'sassc-rails', '~> 2.1'
 gem 'uglifier', '>= 1.3.0'
@@ -28,8 +28,7 @@ gem 'devise-guests'
 # Misc Utilities
 gem 'addressable', '~> 2.7.0'
 gem 'bootstrap_form', '~> 2.7.0'
-gem 'danger', '~> 6.1'
-gem 'nokogiri', '~> 1.10.4'
+gem 'nokogiri', '~> 1.10.8'
 gem 'om'
 
 # Performance monitoring
@@ -71,18 +70,17 @@ group :development do
 end
 
 group :test do
+  gem 'danger', '~> 6.2', require: false
   gem 'simplecov', require: false
 
-  gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'capybara', '~> 3.31'
+  gem 'selenium-webdriver', require: false
+  gem 'webdrivers', '~> 4.2'
 
-  gem 'vcr', require: false
+  gem 'vcr', '5.0', require: false
   gem 'webmock', require: false
-
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
 end
 
 group :uat do
-  gem 'puma', '~> 4.2'
+  gem 'puma', '~> 4.3'
 end

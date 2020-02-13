@@ -35,7 +35,7 @@ peel:
 sfx:
   schema: marc
   config: "config/SolrMarc/sfx_config.properties"
-  endpoint: "http://resolver.library.ualberta.ca/sfx2sirsi/data/sfxdata.xml"
+  endpoint: "https://sfx-resolver.hosted.exlibrisgroup.com/resolver/cgi/public/get_file.cgi?file=sfxdata.xml"
   path: "data/sfx.xml"
 
 sfx_test:
