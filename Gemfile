@@ -77,7 +77,7 @@ group :test do
   gem 'selenium-webdriver', require: false
   gem 'webdrivers', '~> 4.2'
 
-  gem 'vcr', require: false
+  gem 'vcr', '5.0', require: false
   gem 'webmock', require: false
 end
 
