@@ -76,7 +76,7 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 
-  gem 'vcr', require: false
+  gem 'vcr', '5.0.0', require: false
   gem 'webmock', require: false
 
   # Easy installation and use of chromedriver to run system tests with Chrome
