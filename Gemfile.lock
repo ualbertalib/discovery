@@ -226,7 +226,7 @@ GEM
     nap (1.1.0)
     nio4r (2.5.2)
     no_proxy_fix (0.1.2)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     octokit (4.16.0)
       faraday (>= 0.9)
@@ -358,10 +358,10 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    simplecov (0.18.1)
+    simplecov (0.18.2)
       docile (~> 1.1)
-      simplecov-html (~> 0.11.0)
-    simplecov-html (0.11.0)
+      simplecov-html (~> 0.11)
+    simplecov-html (0.12.0)
     smart_properties (1.15.0)
     solrizer (3.4.1)
       activesupport
@@ -391,7 +391,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.6)
     unicode-display_width (1.6.1)
-    vcr (5.0.0)
+    vcr (5.1.0)
     warden (1.2.7)
       rack (>= 1.0)
     webdrivers (4.2.0)
@@ -434,7 +434,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.2)
   mysql2 (~> 0.4.10)
-  nokogiri (~> 1.10.7)
+  nokogiri (~> 1.10.8)
   om
   pry
   pry-byebug
