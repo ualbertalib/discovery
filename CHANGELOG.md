@@ -10,7 +10,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - update tests to address deprecations [PR#1901](https://github.com/ualbertalib/discovery/pull/1901)
 
 ### Changed
-- data sanity regression test values for databases [PR#]()
+- data sanity regression test values for databases [PR#1915](https://github.com/ualbertalib/discovery/pull/1915)
 
 ## [3.0.116] - 2020-02-02
 ### Added
