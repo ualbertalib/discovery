@@ -15,23 +15,23 @@ ActiveRecord::Schema.define(version: 20200128220027) do
 
   create_table "backup_libraries", force: :cascade do |t|
     t.string   "short_code",     limit: 255
-    t.string   "old_short_code", limit: 255
     t.string   "name",           limit: 255
     t.string   "url",            limit: 255
     t.string   "neos_url",       limit: 255
     t.string   "proxy",          limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "old_short_code", limit: 255
   end
 
   create_table "backup_locations", force: :cascade do |t|
     t.string   "short_code",        limit: 255
-    t.string   "old_short_code",    limit: 255
     t.string   "name",              limit: 255
     t.string   "url",               limit: 255
     t.integer  "backup_library_id", limit: 4
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "old_short_code",    limit: 255
   end
 
   add_index "backup_locations", ["backup_library_id"], name: "index_backup_locations_on_backup_library_id", using: :btree
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 20200128220027) do
   add_index "locations", ["short_code"], name: "index_locations_on_short_code", unique: true, using: :btree
 
   create_table "searches", force: :cascade do |t|
-    t.text     "query_params", limit: 65535
+    t.text     "query_params", limit: 16777215
     t.integer  "user_id",      limit: 4
     t.string   "user_type",    limit: 255
     t.datetime "created_at"

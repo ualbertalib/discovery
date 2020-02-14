@@ -24,6 +24,7 @@ class ChangeLibraryShortCode < ActiveRecord::Migration
 
   def up
     add_column :libraries, :old_short_code, :string
+    add_column :backup_libraries, :old_short_code, :string
 
     # before using the old_short_code we need to reset the connection
     Library.connection.schema_cache.clear!
@@ -39,6 +40,8 @@ class ChangeLibraryShortCode < ActiveRecord::Migration
 
   def down
     remove_column :libraries, :old_short_code
+    remove_column :backup_libraries, :old_short_code
+
     CODES.invert.each do |new_code,old_code|
       entry = Library.find_or_initialize_by(short_code: new_code)
       entry.short_code = old_code
