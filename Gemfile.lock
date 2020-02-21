@@ -139,9 +139,6 @@ GEM
       no_proxy_fix
       octokit (~> 4.7)
       terminal-table (~> 1)
-    debase (0.2.4)
-      debase-ruby_core_source (>= 0.10.2)
-    debase-ruby_core_source (0.10.5)
     debug_inspector (0.0.3)
     deprecation (1.0.0)
       activesupport
@@ -329,8 +326,6 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    ruby-debug-ide (0.7.0)
-      rake (>= 0.8.1)
     ruby-progressbar (1.10.1)
     rubyzip (2.0.0)
     safe_yaml (1.0.5)
@@ -424,7 +419,6 @@ DEPENDENCIES
   brakeman
   capybara (~> 3.31)
   danger (~> 6.2)
-  debase (= 0.2.4)
   devise
   devise-guests
   erb_lint (~> 0.0.30)
@@ -446,7 +440,6 @@ DEPENDENCIES
   rspec-rails
   rspec-solr
   rubocop (~> 0.56.0)
-  ruby-debug-ide
   sassc-rails (~> 2.1)
   scss_lint (>= 0.56.0)
   sdoc
@@ -459,4 +452,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.0.2
+   2.1.4
