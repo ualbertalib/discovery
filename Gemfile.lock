@@ -139,9 +139,9 @@ GEM
       no_proxy_fix
       octokit (~> 4.7)
       terminal-table (~> 1)
-    debase (0.2.4)
+    debase (0.2.4.1)
       debase-ruby_core_source (>= 0.10.2)
-    debase-ruby_core_source (0.10.5)
+    debase-ruby_core_source (0.10.9)
     debug_inspector (0.0.3)
     deprecation (1.0.0)
       activesupport
@@ -424,7 +424,7 @@ DEPENDENCIES
   brakeman
   capybara (~> 3.31)
   danger (~> 6.2)
-  debase (= 0.2.4)
+  debase (= 0.2.4.1)
   devise
   devise-guests
   erb_lint (~> 0.0.30)
