@@ -42,12 +42,13 @@ en:
         <a href="mailto:bpsc@ualberta.ca">bpsc@ualberta.ca</a>
         or call
         <a href="tel:+780-492-5998">780-492-5998</a>
-        during regular business hours (Mon-Fri 12:00-4:30pm).'
+        during regular business hours (Mon-Fri 12:30-4:30pm).'
       review_policy_html:
         'Prior to your visit, please review our
         <a href="https://bpsc.library.ualberta.ca/info/visit#policy">Reading Room Policies.</a>'
-      date_of_planned_visit: 'First date of planned visit (open Mon-Fri 12-4:30pm, but renos are expected to cause intermittent closures
-        in 2019-20 so please confirm hours <a href="https://bpsc.library.ualberta.ca/">here</a>)'
+      date_of_planned_visit: 'Please indicate the first date of your planned visit. Public access hours are Monday-Friday
+        12:30-4:30pm. Facilities maintenance work is expected to cause intermittent closures this term, so please confirm
+        public access hours <a href="https://bpsc.library.ualberta.ca/">here</a>.'
       call_number: 'Call Number'
   rcrf_read_on_site_requests:
     new:
