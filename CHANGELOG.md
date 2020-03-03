@@ -11,6 +11,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Changed
 - data sanity regression test values for databases [PR#1915](https://github.com/ualbertalib/discovery/pull/1915)
+- hours and wording of question for BPSC request form [#1889](https://github.com/ualbertalib/discovery/issues/1889)
 
 ## [3.0.116] - 2020-02-02
 ### Added
