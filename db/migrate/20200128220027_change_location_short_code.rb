@@ -58,25 +58,14 @@ class ChangeLocationShortCode < ActiveRecord::Migration
   }
 
   def up
-    add_column :locations, :old_short_code, :string
-    add_column :backup_locations, :old_short_code, :string
-
-    # before using the old_short_code we need to reset the connection
-    Location.connection.schema_cache.clear!
-    Location.reset_column_information
-
     CODES.each do |old_code,new_code|
       entry = Location.find_or_initialize_by(short_code: old_code)
       entry.short_code = new_code
-      entry.old_short_code = old_code
       entry.save
     end
   end
 
   def down
-    remove_column :locations, :old_short_code
-    remove_column :backup_locations, :old_short_code
-
     CODES.invert.each do |old_code,new_code|
       entry = Location.find_or_initialize_by(short_code: old_code)
       entry.short_code = new_code
