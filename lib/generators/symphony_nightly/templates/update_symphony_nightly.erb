@@ -59,8 +59,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
     end
 
     create_table :backup_libraries do |t|
-      t.string :short_code
-      t.string :name
+      t.string :short_code, null: false
+      t.string :name, null: false
       t.string :url
       t.string :neos_url
       t.string :proxy
@@ -68,8 +68,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
       t.timestamps null: false
     end
     create_table :backup_locations do |t|
-      t.string :short_code
-      t.string :name
+      t.string :short_code, null: false
+      t.string :name, null: false
       t.string :url
       t.references :backup_library, index: true, foreign_key: true
 
@@ -79,8 +79,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
 
   def create_table_statues
     create_table :statuses do |t|
-      t.string :short_code
-      t.string :name
+      t.string :short_code, null: false
+      t.string :name, null: false
 
       t.timestamps null: false
     end
@@ -88,8 +88,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
 
   def create_table_item_types
     create_table :item_types do |t|
-      t.string :short_code
-      t.string :name
+      t.string :short_code, null: false
+      t.string :name, null: false
 
       t.timestamps null: false
     end
@@ -97,8 +97,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
 
   def create_table_circulation_rules
     create_table :circulation_rules do |t|
-      t.string :short_code
-      t.string :name
+      t.string :short_code, null: false
+      t.string :name, null: false
 
       t.timestamps null: false
     end
@@ -106,8 +106,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
 
   def create_table_libraries
     create_table :libraries do |t|
-      t.string :short_code
-      t.string :name
+      t.string :short_code, null: false
+      t.string :name, null: false
       t.string :url
       t.string :neos_url
       t.string :proxy
@@ -118,8 +118,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
 
   def create_table_locations
     create_table :locations do |t|
-      t.string :short_code
-      t.string :name
+      t.string :short_code, null: false
+      t.string :name, null: false
       t.string :url
       t.references :library, index: true, foreign_key: true
 
