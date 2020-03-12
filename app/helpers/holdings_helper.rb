@@ -17,27 +17,36 @@ module HoldingsHelper
   end
 
   def symphony_status(item)
-    Status.find_by!(short_code: item[:status].downcase.underscore).name
-  rescue ActiveRecord::RecordNotFound => e
-    Rollbar.error("Error retriving name for Status #{item[:status].downcase.underscore}", e)
-    Status.create(short_code: item[:status].downcase.underscore, name: 'Unknown')
-    'Unknown'
+    @symphony_status ||= Hash.new do |h, key|
+      status = Status.find_by(short_code: key) || begin
+        Rollbar.error("Error retriving name for Status #{key}", e)
+        Status.create(short_code: key, name: 'Unknown')
+      end
+      h[key] = status.name
+    end
+    @symphony_status[item[:status]]
   end
 
   def item_type(item)
-    ItemType.find_by!(short_code: item[:type].downcase.to_sym).name
-  rescue ActiveRecord::RecordNotFound => e
-    Rollbar.error("Error retriving name for ItemType #{item[:type].downcase.to_sym}", e)
-    ItemType.create(short_code: item[:type].downcase.to_sym, name: 'Unknown')
-    'Unknown'
+    @item_type ||= Hash.new do |h, key|
+      type = ItemType.find_by(short_code: key) || begin
+        Rollbar.error("Error retriving name for ItemType #{key}", e)
+        ItemType.create(short_code: key, name: 'Unknown')
+      end
+      h[key] = type.name
+    end
+    @item_type[item[:type]]
   end
 
   def reserve_rule(item)
-    CirculationRule.find_by!(short_code: item[:reserve_rule].to_sym).name
-  rescue ActiveRecord::RecordNotFound => e
-    Rollbar.error("Error retriving name for CirculationRule #{item[:reserve_rule].to_sym}", e)
-    CirculationRule.create(short_code: item[:reserve_rule].to_sym, name: 'Unknown')
-    'Unknown'
+    @reserve_rule ||= Hash.new do |h, key|
+      rule = CirculationRule.find_by(short_code: key) || begin
+        Rollbar.error("Error retriving name for CirculationRule #{key}", e)
+        CirculationRule.create(short_code: key, name: 'Unknown')
+      end
+      h[key] = rule.name
+    end
+    @reserve_rule[item[:reserve_rule]]
   end
 
   def fetch_sfx_holdings(document)
@@ -72,14 +81,17 @@ module HoldingsHelper
 
   # returns the library description that matches the code coming from symphony ws
   def library_location(library_code)
-    Location.find_by!(short_code: library_code).name
-  rescue ActiveRecord::RecordNotFound => e
-    Rollbar.error("Error retriving name for Location #{library_code}", e)
-    Location.create(
-      short_code: library_code,
-      name: 'Unknown'
-    )
-    'Unknown'
+    @location_name ||= Hash.new do |h, key|
+      location = Location.includes(:library).find_by(short_code: key) || begin
+        Rollbar.error("Error retriving name for Location #{key}", e)
+        Location.create(
+          short_code: key,
+          name: 'Unknown'
+        )
+      end
+      h[key] = location.name
+    end
+    @location_name[library_code]
   end
 
   def kule_holdings(document, holdings)
