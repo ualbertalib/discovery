@@ -1,0 +1,132 @@
+class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Migration
+  # order matters for libraries and locations because of the foreign key
+  SYMPHONY_TABLES = ['statuses',
+                     'item_types',
+                     'circulation_rules',
+                     'locations',
+                     'libraries'].freeze
+
+  def self.up
+    SYMPHONY_TABLES.each do |table|
+      backup_table = 'backup_' + table
+      drop_table(backup_table) if table_exists?(backup_table)
+      rename_table(table, backup_table)
+    end
+
+    # Creating the locations table later on without this gives errors that were
+    # difficult to to make sense of.
+    foreign_keys('backup_locations').each do |fkey|
+      rename_column      fkey.from_table, fkey.options[:column], 'backup_' + fkey.options[:column]
+      remove_foreign_key fkey.from_table, fkey.to_table
+      add_foreign_key    fkey.from_table, fkey.to_table
+    end
+
+    create_table_statues
+    create_table_item_types
+    create_table_circulation_rules
+    create_table_libraries
+    create_table_locations
+
+    <%  CSV.foreach('data/data4discovery.txt', col_sep: '|') do |row| -%>
+    <%-   case row[0]
+          when 'CIRC' -%>CirculationRule.create(short_code: '<%= row[2] %>', name: "<%= row[11] %>")
+    <%-   when 'ITYP' %>ItemType.create(short_code: '<%= row[2] %>', name: "<%= row[8] %>")
+    <%-   when 'LOCN' %>Status.create(short_code: '<%= row[2] %>', name: "<%= row[6] %>")
+    <%-   when 'LIBR' %>Location.create(short_code: '<%= row[2] %>', name: "<%= row[21] %>")
+    <%-   end -%>
+    <%  end -%>
+    <%  CSV.foreach('data/Data4DiscoveryManual.txt', col_sep: '|') do |row| %>
+    entry = Library.create(short_code: '<%= row[0] %>',
+                           name: "<%= row[1] %>",
+                           proxy: '<%= row[3] %>',
+                           url: '<%= row[4] %>',
+                           neos_url: '<%= row[5] %>')
+    <%-   row[2].split(',').each do |location_shortcode| -%>
+    Location.where(short_code: '<%= location_shortcode %>').update_all(library_id: entry)
+    <%-   end -%>
+    <%- end %>
+  end
+
+  def self.down
+    SYMPHONY_TABLES.each do |table|
+      backup_table = 'backup_' + table
+      drop_table(table) if table_exists?(backup_table)
+      rename_table(backup_table, table)
+    end
+
+    foreign_keys('locations').each do |fkey|
+      rename_column      fkey.from_table, fkey.options[:column], fkey.options[:column].gsub('backup_', '')
+      remove_foreign_key fkey.from_table, fkey.to_table
+      add_foreign_key    fkey.from_table, fkey.to_table
+    end
+
+    create_table :backup_libraries do |t|
+      t.string :short_code, null: false
+      t.string :name, null: false
+      t.string :url
+      t.string :neos_url
+      t.string :proxy
+
+      t.timestamps null: false
+    end
+    create_table :backup_locations do |t|
+      t.string :short_code, null: false
+      t.string :name, null: false
+      t.string :url
+      t.references :backup_library, index: true, foreign_key: true
+
+      t.timestamps null: false
+    end
+  end
+
+  def create_table_statues
+    create_table :statuses do |t|
+      t.string :short_code, null: false
+      t.string :name, null: false
+
+      t.timestamps null: false
+    end
+  end
+
+  def create_table_item_types
+    create_table :item_types do |t|
+      t.string :short_code, null: false
+      t.string :name, null: false
+
+      t.timestamps null: false
+    end
+  end
+
+  def create_table_circulation_rules
+    create_table :circulation_rules do |t|
+      t.string :short_code, null: false
+      t.string :name, null: false
+
+      t.timestamps null: false
+    end
+  end
+
+  def create_table_libraries
+    create_table :libraries do |t|
+      t.string :short_code, null: false
+      t.string :name, null: false
+      t.string :url
+      t.string :neos_url
+      t.string :proxy
+
+      t.timestamps null: false
+    end
+  end
+
+  def create_table_locations
+    create_table :locations do |t|
+      t.string :short_code, null: false
+      t.string :name, null: false
+      t.string :url
+      t.references :library, index: true, foreign_key: true
+
+      t.timestamps null: false
+    end
+    add_index :locations, :short_code, unique: true
+  end
+end

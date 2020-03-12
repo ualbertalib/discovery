@@ -72,11 +72,11 @@ module HoldingsHelper
 
   # returns the library description that matches the code coming from symphony ws
   def library_location(library_code)
-    Location.find_by!(short_code: library_code.downcase.delete('_').to_sym).name
+    Location.find_by!(short_code: library_code).name
   rescue ActiveRecord::RecordNotFound => e
-    Rollbar.error("Error retriving name for Location #{library_code.downcase.delete('_').to_sym}", e)
+    Rollbar.error("Error retriving name for Location #{library_code}", e)
     Location.create(
-      short_code: library_code.downcase.delete('_').to_sym,
+      short_code: library_code,
       name: 'Unknown'
     )
     'Unknown'

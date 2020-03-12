@@ -9,7 +9,7 @@ RSpec.describe 'Search results UofA holdings logo', type: :feature do
 
     click_on 'Library'
     within('.blacklight-location_tesim') do
-      click_on Location.find_by(short_code: :uainternet).name
+      click_on Location.find_by(short_code: 'UAINTERNET').name
     end
 
     page.all('#documents .document').each do |element|
@@ -25,7 +25,7 @@ RSpec.describe 'Search results UofA holdings logo', type: :feature do
 
     click_on 'Library'
     within('.blacklight-location_tesim') do
-      click_on Location.find_by(short_code: :grmacewan).name
+      click_on Location.find_by(short_code: 'GR_MACEWAN').name
     end
 
     page.all('#documents .document').each do |element|
@@ -41,11 +41,11 @@ RSpec.describe 'Search results UofA holdings logo', type: :feature do
 
     click_on 'Library'
     within('.blacklight-location_tesim') do
-      click_on Location.find_by(short_code: :uainternet).name
+      click_on Location.find_by(short_code: 'UAINTERNET').name
     end
 
     within('.blacklight-location_tesim') do
-      click_on Location.find_by(short_code: :grmacint).name
+      click_on Location.find_by(short_code: 'GR_MAC_INT').name
     end
 
     page.all('#documents .document').each do |element|

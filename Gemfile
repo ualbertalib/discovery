@@ -41,6 +41,7 @@ group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'rspec-solr'
+  gem 'shoulda-matchers', '~> 4.2'
 
   gem 'pry'
   gem 'pry-byebug'
@@ -75,6 +76,8 @@ group :test do
 
   gem 'vcr', '5.0', require: false
   gem 'webmock', require: false
+
+  gem 'generator_spec', '~> 0.9.4'
 end
 
 group :uat do
