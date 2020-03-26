@@ -1,0 +1,26 @@
+import org.marc4j.marc.Record;
+
+org.solrmarc.index.SolrIndexer indexer = null;
+
+public Set getInstitutions(Record record){
+
+  Set institutions = new LinkedHashSet();
+  String code_string = indexer.getFirstFieldVal(record, "596a");
+
+  if (code_string != null){
+  String[] codes = code_string.split(" ");
+  Hashtable institution_codes = new Hashtable();
+  <% Location.all.each do |l| %>
+    <%- if l.library -%>
+      <%= "institution_codes.put(\"#{l.symphony_id}\", \"#{l.library.name}\");" -%>
+    <%- else -%>
+    <%= "institution_codes.put(\"#{l.symphony_id}\", \"#{l.name}\");" -%>
+    <%- end -%>
+  <%- end %>
+
+ for (String code : codes){
+    institutions.add(institution_codes.get(code));
+  }
+}
+ return institutions;
+}
