@@ -70,7 +70,7 @@ group :test do
   gem 'danger', '~> 6.3', require: false
   gem 'simplecov', require: false
 
-  gem 'capybara', '~> 3.31'
+  gem 'capybara', '~> 3.32'
   gem 'selenium-webdriver', require: false
   gem 'webdrivers', '~> 4.2'
 
