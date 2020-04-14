@@ -100,7 +100,7 @@ GEM
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
     bootstrap_form (2.7.0)
-    brakeman (4.8.0)
+    brakeman (4.8.1)
     builder (3.2.4)
     byebug (11.1.1)
     capybara (3.32.1)
