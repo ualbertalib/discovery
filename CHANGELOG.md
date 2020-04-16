@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- abort `symphony_nightly` if data files do not exist. [PR#]()
+
 ## [3.1.0] - 2020-04-06
 
 ### Removed
