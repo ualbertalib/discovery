@@ -19,7 +19,7 @@ module HoldingsHelper
   def symphony_status(item)
     @symphony_status ||= Hash.new do |h, key|
       status = Status.find_by(short_code: key) || begin
-        Rollbar.error("Error retriving name for Status #{key}", e)
+        Rollbar.error("Error retriving name for Status #{key}")
         Status.create(short_code: key, name: 'Unknown')
       end
       h[key] = status.name
@@ -30,7 +30,7 @@ module HoldingsHelper
   def item_type(item)
     @item_type ||= Hash.new do |h, key|
       type = ItemType.find_by(short_code: key) || begin
-        Rollbar.error("Error retriving name for ItemType #{key}", e)
+        Rollbar.error("Error retriving name for ItemType #{key}")
         ItemType.create(short_code: key, name: 'Unknown')
       end
       h[key] = type.name
@@ -41,7 +41,7 @@ module HoldingsHelper
   def reserve_rule(item)
     @reserve_rule ||= Hash.new do |h, key|
       rule = CirculationRule.find_by(short_code: key) || begin
-        Rollbar.error("Error retriving name for CirculationRule #{key}", e)
+        Rollbar.error("Error retriving name for CirculationRule #{key}")
         CirculationRule.create(short_code: key, name: 'Unknown')
       end
       h[key] = rule.name
@@ -83,7 +83,7 @@ module HoldingsHelper
   def library_location(library_code)
     @location_name ||= Hash.new do |h, key|
       location = Location.includes(:library).find_by(short_code: key) || begin
-        Rollbar.error("Error retriving name for Location #{key}", e)
+        Rollbar.error("Error retriving name for Location #{key}")
         Location.create(
           short_code: key,
           name: 'Unknown'
