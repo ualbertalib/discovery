@@ -7,7 +7,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ## [Unreleased]
 
 ### Fixed
-- abort `symphony_nightly` if data files do not exist. [PR#]()
+- abort `symphony_nightly` if data files do not exist. [PR#1961](https://github.com/ualbertalib/discovery/pull/1961)
 
 ## [3.1.0] - 2020-04-06
 
