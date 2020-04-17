@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.1.0] - 2020-04-06
+
 ### Removed
 - update tests to address deprecations [PR#1901](https://github.com/ualbertalib/discovery/pull/1901)
 

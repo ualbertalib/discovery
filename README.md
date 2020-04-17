@@ -42,7 +42,7 @@ Integration tests (run against <http://search-test.library.ualberta.ca/>)
 ## Additional Tasks for uat, staging and production
 
 1.  `bundle exec rake assets:precompile` this can take several minutes
-2.  create cron jobs to ingest `bundle exec rake ingest[sfx]`, `bundle exec rake ingest[databases]` and clean session table `bundle exec rake sessions:cleanup`
+2.  create cron jobs to ingest `bundle exec rake ingest[sfx]`, `bundle exec rake ingest[databases]`, `bundle exec rails g symphony_nightly  && bundle exec rake db:migrate` and clean session table `bundle exec rake sessions:cleanup`
 
 ## UAT
 Go [here](https://github.com/ualbertalib/di_internal/blob/master/System-Adminstration/UAT-Environment.md#access-discovery-uat-instance) for information about accessing Discovery UAT instance.
@@ -61,3 +61,5 @@ export SOLR_INGEST_URL=http://localhost:8983/solr/your-new-solr-collection
 bundle exec rake ingest[collection]
 unset SOLR_INGEST_URL # if desired
 ```
+
+To populate the human readable strings for the 'Where is this?' table.  Assuming `./data/data4discovery.txt` and `./data/Data4DiscoveryManual.txt` are present then you can invoke `bundle exec rails g symphony_nightly  && bundle exec rake db:migrate` to populate the tables with the latest configurations. If for some reason this doesn't go well, `bundle exec rake db:rollback` and delete the migration at `db/migrate/<todays date>_symphony_nightly_<todays date>.rb` will revert to a known good state.
