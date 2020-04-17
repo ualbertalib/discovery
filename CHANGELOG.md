@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- removed reference to error variable in Rollbar errors [PR#1962](https://github.com/ualbertalib/discovery/pull/1962)
+
 ## [3.1.0] - 2020-04-06
 
 ### Removed
