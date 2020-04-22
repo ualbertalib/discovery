@@ -9,6 +9,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Fixed
 - removed reference to error variable in Rollbar errors [PR#1962](https://github.com/ualbertalib/discovery/pull/1962)
 
+### Removed
+- removed paragraph in record views related to Browzine, cancelled as of April 30, 2020. [PR#1964]https://github.com/ualbertalib/discovery/pull/1964
+
 ## [3.1.0] - 2020-04-06
 
 ### Removed
