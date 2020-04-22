@@ -69,6 +69,9 @@ class AddSymphonyIdToLocation < ActiveRecord::Migration
       entry.symphony_id = symphony_id
       entry.save
     end
+
+    # missed this previously
+    Location.create(short_code: 'bmufa', name: "Kule Collection")
     
   end
 

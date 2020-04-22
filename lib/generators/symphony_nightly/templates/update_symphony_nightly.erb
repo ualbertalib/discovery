@@ -27,6 +27,7 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
     create_table_libraries
     create_table_locations
 
+    Location.create(short_code: 'bmufa', name: "Kule Collection")
     <%  CSV.foreach('data/data4discovery.txt', col_sep: '|') do |row| -%>
     <%-   case row[0]
           when 'CIRC' -%>CirculationRule.create(short_code: '<%= row[2] %>', name: "<%= row[11] %>")
