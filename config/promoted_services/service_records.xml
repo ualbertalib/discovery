@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <records>
   <record>
-    <id>service001</id>
-    <title>Browzine</title>
-    <url>http://guides.library.ualberta.ca/browzine</url>
-    <source>services</source>
-    <format>service</format>
-    <electronic>Online</electronic>
-  </record>
-  <record>
     <id>service002</id>
     <title>ERA (Education &amp; Research Archive)</title>
     <url>https://era.library.ualberta.ca/public/home</url>
