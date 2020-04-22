@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+
+## [3.1.1] - 2020-04-22
+
 ### Fixed
 - abort `symphony_nightly` if data files do not exist. [PR#1961](https://github.com/ualbertalib/discovery/pull/1961)
 - removed reference to error variable in Rollbar errors [PR#1962](https://github.com/ualbertalib/discovery/pull/1962)
