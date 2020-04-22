@@ -3,7 +3,7 @@ require_relative '../spec_helper.rb'
 describe PromotedServicesVocabulary do
   let(:service_document) do
     PromotedServicesVocabulary.from_xml(Nokogiri::XML(File.open(
-                                                        Rails.root.join('spec', 'fixtures', 'browzine_record.xml')
+                                                        Rails.root.join('spec', 'fixtures', 'era_record.xml')
                                                       )).xpath('//record').to_s)
   end
 
@@ -14,9 +14,9 @@ describe PromotedServicesVocabulary do
   end
 
   it 'should hold all the right fields' do
-    expect(service_document.id).to eq ['service001']
-    expect(service_document.title).to eq ['Browzine']
-    expect(service_document.url).to eq ['http://guides.library.ualberta.ca/browzine']
+    expect(service_document.id).to eq ['service002']
+    expect(service_document.title).to eq ['ERA (Education &amp; Research Archive)']
+    expect(service_document.url).to eq ['https://era.library.ualberta.ca/public/home']
     expect(service_document.source).to eq ['services']
     expect(service_document.format).to eq ['service']
   end
