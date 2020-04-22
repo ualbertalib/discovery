@@ -15,7 +15,7 @@ describe PromotedServicesVocabulary do
 
   it 'should hold all the right fields' do
     expect(service_document.id).to eq ['service002']
-    expect(service_document.title).to eq ['ERA (Education &amp; Research Archive)']
+    expect(service_document.title).to eq ['ERA (Education & Research Archive)']
     expect(service_document.url).to eq ['https://era.library.ualberta.ca/public/home']
     expect(service_document.source).to eq ['services']
     expect(service_document.format).to eq ['service']
