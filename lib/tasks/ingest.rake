@@ -26,8 +26,13 @@ task :ingest_info do
   puts "Solr collection contains #{response['response']['numFound']} results."
 end
 
+desc 'update Solr Marc maps for location facets from current database state'
+task :update_solr_marc_maps do
+  sh 'rails g solr_marc_prep'
+end
+
 desc 'ingest records' # add config parameter for directory ingest?
-task :ingest, [:collection] do |_t, args|
+task :ingest, [:collection] => [:update_solr_marc_maps] do |_t, args|
   log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
   log_file = if File.exist? log_config['log_path']
                File.open(log_config['log_path'], File::WRONLY | File::APPEND)

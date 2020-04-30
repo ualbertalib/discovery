@@ -1,0 +1,10 @@
+Description:
+    Replaces maps used by the ingest process.  In particular these provide the human readable string for locations
+    and institutions based on the latest values in the application database.
+
+Example:
+    rails generate solr_marc_prep
+
+    This will replace:
+        config/SolrMarc/index_scripts/institution.bsh
+        config/SolrMarc/index_scripts/location_facet.bsh
