@@ -8,7 +8,7 @@ public Set getLocationFacet(Record record){
   Set codes = indexer.getFieldList(record,"926m");
   Hashtable location_codes = new Hashtable();
   <% Location.order(:short_code).each do |l| %>
-    <%= "location_codes.put(\"#{l.short_code}\", \"#{l.name}\");" -%>
+  <%=  "location_codes.put(\"#{l.short_code}\", \"#{l.name}\");" -%>
   <% end %>
 
   for (String code : codes){

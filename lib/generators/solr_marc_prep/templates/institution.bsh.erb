@@ -10,14 +10,13 @@ public Set getInstitutions(Record record){
   if (code_string != null){
   String[] codes = code_string.split(" ");
   Hashtable institution_codes = new Hashtable();
-
-  <%- Location.order(:symphony_id).each do |l| %>
-  <%-   if l.symphony_id.present? && l.library -%>
+  <% Location.includes(:library).order(:symphony_id).where.not(symphony_id: nil).each do |l| -%>
+  <%-   if l.library %>
   <%=     "institution_codes.put(\"#{l.symphony_id}\", \"#{l.library.name}\");" -%>
-  <%-   elsif l.symphony_id.present? -%>
+  <%-   else %>
   <%=     "institution_codes.put(\"#{l.symphony_id}\", \"#{l.name}\");" -%>
   <%-   end -%>
-  <%- end -%>
+  <%- end %>
 
  for (String code : codes){
     institutions.add(institution_codes.get(code));
