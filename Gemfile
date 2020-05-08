@@ -67,7 +67,7 @@ group :development do
 end
 
 group :test do
-  gem 'danger', '~> 6.3', require: false
+  gem 'danger', '~> 8.0', require: false
   gem 'simplecov', require: false
 
   gem 'capybara', '~> 3.32'
