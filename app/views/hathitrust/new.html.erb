@@ -1,0 +1,20 @@
+<%= javascript_tag "hathitrustModal()" %>
+
+<div class="modal-header col-12">
+  <h1 class="modal-title"><%= t('hathitrust.form.title') %></h1>
+  <button type="button" class="ajax-modal-close close" data-dismiss="modal" aria-hidden="true">×</button>
+</div>
+
+<form id="hathitrustForm" target="_blank" rel="noopener noreferrer">
+  <div class="modal-body">
+    <%= render partial: '/flash_msg' %>
+    <%= sanitize(t('hathitrust.form.body_html'), tags: ['a', 'p'], attributes: ['target', 'rel', 'href']) %>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal"> <%= t('hathitrust.form.cancel') %> </button>
+    <button id='hathitrustFormSubmit' type="submit" class="btn btn-primary"> <%= t('hathitrust.form.submit') %> </button>
+  </div>
+
+</form>

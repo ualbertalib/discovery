@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200319205106) do
+ActiveRecord::Schema.define(version: 20200508004437) do
 
   create_table "backup_libraries", force: :cascade do |t|
     t.string   "short_code", limit: 255
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20200319205106) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "hathitrusts", force: :cascade do |t|
+    t.integer  "oclc",       limit: 4, null: false
+    t.integer  "local_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "hathitrusts", ["local_id"], name: "index_hathitrusts_on_local_id", using: :btree
 
   create_table "item_types", force: :cascade do |t|
     t.string   "short_code", limit: 255

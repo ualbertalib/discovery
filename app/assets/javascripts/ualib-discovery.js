@@ -39,3 +39,38 @@ window.onload=setiFrameAttr;
     Blacklight.doResizeFacetLabelsAndCounts();
   });
 })(jQuery);
+
+function getHathitrustLink(oclId) {
+  $(document).ready(function () {
+    $.ajax({
+      url: 'http://catalog.hathitrust.org/api/volumes/brief/oclc/' + oclId + '.json&callback=hathitrustResponse',
+      type: "GET",
+      dataType: "jsonp",
+      jsonpCallback: "hathitrustResponse"
+    });
+  });
+}
+
+function hathitrustResponse(json) {
+  if (!jQuery.isEmptyObject(json) && !jQuery.isEmptyObject(json.records)) {
+
+    // Proper response exists, show button and set hidden div text.
+    $('#hathitrustButton').css('display', 'block');
+    var recordURL = Object.values(json.records)[0].recordURL;
+
+    var $hathitrust_link_div = $('#hathitrustLink');
+    $hathitrust_link_div.text(recordURL + '?urlappend=%3Bsignon=swle:wayf');
+  }
+}
+
+function hathitrustModal() {
+  // Retrieve link and set form action.
+  var $hathitrust_link_div = $('#hathitrustLink');
+
+  var $hathitrust_form = $('#hathitrustForm');
+  $hathitrust_form.attr('action', $hathitrust_link_div.text());
+
+  $('#hathitrustForm').submit(function(e) {
+    $('#ajax-modal').modal('hide');
+  });
+}
