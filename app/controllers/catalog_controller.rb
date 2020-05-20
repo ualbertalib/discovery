@@ -60,7 +60,7 @@ class CatalogController < ApplicationController
     @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] && @document['published_display']
     @document.delete('publisher_tesim') if @document['published_display']
 
-    @document['oclc'] = Hathitrust.find_by(local_id: @document['id'])&.oclc
+    @document['oclc'] = HathitrustOverlapRecord.find(@document['id'])&.oclc
   end
 
   configure_blacklight do |config|

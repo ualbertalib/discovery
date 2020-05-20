@@ -43,7 +43,7 @@ window.onload=setiFrameAttr;
 function getHathitrustLink(oclId) {
   $(document).ready(function () {
     $.ajax({
-      url: 'http://catalog.hathitrust.org/api/volumes/brief/oclc/' + oclId + '.json&callback=hathitrustResponse',
+      url: 'http://catalog.hathitrust.org/api/volumes/brief/oclc/' + oclId + '.json',
       type: "GET",
       dataType: "jsonp",
       jsonpCallback: "hathitrustResponse"
@@ -52,25 +52,26 @@ function getHathitrustLink(oclId) {
 }
 
 function hathitrustResponse(json) {
-  if (!jQuery.isEmptyObject(json) && !jQuery.isEmptyObject(json.records)) {
+  if (!jQuery.isEmptyObject(json) && !jQuery.isEmptyObject(json.items)
+      && !jQuery.isEmptyObject(Object.values(json.items)[0].itemURL)) {
 
     // Proper response exists, show button and set hidden div text.
     $('#hathitrustButton').css('display', 'block');
-    var recordURL = Object.values(json.records)[0].recordURL;
+    var itemURL = Object.values(json.items)[0].itemURL;
 
     var $hathitrust_link_div = $('#hathitrustLink');
-    $hathitrust_link_div.text(recordURL + '?urlappend=%3Bsignon=swle:wayf');
+    $hathitrust_link_div.text(itemURL + '?urlappend=%3Bsignon=swle:https://login.ualberta.ca/saml2/idp/metadata.php');
   }
 }
 
 function hathitrustModal() {
-  // Retrieve link and set form action.
+  // Retrieve link and set href on button.
   var $hathitrust_link_div = $('#hathitrustLink');
 
-  var $hathitrust_form = $('#hathitrustForm');
-  $hathitrust_form.attr('action', $hathitrust_link_div.text());
+  var $hathitrust_accept = $('#hathitrustAccept');
+  $hathitrust_accept.attr('href', $hathitrust_link_div.text());
 
-  $('#hathitrustForm').submit(function(e) {
+  $hathitrust_accept.click(function(e) {
     $('#ajax-modal').modal('hide');
   });
 }
