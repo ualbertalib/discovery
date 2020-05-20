@@ -67,12 +67,12 @@ group :development do
 end
 
 group :test do
-  gem 'danger', '~> 6.3', require: false
+  gem 'danger', '~> 8.0', require: false
   gem 'simplecov', require: false
 
   gem 'capybara', '~> 3.32'
   gem 'selenium-webdriver', require: false
-  gem 'webdrivers', '~> 4.2'
+  gem 'webdrivers', '~> 4.3'
 
   gem 'vcr', '5.0', require: false
   gem 'webmock', require: false

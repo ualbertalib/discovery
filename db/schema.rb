@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200128220027) do
+ActiveRecord::Schema.define(version: 20200319205106) do
 
   create_table "backup_libraries", force: :cascade do |t|
     t.string   "short_code", limit: 255
@@ -71,12 +71,13 @@ ActiveRecord::Schema.define(version: 20200128220027) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string   "short_code", limit: 255
-    t.string   "name",       limit: 255
-    t.string   "url",        limit: 255
-    t.integer  "library_id", limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "short_code",  limit: 255
+    t.string   "name",        limit: 255
+    t.string   "url",         limit: 255
+    t.integer  "library_id",  limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "symphony_id", limit: 4
   end
 
   add_index "locations", ["library_id"], name: "index_locations_on_library_id", using: :btree
