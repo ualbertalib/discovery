@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200319205106) do
+ActiveRecord::Schema.define(version: 20200520170804) do
 
   create_table "backup_libraries", force: :cascade do |t|
     t.string   "short_code", limit: 255
@@ -52,6 +52,13 @@ ActiveRecord::Schema.define(version: 20200319205106) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  create_table "hathitrust_overlap_records", id: false, force: :cascade do |t|
+    t.integer "catalog_id", limit: 4, null: false
+    t.integer "oclc",       limit: 4, null: false
+  end
+
+  add_index "hathitrust_overlap_records", ["catalog_id"], name: "index_hathitrust_overlap_records_on_catalog_id", unique: true, using: :btree
 
   create_table "item_types", force: :cascade do |t|
     t.string   "short_code", limit: 255

@@ -106,3 +106,37 @@ en:
       original_message_below:
         html: '<p>The email message in its original form starts below the following line:</p>'
         plain: 'The email message in its original form starts below the following line:'
+  hathitrust:
+    button: 'Access Full Text at HathiTrust'
+    form:
+      title: 'HathiTrust ETAS'
+      submit: 'Agree'
+      cancel: 'Decline'
+      body_html: "<p>Click through agreement for Canadian institutions participating in
+             HathiTrust’s Emergency Temporary Access Service (ETAS)</p>
+
+             <p>Digital works accessible through HathiTrust’s Emergency Temporary Access
+             Service (ETAS) are made available solely for the use of an individual
+             student, staff member, or faculty member of a participating Canadian
+             institution.</p>
+
+             <p>These works are made available on the basis of fair dealing, only for the
+             purposes of research, private study, education, parody, satire, criticism
+             or review.</p>
+
+             <p>You may view and access these digital works only for the foregoing
+             purpose(s) and only during a period that these digital works are made
+             available by the library.</p>
+
+             <p>You may not distribute, e-mail, or otherwise communicate these works to any
+             other person under the terms of this agreement.</p>
+
+             <p>Any downloading, reproduction, fixation, distribution, transmission,
+             dissemination, communication, or any other uses of these works, if done
+             without securing the permission of the copyright owner, may be an
+             infringement of copyright.</p>
+
+             <p><a href='https://www.hathitrust.org/etas-terms-of-service' target='_blank' rel='noopener noreferrer'>
+             Click here</a> for HathiTrust’s ETAS Terms of Service.</p>
+
+             <p>If additional assistance is required, contact copyright@ualberta.ca</p>"

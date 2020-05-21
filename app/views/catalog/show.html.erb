@@ -79,6 +79,11 @@
         <% end %>
       </div>
     <% end %>
+
+    <% unless @document['oclc'].nil? %>
+      <%= render partial: 'hathitrust_link', locals: {oclc: @document['oclc']} %>
+    <% end %>
+
     <% if @holdings.blank? %>
       <% unless @document["format"].include? "Database" %>
         <br />

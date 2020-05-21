@@ -1,0 +1,4 @@
+<%= javascript_tag "getHathitrustLink(#{oclc})" %>
+
+<div id="hathitrustLink" class="d-none"></div>
+<%= link_to t('hathitrust.button'), new_hathitrust_path(oclc: oclc), {:id => 'hathitrustButton', :class => 'lightboxLink btn'} %>

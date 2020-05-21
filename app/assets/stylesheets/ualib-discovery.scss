@@ -60,7 +60,7 @@ color: #fff;
 #no-dot{
   background-image:none;
 }
-.hold{
+.hold, #hathitrustButton {
   background-color: #557185;
   -webkit-background-size: 8px;
   background-size: 8px;
@@ -72,7 +72,7 @@ color: #fff;
   font-size: 18px;
   width: 100%;
 }
-.hold:hover{
+.hold:hover, #hathitrustButton:hover{
   background-color: #7e9db2;
   color: #fff;
 }
@@ -649,4 +649,8 @@ padding: 15px 0;
   display: inline-block;
   vertical-align: middle;
   float: none;
+}
+
+#hathitrustButton {
+  display: none;
 }
