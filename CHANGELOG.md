@@ -12,6 +12,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 - add generator to prep files for SolrMarc before ingest [#1939](https://github.com/ualbertalib/discovery/issues/1939)
 - add hathitrust ETAS access [#1973](https://github.com/ualbertalib/discovery/issues/1973)
 
+## [3.1.1] - 2020-04-22
+
 ### Fixed
 - abort `symphony_nightly` if data files do not exist. [PR#1961](https://github.com/ualbertalib/discovery/pull/1961)
 - removed reference to error variable in Rollbar errors [PR#1962](https://github.com/ualbertalib/discovery/pull/1962)
