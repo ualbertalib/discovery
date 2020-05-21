@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.2.0] - 2020-05-21
+
 ### Added
 - add generator to prep files for SolrMarc before ingest [#1939](https://github.com/ualbertalib/discovery/issues/1939)
 - add hathitrust ETAS access [#1973](https://github.com/ualbertalib/discovery/issues/1973)
