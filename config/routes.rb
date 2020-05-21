@@ -37,5 +37,7 @@ Rails.application.routes.draw do
   resources :bpsc_read_on_site_requests, only: [:new, :create]
   resources :rcrf_read_on_site_requests, only: [:new, :create]
 
+  resources :hathitrust, only: [:new]
+
   root to: 'catalog#index'
 end

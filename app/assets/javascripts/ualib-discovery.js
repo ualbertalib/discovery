@@ -39,3 +39,39 @@ window.onload=setiFrameAttr;
     Blacklight.doResizeFacetLabelsAndCounts();
   });
 })(jQuery);
+
+function getHathitrustLink(oclId) {
+  $(document).ready(function () {
+    $.ajax({
+      url: 'http://catalog.hathitrust.org/api/volumes/brief/oclc/' + oclId + '.json',
+      type: "GET",
+      dataType: "jsonp",
+      jsonpCallback: "hathitrustResponse"
+    });
+  });
+}
+
+function hathitrustResponse(json) {
+  if (!jQuery.isEmptyObject(json) && !jQuery.isEmptyObject(json.items)
+      && !jQuery.isEmptyObject(Object.values(json.items)[0].itemURL)) {
+
+    // Proper response exists, show button and set hidden div text.
+    $('#hathitrustButton').css('display', 'block');
+    var itemURL = Object.values(json.items)[0].itemURL;
+
+    var $hathitrust_link_div = $('#hathitrustLink');
+    $hathitrust_link_div.text(itemURL + '?urlappend=%3Bsignon=swle:https://login.ualberta.ca/saml2/idp/metadata.php');
+  }
+}
+
+function hathitrustModal() {
+  // Retrieve link and set href on button.
+  var $hathitrust_link_div = $('#hathitrustLink');
+
+  var $hathitrust_accept = $('#hathitrustAccept');
+  $hathitrust_accept.attr('href', $hathitrust_link_div.text());
+
+  $hathitrust_accept.click(function(e) {
+    $('#ajax-modal').modal('hide');
+  });
+}
