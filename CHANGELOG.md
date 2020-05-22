@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- fixed hathitrust mixed content blocking [PR#1999](https://github.com/ualbertalib/discovery/pull/1999)
+
 ## [3.2.0] - 2020-05-21
 
 ### Added

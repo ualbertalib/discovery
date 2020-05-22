@@ -43,7 +43,7 @@ window.onload=setiFrameAttr;
 function getHathitrustLink(oclId) {
   $(document).ready(function () {
     $.ajax({
-      url: 'http://catalog.hathitrust.org/api/volumes/brief/oclc/' + oclId + '.json',
+      url: 'https://catalog.hathitrust.org/api/volumes/brief/oclc/' + oclId + '.json',
       type: "GET",
       dataType: "jsonp",
       jsonpCallback: "hathitrustResponse"
