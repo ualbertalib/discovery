@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.2.2] - 2020-05-28
+
+### Security
+- Bump kaminari from 1.2.0 to 1.2.1 [PR#2004](https://github.com/ualbertalib/discovery/pull/2004)
+
 ## [3.2.1] - 2020-05-22
 
 ### Fixed
