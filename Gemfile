@@ -72,7 +72,7 @@ group :test do
 
   gem 'capybara', '~> 3.32'
   gem 'selenium-webdriver', require: false
-  gem 'webdrivers', '~> 4.3'
+  gem 'webdrivers', '~> 4.4'
 
   gem 'vcr', '5.0', require: false
   gem 'webmock', require: false
