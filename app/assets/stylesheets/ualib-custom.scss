@@ -2009,7 +2009,7 @@ ul.foot-nav{
     @extend .row;
 
     .sort-buttons {
-      @extend .col-md-4;
+      @extend .col-md-4 !optional;
       padding: 0;
     }
 
