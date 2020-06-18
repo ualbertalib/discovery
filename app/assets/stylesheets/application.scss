@@ -12,8 +12,6 @@
  *
  *
 */
-// Make font-size-base slightly smaller due to font size slightly increasing after bootstrap 4 upgrade.
-$font-size-base: 0.9rem;
 
 @import 'bootstrap';
 
@@ -22,6 +20,9 @@ $font-size-base: 0.9rem;
 
 @import 'rails_bootstrap_forms';
 @import 'bootstrap-forms-custom';
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 //Used by blacklight_range_limit
 @import  'blacklight_range_limit';

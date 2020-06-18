@@ -21,7 +21,7 @@
   <div class="ual-top">
     <nav class="navbar navbar-expand-lg navbar-light ual-nav pb-0 pt-0">
       <div class="container flex-fill pt-3 pb-3">
-        <%= link_to (image_tag ("/UA-LIB.svg"), "class" => "ual-logo", "alt" => "UA Library Logo", "type" => "image/svg+xml" ), cms_root_url, "class" => "navbar-brand mr-0", "aria-label" => "UA Library Home" %>
+        <%= link_to (image_tag ("/UA-LIB.svg"), "class" => "ual-logo", "alt" => "UA Library Logo", "type" => "image/svg+xml", "width" => "90%", "height" =>"70px"), cms_root_url, "class" => "navbar-brand mr-0", "aria-label" => "UA Library Home" %>
         <button class="navbar-toggler ual-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,14 +46,12 @@
             </li>
             <li class="nav-item d-block d-lg-none"><a href="/search">Search</a></li>
             <li class="nav-item pt-4 d-none d-lg-block">
-              <span class="fa-stack fa-1x ual-stack" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-toggle-second="tooltip" data-placement="bottom" title="Site Search" tabindex=0 aria-label="Site Search">
+              <a href="https://library.ualberta.ca/site-search" class="fa-stack fa-1x ual-stack" id="navbarDropdown" data-toggle-second="tooltip" data-placement="bottom" title="Site Search" tabindex=0 aria-label="Site Search">
                 <i class="fas fa-circle fa-stack-2x ual-circle"></i>
                 <i class="fas fa-search fa-stack-1x fa-inverse"></i>
-              </span>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <script async src="https://cse.google.com/cse.js?cx=018121540475569823422:4jleodumj3d"></script>
-<div class="gcse-search"></div>
-              </div>
+              </a>
+          
+            
             </li>
           </ul>
         </div>

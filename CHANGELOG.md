@@ -6,6 +6,10 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+- replaced header and footer views with new look and feel. 
+- Deleted old css and replaced with new styles for new look and feel. 
+
 ## [3.2.2] - 2020-05-28
 
 ### Security
