@@ -29,7 +29,9 @@
   <body class="<%= render_body_class %> d-flex flex-column" data-no-turbolink="true">
     <%= render partial: 'shared/header_navbar' %>
     <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
-    <%= yield %> 
+    <main class="flex-fill container ual-ds-main">
+      <%= yield %> 
+    </main>
     <%= render partial: 'shared/footer' %>
     <%= render partial: 'shared/ajax_modal' %>
   </body>

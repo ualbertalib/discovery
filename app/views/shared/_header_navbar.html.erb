@@ -1,7 +1,9 @@
 <div class="d-flex flex-column sticky-footer-wrapper">
   <nav class="navbar navbar-expand-lg navbar-light ual-blade">
     <div class="container flex-fill">
-      <%= link_to raw("<i class='fas fa-comment'></i> Chat with Us"), cms_root_url+"ask-us", "class" => "ual-pulse" %>
+      <%= link_to cms_root_url('ask-us'), "class" => "ual-pulse" do %>
+        <i class='fas fa-comment'></i> Chat with Us
+      <% end %> 
       <button class="navbar-toggler ual-blade-toggler" type="button" data-toggle="collapse" data-target="#navbarBlade" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,27 +23,37 @@
   <div class="ual-top">
     <nav class="navbar navbar-expand-lg navbar-light ual-nav pb-0 pt-0">
       <div class="container flex-fill pt-3 pb-3">
-        <%= link_to (image_tag ("/UA-LIB.svg"), "class" => "ual-logo", "alt" => "UA Library Logo", "type" => "image/svg+xml", "width" => "90%", "height" =>"70px"), cms_root_url, "class" => "navbar-brand mr-0", "aria-label" => "UA Library Home" %>
+        <%= link_to (image_tag ("UA-LIB.svg"), "class" => "ual-logo", "alt" => "UA Library Logo", "type" => "image/svg+xml", "width" => "90%", "height" =>"70px"), cms_root_url, "class" => "navbar-brand mr-0", "aria-label" => "UA Library Home" %>
         <button class="navbar-toggler ual-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
-            <li class="nav-item"><%= link_to "Library Services", cms_root_url+"services" %></li>
-            <li class="nav-item"><%= link_to "Subject Guides", cms_root_url+"subject-guides" %></li>
-            <li class="nav-item"><%= link_to raw("Hours &amp; Locations"), cms_root_url+"hours-locations" %></li>
-            <li class="nav-item ual-about"><%= link_to raw("About <span class='d-lg-none d-xl-block'>the Library</span><span class='d-none d-lg-block d-xl-none'> Us</span>"), cms_root_url+"about-us" %></li>
-            <li class="nav-item"><%= link_to "My Account", cms_root_url+"my-account" %></li>
+            <li class="nav-item"><%= link_to "Library Services", cms_root_url('services') %></li>
+            <li class="nav-item"><%= link_to "Subject Guides", cms_root_url('subject-guides') %></li>
+            <li class="nav-item">
+              <%= link_to cms_root_url('hours-locations') do %>
+                Hours &amp; Locations
+              <% end %>
+            </li>
+            <li class="nav-item ual-about">
+              <%= link_to cms_root_url("about-us") do %>
+                About <span class='d-lg-none d-xl-block'>the Library</span><span class='d-none d-lg-block d-xl-none'> Us</span>
+              <% end %>
+              </li>
+            <li class="nav-item"><%= link_to "My Account", cms_root_url('my-account') %></li>
             <li class="nav-item dropdown">
-             <%= link_to  raw("Ask <br/>Us"), cms_root_url+"ask-us", "class" => "dropdown-toggle", "id" => "navgarDropdown", "role" => "button", "data-toggle" => "dropdown", "aria-haspopup" => true, "aria-expanded" => false %>
+             <%= link_to cms_root_url('ask-us'), "class" => "dropdown-toggle", "id" => "navgarDropdown", "role" => "button", "data-toggle" => "dropdown", "aria-haspopup" => true, "aria-expanded" => false do %>
+                Ask <br/>Us
+             <% end %>
               <div class="dropdown-menu dropleft" aria-labelledby="navbarDropdown">
-                <%= link_to "Chat with Us", cms_root_url+"ask-us", "class" => "dropdown-item" %>
+                <%= link_to "Chat with Us", cms_root_url('ask-us'), "class" => "dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Email Us", "https://web.library.ualberta.ca/ereference/email/index.php", "class" => "dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Book a Consultation", "https://web.library.ualberta.ca/appointment/index.php", "class" => "dropdown-item" %>
                 <div class="dropdown-divider"></div>
-                <%= link_to "Find your Subject Librarian", cms_root_url+"about-us/staff/subject-librarians", "class" => "dropdown-item" %>
+                <%= link_to "Find your Subject Librarian", cms_root_url('about-us/staff/subject-librarians'), "class" => "dropdown-item" %>
               </div>
             </li>
             <li class="nav-item d-block d-lg-none"><a href="/search">Search</a></li>
@@ -49,13 +61,10 @@
               <a href="https://library.ualberta.ca/site-search" class="fa-stack fa-1x ual-stack" id="navbarDropdown" data-toggle-second="tooltip" data-placement="bottom" title="Site Search" tabindex=0 aria-label="Site Search">
                 <i class="fas fa-circle fa-stack-2x ual-circle"></i>
                 <i class="fas fa-search fa-stack-1x fa-inverse"></i>
-              </a>
-          
-            
+              </a>    
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </div>
-<main class="flex-fill container ual-ds-main">
