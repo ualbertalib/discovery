@@ -12,6 +12,7 @@ a:hover{
   border-bottom:0.1rem solid #FFDB05;
   padding-bottom:0.8rem;
   margin-bottom:0.8rem;
+  margin-left:1rem;
 }
 .ual-ds-main .nav-item a, .ual-ds-main .nav-item{
     display: block;
@@ -25,12 +26,12 @@ a:hover{
   padding:0;
   padding-top:2rem;
 }
-.btn-small, .btn-sm, .btn-secondary, .btn-ltblue, .hold, .btn-default{
+.btn-small, .btn-sm, .btn-secondary, .btn-ltblue, .hold, .btn-default, #hathitrustButton{
   color:#fff;
   background-color:#007C41;
   margin-left:0.2rem;
 }
-.btn-small:hover, .btn-sm:hover, .btn-secondary:hover, .btn-ltblue:hover, .hold:hover, .btn-default:hover{
+.btn-small:hover, .btn-sm:hover, .btn-secondary:hover, .btn-ltblue:hover, .hold:hover, .btn-default:hover, #hathitrustButton:hover{
   background-color:#7AB800;
   color:#fff;
 }
@@ -72,7 +73,7 @@ span.constraints-label{
 }
 .outlined p{
   margin-bottom:0;
-  font-size:1.5em;
+  font-size:1.3em;
 }
 .search-text-box{
   margin-top:1rem;
@@ -86,15 +87,19 @@ span.constraints-label{
   float:right;
 }
 #electronic_access{
-  margin-left: 2rem;
   margin-bottom: 1rem; 
   border: 2px solid #007C41;
-  padding:0.5rem;
+  padding:0.5rem 1rem;
   border-radius: 10px;
+  margin-left: 1rem;
 }
+#electronic_access:hover{
+  background-color: #FCFCF0;
+  }
 #electronic_access .row{
 margin:0;
   }
+
 #holdings{
   margin-left: 1rem;
 }
@@ -124,12 +129,13 @@ margin:0;
 .where-is-this-item-title{
   font-style:italic;
 }
+.where-is-this-buttons a:not(:last-child):after{
+    content: "|";
+    padding-left: .5rem;
+    color: #666;
+  }
 .call-number{
   font-weight: bold;
-}
-.lightboxLink#emailLink{
-  border-right:1px solid #333;
-  padding-right: 10px;
 }
 #document dl{
   margin-left: 1rem;
@@ -139,10 +145,35 @@ margin:0;
   width: auto;
   margin-right: 5px;
 }
+.show-document .blacklight-subject_topic_facet{
+  margin-left: 1rem;
+  font-weight: bold;
+}
 .show-tools{
   background-color: #FCFCF0;
   padding:1rem;
+  font-size:0.8em;
 }
 #hathitrustButton {
   display: none;
 }
+.navbar-toggler.navbar-toggler-right {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-right: 15px;
+    margin-top: 3px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    border-color: #ddd;
+}
+.page-link {
+  color: #007C41;
+}
+.page-item.active .page-link {
+    background-color: #007C41;
+    border-color: #007C41;
+  }
