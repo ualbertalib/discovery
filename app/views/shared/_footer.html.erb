@@ -1,34 +1,35 @@
-<div class="footer" id="footer">
-  <div class="container">
-    <ul class="foot-nav">
-      <li><%= link_to 'Search This Site', cms_root_url('site-search') %></li>
-      <li><%= link_to 'Feedback', 'https://web.library.ualberta.ca/feedback/' %></li>
-      <li><%= link_to 'Policies', cms_root_url('about-us/policies') %></li>
-      <li><%= link_to 'Employment', cms_root_url('about-us/employment') %></li>
-      <li><%= link_to 'Our People', cms_root_url('about-us/people') %></li>
-      <li><%= link_to 'Our Collection', cms_root_url('about-us/collections') %></li>
-      <li><%= link_to 'Support the Library', cms_root_url('support') %></li>
-      <li><%= link_to 'Copyright', 'http://www.copyright.ualberta.ca' %></li>
-    </ul>
-
-    <p class="copyright d-none d-md-block">
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-        <%= image_tag 'cc.png', class: 'cc', alt: 'Copyright Statement' %>
-      </a>
-      This work is subject to a
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-        Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license
-      </a>
-      -- For exceptions, see the
-      <%= link_to 'Library Re-use and Attribution Statement.', cms_root_url('about-us/policies/re-use') %>
-      <%= link_to 'Web Site Privacy Policy', cms_root_url('about-us/policies/privacy-policy') %>
-    </p>
-    <p>
-      <%= link_to 'University of Alberta Library', cms_root_url %>
-      -
-      <%= link_to 'University of Alberta', 'http://www.ualberta.ca' %>
-      , Edmonton, AB, Canada T6G 2R3 - We are located on Treaty 6 / Métis Territory.
-      <br />
-    </p>
+<footer class="ual-ft pt-3">
+  <div class="container flex-fill">
+    <div class="row">
+      <div class="col-sm text-center">
+        <%= link_to (image_tag ("UA-LIB.svg"), class: "ual-ft-logo", alt: "UA Library Logo", type: "image/svg+xml", width: "75%", height: "70px"), cms_root_url, "aria-label" => "UA Library Home" %>
+        <%= link_to "Connecting. Engaging. Creating.", cms_root_url('about-us/vision'), class: 'btn ual-btn mt-2 text-decoration-none' %>
+      </div>
+      <div class="col-lg order-lg-first">
+       <div class="row row ml-4 mt-2 ml-lg-0">   
+        <ul class="ual-ft-nav col">
+          <li><%= link_to "Our People", cms_root_url('about-us/people') %></li>
+          <li><%= link_to "Our Policies", cms_root_url('about-us/policies') %></li>
+          <li><%= link_to "Our Collection", cms_root_url('about-us/collection') %></li>
+          <li><%= link_to "Open to Collaborate", cms_root_url('about-us/partners') %></li>
+        </ul>
+        <ul class="ual-ft-nav col">
+          <li><%= link_to "Accessiblity at UAL", cms_root_url('services/accessibility-services') %></li>
+          <li><%= link_to "Support Us", cms_root_url('support') %></li>
+          <li><%= link_to "Employment", cms_root_url('about-us/employment') %></li>
+          <li><%= link_to "Copyright Office", "https://www.ualberta.ca/faculty-and-staff/copyright/index.html" %></li>
+        </ul>
+      </div>
+      </div>
+      <div class="col-lg">
+        <p class="small text-justify ml-4 mt-2">The University of Alberta Library acknowledges that we are located on Treaty 6 and M&eacute;tis territory, and we respect the histories, languages, and cultures of First Nations, M&eacute;tis, Inuit, and all First Peoples of Canada, whose presence continues to enrich our vibrant community.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mb-0 mt-2">
+         <p class="text-center small"><%= link_to "University of Alberta", cms_root_url %>, Edmonton, AB, Canada T6G 2R3 | This site is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons License</a> | <%= link_to "Website Privacy Policy", cms_root_url('about-us/policies/privacy-policy') %></p> 
+      </div>
+    </div>
   </div>
-</div>
+  <div class="ual-ft-bottom"></div>
+</footer>

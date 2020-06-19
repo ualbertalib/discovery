@@ -9,6 +9,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 ### Changed
 - bump rails from 4.2.11.1 to 4.2.11.3 and sprockets from 3.7.2 to 4.0.0 [PR#2008](https://github.com/ualbertalib/discovery/pull/2008)
 - Bump bundler from 1.17.3 to 2.1.4
+- replaced header and footer views with new look and feel. 
+- Deleted old css and replaced with new styles for new look and feel. 
 
 ## [3.2.2] - 2020-05-28
 
