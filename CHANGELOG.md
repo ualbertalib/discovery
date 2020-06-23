@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.3.1] - 2020-06-23
+
+### Changed
+- Fixed style issue on advanced search page. Also added margin to Hathitrust button.
+
 ## [3.3.0] - 2020-06-19
 
 ### Changed
