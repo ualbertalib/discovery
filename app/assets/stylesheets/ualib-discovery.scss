@@ -156,6 +156,8 @@ margin:0;
 }
 #hathitrustButton {
   display: none;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 .navbar-toggler.navbar-toggler-right {
     position: relative;
@@ -177,3 +179,23 @@ margin:0;
     background-color: #007C41;
     border-color: #007C41;
   }
+.advanced .submit-buttons{
+  float: right;
+  margin-top: 1rem;
+}
+.advanced-facet-limits label{
+  margin-bottom:0;
+  display: inline;
+}
+.advanced-help{
+  padding-left:1rem;
+}
+.advanced .facet-count{
+  font-size: 0.9em;
+}
+.advanced .facet-count::before{
+  content: "(";
+}
+.advanced .facet-count::after{
+  content: ")";
+}
