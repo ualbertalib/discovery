@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- regression test of library count on advanced search page after reskin changed layout
+
 ## [3.3.1] - 2020-06-23
 
 ### Changed
