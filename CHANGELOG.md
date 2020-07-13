@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+- discourage holds placed on items with HathiTrust access [#]()
+
 ### Fixed
 - regression test of library count on advanced search page after reskin changed layout
 
