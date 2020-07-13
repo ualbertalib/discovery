@@ -63,7 +63,7 @@ class CatalogController < ApplicationController
     @document['oclc'] = HathitrustOverlapRecord.find_by(catalog_id: @document['id'])&.oclc
 
     # if we're able to provide this via HathiTrust agreement we should discourage anyone from tyring to place a hold
-    @holdable = nil if @document['oclc']
+    @holdable = nil if @document['oclc'].present?
   end
 
   configure_blacklight do |config|
