@@ -11,7 +11,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Fixed
 - regression test of library count on advanced search page after reskin changed layout
-- update bundler version in Docker for uat
+- update bundler version in Docker for uat [#2030](https://github.com/ualbertalib/discovery/pull/2030)
 
 ## [3.3.1] - 2020-06-23
 
