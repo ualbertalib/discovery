@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.4.0] - 2020-07-20
+
 ### Changed
 - discourage holds placed on items with HathiTrust access [#2003](https://github.com/ualbertalib/discovery/issues/2003)
 
