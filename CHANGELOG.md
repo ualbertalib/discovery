@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- remove span tag showing in facets [#2011](https://github.com/ualbertalib/discovery/issues/2011)
+
 ## [3.4.0] - 2020-07-20
 
 ### Changed
