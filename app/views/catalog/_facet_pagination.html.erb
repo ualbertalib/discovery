@@ -4,7 +4,7 @@
                             param_name: Blacklight::Solr::FacetPaginator.request_keys[:page],
                             class: 'btn btn-link',
                             data: { ajax_modal: 'preserve' } do %>
-    <span class="disabled btn btn-disabled"><%= raw(t('views.pagination.previous')) %></span>
+        <%= content_tag :span, raw(t('views.pagination.previous')), class: 'disabled btn btn-disabled' %>
   <% end %>
   <%= link_to_next_page @pagination,
                         raw(t('views.pagination.next')),
@@ -12,7 +12,7 @@
                         class: 'btn btn-link',
                         data: { ajax_modal: 'preserve' } do %>
 
-    <span class="disabled btn  btn-disabled"><%= raw(t('views.pagination.next')) %></span>
+<%= content_tag :span, raw(t('views.pagination.next')), class: 'disabled btn btn-disabled' %>
   <% end %>
 </div>
 
