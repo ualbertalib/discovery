@@ -46,9 +46,9 @@ en:
       review_policy_html:
         'Prior to your visit, please review our
         <a href="https://bpsc.library.ualberta.ca/info/visit#policy">Reading Room Policies.</a>'
-      date_of_planned_visit: 'Please indicate the first date of your planned visit. Public access hours are Monday-Friday
-        12:30-4:30pm. Facilities maintenance work is expected to cause intermittent closures this term, so please confirm
-        public access hours <a href="https://bpsc.library.ualberta.ca/">here</a>.'
+      date_of_planned_visit: 'Please note that the reading room in Bruce Peel Special Collections will remain closed through the 
+        fall term (2020) due to COVID-19 and in order to accommodate a large facilities project. Limited services are available. 
+        Updates and details can be found on the Peel website <a href="https://bpsc.library.ualberta.ca/">here</a>.'
       call_number: 'Call Number'
   rcrf_read_on_site_requests:
     new:
