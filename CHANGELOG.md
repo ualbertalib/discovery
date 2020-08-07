@@ -6,6 +6,10 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+- updated RCRF pickup locations [#2038](https://github.com/ualbertalib/discovery/issues/2038)
+- updated BPSC retrieval request [#2037](https://github.com/ualbertalib/discovery/issues/2037)
+
 ### Fixed
 - remove span tag showing in facets [#2011](https://github.com/ualbertalib/discovery/issues/2011)
 
