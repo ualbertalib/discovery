@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.5.0]
+
 ### Changed
 - updated RCRF pickup locations [#2038](https://github.com/ualbertalib/discovery/issues/2038)
 - updated BPSC retrieval request [#2037](https://github.com/ualbertalib/discovery/issues/2037)
