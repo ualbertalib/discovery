@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.5.1]
+
 ### Fixed
 - missing first sentence in BPSC request [#2037](https://github.com/ualbertalib/discovery/issues/2037)
 
