@@ -371,7 +371,7 @@ GEM
       nokogiri
       stomp
       xml-simple
-    spring (2.1.0)
+    spring (2.1.1)
     sprockets (4.0.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
