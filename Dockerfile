@@ -23,10 +23,6 @@ ENV APP_ROOT /app
 RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
 
-# Update bundler
-RUN gem update --system
-RUN gem install bundler:2.1.4
-
 # Preinstall gems in an earlier layer so we don't reinstall every time any file changes.
 COPY Gemfile  $APP_ROOT
 COPY Gemfile.lock $APP_ROOT
