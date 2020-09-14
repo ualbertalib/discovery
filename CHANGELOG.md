@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Changed
+- revert bump to bundler from 2.1.4 to 1.17.3 [PR#2056](https://github.com/ualbertalib/discovery/pull/2056)
+
 ## [3.5.1]
 
 ### Fixed
