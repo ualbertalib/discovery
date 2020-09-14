@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.5.2]
+
 ### Added
 - oclc number to symphony indexing [#2050](https://github.com/ualbertalib/discovery/issues/2050)
 
