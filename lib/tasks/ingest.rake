@@ -45,7 +45,21 @@ task :ingest, [:collection] => [:update_solr_marc_maps] do |_t, args|
   @collection = args.collection
   @c = IngestConfiguration.new(args.collection, @config_file)
 
+  # store a copy before it's replaced
+  File.rename(Rails.root.join(@c.path), Rails.root.join(@c.path + '.bak')) if @c.endpoint
   Rake::Task['fetch'].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
+
+  # circuit breaker to prevent unparsable data from changing our index
+  if File.extname(Rails.root.join(@c.path)) == '.xml'
+    doc = File.open(Rails.root.join(@c.path)) { |f| Nokogiri::XML(f) }
+    if doc.errors.count.positive?
+      unparsable = "#{@c.path} is unparsable #{doc.errors}"
+      Rollbar.error(unparsable)
+      @ingest_log.fatal(unparsable)
+      at_exit { puts unparsable }
+      exit
+    end
+  end
 
   @ingest_log.info("Starting #{@c.schema} ingest for #{args.collection}")
 
