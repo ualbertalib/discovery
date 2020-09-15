@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Added
+- oclc number to symphony indexing [#2050](https://github.com/ualbertalib/discovery/issues/2050)
+
 ### Security
 - bump blacklight for CVE-2020-15169 [PR#2056](https://github.com/ualbertalib/discovery/pull/2056)
 
