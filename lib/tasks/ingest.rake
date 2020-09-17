@@ -46,7 +46,7 @@ task :ingest, [:collection] => [:update_solr_marc_maps] do |_t, args|
   @c = IngestConfiguration.new(args.collection, @config_file)
 
   # store a copy before it's replaced
-  File.rename(Rails.root.join(@c.path), Rails.root.join(@c.path + '.bak')) if @c.endpoint
+  File.rename(Rails.root.join(@c.path), Rails.root.join(@c.path + '.bak')) if @c.endpoint && File.exist?(Rails.root.join(@c.path))
   Rake::Task['fetch'].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
 
   # circuit breaker to prevent unparsable data from changing our index
