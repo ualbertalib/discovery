@@ -15,6 +15,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Changed
 - revert bump to bundler from 2.1.4 to 1.17.3 [PR#2056](https://github.com/ualbertalib/discovery/pull/2056)
+- discovery.uat.library.ualberta.ca etc via nginx-proxy [1724](https://github.com/ualbertalib/jupiter/issues/1724)
 
 ## [3.5.1]
 
