@@ -22,16 +22,20 @@ services:
     image: ualbertalib/blacklight_solr_conf
     environment:
       - SOLR_HEAP=2g
+      - VIRTUAL_HOST=solr.discovery.uat.library.ualberta.ca
     volumes:
       - solr:/opt/solr/server/solr/mycores
     ports:
-      - "8983:8983"
+      - "8983"
 
   mailcatcher:
     image: sj26/mailcatcher
+    environment:
+      - VIRTUAL_HOST=mail.discovery.uat.library.ualberta.ca
+      - VIRTUAL_PORT=1080
     ports:
-      - "1025:1025"
-      - "3082:1080"
+      - "1025"
+      - "1080"
 
   # Rails
   web:
@@ -39,6 +43,7 @@ services:
     image: ualbertalib/discovery:uat
     volumes:
       - assets:/app/public/assets/
+      - ../discoveryData:/app/data
     command: bundle exec puma -e uat
     env_file: .env_deployment
     depends_on:
@@ -55,4 +60,4 @@ services:
       - ./config/nginx.conf:/etc/nginx/conf.d/default.conf
       - assets:/app/public/assets/
     ports:
-      - "3002:80"
+      - "80"

@@ -10,12 +10,15 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - oclc number to symphony indexing [#2050](https://github.com/ualbertalib/discovery/issues/2050)
+- circuit breaker to SFX ingest [#1875](https://github.com/ualbertalib/discovery/issues/1875)
 
 ### Security
 - bump blacklight for CVE-2020-15169 [PR#2056](https://github.com/ualbertalib/discovery/pull/2056)
+- monkeypatch rack for CVE-2020-8161 [PR#2060](https://github.com/ualbertalib/discovery/pull/2060)
 
 ### Changed
 - revert bump to bundler from 2.1.4 to 1.17.3 [PR#2056](https://github.com/ualbertalib/discovery/pull/2056)
+- discovery.uat.library.ualberta.ca etc via nginx-proxy [1724](https://github.com/ualbertalib/jupiter/issues/1724)
 
 ## [3.5.1]
 
