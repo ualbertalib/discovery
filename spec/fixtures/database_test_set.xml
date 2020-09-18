@@ -504,3 +504,5 @@ Also includes full text from a number of journals, conference proceedings, and r
   <enableproxy type="integer">0</enableproxy>
   <languagenote>English</languagenote>
 </hash>
+</databases>
+</root>

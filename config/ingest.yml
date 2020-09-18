@@ -102,7 +102,7 @@ database_test_set:
   vocabulary: DatabaseVocabulary
   mode: file
   expand_path: "spec/fixtures/database_test_set.xml"
-  path: "spec/fixtures/databases_test_set.xml"
+  path: "spec/fixtures/database_test_set.xml"
   test: true
 
 services:
