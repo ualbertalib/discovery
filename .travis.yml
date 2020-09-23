@@ -2,6 +2,10 @@ language: ruby
 sudo: required
 addons:
   chrome: stable
+    apt:
+      packages:
+        # Needed for `xmllint`.
+        - libxml2-utils
 rvm:
   - 2.5
   - 2.6

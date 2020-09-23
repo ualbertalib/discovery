@@ -6,6 +6,7 @@ discovery platform. Based on [Project Blacklight](projectblacklight.org).
 
 *   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.5.x
 *   Depends on Java (for SolrMarc and Ingestion scripts)
+*   Depends on [xmllint](http://xmlsoft.org/xmllint.html) (for SFX Ingestion scripts) which is available in `sudo apt install libxml2-utils` on Ubuntu.
 *   Depends on an instance of [Solr](https://lucene.apache.org/solr/) with [this configuration](https://github.com/ualbertalib/blacklight_solr_conf)
 *   If you wish to use docker for the datastores install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) first.
 
