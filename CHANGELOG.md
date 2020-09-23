@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- memory use by circuit breaker []()
+
 ## [3.5.2]
 
 ### Added
