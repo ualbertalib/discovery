@@ -1,7 +1,9 @@
 language: ruby
-sudo: required
 addons:
   chrome: stable
+  apt:
+    packages:
+    - libxml2-utils
 rvm:
   - 2.5
   - 2.6

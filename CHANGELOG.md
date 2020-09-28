@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.5.3]
+
+### Fixed
+- memory use by circuit breaker [PR#2067](https://github.com/ualbertalib/discovery/pull/2067)
+
 ## [3.5.2]
 
 ### Added

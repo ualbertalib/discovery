@@ -8,6 +8,7 @@ require "#{Rails.root}/lib/ingest/promoted_services_om.rb"
 require_relative './ingest_configuration.rb'
 
 require 'yaml'
+require 'open3'
 
 import 'lib/tasks/delete.rake'
 
@@ -51,13 +52,15 @@ task :ingest, [:collection] => [:update_solr_marc_maps] do |_t, args|
 
   # circuit breaker to prevent unparsable data from changing our index
   if File.extname(Rails.root.join(@c.path)) == '.xml'
-    doc = File.open(Rails.root.join(@c.path)) { |f| Nokogiri::XML(f) }
-    if doc.errors.count.positive?
-      unparsable = "#{@c.path} is unparsable #{doc.errors}"
-      Rollbar.error(unparsable)
-      @ingest_log.fatal(unparsable)
-      at_exit { puts unparsable }
-      exit
+    Open3.popen3("xmllint --encode utf-8 --noout #{Rails.root.join(@c.path)}") do |_stdout, _stderr, status, _thread|
+      response = status.read
+      unless response.empty?
+        unparsable = "#{@c.path} is unparsable #{response}"
+        Rollbar.error(unparsable)
+        @ingest_log.fatal(unparsable)
+        at_exit { puts unparsable }
+        exit
+      end
     end
   end
 
