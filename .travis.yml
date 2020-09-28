@@ -1,10 +1,9 @@
 language: ruby
 addons:
   chrome: stable
-    apt:
-      packages:
-      # Needed for `xmllint`.
-      - libxml2-utils
+  apt:
+    packages:
+    - libxml2-utils
 rvm:
   - 2.5
   - 2.6
