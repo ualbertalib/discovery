@@ -8,7 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [3.5.4]
 
-## Fixed
+### Fixed
 - memory use by circuit breaker (--stream) [PR#2069](https://github.com/ualbertalib/discovery/pull/2069)
 
 ## [3.5.3]
