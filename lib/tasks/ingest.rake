@@ -52,7 +52,7 @@ task :ingest, [:collection] => [:update_solr_marc_maps] do |_t, args|
 
   # circuit breaker to prevent unparsable data from changing our index
   if File.extname(Rails.root.join(@c.path)) == '.xml'
-    Open3.popen3("xmllint --encode utf-8 --noout #{Rails.root.join(@c.path)}") do |_stdout, _stderr, status, _thread|
+    Open3.popen3("xmllint --encode utf-8 --stream --noout #{Rails.root.join(@c.path)}") do |_stdout, _stderr, status, _thread|
       response = status.read
       unless response.empty?
         unparsable = "#{@c.path} is unparsable #{response}"
