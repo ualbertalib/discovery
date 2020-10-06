@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<records>
+  <record>
+    <id>service002</id>
+    <title>ERA (Education &amp; Research Archive)</title>
+    <url>https://era.library.ualberta.ca/public/home</url>
+    <source>services</source>
+    <format>service</format>
+  </record>
+</records>

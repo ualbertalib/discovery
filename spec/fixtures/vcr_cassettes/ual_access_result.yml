@@ -1,0 +1,163 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=1008878
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 May 2019 21:26:05 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>1008878</titleID><TitleAvailabilityInfo><totalCopiesAvailable>3</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Internet</libraryWithAvailableCopies><libraryWithAvailableCopies>Concordia
+        University of Edmonton</libraryWithAvailableCopies><libraryWithAvailableCopies>University
+        of Alberta Research Collections Resource Facility</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>INTERNET</locationOfFirstAvailableItem><holdable>true</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UAINTERNET</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>1008878-2001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>CONCORDIA</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>1008878-3001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>UARCRF</libraryID><classificationID>LC</classificationID><callNumber>HF
+        5353 S67</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>000043432574</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking><staffNote>{
+        A0019567}</staffNote></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>am1
+        0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>1008878</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>008</entryID><indicators>  </indicators><text>910209s1925    xx
+        afk            0 eng d</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>25006507</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm00526001</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>eng CarP</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        holdings</label><entryID>049</entryID><indicators>  </indicators><text>ALB
+        eng</text></MarcEntryInfo><MarcEntryInfo><label>LC Call Number</label><entryID>050</entryID><indicators>0
+        </indicators><text>HF5353 .S55</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>0 </indicators><text>HF
+        5353 S67 AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        Author</label><entryID>100</entryID><indicators>1 </indicators><text>Snow,
+        A. J. (Adolph Judah), 1894-1994.</text><entryTypeCodes>MAR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>10</indicators><text>Psychology
+        in business relations,</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>Chicago
+        &amp; New York, A. W. Shaw company; [etc., etc.] 1925.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>xv,
+        562 p. incl. illus., plates, forms, diagr. front. 21 cm.</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        type</label><entryID>336</entryID><indicators>  </indicators><text>text txt</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>unmediated
+        n</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>volume
+        nc</text></MarcEntryInfo><MarcEntryInfo><label>Other forms</label><entryID>530</entryID><indicators>  </indicators><text>Also
+        available online. Access restricted to authorized users and institutions.</text></MarcEntryInfo><MarcEntryInfo><label>Action
+        note</label><entryID>583</entryID><indicators>1 </indicators><text>committed
+        to retain 20170930 20421231 HathiTrust https://www.hathitrust.org/shared_print_program
+        AEU HathiTrust Shared Print commitment 2017</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>CONCORDIA
+        UARCRF UAINTERNET</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Psychology,
+        Applied.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Business.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>41</indicators><text>University
+        of Alberta Access</text><unformattedText>|3University of Alberta Access|uhttp://gateway.ovid.com/ovidweb.cgi?T=JS&amp;NEWS=N&amp;PAGE=toc&amp;SEARCH=2005-09562.dd&amp;LINKTYPE=asBody&amp;D=psbk</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://gateway.ovid.com/ovidweb.cgi?T=JS&amp;NEWS=N&amp;PAGE=toc&amp;SEARCH=2005-09562.dd&amp;LINKTYPE=asBody&amp;D=psbk</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>41</indicators><text>Concordia
+        University of Edmonton Access</text><unformattedText>|3Concordia University
+        of Edmonton Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;db=pzh&amp;jid=200509562&amp;site=ehostlive</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;db=pzh&amp;jid=200509562&amp;site=ehostlive</url></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Fri, 24 May 2019 21:26:05 GMT
+- request:
+    method: get
+    uri: https://ws.library.ualberta.ca/symws3/rest/standard/lookupTitleInfo?clientID=Primo&includeAvailabilityInfo=true&includeItemInfo=true&includeMarcHoldings=true&marcEntryFilter=ALL&titleID=1008878
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 24 May 2019 21:26:05 GMT
+      Server:
+      - Apache/2.4.6 (Red Hat Enterprise Linux) OpenSSL/1.0.2k-fips
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><LookupTitleInfoResponse
+        xmlns="http://schemas.sirsidynix.com/symws/standard"><TitleInfo><titleID>1008878</titleID><TitleAvailabilityInfo><totalCopiesAvailable>3</totalCopiesAvailable><libraryWithAvailableCopies>University
+        of Alberta Internet</libraryWithAvailableCopies><libraryWithAvailableCopies>Concordia
+        University of Edmonton</libraryWithAvailableCopies><libraryWithAvailableCopies>University
+        of Alberta Research Collections Resource Facility</libraryWithAvailableCopies><totalResvCopiesAvailable>0</totalResvCopiesAvailable><locationOfFirstAvailableItem>INTERNET</locationOfFirstAvailableItem><holdable>true</holdable><bookable>false</bookable></TitleAvailabilityInfo><CallInfo><libraryID>UAINTERNET</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>1008878-2001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>CONCORDIA</libraryID><classificationID>LC</classificationID><callNumber>Internet
+        Access</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>1008878-3001</itemID><itemTypeID>E-RESOURCE</itemTypeID><currentLocationID>INTERNET</currentLocationID><homeLocationID>INTERNET</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking></ItemInfo></CallInfo><CallInfo><libraryID>UARCRF</libraryID><classificationID>LC</classificationID><callNumber>HF
+        5353 S67</callNumber><numberOfCopies>1</numberOfCopies><ItemInfo><itemID>000043432574</itemID><itemTypeID>BOOK</itemTypeID><currentLocationID>ON_SHELF</currentLocationID><homeLocationID>ON_SHELF</homeLocationID><chargeable>true</chargeable><fixedTimeBooking>false</fixedTimeBooking><staffNote>{
+        A0019567}</staffNote></ItemInfo></CallInfo><BibliographicInfo><MarcEntryInfo><label>Leader</label><entryID>000</entryID><indicators>  </indicators><text>am1
+        0c a</text></MarcEntryInfo><MarcEntryInfo><label>key</label><entryID>001</entryID><indicators>  </indicators><text>1008878</text></MarcEntryInfo><MarcEntryInfo><label>Fixed
+        field data</label><entryID>008</entryID><indicators>  </indicators><text>910209s1925    xx
+        afk            0 eng d</text></MarcEntryInfo><MarcEntryInfo><label>LCCN</label><entryID>010</entryID><indicators>  </indicators><text>25006507</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        system #</label><entryID>035</entryID><indicators>  </indicators><text>ocm00526001</text></MarcEntryInfo><MarcEntryInfo><label>Cataloging
+        Source</label><entryID>040</entryID><indicators>  </indicators><text>eng CarP</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        holdings</label><entryID>049</entryID><indicators>  </indicators><text>ALB
+        eng</text></MarcEntryInfo><MarcEntryInfo><label>LC Call Number</label><entryID>050</entryID><indicators>0
+        </indicators><text>HF5353 .S55</text></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>0 </indicators><text>HF
+        5353 S67 AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEC</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Local
+        LC call number</label><entryID>090</entryID><indicators>  </indicators><text>Internet
+        Access AEU</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Personal
+        Author</label><entryID>100</entryID><indicators>1 </indicators><text>Snow,
+        A. J. (Adolph Judah), 1894-1994.</text><entryTypeCodes>MAR</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Title</label><entryID>245</entryID><indicators>10</indicators><text>Psychology
+        in business relations,</text><entryTypeCodes>RMT</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Publication
+        info</label><entryID>260</entryID><indicators>  </indicators><text>Chicago
+        &amp; New York, A. W. Shaw company; [etc., etc.] 1925.</text><entryTypeCodes>Y</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Physical
+        description</label><entryID>300</entryID><indicators>  </indicators><text>xv,
+        562 p. incl. illus., plates, forms, diagr. front. 21 cm.</text></MarcEntryInfo><MarcEntryInfo><label>Content
+        type</label><entryID>336</entryID><indicators>  </indicators><text>text txt</text></MarcEntryInfo><MarcEntryInfo><label>Media
+        type</label><entryID>337</entryID><indicators>  </indicators><text>unmediated
+        n</text></MarcEntryInfo><MarcEntryInfo><label>Carrier type</label><entryID>338</entryID><indicators>  </indicators><text>volume
+        nc</text></MarcEntryInfo><MarcEntryInfo><label>Other forms</label><entryID>530</entryID><indicators>  </indicators><text>Also
+        available online. Access restricted to authorized users and institutions.</text></MarcEntryInfo><MarcEntryInfo><label>Action
+        note</label><entryID>583</entryID><indicators>1 </indicators><text>committed
+        to retain 20170930 20421231 HathiTrust https://www.hathitrust.org/shared_print_program
+        AEU HathiTrust Shared Print commitment 2017</text><entryTypeCodes>L</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Held
+        by</label><entryID>596</entryID><indicators>  </indicators><text>CONCORDIA
+        UARCRF UAINTERNET</text><entryTypeCodes>H</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Psychology,
+        Applied.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Subject
+        term</label><entryID>650</entryID><indicators> 0</indicators><text>Business.</text><entryTypeCodes>RS</entryTypeCodes></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>41</indicators><text>University
+        of Alberta Access</text><unformattedText>|3University of Alberta Access|uhttp://gateway.ovid.com/ovidweb.cgi?T=JS&amp;NEWS=N&amp;PAGE=toc&amp;SEARCH=2005-09562.dd&amp;LINKTYPE=asBody&amp;D=psbk</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://gateway.ovid.com/ovidweb.cgi?T=JS&amp;NEWS=N&amp;PAGE=toc&amp;SEARCH=2005-09562.dd&amp;LINKTYPE=asBody&amp;D=psbk</url></MarcEntryInfo><MarcEntryInfo><label>Electronic
+        access</label><entryID>856</entryID><indicators>41</indicators><text>Concordia
+        University of Edmonton Access</text><unformattedText>|3Concordia University
+        of Edmonton Access|uhttp://search.ebscohost.com/login.aspx?direct=true&amp;db=pzh&amp;jid=200509562&amp;site=ehostlive</unformattedText><entryTypeCodes>iL</entryTypeCodes><url>http://search.ebscohost.com/login.aspx?direct=true&amp;db=pzh&amp;jid=200509562&amp;site=ehostlive</url></MarcEntryInfo></BibliographicInfo></TitleInfo></LookupTitleInfoResponse>'
+    http_version: 
+  recorded_at: Fri, 24 May 2019 21:26:06 GMT
+recorded_with: VCR 4.0.0

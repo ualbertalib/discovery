@@ -42,11 +42,11 @@ my @collections = (
   },
   {
     name	=>  'journals',
-    minimum	=>  10
+    minimum	=>  1
   },
   {
     name	=>  'databases',
-    minimum	=>  10
+    minimum	=>  1
   }
 );
 for my $href (@collections) {

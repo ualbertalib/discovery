@@ -10,17 +10,20 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+// Following 3 are bootstrap dependencies.
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
 //= require 'blacklight_advanced_search'
 
 //= require jquery_ujs
-//= require turbolinks
 //
 // Required by Blacklight
 //= require blacklight/blacklight
-//= require jquery.hoverIntent.minified
-
 
 // For blacklight_range_limit built-in JS, if you don't want it you don't need
 // this:
 //= require 'blacklight_range_limit'
+
+//= require 'ualib-discovery'

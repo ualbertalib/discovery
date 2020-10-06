@@ -8,6 +8,7 @@ require "#{Rails.root}/lib/ingest/promoted_services_om.rb"
 require_relative './ingest_configuration.rb'
 
 require 'yaml'
+require 'open3'
 
 import 'lib/tasks/delete.rake'
 
@@ -26,8 +27,13 @@ task :ingest_info do
   puts "Solr collection contains #{response['response']['numFound']} results."
 end
 
+desc 'update Solr Marc maps for location facets from current database state'
+task :update_solr_marc_maps do
+  sh 'rails g solr_marc_prep'
+end
+
 desc 'ingest records' # add config parameter for directory ingest?
-task :ingest, [:collection] do |_t, args|
+task :ingest, [:collection] => [:update_solr_marc_maps] do |_t, args|
   log_config = YAML.load_file("#{Rails.root}/config/logger.yml")[Rails.env]
   log_file = if File.exist? log_config['log_path']
                File.open(log_config['log_path'], File::WRONLY | File::APPEND)
@@ -40,7 +46,23 @@ task :ingest, [:collection] do |_t, args|
   @collection = args.collection
   @c = IngestConfiguration.new(args.collection, @config_file)
 
+  # store a copy before it's replaced
+  File.rename(Rails.root.join(@c.path), Rails.root.join(@c.path + '.bak')) if @c.endpoint && File.exist?(Rails.root.join(@c.path))
   Rake::Task['fetch'].invoke("#{@c.endpoint}|#{@c.path}") if @c.endpoint
+
+  # circuit breaker to prevent unparsable data from changing our index
+  if File.extname(Rails.root.join(@c.path)) == '.xml'
+    Open3.popen3("xmllint --encode utf-8 --stream --noout #{Rails.root.join(@c.path)}") do |_stdout, _stderr, status, _thread|
+      response = status.read
+      unless response.empty?
+        unparsable = "#{@c.path} is unparsable #{response}"
+        Rollbar.error(unparsable)
+        @ingest_log.fatal(unparsable)
+        at_exit { puts unparsable }
+        exit
+      end
+    end
+  end
 
   @ingest_log.info("Starting #{@c.schema} ingest for #{args.collection}")
 

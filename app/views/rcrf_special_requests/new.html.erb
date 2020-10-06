@@ -1,0 +1,26 @@
+<h1><%= t('.header') %></h1>
+<p><%= t('.lead') %></p>
+
+<%= bootstrap_form_for(@rcrf_special_request) do |f| %>
+  <%= f.text_field :name, required: true %>
+  <%= f.email_field :email, required: true %>
+  <%= f.text_field :title, required: true %>
+  <%= f.text_field :item_url, label: t('item_url'), help: t('item_url_help'), required: true %>
+
+  <%= f.text_area :notes,
+                  label: t('additional_notes'),
+                  rows: 7,
+                  cols: 45,
+                  placeholder: t('.notes_placeholder'),
+                  required: true %>
+
+  <%= f.select :library,
+               RCRFSpecialRequest::LIBRARIES,
+               label: t('.pickup_library'),
+               prompt: t('.please_select_a_library'),
+               required: true %>
+
+  <%= f.hidden_field :referer, value: @rcrf_special_request.referer %>
+
+  <%= f.primary t('.place_request') %>
+<% end %>

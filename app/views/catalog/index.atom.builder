@@ -82,10 +82,10 @@ xml.feed('xmlns' => 'http://www.w3.org/2005/Atom',
           # encode properly. See:
           # http://tools.ietf.org/html/rfc4287#section-4.1.3.3
           type = type.downcase
-          if type.downcase =~ %r{\+|/xml$}
+          if %r{\+|/xml$}.match?(type.downcase)
             # xml, just put it right in
             content_element << data
-          elsif type.downcase =~ %r{text/}
+          elsif %r{text/}.match?(type.downcase)
             # text, escape
             content_element.text! data
           else

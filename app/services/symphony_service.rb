@@ -37,18 +37,15 @@ class SymphonyService
   end
 
   def links
-    ua, nonua = populate_electronic_items
-    [ua, nonua]
+    ua, non_ua, related_resources = populate_electronic_items
+    [ua, non_ua, related_resources]
   end
 
   private
 
   def summary_holdings
-    nodes.each do |node|
-      current_node = node
-      next unless label(current_node)
-      return node_text(current_node) if label(current_node).text == 'Library has'
-    end
+    holding = nodes.find { |node| label(node)&.text == 'Library has' }
+    node_text(holding)
   end
 
   def ws_endpoint
@@ -115,9 +112,13 @@ class SymphonyService
   def populate_electronic_items
     ua_items = {}
     non_ua_items = {}
-    if @document
-      link_items.each do |item|
-        if label(item) && (label(item).text == 'Electronic access')
+    other_items = {}
+    return [ua_items, non_ua_items, other_items] unless @document
+
+    link_items.each do |item|
+      if label(item)&.text == 'Electronic access' &&
+         item.at_xpath('.//xmlns:text').present? && item.at_xpath('.//xmlns:url').present?
+        if ['41', '40'].include? electronic_resource_indicator(item)&.text
           if (item.at_xpath('.//xmlns:text').text.include? 'University of Alberta Access') ||
              (item.at_xpath('.//xmlns:text').text.include? 'Free') ||
              (item.at_xpath('.//xmlns:text').text.include? 'NEOS')
@@ -125,10 +126,12 @@ class SymphonyService
           else
             non_ua_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
           end
+        else
+          other_items[item.at_xpath('.//xmlns:text').text] = item.at_xpath('.//xmlns:url').text
         end
       end
     end
-    [ua_items, non_ua_items]
+    [ua_items, non_ua_items, other_items]
   end
 
   def holdings_items
@@ -151,19 +154,25 @@ class SymphonyService
     current_node.at_xpath('.//xmlns:label', xmlns: 'http://schemas.sirsidynix.com/symws/standard')
   end
 
+  def electronic_resource_indicator(current_node)
+    current_node.at_xpath('.//xmlns:indicators', xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+  end
+
   def node_text(current_node)
+    return nil if current_node.nil?
+
     current_node.at_xpath('.//xmlns:text', xmlns: 'http://schemas.sirsidynix.com/symws/standard').text
   end
 
   def valid?(id)
-    (id =~ /^[0-9]*$/) == 0
+    /^[0-9]*$/.match?(id)
   end
 
   def id(item)
-    item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard').text if item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+    item.at_xpath('.//xmlns:itemID', xmlns: 'http://schemas.sirsidynix.com/symws/standard')&.text
   end
 
   def get(item, node)
-    item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard').text if item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard')
+    item.at_xpath(".//xmlns:#{node}", xmlns: 'http://schemas.sirsidynix.com/symws/standard')&.text
   end
 end

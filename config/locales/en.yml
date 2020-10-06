@@ -20,6 +20,66 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  additional_notes: 'Additional Notes'
+  conditions_of_use: 'Conditions of Use'
+  item_url: 'Item URL'
+  item_url_help: 'e.g. https://library.ualberta.ca/catalog/8081552'
+  request_viewing: 'Request Viewing'
+  request_form_success: 'Thank you! We have received your request and will be in contact shortly.'
+  request_form_error: 'There was an problem sending your request. Please fix any errors and try again.'
+  text_this: 'Text this'
+  request_this: 'Request this'
+  email_this: 'Email this'
+  this_email_was_generated_by_html: '*** this email generated automatically from %{url} ***'
+
+  bpsc_read_on_site_requests:
+    new:
+      header: 'BPSC Retrieval Request (Read on Site)'
+      lead_html: 'All researchers (including students, faculty, visiting scholars, and members of the general public)
+        must submit a Retrieval Request Form before 8am on the day of their planned visit (at the very latest)
+        in order to be sure that library materials have been retrieved from storage and are available for their use.
+        Item(s) will be available on the date requested and held for a week. If you have any questions, please contact library staff at
+        <a href="mailto:bpsc@ualberta.ca">bpsc@ualberta.ca</a>
+        or call
+        <a href="tel:+780-492-5998">780-492-5998</a>
+        during regular business hours (Mon-Fri 12:30-4:30pm).'
+      review_policy_html:
+        'Prior to your visit, please review our
+        <a href="https://bpsc.library.ualberta.ca/info/visit#policy">Reading Room Policies.</a>'
+      date_of_planned_visit: 'Please indicate the first date of your planned visit. Please note that the reading room in Bruce Peel Special Collections will remain closed through the 
+        fall term (2020) due to COVID-19 and in order to accommodate a large facilities project. Limited services are available. 
+        Updates and details can be found on the Peel website <a href="https://bpsc.library.ualberta.ca/">here</a>.'
+      call_number: 'Call Number'
+  rcrf_read_on_site_requests:
+    new:
+      header: 'Request to View RCRF No Loan Items'
+      lead: 'No Loan items do not circulate, but can be viewed at the Archives Reading Room - RCRF
+        on South Campus or the Bruce Peel Special Collections Reading Room on North Campus.
+        Use this form to request viewing of the item at one of these locations.
+        A staff member will contact you within two to three business days to arrange
+        for your visit to view the item.'
+      please_select_a_location_for_viewing: 'Please select a location for viewing'
+  rcrf_special_requests:
+    new:
+      header: 'RCRF Depository Library Request Form (Microform/Newspapers)'
+      lead: 'We need additional publication information (e.g., year, specific date,
+        section, article title, etc.) for us to retrieve this item.
+        Please provide as much detail as possible.'
+      notes_placeholder: 'Please provide any additional information that can help us retrieve this item. e.g. Year, Volume, Specific Date, etc.'
+      place_request: 'Place Request'
+      pickup_library: 'Pickup Library'
+      please_select_a_library: 'Please select a library'
+  request_form_mailer:
+    name: 'Name: %{name}'
+    email: 'Email: %{email}'
+    title: 'Title: %{title}'
+    call_number: 'Call Number: %{call_number}'
+    item_url_html: 'Item URL: %{item_url}'
+    notes: 'Additional Notes: %{notes}'
+    library: 'Pickup Library: %{library}'
+    viewing_location: 'Viewing Location: %{viewing_location}'
+    appointment_date_and_time: 'Appointment Date and Time: %{appointment_date_and_time}'
+    date_of_planned_visit: 'Date of Planned Visit: %{appointment_time}'
   mail:
     intercepted:
       explanation:
@@ -46,3 +106,37 @@ en:
       original_message_below:
         html: '<p>The email message in its original form starts below the following line:</p>'
         plain: 'The email message in its original form starts below the following line:'
+  hathitrust:
+    button: 'Access Full Text at HathiTrust'
+    form:
+      title: 'HathiTrust ETAS'
+      submit: 'Agree'
+      cancel: 'Decline'
+      body_html: "<p>Click through agreement for Canadian institutions participating in
+             HathiTrust’s Emergency Temporary Access Service (ETAS)</p>
+
+             <p>Digital works accessible through HathiTrust’s Emergency Temporary Access
+             Service (ETAS) are made available solely for the use of an individual
+             student, staff member, or faculty member of a participating Canadian
+             institution.</p>
+
+             <p>These works are made available on the basis of fair dealing, only for the
+             purposes of research, private study, education, parody, satire, criticism
+             or review.</p>
+
+             <p>You may view and access these digital works only for the foregoing
+             purpose(s) and only during a period that these digital works are made
+             available by the library.</p>
+
+             <p>You may not distribute, e-mail, or otherwise communicate these works to any
+             other person under the terms of this agreement.</p>
+
+             <p>Any downloading, reproduction, fixation, distribution, transmission,
+             dissemination, communication, or any other uses of these works, if done
+             without securing the permission of the copyright owner, may be an
+             infringement of copyright.</p>
+
+             <p><a href='https://www.hathitrust.org/etas-terms-of-service' target='_blank' rel='noopener noreferrer'>
+             Click here</a> for HathiTrust’s ETAS Terms of Service.</p>
+
+             <p>If additional assistance is required, contact copyright@ualberta.ca</p>"

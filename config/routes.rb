@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'errors/unprocessable'
   get 'errors/internal_server_error'
 
-  blacklight_for :catalog, :journals, :databases, :symphony, :ebooks, :new_books
+  blacklight_for :catalog, :journals, :databases, :symphony, :ebooks
   Blacklight::Marc.add_routes(self)
 
   devise_for :users
@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get 'journals/range_limit' => 'journals#range_limit'
   get 'databases/range_limit' => 'databases#range_limit'
   get 'ebooks/range_limit' => 'ebooks#range_limit'
-  get 'new_books/range_limit' => 'new_books#range_limit'
 
   # TODO: Should be able to remove this? It is defined twice in the routes, but this fails our tests
   get '/advanced', to: 'advanced#index'
@@ -27,8 +26,6 @@ Rails.application.routes.draw do
   match '/422', to: 'errors#unprocessable', via: :all
   match '/500', to: 'errors#internal_server_error', via: :all
 
-  resources :staff, as: :profiles, controller: :profiles
-
   # We have the actual catalog routes defined from blacklight,
   # this is just so we can get these routes nested nicely with the catalog item's ids in the url
   # e.g: /catalog/1234567/corrections/new
@@ -36,10 +33,11 @@ Rails.application.routes.draw do
     resources :corrections, only: [:new, :create]
   end
 
-  root to: 'comfy/cms/content#show'
+  resources :rcrf_special_requests, only: [:new, :create]
+  resources :bpsc_read_on_site_requests, only: [:new, :create]
+  resources :rcrf_read_on_site_requests, only: [:new, :create]
 
-  comfy_route :cms_admin, path: '/admin'
+  resources :hathitrust, only: [:new]
 
-  # Make sure this routeset is defined last
-  comfy_route :cms, path: '/', sitemap: false
+  root to: 'catalog#index'
 end

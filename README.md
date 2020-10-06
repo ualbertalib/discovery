@@ -1,11 +1,12 @@
-# Discovery Interface for University of Alberta Libraries
+# Discovery Interface for University of Alberta Library
 [![Build Status](https://travis-ci.org/ualbertalib/discovery.svg?branch=master)](https://travis-ci.org/ualbertalib/discovery)
 
-This is the code base for the University of Alberta Libraries's
+This is the code base for the University of Alberta Library's
 discovery platform. Based on [Project Blacklight](projectblacklight.org).
 
-*   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.1.5
+*   Depends on [Ruby](https://www.ruby-lang.org/en/) 2.5.x
 *   Depends on Java (for SolrMarc and Ingestion scripts)
+*   Depends on [xmllint](http://xmlsoft.org/xmllint.html) (for SFX Ingestion scripts) which is available in `sudo apt install libxml2-utils` on Ubuntu.
 *   Depends on an instance of [Solr](https://lucene.apache.org/solr/) with [this configuration](https://github.com/ualbertalib/blacklight_solr_conf)
 *   If you wish to use docker for the datastores install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) first.
 
@@ -42,8 +43,7 @@ Integration tests (run against <http://search-test.library.ualberta.ca/>)
 ## Additional Tasks for uat, staging and production
 
 1.  `bundle exec rake assets:precompile` this can take several minutes
-2.  `bundle exec rake comfortable_mexican_sofa:cmssetup` to setup the CMS
-3.  create cron jobs to ingest `bundle exec rake ingest[sfx]`, `bundle exec rake ingest[databases]` and clean session table `bundle exec rake sessions:cleanup`
+2.  create cron jobs to ingest `bundle exec rake ingest[sfx]`, `bundle exec rake ingest[databases]`, `bundle exec rails g symphony_nightly  && bundle exec rake db:migrate` and clean session table `bundle exec rake sessions:cleanup`
 
 ## UAT
 Go [here](https://github.com/ualbertalib/di_internal/blob/master/System-Adminstration/UAT-Environment.md#access-discovery-uat-instance) for information about accessing Discovery UAT instance.
@@ -54,7 +54,7 @@ The standard library cataloguing data format is [MARC](https://www.loc.gov/marc/
 
 In SolrMarc, the library currently being used to index Blacklight data, the mapping of MARC fields occurs [here](https://github.com/ualbertalib/discovery/blob/master/config/SolrMarc/symphony_index.properties) with more sophisticated data manipulation using BeanShell happening in [these scripts](https://github.com/ualbertalib/discovery/tree/master/config/SolrMarc/index_scripts). Once the fields have been mapped, they can be designated for search and/or display in the appropriate Solr config file (either schema.xml or solrconfig.xml).
 
-`bundle exec rake ingest[collection]` where collection is mainly 'symphony', 'sfx' or 'databases'.  See `config/ingest.yml` for other collections. Most collections are expected to be represented by a file in a `./data` directory.
+`bundle exec rake ingest[collection]` where collection is mainly 'symphony', 'sfx', 'kule' or 'databases'.  See `config/ingest.yml` for other collections. Most collections are expected to be represented by a file in a `./data` directory.
 
 By default the solr target (:url) is set from '#{Rails.env}' stanza in config/blacklight.yml. Alternately you can set the SOLR_INGEST_URL directly.
 ```
@@ -62,3 +62,5 @@ export SOLR_INGEST_URL=http://localhost:8983/solr/your-new-solr-collection
 bundle exec rake ingest[collection]
 unset SOLR_INGEST_URL # if desired
 ```
+
+To populate the human readable strings for the 'Where is this?' table.  Assuming `./data/data4discovery.txt` and `./data/Data4DiscoveryManual.txt` are present then you can invoke `bundle exec rails g symphony_nightly  && bundle exec rake db:migrate` to populate the tables with the latest configurations. If for some reason this doesn't go well, `bundle exec rake db:rollback` and delete the migration at `db/migrate/<todays date>_symphony_nightly_<todays date>.rb` will revert to a known good state.

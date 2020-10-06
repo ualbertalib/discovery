@@ -1,6 +1,6 @@
 proxy: http://login.ezproxy.library.ualberta.ca/login?url=
 
-collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set", "symphony_test_set", "symphony_test_deletes", "kule"]
+collections: ["peel", "sfx", "symphony", "maps", "era", "era_test", "sfx_test", "databases", "services", "database_test_set", "sfx_test_set", "symphony_test_set", "symphony_test_deletes", "kule", "kule_test"]
 
 era:
   schema: dublin_core
@@ -33,7 +33,7 @@ peel:
 sfx:
   schema: marc
   config: "config/SolrMarc/sfx_config.properties"
-  endpoint: "http://resolver.library.ualberta.ca/sfx2sirsi/data/sfxdata.xml"
+  endpoint: "https://sfx-resolver.hosted.exlibrisgroup.com/resolver/cgi/public/get_file.cgi?file=sfxdata.xml"
   path: "data/sfx.xml"
 
 sfx_test:
@@ -102,7 +102,7 @@ database_test_set:
   vocabulary: DatabaseVocabulary
   mode: file
   expand_path: "spec/fixtures/database_test_set.xml"
-  path: "spec/fixtures/databases_test_set.xml"
+  path: "spec/fixtures/database_test_set.xml"
   test: true
 
 services:
@@ -117,4 +117,9 @@ services:
 kule:
   schema: marc
   path: "data/kule.mrc"
+  config: "config/SolrMarc/kule_config.properties"
+
+kule_test:
+  schema: marc
+  path: "spec/fixtures/bmufa-library-test-file-20190411.mrc"
   config: "config/SolrMarc/kule_config.properties"

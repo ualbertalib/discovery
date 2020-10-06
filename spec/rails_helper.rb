@@ -3,7 +3,10 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative './spec_helper'
 require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
+
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'vcr'
+require 'support/test_thread_monkeypatch'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -30,11 +33,33 @@ Capybara.default_driver = if ENV['CAPYBARA_NO_HEADLESS']
                             :selenium_chrome_headless
                           end
 
+# Capbybara 3 does no longer match DOM Elements with text spanning over
+# multiple lines. This configuration re-enables this behavior.
+Capybara.default_normalize_ws = true
+
+# When running your tests Capybara lazily boots the Rails app on a random port
+# and, because this host/port are unknown to Rails, links generated in serializers (i.e. 'more' facets)
+# will point to the wrong URL and following them within your test app and Capybara will fail.
+Rails.application.routes.default_url_options[:host] = Capybara.current_session.server.host
+Rails.application.routes.default_url_options[:port] = Capybara.current_session.server.port
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock # or :fakeweb
+
+  # Only want VCR to intercept requests to external URLs.
+  config.ignore_localhost = true
+
+  # ignore travis trying to get webdrivers
+  driver_hosts = Webdrivers::Common.subclasses.map { |driver| URI(driver.base_url).host }
+  config.ignore_hosts(*driver_hosts)
+end
+
 # smoke test the ingest task and setup some seed data for testing
 require 'rake'
 Rails.application.load_tasks
 Rake::Task['delete'].invoke
-%w[database_test_set sfx_test_set symphony_test_set].each do |test_set|
+%w[database_test_set sfx_test_set kule_test symphony_test_set].each do |test_set|
   # work around tasks already_invoked flag being set
   Rake::Task['ingest'].reenable
   Rake::Task['solr:marc:index'].reenable
@@ -69,4 +94,11 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end

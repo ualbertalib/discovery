@@ -1,3 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>University of Alberta Library</title>
+    <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
+    <meta name="generator" content="<%= "Discovery #{Discovery::VERSION} - https://github.com/ualbertalib/discovery" %>">
+    <%= favicon_link_tag %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    
+    <!-- Google Analytics -->
+    <% if Rails.application.secrets.google_analytics_token.present? %>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=<%= Rails.application.secrets.google_analytics_token %>"></script>
+      <%= javascript_tag do %>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '<%= Rails.application.secrets.google_analytics_token %>');
+      <% end %>
+    <% end %>
+    <!-- End Google Analytics -->
 
-
-<%= yield %>
+    <%= csrf_meta_tags %>
+    <%= content_for(:head) %>
+  </head>
+  <body class="<%= render_body_class %> d-flex flex-column" data-no-turbolink="true">
+    <%= render partial: 'shared/header_navbar' %>
+    <%= render partial: '/flash_msg', layout: 'shared/flash_messages' %>
+    <main class="flex-fill container ual-ds-main">
+      <%= yield %> 
+    </main>
+    <%= render partial: 'shared/footer' %>
+    <%= render partial: 'shared/ajax_modal' %>
+  </body>
+</html>

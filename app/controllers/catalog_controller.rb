@@ -31,10 +31,16 @@ class CatalogController < ApplicationController
         end
       end
       @holdings = fetch_sfx_holdings(@document) if @document['source'].first == 'SFX'
-      @holdings = 'kule' if @document['source'].first == 'KULE'
+      if @document['source'].first == 'KULE'
+        @holdings = kule_holdings(@document, @holdings)
+        @document['kule_id'] = @document['id']
+      end
     end
 
-    @ua_urls, @non_ua_urls = holdings(@document, :links) if @document['url_fulltext_display']
+    @ua_urls = []
+    @non_ua_urls = []
+    @related_resources = []
+    @ua_urls, @non_ua_urls, @related_resources = holdings(@document, :links) if @document['summary_holdings_tesim']
 
     if @document['subject_t']
       @subjects = []
@@ -47,14 +53,17 @@ class CatalogController < ApplicationController
 
     @additional_authors = @document['author_addl_t'] if @document['author_addl_t']
 
-    if @document['title_display']
-      @document['title_display'] = "#{@document['title_display'].first}: #{@document['subtitle_display'].first}" if @document['subtitle_display']
-    else
-      @document['title_display'] = 'Untitled document'
-    end
+    @contents = @document['contents_tesim'].join("\n") if @document['contents_tesim']
+
+    @document['title_display'] = 'Untitled document' unless @document['title_display']
 
     @document['published_display'] = "#{@document['published_display'].first}: #{@document['publisher_tesim'].first}" if @document['publisher_tesim'] && @document['published_display']
     @document.delete('publisher_tesim') if @document['published_display']
+
+    @document['oclc'] = HathitrustOverlapRecord.find_by(catalog_id: @document['id'])&.oclc
+
+    # if we're able to provide this via HathiTrust agreement we should discourage anyone from trying to place a hold
+    @holdable = nil if @document['oclc'].present?
   end
 
   configure_blacklight do |config|
@@ -153,9 +162,8 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     # config.add_show_field 'title_display', :label => 'Title'
     # config.add_show_field 'title_vern_display', :label => 'Title'
+    config.add_show_field 'responsibility_display', label: 'Responsibility'
     config.add_show_field 'title_addl_t', label: 'Full/Alternate Title(s)'
-    # config.add_show_field 'subtitle_display', :label => 'Subtitle'
-    # config.add_show_field 'subtitle_vern_display', :label => 'Subtitle'
     config.add_show_field 'section_number_tesim', label: 'Section Number'
     config.add_show_field 'section_name_tesim', label: 'Section Name'
     config.add_show_field 'alternate_display_tesim', label: 'Original'
@@ -169,11 +177,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'publisher_tesim', label: 'Publisher'
     config.add_show_field 'published_display', label: 'Published'
     config.add_show_field 'published_vern_display', label: 'Published'
-    config.add_show_field 'pub_date', label: 'Year'
+    config.add_show_field 'pub_date_display', label: 'Year'
     # config.add_show_field 'material_type_display', :label => 'Contains'
     # config.add_show_field 'size_tesim', :label => 'Size'
     # config.add_show_field 'description_tesim', :label => 'Other Details'
-    config.add_show_field 'contains_tesim', label: 'Other Physical Details'
+    config.add_show_field 'contains_tesim', label: 'Physical Details'
     config.add_show_field 'moreinfo_tesim', label: 'Additional Information'
     config.add_show_field 'isbn_tesim', label: 'ISBN'
     config.add_show_field 'issn_tesim', label: 'ISSN'
@@ -231,7 +239,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('title') do |field|
       # solr_parameters hash are sent to Solr as ordinary url query params.
-      field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
+      field.solr_parameters = { 'spellcheck.dictionary': 'title' }
 
       # :solr_local_parameters will be sent using Solr LocalParams
       # syntax, as eg {! qf=$title_qf }. This is neccesary to use
@@ -244,7 +252,7 @@ class CatalogController < ApplicationController
     end
 
     config.add_search_field('author') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
+      field.solr_parameters = { 'spellcheck.dictionary': 'author' }
       field.solr_local_parameters = {
         qf: '$author_qf',
         pf: '$author_pf'
@@ -255,7 +263,7 @@ class CatalogController < ApplicationController
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
     config.add_search_field('subject') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
+      field.solr_parameters = { 'spellcheck.dictionary': 'subject' }
       field.qt = 'search'
       field.solr_local_parameters = {
         qf: '$subject_qf',
@@ -275,5 +283,7 @@ class CatalogController < ApplicationController
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
+    config.add_show_field 'accession_number_tesim', label: 'Accession Number'
+    config.add_show_field 'kule_id', label: 'Kule Collection ID'
   end
 end

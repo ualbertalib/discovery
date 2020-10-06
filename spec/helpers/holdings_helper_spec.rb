@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe HoldingsHelper do
   describe '#display_ual_shield' do
-    HoldingsHelper::UAL_SHIELD_LIBRARIES.each do |library|
+    Location::UAL_SHIELD_LIBRARIES.each do |library|
       it "should display if #{library}" do
         document = { 'location_tesim' => library }
         expect(helper.display_ual_shield(document)).to be true
@@ -17,20 +17,39 @@ describe HoldingsHelper do
     end
   end
 
-  describe '#read_on_site_path' do
-    it "should link to #{HoldingsHelper::READ_ON_SITE_LOCATION_RCRF} form" do
+  describe '#request_rcrf_read_on_site_form?' do
+    it 'should return true if you can request the item' do
+      item = { status: 'READONSITE', location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
+      expect(helper.request_rcrf_read_on_site_form?(item)).to be true
+    end
+
+    it 'should return false if you cannot request the item' do
       item = { location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
-      expect(helper.read_on_site_path(item)).to eq '/#TODO_RCRF'
+      expect(helper.request_rcrf_read_on_site_form?(item)).to be false
+    end
+  end
+
+  describe '#request_bpsc_read_on_site_form?' do
+    it 'should return true if you can request the item' do
+      item = { status: 'READONSITE', location: HoldingsHelper::READ_ON_SITE_LOCATION_BPSC }
+      expect(helper.request_bpsc_read_on_site_form?(item)).to be true
     end
 
-    it "should link to #{HoldingsHelper::READ_ON_SITE_LOCATION_BPSC} form" do
+    it 'should return false if you cannot request the item' do
       item = { location: HoldingsHelper::READ_ON_SITE_LOCATION_BPSC }
-      expect(helper.read_on_site_path(item)).to eq '/#TODO_BPSC'
+      expect(helper.request_bpsc_read_on_site_form?(item)).to be false
+    end
+  end
+
+  describe '#request_microform?' do
+    it 'should return true if you can request the item' do
+      item = { type: 'MICROFORM', location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
+      expect(helper.request_microform?(item)).to be true
     end
 
-    it 'should not link otherwise' do
-      item = { location: 'SOMEWHERE' }
-      expect(helper.read_on_site_path(item)).to be_nil
+    it 'should return false if you cannot request the item' do
+      item = { location: HoldingsHelper::READ_ON_SITE_LOCATION_RCRF }
+      expect(helper.request_microform?(item)).to be false
     end
   end
 
@@ -75,12 +94,17 @@ describe HoldingsHelper do
 
   describe 'holdings with links' do
     it 'should return a set of Symphony electronic holdings' do
-      document = {}
-      document['marc_display'] = marc_display_with_ua_links
-      holdings = helper.holdings(document, :links)
-      expect(holdings).to be_an_instance_of Array
-      expect(holdings.first).to be_an_instance_of Hash
-      expect(holdings.first).to eq('University of Alberta Access (6 Concurrent Users)' => 'http://proquest.safaribooksonline.com/?uiCode=ualberta&xmlId=9781785283642')
+      VCR.use_cassette('holdings_with_links') do
+        document = {}
+        document['marc_display'] = marc_display_with_ua_links
+        holdings = helper.holdings(document, :links)
+        expect(holdings).to be_an_instance_of Array
+        expect(holdings.first).to be_an_instance_of Hash
+        expect(holdings.first).to eq(
+          'University of Alberta Access (Unlimited Concurrent Users) from Ebook Central Academic Complete' => 'https://ebookcentral.proquest.com/lib/ualberta/detail.action?docID=1564351',
+          'University of Alberta Access (Unlimited Concurrent Users) from EBSCO Academic Collection' => 'http://search.ebscohost.com/login.aspx?direct=true&scope=site&db=e000xna&AN=666223'
+        )
+      end
     end
   end
 

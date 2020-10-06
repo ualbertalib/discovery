@@ -1,82 +1,71 @@
-<!-- Start Header and Navigation -->
-    <a href="#main-container" class="skip">Skip to content</a>
-    <div id="top"><a name="top"></a></div>
-    <div class="container-fluid hidden-xs"> <!-- UofA Blade -->
-      <div class="container">
-        <div class="row">
-          <ul class="nav navbar-nav">
-            <li><a href="https://ualberta.ca">UAlberta Home</a></li>
-            <li><a href="https://myualberta.ualberta.ca/home">My UAlberta</a></li>
-            <li><a href="https://directory.ualberta.ca/">Find a Person</a></li>
-            <li><a href="https://www.onecard.ualberta.ca/">ONEcard</a></li>
-            <li><a href="https://www.beartracks.ualberta.ca">Bear Tracks</a></li>
-            <li><a href="https://www.ualberta.ca/maps">Maps</a></li>
-            <li><a href="https://apps.ualberta.ca">Email &amp; Apps</a></li>
-            <li class="last"><a href="https://eclass.srv.ualberta.ca/portal">eClass</a></li>
+<div class="d-flex flex-column sticky-footer-wrapper">
+  <nav class="navbar navbar-expand-lg navbar-light ual-blade">
+    <div class="container flex-fill">
+      <%= link_to cms_root_url('ask-us'), class: "ual-pulse" do %>
+        <i class='fas fa-comment'></i> Chat with Us
+      <% end %> 
+      <button class="navbar-toggler ual-blade-toggler" type="button" data-toggle="collapse" data-target="#navbarBlade" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarBlade">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="https://www.ualberta.ca">UAlberta Home</a></li>
+          <li class="nav-item"><a href="https://apps.ualberta.ca/directory">Find a Person</a></li>
+          <li class="nav-item"><a href="https://www.onecard.ualberta.ca/">ONEcard</a></li>
+          <li class="nav-item"><a href="https://www.beartracks.ualberta.ca/">Bear Tracks</a></li>
+          <li class="nav-item"><a href="https://www.ualberta.ca/maps?l=53.522898,-113.525575&z=15&campus=north_campus">Maps</a></li>
+          <li class="nav-item"><a href="https://apps.ualberta.ca/">Email &amp; Apps</a></li>
+          <li class="nav-item"><a href="https://eclass.srv.ualberta.ca/portal/" class="ual-last">eClass</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="ual-top">
+    <nav class="navbar navbar-expand-lg navbar-light ual-nav pb-0 pt-0">
+      <div class="container flex-fill pt-3 pb-3">
+        <%= link_to (image_tag ("UA-LIB.svg"), class: "ual-logo", alt: "UA Library Logo", type: "image/svg+xml", width: "90%", height:"70px"), cms_root_url, class: "navbar-brand mr-0", "aria-label" => "UA Library Home" %>
+        <button class="navbar-toggler ual-navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item"><%= link_to "Library Services", cms_root_url('services') %></li>
+            <li class="nav-item"><%= link_to "Subject Guides", cms_root_url('subject-guides') %></li>
+            <li class="nav-item">
+              <%= link_to cms_root_url('hours-locations') do %>
+                Hours &amp; Locations
+              <% end %>
+            </li>
+            <li class="nav-item ual-about">
+              <%= link_to cms_root_url("about-us") do %>
+                About <span class='d-lg-none d-xl-block'>the Library</span><span class='d-none d-lg-block d-xl-none'> Us</span>
+              <% end %>
+              </li>
+            <li class="nav-item"><%= link_to "My Account", cms_root_url('my-account') %></li>
+            <li class="nav-item dropdown">
+             <%= link_to cms_root_url('ask-us'), class: "dropdown-toggle", id: "navgarDropdown", role: "button", "data-toggle" => "dropdown", "aria-haspopup" => true, "aria-expanded" => false do %>
+                Ask <br/>Us
+             <% end %>
+              <div class="dropdown-menu dropleft" aria-labelledby="navbarDropdown">
+                <%= link_to "Chat with Us", cms_root_url('ask-us'), class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Email Us", "https://web.library.ualberta.ca/ereference/email/index.php", class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Book a Consultation", "https://web.library.ualberta.ca/appointment/index.php", class: "dropdown-item" %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Find your Subject Librarian", cms_root_url('about-us/staff/subject-librarians'), class: "dropdown-item" %>
+              </div>
+            </li>
+            <li class="nav-item d-block d-lg-none"><a href="/search">Search</a></li>
+            <li class="nav-item pt-4 d-none d-lg-block">
+              <%= link_to cms_root_url('site-search'), class: "fa-stack fa-1x ual-stack", id: "navbarDropdown", "data-toggle-second" => "tooltip", "data-placement" => "bottom", title: "Site Search", tabindex: "0", "aria-label" => "Site Search" do %>
+                <i class="fas fa-circle fa-stack-2x ual-circle"></i>
+                <i class="fas fa-search fa-stack-1x fa-inverse"></i>
+              <% end %>
+              </a>    
+            </li>
           </ul>
         </div>
       </div>
-    </div><!-- End UofA Blade -->
-    <div class="container-fluid banner-container"><!-- Logo, banner, ask-us and mobile navigation -->
-      <div class="container banner">
-        <div class="row">
-          <div class="col-sm-6 col-xs-7">
-
-            <a href="/"  data-no-turbolink="true"><%= image_tag "ualib-logo-sm.png", :class => "ualogo", :alt => "University of Alberta Libraries" %></a>
-
-          </div>
-          <div class="col-sm-6 col-xs-3 ask-sm">
-            <a href="/ask-us" class="ask-main" data-no-turbolink="true" target="_blank">Ask Us</a>
-          </div>
-          <div class="col-xs-2 visible-xs">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <h2>menu</h2><!-- Mobile menu button -->
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button><!-- End mobile menu button -->
-          </div>
-        </div>
-      </div>
-      <div id="navbar" class="col-xs-10 collapse" style="height: 0px;"><!-- Mobile menu -->
-        <ul>
-          <li class="active"><a href="/" data-no-turbolink="true">Search &amp; Home</a></li>
-          <li><a href="https://hours.library.ualberta.ca">Hours and Locations</a></li>
-            <li><a href="/#main-news" data-no-turbolink="true">News / Workshops</a></li>
-          <li><a href="/#main-services" data-no-turbolink="true">Services</a></li>
-          <li><a href="/#main-subjects" data-no-turbolink="true">Subject Guides</a></li>
-          <li><a href="/#main-account" data-no-turbolink="true" >My Account</a></li>
-            <li><a href="/francais" >Version Française</a></li>
-          <li><a href="http://www.ualberta.ca">University of Alberta Home</a></li>
-        </ul>
-      </div><!-- End mobile menu -->
-    </div>
-  <div class="container-fluid nav-container hidden-xs"><!-- non-mobile navigation -->
-      <div class="container">
-        <div class="col-sm-12">
-          <div class="row">
-            <ul class="lib-nav">
-              <li id="home-nav" style="display:block" class="col-sm-2">
-                <a href="/" data-no-turbolink="true">Search &amp; Home</a>
-              </li>
-              <li id="news-nav" class="col-sm-2">
-                <a href="/#main-news" data-no-turbolink="true"><span></span>News / Workshops</a>
-              </li>
-              <li id="services-nav" class="col-sm-2">
-                <a href="/#main-services" data-no-turbolink="true"><span></span>Services</a>
-              </li>
-              <li id="subjects-nav" class="col-sm-2">
-                <a href="/#main-subjects" data-no-turbolink="true"><span></span>Subject Guides</a>
-              </li>
-              <li id="research-nav" class="col-sm-2">
-                <a href="/#main-research" data-no-turbolink="true"><span></span>Research Support</a>
-              </li>
-              <li id="account-nav" class="col-sm-2">
-                <a href="/#main-account" data-no-turbolink="true" ><span></span>My Account</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div><!-- End non-mobile navigation -->
+    </nav>
+  </div>

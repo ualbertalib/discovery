@@ -1,3 +1,11 @@
-
-<%= link_to "Place Hold", "https://myaccount.library.ualberta.ca/ccid/login?hldCatKey=#{@document.id}", :class => "btn hold", :target=>'_blank' %>
-      <p style="font-size:90%"><strong><a href="https://myaccount.library.ualberta.ca/barcode/login?hldCatKey=<%= @document["id"] %>" target=_"blank">Place hold with barcode and PIN</a>.</strong></p>
+<%= link_to 'Place Hold',
+            "https://myaccount.library.ualberta.ca/ccid/login?hldCatKey=#{@document.id}",
+            class: 'btn hold',
+            target: '_blank' %>
+<p style="font-size:90%">
+  <strong>
+    <em><a href="https://myaccount.library.ualberta.ca/barcode/login?hldCatKey=<%= @document['id'] %>" target=_"blank">
+      Place hold with barcode and PIN.
+      </a></em>
+  </strong>
+</p>

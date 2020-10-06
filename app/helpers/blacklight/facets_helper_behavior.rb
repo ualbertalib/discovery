@@ -144,7 +144,7 @@ module Blacklight::FacetsHelperBehavior
       content_tag(:span, facet_display_value(facet_solr_field, item), class: 'selected') +
         # remove link
         link_to(
-          content_tag(:span, '', class: 'glyphicon glyphicon-remove') + content_tag(:span, '[remove]', class: 'sr-only'),
+          content_tag(:span, '✖', class: 'remove-icon') + content_tag(:span, '[remove]', class: 'sr-only'),
           search_action_path(remove_facet_params(facet_solr_field, item, params)),
           class: 'remove'
         )
@@ -181,7 +181,7 @@ module Blacklight::FacetsHelperBehavior
   # @param [Object] facet value
   # @return [Boolean]
   def facet_in_params?(field, item)
-    field = item.field if item && item.respond_to?(:field)
+    field = item.field if item&.respond_to?(:field)
 
     value = facet_value_for_facet_item(item)
 

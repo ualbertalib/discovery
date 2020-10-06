@@ -1,11 +1,34 @@
-<% # bookmark/folder functions -%>
-<% if document.to_h["title_display"].class == String %>
-  <% @display_title = document.to_h["title_display"] %>
-<% elsif document.to_h["title_display"].class == Array %>
-  <% @display_title = document.to_h["title_display"].first %>
-<% end %>
 <h1>
-    <%= "#{@display_title}" %><%= ", #{document.to_h["edition_tesim"].first}" if document.to_h["edition_tesim"]%>
+    <%= document.header_title %><%= ", #{document.to_h['edition_tesim'].first}" if document.to_h['edition_tesim'] %>
 </h1>
-<div id="eaccess">
-</div><br />
+<% if electronic_access_top? %>
+  <div id="electronic_access">
+    <% if database_electronic_access? %>
+      <%= link_to 'Click Here for Access', database_electronic_access_url(@document), target: '_blank' %>
+    <% end %>
+    <% @ua_urls.each do |location,url| %>
+      <div class="row">
+        <%= link_to ual_electronic_access_label(location), ual_electronic_access_url(location, url), target: '_blank' %>
+      </div>
+    <% end %>
+    <% @related_resources.each do |label,url| %>
+      <div class="row">
+        <%= link_to label, url, target: '_blank' %>
+      </div>
+    <% end %>
+  </div>
+  <% if libguides_icons(document).present? %>
+    <div class='row row-no-gutters'>
+      <h2 class='col-md-4 h3 align-middle text-break'><%= t('conditions_of_use') %>:</h2>
+      <ul class='col-md-8 align-middle list-inline'>
+        <% libguides_icons(document).each do |icon| -%>
+          <li class='list-inline-item'>
+            <%= link_to icon[:url] do %>
+              <%= image_tag(libguide_icon_image(icon), alt: icon[:description], title: icon[:description], height: '30') %>
+            <% end %>
+          </li>
+        <% end -%>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
