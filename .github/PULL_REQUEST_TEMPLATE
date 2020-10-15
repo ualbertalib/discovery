@@ -8,4 +8,6 @@ Related to # (issue)
 
 Please summarize what's new or changed in this PR.
 
+- [ ] `rake spec` tests pass
+
 Remember to request a reviewer when you submit! 
