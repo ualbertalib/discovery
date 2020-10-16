@@ -20,10 +20,9 @@ RSpec.describe 'Item has proper holding table', type: :feature do
     VCR.use_cassette('item_sfx_holding_table') do
       visit '/catalog/954921333007'
 
-      page.assert_selector('#holdings table td', count: 5)
+      page.assert_selector('#holdings table td', count: 4)
       expect(first('#holdings table td')).to have_link('Business Source Complete', href: 'http://login.ezproxy.library.ualberta.ca/login?url=https://search.ebscohost.com/direct.asp?db=bth&jn=AMJ&scope=site')
       expect(first('#holdings table td')).to have_text('coverage: Available from 1963.')
-      expect(first('#holdings table td')).to have_css("iframe[src='https://tal.scholarsportal.info/alberta/sfx/?tag=EBSCOhost_LHCADL']")
     end
   end
 

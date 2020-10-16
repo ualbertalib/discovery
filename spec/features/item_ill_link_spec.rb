@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe 'Link to ill', type: :feature do
   scenario 'Sfx item has link to ill' do
     VCR.use_cassette('item_ill_link') do
