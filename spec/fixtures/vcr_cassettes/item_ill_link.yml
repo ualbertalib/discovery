@@ -19,210 +19,183 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 09 Aug 2019 18:46:11 GMT
+      - Fri, 16 Oct 2020 16:39:28 GMT
       Server:
       - Apache
       Content-Type:
-      - application/xml
+      - application/xml; charset=ISO-8859-1
       Transfer-Encoding:
       - chunked
+      Vary:
+      - Accept-encoding
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: "<?xml version=\"1.0\"?>\n\n<sfx_menu>\n <ctx_obj_set>&lt;ctx_object_1&gt;&lt;perldata&gt;\n
-        &lt;hash&gt;\n  &lt;item key=\"rft.issn\"&gt;0001-4273&lt;/item&gt;\n  &lt;item
-        key=\"sfx.show_availability\"&gt;1&lt;/item&gt;\n  &lt;item key=\"_stash\"&gt;\n
-        \  &lt;hash&gt;\n    &lt;item key=\"@rfr_id\"&gt;\n     &lt;array&gt;\n      &lt;item
-        key=\"0\"&gt;info:sid/ualberta.ca:opac&lt;/item&gt;\n     &lt;/array&gt;\n
-        \   &lt;/item&gt;\n   &lt;/hash&gt;\n  &lt;/item&gt;\n  &lt;item key=\"ctx_ver\"&gt;Z39.88-2004&lt;/item&gt;\n
-        \ &lt;item key=\"rft.eissn\"&gt;1948-0989&lt;/item&gt;\n  &lt;item key=\"@rfr_id\"&gt;\n
-        \  &lt;array&gt;\n    &lt;item key=\"0\"&gt;info:sid/ualberta.ca:opac&lt;/item&gt;\n
-        \  &lt;/array&gt;\n  &lt;/item&gt;\n  &lt;item key=\"rft.place\"&gt;UNITED
-        STATES&lt;/item&gt;\n  &lt;item key=\"@sfx.subcategory\"&gt;\n   &lt;array&gt;\n
-        \   &lt;item key=\"0\"&gt;Business Management&lt;/item&gt;\n    &lt;item key=\"1\"&gt;Economics&lt;/item&gt;\n
-        \   &lt;item key=\"2\"&gt;General and Others&lt;/item&gt;\n   &lt;/array&gt;\n
-        \ &lt;/item&gt;\n  &lt;item key=\"rft.lccn\"&gt;   58003817 &lt;/item&gt;\n
-        \ &lt;item key=\"@rft_id\"&gt;\n   &lt;array&gt;\n   &lt;/array&gt;\n  &lt;/item&gt;\n
+        &lt;hash&gt;\n  &lt;item key=\"@sfx.related_object_ids\"&gt;\n   &lt;array&gt;\n
+        \   &lt;item key=\"0\"&gt;111006223821010&lt;/item&gt;\n    &lt;item key=\"1\"&gt;954921392000&lt;/item&gt;\n
+        \  &lt;/array&gt;\n  &lt;/item&gt;\n  &lt;item key=\"ctx_enc\"&gt;UTF-8&lt;/item&gt;\n
+        \ &lt;item key=\"rft.pub\"&gt;Academy of Management&lt;/item&gt;\n  &lt;item
+        key=\"rft_val_fmt\"&gt;journal&lt;/item&gt;\n  &lt;item key=\"rft.object_type\"&gt;JOURNAL&lt;/item&gt;\n
         \ &lt;item key=\"sfx.response_type\"&gt;simplexml&lt;/item&gt;\n  &lt;item
-        key=\"sfx.ignore_char_set\"&gt;1&lt;/item&gt;\n  &lt;item key=\"req.session_id\"&gt;sF4ED8364-BAD5-11E9-BF7D-94B86F50BD31&lt;/item&gt;\n
-        \ &lt;item key=\"ctx_enc\"&gt;UTF-8&lt;/item&gt;\n  &lt;item key=\"url_ver\"&gt;Z39.88-2004&lt;/item&gt;\n
-        \ &lt;item key=\"rft.object_type\"&gt;JOURNAL&lt;/item&gt;\n  &lt;item key=\"@sfx.related_object_ids\"&gt;\n
-        \  &lt;array&gt;\n    &lt;item key=\"0\"&gt;111006223821010&lt;/item&gt;\n
-        \   &lt;item key=\"1\"&gt;954921392000&lt;/item&gt;\n   &lt;/array&gt;\n  &lt;/item&gt;\n
-        \ &lt;item key=\"rft.language\"&gt;eng&lt;/item&gt;\n  &lt;item key=\"sfx.has_full_text\"&gt;yes&lt;/item&gt;\n
-        \ &lt;item key=\"rft.object_id\"&gt;954921333007&lt;/item&gt;\n  &lt;item
-        key=\"sfx.request_id\"&gt;75936185&lt;/item&gt;\n  &lt;item key=\"rft.genre\"&gt;journal&lt;/item&gt;\n
-        \ &lt;item key=\"sfx.ignore_date_threshold\"&gt;1&lt;/item&gt;\n  &lt;item
-        key=\"rft.pub\"&gt;Academy of Management&lt;/item&gt;\n  &lt;item key=\"rfr.rfr\"&gt;ualberta.ca:opac&lt;/item&gt;\n
-        \ &lt;item key=\"sfx.openurl\"&gt;HTTP://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;amp;ctx_ver=Z39.88-2004&amp;amp;rfr_id=info%3Asid%2Fualberta.ca%3Aopac&amp;amp;rft.genre=journal&amp;amp;rft.object_id=954921333007&amp;amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;amp;url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&amp;amp;url_ver=Z39.88-2004&amp;amp;sfx.response_type=simplexml&lt;/item&gt;\n
-        \ &lt;item key=\"rft.title\"&gt;Academy of Management Journal&lt;/item&gt;\n
-        \ &lt;item key=\"url_ctx_fmt\"&gt;info:ofi/fmt:kev:mtx:ctx&lt;/item&gt;\n
-        \ &lt;item key=\"@rft.stitle\"&gt;\n   &lt;array&gt;\n    &lt;item key=\"0\"&gt;ACAD
-        MANAGE J&lt;/item&gt;\n    &lt;item key=\"1\"&gt;ACADEMY OF MANAGEMENT JOURNAL
-        (AMJ)&lt;/item&gt;\n    &lt;item key=\"2\"&gt;ACADEMY OF MANAGEMENT JOURNAL&lt;/item&gt;\n
-        \   &lt;item key=\"3\"&gt;JOURNAL OF THE ACADEMY OF MANAGEMENT&lt;/item&gt;\n
-        \   &lt;item key=\"4\"&gt;ACAD. MANAGE. J&lt;/item&gt;\n   &lt;/array&gt;\n
-        \ &lt;/item&gt;\n  &lt;item key=\"@rfe_id\"&gt;\n   &lt;array&gt;\n   &lt;/array&gt;\n
-        \ &lt;/item&gt;\n  &lt;item key=\"@sfx.related_objects\"&gt;\n   &lt;array&gt;\n
-        \   &lt;item key=\"0\"&gt;\n     &lt;hash&gt;\n      &lt;item key=\"rft.issn\"&gt;1535-3990&lt;/item&gt;\n
-        \     &lt;item key=\"sfx.show_availability\"&gt;1&lt;/item&gt;\n      &lt;item
-        key=\"sfx.ignore_date_threshold\"&gt;1&lt;/item&gt;\n      &lt;item key=\"rft.pub\"&gt;A
-        &amp;amp; A Service&lt;/item&gt;\n      &lt;item key=\"ctx_ver\"&gt;Z39.88-2004&lt;/item&gt;\n
-        \     &lt;item key=\"rft.eissn\"&gt;2326-6600&lt;/item&gt;\n      &lt;item
-        key=\"sfx.openurl\"&gt;HTTP://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;amp;ctx_ver=Z39.88-2004&amp;amp;rfr_id=info%3Asid%2Fualberta.ca%3Aopac&amp;amp;rft.genre=journal&amp;amp;rft.object_id=954921333007&amp;amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;amp;url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&amp;amp;url_ver=Z39.88-2004&amp;amp;sfx.response_type=simplexml&lt;/item&gt;\n
+        key=\"@rfe_id\"&gt;\n   &lt;array&gt;\n   &lt;/array&gt;\n  &lt;/item&gt;\n
+        \ &lt;item key=\"@sfx.related_objects\"&gt;\n   &lt;array&gt;\n    &lt;item
+        key=\"0\"&gt;\n     &lt;hash&gt;\n      &lt;item key=\"rft.object_id\"&gt;111006223821010&lt;/item&gt;\n
+        \     &lt;item key=\"sfx.sid\"&gt;ualberta.ca:opac&lt;/item&gt;\n      &lt;item
+        key=\"sfx.sourcename\"&gt;CITATION&lt;/item&gt;\n      &lt;item key=\"sfx.show_availability\"&gt;1&lt;/item&gt;\n
+        \     &lt;item key=\"sfx.openurl\"&gt;HTTP://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;amp;ctx_ver=Z39.88-2004&amp;amp;rfr_id=info%3Asid%2Fualberta.ca%3Aopac&amp;amp;rft.genre=journal&amp;amp;rft.object_id=954921333007&amp;amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;amp;url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&amp;amp;url_ver=Z39.88-2004&amp;amp;sfx.response_type=simplexml&lt;/item&gt;\n
+        \     &lt;item key=\"url_ctx_fmt\"&gt;info:ofi/fmt:kev:mtx:ctx&lt;/item&gt;\n
         \     &lt;item key=\"@rfr_id\"&gt;\n       &lt;array&gt;\n        &lt;item
         key=\"0\"&gt;ualberta.ca:opac&lt;/item&gt;\n       &lt;/array&gt;\n      &lt;/item&gt;\n
+        \     &lt;item key=\"req.session_id\"&gt;s29BCE9C4-0FCE-11EB-96F2-BCAEAD22EEE9&lt;/item&gt;\n
+        \     &lt;item key=\"@sfx.category\"&gt;\n       &lt;array&gt;\n        &lt;item
+        key=\"0\"&gt;Business, Economy and Management&lt;/item&gt;\n        &lt;item
+        key=\"1\"&gt;Business, Economy and Management&lt;/item&gt;\n       &lt;/array&gt;\n
+        \     &lt;/item&gt;\n      &lt;item key=\"ctx_ver\"&gt;Z39.88-2004&lt;/item&gt;\n
+        \     &lt;item key=\"url_ver\"&gt;Z39.88-2004&lt;/item&gt;\n      &lt;item
+        key=\"rft_val_fmt\"&gt;journal&lt;/item&gt;\n      &lt;item key=\"rft.pub\"&gt;Academy
+        of Management&lt;/item&gt;\n      &lt;item key=\"ctx_enc\"&gt;UTF-8&lt;/item&gt;\n
+        \     &lt;item key=\"rft.title\"&gt;The Journal of the Academy of Management&lt;/item&gt;\n
+        \     &lt;item key=\"sfx.response_type\"&gt;simplexml&lt;/item&gt;\n      &lt;item
+        key=\"sfx.ignore_date_threshold\"&gt;1&lt;/item&gt;\n      &lt;item key=\"rft.eissn\"&gt;2326-6600&lt;/item&gt;\n
+        \     &lt;item key=\"rft.language\"&gt;eng&lt;/item&gt;\n      &lt;item key=\"rft.object_type\"&gt;JOURNAL&lt;/item&gt;\n
         \     &lt;item key=\"rft.place\"&gt;Champaign, Ill.&lt;/item&gt;\n      &lt;item
-        key=\"rft.title\"&gt;The Journal of the Academy of Management&lt;/item&gt;\n
-        \     &lt;item key=\"url_ctx_fmt\"&gt;info:ofi/fmt:kev:mtx:ctx&lt;/item&gt;\n
-        \     &lt;item key=\"@sfx.subcategory\"&gt;\n       &lt;array&gt;\n        &lt;item
-        key=\"0\"&gt;Business Management&lt;/item&gt;\n        &lt;item key=\"1\"&gt;Economics&lt;/item&gt;\n
-        \      &lt;/array&gt;\n      &lt;/item&gt;\n      &lt;item key=\"@rft.stitle\"&gt;\n
+        key=\"sfx.ignore_char_set\"&gt;1&lt;/item&gt;\n      &lt;item key=\"@rft.stitle\"&gt;\n
         \      &lt;array&gt;\n        &lt;item key=\"0\"&gt;JOURNAL OF THE ACADEMY
         OF MANAGEMENT&lt;/item&gt;\n       &lt;/array&gt;\n      &lt;/item&gt;\n      &lt;item
-        key=\"rft.lccn\"&gt;2001227360&lt;/item&gt;\n      &lt;item key=\"sfx.response_type\"&gt;simplexml&lt;/item&gt;\n
-        \     &lt;item key=\"sfx.sourcename\"&gt;CITATION&lt;/item&gt;\n      &lt;item
-        key=\"rft_val_fmt\"&gt;journal&lt;/item&gt;\n      &lt;item key=\"sfx.ignore_char_set\"&gt;1&lt;/item&gt;\n
-        \     &lt;item key=\"sfx.sid\"&gt;ualberta.ca:opac&lt;/item&gt;\n      &lt;item
-        key=\"req.session_id\"&gt;sF4ED8364-BAD5-11E9-BF7D-94B86F50BD31&lt;/item&gt;\n
+        key=\"rft.issn\"&gt;1535-3990&lt;/item&gt;\n      &lt;item key=\"@sfx.subcategory\"&gt;\n
+        \      &lt;array&gt;\n        &lt;item key=\"0\"&gt;Business Management&lt;/item&gt;\n
+        \       &lt;item key=\"1\"&gt;Economics&lt;/item&gt;\n       &lt;/array&gt;\n
+        \     &lt;/item&gt;\n      &lt;item key=\"rft.lccn\"&gt;2001227360&lt;/item&gt;\n
+        \    &lt;/hash&gt;\n    &lt;/item&gt;\n    &lt;item key=\"1\"&gt;\n     &lt;hash&gt;\n
         \     &lt;item key=\"url_ver\"&gt;Z39.88-2004&lt;/item&gt;\n      &lt;item
-        key=\"ctx_enc\"&gt;UTF-8&lt;/item&gt;\n      &lt;item key=\"@sfx.category\"&gt;\n
-        \      &lt;array&gt;\n        &lt;item key=\"0\"&gt;Business, Economy and
-        Management&lt;/item&gt;\n        &lt;item key=\"1\"&gt;Business, Economy and
-        Management&lt;/item&gt;\n       &lt;/array&gt;\n      &lt;/item&gt;\n      &lt;item
-        key=\"rft.object_type\"&gt;JOURNAL&lt;/item&gt;\n      &lt;item key=\"rft.language\"&gt;eng&lt;/item&gt;\n
-        \     &lt;item key=\"rft.object_id\"&gt;111006223821010&lt;/item&gt;\n     &lt;/hash&gt;\n
-        \   &lt;/item&gt;\n    &lt;item key=\"1\"&gt;\n     &lt;hash&gt;\n      &lt;item
-        key=\"rft.issn\"&gt;0363-7425&lt;/item&gt;\n      &lt;item key=\"sfx.show_availability\"&gt;1&lt;/item&gt;\n
-        \     &lt;item key=\"sfx.ignore_date_threshold\"&gt;1&lt;/item&gt;\n      &lt;item
-        key=\"rft.pub\"&gt;Academy of Management.&lt;/item&gt;\n      &lt;item key=\"ctx_ver\"&gt;Z39.88-2004&lt;/item&gt;\n
-        \     &lt;item key=\"rft.eissn\"&gt;1930-3807&lt;/item&gt;\n      &lt;item
-        key=\"sfx.openurl\"&gt;HTTP://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;amp;ctx_ver=Z39.88-2004&amp;amp;rfr_id=info%3Asid%2Fualberta.ca%3Aopac&amp;amp;rft.genre=journal&amp;amp;rft.object_id=954921333007&amp;amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;amp;url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&amp;amp;url_ver=Z39.88-2004&amp;amp;sfx.response_type=simplexml&lt;/item&gt;\n
-        \     &lt;item key=\"@rfr_id\"&gt;\n       &lt;array&gt;\n        &lt;item
-        key=\"0\"&gt;ualberta.ca:opac&lt;/item&gt;\n       &lt;/array&gt;\n      &lt;/item&gt;\n
-        \     &lt;item key=\"rft.place\"&gt;UNITED STATES&lt;/item&gt;\n      &lt;item
-        key=\"rft.title\"&gt;Academy of Management Review&lt;/item&gt;\n      &lt;item
-        key=\"url_ctx_fmt\"&gt;info:ofi/fmt:kev:mtx:ctx&lt;/item&gt;\n      &lt;item
-        key=\"@sfx.subcategory\"&gt;\n       &lt;array&gt;\n        &lt;item key=\"0\"&gt;Business
-        Management&lt;/item&gt;\n        &lt;item key=\"1\"&gt;Economics&lt;/item&gt;\n
+        key=\"ctx_ver\"&gt;Z39.88-2004&lt;/item&gt;\n      &lt;item key=\"req.session_id\"&gt;s29BCE9C4-0FCE-11EB-96F2-BCAEAD22EEE9&lt;/item&gt;\n
+        \     &lt;item key=\"@sfx.category\"&gt;\n       &lt;array&gt;\n        &lt;item
+        key=\"0\"&gt;Business, Economy and Management&lt;/item&gt;\n        &lt;item
+        key=\"1\"&gt;Business, Economy and Management&lt;/item&gt;\n       &lt;/array&gt;\n
+        \     &lt;/item&gt;\n      &lt;item key=\"@rfr_id\"&gt;\n       &lt;array&gt;\n
+        \       &lt;item key=\"0\"&gt;ualberta.ca:opac&lt;/item&gt;\n       &lt;/array&gt;\n
+        \     &lt;/item&gt;\n      &lt;item key=\"sfx.openurl\"&gt;HTTP://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;amp;ctx_ver=Z39.88-2004&amp;amp;rfr_id=info%3Asid%2Fualberta.ca%3Aopac&amp;amp;rft.genre=journal&amp;amp;rft.object_id=954921333007&amp;amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;amp;url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&amp;amp;url_ver=Z39.88-2004&amp;amp;sfx.response_type=simplexml&lt;/item&gt;\n
+        \     &lt;item key=\"url_ctx_fmt\"&gt;info:ofi/fmt:kev:mtx:ctx&lt;/item&gt;\n
+        \     &lt;item key=\"sfx.show_availability\"&gt;1&lt;/item&gt;\n      &lt;item
+        key=\"sfx.sourcename\"&gt;CITATION&lt;/item&gt;\n      &lt;item key=\"sfx.sid\"&gt;ualberta.ca:opac&lt;/item&gt;\n
+        \     &lt;item key=\"rft.object_id\"&gt;954921392000&lt;/item&gt;\n      &lt;item
+        key=\"rft.lccn\"&gt;78645264&lt;/item&gt;\n      &lt;item key=\"rft.issn\"&gt;0363-7425&lt;/item&gt;\n
+        \     &lt;item key=\"@sfx.subcategory\"&gt;\n       &lt;array&gt;\n        &lt;item
+        key=\"0\"&gt;Business Management&lt;/item&gt;\n        &lt;item key=\"1\"&gt;Economics&lt;/item&gt;\n
         \      &lt;/array&gt;\n      &lt;/item&gt;\n      &lt;item key=\"@rft.stitle\"&gt;\n
         \      &lt;array&gt;\n        &lt;item key=\"0\"&gt;ACADEMY OF MANAGEMENT
         REVIEW&lt;/item&gt;\n        &lt;item key=\"1\"&gt;ACAD MANAGE REV&lt;/item&gt;\n
         \       &lt;item key=\"2\"&gt;ACADEMY OF MANAGEMENT REVIEW (AMR)&lt;/item&gt;\n
         \       &lt;item key=\"3\"&gt;ACADEMY OF MANAGEMENT. THE ACADEMY OF MANAGEMENT
         REVIEW&lt;/item&gt;\n        &lt;item key=\"4\"&gt;ACAD. MANAGE. REV&lt;/item&gt;\n
-        \      &lt;/array&gt;\n      &lt;/item&gt;\n      &lt;item key=\"rft.lccn\"&gt;78645264&lt;/item&gt;\n
-        \     &lt;item key=\"sfx.response_type\"&gt;simplexml&lt;/item&gt;\n      &lt;item
-        key=\"sfx.sourcename\"&gt;CITATION&lt;/item&gt;\n      &lt;item key=\"rft_val_fmt\"&gt;journal&lt;/item&gt;\n
-        \     &lt;item key=\"sfx.ignore_char_set\"&gt;1&lt;/item&gt;\n      &lt;item
-        key=\"sfx.sid\"&gt;ualberta.ca:opac&lt;/item&gt;\n      &lt;item key=\"req.session_id\"&gt;sF4ED8364-BAD5-11E9-BF7D-94B86F50BD31&lt;/item&gt;\n
-        \     &lt;item key=\"url_ver\"&gt;Z39.88-2004&lt;/item&gt;\n      &lt;item
-        key=\"ctx_enc\"&gt;UTF-8&lt;/item&gt;\n      &lt;item key=\"@sfx.category\"&gt;\n
-        \      &lt;array&gt;\n        &lt;item key=\"0\"&gt;Business, Economy and
-        Management&lt;/item&gt;\n        &lt;item key=\"1\"&gt;Business, Economy and
-        Management&lt;/item&gt;\n       &lt;/array&gt;\n      &lt;/item&gt;\n      &lt;item
+        \      &lt;/array&gt;\n      &lt;/item&gt;\n      &lt;item key=\"sfx.ignore_char_set\"&gt;1&lt;/item&gt;\n
+        \     &lt;item key=\"rft.place\"&gt;UNITED STATES&lt;/item&gt;\n      &lt;item
         key=\"rft.object_type\"&gt;JOURNAL&lt;/item&gt;\n      &lt;item key=\"rft.language\"&gt;eng&lt;/item&gt;\n
-        \     &lt;item key=\"rft.object_id\"&gt;954921392000&lt;/item&gt;\n     &lt;/hash&gt;\n
-        \   &lt;/item&gt;\n   &lt;/array&gt;\n  &lt;/item&gt;\n  &lt;item key=\"sfx.sourcename\"&gt;CITATION&lt;/item&gt;\n
-        \ &lt;item key=\"rft.jtitle\"&gt;Academy of Management Journal&lt;/item&gt;\n
-        \ &lt;item key=\"rft_val_fmt\"&gt;journal&lt;/item&gt;\n  &lt;item key=\"existing_ts_ids\"&gt;\n
-        \  &lt;array&gt;\n    &lt;item key=\"0\"&gt;111053463683001&lt;/item&gt;\n
-        \   &lt;item key=\"1\"&gt;10920000000000007&lt;/item&gt;\n    &lt;item key=\"2\"&gt;111018614652001&lt;/item&gt;\n
-        \   &lt;item key=\"3\"&gt;111026921949001&lt;/item&gt;\n    &lt;item key=\"4\"&gt;10920000000000006&lt;/item&gt;\n
-        \   &lt;item key=\"5\"&gt;10920000000000026&lt;/item&gt;\n    &lt;item key=\"6\"&gt;2610000000000087&lt;/item&gt;\n
-        \   &lt;item key=\"7\"&gt;111006221384001&lt;/item&gt;\n    &lt;item key=\"8\"&gt;2610000000000087&lt;/item&gt;\n
-        \   &lt;item key=\"9\"&gt;111081201237001&lt;/item&gt;\n    &lt;item key=\"10\"&gt;2550000000000007&lt;/item&gt;\n
-        \   &lt;item key=\"11\"&gt;1000000000001224&lt;/item&gt;\n    &lt;item key=\"12\"&gt;2550000000000007&lt;/item&gt;\n
-        \  &lt;/array&gt;\n  &lt;/item&gt;\n  &lt;item key=\"sfx.sid\"&gt;ualberta.ca:opac&lt;/item&gt;\n
+        \     &lt;item key=\"rft.eissn\"&gt;1930-3807&lt;/item&gt;\n      &lt;item
+        key=\"sfx.response_type\"&gt;simplexml&lt;/item&gt;\n      &lt;item key=\"sfx.ignore_date_threshold\"&gt;1&lt;/item&gt;\n
+        \     &lt;item key=\"rft.title\"&gt;The Academy of Management Review&lt;/item&gt;\n
+        \     &lt;item key=\"ctx_enc\"&gt;UTF-8&lt;/item&gt;\n      &lt;item key=\"rft_val_fmt\"&gt;journal&lt;/item&gt;\n
+        \     &lt;item key=\"rft.pub\"&gt;Academy of Management.&lt;/item&gt;\n     &lt;/hash&gt;\n
+        \   &lt;/item&gt;\n   &lt;/array&gt;\n  &lt;/item&gt;\n  &lt;item key=\"rft.lccn\"&gt;
+        \  58003817 &lt;/item&gt;\n  &lt;item key=\"@sfx.subcategory\"&gt;\n   &lt;array&gt;\n
+        \   &lt;item key=\"0\"&gt;Business Management&lt;/item&gt;\n    &lt;item key=\"1\"&gt;Economics&lt;/item&gt;\n
+        \   &lt;item key=\"2\"&gt;General and Others&lt;/item&gt;\n   &lt;/array&gt;\n
+        \ &lt;/item&gt;\n  &lt;item key=\"rft.issn\"&gt;0001-4273&lt;/item&gt;\n  &lt;item
+        key=\"@rft.stitle\"&gt;\n   &lt;array&gt;\n    &lt;item key=\"0\"&gt;ACAD
+        MANAGE J&lt;/item&gt;\n    &lt;item key=\"1\"&gt;ACADEMY OF MANAGEMENT JOURNAL
+        (AMJ)&lt;/item&gt;\n    &lt;item key=\"2\"&gt;ACADEMY OF MANAGEMENT JOURNAL&lt;/item&gt;\n
+        \   &lt;item key=\"3\"&gt;JOURNAL OF THE ACADEMY OF MANAGEMENT&lt;/item&gt;\n
+        \   &lt;item key=\"4\"&gt;ACAD. MANAGE. J&lt;/item&gt;\n   &lt;/array&gt;\n
+        \ &lt;/item&gt;\n  &lt;item key=\"sfx.request_id\"&gt;81095148&lt;/item&gt;\n
+        \ &lt;item key=\"@rft_id\"&gt;\n   &lt;array&gt;\n   &lt;/array&gt;\n  &lt;/item&gt;\n
+        \ &lt;item key=\"rfr.rfr\"&gt;ualberta.ca:opac&lt;/item&gt;\n  &lt;item key=\"url_ctx_fmt\"&gt;info:ofi/fmt:kev:mtx:ctx&lt;/item&gt;\n
+        \ &lt;item key=\"sfx.show_availability\"&gt;1&lt;/item&gt;\n  &lt;item key=\"ctx_ver\"&gt;Z39.88-2004&lt;/item&gt;\n
+        \ &lt;item key=\"@rfr_id\"&gt;\n   &lt;array&gt;\n    &lt;item key=\"0\"&gt;info:sid/ualberta.ca:opac&lt;/item&gt;\n
+        \  &lt;/array&gt;\n  &lt;/item&gt;\n  &lt;item key=\"url_ver\"&gt;Z39.88-2004&lt;/item&gt;\n
+        \ &lt;item key=\"rft.title\"&gt;The Academy of Management Journal&lt;/item&gt;\n
+        \ &lt;item key=\"rft.place\"&gt;UNITED STATES&lt;/item&gt;\n  &lt;item key=\"sfx.ignore_char_set\"&gt;1&lt;/item&gt;\n
+        \ &lt;item key=\"rft.language\"&gt;eng&lt;/item&gt;\n  &lt;item key=\"rft.eissn\"&gt;1948-0989&lt;/item&gt;\n
+        \ &lt;item key=\"sfx.ignore_date_threshold\"&gt;1&lt;/item&gt;\n  &lt;item
+        key=\"sfx.related_objects_relations\"&gt;\n   &lt;hash&gt;\n    &lt;item key=\"954921392000\"&gt;CONTINUED_IN_PART_BY&lt;/item&gt;\n
+        \   &lt;item key=\"111006223821010\"&gt;CONTINUES&lt;/item&gt;\n   &lt;/hash&gt;\n
+        \ &lt;/item&gt;\n  &lt;item key=\"sfx.has_full_text\"&gt;yes&lt;/item&gt;\n
+        \ &lt;item key=\"existing_ts_ids\"&gt;\n   &lt;array&gt;\n    &lt;item key=\"0\"&gt;111026921949001&lt;/item&gt;\n
+        \   &lt;item key=\"1\"&gt;100210000000000026&lt;/item&gt;\n    &lt;item key=\"2\"&gt;100210000000000007&lt;/item&gt;\n
+        \   &lt;item key=\"3\"&gt;111053463683001&lt;/item&gt;\n    &lt;item key=\"4\"&gt;111018614652001&lt;/item&gt;\n
+        \   &lt;item key=\"5\"&gt;100210000000000006&lt;/item&gt;\n    &lt;item key=\"6\"&gt;111081201237001&lt;/item&gt;\n
+        \   &lt;item key=\"7\"&gt;2550000000000007&lt;/item&gt;\n    &lt;item key=\"8\"&gt;2610000000000087&lt;/item&gt;\n
+        \   &lt;item key=\"9\"&gt;2610000000000087&lt;/item&gt;\n    &lt;item key=\"10\"&gt;1000000000001224&lt;/item&gt;\n
+        \   &lt;item key=\"11\"&gt;2550000000000007&lt;/item&gt;\n   &lt;/array&gt;\n
+        \ &lt;/item&gt;\n  &lt;item key=\"sfx.sid\"&gt;ualberta.ca:opac&lt;/item&gt;\n
+        \ &lt;item key=\"rft.jtitle\"&gt;The Academy of Management Journal&lt;/item&gt;\n
+        \ &lt;item key=\"rft.object_id\"&gt;954921333007&lt;/item&gt;\n  &lt;item
+        key=\"rft.genre\"&gt;journal&lt;/item&gt;\n  &lt;item key=\"_stash\"&gt;\n
+        \  &lt;hash&gt;\n    &lt;item key=\"@rfr_id\"&gt;\n     &lt;array&gt;\n      &lt;item
+        key=\"0\"&gt;info:sid/ualberta.ca:opac&lt;/item&gt;\n     &lt;/array&gt;\n
+        \   &lt;/item&gt;\n   &lt;/hash&gt;\n  &lt;/item&gt;\n  &lt;item key=\"sfx.openurl\"&gt;HTTP://resolver.library.ualberta.ca/resolver?ctx_enc=info%3Aofi%2Fenc%3AUTF-8&amp;amp;ctx_ver=Z39.88-2004&amp;amp;rfr_id=info%3Asid%2Fualberta.ca%3Aopac&amp;amp;rft.genre=journal&amp;amp;rft.object_id=954921333007&amp;amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;amp;url_ctx_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Actx&amp;amp;url_ver=Z39.88-2004&amp;amp;sfx.response_type=simplexml&lt;/item&gt;\n
+        \ &lt;item key=\"fetchid\"&gt;0001-4273&lt;/item&gt;\n  &lt;item key=\"sfx.sourcename\"&gt;CITATION&lt;/item&gt;\n
+        \ &lt;item key=\"req.session_id\"&gt;s29BCE9C4-0FCE-11EB-96F2-BCAEAD22EEE9&lt;/item&gt;\n
         \ &lt;item key=\"@sfx.category\"&gt;\n   &lt;array&gt;\n    &lt;item key=\"0\"&gt;Business,
         Economy and Management&lt;/item&gt;\n    &lt;item key=\"1\"&gt;Business, Economy
         and Management&lt;/item&gt;\n    &lt;item key=\"2\"&gt;Business, Economy and
-        Management&lt;/item&gt;\n   &lt;/array&gt;\n  &lt;/item&gt;\n  &lt;item key=\"fetchid\"&gt;0001-4273&lt;/item&gt;\n
-        \ &lt;item key=\"sfx.related_objects_relations\"&gt;\n   &lt;hash&gt;\n    &lt;item
-        key=\"954921392000\"&gt;CONTINUED_IN_PART_BY&lt;/item&gt;\n    &lt;item key=\"111006223821010\"&gt;CONTINUES&lt;/item&gt;\n
-        \  &lt;/hash&gt;\n  &lt;/item&gt;\n &lt;/hash&gt;\n&lt;/perldata&gt;\n&lt;/ctx_object_1&gt;</ctx_obj_set>\n
+        Management&lt;/item&gt;\n   &lt;/array&gt;\n  &lt;/item&gt;\n &lt;/hash&gt;\n&lt;/perldata&gt;\n&lt;/ctx_object_1&gt;</ctx_obj_set>\n
         <targets>\n  <target>\n   <target_name>ABI_INFORM_COLLECTION</target_name>\n
         \  <target_public_name>ABI/INFORM Collection</target_public_name>\n   <target_service_id>2550000000000007</target_service_id>\n
         \  <service_type>getFullTxt</service_type>\n   <parser>PROQUEST::open</parser>\n
-        \  <parse_param>url=http://gateway.proquest.com/openurl &amp; clientid= &amp;
-        url2=https://search.proquest.com&amp;jkey=35200</parse_param>\n   <proxy>yes</proxy>\n
-        \  <crossref>no</crossref>\n   <note></note>\n   <authentication>&lt;iframe
-        src=\"https://tal.scholarsportal.info/alberta/sfx/?tag=ProQuest_TAL\" width=\"100%\"
-        height=\"40\" align=\"middle\" frameborder=\"0\" scrolling=\"no\"&gt;&lt;p&gt;Your
-        browser does not support iframes.&lt;/p&gt;&lt;/iframe&gt;\r\n</authentication>\n
-        \  <char_set>utf8</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.proquest.com/openurl?rft_id=35200&amp;res_dat=xri%3Apqm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;url_ver=Z39.88-2004&amp;genre=journal</target_url>\n
+        \  <parse_param>url=http://gateway.proquest.com/openurl &amp; clientid=14474
+        &amp; url2=https://search.proquest.com&amp;jkey=35201</parse_param>\n   <proxy>yes</proxy>\n
+        \  <crossref>no</crossref>\n   <note></note>\n   <authentication></authentication>\n
+        \  <char_set>utf8</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.proquest.com/openurl?req_dat=xri%3Apqil%3Aclntid%3D14474&amp;genre=journal&amp;res_dat=xri%3Apqm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft_id=35201&amp;url_ver=Z39.88-2004</target_url>\n
         \ </target>\n  <target>\n   <target_name>ABI_INFORM_COLLECTION</target_name>\n
         \  <target_public_name>ABI/INFORM Collection</target_public_name>\n   <target_service_id>2550000000000007</target_service_id>\n
         \  <service_type>getFullTxt</service_type>\n   <parser>PROQUEST::open</parser>\n
-        \  <parse_param>url=http://gateway.proquest.com/openurl &amp; clientid= &amp;
-        url2=https://search.proquest.com&amp;jkey=35201</parse_param>\n   <proxy>yes</proxy>\n
-        \  <crossref>no</crossref>\n   <note></note>\n   <authentication>&lt;iframe
-        src=\"https://tal.scholarsportal.info/alberta/sfx/?tag=ProQuest_TAL\" width=\"100%\"
-        height=\"40\" align=\"middle\" frameborder=\"0\" scrolling=\"no\"&gt;&lt;p&gt;Your
-        browser does not support iframes.&lt;/p&gt;&lt;/iframe&gt;\r\n</authentication>\n
-        \  <char_set>utf8</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.proquest.com/openurl?rft_id=35201&amp;res_dat=xri%3Apqm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;url_ver=Z39.88-2004&amp;genre=journal</target_url>\n
+        \  <parse_param>url=http://gateway.proquest.com/openurl &amp; clientid=14474
+        &amp; url2=https://search.proquest.com&amp;jkey=35200</parse_param>\n   <proxy>yes</proxy>\n
+        \  <crossref>no</crossref>\n   <note></note>\n   <authentication></authentication>\n
+        \  <char_set>utf8</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.proquest.com/openurl?req_dat=xri%3Apqil%3Aclntid%3D14474&amp;genre=journal&amp;res_dat=xri%3Apqm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft_id=35200&amp;url_ver=Z39.88-2004</target_url>\n
         \ </target>\n  <target>\n   <target_name>ENTREPRENEURSHIP_DATABASE</target_name>\n
         \  <target_public_name>Entrepreneurship Database</target_public_name>\n   <target_service_id>2610000000000087</target_service_id>\n
         \  <service_type>getFullTxt</service_type>\n   <parser>PROQUEST::open</parser>\n
         \  <parse_param>url=http://gateway.proquest.com/openurl &amp; clientid= &amp;
         url2=https://search.proquest.com&amp;jkey=35200</parse_param>\n   <proxy>yes</proxy>\n
-        \  <crossref>no</crossref>\n   <note></note>\n   <authentication>&lt;iframe
-        src=\"https://tal.scholarsportal.info/alberta/sfx/?tag=ProQuest_TAL\" width=\"100%\"
-        height=\"40\" align=\"middle\" frameborder=\"0\" scrolling=\"no\"&gt;&lt;p&gt;Your
-        browser does not support iframes.&lt;/p&gt;&lt;/iframe&gt;\r\n</authentication>\n
-        \  <char_set>iso-8859-1</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.proquest.com/openurl?rft_id=35200&amp;res_dat=xri%3Apqm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;url_ver=Z39.88-2004&amp;genre=journal</target_url>\n
+        \  <crossref>no</crossref>\n   <note></note>\n   <authentication></authentication>\n
+        \  <char_set>iso-8859-1</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.proquest.com/openurl?rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;url_ver=Z39.88-2004&amp;rft_id=35200&amp;res_dat=xri%3Apqm&amp;genre=journal</target_url>\n
         \ </target>\n  <target>\n   <target_name>ENTREPRENEURSHIP_DATABASE</target_name>\n
         \  <target_public_name>Entrepreneurship Database</target_public_name>\n   <target_service_id>2610000000000087</target_service_id>\n
         \  <service_type>getFullTxt</service_type>\n   <parser>PROQUEST::open</parser>\n
         \  <parse_param>url=http://gateway.proquest.com/openurl &amp; clientid= &amp;
         url2=https://search.proquest.com&amp;jkey=35201</parse_param>\n   <proxy>yes</proxy>\n
-        \  <crossref>no</crossref>\n   <note></note>\n   <authentication>&lt;iframe
-        src=\"https://tal.scholarsportal.info/alberta/sfx/?tag=ProQuest_TAL\" width=\"100%\"
-        height=\"40\" align=\"middle\" frameborder=\"0\" scrolling=\"no\"&gt;&lt;p&gt;Your
-        browser does not support iframes.&lt;/p&gt;&lt;/iframe&gt;\r\n</authentication>\n
-        \  <char_set>iso-8859-1</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.proquest.com/openurl?rft_id=35201&amp;res_dat=xri%3Apqm&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;url_ver=Z39.88-2004&amp;genre=journal</target_url>\n
+        \  <crossref>no</crossref>\n   <note></note>\n   <authentication></authentication>\n
+        \  <char_set>iso-8859-1</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=http://gateway.proquest.com/openurl?rft_id=35201&amp;url_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;genre=journal&amp;res_dat=xri%3Apqm</target_url>\n
         \ </target>\n  <target>\n   <target_name>JSTOR_ARTS_AND_SCIENCES_IV</target_name>\n
         \  <target_public_name>JSTOR Arts and Sciences IV</target_public_name>\n   <target_service_id>111081201237001</target_service_id>\n
         \  <service_type>getFullTxt</service_type>\n   <parser>JSTOR::JSTOR</parser>\n
         \  <parse_param>url=https://www.jstor.org &amp; shib= &amp; url2=https://shibbolethsp.jstor.org/start
         &amp; u_shib=&amp;jkey=acadmanaj</parse_param>\n   <proxy>yes</proxy>\n   <crossref>yes</crossref>\n
-        \  <note></note>\n   <authentication>&lt;iframe src=\"https://tal.scholarsportal.info/alberta/sfx/?tag=JSTOR_Archive_8_Collections\"
-        width=\"100%\" height=\"40\" align=\"middle\" frameborder=\"0\" scrolling=\"no\"&gt;&lt;p&gt;Your
-        browser does not support iframes.&lt;/p&gt;&lt;/iframe&gt;</authentication>\n
-        \  <char_set></char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=https://www.jstor.org/action/showPublication?journalCode=acadmanaj</target_url>\n
-        \ </target>\n  <target>\n   <target_name>JSTOR_BUSINESS_COLLECTION</target_name>\n
-        \  <target_public_name>JSTOR Business Collection</target_public_name>\n   <target_service_id>111006221384001</target_service_id>\n
-        \  <service_type>getFullTxt</service_type>\n   <parser>JSTOR::JSTOR</parser>\n
-        \  <parse_param>url=https://www.jstor.org &amp; shib= &amp; url2=https://shibbolethsp.jstor.org/start
-        &amp; u_shib=&amp;jkey=acadmanaj</parse_param>\n   <proxy>yes</proxy>\n   <crossref>yes</crossref>\n
-        \  <note></note>\n   <authentication>&lt;iframe src=\"https://tal.scholarsportal.info/alberta/sfx/?tag=JSTOR\"
-        width=\"100%\" height=\"40\" align=\"middle\" frameborder=\"0\" scrolling=\"no\"&gt;&lt;p&gt;Your
-        browser does not support iframes.&lt;/p&gt;&lt;/iframe&gt;\r\n</authentication>\n
-        \  <char_set></char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=https://www.jstor.org/action/showPublication?journalCode=acadmanaj</target_url>\n
+        \  <note></note>\n   <authentication></authentication>\n   <char_set>iso-8859-1</char_set>\n
+        \  <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=https://www.jstor.org/action/showPublication?journalCode=acadmanaj</target_url>\n
         \ </target>\n  <target>\n   <target_name>EBSCOHOST_BUSINESS_SOURCE_COMPLETE</target_name>\n
         \  <target_public_name>Business Source Complete</target_public_name>\n   <target_service_id>1000000000001224</target_service_id>\n
         \  <service_type>getFullTxt</service_type>\n   <parser>EBSCO_HOST::ebsco_am</parser>\n
         \  <parse_param>db_host=bth &amp; ebscohosturl=https://search.ebscohost.com
         &amp; linkurl=https://openurl.ebscohost.com/linksvc/linking.aspx &amp; shib=
-        &amp; customer_id= &amp; athens_id= &amp; u_shib= &amp; sso=&amp;jkey=AMJ</parse_param>\n
-        \  <proxy>yes</proxy>\n   <crossref>no</crossref>\n   <note></note>\n   <authentication>&lt;iframe
-        src=\"https://tal.scholarsportal.info/alberta/sfx/?tag=EBSCOhost_LHCADL\"
-        width=\"100%\" height=\"40\" align=\"middle\" frameborder=\"0\" scrolling=\"no\"&gt;\r\n&lt;p&gt;Your
-        browser does not support iframes.&lt;/p&gt;&lt;/iframe&gt;</authentication>\n
+        &amp; customer_id= &amp; athens_id= &amp; u_shib= &amp; sso= &amp; ipauth=&amp;jkey=AMJ</parse_param>\n
+        \  <proxy>yes</proxy>\n   <crossref>no</crossref>\n   <note></note>\n   <authentication></authentication>\n
         \  <char_set>utf8</char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=https://search.ebscohost.com/direct.asp?db=bth&amp;jn=AMJ&amp;scope=site</target_url>\n
         \ </target>\n  <target>\n   <target_name>LOCAL_CATALOGUE_SIRSI_UNICORN</target_name>\n
-        \  <target_public_name>the Library Catalogue</target_public_name>\n   <target_service_id>111018614652001</target_service_id>\n
-        \  <service_type>getHolding</service_type>\n   <parser>SIRSI::WEBCAT2</parser>\n
-        \  <parse_param>user_id = WUAARCHIVE &amp;\r\nhost = https://neos.library.ualberta.ca
-        &amp;\r\nversion =  &amp; \r\nisbn_13=</parse_param>\n   <proxy>no</proxy>\n
-        \  <crossref>yes</crossref>\n   <note></note>\n   <authentication></authentication>\n
-        \  <char_set></char_set>\n   <displayer></displayer>\n   <target_url>http://login.ezproxy.library.ualberta.ca/login?url=https://neos.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/57/5?user_id=WUAARCHIVE&amp;search_type=KEYWORD&amp;srchfield1=GENERAL%5ESUBJECT%5EGENERAL%5E%5Ewords+or+phrase&amp;library=ALL&amp;language=ANY&amp;format=ANY&amp;item_type=ANY&amp;location=ANY&amp;match_on=KEYWORD&amp;sort_by=ANY&amp;searchdata1=0001-4273%7B022%7D</target_url>\n
+        \  <target_public_name>the Classic Library Catalogue</target_public_name>\n
+        \  <target_service_id>111018614652001</target_service_id>\n   <service_type>getHolding</service_type>\n
+        \  <parser>SIRSI::WEBCAT2</parser>\n   <parse_param>user_id = WUAARCHIVE &amp;\r\nhost
+        = https://neos.library.ualberta.ca &amp;\r\nversion =  &amp; \r\nisbn_13=</parse_param>\n
+        \  <proxy>no</proxy>\n   <crossref>yes</crossref>\n   <note></note>\n   <authentication></authentication>\n
+        \  <char_set></char_set>\n   <displayer></displayer>\n   <target_url>https://neos.library.ualberta.ca/uhtbin/cgisirsi/x/0/0/57/5?user_id=WUAARCHIVE&amp;search_type=KEYWORD&amp;srchfield1=GENERAL%5ESUBJECT%5EGENERAL%5E%5Ewords+or+phrase&amp;library=ALL&amp;language=ANY&amp;format=ANY&amp;item_type=ANY&amp;location=ANY&amp;match_on=KEYWORD&amp;sort_by=ANY&amp;searchdata1=0001-4273%7B022%7D</target_url>\n
         \ </target>\n  <target>\n   <target_name>MESSAGE_NO_DOCDEL_LCL</target_name>\n
         \  <target_public_name>&lt;span class='nofulltext'&gt;Please use the full
-        text or catalogue links.&lt;/span&gt;</target_public_name>\n   <target_service_id>10920000000000007</target_service_id>\n
+        text or catalogue links.&lt;/span&gt;</target_public_name>\n   <target_service_id>100210000000000007</target_service_id>\n
         \  <service_type>getCitedGenome</service_type>\n   <parser></parser>\n   <parse_param></parse_param>\n
         \  <proxy>no</proxy>\n   <crossref>no</crossref>\n   <note></note>\n   <authentication></authentication>\n
         \  <char_set></char_set>\n   <displayer></displayer>\n   <target_url></target_url>\n
         \ </target>\n </targets>\n</sfx_menu>\n"
     http_version: 
-  recorded_at: Fri, 09 Aug 2019 18:46:12 GMT
+  recorded_at: Fri, 16 Oct 2020 16:39:31 GMT
 recorded_with: VCR 5.0.0
