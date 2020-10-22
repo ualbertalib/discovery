@@ -16,6 +16,7 @@ RUN apt-get update -qq \
                           nodejs \
                           yarn \
                           tzdata \
+                          libxml2-utils \
     && rm -rf /var/lib/apt/lists/*
 
 

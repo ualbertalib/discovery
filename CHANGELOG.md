@@ -397,7 +397,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Added
 - Mail catcher docker container for checking mail on UAT [#1342](https://github.com/ualbertalib/discovery/pull/1342)
+- Added local Blacklight SFX to exclusion list [#2074](https://github.com/ualbertalib/discovery/pull/2074)
 - New request forms for RCRF/BPSC [#1386](https://github.com/ualbertalib/discovery/pull/1386)
+
 
 ### Removed
 - Email Interceptor for UAT environments [PR#1387](https://github.com/ualbertalib/discovery/pull/1387)
