@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- changed footer link which was pointing to the library homepage instead of the UAlberta homepage.
+
 ## [3.5.4]
 
 ### Fixed
