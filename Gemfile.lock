@@ -169,7 +169,7 @@ GEM
     faraday-http-cache (2.2.0)
       faraday (>= 0.8)
     ffi (1.13.1)
-    font-awesome-sass (5.13.0)
+    font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     generator_spec (0.9.4)
       activesupport (>= 3.0.0)
@@ -430,7 +430,7 @@ DEPENDENCIES
   devise-guests
   erb_lint (~> 0.0.30)
   factory_bot
-  font-awesome-sass (~> 5.13.0)
+  font-awesome-sass (~> 5.15.1)
   generator_spec (~> 0.9.4)
   jquery-rails
   letter_opener

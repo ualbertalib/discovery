@@ -9,7 +9,7 @@ gem 'mysql2', '~> 0.4.10'
 
 # Assets (CSS/JS) stuff
 gem 'bootstrap', '~> 4.3.1'
-gem 'font-awesome-sass', '~> 5.13.0'
+gem 'font-awesome-sass', '~> 5.15.1'
 gem 'jquery-rails'
 gem 'sassc-rails', '~> 2.1'
 gem 'uglifier', '>= 1.3.0'
