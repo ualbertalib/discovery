@@ -81,5 +81,5 @@ group :test do
 end
 
 group :uat do
-  gem 'puma', '~> 5.0'
+  gem 'puma', '~> 5.1'
 end
