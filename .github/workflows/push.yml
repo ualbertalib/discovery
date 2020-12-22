@@ -1,0 +1,45 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build the docker-compose stack
+        run: docker-compose -f docker-compose.lightweight.yml up -d
+
+      - name: install xmllint
+        run: sudo apt-get install libxml2-utils
+
+      - name: Set up Ruby 2.6
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6.6
+
+      - name: Cache Ruby gems
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+
+      - name: Bundle gems
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without 'production development'
+          bundle install --jobs 4 --retry 3
+
+      - name: Lint with RuboCop
+        run: bundle exec rubocop --parallel
+
+      - name: Run Tests
+        env:
+          RAILS_ENV: test
+        run: |
+          bundle exec rake db:create 
+          bundle exec rake db:migrate
+          bundle exec rake spec
