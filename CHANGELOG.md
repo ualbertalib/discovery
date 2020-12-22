@@ -8,6 +8,7 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ### Changed
 - use github workflows to run CI [#2121](https://github.com/ualbertalib/discovery/issues/2121)
+- lightweight docker includes mysql by default
 
 ## [3.5.5]
 
