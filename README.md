@@ -1,5 +1,4 @@
 # Discovery Interface for University of Alberta Library
-[![Build Status](https://travis-ci.org/ualbertalib/discovery.svg?branch=master)](https://travis-ci.org/ualbertalib/discovery)
 
 This is the code base for the University of Alberta Library's
 discovery platform. Based on [Project Blacklight](projectblacklight.org).
