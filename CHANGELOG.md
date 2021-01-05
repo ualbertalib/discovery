@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.5.6] - 2021-01-05
+
 ### Changed
 - use github workflows to run CI [#2121](https://github.com/ualbertalib/discovery/issues/2121)
 - lightweight docker includes mysql by default [PR#2125](https://github.com/ualbertalib/discovery/pull/2125)
