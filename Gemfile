@@ -28,7 +28,7 @@ gem 'devise-guests'
 # Misc Utilities
 gem 'addressable', '~> 2.7.0'
 gem 'bootstrap_form', '~> 2.7.0'
-gem 'nokogiri', '~> 1.10.10'
+gem 'nokogiri', '~> 1.11.0'
 gem 'om'
 
 # Performance monitoring
