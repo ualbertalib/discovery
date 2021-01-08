@@ -228,7 +228,7 @@ GEM
     nap (1.1.0)
     nio4r (2.5.4)
     no_proxy_fix (0.1.2)
-    nokogiri (1.11.0)
+    nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     octokit (4.19.0)
@@ -441,7 +441,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.4)
   mysql2 (~> 0.4.10)
-  nokogiri (~> 1.11.0)
+  nokogiri (~> 1.11.1)
   om
   pry
   pry-byebug
