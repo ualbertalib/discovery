@@ -41,7 +41,7 @@ group :test, :development do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'rspec-solr'
-  gem 'shoulda-matchers', '~> 4.4'
+  gem 'shoulda-matchers', '~> 4.5'
 
   gem 'pry'
   gem 'pry-byebug'

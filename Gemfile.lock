@@ -361,7 +361,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    shoulda-matchers (4.4.1)
+    shoulda-matchers (4.5.0)
       activesupport (>= 4.2.0)
     simplecov (0.21.1)
       docile (~> 1.1)
@@ -457,7 +457,7 @@ DEPENDENCIES
   scss_lint (>= 0.56.0)
   sdoc
   selenium-webdriver
-  shoulda-matchers (~> 4.4)
+  shoulda-matchers (~> 4.5)
   simplecov
   spring
   uglifier (>= 1.3.0)
