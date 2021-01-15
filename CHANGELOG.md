@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.5.7] - 2021-01-15
+
 ### Fixed
 - symphony_nightly migration foreign key error [2142](https://github.com/ualbertalib/discovery/issues/2142)
 
