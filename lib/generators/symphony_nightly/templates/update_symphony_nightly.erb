@@ -16,8 +16,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
     # Creating the locations table later on without this gives errors that were
     # difficult to to make sense of.
     foreign_keys('backup_locations').each do |fkey|
+      remove_foreign_key fkey.from_table, column: fkey.options[:column]
       rename_column      fkey.from_table, fkey.options[:column], 'backup_' + fkey.options[:column]
-      remove_foreign_key fkey.from_table, fkey.to_table
       add_foreign_key    fkey.from_table, fkey.to_table
     end
 
@@ -56,8 +56,8 @@ class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Mi
     end
 
     foreign_keys('locations').each do |fkey|
+      remove_foreign_key fkey.from_table, column: fkey.options[:column]
       rename_column      fkey.from_table, fkey.options[:column], fkey.options[:column].gsub('backup_', '')
-      remove_foreign_key fkey.from_table, fkey.to_table
       add_foreign_key    fkey.from_table, fkey.to_table
     end
 
