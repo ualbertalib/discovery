@@ -6,6 +6,9 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+### Fixed
+- Added rails version to symphony nightly template []()
+
 ## [3.5.7] - 2021-01-15
 
 ### Fixed

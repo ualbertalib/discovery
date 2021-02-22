@@ -1,4 +1,4 @@
-class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Migration
+class UpdateSymphonyNightly<%= Time.now.strftime('%Y%m%d') %> < ActiveRecord::Migration[4.2]
   # order matters for libraries and locations because of the foreign key
   SYMPHONY_TABLES = ['statuses',
                      'item_types',
