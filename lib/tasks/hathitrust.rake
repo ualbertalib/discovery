@@ -2,7 +2,7 @@ namespace :hathitrust do
   desc 'Populate the hathitrust table from a csv'
   task populate_table: :environment do
     require 'csv'
-    CSV.foreach(Rails.root.join('lib', 'tasks', 'files', '20200508_hathitrust_overlap_report.csv'),
+    CSV.foreach(Rails.root.join('lib', 'tasks', 'files', '20210218_hathitrust_overlap_report.tsv'),
                 col_sep: "\t", headers: true).with_index do |row, index|
 
       print '.' if ((index + 1) % 100).zero?

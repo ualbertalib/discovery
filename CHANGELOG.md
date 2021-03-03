@@ -6,6 +6,11 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.5.8] - 2021-03-03
+
+### Changed
+- Update Hathitrust overlap table
+
 ## [3.5.7] - 2021-01-15
 
 ### Fixed
