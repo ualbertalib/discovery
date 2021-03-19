@@ -46,9 +46,11 @@ en:
       review_policy_html:
         'Prior to your visit, please review our
         <a href="https://bpsc.library.ualberta.ca/info/visit#policy">Reading Room Policies.</a>'
-      date_of_planned_visit: 'Please indicate the first date of your planned visit. Please note that the reading room in Bruce Peel Special Collections will remain closed through the 
-        fall term (2020) due to COVID-19 and in order to accommodate a large facilities project. Limited services are available. 
-        Updates and details can be found on the Peel website <a href="https://bpsc.library.ualberta.ca/">here</a>.'
+      date_of_planned_visit: 'Please indicate the first date of your planned visit. 
+      Please note that the reading room in Bruce Peel Special Collections is currently 
+      closed due to COVID-19 and in order to accommodate a large inventory project. 
+      Limited services are available. Updates and details can be found 
+      on the <a href="https://bpsc.library.ualberta.ca/">Peel website</a>.'
       call_number: 'Call Number'
   rcrf_read_on_site_requests:
     new:
