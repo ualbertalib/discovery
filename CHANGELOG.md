@@ -6,6 +6,8 @@ and releases in Discovery project adheres to [Semantic Versioning](http://semver
 
 ## [Unreleased]
 
+## [3.5.9] - 2021-04-06
+
 ### Changed
 
 - Updated BPSC request form text as per Linda Quirk's request (helpdesk ticket #20210318102)
