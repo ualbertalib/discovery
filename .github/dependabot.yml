@@ -1,0 +1,27 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "10:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: comfortable_mexican_sofa
+    versions:
+    - "> 1.12.9"
+  - dependency-name: mysql2
+    versions:
+    - "> 0.4.10"
+  - dependency-name: rubocop
+    versions:
+    - "> 0.56.0"
+  - dependency-name: vcr
+    versions:
+    - "> 5.0.0"
+  - dependency-name: vcr
+    versions:
+    - ">= 5.1.a, < 5.2"
+  - dependency-name: rspec-rails
+    versions:
+    - 4.1.1
