@@ -363,7 +363,7 @@ GEM
     scrub_rb (1.0.1)
     scss_lint (0.59.0)
       sass (~> 3.5, >= 3.5.5)
-    sdoc (2.0.4)
+    sdoc (2.1.0)
       rdoc (>= 5.0)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
