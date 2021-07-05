@@ -26,7 +26,7 @@ gem 'devise'
 gem 'devise-guests'
 
 # Misc Utilities
-gem 'addressable', '~> 2.7.0'
+gem 'addressable', '~> 2.8.0'
 gem 'bootstrap_form', '~> 2.7.0'
 gem 'nokogiri', '~> 1.11.1'
 gem 'om'
