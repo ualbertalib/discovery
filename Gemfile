@@ -61,7 +61,7 @@ group :development do
   gem 'letter_opener'
 
   gem 'brakeman'
-  gem 'listen', '~> 3.5'
+  gem 'listen', '~> 3.6'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
