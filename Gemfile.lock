@@ -227,7 +227,7 @@ GEM
       unf
     method_source (1.0.0)
     mini_mime (1.0.2)
-    mini_portile2 (2.5.1)
+    mini_portile2 (2.6.1)
     minitest (5.14.4)
     multi_json (1.13.1)
     multipart-post (2.1.1)
@@ -235,8 +235,8 @@ GEM
     nap (1.1.0)
     nio4r (2.5.7)
     no_proxy_fix (0.1.2)
-    nokogiri (1.11.1)
-      mini_portile2 (~> 2.5.0)
+    nokogiri (1.12.3)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     octokit (4.21.0)
       faraday (>= 0.9)
@@ -448,7 +448,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.5)
   mysql2 (~> 0.4.10)
-  nokogiri (~> 1.11.1)
+  nokogiri (~> 1.12.3)
   om
   pry
   pry-byebug
